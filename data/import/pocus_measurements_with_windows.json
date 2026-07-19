@@ -1,0 +1,2737 @@
+{
+  "metadata": {
+    "title": "Mediciones fundamentales en POCUS cardiaco con ventanas recomendadas",
+    "version": "2.0",
+    "revision_date": "2026-07",
+    "language": "es",
+    "adult_reference": true,
+    "educational_use_only": true,
+    "schema_notes": {
+      "primary_window": "Ventana acústica primaria sugerida.",
+      "preferred_view": "Vista o plano recomendado.",
+      "modality": "Modo ecográfico requerido.",
+      "acquisition_timing": "Fase del ciclo cardiaco o respiratorio.",
+      "acquisition_key": "Punto técnico esencial para adquirir la medición.",
+      "alternate_windows": "Ventanas alternativas o complementarias."
+    }
+  },
+  "sections": [
+    {
+      "number": 1,
+      "title": "Ventrículo izquierdo: dimensiones y función sistólica"
+    },
+    {
+      "number": 2,
+      "title": "Grosor, masa y geometría del ventrículo izquierdo"
+    },
+    {
+      "number": 3,
+      "title": "Volumen sistólico, gasto cardiaco y flujo del TSVI"
+    },
+    {
+      "number": 4,
+      "title": "Aurícula izquierda"
+    },
+    {
+      "number": 5,
+      "title": "Función diastólica del ventrículo izquierdo"
+    },
+    {
+      "number": 6,
+      "title": "Ventrículo derecho: tamaño y función sistólica"
+    },
+    {
+      "number": 7,
+      "title": "Aurícula derecha, vena cava inferior y presión auricular derecha"
+    },
+    {
+      "number": 8,
+      "title": "Presión pulmonar y hemodinámica derecha"
+    },
+    {
+      "number": 9,
+      "title": "Válvula aórtica y tracto de salida del VI"
+    },
+    {
+      "number": 10,
+      "title": "Válvula mitral"
+    },
+    {
+      "number": 11,
+      "title": "Insuficiencias valvulares: fórmulas y puntos de corte"
+    },
+    {
+      "number": 12,
+      "title": "Pericardio y signos ecográficos de taponamiento"
+    }
+  ],
+  "measurements": [
+    {
+      "id": "lvidd",
+      "section_number": 1,
+      "section_title": "Ventrículo izquierdo: dimensiones y función sistólica",
+      "measurement": "DTDVI / LVIDd",
+      "formula_or_method": "PLAX, perpendicular al eje largo, al final de la diástole.",
+      "normal_values_or_cutoff": "Hombres 42-58 mm; mujeres 38-52 mm.",
+      "interpretation_limitations": "Cuantifica el tamaño lineal del VI. Confirmar que el corte no sea oblicuo.",
+      "primary_window": "Paraesternal izquierda",
+      "preferred_view": "PLAX",
+      "modality": "2D; modo M opcional",
+      "acquisition_timing": "Fin de diástole",
+      "acquisition_key": "Medir perpendicular al eje largo, habitualmente a nivel de las puntas de las valvas mitrales; evitar cortes oblicuos.",
+      "alternate_windows": [
+        "Subcostal eje corto como alternativa si la ventana paraesternal es deficiente."
+      ],
+      "source_page_original": 4
+    },
+    {
+      "id": "lvids",
+      "section_number": 1,
+      "section_title": "Ventrículo izquierdo: dimensiones y función sistólica",
+      "measurement": "DTSVI / LVIDs",
+      "formula_or_method": "PLAX, al final de la sístole.",
+      "normal_values_or_cutoff": "Hombres 25-40 mm; mujeres 22-35 mm.",
+      "interpretation_limitations": "Útil junto con el DTDVI para calcular la fracción de acortamiento.",
+      "primary_window": "Paraesternal izquierda",
+      "preferred_view": "PLAX",
+      "modality": "2D; modo M opcional",
+      "acquisition_timing": "Fin de sístole",
+      "acquisition_key": "Usar el mismo plano y nivel anatómico que para DTDVI.",
+      "alternate_windows": [
+        "Subcostal eje corto si no hay PLAX adecuada."
+      ],
+      "source_page_original": 4
+    },
+    {
+      "id": "lvedv",
+      "section_number": 1,
+      "section_title": "Ventrículo izquierdo: dimensiones y función sistólica",
+      "measurement": "VTDVI",
+      "formula_or_method": "Simpson biplano en A4C y A2C.",
+      "normal_values_or_cutoff": "Hombres 62-150 mL; mujeres 46-106 mL.",
+      "interpretation_limitations": "Evitar foreshortening y excluir músculos papilares de la cavidad.",
+      "primary_window": "Apical",
+      "preferred_view": "A4C + A2C no acortadas",
+      "modality": "2D; trazado endocárdico",
+      "acquisition_timing": "Fin de diástole",
+      "acquisition_key": "Trazar el endocardio desde anillo mitral a ápex; excluir músculos papilares y trabeculaciones de la cavidad.",
+      "alternate_windows": [
+        "A3C puede complementar; contraste ecográfico si la delimitación endocárdica es insuficiente."
+      ],
+      "source_page_original": 4
+    },
+    {
+      "id": "lvedvi",
+      "section_number": 1,
+      "section_title": "Ventrículo izquierdo: dimensiones y función sistólica",
+      "measurement": "VTDVI indexado",
+      "formula_or_method": "VTDVI / superficie corporal.",
+      "normal_values_or_cutoff": "Hombres 34-74 mL/m²; mujeres 29-61 mL/m².",
+      "interpretation_limitations": "Preferible para comparar entre pacientes de distinto tamaño corporal.",
+      "primary_window": "Derivada",
+      "preferred_view": "A4C + A2C para VTDVI",
+      "modality": "Cálculo",
+      "acquisition_timing": "Después de medir VTDVI",
+      "acquisition_key": "No requiere una ventana adicional: utiliza VTDVI por Simpson y superficie corporal.",
+      "alternate_windows": [],
+      "source_page_original": 4
+    },
+    {
+      "id": "lvesv",
+      "section_number": 1,
+      "section_title": "Ventrículo izquierdo: dimensiones y función sistólica",
+      "measurement": "VTSVI",
+      "formula_or_method": "Simpson biplano al final de la sístole.",
+      "normal_values_or_cutoff": "Hombres 21-61 mL; mujeres 14-42 mL.",
+      "interpretation_limitations": "Depende de contractilidad y condiciones de carga.",
+      "primary_window": "Apical",
+      "preferred_view": "A4C + A2C no acortadas",
+      "modality": "2D; trazado endocárdico",
+      "acquisition_timing": "Fin de sístole",
+      "acquisition_key": "Seleccionar el cuadro con menor cavidad ventricular y trazar el endocardio.",
+      "alternate_windows": [
+        "A3C puede complementar; contraste ecográfico si la delimitación es insuficiente."
+      ],
+      "source_page_original": 4
+    },
+    {
+      "id": "lvesvi",
+      "section_number": 1,
+      "section_title": "Ventrículo izquierdo: dimensiones y función sistólica",
+      "measurement": "VTSVI indexado",
+      "formula_or_method": "VTSVI / superficie corporal.",
+      "normal_values_or_cutoff": "Hombres 11-31 mL/m²; mujeres 8-24 mL/m².",
+      "interpretation_limitations": "Permite cuantificación ajustada por superficie corporal.",
+      "primary_window": "Derivada",
+      "preferred_view": "A4C + A2C para VTSVI",
+      "modality": "Cálculo",
+      "acquisition_timing": "Después de medir VTSVI",
+      "acquisition_key": "No requiere ventana adicional: utiliza VTSVI y superficie corporal.",
+      "alternate_windows": [],
+      "source_page_original": 4
+    },
+    {
+      "id": "lvef",
+      "section_number": 1,
+      "section_title": "Ventrículo izquierdo: dimensiones y función sistólica",
+      "measurement": "FEVI",
+      "formula_or_method": "[(VTDVI - VTSVI) / VTDVI] × 100.",
+      "normal_values_or_cutoff": "53-73%; límite inferior: hombres 52%, mujeres 54%.",
+      "interpretation_limitations": "Integrar con contractilidad regional, carga y calidad de imagen.",
+      "primary_window": "Apical",
+      "preferred_view": "A4C + A2C, Simpson biplano",
+      "modality": "2D; cálculo",
+      "acquisition_timing": "Fin de diástole y fin de sístole",
+      "acquisition_key": "Evitar foreshortening; usar los mismos ciclos y un contorno endocárdico adecuado.",
+      "alternate_windows": [
+        "Estimación visual multiparamétrica desde PLAX, PSAX, A4C y subcostal cuando no sea posible Simpson."
+      ],
+      "source_page_original": 4
+    },
+    {
+      "id": "fractional_shortening",
+      "section_number": 1,
+      "section_title": "Ventrículo izquierdo: dimensiones y función sistólica",
+      "measurement": "Fracción de acortamiento",
+      "formula_or_method": "[(DTDVI - DTSVI) / DTDVI] × 100.",
+      "normal_values_or_cutoff": "25-45%.",
+      "interpretation_limitations": "Solo refleja acortamiento radial en un plano; pierde precisión con alteraciones segmentarias.",
+      "primary_window": "Paraesternal izquierda",
+      "preferred_view": "PLAX",
+      "modality": "2D o modo M",
+      "acquisition_timing": "Diástole y sístole",
+      "acquisition_key": "Usar DTDVI y DTSVI del mismo nivel y eje.",
+      "alternate_windows": [],
+      "source_page_original": 4
+    },
+    {
+      "id": "epss",
+      "section_number": 1,
+      "section_title": "Ventrículo izquierdo: dimensiones y función sistólica",
+      "measurement": "EPSS",
+      "formula_or_method": "Distancia entre el punto E de la valva mitral anterior y el septo en modo M.",
+      "normal_values_or_cutoff": "≤7 mm; >10 mm sugiere disfunción sistólica.",
+      "interpretation_limitations": "No usar de forma aislada; puede alterarse por enfermedad mitral o dilatación del VI.",
+      "primary_window": "Paraesternal izquierda",
+      "preferred_view": "PLAX centrada en válvula mitral",
+      "modality": "Modo M",
+      "acquisition_timing": "Diástole temprana",
+      "acquisition_key": "Colocar el cursor a través de la punta de la valva mitral anterior y medir la mínima separación E-septo.",
+      "alternate_windows": [],
+      "source_page_original": 4
+    },
+    {
+      "id": "mapse",
+      "section_number": 1,
+      "section_title": "Ventrículo izquierdo: dimensiones y función sistólica",
+      "measurement": "MAPSE",
+      "formula_or_method": "Excursión sistólica longitudinal del anillo mitral.",
+      "normal_values_or_cutoff": "Habitualmente ≥10-12 mm.",
+      "interpretation_limitations": "Marcador sencillo de función longitudinal del VI.",
+      "primary_window": "Apical",
+      "preferred_view": "A4C",
+      "modality": "Modo M",
+      "acquisition_timing": "Sístole",
+      "acquisition_key": "Alinear el cursor con el movimiento longitudinal del anillo mitral lateral o septal.",
+      "alternate_windows": [
+        "A2C para anillo anterior/inferior en valoración ampliada."
+      ],
+      "source_page_original": 4
+    },
+    {
+      "id": "mitral_s_prime",
+      "section_number": 1,
+      "section_title": "Ventrículo izquierdo: dimensiones y función sistólica",
+      "measurement": "s’ mitral",
+      "formula_or_method": "Doppler tisular del anillo mitral.",
+      "normal_values_or_cutoff": "Septal ≥7 cm/s; lateral ≥9-10 cm/s.",
+      "interpretation_limitations": "Depende de edad, alineación Doppler y función longitudinal.",
+      "primary_window": "Apical",
+      "preferred_view": "A4C",
+      "modality": "Doppler tisular pulsado",
+      "acquisition_timing": "Sístole",
+      "acquisition_key": "Colocar la muestra en anillo septal y lateral; mantener el haz paralelo al movimiento anular.",
+      "alternate_windows": [],
+      "source_page_original": 4
+    },
+    {
+      "id": "lv_gls",
+      "section_number": 1,
+      "section_title": "Ventrículo izquierdo: dimensiones y función sistólica",
+      "measurement": "GLS del VI",
+      "formula_or_method": "[(Longitud sistólica - longitud diastólica) / longitud diastólica] × 100.",
+      "normal_values_or_cutoff": "Aprox. -18% a -22%; menos negativo que -16% suele ser anormal.",
+      "interpretation_limitations": "Los valores son negativos; comparar idealmente con el mismo equipo/software.",
+      "primary_window": "Apical",
+      "preferred_view": "A4C + A2C + A3C",
+      "modality": "Speckle tracking 2D",
+      "acquisition_timing": "Ciclo completo",
+      "acquisition_key": "Evitar foreshortening, optimizar frecuencia de cuadro y asegurar seguimiento de todos los segmentos.",
+      "alternate_windows": [],
+      "source_page_original": 4
+    },
+    {
+      "id": "wmsi",
+      "section_number": 1,
+      "section_title": "Ventrículo izquierdo: dimensiones y función sistólica",
+      "measurement": "WMSI",
+      "formula_or_method": "Suma de puntuaciones segmentarias / número de segmentos evaluados.",
+      "normal_values_or_cutoff": "1,0 cuando todos los segmentos son normales.",
+      "interpretation_limitations": "Aumenta con mayor extensión o severidad de alteraciones regionales.",
+      "primary_window": "Múltiples",
+      "preferred_view": "A4C, A2C, A3C y PSAX basal/medio/apical",
+      "modality": "2D cine",
+      "acquisition_timing": "Ciclo completo",
+      "acquisition_key": "Evaluar cada segmento en más de una vista cuando sea posible; evitar atribuir artefacto a hipocinesia.",
+      "alternate_windows": [
+        "Subcostal eje corto en ventanas apicales o paraesternales deficientes."
+      ],
+      "source_page_original": 4
+    },
+    {
+      "id": "ivsd",
+      "section_number": 2,
+      "section_title": "Grosor, masa y geometría del ventrículo izquierdo",
+      "measurement": "Septum diastólico (IVSd)",
+      "formula_or_method": "PLAX, fin de diástole.",
+      "normal_values_or_cutoff": "Hombres 6-10 mm; mujeres 6-9 mm.",
+      "interpretation_limitations": "Medir perpendicular al eje largo y evitar incluir estructuras del VD.",
+      "primary_window": "Paraesternal izquierda",
+      "preferred_view": "PLAX",
+      "modality": "2D; modo M opcional",
+      "acquisition_timing": "Fin de diástole",
+      "acquisition_key": "Medir el septo perpendicular al eje largo a nivel de las puntas mitrales; no incluir banda moderadora ni trabeculaciones del VD.",
+      "alternate_windows": [],
+      "source_page_original": 4
+    },
+    {
+      "id": "pwtd",
+      "section_number": 2,
+      "section_title": "Grosor, masa y geometría del ventrículo izquierdo",
+      "measurement": "Pared posterior (PWTd)",
+      "formula_or_method": "PLAX, fin de diástole.",
+      "normal_values_or_cutoff": "Hombres 6-10 mm; mujeres 6-9 mm.",
+      "interpretation_limitations": "Medición lineal de la pared inferolateral posterior.",
+      "primary_window": "Paraesternal izquierda",
+      "preferred_view": "PLAX",
+      "modality": "2D; modo M opcional",
+      "acquisition_timing": "Fin de diástole",
+      "acquisition_key": "Medir en el mismo nivel que IVSd y DTDVI, perpendicular a la pared.",
+      "alternate_windows": [],
+      "source_page_original": 4
+    },
+    {
+      "id": "rwt",
+      "section_number": 2,
+      "section_title": "Grosor, masa y geometría del ventrículo izquierdo",
+      "measurement": "Grosor relativo de pared (RWT)",
+      "formula_or_method": "2 × PWTd / DTDVI.",
+      "normal_values_or_cutoff": "≤0,42.",
+      "interpretation_limitations": "Distingue geometría concéntrica de excéntrica; es adimensional.",
+      "primary_window": "Derivada",
+      "preferred_view": "PLAX para PWTd y DTDVI",
+      "modality": "Cálculo",
+      "acquisition_timing": "Fin de diástole",
+      "acquisition_key": "No requiere ventana adicional; asegurar que ambas medidas provengan del mismo plano y ciclo.",
+      "alternate_windows": [],
+      "source_page_original": 4
+    },
+    {
+      "id": "lv_mass",
+      "section_number": 2,
+      "section_title": "Grosor, masa y geometría del ventrículo izquierdo",
+      "measurement": "Masa del VI",
+      "formula_or_method": "0,8 × 1,04 × [(DTDVI + IVSd + PWTd)³ - DTDVI³] + 0,6 g.",
+      "normal_values_or_cutoff": "Debe indexarse por superficie corporal.",
+      "interpretation_limitations": "La fórmula requiere dimensiones en centímetros; convertir desde milímetros antes de calcular.",
+      "primary_window": "Paraesternal izquierda",
+      "preferred_view": "PLAX",
+      "modality": "2D; cálculo",
+      "acquisition_timing": "Fin de diástole",
+      "acquisition_key": "Usar DTDVI, IVSd y PWTd del mismo plano; convertir a cm antes de elevar al cubo.",
+      "alternate_windows": [],
+      "source_page_original": 4
+    },
+    {
+      "id": "lv_mass_index",
+      "section_number": 2,
+      "section_title": "Grosor, masa y geometría del ventrículo izquierdo",
+      "measurement": "Índice de masa del VI",
+      "formula_or_method": "Masa VI / superficie corporal.",
+      "normal_values_or_cutoff": "Hombres ≤115 g/m²; mujeres ≤95 g/m².",
+      "interpretation_limitations": "Permite clasificar hipertrofia del VI junto con el RWT.",
+      "primary_window": "Derivada",
+      "preferred_view": "PLAX para masa del VI",
+      "modality": "Cálculo",
+      "acquisition_timing": "Después de calcular masa",
+      "acquisition_key": "No requiere ventana adicional; necesita superficie corporal válida.",
+      "alternate_windows": [],
+      "source_page_original": 4
+    },
+    {
+      "id": "lv_geometry",
+      "section_number": 2,
+      "section_title": "Grosor, masa y geometría del ventrículo izquierdo",
+      "measurement": "Geometría del VI",
+      "formula_or_method": "Integración de índice de masa VI y RWT.",
+      "normal_values_or_cutoff": "Normal, remodelado concéntrico, hipertrofia concéntrica o hipertrofia excéntrica.",
+      "interpretation_limitations": "No es una medición aislada, sino una clasificación derivada.",
+      "primary_window": "Derivada",
+      "preferred_view": "PLAX para medidas lineales",
+      "modality": "Clasificación",
+      "acquisition_timing": "Después de calcular IMVI y RWT",
+      "acquisition_key": "Interpretar con el contexto y confirmar que las medidas lineales sean técnicamente válidas.",
+      "alternate_windows": [],
+      "source_page_original": 4
+    },
+    {
+      "id": "lvot_area",
+      "section_number": 3,
+      "section_title": "Volumen sistólico, gasto cardiaco y flujo del TSVI",
+      "measurement": "Área del TSVI",
+      "formula_or_method": "π × (diámetro TSVI / 2)² = 0,785 × diámetro².",
+      "normal_values_or_cutoff": "Depende del diámetro.",
+      "interpretation_limitations": "Usar diámetro en cm; el error se eleva al cuadrado.",
+      "primary_window": "Paraesternal izquierda",
+      "preferred_view": "PLAX ampliada del TSVI y válvula aórtica",
+      "modality": "2D zoom",
+      "acquisition_timing": "Mesosístole",
+      "acquisition_key": "Medir borde interno a borde interno, paralelo al plano valvular, en el sitio correspondiente a la muestra Doppler.",
+      "alternate_windows": [],
+      "source_page_original": 5
+    },
+    {
+      "id": "lvot_vti",
+      "section_number": 3,
+      "section_title": "Volumen sistólico, gasto cardiaco y flujo del TSVI",
+      "measurement": "VTI del TSVI",
+      "formula_or_method": "Doppler pulsado justo proximal a la válvula aórtica.",
+      "normal_values_or_cutoff": "Aprox. 18-22 cm.",
+      "interpretation_limitations": "El trazado debe incluir todo el espectro sistólico y estar alineado con el flujo.",
+      "primary_window": "Apical",
+      "preferred_view": "A5C o A3C",
+      "modality": "Doppler pulsado",
+      "acquisition_timing": "Sístole",
+      "acquisition_key": "Colocar la muestra 0,5-1 cm proximal a la válvula aórtica, antes de la aceleración; trazar el borde modal.",
+      "alternate_windows": [
+        "A4C con inclinación anterior para abrir el TSVI."
+      ],
+      "source_page_original": 5
+    },
+    {
+      "id": "stroke_volume",
+      "section_number": 3,
+      "section_title": "Volumen sistólico, gasto cardiaco y flujo del TSVI",
+      "measurement": "Volumen sistólico",
+      "formula_or_method": "Área TSVI × VTI TSVI.",
+      "normal_values_or_cutoff": "Aprox. 60-100 mL/latido.",
+      "interpretation_limitations": "Con área en cm² y VTI en cm, el resultado equivale a mL.",
+      "primary_window": "Combinada",
+      "preferred_view": "PLAX + A5C/A3C",
+      "modality": "2D + Doppler pulsado; cálculo",
+      "acquisition_timing": "Sístole",
+      "acquisition_key": "Combinar diámetro del TSVI en PLAX con VTI del mismo tracto desde ventana apical.",
+      "alternate_windows": [],
+      "source_page_original": 5
+    },
+    {
+      "id": "stroke_volume_index",
+      "section_number": 3,
+      "section_title": "Volumen sistólico, gasto cardiaco y flujo del TSVI",
+      "measurement": "Índice de volumen sistólico",
+      "formula_or_method": "Volumen sistólico / superficie corporal.",
+      "normal_values_or_cutoff": "35-65 mL/m²; bajo flujo ≤35 mL/m².",
+      "interpretation_limitations": "Útil para identificar estados de bajo flujo.",
+      "primary_window": "Derivada",
+      "preferred_view": "PLAX + A5C/A3C para VS",
+      "modality": "Cálculo",
+      "acquisition_timing": "Después de calcular VS",
+      "acquisition_key": "No requiere ventana adicional; necesita superficie corporal.",
+      "alternate_windows": [],
+      "source_page_original": 5
+    },
+    {
+      "id": "cardiac_output",
+      "section_number": 3,
+      "section_title": "Volumen sistólico, gasto cardiaco y flujo del TSVI",
+      "measurement": "Gasto cardiaco",
+      "formula_or_method": "(Volumen sistólico en mL × frecuencia cardiaca) / 1000.",
+      "normal_values_or_cutoff": "Aprox. 4-8 L/min.",
+      "interpretation_limitations": "Promediar varios ciclos si existe arritmia.",
+      "primary_window": "Derivada",
+      "preferred_view": "PLAX + A5C/A3C para VS",
+      "modality": "Cálculo",
+      "acquisition_timing": "Después de calcular VS",
+      "acquisition_key": "Usar frecuencia cardiaca del ciclo medido; promediar 3-5 latidos o más en arritmia.",
+      "alternate_windows": [],
+      "source_page_original": 5
+    },
+    {
+      "id": "cardiac_index",
+      "section_number": 3,
+      "section_title": "Volumen sistólico, gasto cardiaco y flujo del TSVI",
+      "measurement": "Índice cardiaco",
+      "formula_or_method": "Gasto cardiaco / superficie corporal.",
+      "normal_values_or_cutoff": "Aprox. 2,5-4,0 L/min/m².",
+      "interpretation_limitations": "Ajusta el gasto cardiaco al tamaño corporal.",
+      "primary_window": "Derivada",
+      "preferred_view": "PLAX + A5C/A3C para GC",
+      "modality": "Cálculo",
+      "acquisition_timing": "Después de calcular GC",
+      "acquisition_key": "No requiere ventana adicional.",
+      "alternate_windows": [],
+      "source_page_original": 5
+    },
+    {
+      "id": "plr_vti_change",
+      "section_number": 3,
+      "section_title": "Volumen sistólico, gasto cardiaco y flujo del TSVI",
+      "measurement": "Cambio de VTI tras elevación pasiva de piernas",
+      "formula_or_method": "[(VTI posterior - VTI basal) / VTI basal] × 100.",
+      "normal_values_or_cutoff": "Aumento ≥10-15% sugiere respuesta a precarga.",
+      "interpretation_limitations": "Requiere mediciones consecutivas en el mismo sitio y condiciones estables.",
+      "primary_window": "Apical",
+      "preferred_view": "A5C o A3C",
+      "modality": "Doppler pulsado seriado",
+      "acquisition_timing": "Antes y 30-90 s después de la maniobra",
+      "acquisition_key": "Mantener exactamente la misma posición de la muestra y ángulo Doppler; usar el mismo número de ciclos.",
+      "alternate_windows": [],
+      "source_page_original": 5
+    },
+    {
+      "id": "svr",
+      "section_number": 3,
+      "section_title": "Volumen sistólico, gasto cardiaco y flujo del TSVI",
+      "measurement": "RVS",
+      "formula_or_method": "80 × (PAM - presión AD) / gasto cardiaco.",
+      "normal_values_or_cutoff": "Aprox. 800-1200 dyn·s·cm⁻⁵.",
+      "interpretation_limitations": "Usar gasto cardiaco en L/min y presiones en mmHg.",
+      "primary_window": "Derivada",
+      "preferred_view": "Datos combinados",
+      "modality": "Cálculo hemodinámico",
+      "acquisition_timing": "Después de estimar GC y presión AD",
+      "acquisition_key": "La presión AD suele derivarse de VCI subcostal; reconocer las limitaciones de esa estimación.",
+      "alternate_windows": [],
+      "source_page_original": 5
+    },
+    {
+      "id": "svri",
+      "section_number": 3,
+      "section_title": "Volumen sistólico, gasto cardiaco y flujo del TSVI",
+      "measurement": "IRVS",
+      "formula_or_method": "80 × (PAM - presión AD) / índice cardiaco.",
+      "normal_values_or_cutoff": "Aprox. 1970-2390 dyn·s·cm⁻⁵·m².",
+      "interpretation_limitations": "Índice ajustado por superficie corporal.",
+      "primary_window": "Derivada",
+      "preferred_view": "Datos combinados",
+      "modality": "Cálculo hemodinámico",
+      "acquisition_timing": "Después de estimar IC y presión AD",
+      "acquisition_key": "No requiere ventana adicional.",
+      "alternate_windows": [],
+      "source_page_original": 5
+    },
+    {
+      "id": "la_ap_diameter",
+      "section_number": 4,
+      "section_title": "Aurícula izquierda",
+      "measurement": "Diámetro anteroposterior de AI",
+      "formula_or_method": "PLAX al final de la sístole ventricular.",
+      "normal_values_or_cutoff": "Aprox. 27-40 mm.",
+      "interpretation_limitations": "Menos representativo que el volumen porque la dilatación auricular no es simétrica.",
+      "primary_window": "Paraesternal izquierda",
+      "preferred_view": "PLAX",
+      "modality": "2D",
+      "acquisition_timing": "Fin de sístole",
+      "acquisition_key": "Medir perpendicular al eje largo; preferir volumen auricular para cuantificación.",
+      "alternate_windows": [],
+      "source_page_original": 5
+    },
+    {
+      "id": "la_volume",
+      "section_number": 4,
+      "section_title": "Aurícula izquierda",
+      "measurement": "Volumen de AI",
+      "formula_or_method": "Simpson biplano o método área-longitud.",
+      "normal_values_or_cutoff": "Debe indexarse.",
+      "interpretation_limitations": "Medir al final de la sístole, antes de la apertura mitral.",
+      "primary_window": "Apical",
+      "preferred_view": "A4C + A2C dedicadas a AI",
+      "modality": "2D; planimetría",
+      "acquisition_timing": "Fin de sístole",
+      "acquisition_key": "Evitar foreshortening; excluir venas pulmonares y orejuela; trazar hasta el borde del anillo mitral.",
+      "alternate_windows": [],
+      "source_page_original": 5
+    },
+    {
+      "id": "lavi",
+      "section_number": 4,
+      "section_title": "Aurícula izquierda",
+      "measurement": "LAVI",
+      "formula_or_method": "Volumen AI / superficie corporal.",
+      "normal_values_or_cutoff": "≤34 mL/m².",
+      "interpretation_limitations": "Refleja exposición crónica a presiones de llenado elevadas, con excepciones clínicas.",
+      "primary_window": "Derivada",
+      "preferred_view": "A4C + A2C para volumen AI",
+      "modality": "Cálculo",
+      "acquisition_timing": "Después de medir volumen AI",
+      "acquisition_key": "No requiere ventana adicional.",
+      "alternate_windows": [],
+      "source_page_original": 5
+    },
+    {
+      "id": "la_dilation",
+      "section_number": 4,
+      "section_title": "Aurícula izquierda",
+      "measurement": "Dilatación de AI",
+      "formula_or_method": "Clasificación según LAVI.",
+      "normal_values_or_cutoff": "Leve 35-41; moderada 42-48; severa >48 mL/m².",
+      "interpretation_limitations": "La interpretación debe considerar fibrilación auricular y enfermedad valvular.",
+      "primary_window": "Derivada",
+      "preferred_view": "A4C + A2C para LAVI",
+      "modality": "Clasificación",
+      "acquisition_timing": "Después de calcular LAVI",
+      "acquisition_key": "No requiere ventana adicional.",
+      "alternate_windows": [],
+      "source_page_original": 5
+    },
+    {
+      "id": "la_reservoir_strain",
+      "section_number": 4,
+      "section_title": "Aurícula izquierda",
+      "measurement": "Strain reservorio de AI",
+      "formula_or_method": "Speckle tracking durante la fase de reservorio.",
+      "normal_values_or_cutoff": "Habitualmente >18-23%; ≤18% es anormal.",
+      "interpretation_limitations": "Dependiente del software y de la calidad del seguimiento miocárdico.",
+      "primary_window": "Apical",
+      "preferred_view": "A4C + A2C dedicadas a AI",
+      "modality": "Speckle tracking 2D",
+      "acquisition_timing": "Ciclo completo",
+      "acquisition_key": "Optimizar la pared auricular, evitar foreshortening y usar una referencia temporal consistente.",
+      "alternate_windows": [],
+      "source_page_original": 5
+    },
+    {
+      "id": "mitral_e",
+      "section_number": 5,
+      "section_title": "Función diastólica del ventrículo izquierdo",
+      "measurement": "Onda E mitral",
+      "formula_or_method": "Doppler pulsado en puntas de las valvas mitrales.",
+      "normal_values_or_cutoff": "Frecuentemente 50-100 cm/s; dependiente de edad y carga.",
+      "interpretation_limitations": "Representa el llenado ventricular temprano.",
+      "primary_window": "Apical",
+      "preferred_view": "A4C",
+      "modality": "Doppler pulsado",
+      "acquisition_timing": "Diástole temprana",
+      "acquisition_key": "Muestra de 1-3 mm entre las puntas de las valvas; alinear con el flujo transmitral.",
+      "alternate_windows": [],
+      "source_page_original": 6
+    },
+    {
+      "id": "mitral_a",
+      "section_number": 5,
+      "section_title": "Función diastólica del ventrículo izquierdo",
+      "measurement": "Onda A mitral",
+      "formula_or_method": "Doppler pulsado transmitral durante la contracción auricular.",
+      "normal_values_or_cutoff": "Variable con edad y carga; ausente en fibrilación auricular.",
+      "interpretation_limitations": "No interpretar si no existe contracción auricular organizada.",
+      "primary_window": "Apical",
+      "preferred_view": "A4C",
+      "modality": "Doppler pulsado",
+      "acquisition_timing": "Diástole tardía",
+      "acquisition_key": "Usar el mismo espectro transmitral que para onda E.",
+      "alternate_windows": [],
+      "source_page_original": 6
+    },
+    {
+      "id": "e_a_ratio",
+      "section_number": 5,
+      "section_title": "Función diastólica del ventrículo izquierdo",
+      "measurement": "Relación E/A",
+      "formula_or_method": "Velocidad E / velocidad A.",
+      "normal_values_or_cutoff": "Aprox. 0,8-2,0; dependiente de edad.",
+      "interpretation_limitations": "No diagnostica por sí sola el grado de disfunción diastólica.",
+      "primary_window": "Derivada",
+      "preferred_view": "A4C para E y A",
+      "modality": "Cálculo",
+      "acquisition_timing": "Diástole",
+      "acquisition_key": "Usar velocidades del mismo ciclo o ciclos comparables.",
+      "alternate_windows": [],
+      "source_page_original": 6
+    },
+    {
+      "id": "e_deceleration_time",
+      "section_number": 5,
+      "section_title": "Función diastólica del ventrículo izquierdo",
+      "measurement": "Tiempo de desaceleración de E",
+      "formula_or_method": "Desde el pico E hasta la extrapolación a la línea basal.",
+      "normal_values_or_cutoff": "Aprox. 160-240 ms.",
+      "interpretation_limitations": "Se acorta con llenado restrictivo y puede prolongarse con relajación alterada.",
+      "primary_window": "Apical",
+      "preferred_view": "A4C",
+      "modality": "Doppler pulsado",
+      "acquisition_timing": "Diástole temprana",
+      "acquisition_key": "Trazar la pendiente descendente de E hasta la línea basal.",
+      "alternate_windows": [],
+      "source_page_original": 6
+    },
+    {
+      "id": "ivrt",
+      "section_number": 5,
+      "section_title": "Función diastólica del ventrículo izquierdo",
+      "measurement": "IVRT",
+      "formula_or_method": "Intervalo entre cierre aórtico y apertura mitral.",
+      "normal_values_or_cutoff": "Aprox. 70-100 ms.",
+      "interpretation_limitations": "Depende de frecuencia cardiaca y presiones de relajación/llenado.",
+      "primary_window": "Apical",
+      "preferred_view": "A5C o A3C",
+      "modality": "Doppler pulsado o continuo entre flujo de salida y entrada",
+      "acquisition_timing": "Transición sístole-diástole",
+      "acquisition_key": "Ubicar la muestra para registrar simultáneamente cierre aórtico y apertura mitral cuando sea posible.",
+      "alternate_windows": [],
+      "source_page_original": 6
+    },
+    {
+      "id": "septal_e_prime",
+      "section_number": 5,
+      "section_title": "Función diastólica del ventrículo izquierdo",
+      "measurement": "e’ septal",
+      "formula_or_method": "Doppler tisular en el anillo mitral septal.",
+      "normal_values_or_cutoff": "Valor reducido sugiere relajación alterada; usar umbrales ajustados por edad y guía.",
+      "interpretation_limitations": "No usar aislado; puede alterarse por enfermedad regional o cirugía.",
+      "primary_window": "Apical",
+      "preferred_view": "A4C",
+      "modality": "Doppler tisular pulsado",
+      "acquisition_timing": "Diástole temprana",
+      "acquisition_key": "Muestra en el anillo septal, haz paralelo al movimiento longitudinal.",
+      "alternate_windows": [],
+      "source_page_original": 6
+    },
+    {
+      "id": "lateral_e_prime",
+      "section_number": 5,
+      "section_title": "Función diastólica del ventrículo izquierdo",
+      "measurement": "e’ lateral",
+      "formula_or_method": "Doppler tisular en el anillo mitral lateral.",
+      "normal_values_or_cutoff": "Valor reducido sugiere relajación alterada; usar umbrales ajustados por edad y guía.",
+      "interpretation_limitations": "Sensible a alineación y movimiento de traslación.",
+      "primary_window": "Apical",
+      "preferred_view": "A4C",
+      "modality": "Doppler tisular pulsado",
+      "acquisition_timing": "Diástole temprana",
+      "acquisition_key": "Muestra en el anillo lateral, evitando pared basal adyacente.",
+      "alternate_windows": [],
+      "source_page_original": 6
+    },
+    {
+      "id": "average_e_e_prime",
+      "section_number": 5,
+      "section_title": "Función diastólica del ventrículo izquierdo",
+      "measurement": "E/e’ promedio",
+      "formula_or_method": "E / promedio de e’ septal y lateral.",
+      "normal_values_or_cutoff": ">14 sugiere presión de llenado elevada.",
+      "interpretation_limitations": "Interpretación multiparamétrica; valores intermedios son indeterminados.",
+      "primary_window": "Derivada",
+      "preferred_view": "A4C",
+      "modality": "Doppler pulsado + tisular; cálculo",
+      "acquisition_timing": "Diástole",
+      "acquisition_key": "Usar E transmitral y e’ septal/lateral del mismo estudio y condiciones hemodinámicas.",
+      "alternate_windows": [],
+      "source_page_original": 6
+    },
+    {
+      "id": "tr_vmax_diastology",
+      "section_number": 5,
+      "section_title": "Función diastólica del ventrículo izquierdo",
+      "measurement": "Velocidad máxima de IT",
+      "formula_or_method": "Doppler continuo del jet de insuficiencia tricuspídea.",
+      "normal_values_or_cutoff": "<2,8 m/s como referencia tradicional; integrar con guía vigente y otros signos.",
+      "interpretation_limitations": "Una señal incompleta o mal alineada subestima la velocidad.",
+      "primary_window": "Múltiples",
+      "preferred_view": "A4C enfocada en VD; RV inflow; PSAX; subcostal",
+      "modality": "Doppler continuo guiado por color",
+      "acquisition_timing": "Sístole",
+      "acquisition_key": "Registrar el sobre completo de mayor velocidad entre todas las ventanas disponibles.",
+      "alternate_windows": [],
+      "source_page_original": 6
+    },
+    {
+      "id": "lavi_diastology",
+      "section_number": 5,
+      "section_title": "Función diastólica del ventrículo izquierdo",
+      "measurement": "LAVI en diastología",
+      "formula_or_method": "Volumen AI / superficie corporal.",
+      "normal_values_or_cutoff": "≤34 mL/m².",
+      "interpretation_limitations": "Marcador de carga crónica, no de cambios agudos aislados.",
+      "primary_window": "Derivada",
+      "preferred_view": "A4C + A2C",
+      "modality": "2D; cálculo",
+      "acquisition_timing": "Fin de sístole",
+      "acquisition_key": "Usar vistas auriculares dedicadas no acortadas.",
+      "alternate_windows": [],
+      "source_page_original": 6
+    },
+    {
+      "id": "la_strain_diastology",
+      "section_number": 5,
+      "section_title": "Función diastólica del ventrículo izquierdo",
+      "measurement": "Strain reservorio de AI en diastología",
+      "formula_or_method": "Speckle tracking auricular.",
+      "normal_values_or_cutoff": ">18% orienta a función conservada; ≤18% apoya disfunción/presión AI elevada.",
+      "interpretation_limitations": "Complementario; no reemplaza el algoritmo multiparamétrico.",
+      "primary_window": "Apical",
+      "preferred_view": "A4C + A2C",
+      "modality": "Speckle tracking 2D",
+      "acquisition_timing": "Ciclo completo",
+      "acquisition_key": "Asegurar seguimiento de pared auricular y referencia temporal estandarizada.",
+      "alternate_windows": [],
+      "source_page_original": 6
+    },
+    {
+      "id": "rv_basal_diameter",
+      "section_number": 6,
+      "section_title": "Ventrículo derecho: tamaño y función sistólica",
+      "measurement": "Diámetro basal del VD",
+      "formula_or_method": "A4C enfocada en VD, fin de diástole.",
+      "normal_values_or_cutoff": "≤41 mm.",
+      "interpretation_limitations": "Medir en el tercio basal máximo, perpendicular al eje largo.",
+      "primary_window": "Apical",
+      "preferred_view": "A4C enfocada en VD",
+      "modality": "2D",
+      "acquisition_timing": "Fin de diástole",
+      "acquisition_key": "Maximizar el VD sin foreshortening y medir basalmente de endocardio a endocardio.",
+      "alternate_windows": [],
+      "source_page_original": 7
+    },
+    {
+      "id": "rv_mid_diameter",
+      "section_number": 6,
+      "section_title": "Ventrículo derecho: tamaño y función sistólica",
+      "measurement": "Diámetro medio del VD",
+      "formula_or_method": "A4C enfocada en VD, fin de diástole.",
+      "normal_values_or_cutoff": "≤35 mm.",
+      "interpretation_limitations": "Medir a nivel medio de la cavidad.",
+      "primary_window": "Apical",
+      "preferred_view": "A4C enfocada en VD",
+      "modality": "2D",
+      "acquisition_timing": "Fin de diástole",
+      "acquisition_key": "Medir perpendicular al eje largo a nivel medio.",
+      "alternate_windows": [],
+      "source_page_original": 7
+    },
+    {
+      "id": "rv_length",
+      "section_number": 6,
+      "section_title": "Ventrículo derecho: tamaño y función sistólica",
+      "measurement": "Longitud del VD",
+      "formula_or_method": "Anillo tricuspídeo al ápex.",
+      "normal_values_or_cutoff": "≤83 mm.",
+      "interpretation_limitations": "Evitar acortamiento apical.",
+      "primary_window": "Apical",
+      "preferred_view": "A4C enfocada en VD",
+      "modality": "2D",
+      "acquisition_timing": "Fin de diástole",
+      "acquisition_key": "Medir desde el plano del anillo tricuspídeo al ápex verdadero del VD.",
+      "alternate_windows": [],
+      "source_page_original": 7
+    },
+    {
+      "id": "rv_lv_ratio",
+      "section_number": 6,
+      "section_title": "Ventrículo derecho: tamaño y función sistólica",
+      "measurement": "Relación VD/VI",
+      "formula_or_method": "Diámetro basal VD / diámetro basal VI.",
+      "normal_values_or_cutoff": "<0,6-0,7; ≥1 indica dilatación importante.",
+      "interpretation_limitations": "Útil como estimación rápida; depende del plano y de la carga.",
+      "primary_window": "Apical",
+      "preferred_view": "A4C enfocada en VD",
+      "modality": "2D; cálculo",
+      "acquisition_timing": "Fin de diástole",
+      "acquisition_key": "Medir ambos diámetros en el mismo cuadro y plano.",
+      "alternate_windows": [
+        "Subcostal 4C para evaluación cualitativa en paciente crítico."
+      ],
+      "source_page_original": 7
+    },
+    {
+      "id": "rv_wall_thickness",
+      "section_number": 6,
+      "section_title": "Ventrículo derecho: tamaño y función sistólica",
+      "measurement": "Grosor de pared libre del VD",
+      "formula_or_method": "Subcostal o PLAX, fin de diástole.",
+      "normal_values_or_cutoff": "≤5 mm.",
+      "interpretation_limitations": "Evitar incluir grasa epicárdica o trabeculaciones.",
+      "primary_window": "Subcostal",
+      "preferred_view": "Subcostal 4C o eje largo de VD",
+      "modality": "2D o modo M",
+      "acquisition_timing": "Fin de diástole",
+      "acquisition_key": "Medir la pared libre anteromedial perpendicularmente; excluir grasa epicárdica.",
+      "alternate_windows": [
+        "PLAX enfocada en pared anterior del VD si la subcostal es deficiente."
+      ],
+      "source_page_original": 7
+    },
+    {
+      "id": "tapse",
+      "section_number": 6,
+      "section_title": "Ventrículo derecho: tamaño y función sistólica",
+      "measurement": "TAPSE",
+      "formula_or_method": "Modo M del anillo tricuspídeo lateral.",
+      "normal_values_or_cutoff": ">17 mm.",
+      "interpretation_limitations": "Mide función longitudinal; es dependiente de ángulo y carga.",
+      "primary_window": "Apical",
+      "preferred_view": "A4C enfocada en VD",
+      "modality": "Modo M",
+      "acquisition_timing": "Sístole",
+      "acquisition_key": "Alinear el cursor con la dirección de desplazamiento del anillo tricuspídeo lateral.",
+      "alternate_windows": [],
+      "source_page_original": 7
+    },
+    {
+      "id": "rv_s_prime",
+      "section_number": 6,
+      "section_title": "Ventrículo derecho: tamaño y función sistólica",
+      "measurement": "s’ del VD",
+      "formula_or_method": "Doppler tisular del anillo tricuspídeo lateral.",
+      "normal_values_or_cutoff": ">9,5 cm/s.",
+      "interpretation_limitations": "Marcador de velocidad sistólica longitudinal basal.",
+      "primary_window": "Apical",
+      "preferred_view": "A4C enfocada en VD",
+      "modality": "Doppler tisular pulsado",
+      "acquisition_timing": "Sístole",
+      "acquisition_key": "Muestra en anillo lateral, alineada con el movimiento longitudinal.",
+      "alternate_windows": [],
+      "source_page_original": 7
+    },
+    {
+      "id": "rv_fac",
+      "section_number": 6,
+      "section_title": "Ventrículo derecho: tamaño y función sistólica",
+      "measurement": "FAC del VD",
+      "formula_or_method": "[(Área diastólica - área sistólica) / área diastólica] × 100.",
+      "normal_values_or_cutoff": ">35%.",
+      "interpretation_limitations": "Incluye contracción longitudinal y radial, pero no el TSVD.",
+      "primary_window": "Apical",
+      "preferred_view": "A4C enfocada en VD",
+      "modality": "2D; planimetría",
+      "acquisition_timing": "Fin de diástole y fin de sístole",
+      "acquisition_key": "Trazar endocardio desde anillo lateral a septal, incluyendo trabeculaciones en la cavidad y excluyendo TSVD.",
+      "alternate_windows": [],
+      "source_page_original": 7
+    },
+    {
+      "id": "rvef_3d",
+      "section_number": 6,
+      "section_title": "Ventrículo derecho: tamaño y función sistólica",
+      "measurement": "FEVD 3D",
+      "formula_or_method": "[(VTDVD - VTSVD) / VTDVD] × 100.",
+      "normal_values_or_cutoff": ">45%.",
+      "interpretation_limitations": "Requiere adquisición 3D adecuada; no suele ser POCUS básico.",
+      "primary_window": "Apical",
+      "preferred_view": "A4C enfocada en VD, volumen completo",
+      "modality": "3D",
+      "acquisition_timing": "Varios ciclos o un latido según equipo",
+      "acquisition_key": "Incluir todo el VD y TSVD, evitando stitching y pérdida de pared libre.",
+      "alternate_windows": [],
+      "source_page_original": 7
+    },
+    {
+      "id": "rv_free_wall_strain",
+      "section_number": 6,
+      "section_title": "Ventrículo derecho: tamaño y función sistólica",
+      "measurement": "Strain de pared libre del VD",
+      "formula_or_method": "Promedio de tres segmentos de pared libre.",
+      "normal_values_or_cutoff": "Más negativo que -20%.",
+      "interpretation_limitations": "No incluir septo si se informa strain de pared libre.",
+      "primary_window": "Apical",
+      "preferred_view": "A4C enfocada en VD",
+      "modality": "Speckle tracking 2D",
+      "acquisition_timing": "Ciclo completo",
+      "acquisition_key": "Optimizar pared libre y frecuencia de cuadro; verificar seguimiento basal, medio y apical.",
+      "alternate_windows": [],
+      "source_page_original": 7
+    },
+    {
+      "id": "rv_tei",
+      "section_number": 6,
+      "section_title": "Ventrículo derecho: tamaño y función sistólica",
+      "measurement": "Índice de Tei del VD",
+      "formula_or_method": "(Tiempo cierre-apertura - tiempo de eyección) / tiempo de eyección.",
+      "normal_values_or_cutoff": "<0,40 por Doppler pulsado; <0,55 por TDI.",
+      "interpretation_limitations": "Índice combinado de función sistólica y diastólica; dependiente de carga y ritmo.",
+      "primary_window": "Apical / paraesternal",
+      "preferred_view": "A4C para TDI; RV inflow + PSAX/RVOT para PW",
+      "modality": "Doppler tisular o pulsado",
+      "acquisition_timing": "Ciclo completo",
+      "acquisition_key": "Para TDI, medir intervalos en el anillo tricuspídeo lateral; para PW, integrar tiempos de inflow y outflow.",
+      "alternate_windows": [],
+      "source_page_original": 7
+    },
+    {
+      "id": "rvot_vti",
+      "section_number": 6,
+      "section_title": "Ventrículo derecho: tamaño y función sistólica",
+      "measurement": "VTI del TSVD",
+      "formula_or_method": "Doppler pulsado justo proximal a la válvula pulmonar.",
+      "normal_values_or_cutoff": ">18 cm.",
+      "interpretation_limitations": "Refleja eyección derecha y se usa en cálculos de volumen/PVR.",
+      "primary_window": "Paraesternal izquierda",
+      "preferred_view": "PSAX a nivel de grandes vasos / RVOT",
+      "modality": "Doppler pulsado",
+      "acquisition_timing": "Sístole",
+      "acquisition_key": "Muestra en el TSVD proximal a la válvula pulmonar, con el haz paralelo al flujo.",
+      "alternate_windows": [
+        "Subcostal eje corto del RVOT cuando la ventana paraesternal es limitada."
+      ],
+      "source_page_original": 7
+    },
+    {
+      "id": "paat",
+      "section_number": 6,
+      "section_title": "Ventrículo derecho: tamaño y función sistólica",
+      "measurement": "PAAT / AccT del TSVD",
+      "formula_or_method": "Inicio del flujo pulmonar hasta la velocidad máxima.",
+      "normal_values_or_cutoff": ">105 ms.",
+      "interpretation_limitations": "Se acorta con aumento de poscarga pulmonar; depende de frecuencia cardiaca.",
+      "primary_window": "Paraesternal izquierda",
+      "preferred_view": "PSAX a nivel de grandes vasos / RVOT",
+      "modality": "Doppler pulsado",
+      "acquisition_timing": "Sístole",
+      "acquisition_key": "Usar el mismo espectro del VTI del TSVD y medir desde inicio de flujo hasta el pico.",
+      "alternate_windows": [
+        "Subcostal eje corto del RVOT."
+      ],
+      "source_page_original": 7
+    },
+    {
+      "id": "tapse_pasp",
+      "section_number": 6,
+      "section_title": "Ventrículo derecho: tamaño y función sistólica",
+      "measurement": "TAPSE/PASP",
+      "formula_or_method": "TAPSE en mm / PASP en mmHg.",
+      "normal_values_or_cutoff": ">0,4-0,55 mm/mmHg.",
+      "interpretation_limitations": "Estimación no invasiva del acoplamiento VD-arteria pulmonar.",
+      "primary_window": "Derivada",
+      "preferred_view": "A4C enfocada en VD + mejor ventana de IT",
+      "modality": "Modo M + Doppler continuo; cálculo",
+      "acquisition_timing": "Sístole",
+      "acquisition_key": "Combinar TAPSE y PASP obtenidos en condiciones hemodinámicas similares.",
+      "alternate_windows": [],
+      "source_page_original": 7
+    },
+    {
+      "id": "ra_area",
+      "section_number": 7,
+      "section_title": "Aurícula derecha, vena cava inferior y presión auricular derecha",
+      "measurement": "Área de AD",
+      "formula_or_method": "Planimetría en A4C al final de la sístole.",
+      "normal_values_or_cutoff": "≤18 cm².",
+      "interpretation_limitations": "Evitar incluir venas cavas, seno coronario y apéndice.",
+      "primary_window": "Apical",
+      "preferred_view": "A4C enfocada en VD/AD",
+      "modality": "2D; planimetría",
+      "acquisition_timing": "Fin de sístole",
+      "acquisition_key": "Trazar desde anillo tricuspídeo y excluir entradas venosas y orejuela.",
+      "alternate_windows": [],
+      "source_page_original": 7
+    },
+    {
+      "id": "ra_length",
+      "section_number": 7,
+      "section_title": "Aurícula derecha, vena cava inferior y presión auricular derecha",
+      "measurement": "Longitud de AD",
+      "formula_or_method": "Techo de AD al centro del anillo tricuspídeo.",
+      "normal_values_or_cutoff": "≤53 mm.",
+      "interpretation_limitations": "Medición longitudinal en A4C.",
+      "primary_window": "Apical",
+      "preferred_view": "A4C enfocada en VD/AD",
+      "modality": "2D",
+      "acquisition_timing": "Fin de sístole",
+      "acquisition_key": "Medir eje mayor auricular desde el centro del anillo al techo.",
+      "alternate_windows": [],
+      "source_page_original": 7
+    },
+    {
+      "id": "ra_minor_diameter",
+      "section_number": 7,
+      "section_title": "Aurícula derecha, vena cava inferior y presión auricular derecha",
+      "measurement": "Diámetro menor de AD",
+      "formula_or_method": "Perpendicular al eje mayor.",
+      "normal_values_or_cutoff": "≤44 mm.",
+      "interpretation_limitations": "Medición transversal en A4C.",
+      "primary_window": "Apical",
+      "preferred_view": "A4C enfocada en VD/AD",
+      "modality": "2D",
+      "acquisition_timing": "Fin de sístole",
+      "acquisition_key": "Medir perpendicular al eje largo en el punto de mayor ancho.",
+      "alternate_windows": [],
+      "source_page_original": 7
+    },
+    {
+      "id": "ivc_diameter",
+      "section_number": 7,
+      "section_title": "Aurícula derecha, vena cava inferior y presión auricular derecha",
+      "measurement": "Diámetro de VCI",
+      "formula_or_method": "Subcostal, 1-2 cm de la unión con AD.",
+      "normal_values_or_cutoff": "≤2,1 cm.",
+      "interpretation_limitations": "Interpretar junto con la variación respiratoria.",
+      "primary_window": "Subcostal",
+      "preferred_view": "Eje largo de VCI",
+      "modality": "2D; modo M opcional",
+      "acquisition_timing": "Máximo diámetro, usualmente espiración",
+      "acquisition_key": "Visualizar varios centímetros de VCI y medir 1-2 cm proximal a la unión con AD, evitando el ostium de vena hepática.",
+      "alternate_windows": [
+        "Transhepática derecha lateral; vista transversal para confirmar el diámetro máximo."
+      ],
+      "source_page_original": 7
+    },
+    {
+      "id": "ivc_collapsibility",
+      "section_number": 7,
+      "section_title": "Aurícula derecha, vena cava inferior y presión auricular derecha",
+      "measurement": "Colapsabilidad de VCI",
+      "formula_or_method": "[(VCI espiratoria - VCI inspiratoria) / VCI espiratoria] × 100.",
+      "normal_values_or_cutoff": ">50% en respiración espontánea.",
+      "interpretation_limitations": "No extrapolar directamente a ventilación mecánica.",
+      "primary_window": "Subcostal",
+      "preferred_view": "Eje largo de VCI",
+      "modality": "2D cine o modo M",
+      "acquisition_timing": "Ciclo respiratorio",
+      "acquisition_key": "Registrar respiración espontánea normal y, si procede, inspiración rápida; evitar desplazamiento lateral del vaso.",
+      "alternate_windows": [
+        "Vista transversal de confirmación."
+      ],
+      "source_page_original": 7
+    },
+    {
+      "id": "ivc_distensibility",
+      "section_number": 7,
+      "section_title": "Aurícula derecha, vena cava inferior y presión auricular derecha",
+      "measurement": "Distensibilidad de VCI",
+      "formula_or_method": "[(VCI máxima - VCI mínima) / VCI mínima] × 100.",
+      "normal_values_or_cutoff": "Sin punto universal; depende de condiciones ventilatorias.",
+      "interpretation_limitations": "La utilidad disminuye con respiración espontánea, bajo volumen corriente o hipertensión abdominal.",
+      "primary_window": "Subcostal",
+      "preferred_view": "Eje largo de VCI",
+      "modality": "2D cine o modo M",
+      "acquisition_timing": "Ciclo ventilatorio",
+      "acquisition_key": "Documentar modo ventilatorio, volumen corriente y PEEP; evitar aplicar umbrales universales.",
+      "alternate_windows": [],
+      "source_page_original": 7
+    },
+    {
+      "id": "rap_estimate",
+      "section_number": 7,
+      "section_title": "Aurícula derecha, vena cava inferior y presión auricular derecha",
+      "measurement": "Presión AD estimada",
+      "formula_or_method": "VCI ≤2,1 cm y colapso >50%: 3 mmHg; VCI >2,1 cm y colapso <50%: 15 mmHg; intermedio: 8 mmHg.",
+      "normal_values_or_cutoff": "3, 8 o 15 mmHg según patrón.",
+      "interpretation_limitations": "Es una estimación; pierde precisión con ventilación positiva y otros estados.",
+      "primary_window": "Derivada",
+      "preferred_view": "Subcostal eje largo de VCI",
+      "modality": "2D + integración",
+      "acquisition_timing": "Ciclo respiratorio",
+      "acquisition_key": "Integrar diámetro y colapso; considerar ventilación, presión abdominal, embarazo y atletismo.",
+      "alternate_windows": [],
+      "source_page_original": 7
+    },
+    {
+      "id": "rv_ra_gradient",
+      "section_number": 8,
+      "section_title": "Presión pulmonar y hemodinámica derecha",
+      "measurement": "Gradiente VD-AD",
+      "formula_or_method": "4 × velocidad máxima de IT².",
+      "normal_values_or_cutoff": "Depende de la velocidad.",
+      "interpretation_limitations": "Aplicar Bernoulli con velocidad en m/s para obtener mmHg.",
+      "primary_window": "Múltiples",
+      "preferred_view": "Mejor sobre de IT: A4C VD, RV inflow, PSAX o subcostal",
+      "modality": "Doppler continuo",
+      "acquisition_timing": "Sístole",
+      "acquisition_key": "Usar el mayor valor de una señal completa y bien alineada.",
+      "alternate_windows": [],
+      "source_page_original": 8
+    },
+    {
+      "id": "rvsp_pasp",
+      "section_number": 8,
+      "section_title": "Presión pulmonar y hemodinámica derecha",
+      "measurement": "PSVD / PASP",
+      "formula_or_method": "4 × VIT² + presión AD.",
+      "normal_values_or_cutoff": "Habitualmente <35 mmHg.",
+      "interpretation_limitations": "PASP equivale a PSVD solo sin obstrucción pulmonar/TSVD significativa.",
+      "primary_window": "Combinada",
+      "preferred_view": "Mejor ventana de IT + VCI subcostal",
+      "modality": "Doppler continuo + estimación de RAP",
+      "acquisition_timing": "Sístole",
+      "acquisition_key": "Confirmar ausencia de obstrucción pulmonar significativa y sumar presión AD estimada.",
+      "alternate_windows": [],
+      "source_page_original": 8
+    },
+    {
+      "id": "mpap_pr",
+      "section_number": 8,
+      "section_title": "Presión pulmonar y hemodinámica derecha",
+      "measurement": "Presión media pulmonar por PR",
+      "formula_or_method": "4 × velocidad protodiastólica de PR² + presión AD.",
+      "normal_values_or_cutoff": "<20 mmHg.",
+      "interpretation_limitations": "La definición hemodinámica de hipertensión pulmonar requiere confirmación invasiva.",
+      "primary_window": "Paraesternal izquierda",
+      "preferred_view": "PSAX grandes vasos / RVOT",
+      "modality": "Doppler continuo guiado por color",
+      "acquisition_timing": "Protodiástole",
+      "acquisition_key": "Alinear con el jet de insuficiencia pulmonar y medir la velocidad temprana.",
+      "alternate_windows": [
+        "Subcostal RVOT si la alineación es mejor."
+      ],
+      "source_page_original": 8
+    },
+    {
+      "id": "padp_pr",
+      "section_number": 8,
+      "section_title": "Presión pulmonar y hemodinámica derecha",
+      "measurement": "Presión diastólica pulmonar",
+      "formula_or_method": "4 × velocidad telediastólica de PR² + presión AD.",
+      "normal_values_or_cutoff": "Aprox. <15 mmHg.",
+      "interpretation_limitations": "Depende de una señal adecuada de insuficiencia pulmonar.",
+      "primary_window": "Paraesternal izquierda",
+      "preferred_view": "PSAX grandes vasos / RVOT",
+      "modality": "Doppler continuo guiado por color",
+      "acquisition_timing": "Fin de diástole",
+      "acquisition_key": "Medir la velocidad de PR al final de la diástole y sumar RAP.",
+      "alternate_windows": [
+        "Subcostal RVOT."
+      ],
+      "source_page_original": 8
+    },
+    {
+      "id": "pvr_echo",
+      "section_number": 8,
+      "section_title": "Presión pulmonar y hemodinámica derecha",
+      "measurement": "RVP ecográfica",
+      "formula_or_method": "[(Vmax IT / VTI del TSVD) × 10] + 0,16.",
+      "normal_values_or_cutoff": "Normal <1,5 UW; >2 UW es anormal.",
+      "interpretation_limitations": "Usa VTI del TSVD/RVOT, no VTI del TSVI. No sustituye cateterismo derecho.",
+      "primary_window": "Combinada",
+      "preferred_view": "Mejor ventana de IT + PSAX/RVOT",
+      "modality": "Doppler continuo + pulsado; cálculo",
+      "acquisition_timing": "Sístole",
+      "acquisition_key": "Combinar Vmax de IT con VTI del TSVD; no usar VTI del TSVI.",
+      "alternate_windows": [],
+      "source_page_original": 8
+    },
+    {
+      "id": "lv_eccentricity_index",
+      "section_number": 8,
+      "section_title": "Presión pulmonar y hemodinámica derecha",
+      "measurement": "Índice de excentricidad del VI",
+      "formula_or_method": "Diámetro paralelo al septo / diámetro perpendicular.",
+      "normal_values_or_cutoff": "Aprox. 1,0.",
+      "interpretation_limitations": "Aplanamiento sistólico sugiere sobrecarga de presión; diastólico, sobrecarga de volumen.",
+      "primary_window": "Paraesternal izquierda",
+      "preferred_view": "PSAX medio ventricular a nivel de músculos papilares",
+      "modality": "2D",
+      "acquisition_timing": "Fin de sístole y fin de diástole",
+      "acquisition_key": "Medir dos diámetros ortogonales del VI en un corte circular verdadero.",
+      "alternate_windows": [
+        "Subcostal eje corto cuando PSAX es deficiente."
+      ],
+      "source_page_original": 8
+    },
+    {
+      "id": "septal_flattening",
+      "section_number": 8,
+      "section_title": "Presión pulmonar y hemodinámica derecha",
+      "measurement": "Aplanamiento septal",
+      "formula_or_method": "Evaluación cualitativa en eje corto.",
+      "normal_values_or_cutoff": "Ausente normalmente.",
+      "interpretation_limitations": "Interpretar la fase del ciclo en que aparece.",
+      "primary_window": "Paraesternal izquierda",
+      "preferred_view": "PSAX medio ventricular",
+      "modality": "2D cine",
+      "acquisition_timing": "Sístole y diástole",
+      "acquisition_key": "Determinar si el VI adopta forma de D en sístole, diástole o ambas.",
+      "alternate_windows": [
+        "Subcostal eje corto."
+      ],
+      "source_page_original": 8
+    },
+    {
+      "id": "av_vmax",
+      "section_number": 9,
+      "section_title": "Válvula aórtica y tracto de salida del VI",
+      "measurement": "Velocidad máxima aórtica",
+      "formula_or_method": "Doppler continuo desde múltiples ventanas.",
+      "normal_values_or_cutoff": "<2,0 m/s.",
+      "interpretation_limitations": "Usar la ventana con mayor velocidad y buena alineación.",
+      "primary_window": "Múltiples",
+      "preferred_view": "A5C/A3C, paraesternal derecha alta y supraesternal",
+      "modality": "Doppler continuo",
+      "acquisition_timing": "Sístole",
+      "acquisition_key": "Interrogar todas las ventanas disponibles y conservar la señal de mayor velocidad con sobre completo.",
+      "alternate_windows": [
+        "Apical; paraesternal derecha; supraesternal."
+      ],
+      "source_page_original": 9
+    },
+    {
+      "id": "av_peak_gradient",
+      "section_number": 9,
+      "section_title": "Válvula aórtica y tracto de salida del VI",
+      "measurement": "Gradiente máximo aórtico",
+      "formula_or_method": "4 × Vmax².",
+      "normal_values_or_cutoff": "<16 mmHg.",
+      "interpretation_limitations": "Gradiente instantáneo máximo; no equivale al gradiente pico-pico invasivo.",
+      "primary_window": "Derivada",
+      "preferred_view": "Misma ventana que Vmax aórtica",
+      "modality": "Cálculo desde Doppler continuo",
+      "acquisition_timing": "Sístole",
+      "acquisition_key": "Usar la Vmax más alta técnicamente válida.",
+      "alternate_windows": [],
+      "source_page_original": 9
+    },
+    {
+      "id": "av_mean_gradient",
+      "section_number": 9,
+      "section_title": "Válvula aórtica y tracto de salida del VI",
+      "measurement": "Gradiente medio aórtico",
+      "formula_or_method": "Integración de gradientes instantáneos durante la eyección.",
+      "normal_values_or_cutoff": "<10-15 mmHg.",
+      "interpretation_limitations": "Depende del flujo y de la frecuencia cardiaca.",
+      "primary_window": "Múltiples",
+      "preferred_view": "Ventana con mayor señal aórtica",
+      "modality": "Doppler continuo; trazado",
+      "acquisition_timing": "Sístole",
+      "acquisition_key": "Trazar el borde denso del espectro completo, excluyendo ruido.",
+      "alternate_windows": [],
+      "source_page_original": 9
+    },
+    {
+      "id": "ava",
+      "section_number": 9,
+      "section_title": "Válvula aórtica y tracto de salida del VI",
+      "measurement": "Área valvular aórtica (AVA)",
+      "formula_or_method": "(Área TSVI × VTI TSVI) / VTI aórtico.",
+      "normal_values_or_cutoff": "Aprox. 3-4 cm²; claramente normal >2 cm².",
+      "interpretation_limitations": "La medición del diámetro TSVI es la mayor fuente de error.",
+      "primary_window": "Combinada",
+      "preferred_view": "PLAX + A5C/A3C + mejor ventana CW aórtica",
+      "modality": "2D + PW + CW; cálculo",
+      "acquisition_timing": "Sístole",
+      "acquisition_key": "Medir diámetro y VTI del TSVI en sitios concordantes y usar el VTI aórtico de mayor velocidad.",
+      "alternate_windows": [],
+      "source_page_original": 9
+    },
+    {
+      "id": "ava_indexed",
+      "section_number": 9,
+      "section_title": "Válvula aórtica y tracto de salida del VI",
+      "measurement": "AVA indexada",
+      "formula_or_method": "AVA / superficie corporal.",
+      "normal_values_or_cutoff": ">0,85 cm²/m².",
+      "interpretation_limitations": "Ayuda en pacientes de tamaño corporal extremo.",
+      "primary_window": "Derivada",
+      "preferred_view": "Mismas ventanas que AVA",
+      "modality": "Cálculo",
+      "acquisition_timing": "Después de calcular AVA",
+      "acquisition_key": "No requiere ventana adicional.",
+      "alternate_windows": [],
+      "source_page_original": 9
+    },
+    {
+      "id": "dvi",
+      "section_number": 9,
+      "section_title": "Válvula aórtica y tracto de salida del VI",
+      "measurement": "Índice adimensional (DVI)",
+      "formula_or_method": "VTI TSVI / VTI aórtico o Vmax TSVI / Vmax aórtica.",
+      "normal_values_or_cutoff": ">0,50.",
+      "interpretation_limitations": "Evita medir el diámetro TSVI; <0,25 apoya estenosis severa.",
+      "primary_window": "Combinada",
+      "preferred_view": "A5C/A3C + mejor ventana CW aórtica",
+      "modality": "Doppler pulsado y continuo; cálculo",
+      "acquisition_timing": "Sístole",
+      "acquisition_key": "Usar señales bien alineadas y preferiblemente del mismo estado hemodinámico.",
+      "alternate_windows": [],
+      "source_page_original": 9
+    },
+    {
+      "id": "lvot_velocity",
+      "section_number": 9,
+      "section_title": "Válvula aórtica y tracto de salida del VI",
+      "measurement": "Velocidad del TSVI",
+      "formula_or_method": "Doppler pulsado proximal a la válvula aórtica.",
+      "normal_values_or_cutoff": "Aprox. 0,7-1,1 m/s.",
+      "interpretation_limitations": "La muestra debe colocarse antes de la zona de aceleración.",
+      "primary_window": "Apical",
+      "preferred_view": "A5C o A3C",
+      "modality": "Doppler pulsado",
+      "acquisition_timing": "Sístole",
+      "acquisition_key": "Mover la muestra desde la válvula hacia el ápex hasta desaparecer el clic valvular y obtener flujo laminar.",
+      "alternate_windows": [],
+      "source_page_original": 9
+    },
+    {
+      "id": "mva_planimetry",
+      "section_number": 10,
+      "section_title": "Válvula mitral",
+      "measurement": "Área valvular mitral por planimetría",
+      "formula_or_method": "Planimetría directa en eje corto al nivel de las puntas.",
+      "normal_values_or_cutoff": "Aprox. 4-6 cm².",
+      "interpretation_limitations": "Preferible cuando el plano es perpendicular al orificio.",
+      "primary_window": "Paraesternal izquierda",
+      "preferred_view": "PSAX a nivel de las puntas mitrales",
+      "modality": "2D zoom",
+      "acquisition_timing": "Máxima apertura en diástole",
+      "acquisition_key": "Barrido fino hasta el orificio mínimo; trazar el borde interno del orificio.",
+      "alternate_windows": [],
+      "source_page_original": 9
+    },
+    {
+      "id": "mva_pht",
+      "section_number": 10,
+      "section_title": "Válvula mitral",
+      "measurement": "Área mitral por PHT",
+      "formula_or_method": "220 / PHT.",
+      "normal_values_or_cutoff": ">4 cm².",
+      "interpretation_limitations": "Puede ser inexacta tras valvuloplastia, con cambios de compliance o insuficiencia aórtica.",
+      "primary_window": "Apical",
+      "preferred_view": "A4C",
+      "modality": "Doppler continuo transmitral",
+      "acquisition_timing": "Diástole",
+      "acquisition_key": "Alinear con el flujo mitral y medir PHT en el descenso de la onda E.",
+      "alternate_windows": [],
+      "source_page_original": 9
+    },
+    {
+      "id": "mitral_mean_gradient",
+      "section_number": 10,
+      "section_title": "Válvula mitral",
+      "measurement": "Gradiente medio mitral",
+      "formula_or_method": "Doppler continuo con trazado diastólico.",
+      "normal_values_or_cutoff": "<2-3 mmHg.",
+      "interpretation_limitations": "Reportar frecuencia cardiaca porque el gradiente depende del flujo y la diástole.",
+      "primary_window": "Apical",
+      "preferred_view": "A4C",
+      "modality": "Doppler continuo",
+      "acquisition_timing": "Diástole",
+      "acquisition_key": "Trazar todo el espectro diastólico y documentar frecuencia cardiaca.",
+      "alternate_windows": [],
+      "source_page_original": 9
+    },
+    {
+      "id": "pht",
+      "section_number": 10,
+      "section_title": "Válvula mitral",
+      "measurement": "PHT",
+      "formula_or_method": "Tiempo para que el gradiente transmitral inicial se reduzca a la mitad.",
+      "normal_values_or_cutoff": "<50-60 ms.",
+      "interpretation_limitations": "Se prolonga con estenosis mitral, pero depende de compliance.",
+      "primary_window": "Apical",
+      "preferred_view": "A4C",
+      "modality": "Doppler continuo",
+      "acquisition_timing": "Diástole temprana",
+      "acquisition_key": "Medir sobre el descenso de E; evitar espectros fusionados o mal alineados.",
+      "alternate_windows": [],
+      "source_page_original": 9
+    },
+    {
+      "id": "mitral_lvot_vti_ratio",
+      "section_number": 10,
+      "section_title": "Válvula mitral",
+      "measurement": "Relación VTI mitral/VTI TSVI",
+      "formula_or_method": "VTI mitral / VTI TSVI.",
+      "normal_values_or_cutoff": "<1,0-1,3.",
+      "interpretation_limitations": "Puede apoyar la evaluación de obstrucción o regurgitación en contexto adecuado.",
+      "primary_window": "Combinada",
+      "preferred_view": "A4C para VTI mitral + A5C/A3C para VTI TSVI",
+      "modality": "Doppler pulsado/continuo; cálculo",
+      "acquisition_timing": "Diástole y sístole",
+      "acquisition_key": "Usar trazados completos y condiciones hemodinámicas comparables.",
+      "alternate_windows": [],
+      "source_page_original": 9
+    },
+    {
+      "id": "vena_contracta",
+      "section_number": 11,
+      "section_title": "Insuficiencias valvulares: fórmulas y puntos de corte",
+      "measurement": "Vena contracta (VC)",
+      "formula_or_method": "Ancho de la porción más estrecha del jet inmediatamente distal al orificio.",
+      "normal_values_or_cutoff": "Depende de la válvula; IM severa ≥7 mm, IA severa >6 mm, IT severa ≥7 mm.",
+      "interpretation_limitations": "Evitar usarla aislada en orificios múltiples o no circulares.",
+      "primary_window": "Dependiente de válvula",
+      "preferred_view": "IM: PLAX/A4C/A2C; IA: PLAX; IT: A4C VD/RV inflow",
+      "modality": "Color Doppler 2D con zoom",
+      "acquisition_timing": "Sístole para IM/IT; diástole para IA",
+      "acquisition_key": "Elegir el plano que corte perpendicularmente la zona más estrecha del jet; reducir sector y optimizar Nyquist.",
+      "alternate_windows": [
+        "Usar varias vistas para jets excéntricos."
+      ],
+      "source_page_original": 10
+    },
+    {
+      "id": "pisa_flow",
+      "section_number": 11,
+      "section_title": "Insuficiencias valvulares: fórmulas y puntos de corte",
+      "measurement": "Flujo PISA",
+      "formula_or_method": "2πr² × velocidad de aliasing.",
+      "normal_values_or_cutoff": "Sin valor normal único.",
+      "interpretation_limitations": "Radio en cm y velocidad de aliasing en cm/s producen flujo en mL/s.",
+      "primary_window": "Dependiente de válvula",
+      "preferred_view": "IM: apical; IA: PLAX/apical; IT: A4C VD",
+      "modality": "Color Doppler con línea basal desplazada",
+      "acquisition_timing": "Pico de regurgitación",
+      "acquisition_key": "Ampliar la zona de convergencia, medir radio desde el orificio al primer aliasing y documentar Va.",
+      "alternate_windows": [],
+      "source_page_original": 10
+    },
+    {
+      "id": "eroa",
+      "section_number": 11,
+      "section_title": "Insuficiencias valvulares: fórmulas y puntos de corte",
+      "measurement": "EROA",
+      "formula_or_method": "(2πr² × Va) / velocidad máxima regurgitante.",
+      "normal_values_or_cutoff": "Depende de la válvula.",
+      "interpretation_limitations": "Usar velocidades en las mismas unidades; integrar con otros parámetros.",
+      "primary_window": "Combinada",
+      "preferred_view": "Vista PISA + mejor CW del jet",
+      "modality": "Color Doppler + Doppler continuo; cálculo",
+      "acquisition_timing": "Mismo momento del ciclo",
+      "acquisition_key": "Relacionar el radio PISA con la velocidad instantánea/peak correspondiente y un CW completo.",
+      "alternate_windows": [],
+      "source_page_original": 10
+    },
+    {
+      "id": "regurgitant_volume",
+      "section_number": 11,
+      "section_title": "Insuficiencias valvulares: fórmulas y puntos de corte",
+      "measurement": "Volumen regurgitante",
+      "formula_or_method": "EROA × VTI del jet regurgitante.",
+      "normal_values_or_cutoff": "Depende de la válvula.",
+      "interpretation_limitations": "Con EROA en cm² y VTI en cm, el resultado es mL.",
+      "primary_window": "Derivada",
+      "preferred_view": "Mismas vistas que EROA y VTI del jet",
+      "modality": "Cálculo",
+      "acquisition_timing": "Ciclo completo del jet",
+      "acquisition_key": "Usar el VTI del mismo jet y válvula.",
+      "alternate_windows": [],
+      "source_page_original": 10
+    },
+    {
+      "id": "regurgitant_fraction",
+      "section_number": 11,
+      "section_title": "Insuficiencias valvulares: fórmulas y puntos de corte",
+      "measurement": "Fracción regurgitante",
+      "formula_or_method": "(Volumen regurgitante / volumen sistólico total) × 100.",
+      "normal_values_or_cutoff": "Sin regurgitación significativa en condiciones normales.",
+      "interpretation_limitations": "Es la proporción del volumen sistólico que regresa a la cavidad proximal.",
+      "primary_window": "Derivada",
+      "preferred_view": "Datos volumétricos combinados",
+      "modality": "Cálculo",
+      "acquisition_timing": "Después de obtener volúmenes",
+      "acquisition_key": "No requiere ventana adicional; depende de la exactitud de todos los componentes.",
+      "alternate_windows": [],
+      "source_page_original": 10
+    },
+    {
+      "id": "severe_mr",
+      "section_number": 11,
+      "section_title": "Insuficiencias valvulares: fórmulas y puntos de corte",
+      "measurement": "Insuficiencia mitral severa",
+      "formula_or_method": "Integración multiparamétrica.",
+      "normal_values_or_cutoff": "VC ≥7 mm; EROA ≥0,40 cm²; VR ≥60 mL; FR ≥50%.",
+      "interpretation_limitations": "La etiología primaria o secundaria puede modificar la interpretación.",
+      "primary_window": "Múltiples",
+      "preferred_view": "PLAX, A4C, A2C, A3C; venas pulmonares",
+      "modality": "2D, color, PW y CW",
+      "acquisition_timing": "Sístole",
+      "acquisition_key": "Evaluar mecanismo, jet, VC/PISA, CW y repercusión; flujo venoso pulmonar desde A4C.",
+      "alternate_windows": [],
+      "source_page_original": 10
+    },
+    {
+      "id": "severe_ar",
+      "section_number": 11,
+      "section_title": "Insuficiencias valvulares: fórmulas y puntos de corte",
+      "measurement": "Insuficiencia aórtica severa",
+      "formula_or_method": "Integración multiparamétrica.",
+      "normal_values_or_cutoff": "VC >6 mm; EROA ≥0,30 cm²; VR ≥60 mL; FR ≥50%; PHT <200 ms.",
+      "interpretation_limitations": "Confirmar con reversión holodiastólica y repercusión ventricular.",
+      "primary_window": "Múltiples",
+      "preferred_view": "PLAX para VC; A5C/A3C para CW; supraesternal para aorta descendente",
+      "modality": "2D, color, PW y CW",
+      "acquisition_timing": "Diástole",
+      "acquisition_key": "Integrar ancho/VC, PISA, PHT y reversión holodiastólica en aorta descendente.",
+      "alternate_windows": [
+        "Subcostal para flujo aórtico abdominal como apoyo."
+      ],
+      "source_page_original": 10
+    },
+    {
+      "id": "severe_tr",
+      "section_number": 11,
+      "section_title": "Insuficiencias valvulares: fórmulas y puntos de corte",
+      "measurement": "Insuficiencia tricuspídea severa",
+      "formula_or_method": "Integración multiparamétrica.",
+      "normal_values_or_cutoff": "VC ≥7 mm; EROA ≥0,40 cm²; VR ≥45 mL; reversión sistólica hepática.",
+      "interpretation_limitations": "Las categorías masiva y torrencial pueden requerir esquemas ampliados.",
+      "primary_window": "Múltiples",
+      "preferred_view": "A4C enfocada en VD, RV inflow, PSAX; venas hepáticas subcostales",
+      "modality": "2D, color, PW y CW",
+      "acquisition_timing": "Sístole",
+      "acquisition_key": "Usar la mejor alineación del jet y buscar reversión sistólica en venas hepáticas.",
+      "alternate_windows": [],
+      "source_page_original": 10
+    },
+    {
+      "id": "small_effusion",
+      "section_number": 12,
+      "section_title": "Pericardio y signos ecográficos de taponamiento",
+      "measurement": "Derrame pericárdico pequeño",
+      "formula_or_method": "Separación eco-libre máxima en diástole.",
+      "normal_values_or_cutoff": "<10 mm.",
+      "interpretation_limitations": "La distribución puede ser circunferencial o loculada.",
+      "primary_window": "Múltiples",
+      "preferred_view": "PLAX, PSAX, A4C y subcostal",
+      "modality": "2D",
+      "acquisition_timing": "Fin de diástole",
+      "acquisition_key": "Medir perpendicularmente la separación máxima y describir localización; confirmar en más de una ventana.",
+      "alternate_windows": [],
+      "source_page_original": 10
+    },
+    {
+      "id": "moderate_effusion",
+      "section_number": 12,
+      "section_title": "Pericardio y signos ecográficos de taponamiento",
+      "measurement": "Derrame pericárdico moderado",
+      "formula_or_method": "Separación máxima.",
+      "normal_values_or_cutoff": "10-20 mm.",
+      "interpretation_limitations": "El tamaño no determina por sí solo la repercusión hemodinámica.",
+      "primary_window": "Múltiples",
+      "preferred_view": "PLAX, PSAX, A4C y subcostal",
+      "modality": "2D",
+      "acquisition_timing": "Fin de diástole",
+      "acquisition_key": "Confirmar distribución y medir en el sitio de mayor separación.",
+      "alternate_windows": [],
+      "source_page_original": 10
+    },
+    {
+      "id": "large_effusion",
+      "section_number": 12,
+      "section_title": "Pericardio y signos ecográficos de taponamiento",
+      "measurement": "Derrame pericárdico grande",
+      "formula_or_method": "Separación máxima.",
+      "normal_values_or_cutoff": ">20 mm.",
+      "interpretation_limitations": "Puede existir sin taponamiento si se acumula lentamente.",
+      "primary_window": "Múltiples",
+      "preferred_view": "PLAX, PSAX, A4C y subcostal",
+      "modality": "2D",
+      "acquisition_timing": "Fin de diástole",
+      "acquisition_key": "Evaluar circunferencialidad, loculaciones y signos de repercusión.",
+      "alternate_windows": [],
+      "source_page_original": 10
+    },
+    {
+      "id": "ra_collapse",
+      "section_number": 12,
+      "section_title": "Pericardio y signos ecográficos de taponamiento",
+      "measurement": "Colapso de AD",
+      "formula_or_method": "Colapso sistólico de la pared de AD.",
+      "normal_values_or_cutoff": "Ausente normalmente.",
+      "interpretation_limitations": "La duración del colapso aumenta su especificidad.",
+      "primary_window": "Apical / subcostal",
+      "preferred_view": "A4C o subcostal 4C",
+      "modality": "2D cine; modo M opcional",
+      "acquisition_timing": "Sístole",
+      "acquisition_key": "Observar inversión de la pared libre y su duración relativa durante el ciclo.",
+      "alternate_windows": [
+        "PLAX puede complementar según localización del derrame."
+      ],
+      "source_page_original": 10
+    },
+    {
+      "id": "rv_collapse",
+      "section_number": 12,
+      "section_title": "Pericardio y signos ecográficos de taponamiento",
+      "measurement": "Colapso de VD",
+      "formula_or_method": "Colapso diastólico temprano de la pared libre.",
+      "normal_values_or_cutoff": "Ausente normalmente.",
+      "interpretation_limitations": "Puede no aparecer con hipertensión pulmonar o presión derecha elevada.",
+      "primary_window": "Múltiples",
+      "preferred_view": "PLAX, A4C y subcostal 4C",
+      "modality": "2D cine; modo M opcional",
+      "acquisition_timing": "Diástole temprana",
+      "acquisition_key": "Identificar inversión de la pared libre inmediatamente después de apertura mitral.",
+      "alternate_windows": [],
+      "source_page_original": 10
+    },
+    {
+      "id": "mitral_respiratory_variation",
+      "section_number": 12,
+      "section_title": "Pericardio y signos ecográficos de taponamiento",
+      "measurement": "Variación mitral respiratoria",
+      "formula_or_method": "Cambio respiratorio de la velocidad E mitral.",
+      "normal_values_or_cutoff": "Normal <25%.",
+      "interpretation_limitations": "Mayor variación apoya interacción ventricular exagerada en el contexto adecuado.",
+      "primary_window": "Apical",
+      "preferred_view": "A4C",
+      "modality": "Doppler pulsado",
+      "acquisition_timing": "Varios ciclos respiratorios",
+      "acquisition_key": "Muestra en puntas mitrales; registrar inspiración y espiración sin mover la muestra.",
+      "alternate_windows": [],
+      "source_page_original": 10
+    },
+    {
+      "id": "tricuspid_respiratory_variation",
+      "section_number": 12,
+      "section_title": "Pericardio y signos ecográficos de taponamiento",
+      "measurement": "Variación tricuspídea respiratoria",
+      "formula_or_method": "Cambio respiratorio de la velocidad E tricuspídea.",
+      "normal_values_or_cutoff": "Normal <40%.",
+      "interpretation_limitations": "Interpretar según patrón respiratorio y ventilación.",
+      "primary_window": "Apical",
+      "preferred_view": "A4C enfocada en VD",
+      "modality": "Doppler pulsado",
+      "acquisition_timing": "Varios ciclos respiratorios",
+      "acquisition_key": "Muestra en puntas tricuspídeas; registrar variación con respiración.",
+      "alternate_windows": [],
+      "source_page_original": 10
+    },
+    {
+      "id": "plethoric_ivc",
+      "section_number": 12,
+      "section_title": "Pericardio y signos ecográficos de taponamiento",
+      "measurement": "VCI pletórica",
+      "formula_or_method": "VCI >2,1 cm con escaso colapso.",
+      "normal_values_or_cutoff": "No es normal; apoya presión AD elevada.",
+      "interpretation_limitations": "Es sensible, pero poco específica para taponamiento.",
+      "primary_window": "Subcostal",
+      "preferred_view": "Eje largo de VCI",
+      "modality": "2D cine",
+      "acquisition_timing": "Ciclo respiratorio",
+      "acquisition_key": "Medir diámetro y colapso 1-2 cm de la AD.",
+      "alternate_windows": [],
+      "source_page_original": 10
+    },
+    {
+      "id": "swinging_heart",
+      "section_number": 12,
+      "section_title": "Pericardio y signos ecográficos de taponamiento",
+      "measurement": "Movimiento pendular del corazón",
+      "formula_or_method": "Movimiento global dentro de un derrame grande.",
+      "normal_values_or_cutoff": "Ausente normalmente.",
+      "interpretation_limitations": "Puede asociarse a alternancia eléctrica, pero no es requisito diagnóstico.",
+      "primary_window": "Múltiples",
+      "preferred_view": "Subcostal 4C, A4C y PLAX",
+      "modality": "2D cine",
+      "acquisition_timing": "Varios ciclos",
+      "acquisition_key": "Documentar movimiento global dentro del saco pericárdico; no usar como criterio aislado.",
+      "alternate_windows": [],
+      "source_page_original": 10
+    }
+  ],
+  "windows": [
+    {
+      "id": "plax",
+      "window": "Paraesternal eje largo",
+      "abbreviation": "PLAX",
+      "typical_probe_position": "Borde esternal izquierdo, habitualmente 3.º-5.º espacio intercostal.",
+      "typical_marker_orientation": "Orientación típica hacia el hombro derecho; puede variar según la convención del equipo.",
+      "favored_structures": "VI, AI, válvula mitral, TSVI, válvula aórtica, raíz aórtica, pared anterior del VD y pericardio.",
+      "favored_measurements": "DTDVI/DTSVI, IVSd, PWTd, RWT, masa VI, EPSS, diámetro TSVI, diámetro AI, VC de IA y derrame pericárdico."
+    },
+    {
+      "id": "psax",
+      "window": "Paraesternal eje corto",
+      "abbreviation": "PSAX",
+      "typical_probe_position": "Desde PLAX, rotar aproximadamente 90° y barrer desde grandes vasos hasta el ápex.",
+      "typical_marker_orientation": "Orientación típica hacia el hombro izquierdo.",
+      "favored_structures": "Válvula aórtica, válvula mitral, TSVD, músculos papilares, septo y ventrículos en corte transversal.",
+      "favored_measurements": "Planimetría mitral, VTI/PAAT del TSVD, índice de excentricidad y aplanamiento septal."
+    },
+    {
+      "id": "a4c",
+      "window": "Apical cuatro cámaras",
+      "abbreviation": "A4C",
+      "typical_probe_position": "Ápex cardiaco, con el haz dirigido hacia la base.",
+      "typical_marker_orientation": "Orientación típica hacia el lado izquierdo del paciente; depende de la convención.",
+      "favored_structures": "VI, VD, AI, AD, válvulas mitral y tricúspide.",
+      "favored_measurements": "Simpson, MAPSE, s’/e’ mitral, flujo mitral, LAVI, dimensiones AD, TAPSE, s’ VD, FAC, TR y variaciones respiratorias."
+    },
+    {
+      "id": "rv_focused_a4c",
+      "window": "Apical cuatro cámaras enfocada en VD",
+      "abbreviation": "A4C-VD",
+      "typical_probe_position": "Desde A4C, ajustar posición, rotación e inclinación para maximizar el VD sin acortar el ápex.",
+      "typical_marker_orientation": "Similar a A4C.",
+      "favored_structures": "VD completo, pared libre, anillo tricuspídeo y AD.",
+      "favored_measurements": "Diámetros y longitud del VD, TAPSE, s’ VD, FAC, strain VD, área/longitudes de AD y TR."
+    },
+    {
+      "id": "a2c",
+      "window": "Apical dos cámaras",
+      "abbreviation": "A2C",
+      "typical_probe_position": "Rotación desde A4C para mostrar VI y AI sin cavidades derechas.",
+      "typical_marker_orientation": "Variable según convención; mantener ápex no acortado.",
+      "favored_structures": "VI y AI, paredes anterior e inferior.",
+      "favored_measurements": "Simpson biplano, LAVI, GLS y WMSI."
+    },
+    {
+      "id": "a3c",
+      "window": "Apical eje largo / tres cámaras",
+      "abbreviation": "A3C",
+      "typical_probe_position": "Rotación adicional desde A2C o ajuste desde A4C para alinear VI, TSVI y aorta.",
+      "typical_marker_orientation": "Variable según convención.",
+      "favored_structures": "VI, AI, válvula mitral, TSVI y válvula aórtica.",
+      "favored_measurements": "GLS, WMSI, VTI TSVI, IVRT y Doppler aórtico."
+    },
+    {
+      "id": "a5c",
+      "window": "Apical cinco cámaras",
+      "abbreviation": "A5C",
+      "typical_probe_position": "Desde A4C, inclinar anteriormente para abrir el TSVI y la válvula aórtica.",
+      "typical_marker_orientation": "Similar a A4C.",
+      "favored_structures": "A4C más TSVI y válvula aórtica.",
+      "favored_measurements": "VTI/velocidad TSVI, Doppler aórtico, AVA, DVI e IVRT."
+    },
+    {
+      "id": "subcostal_4c",
+      "window": "Subcostal cuatro cámaras",
+      "abbreviation": "SC4C",
+      "typical_probe_position": "Debajo del xifoides, usando hígado como ventana y dirigiendo el haz al hombro izquierdo.",
+      "typical_marker_orientation": "Orientación típica hacia el lado izquierdo del paciente.",
+      "favored_structures": "Cuatro cámaras, septos, pericardio y pared libre del VD.",
+      "favored_measurements": "Derrame/taponamiento, grosor pared VD y evaluación alternativa de función/tamaño en ventanas precordiales deficientes."
+    },
+    {
+      "id": "subcostal_ivc",
+      "window": "Subcostal eje largo de VCI",
+      "abbreviation": "SC-VCI",
+      "typical_probe_position": "Desde subcostal, rotar para alinear VCI longitudinalmente hacia la AD.",
+      "typical_marker_orientation": "Orientación típica hacia la cabeza.",
+      "favored_structures": "VCI, unión cavoauricular y venas hepáticas.",
+      "favored_measurements": "Diámetro, colapsabilidad/distensibilidad de VCI, presión AD y flujo de venas hepáticas."
+    },
+    {
+      "id": "rv_inflow",
+      "window": "Paraesternal de entrada del VD",
+      "abbreviation": "RV inflow",
+      "typical_probe_position": "Desde PLAX, inclinar medial e inferiormente hacia la válvula tricúspide.",
+      "typical_marker_orientation": "Ajustar para alinear AD-TV-VD.",
+      "favored_structures": "AD, válvula tricúspide y entrada del VD.",
+      "favored_measurements": "Doppler de IT, evaluación tricuspídea y, en algunos casos, Tei por PW."
+    },
+    {
+      "id": "right_parasternal",
+      "window": "Paraesternal derecha alta",
+      "abbreviation": "RPS",
+      "typical_probe_position": "2.º-3.º espacio intercostal derecho, paciente en decúbito lateral derecho cuando sea posible.",
+      "typical_marker_orientation": "Hacia el hombro derecho en la convención habitual.",
+      "favored_structures": "Aorta ascendente y flujo transaórtico.",
+      "favored_measurements": "Vmax y gradientes aórticos; puede proporcionar la mayor velocidad en estenosis aórtica."
+    },
+    {
+      "id": "suprasternal",
+      "window": "Supraesternal",
+      "abbreviation": "SSN",
+      "typical_probe_position": "Escotadura supraesternal, cuello extendido si es tolerado.",
+      "typical_marker_orientation": "Orientación ajustada al eje del arco aórtico.",
+      "favored_structures": "Arco aórtico, aorta descendente y ramas supraaórticas.",
+      "favored_measurements": "Doppler aórtico alternativo y reversión holodiastólica en aorta descendente."
+    }
+  ],
+  "classifications": [
+    {
+      "classification": "FEVI hiperdinámica",
+      "method": "Estimación visual o Simpson",
+      "cutoff": ">70-75%."
+    },
+    {
+      "classification": "FEVI normal",
+      "method": "Simpson biplano",
+      "cutoff": "53-73%."
+    },
+    {
+      "classification": "FEVI levemente reducida",
+      "method": "Simpson biplano",
+      "cutoff": "41-52%."
+    },
+    {
+      "classification": "FEVI moderadamente reducida",
+      "method": "Simpson biplano",
+      "cutoff": "30-40%."
+    },
+    {
+      "classification": "FEVI severamente reducida",
+      "method": "Simpson biplano",
+      "cutoff": "<30%."
+    },
+    {
+      "classification": "Estenosis aórtica severa",
+      "method": "Integración de Vmax, gradiente medio, AVA y DVI",
+      "cutoff": "Vmax ≥4 m/s; gradiente medio ≥40 mmHg; AVA ≤1,0 cm²; DVI <0,25."
+    },
+    {
+      "classification": "Estenosis mitral severa",
+      "method": "Integración de área y gradiente a FC conocida",
+      "cutoff": "Área <1,0 cm²; gradiente medio >10 mmHg a FC 60-80 lpm."
+    }
+  ],
+  "abbreviations": [
+    {
+      "abbreviation": "AD / RA",
+      "meaning": "Aurícula derecha / right atrium"
+    },
+    {
+      "abbreviation": "AI / LA",
+      "meaning": "Aurícula izquierda / left atrium"
+    },
+    {
+      "abbreviation": "A4C / A2C",
+      "meaning": "Apical cuatro cámaras / apical dos cámaras"
+    },
+    {
+      "abbreviation": "A3C / A5C",
+      "meaning": "Apical tres cámaras / apical cinco cámaras"
+    },
+    {
+      "abbreviation": "AVA",
+      "meaning": "Área valvular aórtica"
+    },
+    {
+      "abbreviation": "DVI",
+      "meaning": "Índice adimensional"
+    },
+    {
+      "abbreviation": "EROA",
+      "meaning": "Área efectiva del orificio regurgitante"
+    },
+    {
+      "abbreviation": "FAC",
+      "meaning": "Cambio fraccional de área"
+    },
+    {
+      "abbreviation": "FEVI / LVEF",
+      "meaning": "Fracción de eyección del ventrículo izquierdo"
+    },
+    {
+      "abbreviation": "FEVD / RVEF",
+      "meaning": "Fracción de eyección del ventrículo derecho"
+    },
+    {
+      "abbreviation": "GLS",
+      "meaning": "Strain longitudinal global"
+    },
+    {
+      "abbreviation": "IT / TR",
+      "meaning": "Insuficiencia tricuspídea / tricuspid regurgitation"
+    },
+    {
+      "abbreviation": "IVRT",
+      "meaning": "Tiempo de relajación isovolumétrica"
+    },
+    {
+      "abbreviation": "LAVI",
+      "meaning": "Índice de volumen auricular izquierdo"
+    },
+    {
+      "abbreviation": "MAPSE",
+      "meaning": "Excursión sistólica del plano del anillo mitral"
+    },
+    {
+      "abbreviation": "PAAT / AccT",
+      "meaning": "Tiempo de aceleración de la arteria pulmonar/TSVD"
+    },
+    {
+      "abbreviation": "PASP",
+      "meaning": "Presión sistólica de la arteria pulmonar"
+    },
+    {
+      "abbreviation": "PHT",
+      "meaning": "Tiempo de hemipresión"
+    },
+    {
+      "abbreviation": "PISA",
+      "meaning": "Área de superficie de isovelocidad proximal"
+    },
+    {
+      "abbreviation": "PLAX / PSAX",
+      "meaning": "Eje largo / eje corto paraesternal"
+    },
+    {
+      "abbreviation": "PR",
+      "meaning": "Insuficiencia pulmonar"
+    },
+    {
+      "abbreviation": "PSVD / RVSP",
+      "meaning": "Presión sistólica del ventrículo derecho"
+    },
+    {
+      "abbreviation": "RAP",
+      "meaning": "Presión auricular derecha"
+    },
+    {
+      "abbreviation": "RVP / PVR",
+      "meaning": "Resistencia vascular pulmonar"
+    },
+    {
+      "abbreviation": "RVS / SVR",
+      "meaning": "Resistencia vascular sistémica"
+    },
+    {
+      "abbreviation": "RWT",
+      "meaning": "Grosor relativo de pared"
+    },
+    {
+      "abbreviation": "TAPSE",
+      "meaning": "Excursión sistólica del plano del anillo tricuspídeo"
+    },
+    {
+      "abbreviation": "TSVD / RVOT",
+      "meaning": "Tracto de salida del ventrículo derecho"
+    },
+    {
+      "abbreviation": "TSVI / LVOT",
+      "meaning": "Tracto de salida del ventrículo izquierdo"
+    },
+    {
+      "abbreviation": "VC",
+      "meaning": "Vena contracta"
+    },
+    {
+      "abbreviation": "VCI / IVC",
+      "meaning": "Vena cava inferior"
+    },
+    {
+      "abbreviation": "VD / RV",
+      "meaning": "Ventrículo derecho"
+    },
+    {
+      "abbreviation": "VI / LV",
+      "meaning": "Ventrículo izquierdo"
+    },
+    {
+      "abbreviation": "VTI",
+      "meaning": "Integral velocidad-tiempo"
+    },
+    {
+      "abbreviation": "WMSI",
+      "meaning": "Índice de puntuación de movilidad parietal"
+    }
+  ],
+  "glossary": [
+    {
+      "category": "Ventrículo izquierdo",
+      "term": "A4C / A2C",
+      "definition": "Vistas apicales de cuatro y dos cámaras.",
+      "acquisition_utility_limitation": "Se utilizan para Simpson biplano, volumen auricular y evaluación segmentaria.",
+      "recommended_window_or_view": "Ventana apical."
+    },
+    {
+      "category": "Ventrículo izquierdo",
+      "term": "DTDVI / LVIDd",
+      "definition": "Diámetro interno del ventrículo izquierdo al final de la diástole.",
+      "acquisition_utility_limitation": "Representa el tamaño lineal del VI cuando se encuentra con mayor llenado.",
+      "recommended_window_or_view": "PLAX."
+    },
+    {
+      "category": "Ventrículo izquierdo",
+      "term": "DTSVI / LVIDs",
+      "definition": "Diámetro interno del ventrículo izquierdo al final de la sístole.",
+      "acquisition_utility_limitation": "Refleja el tamaño residual del VI después de la contracción.",
+      "recommended_window_or_view": "PLAX."
+    },
+    {
+      "category": "Ventrículo izquierdo",
+      "term": "VTDVI",
+      "definition": "Volumen telediastólico del VI.",
+      "acquisition_utility_limitation": "Volumen contenido en el VI antes de la eyección; es el denominador de la FEVI.",
+      "recommended_window_or_view": "A4C + A2C."
+    },
+    {
+      "category": "Ventrículo izquierdo",
+      "term": "VTSVI",
+      "definition": "Volumen telesistólico del VI.",
+      "acquisition_utility_limitation": "Volumen que permanece en el VI después de la eyección.",
+      "recommended_window_or_view": "A4C + A2C."
+    },
+    {
+      "category": "Ventrículo izquierdo",
+      "term": "FEVI",
+      "definition": "Fracción de eyección del ventrículo izquierdo.",
+      "acquisition_utility_limitation": "Porcentaje del VTDVI expulsado en cada latido; mide función sistólica global, no contractilidad pura.",
+      "recommended_window_or_view": "A4C + A2C para Simpson; múltiples vistas para estimación visual."
+    },
+    {
+      "category": "Ventrículo izquierdo",
+      "term": "Fracción de acortamiento",
+      "definition": "Porcentaje de reducción del diámetro del VI entre diástole y sístole.",
+      "acquisition_utility_limitation": "Es una medición lineal rápida, menos fiable con alteraciones segmentarias.",
+      "recommended_window_or_view": "PLAX."
+    },
+    {
+      "category": "Ventrículo izquierdo",
+      "term": "EPSS",
+      "definition": "Separación entre el punto E de la valva mitral anterior y el septo interventricular.",
+      "acquisition_utility_limitation": "Una distancia aumentada sugiere menor apertura mitral relativa o dilatación/disfunción del VI.",
+      "recommended_window_or_view": "PLAX con modo M."
+    },
+    {
+      "category": "Ventrículo izquierdo",
+      "term": "MAPSE",
+      "definition": "Excursión sistólica del plano del anillo mitral.",
+      "acquisition_utility_limitation": "Cuantifica el desplazamiento longitudinal del anillo hacia el ápex durante la sístole.",
+      "recommended_window_or_view": "A4C con modo M."
+    },
+    {
+      "category": "Ventrículo izquierdo",
+      "term": "s’ mitral",
+      "definition": "Velocidad sistólica del anillo mitral por Doppler tisular.",
+      "acquisition_utility_limitation": "Marcador de la función longitudinal del VI.",
+      "recommended_window_or_view": "A4C con Doppler tisular."
+    },
+    {
+      "category": "Ventrículo izquierdo",
+      "term": "GLS",
+      "definition": "Strain longitudinal global del VI.",
+      "acquisition_utility_limitation": "Porcentaje de deformación longitudinal; valores más negativos representan mayor acortamiento.",
+      "recommended_window_or_view": "A4C + A2C + A3C."
+    },
+    {
+      "category": "Ventrículo izquierdo",
+      "term": "WMSI",
+      "definition": "Índice de puntuación de movilidad parietal.",
+      "acquisition_utility_limitation": "Promedio de la puntuación de los segmentos; 1 es normal y valores mayores indican alteración regional.",
+      "recommended_window_or_view": "A4C, A2C, A3C y PSAX."
+    },
+    {
+      "category": "Ventrículo izquierdo",
+      "term": "Simpson biplano",
+      "definition": "Método de discos para calcular volúmenes ventriculares desde A4C y A2C.",
+      "acquisition_utility_limitation": "Reduce supuestos geométricos, pero exige buena delimitación endocárdica y evitar acortamiento apical.",
+      "recommended_window_or_view": "A4C + A2C no acortadas."
+    },
+    {
+      "category": "Grosor, masa y geometría",
+      "term": "IVSd",
+      "definition": "Grosor del septo interventricular en diástole.",
+      "acquisition_utility_limitation": "Se usa para calcular masa y valorar hipertrofia.",
+      "recommended_window_or_view": "PLAX."
+    },
+    {
+      "category": "Grosor, masa y geometría",
+      "term": "PWTd",
+      "definition": "Grosor de la pared posterior del VI en diástole.",
+      "acquisition_utility_limitation": "Junto con IVSd y DTDVI permite calcular masa y RWT.",
+      "recommended_window_or_view": "PLAX."
+    },
+    {
+      "category": "Grosor, masa y geometría",
+      "term": "RWT",
+      "definition": "Grosor relativo de pared.",
+      "acquisition_utility_limitation": "Relaciona el grosor de pared posterior con el diámetro del VI y define geometría concéntrica.",
+      "recommended_window_or_view": "Derivada de medidas PLAX."
+    },
+    {
+      "category": "Grosor, masa y geometría",
+      "term": "Masa del VI",
+      "definition": "Estimación de la cantidad de miocardio del VI.",
+      "acquisition_utility_limitation": "Se calcula con dimensiones lineales; debe indexarse y requiere medidas en cm.",
+      "recommended_window_or_view": "PLAX."
+    },
+    {
+      "category": "Grosor, masa y geometría",
+      "term": "Índice de masa del VI",
+      "definition": "Masa del VI dividida por superficie corporal.",
+      "acquisition_utility_limitation": "Determina si existe hipertrofia ajustada al tamaño corporal.",
+      "recommended_window_or_view": "Derivada."
+    },
+    {
+      "category": "Grosor, masa y geometría",
+      "term": "Remodelado concéntrico",
+      "definition": "RWT aumentado con masa VI normal.",
+      "acquisition_utility_limitation": "Describe paredes relativamente gruesas sin cumplir criterios de hipertrofia.",
+      "recommended_window_or_view": "Derivada."
+    },
+    {
+      "category": "Grosor, masa y geometría",
+      "term": "Hipertrofia concéntrica",
+      "definition": "Masa VI aumentada y RWT aumentado.",
+      "acquisition_utility_limitation": "Patrón frecuente en sobrecarga crónica de presión.",
+      "recommended_window_or_view": "Derivada."
+    },
+    {
+      "category": "Grosor, masa y geometría",
+      "term": "Hipertrofia excéntrica",
+      "definition": "Masa VI aumentada con RWT normal o bajo.",
+      "acquisition_utility_limitation": "Patrón asociado con dilatación y sobrecarga de volumen.",
+      "recommended_window_or_view": "Derivada."
+    },
+    {
+      "category": "Flujo y gasto cardiaco",
+      "term": "TSVI / LVOT",
+      "definition": "Tracto de salida del ventrículo izquierdo.",
+      "acquisition_utility_limitation": "Zona entre el VI y la válvula aórtica donde se mide diámetro y VTI para calcular volumen sistólico.",
+      "recommended_window_or_view": "PLAX para diámetro; A5C/A3C para Doppler."
+    },
+    {
+      "category": "Flujo y gasto cardiaco",
+      "term": "VTI",
+      "definition": "Integral velocidad-tiempo.",
+      "acquisition_utility_limitation": "Distancia sistólica recorrida por una columna de sangre; corresponde al área bajo la curva Doppler.",
+      "recommended_window_or_view": "Depende del tracto: A5C/A3C para TSVI; PSAX para TSVD."
+    },
+    {
+      "category": "Flujo y gasto cardiaco",
+      "term": "Área del TSVI",
+      "definition": "Área transversal calculada a partir del diámetro del TSVI.",
+      "acquisition_utility_limitation": "Se asume circular; pequeños errores del diámetro producen grandes errores del área.",
+      "recommended_window_or_view": "PLAX ampliada."
+    },
+    {
+      "category": "Flujo y gasto cardiaco",
+      "term": "Volumen sistólico",
+      "definition": "Volumen expulsado por un ventrículo en cada latido.",
+      "acquisition_utility_limitation": "Se calcula como área del tracto de salida por VTI.",
+      "recommended_window_or_view": "PLAX + A5C/A3C."
+    },
+    {
+      "category": "Flujo y gasto cardiaco",
+      "term": "Índice de volumen sistólico",
+      "definition": "Volumen sistólico ajustado por superficie corporal.",
+      "acquisition_utility_limitation": "Permite identificar bajo flujo independientemente del tamaño del paciente.",
+      "recommended_window_or_view": "Derivada."
+    },
+    {
+      "category": "Flujo y gasto cardiaco",
+      "term": "Gasto cardiaco",
+      "definition": "Volumen de sangre bombeado por minuto.",
+      "acquisition_utility_limitation": "Producto del volumen sistólico por la frecuencia cardiaca.",
+      "recommended_window_or_view": "Derivada de PLAX + A5C/A3C."
+    },
+    {
+      "category": "Flujo y gasto cardiaco",
+      "term": "Índice cardiaco",
+      "definition": "Gasto cardiaco ajustado por superficie corporal.",
+      "acquisition_utility_limitation": "Facilita comparación entre pacientes de diferente tamaño.",
+      "recommended_window_or_view": "Derivada."
+    },
+    {
+      "category": "Flujo y gasto cardiaco",
+      "term": "Elevación pasiva de piernas",
+      "definition": "Maniobra reversible de autotransfusión.",
+      "acquisition_utility_limitation": "El aumento del VTI tras la maniobra puede sugerir respuesta a precarga.",
+      "recommended_window_or_view": "A5C/A3C, misma muestra antes y después."
+    },
+    {
+      "category": "Flujo y gasto cardiaco",
+      "term": "RVS",
+      "definition": "Resistencia vascular sistémica.",
+      "acquisition_utility_limitation": "Estimación de la poscarga vascular sistémica a partir de presión y gasto cardiaco.",
+      "recommended_window_or_view": "Derivada; VCI subcostal aporta RAP."
+    },
+    {
+      "category": "Flujo y gasto cardiaco",
+      "term": "IRVS",
+      "definition": "Índice de resistencia vascular sistémica.",
+      "acquisition_utility_limitation": "RVS expresada en relación con el índice cardiaco.",
+      "recommended_window_or_view": "Derivada."
+    },
+    {
+      "category": "Flujo y gasto cardiaco",
+      "term": "PAM",
+      "definition": "Presión arterial media.",
+      "acquisition_utility_limitation": "Presión promedio efectiva que impulsa el flujo sistémico durante el ciclo cardiaco.",
+      "recommended_window_or_view": "No depende de ventana ecográfica."
+    },
+    {
+      "category": "Aurícula izquierda y diastología",
+      "term": "AI",
+      "definition": "Aurícula izquierda.",
+      "acquisition_utility_limitation": "Recibe sangre de las venas pulmonares y contribuye al llenado del VI.",
+      "recommended_window_or_view": "PLAX; A4C/A2C para volumen."
+    },
+    {
+      "category": "Aurícula izquierda y diastología",
+      "term": "LAVI",
+      "definition": "Índice de volumen de la aurícula izquierda.",
+      "acquisition_utility_limitation": "Volumen auricular ajustado por superficie corporal; marcador de exposición crónica a presión elevada.",
+      "recommended_window_or_view": "A4C + A2C."
+    },
+    {
+      "category": "Aurícula izquierda y diastología",
+      "term": "Onda E",
+      "definition": "Velocidad del llenado mitral temprano.",
+      "acquisition_utility_limitation": "Aumenta o disminuye según relajación, gradiente AI-VI y condiciones de carga.",
+      "recommended_window_or_view": "A4C, PW en puntas mitrales."
+    },
+    {
+      "category": "Aurícula izquierda y diastología",
+      "term": "Onda A",
+      "definition": "Velocidad del llenado mitral durante contracción auricular.",
+      "acquisition_utility_limitation": "No está presente en fibrilación auricular.",
+      "recommended_window_or_view": "A4C, PW en puntas mitrales."
+    },
+    {
+      "category": "Aurícula izquierda y diastología",
+      "term": "Relación E/A",
+      "definition": "Cociente entre las ondas E y A.",
+      "acquisition_utility_limitation": "Describe el patrón de llenado, pero cambia con la edad y no debe interpretarse aislado.",
+      "recommended_window_or_view": "Derivada de A4C."
+    },
+    {
+      "category": "Aurícula izquierda y diastología",
+      "term": "Tiempo de desaceleración de E",
+      "definition": "Tiempo en que la onda E desciende desde su pico hasta la línea basal.",
+      "acquisition_utility_limitation": "Refleja la rapidez de igualación de presiones entre AI y VI.",
+      "recommended_window_or_view": "A4C."
+    },
+    {
+      "category": "Aurícula izquierda y diastología",
+      "term": "IVRT",
+      "definition": "Tiempo de relajación isovolumétrica.",
+      "acquisition_utility_limitation": "Intervalo entre cierre aórtico y apertura mitral, cuando el VI se relaja sin cambiar de volumen.",
+      "recommended_window_or_view": "A5C/A3C."
+    },
+    {
+      "category": "Aurícula izquierda y diastología",
+      "term": "e’",
+      "definition": "Velocidad diastólica temprana del anillo mitral por Doppler tisular.",
+      "acquisition_utility_limitation": "Marcador de relajación miocárdica relativamente menos dependiente de precarga que la onda E.",
+      "recommended_window_or_view": "A4C, anillo septal y lateral."
+    },
+    {
+      "category": "Aurícula izquierda y diastología",
+      "term": "E/e’",
+      "definition": "Relación entre velocidad transmitral E y velocidad tisular e’.",
+      "acquisition_utility_limitation": "Estimador indirecto de presión de llenado del VI; requiere integración con otros parámetros.",
+      "recommended_window_or_view": "Derivada de A4C."
+    },
+    {
+      "category": "Aurícula izquierda y diastología",
+      "term": "Strain reservorio de AI",
+      "definition": "Deformación de la AI durante el llenado auricular.",
+      "acquisition_utility_limitation": "Evalúa la capacidad de reservorio y complementa el análisis diastólico.",
+      "recommended_window_or_view": "A4C + A2C."
+    },
+    {
+      "category": "Aurícula izquierda y diastología",
+      "term": "Flujo venoso pulmonar",
+      "definition": "Patrón Doppler de las venas pulmonares.",
+      "acquisition_utility_limitation": "Sus ondas sistólica, diastólica y reversa auricular ayudan a estimar presión y función auricular.",
+      "recommended_window_or_view": "A4C, vena pulmonar superior derecha habitualmente."
+    },
+    {
+      "category": "Ventrículo derecho y circulación pulmonar",
+      "term": "VD",
+      "definition": "Ventrículo derecho.",
+      "acquisition_utility_limitation": "Bombea sangre hacia la circulación pulmonar; su geometría compleja exige evaluación multiparamétrica.",
+      "recommended_window_or_view": "A4C enfocada en VD; PLAX/PSAX complementarias."
+    },
+    {
+      "category": "Ventrículo derecho y circulación pulmonar",
+      "term": "Relación VD/VI",
+      "definition": "Comparación entre diámetros basales de ambos ventrículos.",
+      "acquisition_utility_limitation": "Una relación elevada sugiere dilatación relativa del VD.",
+      "recommended_window_or_view": "A4C enfocada en VD."
+    },
+    {
+      "category": "Ventrículo derecho y circulación pulmonar",
+      "term": "TAPSE",
+      "definition": "Excursión sistólica del plano del anillo tricuspídeo.",
+      "acquisition_utility_limitation": "Mide desplazamiento longitudinal basal del VD.",
+      "recommended_window_or_view": "A4C enfocada en VD, modo M."
+    },
+    {
+      "category": "Ventrículo derecho y circulación pulmonar",
+      "term": "s’ del VD",
+      "definition": "Velocidad sistólica tisular del anillo tricuspídeo lateral.",
+      "acquisition_utility_limitation": "Marcador de función longitudinal basal del VD.",
+      "recommended_window_or_view": "A4C enfocada en VD, TDI."
+    },
+    {
+      "category": "Ventrículo derecho y circulación pulmonar",
+      "term": "FAC",
+      "definition": "Cambio fraccional de área del VD.",
+      "acquisition_utility_limitation": "Porcentaje de reducción del área del VD desde diástole a sístole.",
+      "recommended_window_or_view": "A4C enfocada en VD."
+    },
+    {
+      "category": "Ventrículo derecho y circulación pulmonar",
+      "term": "FEVD",
+      "definition": "Fracción de eyección del ventrículo derecho.",
+      "acquisition_utility_limitation": "Porcentaje del volumen telediastólico derecho expulsado en sístole.",
+      "recommended_window_or_view": "A4C enfocada en VD, 3D."
+    },
+    {
+      "category": "Ventrículo derecho y circulación pulmonar",
+      "term": "Strain de pared libre del VD",
+      "definition": "Deformación longitudinal de los segmentos de la pared libre del VD.",
+      "acquisition_utility_limitation": "Valores más negativos indican mayor acortamiento.",
+      "recommended_window_or_view": "A4C enfocada en VD."
+    },
+    {
+      "category": "Ventrículo derecho y circulación pulmonar",
+      "term": "Índice de Tei / MPI",
+      "definition": "Índice de rendimiento miocárdico.",
+      "acquisition_utility_limitation": "Integra tiempos isovolumétricos y de eyección para reflejar función global.",
+      "recommended_window_or_view": "A4C para TDI; RV inflow/PSAX para PW."
+    },
+    {
+      "category": "Ventrículo derecho y circulación pulmonar",
+      "term": "TSVD / RVOT",
+      "definition": "Tracto de salida del ventrículo derecho.",
+      "acquisition_utility_limitation": "Zona donde se adquieren el VTI y el tiempo de aceleración pulmonar.",
+      "recommended_window_or_view": "PSAX grandes vasos; subcostal RVOT alternativa."
+    },
+    {
+      "category": "Ventrículo derecho y circulación pulmonar",
+      "term": "PAAT / AccT",
+      "definition": "Tiempo de aceleración del flujo pulmonar.",
+      "acquisition_utility_limitation": "Intervalo desde el inicio del flujo en TSVD hasta su velocidad máxima.",
+      "recommended_window_or_view": "PSAX/RVOT con PW."
+    },
+    {
+      "category": "Ventrículo derecho y circulación pulmonar",
+      "term": "IT / TR",
+      "definition": "Insuficiencia tricuspídea.",
+      "acquisition_utility_limitation": "El jet permite estimar el gradiente VD-AD mediante Bernoulli.",
+      "recommended_window_or_view": "A4C VD, RV inflow, PSAX o subcostal."
+    },
+    {
+      "category": "Ventrículo derecho y circulación pulmonar",
+      "term": "PR",
+      "definition": "Insuficiencia pulmonar.",
+      "acquisition_utility_limitation": "Las velocidades protodiastólica y telediastólica pueden estimar presiones pulmonares.",
+      "recommended_window_or_view": "PSAX/RVOT."
+    },
+    {
+      "category": "Ventrículo derecho y circulación pulmonar",
+      "term": "PSVD / RVSP",
+      "definition": "Presión sistólica estimada del VD.",
+      "acquisition_utility_limitation": "Suma del gradiente del jet de IT y la presión AD estimada.",
+      "recommended_window_or_view": "Mejor ventana de IT + VCI subcostal."
+    },
+    {
+      "category": "Ventrículo derecho y circulación pulmonar",
+      "term": "PASP",
+      "definition": "Presión sistólica de la arteria pulmonar.",
+      "acquisition_utility_limitation": "Se aproxima a la PSVD si no existe obstrucción del TSVD o válvula pulmonar.",
+      "recommended_window_or_view": "Mejor ventana de IT + VCI subcostal."
+    },
+    {
+      "category": "Ventrículo derecho y circulación pulmonar",
+      "term": "mPAP",
+      "definition": "Presión arterial pulmonar media.",
+      "acquisition_utility_limitation": "La hipertensión pulmonar hemodinámica se define invasivamente; la ecografía estima probabilidad y presiones.",
+      "recommended_window_or_view": "PSAX/RVOT para PR o PAAT."
+    },
+    {
+      "category": "Ventrículo derecho y circulación pulmonar",
+      "term": "RVP / PVR",
+      "definition": "Resistencia vascular pulmonar.",
+      "acquisition_utility_limitation": "Poscarga resistiva del VD; la fórmula Doppler usa Vmax IT y VTI del TSVD.",
+      "recommended_window_or_view": "Mejor IT + PSAX/RVOT."
+    },
+    {
+      "category": "Ventrículo derecho y circulación pulmonar",
+      "term": "TAPSE/PASP",
+      "definition": "Relación entre función longitudinal del VD y su poscarga estimada.",
+      "acquisition_utility_limitation": "Marcador no invasivo de acoplamiento VD-arteria pulmonar.",
+      "recommended_window_or_view": "A4C VD + mejor IT."
+    },
+    {
+      "category": "Ventrículo derecho y circulación pulmonar",
+      "term": "Índice de excentricidad",
+      "definition": "Relación entre diámetros del VI en eje corto.",
+      "acquisition_utility_limitation": "Cuantifica aplanamiento septal por sobrecarga derecha.",
+      "recommended_window_or_view": "PSAX medio ventricular."
+    },
+    {
+      "category": "Aurícula derecha y vena cava inferior",
+      "term": "AD",
+      "definition": "Aurícula derecha.",
+      "acquisition_utility_limitation": "Recibe el retorno venoso sistémico y participa en el llenado del VD.",
+      "recommended_window_or_view": "A4C enfocada en VD/AD."
+    },
+    {
+      "category": "Aurícula derecha y vena cava inferior",
+      "term": "VCI",
+      "definition": "Vena cava inferior.",
+      "acquisition_utility_limitation": "Su diámetro y variación respiratoria se usan para estimar presión AD en condiciones apropiadas.",
+      "recommended_window_or_view": "Subcostal eje largo de VCI."
+    },
+    {
+      "category": "Aurícula derecha y vena cava inferior",
+      "term": "Colapsabilidad de VCI",
+      "definition": "Reducción porcentual del diámetro de la VCI durante inspiración espontánea.",
+      "acquisition_utility_limitation": "Mayor colapso suele asociarse con menor presión AD.",
+      "recommended_window_or_view": "Subcostal eje largo de VCI."
+    },
+    {
+      "category": "Aurícula derecha y vena cava inferior",
+      "term": "Distensibilidad de VCI",
+      "definition": "Aumento porcentual del diámetro de VCI durante ventilación positiva.",
+      "acquisition_utility_limitation": "Su interpretación depende de modalidad ventilatoria, volumen corriente y presión abdominal.",
+      "recommended_window_or_view": "Subcostal eje largo de VCI."
+    },
+    {
+      "category": "Aurícula derecha y vena cava inferior",
+      "term": "Presión AD / RAP",
+      "definition": "Presión de la aurícula derecha.",
+      "acquisition_utility_limitation": "Se estima de forma semicuantitativa con VCI, pero no sustituye medición invasiva.",
+      "recommended_window_or_view": "Subcostal eje largo de VCI."
+    },
+    {
+      "category": "Válvula aórtica y mitral",
+      "term": "Vmax aórtica",
+      "definition": "Velocidad máxima transvalvular aórtica.",
+      "acquisition_utility_limitation": "Se incrementa con estenosis o estados de alto flujo.",
+      "recommended_window_or_view": "A5C/A3C, RPS y SSN; usar la mayor."
+    },
+    {
+      "category": "Válvula aórtica y mitral",
+      "term": "Gradiente máximo",
+      "definition": "Gradiente instantáneo derivado de la Vmax.",
+      "acquisition_utility_limitation": "Se calcula con 4V².",
+      "recommended_window_or_view": "Misma ventana que Vmax."
+    },
+    {
+      "category": "Válvula aórtica y mitral",
+      "term": "Gradiente medio",
+      "definition": "Promedio temporal de los gradientes instantáneos durante la eyección.",
+      "acquisition_utility_limitation": "Es un criterio principal para graduar estenosis aórtica.",
+      "recommended_window_or_view": "Misma ventana que Vmax."
+    },
+    {
+      "category": "Válvula aórtica y mitral",
+      "term": "AVA",
+      "definition": "Área valvular aórtica.",
+      "acquisition_utility_limitation": "Se calcula por ecuación de continuidad comparando flujo del TSVI y flujo transaórtico.",
+      "recommended_window_or_view": "PLAX + A5C/A3C + mejor CW aórtico."
+    },
+    {
+      "category": "Válvula aórtica y mitral",
+      "term": "DVI",
+      "definition": "Índice de velocidad o índice adimensional.",
+      "acquisition_utility_limitation": "Relación entre flujo del TSVI y flujo aórtico; valores bajos indican obstrucción más severa.",
+      "recommended_window_or_view": "A5C/A3C + mejor CW aórtico."
+    },
+    {
+      "category": "Válvula aórtica y mitral",
+      "term": "Área valvular mitral",
+      "definition": "Área anatómica o funcional del orificio mitral.",
+      "acquisition_utility_limitation": "Puede medirse por planimetría o estimarse con PHT.",
+      "recommended_window_or_view": "PSAX para planimetría; A4C para PHT."
+    },
+    {
+      "category": "Válvula aórtica y mitral",
+      "term": "PHT",
+      "definition": "Tiempo de hemipresión.",
+      "acquisition_utility_limitation": "Tiempo para que el gradiente transmitral inicial disminuya a la mitad; se usa para estimar área mitral.",
+      "recommended_window_or_view": "A4C con CW."
+    },
+    {
+      "category": "Válvula aórtica y mitral",
+      "term": "Gradiente mitral medio",
+      "definition": "Promedio del gradiente diastólico a través de la válvula mitral.",
+      "acquisition_utility_limitation": "Depende de frecuencia cardiaca y flujo, por lo que deben reportarse ambos.",
+      "recommended_window_or_view": "A4C con CW."
+    },
+    {
+      "category": "Insuficiencias valvulares",
+      "term": "Vena contracta",
+      "definition": "Porción más estrecha del jet regurgitante.",
+      "acquisition_utility_limitation": "Su ancho se relaciona con el tamaño del orificio, pero puede fallar con orificios múltiples o no circulares.",
+      "recommended_window_or_view": "Vista específica de válvula; zoom y plano perpendicular."
+    },
+    {
+      "category": "Insuficiencias valvulares",
+      "term": "PISA",
+      "definition": "Área de superficie de isovelocidad proximal.",
+      "acquisition_utility_limitation": "Describe hemisferios de convergencia de flujo antes del orificio regurgitante.",
+      "recommended_window_or_view": "Apical para IM/IT; PLAX o apical para IA."
+    },
+    {
+      "category": "Insuficiencias valvulares",
+      "term": "EROA",
+      "definition": "Área efectiva del orificio regurgitante.",
+      "acquisition_utility_limitation": "Representa el tamaño funcional del orificio por donde ocurre la regurgitación.",
+      "recommended_window_or_view": "Vista PISA + mejor CW."
+    },
+    {
+      "category": "Insuficiencias valvulares",
+      "term": "Volumen regurgitante",
+      "definition": "Cantidad de sangre que regresa por la válvula en cada latido.",
+      "acquisition_utility_limitation": "Se calcula a partir de EROA y VTI del jet, o por diferencias volumétricas.",
+      "recommended_window_or_view": "Derivada de varias ventanas."
+    },
+    {
+      "category": "Insuficiencias valvulares",
+      "term": "Fracción regurgitante",
+      "definition": "Porcentaje del volumen sistólico total que regurgita.",
+      "acquisition_utility_limitation": "Cuantifica la proporción de flujo retrógrado.",
+      "recommended_window_or_view": "Derivada."
+    },
+    {
+      "category": "Insuficiencias valvulares",
+      "term": "Reversión sistólica hepática",
+      "definition": "Flujo retrógrado sistólico en venas hepáticas.",
+      "acquisition_utility_limitation": "Hallazgo que apoya insuficiencia tricuspídea severa en el contexto adecuado.",
+      "recommended_window_or_view": "Subcostal, PW en vena hepática."
+    },
+    {
+      "category": "Insuficiencias valvulares",
+      "term": "Reversión holodiastólica aórtica",
+      "definition": "Flujo retrógrado durante toda la diástole en aorta descendente.",
+      "acquisition_utility_limitation": "Apoya insuficiencia aórtica importante.",
+      "recommended_window_or_view": "Supraesternal o subcostal aórtica."
+    },
+    {
+      "category": "Pericardio y taponamiento",
+      "term": "Derrame pericárdico",
+      "definition": "Acumulación de líquido en el espacio pericárdico.",
+      "acquisition_utility_limitation": "Se cuantifica por separación eco-libre y se describe su distribución.",
+      "recommended_window_or_view": "PLAX, PSAX, A4C y subcostal."
+    },
+    {
+      "category": "Pericardio y taponamiento",
+      "term": "Colapso sistólico de AD",
+      "definition": "Inversión de la pared de AD durante la sístole.",
+      "acquisition_utility_limitation": "Sugiere que la presión pericárdica supera transitoriamente la presión auricular.",
+      "recommended_window_or_view": "A4C o subcostal 4C."
+    },
+    {
+      "category": "Pericardio y taponamiento",
+      "term": "Colapso diastólico de VD",
+      "definition": "Inversión de la pared libre del VD al inicio de la diástole.",
+      "acquisition_utility_limitation": "Apoya compromiso hemodinámico cuando se integra con clínica y otros signos.",
+      "recommended_window_or_view": "PLAX, A4C o subcostal."
+    },
+    {
+      "category": "Pericardio y taponamiento",
+      "term": "Variación respiratoria transmitral",
+      "definition": "Cambio respiratorio de la velocidad E mitral.",
+      "acquisition_utility_limitation": "Una variación exagerada refleja mayor interdependencia ventricular.",
+      "recommended_window_or_view": "A4C, PW mitral."
+    },
+    {
+      "category": "Pericardio y taponamiento",
+      "term": "Variación respiratoria transtricuspídea",
+      "definition": "Cambio respiratorio de la velocidad E tricuspídea.",
+      "acquisition_utility_limitation": "Aumenta en taponamiento, pero depende del patrón respiratorio.",
+      "recommended_window_or_view": "A4C VD, PW tricuspídeo."
+    },
+    {
+      "category": "Pericardio y taponamiento",
+      "term": "VCI pletórica",
+      "definition": "VCI dilatada con poco colapso respiratorio.",
+      "acquisition_utility_limitation": "Sugiere presión AD elevada; es sensible, pero no específica.",
+      "recommended_window_or_view": "Subcostal VCI."
+    },
+    {
+      "category": "Pericardio y taponamiento",
+      "term": "Movimiento pendular",
+      "definition": "Movimiento oscilante del corazón dentro de un derrame grande.",
+      "acquisition_utility_limitation": "Puede aparecer en derrames voluminosos y favorecer alternancia eléctrica.",
+      "recommended_window_or_view": "Subcostal, apical o PLAX."
+    },
+    {
+      "category": "Pericardio y taponamiento",
+      "term": "Taponamiento cardiaco",
+      "definition": "Compromiso hemodinámico por aumento de presión pericárdica.",
+      "acquisition_utility_limitation": "Es un diagnóstico clínico-hemodinámico; la ecografía identifica signos de apoyo y urgencia.",
+      "recommended_window_or_view": "Integración de múltiples ventanas."
+    },
+    {
+      "category": "Términos técnicos y unidades",
+      "term": "PLAX",
+      "definition": "Vista paraesternal de eje largo.",
+      "acquisition_utility_limitation": "Permite evaluar VI, AI, válvulas mitral/aórtica, raíz aórtica y pericardio.",
+      "recommended_window_or_view": "Ventana paraesternal izquierda."
+    },
+    {
+      "category": "Términos técnicos y unidades",
+      "term": "PSAX",
+      "definition": "Vista paraesternal de eje corto.",
+      "acquisition_utility_limitation": "Permite evaluar geometría ventricular, válvulas y TSVD según el nivel.",
+      "recommended_window_or_view": "Ventana paraesternal izquierda."
+    },
+    {
+      "category": "Términos técnicos y unidades",
+      "term": "Modo M",
+      "definition": "Registro unidimensional de estructuras a lo largo del tiempo.",
+      "acquisition_utility_limitation": "Ofrece alta resolución temporal para excursiones y diámetros.",
+      "recommended_window_or_view": "Se aplica sobre la vista 2D adecuada."
+    },
+    {
+      "category": "Términos técnicos y unidades",
+      "term": "Doppler pulsado",
+      "definition": "Mide velocidades en una ubicación específica.",
+      "acquisition_utility_limitation": "Tiene límite de Nyquist y puede presentar aliasing.",
+      "recommended_window_or_view": "Ventana que alinee el flujo y permita colocar muestra."
+    },
+    {
+      "category": "Términos técnicos y unidades",
+      "term": "Doppler continuo",
+      "definition": "Mide velocidades altas a lo largo de todo el haz.",
+      "acquisition_utility_limitation": "No localiza con precisión la profundidad, pero evita aliasing en jets rápidos.",
+      "recommended_window_or_view": "Usar la ventana con mejor alineación."
+    },
+    {
+      "category": "Términos técnicos y unidades",
+      "term": "Doppler tisular",
+      "definition": "Mide velocidades de movimiento miocárdico/anular.",
+      "acquisition_utility_limitation": "Usado para e’ y s’.",
+      "recommended_window_or_view": "A4C habitualmente."
+    },
+    {
+      "category": "Términos técnicos y unidades",
+      "term": "Speckle tracking",
+      "definition": "Seguimiento de patrones acústicos del miocardio cuadro a cuadro.",
+      "acquisition_utility_limitation": "Permite calcular strain y strain rate.",
+      "recommended_window_or_view": "Vistas apicales no acortadas."
+    },
+    {
+      "category": "Términos técnicos y unidades",
+      "term": "Superficie corporal",
+      "definition": "Estimación del tamaño corporal expresada en m².",
+      "acquisition_utility_limitation": "Se usa para indexar volúmenes, masas y áreas.",
+      "recommended_window_or_view": "No depende de ventana."
+    },
+    {
+      "category": "Términos técnicos y unidades",
+      "term": "Indexado",
+      "definition": "Valor dividido por superficie corporal u otra variable corporal.",
+      "acquisition_utility_limitation": "Reduce el sesgo por tamaño del paciente.",
+      "recommended_window_or_view": "No depende de ventana."
+    },
+    {
+      "category": "Términos técnicos y unidades",
+      "term": "Bernoulli simplificada",
+      "definition": "Ecuación ΔP = 4V².",
+      "acquisition_utility_limitation": "Convierte velocidad Doppler en gradiente de presión cuando V está en m/s.",
+      "recommended_window_or_view": "Usar la ventana con mejor alineación del jet."
+    },
+    {
+      "category": "Términos técnicos y unidades",
+      "term": "UW / Wood",
+      "definition": "Unidad Wood de resistencia vascular.",
+      "acquisition_utility_limitation": "1 UW equivale a 80 dyn·s·cm⁻⁵.",
+      "recommended_window_or_view": "No depende de ventana."
+    },
+    {
+      "category": "Términos técnicos y unidades",
+      "term": "Foreshortening",
+      "definition": "Acortamiento artificial de una cavidad por corte apical incorrecto.",
+      "acquisition_utility_limitation": "Subestima longitudes y volúmenes.",
+      "recommended_window_or_view": "Evitar en A4C, A2C, A3C y A4C enfocada en VD."
+    }
+  ],
+  "references": [
+    "Lang RM, Badano LP, Mor-Avi V, et al. Recommendations for Cardiac Chamber Quantification by Echocardiography in Adults. J Am Soc Echocardiogr. 2015;28:1-39.e14.",
+    "Mitchell C, Rahko PS, Blauwet LA, et al. Guidelines for Performing a Comprehensive Transthoracic Echocardiographic Examination in Adults. J Am Soc Echocardiogr. 2019;32:1-64.",
+    "Nagueh SF, Sanborn DY, Oh JK, et al. Recommendations for the Evaluation of Left Ventricular Diastolic Function by Echocardiography: 2025 Update. J Am Soc Echocardiogr. 2025.",
+    "Mukherjee M, Rudski LG, Addetia K, et al. Guidelines for the Echocardiographic Assessment of the Right Heart in Adults and Special Considerations in Pulmonary Hypertension. J Am Soc Echocardiogr. 2025;38:141-199.",
+    "Baumgartner H, Hung J, Bermejo J, et al. Recommendations on the Echocardiographic Assessment of Aortic Valve Stenosis: A Focused Update. J Am Soc Echocardiogr. 2017;30:372-392.",
+    "Zoghbi WA, Adams D, Bonow RO, et al. Recommendations for Noninvasive Evaluation of Native Valvular Regurgitation. J Am Soc Echocardiogr. 2017;30:303-371."
+  ],
+  "clinical_disclaimer": "Herramienta educativa de referencia rápida. No sustituye un ecocardiograma formal, la valoración clínica, las guías vigentes ni el juicio de un profesional capacitado."
+}
