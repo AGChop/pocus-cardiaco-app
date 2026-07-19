@@ -43,6 +43,17 @@ const Router = {
             return;
         }
 
+        // Rutas de Ventanas Ecocardiográficas
+        if (hash === '#/ventanas') {
+            await this.renderWindowsList(container);
+            return;
+        }
+        if (hash.startsWith('#/ventanas/')) {
+            const id = hash.replace('#/ventanas/', '');
+            await this.renderWindowDetail(container, id);
+            return;
+        }
+
         // 4. Otras Secciones
         if (hash === '#/abreviaturas') {
             await this.renderAbbreviations(container);
@@ -133,6 +144,10 @@ const Router = {
                 <a href="#/mediciones" class="nav-card">
                     <h2>Banco de Mediciones</h2>
                     <p>12 secciones con valores normales, fórmulas y puntos de corte ecocardiográficos.</p>
+                </a>
+                <a href="#/ventanas" class="nav-card">
+                    <h2>Ventanas ecocardiográficas</h2>
+                    <p>Guía de posición del transductor, orientación del marcador, estructuras visibles y mediciones asociadas.</p>
                 </a>
             </div>
 
@@ -456,6 +471,26 @@ const Router = {
                 .replace(/'/g, "&#039;");
         };
 
+        const getLinkForWindow = (primary, view) => {
+            const p = (primary || "").toLowerCase();
+            const v = (view || "").toLowerCase();
+            if (v.includes("plax")) return "plax";
+            if (v.includes("psax")) return "psax";
+            if (v.includes("a4c-vd") || v.includes("enfoque vd") || v.includes("enfocada en vd")) return "rv_focused_a4c";
+            if (v.includes("a4c") || v.includes("4c")) return "a4c";
+            if (v.includes("a2c") || v.includes("2c")) return "a2c";
+            if (v.includes("a3c") || v.includes("3c")) return "a3c";
+            if (v.includes("a5c") || v.includes("5c")) return "a5c";
+            if (v.includes("vci") || v.includes("cava")) return "subcostal_ivc";
+            if (v.includes("subcostal 4c") || v.includes("sc4c")) return "subcostal_4c";
+            if (v.includes("inflow") || v.includes("entrada vd")) return "rv_inflow";
+            if (p.includes("derecha") || v.includes("rps")) return "right_parasternal";
+            if (p.includes("supraesternal") || v.includes("ssn")) return "suprasternal";
+            if (p.includes("subcostal")) return "subcostal_4c";
+            if (p.includes("paraesternal")) return "plax";
+            return null;
+        };
+
         // Construir la sección de Ventana y técnica recomendadas
         let windowsHtml = "";
         const isAltArray = Array.isArray(item.alternate_windows);
@@ -473,6 +508,11 @@ const Router = {
                 </ul>`;
             }
 
+            const winId = getLinkForWindow(item.primary_window, item.preferred_view);
+            const primaryWindowHTML = winId
+                ? `<a href="#/ventanas/${winId}" class="clinical-link" style="color: var(--primary-medium); font-weight: 600; text-decoration: underline;">${escapeHTML(item.primary_window)}</a>`
+                : escapeHTML(item.primary_window);
+
             windowsHtml = `
                 <div class="card-section-divider" style="margin: 0.5rem 0; border-top: 1px dashed var(--border-light);"></div>
                 <details style="margin-top: 0.5rem;">
@@ -483,7 +523,7 @@ const Router = {
                         ${item.primary_window ? `
                         <div class="card-section">
                             <span class="detail-label">Ventana acústica primaria</span>
-                            <p class="detail-text">${escapeHTML(item.primary_window)}</p>
+                            <p class="detail-text">${primaryWindowHTML}</p>
                         </div>` : ''}
 
                         ${item.preferred_view ? `
@@ -560,6 +600,229 @@ const Router = {
                         ${isFav ? "★ Quitar Favorito" : "☆ Guardar Favorito"}
                     </button>
                 </div>
+            </div>
+        `;
+
+        container.innerHTML = html;
+    },
+
+    // LISTA DE VENTANAS ECOCARDIOGRÁFICAS
+    async renderWindowsList(container) {
+        let windows = [];
+        try {
+            windows = await DataLoader.getWindows();
+            if (!windows || windows.length === 0) {
+                throw new Error("No se encontraron ventanas o el archivo está vacío.");
+            }
+        } catch (error) {
+            container.innerHTML = `
+                <div class="card error-card">
+                    <h2>Error al cargar las ventanas</h2>
+                    <p>Lo sentimos, no pudimos cargar la lista de ventanas ecocardiográficas. Por favor, intente nuevamente más tarde.</p>
+                    <a href="#/" class="btn-primary">Volver al Inicio</a>
+                </div>
+            `;
+            return;
+        }
+
+        const escapeHTML = (str) => {
+            if (!str) return "";
+            return str.toString()
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        };
+
+        let html = `
+            <div class="navigation-header">
+                <a href="#/" class="btn-back">← Inicio</a>
+                <h2>Ventanas Ecocardiográficas</h2>
+            </div>
+
+            <div class="desktop-view">
+                <table class="clinical-table">
+                    <thead>
+                        <tr>
+                            <th>Ventana</th>
+                            <th>Abreviatura</th>
+                            <th>Estructuras Favorecidas</th>
+                            <th>Acción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+        `;
+
+        windows.forEach(item => {
+            html += `
+                <tr>
+                    <td><strong>${escapeHTML(item.window)}</strong></td>
+                    <td><span class="unit-badge">${escapeHTML(item.abbreviation)}</span></td>
+                    <td>${escapeHTML(item.favored_structures)}</td>
+                    <td>
+                        <a href="#/ventanas/${item.id}" class="btn-table-action">Detalle</a>
+                    </td>
+                </tr>
+            `;
+        });
+
+        html += `
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="mobile-view">
+                <div class="cards-list">
+        `;
+
+        windows.forEach(item => {
+            html += `
+                <div class="card clinical-card">
+                    <div class="card-header">
+                        <h3>${escapeHTML(item.window)}</h3>
+                        <span class="unit-badge">${escapeHTML(item.abbreviation)}</span>
+                    </div>
+                    <p><strong>Estructuras favorecidas:</strong> ${escapeHTML(item.favored_structures)}</p>
+                    <div class="card-actions">
+                        <a href="#/ventanas/${item.id}" class="btn-card-action">Detalle</a>
+                    </div>
+                </div>
+            `;
+        });
+
+        html += `
+                </div>
+            </div>
+        `;
+
+        container.innerHTML = html;
+    },
+
+    // DETALLE DE VENTANA ECOCARDIOGRÁFICA
+    async renderWindowDetail(container, id) {
+        let windows = [];
+        let measurements = [];
+        try {
+            windows = await DataLoader.getWindows() || [];
+            measurements = await DataLoader.getMeasurements() || [];
+        } catch (error) {
+            container.innerHTML = `
+                <div class="card error-card">
+                    <h2>Error al cargar la información</h2>
+                    <p>No se pudo cargar la información de la ventana ecocardiográfica.</p>
+                    <a href="#/ventanas" class="btn-primary">Volver a Ventanas</a>
+                </div>
+            `;
+            return;
+        }
+
+        const item = windows.find(w => w.id === id);
+        if (!item) {
+            this.render404(container);
+            return;
+        }
+
+        const escapeHTML = (str) => {
+            if (!str) return "";
+            return str.toString()
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        };
+
+        // Relación con mediciones
+        let favoredMeasurementsHTML = "";
+        if (item.favored_measurements) {
+            const parts = item.favored_measurements.split(",").map(p => p.trim());
+            const linkedParts = parts.map(part => {
+                const part_lower = part.toLowerCase();
+                let found = null;
+
+                for (const m of measurements) {
+                    const m_name = m.measurement.toLowerCase();
+                    const m_abbr = (m.abbreviation || "").toLowerCase();
+                    const aliases = (m.aliases || []).map(a => a.toLowerCase());
+
+                    if (part_lower === m_abbr || part_lower === m_name || aliases.includes(part_lower)) {
+                        found = m;
+                        break;
+                    }
+                }
+
+                if (!found) {
+                    const manualMap = {
+                        "dtdvi/dtsvi": "dtdvi",
+                        "dtdvi": "dtdvi",
+                        "dtsvi": "dtsvi",
+                        "ivsd": "ivsd",
+                        "pwtd": "pwtd",
+                        "rwt": "rwt_meas",
+                        "epss": "epss",
+                        "mapse": "mapse",
+                        "tapse": "tapse_meas",
+                        "grosor pared vd": "grosor_pared_vd",
+                        "planimetría mitral": "area_mitral_planimetria",
+                        "diámetro tsvi": "area_tsvi_meas",
+                        "diámetro ai": "diametro_ap_ai",
+                        "lavi": "lavi_meas",
+                        "flujo mitral": "onda_e_mitral",
+                        "gls": "gls_vi",
+                        "wmsi": "wmsi",
+                        "subcostal": "derrame_pericardico_pequeno"
+                    };
+                    if (manualMap[part_lower]) {
+                        found = measurements.find(m => m.id === manualMap[part_lower]);
+                    }
+                }
+
+                if (found) {
+                    return `<a href="#/medicion/${found.id}" class="clinical-link" style="color: var(--primary-medium); font-weight: 600; text-decoration: underline;">${escapeHTML(part)}</a>`;
+                } else {
+                    return escapeHTML(part);
+                }
+            });
+            favoredMeasurementsHTML = linkedParts.join(", ");
+        }
+
+        let html = `
+            <div class="navigation-header">
+                <a href="#/ventanas" class="btn-back">← Ventanas</a>
+                <h2>${escapeHTML(item.window)}</h2>
+            </div>
+
+            <div class="card clinical-detail-card">
+                ${item.abbreviation ? `
+                <div class="card-section">
+                    <span class="detail-label">Abreviatura</span>
+                    <span class="unit-badge large-badge" style="width: fit-content;">${escapeHTML(item.abbreviation)}</span>
+                </div>` : ''}
+
+                ${item.typical_probe_position ? `
+                <div class="card-section">
+                    <span class="detail-label">Posición del transductor</span>
+                    <p class="detail-text">${escapeHTML(item.typical_probe_position)}</p>
+                </div>` : ''}
+
+                ${item.typical_marker_orientation ? `
+                <div class="card-section">
+                    <span class="detail-label">Orientación del marcador</span>
+                    <p class="detail-text">${escapeHTML(item.typical_marker_orientation)}</p>
+                </div>` : ''}
+
+                ${item.favored_structures ? `
+                <div class="card-section">
+                    <span class="detail-label">Estructuras favorecidas</span>
+                    <p class="detail-text">${escapeHTML(item.favored_structures)}</p>
+                </div>` : ''}
+
+                ${favoredMeasurementsHTML ? `
+                <div class="card-section">
+                    <span class="detail-label">Mediciones favorecidas</span>
+                    <p class="detail-text">${favoredMeasurementsHTML}</p>
+                </div>` : ''}
             </div>
         `;
 

@@ -30,5 +30,6 @@ const DataLoader = {
     async getMinimumPocusSet() { return this.fetchResource('minimum_pocus_set'); },
     async getUnitWarnings() { return this.fetchResource('unit_warnings'); },
     async getReferences() { return this.fetchResource('references'); },
-    async getMetadata() { return this.fetchResource('metadata'); }
+    async getMetadata() { return this.fetchResource('metadata'); },
+    async getWindows() { return this.fetchResource('windows'); }
 };
