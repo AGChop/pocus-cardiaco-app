@@ -1,0 +1,110 @@
+[
+  {
+    "id": "plax",
+    "window": "Paraesternal eje largo",
+    "abbreviation": "PLAX",
+    "typical_probe_position": "Borde esternal izquierdo, habitualmente 3.º-5.º espacio intercostal.",
+    "typical_marker_orientation": "Orientación típica hacia el hombro derecho; puede variar según la convención del equipo.",
+    "favored_structures": "VI, AI, válvula mitral, TSVI, válvula aórtica, raíz aórtica, pared anterior del VD y pericardio.",
+    "favored_measurements": "DTDVI/DTSVI, IVSd, PWTd, RWT, masa VI, EPSS, diámetro TSVI, diámetro AI, VC de IA y derrame pericárdico."
+  },
+  {
+    "id": "psax",
+    "window": "Paraesternal eje corto",
+    "abbreviation": "PSAX",
+    "typical_probe_position": "Desde PLAX, rotar aproximadamente 90° y barrer desde grandes vasos hasta el ápex.",
+    "typical_marker_orientation": "Orientación típica hacia el hombro izquierdo.",
+    "favored_structures": "Válvula aórtica, válvula mitral, TSVD, músculos papilares, septo y ventrículos en corte transversal.",
+    "favored_measurements": "Planimetría mitral, VTI/PAAT del TSVD, índice de excentricidad y aplanamiento septal."
+  },
+  {
+    "id": "a4c",
+    "window": "Apical cuatro cámaras",
+    "abbreviation": "A4C",
+    "typical_probe_position": "Ápex cardiaco, con el haz dirigido hacia la base.",
+    "typical_marker_orientation": "Orientación típica hacia el lado izquierdo del paciente; depende de la convención.",
+    "favored_structures": "VI, VD, AI, AD, válvulas mitral y tricúspide.",
+    "favored_measurements": "Simpson, MAPSE, s’/e’ mitral, flujo mitral, LAVI, dimensiones AD, TAPSE, s’ VD, FAC, TR y variaciones respiratorias."
+  },
+  {
+    "id": "rv_focused_a4c",
+    "window": "Apical cuatro cámaras enfocada en VD",
+    "abbreviation": "A4C-VD",
+    "typical_probe_position": "Desde A4C, ajustar posición, rotación e inclinación para maximizar el VD sin acortar el ápex.",
+    "typical_marker_orientation": "Similar a A4C.",
+    "favored_structures": "VD completo, pared libre, anillo tricuspídeo y AD.",
+    "favored_measurements": "Diámetros y longitud del VD, TAPSE, s’ VD, FAC, strain VD, área/longitudes de AD y TR."
+  },
+  {
+    "id": "a2c",
+    "window": "Apical dos cámaras",
+    "abbreviation": "A2C",
+    "typical_probe_position": "Rotación desde A4C para mostrar VI y AI sin cavidades derechas.",
+    "typical_marker_orientation": "Variable según convención; mantener ápex no acortado.",
+    "favored_structures": "VI y AI, paredes anterior e inferior.",
+    "favored_measurements": "Simpson biplano, LAVI, GLS y WMSI."
+  },
+  {
+    "id": "a3c",
+    "window": "Apical eje largo / tres cámaras",
+    "abbreviation": "A3C",
+    "typical_probe_position": "Rotación adicional desde A2C o ajuste desde A4C para alinear VI, TSVI y aorta.",
+    "typical_marker_orientation": "Variable según convención.",
+    "favored_structures": "VI, AI, válvula mitral, TSVI y válvula aórtica.",
+    "favored_measurements": "GLS, WMSI, VTI TSVI, IVRT y Doppler aórtico."
+  },
+  {
+    "id": "a5c",
+    "window": "Apical cinco cámaras",
+    "abbreviation": "A5C",
+    "typical_probe_position": "Desde A4C, inclinar anteriormente para abrir el TSVI y la válvula aórtica.",
+    "typical_marker_orientation": "Similar a A4C.",
+    "favored_structures": "A4C más TSVI y válvula aórtica.",
+    "favored_measurements": "VTI/velocidad TSVI, Doppler aórtico, AVA, DVI e IVRT."
+  },
+  {
+    "id": "subcostal_4c",
+    "window": "Subcostal cuatro cámaras",
+    "abbreviation": "SC4C",
+    "typical_probe_position": "Debajo del xifoides, usando hígado como ventana y dirigiendo el haz al hombro izquierdo.",
+    "typical_marker_orientation": "Orientación típica hacia el lado izquierdo del paciente.",
+    "favored_structures": "Cuatro cámaras, septos, pericardio y pared libre del VD.",
+    "favored_measurements": "Derrame/taponamiento, grosor pared VD y evaluación alternativa de función/tamaño en ventanas precordiales deficientes."
+  },
+  {
+    "id": "subcostal_ivc",
+    "window": "Subcostal eje largo de VCI",
+    "abbreviation": "SC-VCI",
+    "typical_probe_position": "Desde subcostal, rotar para alinear VCI longitudinalmente hacia la AD.",
+    "typical_marker_orientation": "Orientación típica hacia la cabeza.",
+    "favored_structures": "VCI, unión cavoauricular y venas hepáticas.",
+    "favored_measurements": "Diámetro, colapsabilidad/distensibilidad de VCI, presión AD y flujo de venas hepáticas."
+  },
+  {
+    "id": "rv_inflow",
+    "window": "Paraesternal de entrada del VD",
+    "abbreviation": "RV inflow",
+    "typical_probe_position": "Desde PLAX, inclinar medial e inferiormente hacia la válvula tricúspide.",
+    "typical_marker_orientation": "Ajustar para alinear AD-TV-VD.",
+    "favored_structures": "AD, válvula tricúspide y entrada del VD.",
+    "favored_measurements": "Doppler de IT, evaluación tricuspídea y, en algunos casos, Tei por PW."
+  },
+  {
+    "id": "right_parasternal",
+    "window": "Paraesternal derecha alta",
+    "abbreviation": "RPS",
+    "typical_probe_position": "2.º-3.º espacio intercostal derecho, paciente en decúbito lateral derecho cuando sea posible.",
+    "typical_marker_orientation": "Hacia el hombro derecho en la convención habitual.",
+    "favored_structures": "Aorta ascendente y flujo transaórtico.",
+    "favored_measurements": "Vmax y gradientes aórticos; puede proporcionar la mayor velocidad en estenosis aórtica."
+  },
+  {
+    "id": "suprasternal",
+    "window": "Supraesternal",
+    "abbreviation": "SSN",
+    "typical_probe_position": "Escotadura supraesternal, cuello extendido si es tolerado.",
+    "typical_marker_orientation": "Orientación ajustada al eje del arco aórtico.",
+    "favored_structures": "Arco aórtico, aorta descendente y ramas supraaórticas.",
+    "favored_measurements": "Doppler aórtico alternativo y reversión holodiastólica en aorta descendente."
+  }
+]

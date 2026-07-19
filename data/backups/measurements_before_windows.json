@@ -19,15 +19,7 @@
       "plax"
     ],
     "source_page": 4,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Paraesternal izquierda",
-    "preferred_view": "PLAX",
-    "modality": "2D; modo M opcional",
-    "acquisition_timing": "Fin de diástole",
-    "acquisition_key": "Medir perpendicular al eje largo, habitualmente a nivel de las puntas de las valvas mitrales; evitar cortes oblicuos.",
-    "alternate_windows": [
-      "Subcostal eje corto como alternativa si la ventana paraesternal es deficiente."
-    ]
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "dtsvi",
@@ -49,15 +41,7 @@
       "plax"
     ],
     "source_page": 4,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Paraesternal izquierda",
-    "preferred_view": "PLAX",
-    "modality": "2D; modo M opcional",
-    "acquisition_timing": "Fin de sístole",
-    "acquisition_key": "Usar el mismo plano y nivel anatómico que para DTDVI.",
-    "alternate_windows": [
-      "Subcostal eje corto si no hay PLAX adecuada."
-    ]
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "vtdvi",
@@ -79,15 +63,7 @@
       "foreshortening"
     ],
     "source_page": 4,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Apical",
-    "preferred_view": "A4C + A2C no acortadas",
-    "modality": "2D; trazado endocárdico",
-    "acquisition_timing": "Fin de diástole",
-    "acquisition_key": "Trazar el endocardio desde anillo mitral a ápex; excluir músculos papilares y trabeculaciones de la cavidad.",
-    "alternate_windows": [
-      "A3C puede complementar; contraste ecográfico si la delimitación endocárdica es insuficiente."
-    ]
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "vtdvi_indexed",
@@ -110,13 +86,7 @@
       "indexed"
     ],
     "source_page": 4,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Derivada",
-    "preferred_view": "A4C + A2C para VTDVI",
-    "modality": "Cálculo",
-    "acquisition_timing": "Después de medir VTDVI",
-    "acquisition_key": "No requiere una ventana adicional: utiliza VTDVI por Simpson y superficie corporal.",
-    "alternate_windows": []
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "vtsvi_meas",
@@ -137,15 +107,7 @@
       "simpson_biplano"
     ],
     "source_page": 4,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Apical",
-    "preferred_view": "A4C + A2C no acortadas",
-    "modality": "2D; trazado endocárdico",
-    "acquisition_timing": "Fin de sístole",
-    "acquisition_key": "Seleccionar el cuadro con menor cavidad ventricular y trazar el endocardio.",
-    "alternate_windows": [
-      "A3C puede complementar; contraste ecográfico si la delimitación es insuficiente."
-    ]
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "vtsvi_indexed",
@@ -168,13 +130,7 @@
       "indexed"
     ],
     "source_page": 4,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Derivada",
-    "preferred_view": "A4C + A2C para VTSVI",
-    "modality": "Cálculo",
-    "acquisition_timing": "Después de medir VTSVI",
-    "acquisition_key": "No requiere ventana adicional: utiliza VTSVI y superficie corporal.",
-    "alternate_windows": []
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "fevi",
@@ -196,15 +152,7 @@
       "vtsvi_term"
     ],
     "source_page": 4,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Apical",
-    "preferred_view": "A4C + A2C, Simpson biplano",
-    "modality": "2D; cálculo",
-    "acquisition_timing": "Fin de diástole y fin de sístole",
-    "acquisition_key": "Evitar foreshortening; usar los mismos ciclos y un contorno endocárdico adecuado.",
-    "alternate_windows": [
-      "Estimación visual multiparamétrica desde PLAX, PSAX, A4C y subcostal cuando no sea posible Simpson."
-    ]
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "fraccion_acortamiento_meas",
@@ -226,13 +174,7 @@
       "dtsvi_term"
     ],
     "source_page": 4,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Paraesternal izquierda",
-    "preferred_view": "PLAX",
-    "modality": "2D o modo M",
-    "acquisition_timing": "Diástole y sístole",
-    "acquisition_key": "Usar DTDVI y DTSVI del mismo nivel y eje.",
-    "alternate_windows": []
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "epss",
@@ -253,13 +195,7 @@
       "modo_m"
     ],
     "source_page": 4,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Paraesternal izquierda",
-    "preferred_view": "PLAX centrada en válvula mitral",
-    "modality": "Modo M",
-    "acquisition_timing": "Diástole temprana",
-    "acquisition_key": "Colocar el cursor a través de la punta de la valva mitral anterior y medir la mínima separación E-septo.",
-    "alternate_windows": []
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "mapse",
@@ -280,15 +216,7 @@
       "modo_m"
     ],
     "source_page": 4,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Apical",
-    "preferred_view": "A4C",
-    "modality": "Modo M",
-    "acquisition_timing": "Sístole",
-    "acquisition_key": "Alinear el cursor con el movimiento longitudinal del anillo mitral lateral o septal.",
-    "alternate_windows": [
-      "A2C para anillo anterior/inferior en valoración ampliada."
-    ]
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "s_prima_mitral",
@@ -310,13 +238,7 @@
       "tdi"
     ],
     "source_page": 4,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Apical",
-    "preferred_view": "A4C",
-    "modality": "Doppler tisular pulsado",
-    "acquisition_timing": "Sístole",
-    "acquisition_key": "Colocar la muestra en anillo septal y lateral; mantener el haz paralelo al movimiento anular.",
-    "alternate_windows": []
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "gls_vi",
@@ -338,13 +260,7 @@
       "speckle_tracking"
     ],
     "source_page": 4,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Apical",
-    "preferred_view": "A4C + A2C + A3C",
-    "modality": "Speckle tracking 2D",
-    "acquisition_timing": "Ciclo completo",
-    "acquisition_key": "Evitar foreshortening, optimizar frecuencia de cuadro y asegurar seguimiento de todos los segmentos.",
-    "alternate_windows": []
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "wmsi",
@@ -364,15 +280,7 @@
       "wmsi_term"
     ],
     "source_page": 4,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Múltiples",
-    "preferred_view": "A4C, A2C, A3C y PSAX basal/medio/apical",
-    "modality": "2D cine",
-    "acquisition_timing": "Ciclo completo",
-    "acquisition_key": "Evaluar cada segmento en más de una vista cuando sea posible; evitar atribuir artefacto a hipocinesia.",
-    "alternate_windows": [
-      "Subcostal eje corto en ventanas apicales o paraesternales deficientes."
-    ]
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "ivsd",
@@ -393,13 +301,7 @@
       "plax"
     ],
     "source_page": 4,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Paraesternal izquierda",
-    "preferred_view": "PLAX",
-    "modality": "2D; modo M opcional",
-    "acquisition_timing": "Fin de diástole",
-    "acquisition_key": "Medir el septo perpendicular al eje largo a nivel de las puntas mitrales; no incluir banda moderadora ni trabeculaciones del VD.",
-    "alternate_windows": []
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "pwtd",
@@ -420,13 +322,7 @@
       "plax"
     ],
     "source_page": 4,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Paraesternal izquierda",
-    "preferred_view": "PLAX",
-    "modality": "2D; modo M opcional",
-    "acquisition_timing": "Fin de diástole",
-    "acquisition_key": "Medir en el mismo nivel que IVSd y DTDVI, perpendicular a la pared.",
-    "alternate_windows": []
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "rwt_meas",
@@ -449,13 +345,7 @@
       "pwtd_term"
     ],
     "source_page": 4,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Derivada",
-    "preferred_view": "PLAX para PWTd y DTDVI",
-    "modality": "Cálculo",
-    "acquisition_timing": "Fin de diástole",
-    "acquisition_key": "No requiere ventana adicional; asegurar que ambas medidas provengan del mismo plano y ciclo.",
-    "alternate_windows": []
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "masa_vi_meas",
@@ -478,13 +368,7 @@
       "pwtd_term"
     ],
     "source_page": 4,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Paraesternal izquierda",
-    "preferred_view": "PLAX",
-    "modality": "2D; cálculo",
-    "acquisition_timing": "Fin de diástole",
-    "acquisition_key": "Usar DTDVI, IVSd y PWTd del mismo plano; convertir a cm antes de elevar al cubo.",
-    "alternate_windows": []
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "lv_mass_index",
@@ -507,13 +391,7 @@
       "indexed"
     ],
     "source_page": 4,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Derivada",
-    "preferred_view": "PLAX para masa del VI",
-    "modality": "Cálculo",
-    "acquisition_timing": "Después de calcular masa",
-    "acquisition_key": "No requiere ventana adicional; necesita superficie corporal válida.",
-    "alternate_windows": []
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "geometria_vi_meas",
@@ -535,13 +413,7 @@
       "hipertrofia_excentrica"
     ],
     "source_page": 4,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Derivada",
-    "preferred_view": "PLAX para medidas lineales",
-    "modality": "Clasificación",
-    "acquisition_timing": "Después de calcular IMVI y RWT",
-    "acquisition_key": "Interpretar con el contexto y confirmar que las medidas lineales sean técnicamente válidas.",
-    "alternate_windows": []
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "area_tsvi_meas",
@@ -562,13 +434,7 @@
       "tsvi_term"
     ],
     "source_page": 5,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Paraesternal izquierda",
-    "preferred_view": "PLAX ampliada del TSVI y válvula aórtica",
-    "modality": "2D zoom",
-    "acquisition_timing": "Mesosístole",
-    "acquisition_key": "Medir borde interno a borde interno, paralelo al plano valvular, en el sitio correspondiente a la muestra Doppler.",
-    "alternate_windows": []
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "vti_tsvi_meas",
@@ -590,15 +456,7 @@
       "pw_doppler"
     ],
     "source_page": 5,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Apical",
-    "preferred_view": "A5C o A3C",
-    "modality": "Doppler pulsado",
-    "acquisition_timing": "Sístole",
-    "acquisition_key": "Colocar la muestra 0,5-1 cm proximal a la válvula aórtica, antes de la aceleración; trazar el borde modal.",
-    "alternate_windows": [
-      "A4C con inclinación anterior para abrir el TSVI."
-    ]
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "volumen_sistolico_meas",
@@ -621,13 +479,7 @@
       "vti_term"
     ],
     "source_page": 5,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Combinada",
-    "preferred_view": "PLAX + A5C/A3C",
-    "modality": "2D + Doppler pulsado; cálculo",
-    "acquisition_timing": "Sístole",
-    "acquisition_key": "Combinar diámetro del TSVI en PLAX con VTI del mismo tracto desde ventana apical.",
-    "alternate_windows": []
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "sv_index",
@@ -650,13 +502,7 @@
       "indexed"
     ],
     "source_page": 5,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Derivada",
-    "preferred_view": "PLAX + A5C/A3C para VS",
-    "modality": "Cálculo",
-    "acquisition_timing": "Después de calcular VS",
-    "acquisition_key": "No requiere ventana adicional; necesita superficie corporal.",
-    "alternate_windows": []
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "gasto_cardiaco_meas",
@@ -678,13 +524,7 @@
       "volumen_sistolico_term"
     ],
     "source_page": 5,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Derivada",
-    "preferred_view": "PLAX + A5C/A3C para VS",
-    "modality": "Cálculo",
-    "acquisition_timing": "Después de calcular VS",
-    "acquisition_key": "Usar frecuencia cardiaca del ciclo medido; promediar 3-5 latidos o más en arritmia.",
-    "alternate_windows": []
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "cardiac_index",
@@ -706,13 +546,7 @@
       "indexed"
     ],
     "source_page": 5,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Derivada",
-    "preferred_view": "PLAX + A5C/A3C para GC",
-    "modality": "Cálculo",
-    "acquisition_timing": "Después de calcular GC",
-    "acquisition_key": "No requiere ventana adicional.",
-    "alternate_windows": []
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "plr_vti_change",
@@ -734,13 +568,7 @@
       "vti_term"
     ],
     "source_page": 5,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Apical",
-    "preferred_view": "A5C o A3C",
-    "modality": "Doppler pulsado seriado",
-    "acquisition_timing": "Antes y 30-90 s después de la maniobra",
-    "acquisition_key": "Mantener exactamente la misma posición de la muestra y ángulo Doppler; usar el mismo número de ciclos.",
-    "alternate_windows": []
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "rvs_meas",
@@ -763,13 +591,7 @@
       "gasto_cardiaco_term"
     ],
     "source_page": 5,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Derivada",
-    "preferred_view": "Datos combinados",
-    "modality": "Cálculo hemodinámico",
-    "acquisition_timing": "Después de estimar GC y presión AD",
-    "acquisition_key": "La presión AD suele derivarse de VCI subcostal; reconocer las limitaciones de esa estimación.",
-    "alternate_windows": []
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "irvs_meas",
@@ -792,13 +614,7 @@
       "indice_cardiaco_term"
     ],
     "source_page": 5,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Derivada",
-    "preferred_view": "Datos combinados",
-    "modality": "Cálculo hemodinámico",
-    "acquisition_timing": "Después de estimar IC y presión AD",
-    "acquisition_key": "No requiere ventana adicional.",
-    "alternate_windows": []
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "diametro_ap_ai",
@@ -819,13 +635,7 @@
       "plax"
     ],
     "source_page": 5,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Paraesternal izquierda",
-    "preferred_view": "PLAX",
-    "modality": "2D",
-    "acquisition_timing": "Fin de sístole",
-    "acquisition_key": "Medir perpendicular al eje largo; preferir volumen auricular para cuantificación.",
-    "alternate_windows": []
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "volumen_ai_meas",
@@ -846,13 +656,7 @@
       "simpson_biplano"
     ],
     "source_page": 5,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Apical",
-    "preferred_view": "A4C + A2C dedicadas a AI",
-    "modality": "2D; planimetría",
-    "acquisition_timing": "Fin de sístole",
-    "acquisition_key": "Evitar foreshortening; excluir venas pulmonares y orejuela; trazar hasta el borde del anillo mitral.",
-    "alternate_windows": []
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "lavi_meas",
@@ -874,13 +678,7 @@
       "indexed"
     ],
     "source_page": 5,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Derivada",
-    "preferred_view": "A4C + A2C para volumen AI",
-    "modality": "Cálculo",
-    "acquisition_timing": "Después de medir volumen AI",
-    "acquisition_key": "No requiere ventana adicional.",
-    "alternate_windows": []
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "dilatacion_ai_class",
@@ -900,13 +698,7 @@
       "ai_term"
     ],
     "source_page": 5,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Derivada",
-    "preferred_view": "A4C + A2C para LAVI",
-    "modality": "Clasificación",
-    "acquisition_timing": "Después de calcular LAVI",
-    "acquisition_key": "No requiere ventana adicional.",
-    "alternate_windows": []
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "la_strain_reservoir",
@@ -927,13 +719,7 @@
       "speckle_tracking"
     ],
     "source_page": 5,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Apical",
-    "preferred_view": "A4C + A2C dedicadas a AI",
-    "modality": "Speckle tracking 2D",
-    "acquisition_timing": "Ciclo completo",
-    "acquisition_key": "Optimizar la pared auricular, evitar foreshortening y usar una referencia temporal consistente.",
-    "alternate_windows": []
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "onda_e_mitral",
@@ -954,13 +740,7 @@
       "pw_doppler"
     ],
     "source_page": 6,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Apical",
-    "preferred_view": "A4C",
-    "modality": "Doppler pulsado",
-    "acquisition_timing": "Diástole temprana",
-    "acquisition_key": "Muestra de 1-3 mm entre las puntas de las valvas; alinear con el flujo transmitral.",
-    "alternate_windows": []
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "onda_a_mitral",
@@ -981,13 +761,7 @@
       "pw_doppler"
     ],
     "source_page": 6,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Apical",
-    "preferred_view": "A4C",
-    "modality": "Doppler pulsado",
-    "acquisition_timing": "Diástole tardía",
-    "acquisition_key": "Usar el mismo espectro transmitral que para onda E.",
-    "alternate_windows": []
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "relacion_e_a",
@@ -1009,13 +783,7 @@
       "onda_a_term"
     ],
     "source_page": 6,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Derivada",
-    "preferred_view": "A4C para E y A",
-    "modality": "Cálculo",
-    "acquisition_timing": "Diástole",
-    "acquisition_key": "Usar velocidades del mismo ciclo o ciclos comparables.",
-    "alternate_windows": []
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "tiempo_desaceleracion_e",
@@ -1037,13 +805,7 @@
       "onda_e_term"
     ],
     "source_page": 6,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Apical",
-    "preferred_view": "A4C",
-    "modality": "Doppler pulsado",
-    "acquisition_timing": "Diástole temprana",
-    "acquisition_key": "Trazar la pendiente descendente de E hasta la línea basal.",
-    "alternate_windows": []
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "ivrt_meas",
@@ -1063,13 +825,7 @@
       "ivrt_term"
     ],
     "source_page": 6,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Apical",
-    "preferred_view": "A5C o A3C",
-    "modality": "Doppler pulsado o continuo entre flujo de salida y entrada",
-    "acquisition_timing": "Transición sístole-diástole",
-    "acquisition_key": "Ubicar la muestra para registrar simultáneamente cierre aórtico y apertura mitral cuando sea posible.",
-    "alternate_windows": []
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "e_septal_meas",
@@ -1090,13 +846,7 @@
       "tdi"
     ],
     "source_page": 6,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Apical",
-    "preferred_view": "A4C",
-    "modality": "Doppler tisular pulsado",
-    "acquisition_timing": "Diástole temprana",
-    "acquisition_key": "Muestra en el anillo septal, haz paralelo al movimiento longitudinal.",
-    "alternate_windows": []
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "e_lateral_meas",
@@ -1117,13 +867,7 @@
       "tdi"
     ],
     "source_page": 6,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Apical",
-    "preferred_view": "A4C",
-    "modality": "Doppler tisular pulsado",
-    "acquisition_timing": "Diástole temprana",
-    "acquisition_key": "Muestra en el anillo lateral, evitando pared basal adyacente.",
-    "alternate_windows": []
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "relacion_e_e_promedio",
@@ -1146,13 +890,7 @@
       "e_prima_term"
     ],
     "source_page": 6,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Derivada",
-    "preferred_view": "A4C",
-    "modality": "Doppler pulsado + tisular; cálculo",
-    "acquisition_timing": "Diástole",
-    "acquisition_key": "Usar E transmitral y e’ septal/lateral del mismo estudio y condiciones hemodinámicas.",
-    "alternate_windows": []
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "velocidad_it_diastology",
@@ -1173,13 +911,7 @@
       "cw_doppler"
     ],
     "source_page": 6,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Múltiples",
-    "preferred_view": "A4C enfocada en VD; RV inflow; PSAX; subcostal",
-    "modality": "Doppler continuo guiado por color",
-    "acquisition_timing": "Sístole",
-    "acquisition_key": "Registrar el sobre completo de mayor velocidad entre todas las ventanas disponibles.",
-    "alternate_windows": []
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "lavi_diastology",
@@ -1200,13 +932,7 @@
       "indexed"
     ],
     "source_page": 6,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Derivada",
-    "preferred_view": "A4C + A2C",
-    "modality": "2D; cálculo",
-    "acquisition_timing": "Fin de sístole",
-    "acquisition_key": "Usar vistas auriculares dedicadas no acortadas.",
-    "alternate_windows": []
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "la_strain_diastology",
@@ -1226,13 +952,7 @@
       "speckle_tracking"
     ],
     "source_page": 6,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Apical",
-    "preferred_view": "A4C + A2C",
-    "modality": "Speckle tracking 2D",
-    "acquisition_timing": "Ciclo completo",
-    "acquisition_key": "Asegurar seguimiento de pared auricular y referencia temporal estandarizada.",
-    "alternate_windows": []
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "diametro_basal_vd",
@@ -1254,13 +974,7 @@
       "a4c"
     ],
     "source_page": 7,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Apical",
-    "preferred_view": "A4C enfocada en VD",
-    "modality": "2D",
-    "acquisition_timing": "Fin de diástole",
-    "acquisition_key": "Maximizar el VD sin foreshortening y medir basalmente de endocardio a endocardio.",
-    "alternate_windows": []
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "diametro_medio_vd",
@@ -1282,13 +996,7 @@
       "a4c"
     ],
     "source_page": 7,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Apical",
-    "preferred_view": "A4C enfocada en VD",
-    "modality": "2D",
-    "acquisition_timing": "Fin de diástole",
-    "acquisition_key": "Medir perpendicular al eje largo a nivel medio.",
-    "alternate_windows": []
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "rv_length",
@@ -1309,13 +1017,7 @@
       "foreshortening"
     ],
     "source_page": 7,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Apical",
-    "preferred_view": "A4C enfocada en VD",
-    "modality": "2D",
-    "acquisition_timing": "Fin de diástole",
-    "acquisition_key": "Medir desde el plano del anillo tricuspídeo al ápex verdadero del VD.",
-    "alternate_windows": []
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "relacion_vd_vi",
@@ -1337,15 +1039,7 @@
       "vi_term"
     ],
     "source_page": 7,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Apical",
-    "preferred_view": "A4C enfocada en VD",
-    "modality": "2D; cálculo",
-    "acquisition_timing": "Fin de diástole",
-    "acquisition_key": "Medir ambos diámetros en el mismo cuadro y plano.",
-    "alternate_windows": [
-      "Subcostal 4C para evaluación cualitativa en paciente crítico."
-    ]
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "grosor_pared_vd",
@@ -1366,15 +1060,7 @@
       "plax"
     ],
     "source_page": 7,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Subcostal",
-    "preferred_view": "Subcostal 4C o eje largo de VD",
-    "modality": "2D o modo M",
-    "acquisition_timing": "Fin de diástole",
-    "acquisition_key": "Medir la pared libre anteromedial perpendicularmente; excluir grasa epicárdica.",
-    "alternate_windows": [
-      "PLAX enfocada en pared anterior del VD si la subcostal es deficiente."
-    ]
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "tapse_meas",
@@ -1395,13 +1081,7 @@
       "modo_m"
     ],
     "source_page": 7,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Apical",
-    "preferred_view": "A4C enfocada en VD",
-    "modality": "Modo M",
-    "acquisition_timing": "Sístole",
-    "acquisition_key": "Alinear el cursor con la dirección de desplazamiento del anillo tricuspídeo lateral.",
-    "alternate_windows": []
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "s_prima_vd",
@@ -1423,13 +1103,7 @@
       "tdi"
     ],
     "source_page": 7,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Apical",
-    "preferred_view": "A4C enfocada en VD",
-    "modality": "Doppler tisular pulsado",
-    "acquisition_timing": "Sístole",
-    "acquisition_key": "Muestra en anillo lateral, alineada con el movimiento longitudinal.",
-    "alternate_windows": []
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "fac_vd_meas",
@@ -1450,13 +1124,7 @@
       "vd_term"
     ],
     "source_page": 7,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Apical",
-    "preferred_view": "A4C enfocada en VD",
-    "modality": "2D; planimetría",
-    "acquisition_timing": "Fin de diástole y fin de sístole",
-    "acquisition_key": "Trazar endocardio desde anillo lateral a septal, incluyendo trabeculaciones en la cavidad y excluyendo TSVD.",
-    "alternate_windows": []
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "fevd_3d",
@@ -1476,13 +1144,7 @@
       "fevd_term"
     ],
     "source_page": 7,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Apical",
-    "preferred_view": "A4C enfocada en VD, volumen completo",
-    "modality": "3D",
-    "acquisition_timing": "Varios ciclos o un latido según equipo",
-    "acquisition_key": "Incluir todo el VD y TSVD, evitando stitching y pérdida de pared libre.",
-    "alternate_windows": []
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "strain_rv",
@@ -1503,13 +1165,7 @@
       "speckle_tracking"
     ],
     "source_page": 7,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Apical",
-    "preferred_view": "A4C enfocada en VD",
-    "modality": "Speckle tracking 2D",
-    "acquisition_timing": "Ciclo completo",
-    "acquisition_key": "Optimizar pared libre y frecuencia de cuadro; verificar seguimiento basal, medio y apical.",
-    "alternate_windows": []
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "indice_tei_vd",
@@ -1530,13 +1186,7 @@
       "indice_tei_term"
     ],
     "source_page": 7,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Apical / paraesternal",
-    "preferred_view": "A4C para TDI; RV inflow + PSAX/RVOT para PW",
-    "modality": "Doppler tisular o pulsado",
-    "acquisition_timing": "Ciclo completo",
-    "acquisition_key": "Para TDI, medir intervalos en el anillo tricuspídeo lateral; para PW, integrar tiempos de inflow y outflow.",
-    "alternate_windows": []
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "vti_tsvd_meas",
@@ -1558,15 +1208,7 @@
       "pw_doppler"
     ],
     "source_page": 7,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Paraesternal izquierda",
-    "preferred_view": "PSAX a nivel de grandes vasos / RVOT",
-    "modality": "Doppler pulsado",
-    "acquisition_timing": "Sístole",
-    "acquisition_key": "Muestra en el TSVD proximal a la válvula pulmonar, con el haz paralelo al flujo.",
-    "alternate_windows": [
-      "Subcostal eje corto del RVOT cuando la ventana paraesternal es limitada."
-    ]
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "paat_tsvd",
@@ -1587,15 +1229,7 @@
       "paat_term"
     ],
     "source_page": 7,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Paraesternal izquierda",
-    "preferred_view": "PSAX a nivel de grandes vasos / RVOT",
-    "modality": "Doppler pulsado",
-    "acquisition_timing": "Sístole",
-    "acquisition_key": "Usar el mismo espectro del VTI del TSVD y medir desde inicio de flujo hasta el pico.",
-    "alternate_windows": [
-      "Subcostal eje corto del RVOT."
-    ]
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "tapse_pasp_ratio",
@@ -1617,13 +1251,7 @@
       "pasp_term"
     ],
     "source_page": 7,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Derivada",
-    "preferred_view": "A4C enfocada en VD + mejor ventana de IT",
-    "modality": "Modo M + Doppler continuo; cálculo",
-    "acquisition_timing": "Sístole",
-    "acquisition_key": "Combinar TAPSE y PASP obtenidos en condiciones hemodinámicas similares.",
-    "alternate_windows": []
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "area_ad_meas",
@@ -1644,13 +1272,7 @@
       "a4c"
     ],
     "source_page": 7,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Apical",
-    "preferred_view": "A4C enfocada en VD/AD",
-    "modality": "2D; planimetría",
-    "acquisition_timing": "Fin de sístole",
-    "acquisition_key": "Trazar desde anillo tricuspídeo y excluir entradas venosas y orejuela.",
-    "alternate_windows": []
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "longitud_ad",
@@ -1671,13 +1293,7 @@
       "a4c"
     ],
     "source_page": 7,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Apical",
-    "preferred_view": "A4C enfocada en VD/AD",
-    "modality": "2D",
-    "acquisition_timing": "Fin de sístole",
-    "acquisition_key": "Medir eje mayor auricular desde el centro del anillo al techo.",
-    "alternate_windows": []
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "diametro_menor_ad",
@@ -1698,13 +1314,7 @@
       "a4c"
     ],
     "source_page": 7,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Apical",
-    "preferred_view": "A4C enfocada en VD/AD",
-    "modality": "2D",
-    "acquisition_timing": "Fin de sístole",
-    "acquisition_key": "Medir perpendicular al eje largo en el punto de mayor ancho.",
-    "alternate_windows": []
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "diametro_vci_meas",
@@ -1725,15 +1335,7 @@
       "subcostal"
     ],
     "source_page": 7,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Subcostal",
-    "preferred_view": "Eje largo de VCI",
-    "modality": "2D; modo M opcional",
-    "acquisition_timing": "Máximo diámetro, usualmente espiración",
-    "acquisition_key": "Visualizar varios centímetros de VCI y medir 1-2 cm proximal a la unión con AD, evitando el ostium de vena hepática.",
-    "alternate_windows": [
-      "Transhepática derecha lateral; vista transversal para confirmar el diámetro máximo."
-    ]
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "colapsabilidad_vci_meas",
@@ -1754,15 +1356,7 @@
       "vci_term"
     ],
     "source_page": 7,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Subcostal",
-    "preferred_view": "Eje largo de VCI",
-    "modality": "2D cine o modo M",
-    "acquisition_timing": "Ciclo respiratorio",
-    "acquisition_key": "Registrar respiración espontánea normal y, si procede, inspiración rápida; evitar desplazamiento lateral del vaso.",
-    "alternate_windows": [
-      "Vista transversal de confirmación."
-    ]
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "distensibilidad_vci_meas",
@@ -1783,13 +1377,7 @@
       "vci_term"
     ],
     "source_page": 7,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Subcostal",
-    "preferred_view": "Eje largo de VCI",
-    "modality": "2D cine o modo M",
-    "acquisition_timing": "Ciclo ventilatorio",
-    "acquisition_key": "Documentar modo ventilatorio, volumen corriente y PEEP; evitar aplicar umbrales universales.",
-    "alternate_windows": []
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "presion_ad_estimada_meas",
@@ -1812,13 +1400,7 @@
       "colapsabilidad_vci_term"
     ],
     "source_page": 7,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Derivada",
-    "preferred_view": "Subcostal eje largo de VCI",
-    "modality": "2D + integración",
-    "acquisition_timing": "Ciclo respiratorio",
-    "acquisition_key": "Integrar diámetro y colapso; considerar ventilación, presión abdominal, embarazo y atletismo.",
-    "alternate_windows": []
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "gradiente_vd_ad",
@@ -1839,13 +1421,7 @@
       "it_term"
     ],
     "source_page": 8,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Múltiples",
-    "preferred_view": "Mejor sobre de IT: A4C VD, RV inflow, PSAX o subcostal",
-    "modality": "Doppler continuo",
-    "acquisition_timing": "Sístole",
-    "acquisition_key": "Usar el mayor valor de una señal completa y bien alineada.",
-    "alternate_windows": []
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "pasp_meas",
@@ -1870,13 +1446,7 @@
       "presion_ad_term"
     ],
     "source_page": 8,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Combinada",
-    "preferred_view": "Mejor ventana de IT + VCI subcostal",
-    "modality": "Doppler continuo + estimación de RAP",
-    "acquisition_timing": "Sístole",
-    "acquisition_key": "Confirmar ausencia de obstrucción pulmonar significativa y sumar presión AD estimada.",
-    "alternate_windows": []
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "presion_media_pulmonar",
@@ -1899,15 +1469,7 @@
       "presion_ad_term"
     ],
     "source_page": 8,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Paraesternal izquierda",
-    "preferred_view": "PSAX grandes vasos / RVOT",
-    "modality": "Doppler continuo guiado por color",
-    "acquisition_timing": "Protodiástole",
-    "acquisition_key": "Alinear con el jet de insuficiencia pulmonar y medir la velocidad temprana.",
-    "alternate_windows": [
-      "Subcostal RVOT si la alineación es mejor."
-    ]
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "presion_diastolica_pulmonar",
@@ -1929,15 +1491,7 @@
       "presion_ad_term"
     ],
     "source_page": 8,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Paraesternal izquierda",
-    "preferred_view": "PSAX grandes vasos / RVOT",
-    "modality": "Doppler continuo guiado por color",
-    "acquisition_timing": "Fin de diástole",
-    "acquisition_key": "Medir la velocidad de PR al final de la diástole y sumar RAP.",
-    "alternate_windows": [
-      "Subcostal RVOT."
-    ]
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "rvp_ecografica",
@@ -1959,13 +1513,7 @@
       "tsvd_term"
     ],
     "source_page": 8,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Combinada",
-    "preferred_view": "Mejor ventana de IT + PSAX/RVOT",
-    "modality": "Doppler continuo + pulsado; cálculo",
-    "acquisition_timing": "Sístole",
-    "acquisition_key": "Combinar Vmax de IT con VTI del TSVD; no usar VTI del TSVI.",
-    "alternate_windows": []
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "indice_excentricidad_vi",
@@ -1986,15 +1534,7 @@
       "indice_excentricidad_term"
     ],
     "source_page": 8,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Paraesternal izquierda",
-    "preferred_view": "PSAX medio ventricular a nivel de músculos papilares",
-    "modality": "2D",
-    "acquisition_timing": "Fin de sístole y fin de diástole",
-    "acquisition_key": "Medir dos diámetros ortogonales del VI en un corte circular verdadero.",
-    "alternate_windows": [
-      "Subcostal eje corto cuando PSAX es deficiente."
-    ]
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "aplanamiento_septal_meas",
@@ -2015,15 +1555,7 @@
       "indice_excentricidad_term"
     ],
     "source_page": 8,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Paraesternal izquierda",
-    "preferred_view": "PSAX medio ventricular",
-    "modality": "2D cine",
-    "acquisition_timing": "Sístole y diástole",
-    "acquisition_key": "Determinar si el VI adopta forma de D en sístole, diástole o ambas.",
-    "alternate_windows": [
-      "Subcostal eje corto."
-    ]
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "velocidad_max_aortica",
@@ -2044,15 +1576,7 @@
       "cw_doppler"
     ],
     "source_page": 9,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Múltiples",
-    "preferred_view": "A5C/A3C, paraesternal derecha alta y supraesternal",
-    "modality": "Doppler continuo",
-    "acquisition_timing": "Sístole",
-    "acquisition_key": "Interrogar todas las ventanas disponibles y conservar la señal de mayor velocidad con sobre completo.",
-    "alternate_windows": [
-      "Apical; paraesternal derecha; supraesternal."
-    ]
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "gradiente_max_aortico",
@@ -2074,13 +1598,7 @@
       "vmax_aortica_term"
     ],
     "source_page": 9,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Derivada",
-    "preferred_view": "Misma ventana que Vmax aórtica",
-    "modality": "Cálculo desde Doppler continuo",
-    "acquisition_timing": "Sístole",
-    "acquisition_key": "Usar la Vmax más alta técnicamente válida.",
-    "alternate_windows": []
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "gradiente_medio_aortico",
@@ -2101,13 +1619,7 @@
       "vmax_aortica_term"
     ],
     "source_page": 9,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Múltiples",
-    "preferred_view": "Ventana con mayor señal aórtica",
-    "modality": "Doppler continuo; trazado",
-    "acquisition_timing": "Sístole",
-    "acquisition_key": "Trazar el borde denso del espectro completo, excluyendo ruido.",
-    "alternate_windows": []
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "ava_meas",
@@ -2130,13 +1642,7 @@
       "vti_term"
     ],
     "source_page": 9,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Combinada",
-    "preferred_view": "PLAX + A5C/A3C + mejor ventana CW aórtica",
-    "modality": "2D + PW + CW; cálculo",
-    "acquisition_timing": "Sístole",
-    "acquisition_key": "Medir diámetro y VTI del TSVI en sitios concordantes y usar el VTI aórtico de mayor velocidad.",
-    "alternate_windows": []
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "ava_indexed",
@@ -2158,13 +1664,7 @@
       "indexed"
     ],
     "source_page": 9,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Derivada",
-    "preferred_view": "Mismas ventanas que AVA",
-    "modality": "Cálculo",
-    "acquisition_timing": "Después de calcular AVA",
-    "acquisition_key": "No requiere ventana adicional.",
-    "alternate_windows": []
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "dvi_meas",
@@ -2187,13 +1687,7 @@
       "vmax_aortica_term"
     ],
     "source_page": 9,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Combinada",
-    "preferred_view": "A5C/A3C + mejor ventana CW aórtica",
-    "modality": "Doppler pulsado y continuo; cálculo",
-    "acquisition_timing": "Sístole",
-    "acquisition_key": "Usar señales bien alineadas y preferiblemente del mismo estado hemodinámico.",
-    "alternate_windows": []
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "velocidad_tsvi",
@@ -2214,13 +1708,7 @@
       "pw_doppler"
     ],
     "source_page": 9,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Apical",
-    "preferred_view": "A5C o A3C",
-    "modality": "Doppler pulsado",
-    "acquisition_timing": "Sístole",
-    "acquisition_key": "Mover la muestra desde la válvula hacia el ápex hasta desaparecer el clic valvular y obtener flujo laminar.",
-    "alternate_windows": []
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "area_mitral_planimetria",
@@ -2241,13 +1729,7 @@
       "psax"
     ],
     "source_page": 9,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Paraesternal izquierda",
-    "preferred_view": "PSAX a nivel de las puntas mitrales",
-    "modality": "2D zoom",
-    "acquisition_timing": "Máxima apertura en diástole",
-    "acquisition_key": "Barrido fino hasta el orificio mínimo; trazar el borde interno del orificio.",
-    "alternate_windows": []
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "area_mitral_pht",
@@ -2268,13 +1750,7 @@
       "pht_term"
     ],
     "source_page": 9,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Apical",
-    "preferred_view": "A4C",
-    "modality": "Doppler continuo transmitral",
-    "acquisition_timing": "Diástole",
-    "acquisition_key": "Alinear con el flujo mitral y medir PHT en el descenso de la onda E.",
-    "alternate_windows": []
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "gradiente_medio_mitral",
@@ -2295,13 +1771,7 @@
       "cw_doppler"
     ],
     "source_page": 9,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Apical",
-    "preferred_view": "A4C",
-    "modality": "Doppler continuo",
-    "acquisition_timing": "Diástole",
-    "acquisition_key": "Trazar todo el espectro diastólico y documentar frecuencia cardiaca.",
-    "alternate_windows": []
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "pht_meas",
@@ -2321,13 +1791,7 @@
       "pht_term"
     ],
     "source_page": 9,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Apical",
-    "preferred_view": "A4C",
-    "modality": "Doppler continuo",
-    "acquisition_timing": "Diástole temprana",
-    "acquisition_key": "Medir sobre el descenso de E; evitar espectros fusionados o mal alineados.",
-    "alternate_windows": []
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "relacion_vti_mitral_tsvi",
@@ -2347,13 +1811,7 @@
       "vti_term"
     ],
     "source_page": 9,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Combinada",
-    "preferred_view": "A4C para VTI mitral + A5C/A3C para VTI TSVI",
-    "modality": "Doppler pulsado/continuo; cálculo",
-    "acquisition_timing": "Diástole y sístole",
-    "acquisition_key": "Usar trazados completos y condiciones hemodinámicas comparables.",
-    "alternate_windows": []
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "vena_contracta_meas",
@@ -2373,15 +1831,7 @@
       "vena_contracta_term"
     ],
     "source_page": 10,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Dependiente de válvula",
-    "preferred_view": "IM: PLAX/A4C/A2C; IA: PLAX; IT: A4C VD/RV inflow",
-    "modality": "Color Doppler 2D con zoom",
-    "acquisition_timing": "Sístole para IM/IT; diástole para IA",
-    "acquisition_key": "Elegir el plano que corte perpendicularmente la zona más estrecha del jet; reducir sector y optimizar Nyquist.",
-    "alternate_windows": [
-      "Usar varias vistas para jets excéntricos."
-    ]
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "flujo_pisa_meas",
@@ -2401,13 +1851,7 @@
       "pisa_term"
     ],
     "source_page": 10,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Dependiente de válvula",
-    "preferred_view": "IM: apical; IA: PLAX/apical; IT: A4C VD",
-    "modality": "Color Doppler con línea basal desplazada",
-    "acquisition_timing": "Pico de regurgitación",
-    "acquisition_key": "Ampliar la zona de convergencia, medir radio desde el orificio al primer aliasing y documentar Va.",
-    "alternate_windows": []
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "eroa_meas",
@@ -2428,13 +1872,7 @@
       "pisa_term"
     ],
     "source_page": 10,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Combinada",
-    "preferred_view": "Vista PISA + mejor CW del jet",
-    "modality": "Color Doppler + Doppler continuo; cálculo",
-    "acquisition_timing": "Mismo momento del ciclo",
-    "acquisition_key": "Relacionar el radio PISA con la velocidad instantánea/peak correspondiente y un CW completo.",
-    "alternate_windows": []
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "volumen_regurgitante_meas",
@@ -2456,13 +1894,7 @@
       "eroa_term"
     ],
     "source_page": 10,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Derivada",
-    "preferred_view": "Mismas vistas que EROA y VTI del jet",
-    "modality": "Cálculo",
-    "acquisition_timing": "Ciclo completo del jet",
-    "acquisition_key": "Usar el VTI del mismo jet y válvula.",
-    "alternate_windows": []
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "fraccion_regurgitante_meas",
@@ -2484,13 +1916,7 @@
       "volumen_regurgitante_term"
     ],
     "source_page": 10,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Derivada",
-    "preferred_view": "Datos volumétricos combinados",
-    "modality": "Cálculo",
-    "acquisition_timing": "Después de obtener volúmenes",
-    "acquisition_key": "No requiere ventana adicional; depende de la exactitud de todos los componentes.",
-    "alternate_windows": []
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "insuficiencia_mitral_severa_meas",
@@ -2513,13 +1939,7 @@
       "volumen_regurgitante_term"
     ],
     "source_page": 10,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Múltiples",
-    "preferred_view": "PLAX, A4C, A2C, A3C; venas pulmonares",
-    "modality": "2D, color, PW y CW",
-    "acquisition_timing": "Sístole",
-    "acquisition_key": "Evaluar mecanismo, jet, VC/PISA, CW y repercusión; flujo venoso pulmonar desde A4C.",
-    "alternate_windows": []
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "insuficiencia_aortica_severa_meas",
@@ -2541,15 +1961,7 @@
       "pht_term"
     ],
     "source_page": 10,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Múltiples",
-    "preferred_view": "PLAX para VC; A5C/A3C para CW; supraesternal para aorta descendente",
-    "modality": "2D, color, PW y CW",
-    "acquisition_timing": "Diástole",
-    "acquisition_key": "Integrar ancho/VC, PISA, PHT y reversión holodiastólica en aorta descendente.",
-    "alternate_windows": [
-      "Subcostal para flujo aórtico abdominal como apoyo."
-    ]
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "insuficiencia_tricuspidea_severa_meas",
@@ -2570,13 +1982,7 @@
       "reversion_sistolica_hepatica_term"
     ],
     "source_page": 10,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Múltiples",
-    "preferred_view": "A4C enfocada en VD, RV inflow, PSAX; venas hepáticas subcostales",
-    "modality": "2D, color, PW y CW",
-    "acquisition_timing": "Sístole",
-    "acquisition_key": "Usar la mejor alineación del jet y buscar reversión sistólica en venas hepáticas.",
-    "alternate_windows": []
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "derrame_pericardico_pequeno",
@@ -2595,13 +2001,7 @@
       "derrame_pericardico_term"
     ],
     "source_page": 10,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Múltiples",
-    "preferred_view": "PLAX, PSAX, A4C y subcostal",
-    "modality": "2D",
-    "acquisition_timing": "Fin de diástole",
-    "acquisition_key": "Medir perpendicularmente la separación máxima y describir localización; confirmar en más de una ventana.",
-    "alternate_windows": []
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "derrame_pericardico_moderado",
@@ -2620,13 +2020,7 @@
       "derrame_pericardico_term"
     ],
     "source_page": 10,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Múltiples",
-    "preferred_view": "PLAX, PSAX, A4C y subcostal",
-    "modality": "2D",
-    "acquisition_timing": "Fin de diástole",
-    "acquisition_key": "Confirmar distribución y medir en el sitio de mayor separación.",
-    "alternate_windows": []
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "derrame_pericardico_grande",
@@ -2645,13 +2039,7 @@
       "derrame_pericardico_term"
     ],
     "source_page": 10,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Múltiples",
-    "preferred_view": "PLAX, PSAX, A4C y subcostal",
-    "modality": "2D",
-    "acquisition_timing": "Fin de diástole",
-    "acquisition_key": "Evaluar circunferencialidad, loculaciones y signos de repercusión.",
-    "alternate_windows": []
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "colapso_ad_meas",
@@ -2672,15 +2060,7 @@
       "ad_term"
     ],
     "source_page": 10,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Apical / subcostal",
-    "preferred_view": "A4C o subcostal 4C",
-    "modality": "2D cine; modo M opcional",
-    "acquisition_timing": "Sístole",
-    "acquisition_key": "Observar inversión de la pared libre y su duración relativa durante el ciclo.",
-    "alternate_windows": [
-      "PLAX puede complementar según localización del derrame."
-    ]
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "colapso_vd_meas",
@@ -2701,13 +2081,7 @@
       "vd_term"
     ],
     "source_page": 10,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Múltiples",
-    "preferred_view": "PLAX, A4C y subcostal 4C",
-    "modality": "2D cine; modo M opcional",
-    "acquisition_timing": "Diástole temprana",
-    "acquisition_key": "Identificar inversión de la pared libre inmediatamente después de apertura mitral.",
-    "alternate_windows": []
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "variacion_mitral_respiratoria",
@@ -2728,13 +2102,7 @@
       "onda_e_term"
     ],
     "source_page": 10,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Apical",
-    "preferred_view": "A4C",
-    "modality": "Doppler pulsado",
-    "acquisition_timing": "Varios ciclos respiratorios",
-    "acquisition_key": "Muestra en puntas mitrales; registrar inspiración y espiración sin mover la muestra.",
-    "alternate_windows": []
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "variacion_tricuspidea_respiratoria",
@@ -2754,13 +2122,7 @@
       "variacion_respiratoria_trantricuspidea_term"
     ],
     "source_page": 10,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Apical",
-    "preferred_view": "A4C enfocada en VD",
-    "modality": "Doppler pulsado",
-    "acquisition_timing": "Varios ciclos respiratorios",
-    "acquisition_key": "Muestra en puntas tricuspídeas; registrar variación con respiración.",
-    "alternate_windows": []
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "vci_pletorica_meas",
@@ -2781,13 +2143,7 @@
       "vci_term"
     ],
     "source_page": 10,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Subcostal",
-    "preferred_view": "Eje largo de VCI",
-    "modality": "2D cine",
-    "acquisition_timing": "Ciclo respiratorio",
-    "acquisition_key": "Medir diámetro y colapso 1-2 cm de la AD.",
-    "alternate_windows": []
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "movimiento_pendular_meas",
@@ -2807,12 +2163,6 @@
       "movimiento_pendular_term"
     ],
     "source_page": 10,
-    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Múltiples",
-    "preferred_view": "Subcostal 4C, A4C y PLAX",
-    "modality": "2D cine",
-    "acquisition_timing": "Varios ciclos",
-    "acquisition_key": "Documentar movimiento global dentro del saco pericárdico; no usar como criterio aislado.",
-    "alternate_windows": []
+    "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   }
 ]
