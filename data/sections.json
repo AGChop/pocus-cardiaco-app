@@ -1,0 +1,134 @@
+[
+  {
+    "id": "lv_systolic",
+    "number": 1,
+    "slug": "ventriculo-izquierdo-dimensiones-funcion-sistolica",
+    "title": "Ventrículo izquierdo: dimensiones y función sistólica",
+    "short_title": "Ventrículo izquierdo",
+    "description": "Mediciones de tamaño y función sistólica global y longitudinal del VI.",
+    "clinical_warning": "",
+    "order": 1,
+    "enabled": true
+  },
+  {
+    "id": "lv_geometry",
+    "number": 2,
+    "slug": "grosor-masa-geometria-vi",
+    "title": "Grosor, masa y geometría del ventrículo izquierdo",
+    "short_title": "Grosor y Masa del VI",
+    "description": "Evaluación del grosor de las paredes, la masa miocárdica indexada y el patrón geométrico del VI.",
+    "clinical_warning": "",
+    "order": 2,
+    "enabled": true
+  },
+  {
+    "id": "stroke_volume_output",
+    "number": 3,
+    "slug": "volumen-sistolico-gasto-cardiaco-flujo-tsvi",
+    "title": "Volumen sistólico, gasto cardiaco y flujo del TSVI",
+    "short_title": "Gasto Cardiaco",
+    "description": "Cálculo del volumen latido, gasto cardiaco, resistencias vasculares periféricas y respuesta a fluidos.",
+    "clinical_warning": "",
+    "order": 3,
+    "enabled": true
+  },
+  {
+    "id": "left_atrium",
+    "number": 4,
+    "slug": "auricula-izquierda",
+    "title": "Aurícula izquierda",
+    "short_title": "Aurícula izquierda",
+    "description": "Diámetros, volúmenes indexados (LAVI) y deformación miocárdica (strain) de la aurícula izquierda.",
+    "clinical_warning": "",
+    "order": 4,
+    "enabled": true
+  },
+  {
+    "id": "lv_diastolic",
+    "number": 5,
+    "slug": "funcion-diastolica-ventriculo-izquierdo",
+    "title": "Función diastólica del ventrículo izquierdo",
+    "short_title": "Función Diastólica",
+    "description": "Evaluación integrada de las presiones de llenado y relajación del VI mediante Doppler y velocidades tisulares.",
+    "clinical_warning": "No clasificar la función diastólica utilizando una sola variable. Debe realizarse integración multiparamétrica.",
+    "order": 5,
+    "enabled": true
+  },
+  {
+    "id": "rv_systolic",
+    "number": 6,
+    "slug": "ventriculo-derecho-tamano-funcion-sistolica",
+    "title": "Ventrículo derecho: tamaño y función sistólica",
+    "short_title": "Ventrículo derecho",
+    "description": "Dimensiones basales y medias del VD, y estimación de su función longitudinal y global.",
+    "clinical_warning": "La función del ventrículo derecho requiere evaluación multiparamétrica.",
+    "order": 6,
+    "enabled": true
+  },
+  {
+    "id": "ra_ivc",
+    "number": 7,
+    "slug": "auricula-derecha-vena-cava-inferior-presion-auricular",
+    "title": "Aurícula derecha, vena cava inferior y presión auricular derecha",
+    "short_title": "Aurícula derecha y VCI",
+    "description": "Medición del área de la AD y valoración del diámetro y colapsabilidad de la VCI para estimar la presión auricular derecha.",
+    "clinical_warning": "No aplicar directamente los criterios de respiración espontánea a pacientes con ventilación mecánica.",
+    "order": 7,
+    "enabled": true
+  },
+  {
+    "id": "pulmonary_hemodynamics",
+    "number": 8,
+    "slug": "presion-pulmonar-hemodinamica-derecha",
+    "title": "Presión pulmonar y hemodinámica derecha",
+    "short_title": "Presión Pulmonar",
+    "description": "Estimación no invasiva de la presión sistólica, media y diastólica pulmonar, y resistencia vascular pulmonar.",
+    "clinical_warning": "La ecografía estima probabilidad, presiones y repercusión. La confirmación hemodinámica invasiva puede ser necesaria.",
+    "order": 8,
+    "enabled": true
+  },
+  {
+    "id": "aortic_valve_lvot",
+    "number": 9,
+    "slug": "valvula-aortica-tracto-salida-ventriculo-izquierdo",
+    "title": "Válvula aórtica y tracto de salida del ventrículo izquierdo",
+    "short_title": "Válvula aórtica",
+    "description": "Velocidades, gradientes, área valvular aórtica por continuidad e índice adimensional.",
+    "clinical_warning": "",
+    "order": 9,
+    "enabled": true
+  },
+  {
+    "id": "mitral_valve",
+    "number": 10,
+    "slug": "valvula-mitral",
+    "title": "Válvula mitral",
+    "short_title": "Válvula mitral",
+    "description": "Área valvular mitral por planimetría o PHT, gradiente medio y tiempos de caída de presión.",
+    "clinical_warning": "",
+    "order": 10,
+    "enabled": true
+  },
+  {
+    "id": "valvular_regurgitation",
+    "number": 11,
+    "slug": "insuficiencias-valvulares",
+    "title": "Insuficiencias valvulares",
+    "short_title": "Insuficiencias valvulares",
+    "description": "Cuantificación de las insuficiencias mitral, aórtica y tricuspídea mediante vena contracta, EROA y volumen regurgitante.",
+    "clinical_warning": "La severidad valvular debe establecerse mediante integración de múltiples parámetros.",
+    "order": 11,
+    "enabled": true
+  },
+  {
+    "id": "pericardium_tamponade",
+    "number": 12,
+    "slug": "pericardio-signos-ecograficos-taponamiento",
+    "title": "Pericardio y signos ecográficos de taponamiento",
+    "short_title": "Pericardio y Taponamiento",
+    "description": "Graduación del derrame pericárdico y detección de signos mecánicos y respiratorios de compromiso de llenado.",
+    "clinical_warning": "El taponamiento cardiaco es un diagnóstico clínico y hemodinámico. El tamaño del derrame no determina por sí solo el compromiso.",
+    "order": 12,
+    "enabled": true
+  }
+]

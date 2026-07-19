@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "skill": "FEVI visual y, cuando sea posible, Simpson biplano.",
+    "source_page": 11
+  },
+  {
+    "id": 2,
+    "skill": "VTI del TSVI, volumen sistólico, gasto cardiaco e índice cardiaco.",
+    "source_page": 11
+  },
+  {
+    "id": 3,
+    "skill": "Tamaño y función del VD: relación VD/VI, TAPSE, s' y FAC.",
+    "source_page": 11
+  },
+  {
+    "id": 4,
+    "skill": "Velocidad de insuficiencia tricuspídea y estimación de PASP.",
+    "source_page": 11
+  },
+  {
+    "id": 5,
+    "skill": "VCI y estimación de presión auricular derecha.",
+    "source_page": 11
+  },
+  {
+    "id": 6,
+    "skill": "E/A, e', E/e' y LAVI para evaluación diastólica integrada.",
+    "source_page": 11
+  },
+  {
+    "id": 7,
+    "skill": "Velocidad máxima y gradientes de la válvula aórtica.",
+    "source_page": 11
+  },
+  {
+    "id": 8,
+    "skill": "Búsqueda y graduación integrada de insuficiencias valvulares.",
+    "source_page": 11
+  },
+  {
+    "id": 9,
+    "skill": "Derrame pericárdico y signos ecográficos de taponamiento.",
+    "source_page": 11
+  },
+  {
+    "id": 10,
+    "skill": "Alteraciones segmentarias de contractilidad y respuesta dinámica del VTI.",
+    "source_page": 11
+  }
+]

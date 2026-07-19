@@ -1,0 +1,172 @@
+[
+  {
+    "abbreviation": "AD / RA",
+    "meaning": "Aurícula derecha / right atrium",
+    "source_page": 12
+  },
+  {
+    "abbreviation": "AI / LA",
+    "meaning": "Aurícula izquierda / left atrium",
+    "source_page": 12
+  },
+  {
+    "abbreviation": "A4C / A2C",
+    "meaning": "Apical cuatro cámaras / apical dos cámaras",
+    "source_page": 12
+  },
+  {
+    "abbreviation": "AVA",
+    "meaning": "Área valvular aórtica",
+    "source_page": 12
+  },
+  {
+    "abbreviation": "DVI",
+    "meaning": "Índice adimensional",
+    "source_page": 12
+  },
+  {
+    "abbreviation": "EROA",
+    "meaning": "Área efectiva del orificio regurgitante",
+    "source_page": 12
+  },
+  {
+    "abbreviation": "FAC",
+    "meaning": "Cambio fraccional de área",
+    "source_page": 12
+  },
+  {
+    "abbreviation": "FEVI / LVEF",
+    "meaning": "Fracción de eyección del ventrículo izquierdo",
+    "source_page": 12
+  },
+  {
+    "abbreviation": "FEVD / RVEF",
+    "meaning": "Fracción de eyección del ventrículo derecho",
+    "source_page": 12
+  },
+  {
+    "abbreviation": "GLS",
+    "meaning": "Strain longitudinal global",
+    "source_page": 12
+  },
+  {
+    "abbreviation": "IT / TR",
+    "meaning": "Insuficiencia tricuspídea / tricuspid regurgitation",
+    "source_page": 12
+  },
+  {
+    "abbreviation": "IVRT",
+    "meaning": "Tiempo de relajación isovolumétrica",
+    "source_page": 12
+  },
+  {
+    "abbreviation": "LAVI",
+    "meaning": "Índice de volumen auricular izquierdo",
+    "source_page": 12
+  },
+  {
+    "abbreviation": "MAPSE",
+    "meaning": "Excursión sistólica del plano del anillo mitral",
+    "source_page": 12
+  },
+  {
+    "abbreviation": "PAAT / AccT",
+    "meaning": "Tiempo de aceleración de la arteria pulmonar/TSVD",
+    "source_page": 12
+  },
+  {
+    "abbreviation": "PASP",
+    "meaning": "Presión sistólica de la arteria pulmonar",
+    "source_page": 12
+  },
+  {
+    "abbreviation": "PHT",
+    "meaning": "Tiempo de hemipresión",
+    "source_page": 12
+  },
+  {
+    "abbreviation": "PISA",
+    "meaning": "Área de superficie de isovelocidad proximal",
+    "source_page": 12
+  },
+  {
+    "abbreviation": "PLAX / PSAX",
+    "meaning": "Eje largo / eje corto paraesternal",
+    "source_page": 12
+  },
+  {
+    "abbreviation": "PR",
+    "meaning": "Insuficiencia pulmonar",
+    "source_page": 12
+  },
+  {
+    "abbreviation": "PSVD / RVSP",
+    "meaning": "Presión sistólica del ventrículo derecho",
+    "source_page": 12
+  },
+  {
+    "abbreviation": "RAP",
+    "meaning": "Presión auricular derecha",
+    "source_page": 12
+  },
+  {
+    "abbreviation": "RVP / PVR",
+    "meaning": "Resistencia vascular pulmonar",
+    "source_page": 12
+  },
+  {
+    "abbreviation": "RVS / SVR",
+    "meaning": "Resistencia vascular sistémica",
+    "source_page": 12
+  },
+  {
+    "abbreviation": "RWT",
+    "meaning": "Grosor relativo de pared",
+    "source_page": 12
+  },
+  {
+    "abbreviation": "TAPSE",
+    "meaning": "Excursión sistólica del plano del anillo tricuspídeo",
+    "source_page": 12
+  },
+  {
+    "abbreviation": "TSVD / RVOT",
+    "meaning": "Tracto de salida del ventrículo derecho",
+    "source_page": 12
+  },
+  {
+    "abbreviation": "TSVI / LVOT",
+    "meaning": "Tracto de salida del ventrículo izquierdo",
+    "source_page": 12
+  },
+  {
+    "abbreviation": "VC",
+    "meaning": "Vena contracta",
+    "source_page": 12
+  },
+  {
+    "abbreviation": "VCI / IVC",
+    "meaning": "Vena cava inferior",
+    "source_page": 12
+  },
+  {
+    "abbreviation": "VD / RV",
+    "meaning": "Ventrículo derecho",
+    "source_page": 12
+  },
+  {
+    "abbreviation": "VI / LV",
+    "meaning": "Ventrículo izquierdo",
+    "source_page": 12
+  },
+  {
+    "abbreviation": "VTI",
+    "meaning": "Integral velocidad-tiempo",
+    "source_page": 12
+  },
+  {
+    "abbreviation": "WMSI",
+    "meaning": "Índice de puntuación de movilidad parietal",
+    "source_page": 12
+  }
+]

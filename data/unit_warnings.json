@@ -1,0 +1,57 @@
+[
+  {
+    "parameter": "Masa del VI",
+    "warning": "DTDVI, IVSd y PWTd deben estar en cm antes de aplicar la fórmula.",
+    "source_page": 3
+  },
+  {
+    "parameter": "Área del TSVI",
+    "warning": "El diámetro debe estar en cm. El área queda en cm².",
+    "source_page": 3
+  },
+  {
+    "parameter": "Volumen sistólico",
+    "warning": "Área en cm² x VTI en cm = cm³, equivalente a mL.",
+    "source_page": 3
+  },
+  {
+    "parameter": "Gasto cardiaco",
+    "warning": "VS en mL x FC / 1000 = L/min.",
+    "source_page": 3
+  },
+  {
+    "parameter": "Bernoulli",
+    "warning": "Velocidad en m/s: ΔP = 4V² produce mmHg.",
+    "source_page": 3
+  },
+  {
+    "parameter": "PISA / EROA",
+    "warning": "Radio en cm y velocidades en unidades consistentes.",
+    "source_page": 3
+  },
+  {
+    "parameter": "RVP ecográfica",
+    "warning": "Debe emplearse VTI del TSVD/RVOT, no VTI del TSVI/LVOT.",
+    "source_page": 3
+  },
+  {
+    "parameter": "Strain",
+    "warning": "Los valores son negativos: un valor menos negativo indica menor deformación.",
+    "source_page": 3
+  },
+  {
+    "parameter": "Señal Doppler",
+    "warning": "No utilizar una señal Doppler incompleta o desalineada.",
+    "source_page": 3
+  },
+  {
+    "parameter": "VCI en Ventilación",
+    "warning": "No extrapolar criterios de VCI de respiración espontánea a ventilación mecánica.",
+    "source_page": 3
+  },
+  {
+    "parameter": "Verificación general",
+    "warning": "Confirmar ventana, unidad, momento del ciclo y alineación Doppler antes de aceptar un resultado.",
+    "source_page": 3
+  }
+]

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POCUS Cardíaco - Glosario y Mediciones</title>
+    <!-- Importar tipografía moderna Outfit de Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Enlace al archivo de estilos CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    
+    <!-- Configuración para PWA (Manifiesto e iOS) -->
+    <link rel="manifest" href="manifest.webmanifest">
+    <meta name="theme-color" content="#1e3a8a">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="POCUS Cardíaco">
+    <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Cabecera principal con Logotipo de Fusión Biomédica Profesional -->
+        <header style="position: relative; text-align: center; padding: 1rem 0 0.5rem 0;">
+            <div style="position: absolute; right: 0.5rem; top: 0.5rem; z-index: 10;">
+                <select id="theme-select" aria-label="Seleccionar tema visual" style="padding: 0.25rem 0.5rem; border-radius: 6px; border: 1px solid var(--border-light); font-size: 0.8rem; background-color: var(--card-bg-light); color: var(--text-main-light); cursor: pointer;">
+                    <option value="auto">🌓 Auto</option>
+                    <option value="light">☀️ Claro</option>
+                    <option value="dark">🌙 Oscuro</option>
+                </select>
+            </div>
+            
+            <!-- Logotipo Profesional Adaptable (Retorno a Inicio) -->
+            <div class="header-logo" style="margin: 0 auto; max-width: 250px; width: 100%; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.08));">
+                <a href="#/" aria-label="Volver al inicio" style="display: block; text-decoration: none;">
+                    <img src="assets/images/pocus_fusion_branding.png" alt="POCUS Cardíaco - Glosario y banco de mediciones" style="width: 100%; height: auto; display: block; border-radius: 12px; border: 2px solid var(--border-light); transition: filter 0.3s; background-color: #ffffff;" class="brand-logo-img">
+                </a>
+            </div>
+        </header>
+
+        <!-- Descargo de Responsabilidad de Seguridad Clínica -->
+        <div class="safety-banner" role="alert">
+            <strong>Aviso de seguridad clínica:</strong> Esta herramienta es educativa y de consulta rápida. 
+            No sustituye un ecocardiograma formal, la valoración clínica, las guías vigentes ni el juicio 
+            de un profesional capacitado.
+        </div>
+
+        <!-- Barra de Búsqueda Global -->
+        <div class="search-container">
+            <input type="text" id="global-search" placeholder="🔍 Buscar FEVI, e', longitud VD, Simpson..." aria-label="Buscar en la aplicación">
+            <button id="clear-search" aria-label="Limpiar búsqueda" style="display: none;">&times;</button>
+        </div>
+
+        <!-- Sección de Contenido Principal -->
+        <main id="app-content">
+            <div class="main-nav">
+                <a href="#/glosario" class="nav-card">
+                    <h2>Glosario de Términos</h2>
+                    <p>Definición de parámetros, ventanas de adquisición y vocabulario clínico de POCUS.</p>
+                </a>
+                <a href="#/mediciones" class="nav-card">
+                    <h2>Banco de Mediciones</h2>
+                    <p>12 secciones con valores normales, fórmulas y puntos de corte ecocardiográficos.</p>
+                </a>
+            </div>
+        </main>
+
+        <!-- Pie de página -->
+        <footer>
+            <p>&copy; 2026 POCUS Cardíaco. Versión Inicial Mínima.</p>
+            <p>Desarrollado por Medicina Interna del HSRA - Dr. García R.</p>
+        </footer>
+    </div>
+
+    <!-- Enlaces a los archivos de JavaScript de la aplicación -->
+    <script src="assets/js/data-loader.js"></script>
+    <script src="assets/js/storage.js"></script>
+    <script src="assets/js/theme.js"></script>
+    <script src="assets/js/search.js"></script>
+    <script src="assets/js/router.js"></script>
+    <script src="assets/js/app.js"></script>
+</body>
+</html>

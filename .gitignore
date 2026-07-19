@@ -1,0 +1,16 @@
+# Entorno virtual de Python
+.venv/
+venv/
+ENV/
+
+# Caché de ejecución de Python y pruebas
+__pycache__/
+.pytest_cache/
+*.pyc
+
+# Archivos temporales de sistema (macOS)
+.DS_Store
+
+# Archivos del sistema IDE Antigravity
+.agents/
+.gemini/

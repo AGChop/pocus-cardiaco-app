@@ -1,0 +1,74 @@
+[
+  {
+    "id": "fevi_class",
+    "name": "Clasificación de la FEVI",
+    "items": [
+      {
+        "range": ">70-75%",
+        "category": "FEVI hiperdinámica",
+        "method": "Estimación visual o Simpson"
+      },
+      {
+        "range": "53-73%",
+        "category": "FEVI normal",
+        "method": "Simpson biplano"
+      },
+      {
+        "range": "41-52%",
+        "category": "FEVI levemente reducida",
+        "method": "Simpson biplano"
+      },
+      {
+        "range": "30-40%",
+        "category": "FEVI moderadamente reducida",
+        "method": "Simpson biplano"
+      },
+      {
+        "range": "<30%",
+        "category": "FEVI severamente reducida",
+        "method": "Simpson biplano"
+      }
+    ],
+    "source_page": 11
+  },
+  {
+    "id": "as_severe_class",
+    "name": "Estenosis aórtica severa",
+    "items": [
+      {
+        "parameter": "Vmax",
+        "threshold": "≥4 m/s"
+      },
+      {
+        "parameter": "Gradiente medio",
+        "threshold": "≥40 mmHg"
+      },
+      {
+        "parameter": "AVA",
+        "threshold": "≤1,0 cm²"
+      },
+      {
+        "parameter": "DVI",
+        "threshold": "<0,25"
+      }
+    ],
+    "note": "Integración de Vmax, gradiente medio, AVA y DVI.",
+    "source_page": 11
+  },
+  {
+    "id": "ms_severe_class",
+    "name": "Estenosis mitral severa",
+    "items": [
+      {
+        "parameter": "Área mitral",
+        "threshold": "<1,0 cm²"
+      },
+      {
+        "parameter": "Gradiente medio",
+        "threshold": ">10 mmHg a FC 60-80 lpm"
+      }
+    ],
+    "note": "Integración de área y gradiente a FC conocida.",
+    "source_page": 11
+  }
+]

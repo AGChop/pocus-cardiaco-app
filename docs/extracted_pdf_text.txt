@@ -1,0 +1,589 @@
+--- PÁGINA 1 ---
+POCUS cardiaco en adultos - Documento de referencia clínica
+Mediciones fundamentales en POCUS cardiaco | Página 1
+MEDICIONES FUNDAMENTALES
+EN POCUS CARDIACO
+Guía práctica de fórmulas, métodos, valores de referencia y glosario clínico
+Adultos | POCUS cardiaco básico y avanzado
+Alcance: Documento educativo de referencia rápida. Los valores deben interpretarse según edad, sexo, superficie corporal, ritmo, ventilación, precarga, poscarga y calidad de imagen. Una 
+medición aislada no sustituye la integración clínica ni un ecocardiograma formal cuando esté indicado.
+Versión revisada: Se mejoraron las notas de unidades, se aclararon limitaciones de las fórmulas y se añadió un glosario de todos los parámetros al final. Revisión: julio de 2026.
+
+--- PÁGINA 2 ---
+POCUS cardiaco en adultos - Documento de referencia clínica
+Mediciones fundamentales en POCUS cardiaco | Página 2
+Cómo utilizar esta guía
+ Utilice las tablas como referencia para adquisición, cálculo e interpretación inicial.
+ Verifique siempre la unidad esperada antes de introducir datos en una calculadora.
+ Indexe por superficie corporal cuando el parámetro lo requiera.
+ Integre múltiples parámetros para función diastólica, ventrículo derecho, valvulopatías y taponamiento.
+ Consulte el glosario final para una definición práctica de cada abreviatura y medición.
+Seguridad clínica: Esta herramienta es educativa y de apoyo al cálculo. No sustituye un ecocardiograma formal, la valoración clínica, las guías vigentes ni el juicio de un profesional 
+capacitado.
+Índice de contenidos
+Sección Contenido
+1 Ventrículo izquierdo: dimensiones y función sistólica
+2 Grosor, masa y geometría del VI
+3 Volumen sistólico, gasto cardiaco y flujo del TSVI
+4 Aurícula izquierda
+5 Función diastólica del VI
+6 Ventrículo derecho: tamaño y función sistólica
+7 Aurícula derecha, VCI y presión AD
+8 Presión pulmonar y hemodinámica derecha
+9 Válvula aórtica y TSVI
+10 Válvula mitral
+11 Insuficiencias valvulares
+12 Pericardio y taponamiento
+13 Clasificaciones prácticas
+14 Conjunto mínimo para el operador POCUS
+15 Lista de abreviaturas
+16 Glosario clínico de parámetros
+17 Referencias principales
+
+--- PÁGINA 3 ---
+POCUS cardiaco en adultos - Documento de referencia clínica
+Mediciones fundamentales en POCUS cardiaco | Página 3
+Notas críticas de unidades y fórmulas
+Parámetro Precaución
+Masa del VI DTDVI, IVSd y PWTd deben estar en cm antes de aplicar la fórmula.
+Área del TSVI El diámetro debe estar en cm. El área queda en cm².
+Volumen sistólico Área en cm² x VTI en cm = cm³, equivalente a mL.
+Gasto cardiaco VS en mL x FC / 1000 = L/min.
+Bernoulli Velocidad en m/s: ΔP = 4V² produce mmHg.
+PISA / EROA Radio en cm y velocidades en unidades consistentes.
+RVP ecográfica Debe emplearse VTI del TSVD/RVOT, no VTI del TSVI/LVOT.
+Strain Los valores son negativos: un valor menos negativo indica menor deformación.
+Errores frecuentes que deben evitarse
+ Introducir milímetros en fórmulas que requieren centímetros.
+ Calcular gasto cardiaco sin convertir mL/min a L/min.
+ Usar una señal Doppler incompleta o desalineada.
+ Interpretar strain como un número positivo: los valores longitudinales suelen expresarse con signo negativo.
+ Aplicar reglas de VCI de respiración espontánea a ventilación mecánica.
+ Diagnosticar disfunción diastólica, hipertensión pulmonar, valvulopatía severa o taponamiento con un único parámetro.
+ Usar VTI del TSVI en la fórmula de RVP: la fórmula ecográfica utiliza VTI del TSVD/RVOT.
+Regla de oro: Antes de aceptar un resultado, confirme ventana, momento del ciclo cardiaco, unidad, alineación Doppler y coherencia con el resto del estudio.
+
+--- PÁGINA 4 ---
+POCUS cardiaco en adultos - Documento de referencia clínica
+Mediciones fundamentales en POCUS cardiaco | Página 4
+1. Ventrículo izquierdo: dimensiones y función sistólica
+Medición Fórmula o método Valores normales / punto de corte Interpretación y limitaciones
+DTDVI / LVIDd PLAX, perpendicular al eje largo, al final de la diástole. Hombres 42-58 mm; mujeres 38-52 mm. Cuantifica el tamaño lineal del VI. Confirmar que el corte no 
+sea oblicuo.
+DTSVI / LVIDs PLAX, al final de la sístole. Hombres 25-40 mm; mujeres 22-35 mm. Útil junto con el DTDVI para calcular la fracción de 
+acortamiento.
+VTDVI Simpson biplano en A4C y A2C. Hombres 62-150 mL; mujeres 46-106 mL. Evitar foreshortening y excluir músculos papilares de la 
+cavidad.
+VTDVI indexado VTDVI / superficie corporal. Hombres 34-74 mL/m²; mujeres 29-61 mL/m². Preferible para comparar entre pacientes de distinto 
+tamaño corporal.
+VTSVI Simpson biplano al final de la sístole. Hombres 21-61 mL; mujeres 14-42 mL. Depende de contractilidad y condiciones de carga.
+VTSVI indexado VTSVI / superficie corporal. Hombres 11-31 mL/m²; mujeres 8-24 mL/m². Permite cuantificación ajustada por superficie corporal.
+FEVI [(VTDVI - VTSVI) / VTDVI] x 100. 53-73%; límite inferior: hombres 52%, mujeres 54%. Integrar con contractilidad regional, carga y calidad de 
+imagen.
+Fracción de acortamiento [(DTDVI - DTSVI) / DTDVI] x 100. 25-45%. Solo refleja acortamiento radial en un plano; pierde 
+precisión con alteraciones segmentarias.
+EPSS Distancia entre el punto E de la valva mitral anterior y el 
+septo en modo M. ≤7 mm; >10 mm sugiere disfunción sistólica. No usar de forma aislada; puede alterarse por enfermedad 
+mitral o dilatación del VI.
+MAPSE Excursión sistólica longitudinal del anillo mitral. Habitualmente ≥10-12 mm. Marcador sencillo de función longitudinal del VI.
+s' mitral Doppler tisular del anillo mitral. Septal ≥7 cm/s; lateral ≥9-10 cm/s. Depende de edad, alineación Doppler y función 
+longitudinal.
+GLS del VI [(Longitud sistólica - longitud diastólica) / longitud diastólica] 
+x 100.
+Aprox. -18% a -22%; menos negativo que -16% suele ser 
+anormal.
+Los valores son negativos; comparar idealmente con el 
+mismo equipo/software.
+WMSI Suma de puntuaciones segmentarias / número de 
+segmentos evaluados. 1,0 cuando todos los segmentos son normales. Aumenta con mayor extensión o severidad de alteraciones 
+regionales.
+Nota: los rangos son orientativos para adultos y deben integrarse con el contexto clínico y la calidad de adquisición.
+2. Grosor, masa y geometría del ventrículo izquierdo
+Medición Fórmula o método Valores normales / punto de corte Interpretación y limitaciones
+Septum diastólico (IVSd) PLAX, fin de diástole. Hombres 6-10 mm; mujeres 6-9 mm. Medir perpendicular al eje largo y evitar incluir estructuras 
+del VD.
+Pared posterior (PWTd) PLAX, fin de diástole. Hombres 6-10 mm; mujeres 6-9 mm. Medición lineal de la pared inferolateral posterior.
+Grosor relativo de pared (RWT) 2 x PWTd / DTDVI. ≤0,42. Distingue geometría concéntrica de excéntrica; es 
+adimensional.
+Masa del VI 0,8 x 1,04 x [(DTDVI + IVSd + PWTd)³ - DTDVI³] + 0,6 g. Debe indexarse por superficie corporal. La fórmula requiere dimensiones en centímetros; convertir 
+desde milímetros antes de calcular.
+Índice de masa del VI Masa VI / superficie corporal. Hombres ≤115 g/m²; mujeres ≤95 g/m². Permite clasificar hipertrofia del VI junto con el RWT.
+Geometría del VI Integración de índice de masa VI y RWT. Normal, remodelado concéntrico, hipertrofia concéntrica o 
+hipertrofia excéntrica.
+No es una medición aislada, sino una clasificación 
+derivada.
+Nota: los rangos son orientativos para adultos y deben integrarse con el contexto clínico y la calidad de adquisición.
+
+--- PÁGINA 5 ---
+POCUS cardiaco en adultos - Documento de referencia clínica
+Mediciones fundamentales en POCUS cardiaco | Página 5
+3. Volumen sistólico, gasto cardiaco y flujo del TSVI
+Medición Fórmula o método Valores normales / punto de corte Interpretación y limitaciones
+Área del TSVI π x (diámetro TSVI / 2)² = 0,785 x diámetro². Depende del diámetro. Usar diámetro en cm; el error se eleva al cuadrado.
+VTI del TSVI Doppler pulsado justo proximal a la válvula aórtica. Aprox. 18-22 cm. El trazado debe incluir todo el espectro sistólico y estar 
+alineado con el flujo.
+Volumen sistólico Área TSVI x VTI TSVI. Aprox. 60-100 mL/latido. Con área en cm² y VTI en cm, el resultado equivale a mL.
+Índice de volumen sistólico Volumen sistólico / superficie corporal. 35-65 mL/m²; bajo flujo ≤35 mL/m². Útil para identificar estados de bajo flujo.
+Gasto cardiaco (Volumen sistólico en mL x frecuencia cardiaca) / 1000. Aprox. 4-8 L/min. Promediar varios ciclos si existe arritmia.
+Índice cardiaco Gasto cardiaco / superficie corporal. Aprox. 2,5-4,0 L/min/m². Ajusta el gasto cardiaco al tamaño corporal.
+Cambio de VTI tras elevación pasiva de piernas [(VTI posterior - VTI basal) / VTI basal] x 100. Aumento ≥10-15% sugiere respuesta a precarga. Requiere mediciones consecutivas en el mismo sitio y 
+condiciones estables.
+RVS 80 x (PAM - presión AD) / gasto cardiaco. Aprox. 800-1200 dyn·s·cm ⁵.⁻ Usar gasto cardiaco en L/min y presiones en mmHg.
+IRVS 80 x (PAM - presión AD) / índice cardiaco. Aprox. 1970-2390 dyn·s·cm ⁵·m².⁻ Índice ajustado por superficie corporal.
+Nota: los rangos son orientativos para adultos y deben integrarse con el contexto clínico y la calidad de adquisición.
+4. Aurícula izquierda
+Medición Fórmula o método Valores normales / punto de corte Interpretación y limitaciones
+Diámetro anteroposterior de AI PLAX al final de la sístole ventricular. Aprox. 27-40 mm. Menos representativo que el volumen porque la dilatación 
+auricular no es simétrica.
+Volumen de AI Simpson biplano o método área-longitud. Debe indexarse. Medir al final de la sístole, antes de la apertura mitral.
+LAVI Volumen AI / superficie corporal. ≤34 mL/m². Refleja exposición crónica a presiones de llenado elevadas, 
+con excepciones clínicas.
+Dilatación de AI Clasificación según LAVI. Leve 35-41; moderada 42-48; severa >48 mL/m². La interpretación debe considerar fibrilación auricular y 
+enfermedad valvular.
+Strain reservorio de AI Speckle tracking durante la fase de reservorio. Habitualmente >18-23%; ≤18% es anormal. Dependiente del software y de la calidad del seguimiento 
+miocárdico.
+Nota: los rangos son orientativos para adultos y deben integrarse con el contexto clínico y la calidad de adquisición.
+
+--- PÁGINA 6 ---
+POCUS cardiaco en adultos - Documento de referencia clínica
+Mediciones fundamentales en POCUS cardiaco | Página 6
+5. Función diastólica del ventrículo izquierdo
+Medición Fórmula o método Valores normales / punto de corte Interpretación y limitaciones
+Onda E mitral Doppler pulsado en puntas de las valvas mitrales. Frecuentemente 50-100 cm/s; dependiente de edad y 
+carga. Representa el llenado ventricular temprano.
+Onda A mitral Doppler pulsado transmitral durante la contracción 
+auricular. Variable con edad y carga; ausente en fibrilación auricular. No interpretar si no existe contracción auricular organizada.
+Relación E/A Velocidad E / velocidad A. Aprox. 0,8-2,0; dependiente de edad. No diagnostica por sí sola el grado de disfunción diastólica.
+Tiempo de desaceleración de E Desde el pico E hasta la extrapolación a la línea basal. Aprox. 160-240 ms. Se acorta con llenado restrictivo y puede prolongarse con 
+relajación alterada.
+IVRT Intervalo entre cierre aórtico y apertura mitral. Aprox. 70-100 ms. Depende de frecuencia cardiaca y presiones de 
+relajación/llenado.
+e' septal Doppler tisular en el anillo mitral septal. Valor reducido sugiere relajación alterada; usar umbrales 
+ajustados por edad y guía.
+No usar aislado; puede alterarse por enfermedad regional o 
+cirugía.
+e' lateral Doppler tisular en el anillo mitral lateral. Valor reducido sugiere relajación alterada; usar umbrales 
+ajustados por edad y guía. Sensible a alineación y movimiento de traslación.
+E/e' promedio E / promedio de e' septal y lateral. >14 sugiere presión de llenado elevada. Interpretación multiparamétrica; valores intermedios son 
+indeterminados.
+Velocidad máxima de IT Doppler continuo del jet de insuficiencia tricuspídea. <2,8 m/s como referencia tradicional; integrar con guía 
+vigente y otros signos.
+Una señal incompleta o mal alineada subestima la 
+velocidad.
+LAVI en diastología Volumen AI / superficie corporal. ≤34 mL/m². Marcador de carga crónica, no de cambios agudos 
+aislados.
+Strain reservorio de AI en diastología Speckle tracking auricular. >18% orienta a función conservada; ≤18% apoya 
+disfunción/presión AI elevada.
+Complementario; no reemplaza el algoritmo 
+multiparamétrico.
+Nota: los rangos son orientativos para adultos y deben integrarse con el contexto clínico y la calidad de adquisición.
+Función diastólica: No clasificar la función diastólica con una sola variable. Integrar patrón transmitral, velocidades e', E/e', LAVI, velocidad de IT, strain auricular y contexto clínico.
+
+--- PÁGINA 7 ---
+POCUS cardiaco en adultos - Documento de referencia clínica
+Mediciones fundamentales en POCUS cardiaco | Página 7
+6. Ventrículo derecho: tamaño y función sistólica
+Medición Fórmula o método Valores normales / punto de corte Interpretación y limitaciones
+Diámetro basal del VD A4C enfocada en VD, fin de diástole. ≤41 mm. Medir en el tercio basal máximo, perpendicular al eje largo.
+Diámetro medio del VD A4C enfocada en VD, fin de diástole. ≤35 mm. Medir a nivel medio de la cavidad.
+Longitud del VD Anillo tricuspídeo al ápex. ≤83 mm. Evitar acortamiento apical.
+Relación VD/VI Diámetro basal VD / diámetro basal VI. <0,6-0,7; ≥1 indica dilatación importante. Útil como estimación rápida; depende del plano y de la 
+carga.
+Grosor de pared libre del VD Subcostal o PLAX, fin de diástole. ≤5 mm. Evitar incluir grasa epicárdica o trabeculaciones.
+TAPSE Modo M del anillo tricuspídeo lateral. >17 mm. Mide función longitudinal; es dependiente de ángulo y 
+carga.
+s' del VD Doppler tisular del anillo tricuspídeo lateral. >9,5 cm/s. Marcador de velocidad sistólica longitudinal basal.
+FAC del VD [(Área diastólica - área sistólica) / área diastólica] x 100. >35%. Incluye contracción longitudinal y radial, pero no el TSVD.
+FEVD 3D [(VTDVD - VTSVD) / VTDVD] x 100. >45%. Requiere adquisición 3D adecuada; no suele ser POCUS 
+básico.
+Strain de pared libre del VD Promedio de tres segmentos de pared libre. Más negativo que -20%. No incluir septo si se informa strain de pared libre.
+Índice de Tei del VD (Tiempo cierre-apertura - tiempo de eyección) / tiempo de 
+eyección. <0,40 por Doppler pulsado; <0,55 por TDI. Índice combinado de función sistólica y diastólica; 
+dependiente de carga y ritmo.
+VTI del TSVD Doppler pulsado justo proximal a la válvula pulmonar. >18 cm. Refleja eyección derecha y se usa en cálculos de 
+volumen/PVR.
+PAAT / AccT del TSVD Inicio del flujo pulmonar hasta la velocidad máxima. >105 ms. Se acorta con aumento de poscarga pulmonar; depende de 
+frecuencia cardiaca.
+TAPSE/PASP TAPSE en mm / PASP en mmHg. >0,4-0,55 mm/mmHg. Estimación no invasiva del acoplamiento VD-arteria 
+pulmonar.
+Nota: los rangos son orientativos para adultos y deben integrarse con el contexto clínico y la calidad de adquisición.
+7. Aurícula derecha, vena cava inferior y presión auricular derecha
+Medición Fórmula o método Valores normales / punto de corte Interpretación y limitaciones
+Área de AD Planimetría en A4C al final de la sístole. ≤18 cm². Evitar incluir venas cavas, seno coronario y apéndice.
+Longitud de AD Techo de AD al centro del anillo tricuspídeo. ≤53 mm. Medición longitudinal en A4C.
+Diámetro menor de AD Perpendicular al eje mayor. ≤44 mm. Medición transversal en A4C.
+Diámetro de VCI Subcostal, 1-2 cm de la unión con AD. ≤2,1 cm. Interpretar junto con la variación respiratoria.
+Colapsabilidad de VCI [(VCI espiratoria - VCI inspiratoria) / VCI espiratoria] x 100. >50% en respiración espontánea. No extrapolar directamente a ventilación mecánica.
+Distensibilidad de VCI [(VCI máxima - VCI mínima) / VCI mínima] x 100. Sin punto universal; depende de condiciones ventilatorias. La utilidad disminuye con respiración espontánea, bajo 
+volumen corriente o hipertensión abdominal.
+Presión AD estimada VCI ≤2,1 cm y colapso >50%: 3 mmHg; VCI >2,1 cm y 
+colapso <50%: 15 mmHg; intermedio: 8 mmHg. 3, 8 o 15 mmHg según patrón. Es una estimación; pierde precisión con ventilación positiva 
+y otros estados.
+Nota: los rangos son orientativos para adultos y deben integrarse con el contexto clínico y la calidad de adquisición.
+
+--- PÁGINA 8 ---
+POCUS cardiaco en adultos - Documento de referencia clínica
+Mediciones fundamentales en POCUS cardiaco | Página 8
+8. Presión pulmonar y hemodinámica derecha
+Medición Fórmula o método Valores normales / punto de corte Interpretación y limitaciones
+Gradiente VD-AD 4 x velocidad máxima de IT². Depende de la velocidad. Aplicar Bernoulli con velocidad en m/s para obtener mmHg.
+PSVD / PASP 4 x VIT² + presión AD. Habitualmente <35 mmHg. PASP equivale a PSVD solo sin obstrucción 
+pulmonar/TSVD significativa.
+Presión media pulmonar por PR 4 x velocidad protodiastólica de PR² + presión AD. <20 mmHg. La definición hemodinámica de hipertensión pulmonar 
+requiere confirmación invasiva.
+Presión diastólica pulmonar 4 x velocidad telediastólica de PR² + presión AD. Aprox. <15 mmHg. Depende de una señal adecuada de insuficiencia 
+pulmonar.
+RVP ecográfica [(Vmax IT / VTI del TSVD) x 10] + 0,16. Normal <1,5 UW; >2 UW es anormal. Corrección importante: usa VTI del TSVD/RVOT, no VTI 
+del TSVI. No sustituye cateterismo derecho.
+Índice de excentricidad del VI Diámetro paralelo al septo / diámetro perpendicular. Aprox. 1,0. Aplanamiento sistólico sugiere sobrecarga de presión; 
+diastólico, sobrecarga de volumen.
+Aplanamiento septal Evaluación cualitativa en eje corto. Ausente normalmente. Interpretar la fase del ciclo en que aparece.
+Nota: los rangos son orientativos para adultos y deben integrarse con el contexto clínico y la calidad de adquisición.
+Hipertensión pulmonar: Una PASP elevada no implica necesariamente RVP elevada. La ecografía estima probabilidad y repercusión; el diagnóstico y la clasificación definitivos requieren 
+hemodinámica invasiva cuando esté indicada.
+
+--- PÁGINA 9 ---
+POCUS cardiaco en adultos - Documento de referencia clínica
+Mediciones fundamentales en POCUS cardiaco | Página 9
+9. Válvula aórtica y tracto de salida del VI
+Medición Fórmula o método Valores normales / punto de corte Interpretación y limitaciones
+Velocidad máxima aórtica Doppler continuo desde múltiples ventanas. <2,0 m/s. Usar la ventana con mayor velocidad y buena alineación.
+Gradiente máximo aórtico 4 x Vmax². <16 mmHg. Gradiente instantáneo máximo; no equivale al gradiente 
+pico-pico invasivo.
+Gradiente medio aórtico Integración de gradientes instantáneos durante la eyección. <10-15 mmHg. Depende del flujo y de la frecuencia cardiaca.
+Área valvular aórtica (AVA) (Área TSVI x VTI TSVI) / VTI aórtico. Aprox. 3-4 cm²; claramente normal >2 cm². La medición del diámetro TSVI es la mayor fuente de error.
+AVA indexada AVA / superficie corporal. >0,85 cm²/m². Ayuda en pacientes de tamaño corporal extremo.
+Índice adimensional (DVI) VTI TSVI / VTI aórtico o Vmax TSVI / Vmax aórtica. >0,50. Evita medir el diámetro TSVI; <0,25 apoya estenosis 
+severa.
+Velocidad del TSVI Doppler pulsado proximal a la válvula aórtica. Aprox. 0,7-1,1 m/s. La muestra debe colocarse antes de la zona de 
+aceleración.
+Nota: los rangos son orientativos para adultos y deben integrarse con el contexto clínico y la calidad de adquisición.
+10. Válvula mitral
+Medición Fórmula o método Valores normales / punto de corte Interpretación y limitaciones
+Área valvular mitral por planimetría Planimetría directa en eje corto al nivel de las puntas. Aprox. 4-6 cm². Preferible cuando el plano es perpendicular al orificio.
+Área mitral por PHT 220 / PHT. >4 cm². Puede ser inexacta tras valvuloplastia, con cambios de 
+compliance o insuficiencia aórtica.
+Gradiente medio mitral Doppler continuo con trazado diastólico. <2-3 mmHg. Reportar frecuencia cardiaca porque el gradiente depende 
+del flujo y la diástole.
+PHT Tiempo para que el gradiente transmitral inicial se reduzca 
+a la mitad. <50-60 ms. Se prolonga con estenosis mitral, pero depende de 
+compliance.
+Relación VTI mitral/VTI TSVI VTI mitral / VTI TSVI. <1,0-1,3. Puede apoyar la evaluación de obstrucción o regurgitación 
+en contexto adecuado.
+Nota: los rangos son orientativos para adultos y deben integrarse con el contexto clínico y la calidad de adquisición.
+
+--- PÁGINA 10 ---
+POCUS cardiaco en adultos - Documento de referencia clínica
+Mediciones fundamentales en POCUS cardiaco | Página 10
+11. Insuficiencias valvulares: fórmulas y puntos de corte
+Medición Fórmula o método Valores normales / punto de corte Interpretación y limitaciones
+Vena contracta (VC) Ancho de la porción más estrecha del jet inmediatamente 
+distal al orificio.
+Depende de la válvula; IM severa ≥7 mm, IA severa >6 
+mm, IT severa ≥7 mm. Evitar usarla aislada en orificios múltiples o no circulares.
+Flujo PISA 2πr² x velocidad de aliasing. Sin valor normal único. Radio en cm y velocidad de aliasing en cm/s producen flujo 
+en mL/s.
+EROA (2πr² x Va) / velocidad máxima regurgitante. Depende de la válvula. Usar velocidades en las mismas unidades; integrar con 
+otros parámetros.
+Volumen regurgitante EROA x VTI del jet regurgitante. Depende de la válvula. Con EROA en cm² y VTI en cm, el resultado es mL.
+Fracción regurgitante (Volumen regurgitante / volumen sistólico total) x 100. Sin regurgitación significativa en condiciones normales. Es la proporción del volumen sistólico que regresa a la 
+cavidad proximal.
+Insuficiencia mitral severa Integración multiparamétrica. VC ≥7 mm; EROA ≥0,40 cm²; VR ≥60 mL; FR ≥50%. La etiología primaria o secundaria puede modificar la 
+interpretación.
+Insuficiencia aórtica severa Integración multiparamétrica. VC >6 mm; EROA ≥0,30 cm²; VR ≥60 mL; FR ≥50%; PHT 
+<200 ms.
+Confirmar con reversión holodiastólica y repercusión 
+ventricular.
+Insuficiencia tricuspídea severa Integración multiparamétrica. VC ≥7 mm; EROA ≥0,40 cm²; VR ≥45 mL; reversión 
+sistólica hepática.
+Las categorías masiva y torrencial pueden requerir 
+esquemas ampliados.
+Nota: los rangos son orientativos para adultos y deben integrarse con el contexto clínico y la calidad de adquisición.
+12. Pericardio y signos ecográficos de taponamiento
+Medición Fórmula o método Valores normales / punto de corte Interpretación y limitaciones
+Derrame pericárdico pequeño Separación eco-libre máxima en diástole. <10 mm. La distribución puede ser circunferencial o loculada.
+Derrame pericárdico moderado Separación máxima. 10-20 mm. El tamaño no determina por sí solo la repercusión 
+hemodinámica.
+Derrame pericárdico grande Separación máxima. >20 mm. Puede existir sin taponamiento si se acumula lentamente.
+Colapso de AD Colapso sistólico de la pared de AD. Ausente normalmente. La duración del colapso aumenta su especificidad.
+Colapso de VD Colapso diastólico temprano de la pared libre. Ausente normalmente. Puede no aparecer con hipertensión pulmonar o presión 
+derecha elevada.
+Variación mitral respiratoria Cambio respiratorio de la velocidad E mitral. Normal <25%. Mayor variación apoya interacción ventricular exagerada en 
+el contexto adecuado.
+Variación tricuspídea respiratoria Cambio respiratorio de la velocidad E tricuspídea. Normal <40%. Interpretar según patrón respiratorio y ventilación.
+VCI pletórica VCI >2,1 cm con escaso colapso. No es normal; apoya presión AD elevada. Es sensible, pero poco específica para taponamiento.
+Movimiento pendular del corazón Movimiento global dentro de un derrame grande. Ausente normalmente. Puede asociarse a alternancia eléctrica, pero no es 
+requisito diagnóstico.
+Nota: los rangos son orientativos para adultos y deben integrarse con el contexto clínico y la calidad de adquisición.
+
+--- PÁGINA 11 ---
+POCUS cardiaco en adultos - Documento de referencia clínica
+Mediciones fundamentales en POCUS cardiaco | Página 11
+13. Clasificaciones prácticas
+Clasificación Método Punto de corte orientativo
+FEVI hiperdinámica Estimación visual o Simpson. >70-75%.
+FEVI normal Simpson biplano. 53-73%.
+FEVI levemente reducida Simpson biplano. 41-52%.
+FEVI moderadamente reducida Simpson biplano. 30-40%.
+FEVI severamente reducida Simpson biplano. <30%.
+Estenosis aórtica severa Integración de Vmax, gradiente medio, AVA y DVI. Vmax ≥4 m/s; gradiente medio ≥40 mmHg; AVA ≤1,0 cm²; DVI <0,25.
+Estenosis mitral severa Integración de área y gradiente a FC conocida. Área <1,0 cm²; gradiente medio >10 mmHg a FC 60-80 lpm.
+14. Conjunto mínimo que debe dominar el operador POCUS
+1. FEVI visual y, cuando sea posible, Simpson biplano.
+2. VTI del TSVI, volumen sistólico, gasto cardiaco e índice cardiaco.
+3. Tamaño y función del VD: relación VD/VI, TAPSE, s' y FAC.
+4. Velocidad de insuficiencia tricuspídea y estimación de PASP.
+5. VCI y estimación de presión auricular derecha.
+6. E/A, e', E/e' y LAVI para evaluación diastólica integrada.
+7. Velocidad máxima y gradientes de la válvula aórtica.
+8. Búsqueda y graduación integrada de insuficiencias valvulares.
+9. Derrame pericárdico y signos ecográficos de taponamiento.
+10. Alteraciones segmentarias de contractilidad y respuesta dinámica del VTI.
+Principio de integración: La función diastólica, la función del VD, la hipertensión pulmonar, la severidad valvular y el taponamiento no deben definirse mediante una sola medición.
+
+--- PÁGINA 12 ---
+POCUS cardiaco en adultos - Documento de referencia clínica
+Mediciones fundamentales en POCUS cardiaco | Página 12
+15. Lista de abreviaturas
+Abreviatura Significado Abreviatura Significado
+AD / RA Aurícula derecha / right atrium AI / LA Aurícula izquierda / left atrium
+A4C / A2C Apical cuatro cámaras / apical dos cámaras AVA Área valvular aórtica
+DVI Índice adimensional EROA Área efectiva del orificio regurgitante
+FAC Cambio fraccional de área FEVI / LVEF Fracción de eyección del ventrículo izquierdo
+FEVD / RVEF Fracción de eyección del ventrículo derecho GLS Strain longitudinal global
+IT / TR Insuficiencia tricuspídea / tricuspid regurgitation IVRT Tiempo de relajación isovolumétrica
+LAVI Índice de volumen auricular izquierdo MAPSE Excursión sistólica del plano del anillo mitral
+PAAT / AccT Tiempo de aceleración de la arteria pulmonar/TSVD PASP Presión sistólica de la arteria pulmonar
+PHT Tiempo de hemipresión PISA Área de superficie de isovelocidad proximal
+PLAX / PSAX Eje largo / eje corto paraesternal PR Insuficiencia pulmonar
+PSVD / RVSP Presión sistólica del ventrículo derecho RAP Presión auricular derecha
+RVP / PVR Resistencia vascular pulmonar RVS / SVR Resistencia vascular sistémica
+RWT Grosor relativo de pared TAPSE Excursión sistólica del plano del anillo tricuspídeo
+TSVD / RVOT Tracto de salida del ventrículo derecho TSVI / LVOT Tracto de salida del ventrículo izquierdo
+VC Vena contracta VCI / IVC Vena cava inferior
+VD / RV Ventrículo derecho VI / LV Ventrículo izquierdo
+VTI Integral velocidad-tiempo WMSI Índice de puntuación de movilidad parietal
+
+--- PÁGINA 13 ---
+POCUS cardiaco en adultos - Documento de referencia clínica
+Mediciones fundamentales en POCUS cardiaco | Página 13
+16. Glosario clínico de parámetros
+El glosario conserva la clasificación clínica de las tablas y define qué representa cada parámetro, cómo se obtiene y cuál es su utilidad práctica.
+Ventrículo izquierdo
+Parámetro / término Definición Adquisición, utilidad o limitación
+A4C / A2C Vistas apicales de cuatro y dos cámaras. Se utilizan para Simpson biplano, volumen auricular y evaluación 
+segmentaria.
+DTDVI / LVIDd Diámetro interno del ventrículo izquierdo al final de la diástole. Representa el tamaño lineal del VI cuando se encuentra con mayor 
+llenado.
+DTSVI / LVIDs Diámetro interno del ventrículo izquierdo al final de la sístole. Refleja el tamaño residual del VI después de la contracción.
+VTDVI Volumen telediastólico del VI. Volumen contenido en el VI antes de la eyección; es el denominador de la 
+FEVI.
+VTSVI Volumen telesistólico del VI. Volumen que permanece en el VI después de la eyección.
+FEVI Fracción de eyección del ventrículo izquierdo. Porcentaje del VTDVI expulsado en cada latido; mide función sistólica 
+global, no contractilidad pura.
+Fracción de acortamiento Porcentaje de reducción del diámetro del VI entre diástole y sístole. Es una medición lineal rápida, menos fiable con alteraciones 
+segmentarias.
+EPSS Separación entre el punto E de la valva mitral anterior y el septo 
+interventricular.
+Una distancia aumentada sugiere menor apertura mitral relativa o 
+dilatación/disfunción del VI.
+MAPSE Excursión sistólica del plano del anillo mitral. Cuantifica el desplazamiento longitudinal del anillo hacia el ápex durante la 
+sístole.
+s' mitral Velocidad sistólica del anillo mitral por Doppler tisular. Marcador de la función longitudinal del VI.
+GLS Strain longitudinal global del VI. Porcentaje de deformación longitudinal; valores más negativos 
+representan mayor acortamiento.
+WMSI Índice de puntuación de movilidad parietal. Promedio de la puntuación de los segmentos; 1 es normal y valores 
+mayores indican alteración regional.
+Simpson biplano Método de discos para calcular volúmenes ventriculares desde A4C y 
+A2C.
+Reduce supuestos geométricos, pero exige buena delimitación 
+endocárdica y evitar acortamiento apical.
+Interpretar siempre en conjunto con el resto del estudio y el escenario clínico.
+Grosor, masa y geometría
+Parámetro / término Definición Adquisición, utilidad o limitación
+IVSd Grosor del septo interventricular en diástole. Se usa para calcular masa y valorar hipertrofia.
+PWTd Grosor de la pared posterior del VI en diástole. Junto con IVSd y DTDVI permite calcular masa y RWT.
+RWT Grosor relativo de pared. Relaciona el grosor de pared posterior con el diámetro del VI y define 
+geometría concéntrica.
+Masa del VI Estimación de la cantidad de miocardio del VI. Se calcula con dimensiones lineales; debe indexarse y requiere medidas 
+en cm.
+Índice de masa del VI Masa del VI dividida por superficie corporal. Determina si existe hipertrofia ajustada al tamaño corporal.
+Remodelado concéntrico RWT aumentado con masa VI normal. Describe paredes relativamente gruesas sin cumplir criterios de hipertrofia.
+Hipertrofia concéntrica Masa VI aumentada y RWT aumentado. Patrón frecuente en sobrecarga crónica de presión.
+
+--- PÁGINA 14 ---
+POCUS cardiaco en adultos - Documento de referencia clínica
+Mediciones fundamentales en POCUS cardiaco | Página 14
+Parámetro / término Definición Adquisición, utilidad o limitación
+Hipertrofia excéntrica Masa VI aumentada con RWT normal o bajo. Patrón asociado con dilatación y sobrecarga de volumen.
+Interpretar siempre en conjunto con el resto del estudio y el escenario clínico.
+Flujo y gasto cardiaco
+Parámetro / término Definición Adquisición, utilidad o limitación
+TSVI / LVOT Tracto de salida del ventrículo izquierdo. Zona entre el VI y la válvula aórtica donde se mide diámetro y VTI para 
+calcular volumen sistólico.
+VTI Integral velocidad-tiempo. Distancia sistólica recorrida por una columna de sangre; corresponde al 
+área bajo la curva Doppler.
+Área del TSVI Área transversal calculada a partir del diámetro del TSVI. Se asume circular; pequeños errores del diámetro producen grandes 
+errores del área.
+Volumen sistólico Volumen expulsado por un ventrículo en cada latido. Se calcula como área del tracto de salida por VTI.
+Índice de volumen sistólico Volumen sistólico ajustado por superficie corporal. Permite identificar bajo flujo independientemente del tamaño del paciente.
+Gasto cardiaco Volumen de sangre bombeado por minuto. Producto del volumen sistólico por la frecuencia cardiaca.
+Índice cardiaco Gasto cardiaco ajustado por superficie corporal. Facilita comparación entre pacientes de diferente tamaño.
+Elevación pasiva de piernas Maniobra reversible de autotransfusión. El aumento del VTI tras la maniobra puede sugerir respuesta a precarga.
+RVS Resistencia vascular sistémica. Estimación de la poscarga vascular sistémica a partir de presión y gasto 
+cardiaco.
+IRVS Índice de resistencia vascular sistémica. RVS expresada en relación con el índice cardiaco.
+PAM Presión arterial media. Presión promedio efectiva que impulsa el flujo sistémico durante el ciclo 
+cardiaco.
+Interpretar siempre en conjunto con el resto del estudio y el escenario clínico.
+Aurícula izquierda y diastología
+Parámetro / término Definición Adquisición, utilidad o limitación
+AI Aurícula izquierda. Recibe sangre de las venas pulmonares y contribuye al llenado del VI.
+LAVI Índice de volumen de la aurícula izquierda. Volumen auricular ajustado por superficie corporal; marcador de 
+exposición crónica a presión elevada.
+Onda E Velocidad del llenado mitral temprano. Aumenta o disminuye según relajación, gradiente AI-VI y condiciones de 
+carga.
+Onda A Velocidad del llenado mitral durante contracción auricular. No está presente en fibrilación auricular.
+Relación E/A Cociente entre las ondas E y A. Describe el patrón de llenado, pero cambia con la edad y no debe 
+interpretarse aislado.
+Tiempo de desaceleración de E Tiempo en que la onda E desciende desde su pico hasta la línea basal. Refleja la rapidez de igualación de presiones entre AI y VI.
+IVRT Tiempo de relajación isovolumétrica. Intervalo entre cierre aórtico y apertura mitral, cuando el VI se relaja sin 
+cambiar de volumen.
+e' Velocidad diastólica temprana del anillo mitral por Doppler tisular. Marcador de relajación miocárdica relativamente menos dependiente de 
+precarga que la onda E.
+E/e' Relación entre velocidad transmitral E y velocidad tisular e'. Estimador indirecto de presión de llenado del VI; requiere integración con 
+otros parámetros.
+
+--- PÁGINA 15 ---
+POCUS cardiaco en adultos - Documento de referencia clínica
+Mediciones fundamentales en POCUS cardiaco | Página 15
+Parámetro / término Definición Adquisición, utilidad o limitación
+Strain reservorio de AI Deformación de la AI durante el llenado auricular. Evalúa la capacidad de reservorio y complementa el análisis diastólico.
+Flujo venoso pulmonar Patrón Doppler de las venas pulmonares. Sus ondas sistólica, diastólica y reversa auricular ayudan a estimar presión 
+y función auricular.
+Interpretar siempre en conjunto con el resto del estudio y el escenario clínico.
+Ventrículo derecho y circulación pulmonar
+Parámetro / término Definición Adquisición, utilidad o limitación
+VD Ventrículo derecho. Bombea sangre hacia la circulación pulmonar; su geometría compleja 
+exige evaluación multiparamétrica.
+Relación VD/VI Comparación entre diámetros basales de ambos ventrículos. Una relación elevada sugiere dilatación relativa del VD.
+TAPSE Excursión sistólica del plano del anillo tricuspídeo. Mide desplazamiento longitudinal basal del VD.
+s' del VD Velocidad sistólica tisular del anillo tricuspídeo lateral. Marcador de función longitudinal basal del VD.
+FAC Cambio fraccional de área del VD. Porcentaje de reducción del área del VD desde diástole a sístole.
+FEVD Fracción de eyección del ventrículo derecho. Porcentaje del volumen telediastólico derecho expulsado en sístole.
+Strain de pared libre del VD Deformación longitudinal de los segmentos de la pared libre del VD. Valores más negativos indican mayor acortamiento.
+Índice de Tei / MPI Índice de rendimiento miocárdico. Integra tiempos isovolumétricos y de eyección para reflejar función global.
+TSVD / RVOT Tracto de salida del ventrículo derecho. Zona donde se adquieren el VTI y el tiempo de aceleración pulmonar.
+PAAT / AccT Tiempo de aceleración del flujo pulmonar. Intervalo desde el inicio del flujo en TSVD hasta su velocidad máxima.
+IT / TR Insuficiencia tricuspídea. El jet permite estimar el gradiente VD-AD mediante Bernoulli.
+PR Insuficiencia pulmonar. Las velocidades protodiastólica y telediastólica pueden estimar presiones 
+pulmonares.
+PSVD / RVSP Presión sistólica estimada del VD. Suma del gradiente del jet de IT y la presión AD estimada.
+PASP Presión sistólica de la arteria pulmonar. Se aproxima a la PSVD si no existe obstrucción del TSVD o válvula 
+pulmonar.
+mPAP Presión arterial pulmonar media. La hipertensión pulmonar hemodinámica se define invasivamente; la 
+ecografía estima probabilidad y presiones.
+RVP / PVR Resistencia vascular pulmonar. Poscarga resistiva del VD; la fórmula Doppler usa Vmax IT y VTI del 
+TSVD.
+TAPSE/PASP Relación entre función longitudinal del VD y su poscarga estimada. Marcador no invasivo de acoplamiento VD-arteria pulmonar.
+Índice de excentricidad Relación entre diámetros del VI en eje corto. Cuantifica aplanamiento septal por sobrecarga derecha.
+Interpretar siempre en conjunto con el resto del estudio y el escenario clínico.
+Aurícula derecha y vena cava inferior
+Parámetro / término Definición Adquisición, utilidad o limitación
+AD Aurícula derecha. Recibe el retorno venoso sistémico y participa en el llenado del VD.
+VCI Vena cava inferior. Su diámetro y variación respiratoria se usan para estimar presión AD en 
+condiciones apropiadas.
+Colapsabilidad de VCI Reducción porcentual del diámetro de la VCI durante inspiración 
+espontánea. Mayor colapso suele asociarse con menor presión AD.
+
+--- PÁGINA 16 ---
+POCUS cardiaco en adultos - Documento de referencia clínica
+Mediciones fundamentales en POCUS cardiaco | Página 16
+Parámetro / término Definición Adquisición, utilidad o limitación
+Distensibilidad de VCI Aumento porcentual del diámetro de VCI durante ventilación positiva. Su interpretación depende de modalidad ventilatoria, volumen corriente y 
+presión abdominal.
+Presión AD / RAP Presión de la aurícula derecha. Se estima de forma semicuantitativa con VCI, pero no sustituye medición 
+invasiva.
+Interpretar siempre en conjunto con el resto del estudio y el escenario clínico.
+Válvula aórtica y mitral
+Parámetro / término Definición Adquisición, utilidad o limitación
+Vmax aórtica Velocidad máxima transvalvular aórtica. Se incrementa con estenosis o estados de alto flujo.
+Gradiente máximo Gradiente instantáneo derivado de la Vmax. Se calcula con 4V².
+Gradiente medio Promedio temporal de los gradientes instantáneos durante la eyección. Es un criterio principal para graduar estenosis aórtica.
+AVA Área valvular aórtica. Se calcula por ecuación de continuidad comparando flujo del TSVI y flujo 
+transaórtico.
+DVI Índice de velocidad o índice adimensional. Relación entre flujo del TSVI y flujo aórtico; valores bajos indican 
+obstrucción más severa.
+Área valvular mitral Área anatómica o funcional del orificio mitral. Puede medirse por planimetría o estimarse con PHT.
+PHT Tiempo de hemipresión. Tiempo para que el gradiente transmitral inicial disminuya a la mitad; se 
+usa para estimar área mitral.
+Gradiente mitral medio Promedio del gradiente diastólico a través de la válvula mitral. Depende de frecuencia cardiaca y flujo, por lo que deben reportarse 
+ambos.
+Interpretar siempre en conjunto con el resto del estudio y el escenario clínico.
+Insuficiencias valvulares
+Parámetro / término Definición Adquisición, utilidad o limitación
+Vena contracta Porción más estrecha del jet regurgitante. Su ancho se relaciona con el tamaño del orificio, pero puede fallar con 
+orificios múltiples o no circulares.
+PISA Área de superficie de isovelocidad proximal. Describe hemisferios de convergencia de flujo antes del orificio 
+regurgitante.
+EROA Área efectiva del orificio regurgitante. Representa el tamaño funcional del orificio por donde ocurre la 
+regurgitación.
+Volumen regurgitante Cantidad de sangre que regresa por la válvula en cada latido. Se calcula a partir de EROA y VTI del jet, o por diferencias volumétricas.
+Fracción regurgitante Porcentaje del volumen sistólico total que regurgita. Cuantifica la proporción de flujo retrógrado.
+Reversión sistólica hepática Flujo retrógrado sistólico en venas hepáticas. Hallazgo que apoya insuficiencia tricuspídea severa en el contexto 
+adecuado.
+Reversión holodiastólica aórtica Flujo retrógrado durante toda la diástole en aorta descendente. Apoya insuficiencia aórtica importante.
+Interpretar siempre en conjunto con el resto del estudio y el escenario clínico.
+Pericardio y taponamiento
+Parámetro / término Definición Adquisición, utilidad o limitación
+Derrame pericárdico Acumulación de líquido en el espacio pericárdico. Se cuantifica por separación eco-libre y se describe su distribución.
+
+--- PÁGINA 17 ---
+POCUS cardiaco en adultos - Documento de referencia clínica
+Mediciones fundamentales en POCUS cardiaco | Página 17
+Parámetro / término Definición Adquisición, utilidad o limitación
+Colapso sistólico de AD Inversión de la pared de AD durante la sístole. Sugiere que la presión pericárdica supera transitoriamente la presión 
+auricular.
+Colapso diastólico de VD Inversión de la pared libre del VD al inicio de la diástole. Apoya compromiso hemodinámico cuando se integra con clínica y otros 
+signos.
+Variación respiratoria transmitral Cambio respiratorio de la velocidad E mitral. Una variación exagerada refleja mayor interdependencia ventricular.
+Variación respiratoria transtricuspídea Cambio respiratorio de la velocidad E tricuspídea. Aumenta en taponamiento, pero depende del patrón respiratorio.
+VCI pletórica VCI dilatada con poco colapso respiratorio. Sugiere presión AD elevada; es sensible, pero no específica.
+Movimiento pendular Movimiento oscilante del corazón dentro de un derrame grande. Puede aparecer en derrames voluminosos y favorecer alternancia 
+eléctrica.
+Taponamiento cardiaco Compromiso hemodinámico por aumento de presión pericárdica. Es un diagnóstico clínico-hemodinámico; la ecografía identifica signos de 
+apoyo y urgencia.
+Interpretar siempre en conjunto con el resto del estudio y el escenario clínico.
+Términos técnicos y unidades
+Parámetro / término Definición Adquisición, utilidad o limitación
+PLAX Vista paraesternal de eje largo. Permite evaluar VI, AI, válvulas mitral/aórtica, raíz aórtica y pericardio.
+PSAX Vista paraesternal de eje corto. Permite evaluar geometría ventricular, válvulas y TSVD según el nivel.
+Modo M Registro unidimensional de estructuras a lo largo del tiempo. Ofrece alta resolución temporal para excursiones y diámetros.
+Doppler pulsado Mide velocidades en una ubicación específica. Tiene límite de Nyquist y puede presentar aliasing.
+Doppler continuo Mide velocidades altas a lo largo de todo el haz. No localiza con precisión la profundidad, pero evita aliasing en jets 
+rápidos.
+Doppler tisular Mide velocidades de movimiento miocárdico/anular. Usado para e' y s'.
+Speckle tracking Seguimiento de patrones acústicos del miocardio cuadro a cuadro. Permite calcular strain y strain rate.
+Superficie corporal Estimación del tamaño corporal expresada en m². Se usa para indexar volúmenes, masas y áreas.
+Indexado Valor dividido por superficie corporal u otra variable corporal. Reduce el sesgo por tamaño del paciente.
+Bernoulli simplificada Ecuación ΔP = 4V². Convierte velocidad Doppler en gradiente de presión cuando V está en 
+m/s.
+UW / Wood Unidad Wood de resistencia vascular. 1 UW equivale a 80 dyn·s·cm ⁵.⁻
+Foreshortening Acortamiento artificial de una cavidad por corte apical incorrecto. Subestima longitudes y volúmenes.
+Interpretar siempre en conjunto con el resto del estudio y el escenario clínico.
+
+--- PÁGINA 18 ---
+POCUS cardiaco en adultos - Documento de referencia clínica
+Mediciones fundamentales en POCUS cardiaco | Página 18
+17. Referencias principales
+ Lang RM, Badano LP, Mor-Avi V, et al. Recommendations for Cardiac Chamber Quantification by Echocardiography in Adults. J Am Soc Echocardiogr. 2015;28:1-39.e14.
+ Nagueh SF, Sanborn DY, Oh JK, et al. Recommendations for the Evaluation of Left Ventricular Diastolic Function by Echocardiography: 2025 Update from the American Society of Echocardiography. J 
+Am Soc Echocardiogr. 2025.
+ Mukherjee M, Rudski LG, Addetia K, et al. Guidelines for the Echocardiographic Assessment of the Right Heart in Adults and Special Considerations in Pulmonary Hypertension. J Am Soc 
+Echocardiogr. 2025;38:141-199.
+ Baumgartner H, Hung J, Bermejo J, et al. Recommendations on the Echocardiographic Assessment of Aortic Valve Stenosis: A Focused Update. J Am Soc Echocardiogr. 2017;30:372-392.
+ Zoghbi WA, Adams D, Bonow RO, et al. Recommendations for Noninvasive Evaluation of Native Valvular Regurgitation. J Am Soc Echocardiogr. 2017;30:303-371.
+ American Society of Echocardiography. Guidelines for Performing a Comprehensive Transthoracic Echocardiographic Examination in Adults. J Am Soc Echocardiogr. 2019;32:1-64.
+Nota editorial: Los valores de referencia pueden variar entre guías, laboratorios, equipos y poblaciones. Para decisiones clínicas definitivas debe consultarse la publicación primaria y el 
+protocolo institucional vigente.
+
