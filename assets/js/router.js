@@ -4,7 +4,7 @@ const Router = {
     async route() {
         const hash = window.location.hash || '#/';
         const container = document.getElementById("app-content");
-        
+
         if (!container) return;
 
         // Limpiar contenido previo
@@ -86,7 +86,7 @@ const Router = {
     },
 
     // --- UTILERÍAS ---
-    
+
     // Función para copiar texto de forma simple
     copyText(text, btnId) {
         navigator.clipboard.writeText(text).then(() => {
@@ -124,7 +124,7 @@ const Router = {
                     Herramienta educativa de consulta rápida para residentes y médicos en formación en ultrasonido POCUS cardiaco.
                 </p>
             </div>
-            
+
             <div class="main-nav">
                 <a href="#/glosario" class="nav-card">
                     <h2>Glosario de Términos</h2>
@@ -135,7 +135,7 @@ const Router = {
                     <p>12 secciones con valores normales, fórmulas y puntos de corte ecocardiográficos.</p>
                 </a>
             </div>
-            
+
             <div class="secondary-nav" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-top: 1rem;">
                 <a href="#/abreviaturas" class="btn-secondary">Abreviaturas</a>
                 <a href="#/clasificaciones" class="btn-secondary">Clasificaciones</a>
@@ -146,7 +146,7 @@ const Router = {
                 <a href="#/referencias" class="btn-secondary">Referencias</a>
                 <a href="#/acerca" class="btn-secondary">Acerca de</a>
             </div>
-            
+
             <div style="text-align: center; margin-top: 1.5rem;">
                 <a href="#/instalar" class="btn-install">📲 Instalar en iPhone</a>
             </div>
@@ -167,13 +167,13 @@ const Router = {
     // GLOSARIO DE TÉRMINOS
     async renderGlossaryList(container) {
         const glossary = await DataLoader.getGlossary() || [];
-        
+
         let html = `
             <div class="navigation-header">
                 <a href="#/" class="btn-back">← Inicio</a>
                 <h2>Glosario de Términos</h2>
             </div>
-            
+
             <!-- Vista de Computadora (Tabla) -->
             <div class="desktop-view">
                 <table class="clinical-table">
@@ -191,7 +191,7 @@ const Router = {
         glossary.forEach(item => {
             const isFav = Storage.isFavorite("término", item.id);
             const copyData = `Término: ${item.term}\nDefinición: ${item.definition}\nAdquisición/Utilidad: ${item.acquisition_utility_limitation}\nFuente: ${item.source_document} (Pág. ${item.source_page})`;
-            
+
             html += `
                 <tr>
                     <td><strong>${item.term}</strong></td>
@@ -211,7 +211,7 @@ const Router = {
                     </tbody>
                 </table>
             </div>
-            
+
             <!-- Vista de Teléfono (Tarjetas) -->
             <div class="mobile-view">
                 <div class="cards-list">
@@ -220,7 +220,7 @@ const Router = {
         glossary.forEach(item => {
             const isFav = Storage.isFavorite("término", item.id);
             const copyData = `Término: ${item.term}\nDefinición: ${item.definition}\nAdquisición/Utilidad: ${item.acquisition_utility_limitation}\nFuente: ${item.source_document} (Pág. ${item.source_page})`;
-            
+
             html += `
                 <div class="card clinical-card">
                     <div class="card-header">
@@ -267,7 +267,7 @@ const Router = {
                 <a href="#/glosario" class="btn-back">← Glosario</a>
                 <h2>${term.term}</h2>
             </div>
-            
+
             <div class="card clinical-detail-card">
                 <div class="card-section">
                     <span class="detail-label">Categoría</span>
@@ -290,7 +290,7 @@ const Router = {
                     <span class="detail-label">Fuente Autorizada</span>
                     <p class="detail-text">${term.source_document} (Página ${term.source_page})</p>
                 </div>
-                
+
                 <div class="detail-actions">
                     <button class="btn-primary" onclick="Router.copyText(\`${copyData.replace(/`/g, '\\`').replace(/\n/g, '\\n')}\`, 'copy-det-t')" id="copy-det-t">Copiar Contenido</button>
                     <button class="btn-secondary" onclick="Router.toggleFav('término', '${term.id}', '${term.term}', 'fav-det-t')" id="fav-det-t">
@@ -299,14 +299,14 @@ const Router = {
                 </div>
             </div>
         `;
-        
+
         container.innerHTML = html;
     },
 
     // BANCO DE MEDICIONES - SECCIONES
     async renderMeasurementsSections(container) {
         const sections = await DataLoader.getSections() || [];
-        
+
         let html = `
             <div class="navigation-header">
                 <a href="#/" class="btn-back">← Inicio</a>
@@ -334,7 +334,7 @@ const Router = {
     async renderMeasurementsList(container, sectionId) {
         const sections = await DataLoader.getSections() || [];
         const section = sections.find(s => s.id === sectionId);
-        
+
         if (!section) {
             this.render404(container);
             return;
@@ -348,12 +348,12 @@ const Router = {
                 <a href="#/mediciones" class="btn-back">← Banco</a>
                 <h2>Sección ${section.number}: ${section.short_title}</h2>
             </div>
-            
+
             ${section.clinical_warning ? `
             <div class="safety-banner" role="alert">
                 <strong>Advertencia de Seguridad:</strong> ${section.clinical_warning}
             </div>` : ''}
-            
+
             <!-- Vista Escritorio (Tabla) -->
             <div class="desktop-view">
                 <table class="clinical-table">
@@ -446,12 +446,85 @@ const Router = {
         const isFav = Storage.isFavorite("medición", item.id);
         const copyData = `Medición: ${item.measurement}\nFórmula/Método: ${item.formula_or_method}\nValores normales: ${item.normal_values}\nLimitaciones: ${item.interpretation_limitations}\nUnidad: ${item.units}\nFuente: ${item.source_document} (Pág. ${item.source_page})`;
 
+        const escapeHTML = (str) => {
+            if (!str) return "";
+            return str.toString()
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        };
+
+        // Construir la sección de Ventana y técnica recomendadas
+        let windowsHtml = "";
+        const isAltArray = Array.isArray(item.alternate_windows);
+        const hasAlternate = isAltArray && item.alternate_windows.length > 0;
+
+        if (item.primary_window || item.preferred_view || item.modality || item.acquisition_timing || item.acquisition_key || hasAlternate) {
+            let altWindowsContent = "";
+            if (!isAltArray || item.alternate_windows.length === 0) {
+                altWindowsContent = '<p class="detail-text">No se especifican ventanas alternativas.</p>';
+            } else if (item.alternate_windows.length === 1) {
+                altWindowsContent = `<p class="detail-text">${escapeHTML(item.alternate_windows[0])}</p>`;
+            } else {
+                altWindowsContent = `<ul class="detail-list" style="margin: 0.25rem 0 0 1.25rem; padding-left: 0; color: var(--text-main-light); list-style-type: disc;">
+                    ${item.alternate_windows.map(win => `<li style="margin-bottom: 0.25rem;">${escapeHTML(win)}</li>`).join("")}
+                </ul>`;
+            }
+
+            windowsHtml = `
+                <div class="card-section-divider" style="margin: 0.5rem 0; border-top: 1px dashed var(--border-light);"></div>
+                <details style="margin-top: 0.5rem;">
+                    <summary style="font-size: 1.1rem; font-weight: 600; color: var(--primary-medium); cursor: pointer; padding: 0.25rem 0; outline: none; user-select: none;">
+                        Ventana y técnica recomendadas
+                    </summary>
+                    <div style="display: flex; flex-direction: column; gap: 1.25rem; margin-top: 0.75rem; padding-left: 0.25rem;">
+                        ${item.primary_window ? `
+                        <div class="card-section">
+                            <span class="detail-label">Ventana acústica primaria</span>
+                            <p class="detail-text">${escapeHTML(item.primary_window)}</p>
+                        </div>` : ''}
+
+                        ${item.preferred_view ? `
+                        <div class="card-section">
+                            <span class="detail-label">Vista recomendada</span>
+                            <p class="detail-text">${escapeHTML(item.preferred_view)}</p>
+                        </div>` : ''}
+
+                        ${item.modality ? `
+                        <div class="card-section">
+                            <span class="detail-label">Modalidad ecográfica</span>
+                            <p class="detail-text">${escapeHTML(item.modality)}</p>
+                        </div>` : ''}
+
+                        ${item.acquisition_timing ? `
+                        <div class="card-section">
+                            <span class="detail-label">Momento de adquisición</span>
+                            <p class="detail-text">${escapeHTML(item.acquisition_timing)}</p>
+                        </div>` : ''}
+
+                        ${item.acquisition_key ? `
+                        <div class="card-section">
+                            <span class="detail-label">Consejo técnico de adquisición</span>
+                            <p class="detail-text" style="font-style: italic;">${escapeHTML(item.acquisition_key)}</p>
+                        </div>` : ''}
+
+                        <div class="card-section">
+                            <span class="detail-label">Ventanas alternativas</span>
+                            ${altWindowsContent}
+                        </div>
+                    </div>
+                </details>
+            `;
+        }
+
         let html = `
             <div class="navigation-header">
                 <a href="#/mediciones/${item.section_id}" class="btn-back">← Sección</a>
                 <h2>${item.measurement}</h2>
             </div>
-            
+
             <div class="card clinical-detail-card">
                 <div class="card-section">
                     <span class="detail-label">Fórmula o Método de Adquisición</span>
@@ -478,7 +551,9 @@ const Router = {
                     <span class="detail-label">Fuente Autorizada</span>
                     <p class="detail-text">${item.source_document} (Página ${item.source_page})</p>
                 </div>
-                
+
+                ${windowsHtml}
+
                 <div class="detail-actions">
                     <button class="btn-primary" onclick="Router.copyText(\`${copyData.replace(/`/g, '\\`').replace(/\n/g, '\\n')}\`, 'copy-det-m')" id="copy-det-m">Copiar Contenido</button>
                     <button class="btn-secondary" onclick="Router.toggleFav('medición', '${item.id}', '${item.measurement}', 'fav-det-m')" id="fav-det-m">
@@ -494,13 +569,13 @@ const Router = {
     // ABREVIATURAS
     async renderAbbreviations(container) {
         const abbreviations = await DataLoader.getAbbreviations() || [];
-        
+
         let html = `
             <div class="navigation-header">
                 <a href="#/" class="btn-back">← Inicio</a>
                 <h2>Lista de Abreviaturas</h2>
             </div>
-            
+
             <table class="clinical-table">
                 <thead>
                     <tr>
@@ -532,7 +607,7 @@ const Router = {
     // CLASIFICACIONES
     async renderClassifications(container) {
         const classifications = await DataLoader.getClassifications() || [];
-        
+
         let html = `
             <div class="navigation-header">
                 <a href="#/" class="btn-back">← Inicio</a>
@@ -578,13 +653,13 @@ const Router = {
     // CONJUNTO MÍNIMO POCUS
     async renderMinimumSet(container) {
         const minSet = await DataLoader.getMinimumPocusSet() || [];
-        
+
         let html = `
             <div class="navigation-header">
                 <a href="#/" class="btn-back">← Inicio</a>
                 <h2>Conjunto Mínimo POCUS</h2>
             </div>
-            
+
             <div style="background-color: var(--card-bg-light); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border-light);">
                 <p style="margin-bottom: 1rem; font-size: 0.95rem; color: var(--text-muted-light);">
                     Habilidades y destrezas ecográficas básicas que el operador POCUS debe dominar para una evaluación cardiaca inicial completa.
@@ -614,13 +689,13 @@ const Router = {
     // UNIDADES Y ERRORES FRECUENTES
     async renderUnitWarnings(container) {
         const warnings = await DataLoader.getUnitWarnings() || [];
-        
+
         let html = `
             <div class="navigation-header">
                 <a href="#/" class="btn-back">← Inicio</a>
                 <h2>Unidades y Errores Frecuentes</h2>
             </div>
-            
+
             <div class="cards-list">
         `;
 
@@ -669,7 +744,7 @@ const Router = {
         favs.forEach(f => {
             const link = f.type === "medición" ? `#/medicion/${f.id}` : `#/glosario/${f.id}`;
             const badgeClass = f.type === "medición" ? "badge-medicion" : "badge-termino";
-            
+
             html += `
                 <div class="card clinical-card" style="display: flex; flex-direction: row; justify-content: space-between; align-items: center; padding: 1rem;">
                     <div>
@@ -746,13 +821,13 @@ const Router = {
     // REFERENCIAS PRINCIPALES
     async renderReferences(container) {
         const refs = await DataLoader.getReferences() || [];
-        
+
         let html = `
             <div class="navigation-header">
                 <a href="#/" class="btn-back">← Inicio</a>
                 <h2>Referencias Bibliográficas</h2>
             </div>
-            
+
             <div style="background-color: var(--card-bg-light); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border-light); display: flex; flex-direction: column; gap: 1rem;">
         `;
 
@@ -781,7 +856,7 @@ const Router = {
                 <a href="#/" class="btn-back">← Inicio</a>
                 <h2>Acerca de POCUS Cardíaco</h2>
             </div>
-            
+
             <div style="background-color: var(--card-bg-light); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border-light); display: flex; flex-direction: column; gap: 1rem; font-size: 0.95rem;">
                 <p><strong>POCUS Cardíaco</strong> es una aplicación web y PWA educativa, diseñada exclusivamente como una herramienta de consulta rápida y banco de mediciones.</p>
                 <p>Tiene como objetivo apoyar en la formación de médicos generales, residentes de especialidades médicas (Medicina Interna, Anestesiología, Urgencias, Cuidado Crítico) y estudiantes durante la adquisición de competencias en ultrasonido clínico enfocado en el punto de atención (POCUS).</p>
@@ -798,10 +873,10 @@ const Router = {
                 <a href="#/" class="btn-back">← Inicio</a>
                 <h2>Instalación en iPhone (PWA)</h2>
             </div>
-            
+
             <div style="background-color: var(--card-bg-light); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border-light); font-size: 0.95rem;">
                 <p style="margin-bottom: 1rem; font-weight: 600;">Sigue estos pasos para instalar esta aplicación en la pantalla de inicio de tu iPhone:</p>
-                
+
                 <ol style="padding-left: 1.25rem; display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.5rem;">
                     <li>Abre el navegador <strong>Safari</strong> en tu iPhone e ingresa a este sitio web.</li>
                     <li>Toca el botón <strong>Compartir</strong> <span style="font-size: 1.2rem;">📤</span> (el icono de caja con flecha hacia arriba) en la barra de navegación inferior de Safari.</li>
@@ -809,7 +884,7 @@ const Router = {
                     <li>Confirma el nombre de la aplicación (<strong>POCUS Cardíaco</strong>) y toca <strong>"Agregar"</strong> en la esquina superior derecha.</li>
                     <li>Busca el icono de la aplicación en tu pantalla de inicio y ábrela.</li>
                 </ol>
-                
+
                 <div class="safety-banner">
                     <strong>Nota de la PWA:</strong> Después de abrir la aplicación por primera vez con conexión a Internet, todos los datos médicos clínicos quedarán almacenados de manera segura en la memoria de tu dispositivo. Podrás consultarla sin conexión de red en cualquier momento.
                 </div>
