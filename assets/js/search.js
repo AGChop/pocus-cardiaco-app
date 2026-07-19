@@ -55,6 +55,7 @@ const Search = {
         const glossary = await DataLoader.getGlossary() || [];
         const abbreviations = await DataLoader.getAbbreviations() || [];
         const classifications = await DataLoader.getClassifications() || [];
+        const windows = await DataLoader.getWindows() || [];
 
         const results = [];
 
@@ -69,6 +70,7 @@ const Search = {
             let definition = "";
             let formula = "";
             let interpretation = "";
+            let extraFields = "";
 
             if (type === "medición") {
                 name = item.measurement;
@@ -76,6 +78,16 @@ const Search = {
                 aliases = item.aliases || [];
                 formula = item.formula_or_method;
                 interpretation = item.interpretation_limitations;
+                // Campos de ventana asociados a la medición
+                extraFields = [
+                    item.section_id || "",
+                    item.primary_window || "",
+                    item.preferred_view || "",
+                    item.modality || "",
+                    item.acquisition_timing || "",
+                    item.acquisition_key || "",
+                    Array.isArray(item.alternate_windows) ? item.alternate_windows.join(" ") : ""
+                ].join(" ");
             } else if (type === "término") {
                 name = item.term;
                 aliases = item.aliases || [];
@@ -87,6 +99,15 @@ const Search = {
             } else if (type === "clasificación") {
                 name = item.name;
                 definition = item.note || "";
+            } else if (type === "ventana") {
+                name = item.window;
+                abbreviation = item.abbreviation;
+                definition = [
+                    item.typical_probe_position || "",
+                    item.typical_marker_orientation || "",
+                    item.favored_structures || "",
+                    item.favored_measurements || ""
+                ].join(" ");
             }
 
             const nName = this.normalizeText(name);
@@ -94,6 +115,7 @@ const Search = {
             const nDef = this.normalizeText(definition);
             const nForm = this.normalizeText(formula);
             const nInterp = this.normalizeText(interpretation);
+            const nExtra = this.normalizeText(extraFields);
 
             // Reglas de puntuación basadas en prioridad
             // 1. Coincidencia exacta
@@ -119,15 +141,19 @@ const Search = {
             else if (nName.includes(normalizedQuery)) {
                 score += 70;
             }
-            // 6. Coincidencia en definición
+            // 6. Coincidencia en definición / estructuras / mediciones / posición / orientación
             else if (nDef.includes(normalizedQuery)) {
                 score += 50;
             }
-            // 7. Coincidencia en fórmula
+            // 7. Coincidencia en campos adicionales de ventana en medición
+            else if (nExtra.includes(normalizedQuery)) {
+                score += 45;
+            }
+            // 8. Coincidencia en fórmula
             else if (nForm.includes(normalizedQuery)) {
                 score += 40;
             }
-            // 8. Coincidencia en interpretación o limitación
+            // 9. Coincidencia en interpretación o limitación
             else if (nInterp.includes(normalizedQuery)) {
                 score += 30;
             }
@@ -157,6 +183,12 @@ const Search = {
         classifications.forEach(item => {
             const score = calculateScore(item, "clasificación");
             if (score > 0) results.push({ type: "clasificación", item, score });
+        });
+
+        // Procesar ventanas ecocardiográficas
+        windows.forEach(item => {
+            const score = calculateScore(item, "ventana");
+            if (score > 0) results.push({ type: "ventana", item, score });
         });
 
         // Ordenar de mayor a menor puntuación (relevancia)

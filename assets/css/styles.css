@@ -320,6 +320,11 @@ footer {
     color: #9a3412;
 }
 
+.badge-ventana {
+    background-color: #fef3c7;
+    color: #92400e;
+}
+
 .search-result-title {
     font-size: 1.1rem;
     font-weight: 600;
