@@ -1,5 +1,5 @@
 // Service Worker de POCUS Cardíaco para soporte sin conexión (Offline)
-const CACHE_NAME = 'pocus-cardiaco-cache-v7';
+const CACHE_NAME = 'pocus-cardiaco-cache-v8';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
@@ -77,8 +77,25 @@ self.addEventListener('fetch', (event) => {
 
         return networkResponse;
       }).catch(() => {
-        // Si no hay internet y no está en caché, retornar error silencioso o fallback simple
         console.log('Recurso no disponible sin conexión:', event.request.url);
+
+        // 1. Solicitudes de navegación (páginas html) -> Devolver index.html
+        if (event.request.mode === 'navigate') {
+          return caches.match('./index.html');
+        }
+
+        // 2. Solicitudes de imágenes o favicon -> Devolver el icono de 192px cacheado
+        const url = event.request.url.toLowerCase();
+        if (event.request.destination === 'image' || url.endsWith('.ico') || url.endsWith('.png') || url.endsWith('.jpg') || url.endsWith('.jpeg')) {
+          return caches.match('./assets/icons/icon-192.png');
+        }
+
+        // 3. Otros recursos -> Devolver un Response válido con estado 503
+        return new Response("Recurso no disponible sin conexión", {
+          status: 503,
+          statusText: "Service Unavailable",
+          headers: { "Content-Type": "text/plain; charset=utf-8" }
+        });
       });
     })
   );
