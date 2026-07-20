@@ -1,5 +1,5 @@
 // Service Worker de POCUS Cardíaco para soporte sin conexión (Offline)
-const CACHE_NAME = 'pocus-cardiaco-cache-v8';
+const CACHE_NAME = 'pocus-cardiaco-cache-v9';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
@@ -22,9 +22,11 @@ const ASSETS_TO_CACHE = [
   './data/metadata.json',
   './data/windows.json',
   './assets/images/pocus_fusion_branding.png',
+  './assets/icons/apple-touch-icon-180.png',
   './assets/icons/icon-192.png',
   './assets/icons/icon-512.png',
-  './assets/icons/icon-maskable-512.png'
+  './assets/icons/icon-maskable-512.png',
+  './assets/images/social-preview-1200x630.png'
 ];
 
 // Evento de instalación: cachear recursos estáticos y data clínica
