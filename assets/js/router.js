@@ -369,19 +369,8 @@ const Router = {
                 <strong>Advertencia de Seguridad:</strong> ${section.clinical_warning}
             </div>` : ''}
 
-            <!-- Vista Escritorio (Tabla) -->
-            <div class="desktop-view">
-                <table class="clinical-table">
-                    <thead>
-                        <tr>
-                            <th>Medición / Parámetro</th>
-                            <th>Fórmula / Adquisición</th>
-                            <th>Valores Normales / Punto de Corte</th>
-                            <th>Interpretación y Limitaciones</th>
-                            <th>Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+            <!-- Lista de Mediciones en Acordeón -->
+            <div class="measurements-grid cards-list">
         `;
 
         filtered.forEach(item => {
@@ -389,58 +378,32 @@ const Router = {
             const copyData = `Medición: ${item.measurement}\nFórmula/Método: ${item.formula_or_method}\nValores normales: ${item.normal_values}\nLimitaciones: ${item.interpretation_limitations}\nUnidad: ${item.units}\nFuente: ${item.source_document} (Pág. ${item.source_page})`;
 
             html += `
-                <tr>
-                    <td><strong>${item.measurement}</strong></td>
-                    <td>${item.formula_or_method}</td>
-                    <td><span class="normal-range">${item.normal_values}</span></td>
-                    <td>${item.interpretation_limitations}</td>
-                    <td>
-                        <div class="table-actions">
-                            <a href="#/medicion/${item.id}" class="btn-table-action">Detalle</a>
-                            <button class="btn-table-action" onclick="Router.copyText(\`${copyData.replace(/`/g, '\\`').replace(/\n/g, '\\n')}\`, 'copy-m-${item.id}')" id="copy-m-${item.id}">Copiar</button>
+                <details class="measurement-accordion card clinical-card">
+                    <summary class="accordion-summary">
+                        <span class="measurement-title">${item.measurement}</span>
+                        <span class="accordion-arrow"></span>
+                    </summary>
+                    <div class="measurement-accordion-content">
+                        <div class="measurement-header-content">
+                            <span class="unit-badge">${item.units}</span>
                         </div>
-                    </td>
-                </tr>
+                        <p><strong>Fórmula/Adquisición:</strong> ${item.formula_or_method}</p>
+                        <p class="normal-values"><strong>Valores normales / Corte:</strong> ${item.normal_values}</p>
+                        <p class="limitations"><strong>Limitaciones:</strong> ${item.interpretation_limitations}</p>
+                        <div class="card-meta">Página origen: ${item.source_page}</div>
+                        <div class="card-actions">
+                            <a href="#/medicion/${item.id}" class="btn-card-action">Detalle</a>
+                            <button class="btn-card-action" onclick="Router.copyText(\`${copyData.replace(/`/g, '\\`').replace(/\n/g, '\\n')}\`, 'copy-m-m-${item.id}')" id="copy-m-m-${item.id}">Copiar</button>
+                            <button class="btn-card-action" onclick="Router.toggleFav('medición', '${item.id}', '${item.measurement}', 'fav-m-${item.id}')" id="fav-m-${item.id}">
+                                ${isFav ? "★ Quitar" : "☆ Favorito"}
+                            </button>
+                        </div>
+                    </div>
+                </details>
             `;
         });
 
         html += `
-                    </tbody>
-                </table>
-            </div>
-
-            <!-- Vista Teléfono (Tarjetas) -->
-            <div class="mobile-view">
-                <div class="cards-list">
-        `;
-
-        filtered.forEach(item => {
-            const isFav = Storage.isFavorite("medición", item.id);
-            const copyData = `Medición: ${item.measurement}\nFórmula/Método: ${item.formula_or_method}\nValores normales: ${item.normal_values}\nLimitaciones: ${item.interpretation_limitations}\nUnidad: ${item.units}\nFuente: ${item.source_document} (Pág. ${item.source_page})`;
-
-            html += `
-                <div class="card clinical-card">
-                    <div class="card-header">
-                        <h3>${item.measurement}</h3>
-                        <span class="unit-badge">${item.units}</span>
-                    </div>
-                    <p><strong>Fórmula/Adquisición:</strong> ${item.formula_or_method}</p>
-                    <p class="normal-values"><strong>Valores normales / Corte:</strong> ${item.normal_values}</p>
-                    <p class="limitations"><strong>Limitaciones:</strong> ${item.interpretation_limitations}</p>
-                    <div class="card-meta">Página origen: ${item.source_page}</div>
-                    <div class="card-actions">
-                        <a href="#/medicion/${item.id}" class="btn-card-action">Detalle</a>
-                        <button class="btn-card-action" onclick="Router.copyText(\`${copyData.replace(/`/g, '\\`').replace(/\n/g, '\\n')}\`, 'copy-m-m-${item.id}')" id="copy-m-m-${item.id}">Copiar</button>
-                        <button class="btn-card-action" onclick="Router.toggleFav('medición', '${item.id}', '${item.measurement}', 'fav-m-${item.id}')" id="fav-m-${item.id}">
-                            ${isFav ? "★ Quitar" : "☆ Favorito"}
-                        </button>
-                    </div>
-                </div>
-            `;
-        });
-
-        html += `
-                </div>
             </div>
         `;
 

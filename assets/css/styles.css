@@ -627,5 +627,127 @@ footer {
     }
 }
 
+/* --- Acordeón de Mediciones y Diseño en Columnas (Fase 2) --- */
+
+/* Contenedor Grid para la lista de mediciones */
+.measurements-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .measurements-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Tarjeta de Medicion en Acordeón */
+.measurement-accordion {
+    padding: 0 !important; /* Sobrescribe padding de .clinical-card */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Control interactivo (summary) */
+.accordion-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.25rem;
+    font-weight: 600;
+    cursor: pointer;
+    user-select: none;
+    list-style: none; /* Oculta marcador en Firefox/Chrome */
+    background-color: var(--card-bg-light);
+    color: var(--text-main-light);
+    transition: background-color 0.2s ease;
+}
+
+body.dark-mode .accordion-summary {
+    background-color: var(--card-bg-dark);
+    color: var(--text-main-dark);
+}
+
+.accordion-summary::-webkit-details-marker {
+    display: none; /* Oculta marcador en Safari */
+}
+
+/* Foco visible al navegar con teclado */
+.accordion-summary:focus-visible {
+    outline: 3px solid var(--primary-medium);
+    outline-offset: -3px;
+    background-color: rgba(30, 58, 138, 0.08);
+}
+
+body.dark-mode .accordion-summary:focus-visible {
+    outline: 3px solid var(--primary-light);
+    background-color: rgba(59, 130, 246, 0.15);
+}
+
+/* Hover interactivo */
+.accordion-summary:hover {
+    background-color: rgba(30, 58, 138, 0.04);
+}
+body.dark-mode .accordion-summary:hover {
+    background-color: rgba(255, 255, 255, 0.04);
+}
+
+/* Título de la medición */
+.measurement-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+}
+
+/* Indicador visual de apertura */
+.accordion-arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    font-size: 1.1rem;
+    color: var(--text-muted-light);
+    transition: transform 0.2s ease;
+}
+
+body.dark-mode .accordion-arrow {
+    color: var(--text-muted-dark);
+}
+
+.accordion-arrow::after {
+    content: "▾";
+}
+
+.measurement-accordion[open] .accordion-arrow::after {
+    content: "▴";
+}
+
+/* Contenido del acordeón desplegado */
+.measurement-accordion-content {
+    padding: 1.25rem;
+    border-top: 1px solid var(--border-light);
+    background-color: var(--card-bg-light);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+body.dark-mode .measurement-accordion-content {
+    border-top: 1px solid var(--border-dark);
+    background-color: var(--card-bg-dark);
+}
+
+/* Cabecera del contenido interior */
+.measurement-header-content {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 0.25rem;
+}
+
 
 
