@@ -22,8 +22,72 @@ const DataLoader = {
         }
     },
 
+    // Cargar borrador/aprobado de prioridades con degradación segura
+    async getPriority() {
+        if (this.cache['measurement-priority']) {
+            return this.cache['measurement-priority'];
+        }
+        try {
+            const response = await fetch('data/measurement-priority.json');
+            if (!response.ok) {
+                console.warn(`Advertencia: No se pudo cargar data/measurement-priority.json (${response.status}). Se usará el orden original.`);
+                return null;
+            }
+            const data = await response.json();
+            this.cache['measurement-priority'] = data;
+            return data;
+        } catch (error) {
+            console.warn('Advertencia: Excepción al cargar data/measurement-priority.json. Se usará el orden original.', error);
+            return null;
+        }
+    },
+
     async getSections() { return this.fetchResource('sections'); },
-    async getMeasurements() { return this.fetchResource('measurements'); },
+
+    async getMeasurements() {
+        const measurements = await this.fetchResource('measurements');
+        if (!measurements) return null;
+
+        // Intentar combinar con las prioridades de forma no destructiva
+        const priorityData = await this.getPriority();
+        if (!priorityData || !Array.isArray(priorityData.priorities)) {
+            return measurements;
+        }
+
+        const priorityMap = new Map();
+        priorityData.priorities.forEach(p => {
+            if (p && p.measurement_id) {
+                priorityMap.set(p.measurement_id, p);
+            }
+        });
+
+        return measurements.map(m => {
+            const p = priorityMap.get(m.id);
+            if (!p) {
+                return {
+                    ...m,
+                    priority_tier: 99,
+                    priority_label: "Sin priorizar",
+                    pocus_scope: "contextual",
+                    display_order: 9999,
+                    original_order: m.order || 9999,
+                    priority_rationale: "",
+                    priority_confidence: "low"
+                };
+            }
+            return {
+                ...m,
+                priority_tier: p.priority_tier,
+                priority_label: p.priority_label,
+                pocus_scope: p.pocus_scope,
+                display_order: p.display_order,
+                original_order: p.original_order !== undefined ? p.original_order : (m.order || 9999),
+                priority_rationale: p.rationale || "",
+                priority_confidence: p.confidence || "high"
+            };
+        });
+    },
+
     async getGlossary() { return this.fetchResource('glossary'); },
     async getAbbreviations() { return this.fetchResource('abbreviations'); },
     async getClassifications() { return this.fetchResource('classifications'); },

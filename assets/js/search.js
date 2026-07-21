@@ -191,7 +191,19 @@ const Search = {
             if (score > 0) results.push({ type: "ventana", item, score });
         });
 
-        // Ordenar de mayor a menor puntuación (relevancia)
-        return results.sort((a, b) => b.score - a.score);
+        // Ordenar de mayor a menor puntuación (relevancia). Desempate secundario por prioridad clínica.
+        return results.sort((a, b) => {
+            if (b.score !== a.score) {
+                return b.score - a.score;
+            }
+            // Desempate por priority_tier ascendente (si el elemento es una medición priorizada)
+            const tierA = (a.item && a.item.priority_tier !== undefined) ? a.item.priority_tier : 99;
+            const tierB = (b.item && b.item.priority_tier !== undefined) ? b.item.priority_tier : 99;
+            if (tierA !== tierB) return tierA - tierB;
+
+            const orderA = (a.item && a.item.display_order !== undefined) ? a.item.display_order : 9999;
+            const orderB = (b.item && b.item.display_order !== undefined) ? b.item.display_order : 9999;
+            return orderA - orderB;
+        });
     }
 };

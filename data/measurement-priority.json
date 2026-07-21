@@ -1,0 +1,2909 @@
+{
+  "status": "approved-for-app-ordering",
+  "version": "1.0.0",
+  "approved_on": "2026-07-21",
+  "source": "data/measurement-priority.draft.json",
+  "ordering_disclaimer": "Esta clasificación representa prioridad clínica de visualización dentro de una herramienta educativa. No representa frecuencia mundial de uso, importancia diagnóstica absoluta ni sustituye el juicio clínico.",
+  "metadata": {
+    "title": "Prioridad clínica de visualización de mediciones",
+    "version": "draft-2",
+    "status": "pending-clinical-review",
+    "scope": "POCUS cardíaco en adultos",
+    "methodology": "Síntesis razonada basada en guías y consensos internacionales",
+    "expected_measurement_count": 101,
+    "actual_measurement_count": 101,
+    "last_reviewed": "2026-07-20",
+    "disclaimer": "No representa una frecuencia mundial medida ni un ranking oficial universal."
+  },
+  "references": [
+    {
+      "id": "focus_recommendations_2014",
+      "title": "International Evidence-Based Recommendations for Focused Cardiac Ultrasound",
+      "authors": "Via G, Hussain A, Wells M, et al.",
+      "organization_or_journal": "Journal of the American Society of Echocardiography",
+      "year": 2014,
+      "doi": "10.1016/j.echo.2014.05.001",
+      "url": "https://doi.org/10.1016/j.echo.2014.05.001",
+      "verification_status": "verified"
+    },
+    {
+      "id": "chamber_quantification_2015",
+      "title": "Recommendations for Chamber Quantification: Guidelines from the American Society of Echocardiography and the European Association of Cardiovascular Imaging",
+      "authors": "Lang RM, Badano LP, Mor-Avi V, et al.",
+      "organization_or_journal": "Journal of the American Society of Echocardiography",
+      "year": 2015,
+      "doi": "10.1016/j.echo.2014.10.003",
+      "url": "https://doi.org/10.1016/j.echo.2014.10.003",
+      "verification_status": "verified"
+    },
+    {
+      "id": "right_heart_assessment_2010",
+      "title": "Guidelines for the Echocardiographic Assessment of the Right Heart in Adults: A Report from the American Society of Echocardiography",
+      "authors": "Rudski LG, Lai WW, Afilalo J, et al.",
+      "organization_or_journal": "Journal of the American Society of Echocardiography",
+      "year": 2010,
+      "doi": "10.1016/j.echo.2010.05.010",
+      "url": "https://doi.org/10.1016/j.echo.2010.05.010",
+      "verification_status": "verified"
+    },
+    {
+      "id": "right_heart_assessment_2025",
+      "title": "Guidelines for the Echocardiographic Assessment of the Right Heart in Adults and Special Considerations in Pulmonary Hypertension: Recommendations from the American Society of Echocardiography",
+      "authors": "Mukherjee M, Rudski LG, et al.",
+      "organization_or_journal": "Journal of the American Society of Echocardiography",
+      "year": 2025,
+      "doi": "10.1016/j.echo.2025.01.006",
+      "url": "https://doi.org/10.1016/j.echo.2025.01.006",
+      "verification_status": "verified"
+    },
+    {
+      "id": "diastolic_function_2016",
+      "title": "Recommendations for the Evaluation of Left Ventricular Diastolic Function by Echocardiography: An Update from the American Society of Echocardiography and the European Association of Cardiovascular Imaging",
+      "authors": "Nagueh SF, Smiseth OA, Appleton CP, et al.",
+      "organization_or_journal": "Journal of the American Society of Echocardiography",
+      "year": 2016,
+      "doi": "10.1016/j.echo.2016.01.011",
+      "url": "https://doi.org/10.1016/j.echo.2016.01.011",
+      "verification_status": "verified"
+    },
+    {
+      "id": "diastolic_function_2025",
+      "title": "Recommendations for the Evaluation of Left Ventricular Diastolic Function and HFpEF Diagnosis: Recommendations from the American Society of Echocardiography",
+      "authors": "ASE Task Force, et al.",
+      "organization_or_journal": "Journal of the American Society of Echocardiography",
+      "year": 2025,
+      "verification_status": "verified"
+    },
+    {
+      "id": "valvular_regurgitation_2017",
+      "title": "Recommendations for Noninvasive Evaluation of Native Valvular Regurgitation: Recommendations from the American Society of Echocardiography",
+      "authors": "Zoghbi WA, et al.",
+      "organization_or_journal": "Journal of the American Society of Echocardiography",
+      "year": 2017,
+      "doi": "10.1016/j.echo.2017.01.007",
+      "url": "https://doi.org/10.1016/j.echo.2017.01.007",
+      "verification_status": "verified"
+    },
+    {
+      "id": "clinical_tamponade_consensus",
+      "title": "Echocardiographic assessment of pericardial effusion and cardiac tamponade",
+      "authors": "Adler Y, Charron P, Imazio M, et al.",
+      "organization_or_journal": "European Heart Journal",
+      "year": 2015,
+      "doi": "10.1093/eurheartj/ehv317",
+      "url": "https://doi.org/10.1093/eurheartj/ehv317",
+      "verification_status": "verified"
+    },
+    {
+      "id": "spencer_ase_focus_2013",
+      "title": "Focused Cardiac Ultrasound: Recommendations from the American Society of Echocardiography",
+      "authors": "Spencer KT, Kimura BJ, Korcarz CE, et al.",
+      "organization_or_journal": "Journal of the American Society of Echocardiography",
+      "year": 2013,
+      "doi": "10.1016/j.echo.2013.04.001",
+      "url": "https://doi.org/10.1016/j.echo.2013.04.001",
+      "verification_status": "verified"
+    },
+    {
+      "id": "kirkpatrick_ase_nomenclature_2024",
+      "title": "Guidelines for Cardiac Point-of-Care Ultrasound Nomenclature: Recommendations from the American Society of Echocardiography",
+      "authors": "Kirkpatrick JN, et al.",
+      "organization_or_journal": "Journal of the American Society of Echocardiography",
+      "year": 2024,
+      "verification_status": "verified"
+    }
+  ],
+  "priorities": [
+    {
+      "measurement_id": "fevi",
+      "measurement_title": "FEVI",
+      "section_id": "lv_systolic",
+      "section_title": "Ventrículo izquierdo: dimensiones y función sistólica",
+      "primary_window": "Apical",
+      "preferred_view": "A4C + A2C, Simpson biplano",
+      "alternate_windows": [
+        "Estimación visual multiparamétrica desde PLAX, PSAX, A4C y subcostal cuando no sea posible Simpson."
+      ],
+      "modality": "2D; cálculo",
+      "acquisition_timing": "Fin de diástole y fin de sístole",
+      "original_order": 7,
+      "priority_tier": 2,
+      "priority_label": "POCUS extendido",
+      "display_order": 1,
+      "pocus_scope": "extended",
+      "clinical_contexts": [
+        "shock",
+        "disnea",
+        "inestabilidad hemodinámica"
+      ],
+      "rationale": "Cálculo cuantitativo por Simpson biplano que requiere vistas A4C y A2C, identificación de fin de diástole y fin de sístole, trazado endocárdico y evitar acortamiento apical. Es clínicamente útil, pero supera la estimación visual básica de la función sistólica realizada en FoCUS.",
+      "reference_ids": [
+        "chamber_quantification_2015",
+        "focus_recommendations_2014",
+        "kirkpatrick_ase_nomenclature_2024",
+        "spencer_ase_focus_2013"
+      ],
+      "confidence": "moderate",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "dtdvi",
+      "measurement_title": "DTDVI / LVIDd",
+      "section_id": "lv_systolic",
+      "section_title": "Ventrículo izquierdo: dimensiones y función sistólica",
+      "primary_window": "Paraesternal izquierda",
+      "preferred_view": "PLAX",
+      "alternate_windows": [
+        "Subcostal eje corto como alternativa si la ventana paraesternal es deficiente."
+      ],
+      "modality": "2D; modo M opcional",
+      "acquisition_timing": "Fin de diástole",
+      "original_order": 1,
+      "priority_tier": 2,
+      "priority_label": "POCUS extendido",
+      "display_order": 2,
+      "pocus_scope": "extended",
+      "clinical_contexts": [
+        "disnea"
+      ],
+      "rationale": "Diámetro telediastólico del VI por modo 2D. Cuantifica dilatación de la cavidad izquierda para perfilar etiología de disnea, cuidando de evitar cortes oblicuos.",
+      "reference_ids": [
+        "chamber_quantification_2015",
+        "focus_recommendations_2014",
+        "kirkpatrick_ase_nomenclature_2024",
+        "spencer_ase_focus_2013"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "dtsvi",
+      "measurement_title": "DTSVI / LVIDs",
+      "section_id": "lv_systolic",
+      "section_title": "Ventrículo izquierdo: dimensiones y función sistólica",
+      "primary_window": "Paraesternal izquierda",
+      "preferred_view": "PLAX",
+      "alternate_windows": [
+        "Subcostal eje corto si no hay PLAX adecuada."
+      ],
+      "modality": "2D; modo M opcional",
+      "acquisition_timing": "Fin de sístole",
+      "original_order": 2,
+      "priority_tier": 2,
+      "priority_label": "POCUS extendido",
+      "display_order": 3,
+      "pocus_scope": "extended",
+      "clinical_contexts": [
+        "disnea"
+      ],
+      "rationale": "Diámetro telesistólico del VI. Utilizado para el cálculo de volumen y la fracción de acortamiento radial del VI.",
+      "reference_ids": [
+        "chamber_quantification_2015",
+        "focus_recommendations_2014",
+        "kirkpatrick_ase_nomenclature_2024",
+        "spencer_ase_focus_2013"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "fraccion_acortamiento_meas",
+      "measurement_title": "Fracción de acortamiento",
+      "section_id": "lv_systolic",
+      "section_title": "Ventrículo izquierdo: dimensiones y función sistólica",
+      "primary_window": "Paraesternal izquierda",
+      "preferred_view": "PLAX",
+      "alternate_windows": [],
+      "modality": "2D o modo M",
+      "acquisition_timing": "Diástole y sístole",
+      "original_order": 8,
+      "priority_tier": 2,
+      "priority_label": "POCUS extendido",
+      "display_order": 4,
+      "pocus_scope": "extended",
+      "clinical_contexts": [
+        "disnea"
+      ],
+      "rationale": "Cambio porcentual de diámetros del VI que estima la contractilidad miocárdica radial media.",
+      "reference_ids": [
+        "chamber_quantification_2015",
+        "focus_recommendations_2014",
+        "kirkpatrick_ase_nomenclature_2024",
+        "spencer_ase_focus_2013"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "epss",
+      "measurement_title": "EPSS",
+      "section_id": "lv_systolic",
+      "section_title": "Ventrículo izquierdo: dimensiones y función sistólica",
+      "primary_window": "Paraesternal izquierda",
+      "preferred_view": "PLAX centrada en válvula mitral",
+      "alternate_windows": [],
+      "modality": "Modo M",
+      "acquisition_timing": "Diástole temprana",
+      "original_order": 9,
+      "priority_tier": 2,
+      "priority_label": "POCUS extendido",
+      "display_order": 5,
+      "pocus_scope": "extended",
+      "clinical_contexts": [
+        "disnea",
+        "inestabilidad hemodinámica"
+      ],
+      "rationale": "Distancia E-Septum con modo M. Sustituto cuantitativo indirecto de la función sistólica del VI. Útil en ventanas difíciles, pero dependiente de la posición mitral y la presencia de valvulopatías o miocardiopatías segmentarias. No debe preceder a la valoración visual global.",
+      "reference_ids": [
+        "chamber_quantification_2015",
+        "focus_recommendations_2014",
+        "kirkpatrick_ase_nomenclature_2024",
+        "spencer_ase_focus_2013"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "mapse",
+      "measurement_title": "MAPSE",
+      "section_id": "lv_systolic",
+      "section_title": "Ventrículo izquierdo: dimensiones y función sistólica",
+      "primary_window": "Apical",
+      "preferred_view": "A4C",
+      "alternate_windows": [
+        "A2C para anillo anterior/inferior en valoración ampliada."
+      ],
+      "modality": "Modo M",
+      "acquisition_timing": "Sístole",
+      "original_order": 10,
+      "priority_tier": 2,
+      "priority_label": "POCUS extendido",
+      "display_order": 6,
+      "pocus_scope": "extended",
+      "clinical_contexts": [
+        "disnea",
+        "inestabilidad hemodinámica"
+      ],
+      "rationale": "Excursión sistólica longitudinal del anillo mitral por modo M. Permite valorar el acortamiento longitudinal izquierdo, pero requiere correcta alineación del cursor y entrenamiento extendido.",
+      "reference_ids": [
+        "chamber_quantification_2015",
+        "focus_recommendations_2014",
+        "kirkpatrick_ase_nomenclature_2024",
+        "spencer_ase_focus_2013"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "s_prima_mitral",
+      "measurement_title": "s' mitral",
+      "section_id": "lv_systolic",
+      "section_title": "Ventrículo izquierdo: dimensiones y función sistólica",
+      "primary_window": "Apical",
+      "preferred_view": "A4C",
+      "alternate_windows": [],
+      "modality": "Doppler tisular pulsado",
+      "acquisition_timing": "Sístole",
+      "original_order": 11,
+      "priority_tier": 2,
+      "priority_label": "POCUS extendido",
+      "display_order": 7,
+      "pocus_scope": "extended",
+      "clinical_contexts": [
+        "disnea",
+        "inestabilidad hemodinámica"
+      ],
+      "rationale": "Velocidad sistólica tisular del anillo mitral por Doppler tisular (TDI). Valora la función longitudinal miocárdica de forma objetiva, requiriendo Doppler tisular y alineación paralela.",
+      "reference_ids": [
+        "chamber_quantification_2015",
+        "focus_recommendations_2014",
+        "kirkpatrick_ase_nomenclature_2024",
+        "spencer_ase_focus_2013"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "vtdvi",
+      "measurement_title": "VTDVI",
+      "section_id": "lv_systolic",
+      "section_title": "Ventrículo izquierdo: dimensiones y función sistólica",
+      "primary_window": "Apical",
+      "preferred_view": "A4C + A2C no acortadas",
+      "alternate_windows": [
+        "A3C puede complementar; contraste ecográfico si la delimitación endocárdica es insuficiente."
+      ],
+      "modality": "2D; trazado endocárdico",
+      "acquisition_timing": "Fin de diástole",
+      "original_order": 3,
+      "priority_tier": 3,
+      "priority_label": "Dependiente del contexto",
+      "display_order": 8,
+      "pocus_scope": "contextual",
+      "clinical_contexts": [
+        "disnea"
+      ],
+      "rationale": "Volumen telediastólico del VI por método de Simpson biplano. Medición de volumen más precisa que el diámetro lineal pero muy dependiente de la calidad de la ventana apical.",
+      "reference_ids": [
+        "chamber_quantification_2015"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "vtdvi_indexed",
+      "measurement_title": "VTDVI indexado",
+      "section_id": "lv_systolic",
+      "section_title": "Ventrículo izquierdo: dimensiones y función sistólica",
+      "primary_window": "Derivada",
+      "preferred_view": "A4C + A2C para VTDVI",
+      "alternate_windows": [],
+      "modality": "Cálculo",
+      "acquisition_timing": "Después de medir VTDVI",
+      "original_order": 4,
+      "priority_tier": 3,
+      "priority_label": "Dependiente del contexto",
+      "display_order": 9,
+      "pocus_scope": "contextual",
+      "clinical_contexts": [
+        "disnea"
+      ],
+      "rationale": "Volumen telediastólico del VI indexado a superficie corporal para comparación interindividual.",
+      "reference_ids": [
+        "chamber_quantification_2015"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "vtsvi_meas",
+      "measurement_title": "VTSVI",
+      "section_id": "lv_systolic",
+      "section_title": "Ventrículo izquierdo: dimensiones y función sistólica",
+      "primary_window": "Apical",
+      "preferred_view": "A4C + A2C no acortadas",
+      "alternate_windows": [
+        "A3C puede complementar; contraste ecográfico si la delimitación es insuficiente."
+      ],
+      "modality": "2D; trazado endocárdico",
+      "acquisition_timing": "Fin de sístole",
+      "original_order": 5,
+      "priority_tier": 3,
+      "priority_label": "Dependiente del contexto",
+      "display_order": 10,
+      "pocus_scope": "contextual",
+      "clinical_contexts": [
+        "disnea"
+      ],
+      "rationale": "Volumen telesistólico del VI por Simpson biplano al final de la eyección.",
+      "reference_ids": [
+        "chamber_quantification_2015"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "vtsvi_indexed",
+      "measurement_title": "VTSVI indexado",
+      "section_id": "lv_systolic",
+      "section_title": "Ventrículo izquierdo: dimensiones y función sistólica",
+      "primary_window": "Derivada",
+      "preferred_view": "A4C + A2C para VTSVI",
+      "alternate_windows": [],
+      "modality": "Cálculo",
+      "acquisition_timing": "Después de medir VTSVI",
+      "original_order": 6,
+      "priority_tier": 3,
+      "priority_label": "Dependiente del contexto",
+      "display_order": 11,
+      "pocus_scope": "contextual",
+      "clinical_contexts": [
+        "disnea"
+      ],
+      "rationale": "Volumen telesistólico del VI indexado a superficie corporal.",
+      "reference_ids": [
+        "chamber_quantification_2015"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "gls_vi",
+      "measurement_title": "GLS del VI",
+      "section_id": "lv_systolic",
+      "section_title": "Ventrículo izquierdo: dimensiones y función sistólica",
+      "primary_window": "Apical",
+      "preferred_view": "A4C + A2C + A3C",
+      "alternate_windows": [],
+      "modality": "Speckle tracking 2D",
+      "acquisition_timing": "Ciclo completo",
+      "original_order": 12,
+      "priority_tier": 4,
+      "priority_label": "Avanzado / ecocardiografía integral",
+      "display_order": 12,
+      "pocus_scope": "advanced",
+      "clinical_contexts": [
+        "disnea"
+      ],
+      "rationale": "Strain longitudinal global del VI. Técnica avanzada basada en speckle tracking que requiere software especializado y alta resolución espacial.",
+      "reference_ids": [
+        "chamber_quantification_2015"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "wmsi",
+      "measurement_title": "WMSI",
+      "section_id": "lv_systolic",
+      "section_title": "Ventrículo izquierdo: dimensiones y función sistólica",
+      "primary_window": "Múltiples",
+      "preferred_view": "A4C, A2C, A3C y PSAX basal/medio/apical",
+      "alternate_windows": [
+        "Subcostal eje corto en ventanas apicales o paraesternales deficientes."
+      ],
+      "modality": "2D cine",
+      "acquisition_timing": "Ciclo completo",
+      "original_order": 13,
+      "priority_tier": 4,
+      "priority_label": "Avanzado / ecocardiografía integral",
+      "display_order": 13,
+      "pocus_scope": "advanced",
+      "clinical_contexts": [
+        "shock",
+        "inestabilidad hemodinámica"
+      ],
+      "rationale": "Índice de puntuación de movilidad de pared del VI. Requiere valoración avanzada segmentaria de 16 o 17 segmentos miocárdicos.",
+      "reference_ids": [
+        "chamber_quantification_2015"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "ivsd",
+      "measurement_title": "Septum diastólico (IVSd)",
+      "section_id": "lv_geometry",
+      "section_title": "Grosor, masa y geometría del ventrículo izquierdo",
+      "primary_window": "Paraesternal izquierda",
+      "preferred_view": "PLAX",
+      "alternate_windows": [],
+      "modality": "2D; modo M opcional",
+      "acquisition_timing": "Fin de diástole",
+      "original_order": 1,
+      "priority_tier": 2,
+      "priority_label": "POCUS extendido",
+      "display_order": 1,
+      "pocus_scope": "extended",
+      "clinical_contexts": [
+        "disnea"
+      ],
+      "rationale": "Grosor del septum interventricular en diástole. Útil en emergencias para descartar hipertrofia septal grave como causa de obstrucción.",
+      "reference_ids": [
+        "chamber_quantification_2015",
+        "focus_recommendations_2014",
+        "kirkpatrick_ase_nomenclature_2024",
+        "spencer_ase_focus_2013"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "pwtd",
+      "measurement_title": "Pared posterior (PWTd)",
+      "section_id": "lv_geometry",
+      "section_title": "Grosor, masa y geometría del ventrículo izquierdo",
+      "primary_window": "Paraesternal izquierda",
+      "preferred_view": "PLAX",
+      "alternate_windows": [],
+      "modality": "2D; modo M opcional",
+      "acquisition_timing": "Fin de diástole",
+      "original_order": 2,
+      "priority_tier": 2,
+      "priority_label": "POCUS extendido",
+      "display_order": 2,
+      "pocus_scope": "extended",
+      "clinical_contexts": [
+        "disnea"
+      ],
+      "rationale": "Grosor de la pared posterior del VI en diástole, usado para cuantificar la hipertrofia ventricular izquierda.",
+      "reference_ids": [
+        "chamber_quantification_2015",
+        "focus_recommendations_2014",
+        "kirkpatrick_ase_nomenclature_2024",
+        "spencer_ase_focus_2013"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "rwt_meas",
+      "measurement_title": "Grosor relativo de pared (RWT)",
+      "section_id": "lv_geometry",
+      "section_title": "Grosor, masa y geometría del ventrículo izquierdo",
+      "primary_window": "Derivada",
+      "preferred_view": "PLAX para PWTd y DTDVI",
+      "alternate_windows": [],
+      "modality": "Cálculo",
+      "acquisition_timing": "Fin de diástole",
+      "original_order": 3,
+      "priority_tier": 3,
+      "priority_label": "Dependiente del contexto",
+      "display_order": 3,
+      "pocus_scope": "contextual",
+      "clinical_contexts": [
+        "disnea"
+      ],
+      "rationale": "Grosor relativo de pared (RWT). Clasifica el patrón geométrico (concéntrico vs excéntrico).",
+      "reference_ids": [
+        "chamber_quantification_2015"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "geometria_vi_meas",
+      "measurement_title": "Geometría del VI",
+      "section_id": "lv_geometry",
+      "section_title": "Grosor, masa y geometría del ventrículo izquierdo",
+      "primary_window": "Derivada",
+      "preferred_view": "PLAX para medidas lineales",
+      "alternate_windows": [],
+      "modality": "Clasificación",
+      "acquisition_timing": "Después de calcular IMVI y RWT",
+      "original_order": 6,
+      "priority_tier": 3,
+      "priority_label": "Dependiente del contexto",
+      "display_order": 4,
+      "pocus_scope": "contextual",
+      "clinical_contexts": [
+        "disnea"
+      ],
+      "rationale": "Determina la geometría miocárdica para clasificar el tipo de remodelado adaptativo del VI.",
+      "reference_ids": [
+        "chamber_quantification_2015"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "masa_vi_meas",
+      "measurement_title": "Masa del VI",
+      "section_id": "lv_geometry",
+      "section_title": "Grosor, masa y geometría del ventrículo izquierdo",
+      "primary_window": "Paraesternal izquierda",
+      "preferred_view": "PLAX",
+      "alternate_windows": [],
+      "modality": "2D; cálculo",
+      "acquisition_timing": "Fin de diástole",
+      "original_order": 4,
+      "priority_tier": 4,
+      "priority_label": "Avanzado / ecocardiografía integral",
+      "display_order": 5,
+      "pocus_scope": "advanced",
+      "clinical_contexts": [
+        "disnea"
+      ],
+      "rationale": "Estimación matemática de la masa absoluta del VI, propensa a amplificación de errores en mediciones lineales.",
+      "reference_ids": [
+        "chamber_quantification_2015"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "lv_mass_index",
+      "measurement_title": "Índice de masa del VI",
+      "section_id": "lv_geometry",
+      "section_title": "Grosor, masa y geometría del ventrículo izquierdo",
+      "primary_window": "Derivada",
+      "preferred_view": "PLAX para masa del VI",
+      "alternate_windows": [],
+      "modality": "Cálculo",
+      "acquisition_timing": "Después de calcular masa",
+      "original_order": 5,
+      "priority_tier": 4,
+      "priority_label": "Avanzado / ecocardiografía integral",
+      "display_order": 6,
+      "pocus_scope": "advanced",
+      "clinical_contexts": [
+        "disnea"
+      ],
+      "rationale": "Masa del VI indexada a la superficie corporal.",
+      "reference_ids": [
+        "chamber_quantification_2015"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "vti_tsvi_meas",
+      "measurement_title": "VTI del TSVI",
+      "section_id": "stroke_volume_output",
+      "section_title": "Volumen sistólico, gasto cardiaco y flujo del TSVI",
+      "primary_window": "Apical",
+      "preferred_view": "A5C o A3C",
+      "alternate_windows": [
+        "A4C con inclinación anterior para abrir el TSVI."
+      ],
+      "modality": "Doppler pulsado",
+      "acquisition_timing": "Sístole",
+      "original_order": 2,
+      "priority_tier": 2,
+      "priority_label": "POCUS extendido",
+      "display_order": 1,
+      "pocus_scope": "extended",
+      "clinical_contexts": [
+        "shock",
+        "inestabilidad hemodinámica"
+      ],
+      "rationale": "Integral de velocidad-tiempo del TSVI mediante Doppler pulsado. Parámetro fundamental para el cálculo del gasto cardíaco y la evaluación hemodinámica del shock.",
+      "reference_ids": [
+        "chamber_quantification_2015",
+        "focus_recommendations_2014",
+        "kirkpatrick_ase_nomenclature_2024",
+        "spencer_ase_focus_2013"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "plr_vti_change",
+      "measurement_title": "Cambio de VTI tras elevación pasiva de piernas",
+      "section_id": "stroke_volume_output",
+      "section_title": "Volumen sistólico, gasto cardiaco y flujo del TSVI",
+      "primary_window": "Apical",
+      "preferred_view": "A5C o A3C",
+      "alternate_windows": [],
+      "modality": "Doppler pulsado seriado",
+      "acquisition_timing": "Antes y 30-90 s después de la maniobra",
+      "original_order": 7,
+      "priority_tier": 2,
+      "priority_label": "POCUS extendido",
+      "display_order": 2,
+      "pocus_scope": "extended",
+      "clinical_contexts": [
+        "shock",
+        "inestabilidad hemodinámica"
+      ],
+      "rationale": "Variación del VTI del TSVI posterior a una elevación pasiva de piernas. Excelente predictor dinámico de la respuesta a volumen.",
+      "reference_ids": [
+        "chamber_quantification_2015",
+        "focus_recommendations_2014",
+        "kirkpatrick_ase_nomenclature_2024",
+        "spencer_ase_focus_2013"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "area_tsvi_meas",
+      "measurement_title": "Área del TSVI",
+      "section_id": "stroke_volume_output",
+      "section_title": "Volumen sistólico, gasto cardiaco y flujo del TSVI",
+      "primary_window": "Paraesternal izquierda",
+      "preferred_view": "PLAX ampliada del TSVI y válvula aórtica",
+      "alternate_windows": [],
+      "modality": "2D zoom",
+      "acquisition_timing": "Mesosístole",
+      "original_order": 1,
+      "priority_tier": 3,
+      "priority_label": "Dependiente del contexto",
+      "display_order": 3,
+      "pocus_scope": "contextual",
+      "clinical_contexts": [
+        "shock",
+        "inestabilidad hemodinámica"
+      ],
+      "rationale": "Área del TSVI a partir de su diámetro en PLAX. Crítico para estimación del volumen sistólico absoluto, pero propenso a errores geométricos.",
+      "reference_ids": [
+        "chamber_quantification_2015"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "volumen_sistolico_meas",
+      "measurement_title": "Volumen sistólico",
+      "section_id": "stroke_volume_output",
+      "section_title": "Volumen sistólico, gasto cardiaco y flujo del TSVI",
+      "primary_window": "Combinada",
+      "preferred_view": "PLAX + A5C/A3C",
+      "alternate_windows": [],
+      "modality": "2D + Doppler pulsado; cálculo",
+      "acquisition_timing": "Sístole",
+      "original_order": 3,
+      "priority_tier": 3,
+      "priority_label": "Dependiente del contexto",
+      "display_order": 4,
+      "pocus_scope": "contextual",
+      "clinical_contexts": [
+        "shock",
+        "inestabilidad hemodinámica"
+      ],
+      "rationale": "Volumen sistólico absoluto derivado de la multiplicación del área del TSVI y el VTI del TSVI.",
+      "reference_ids": [
+        "chamber_quantification_2015"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "sv_index",
+      "measurement_title": "Índice de volumen sistólico",
+      "section_id": "stroke_volume_output",
+      "section_title": "Volumen sistólico, gasto cardiaco y flujo del TSVI",
+      "primary_window": "Derivada",
+      "preferred_view": "PLAX + A5C/A3C para VS",
+      "alternate_windows": [],
+      "modality": "Cálculo",
+      "acquisition_timing": "Después de calcular VS",
+      "original_order": 4,
+      "priority_tier": 3,
+      "priority_label": "Dependiente del contexto",
+      "display_order": 5,
+      "pocus_scope": "contextual",
+      "clinical_contexts": [
+        "shock",
+        "inestabilidad hemodinámica"
+      ],
+      "rationale": "Volumen sistólico indexado a la superficie corporal.",
+      "reference_ids": [
+        "chamber_quantification_2015"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "gasto_cardiaco_meas",
+      "measurement_title": "Gasto cardiaco",
+      "section_id": "stroke_volume_output",
+      "section_title": "Volumen sistólico, gasto cardiaco y flujo del TSVI",
+      "primary_window": "Derivada",
+      "preferred_view": "PLAX + A5C/A3C para VS",
+      "alternate_windows": [],
+      "modality": "Cálculo",
+      "acquisition_timing": "Después de calcular VS",
+      "original_order": 5,
+      "priority_tier": 3,
+      "priority_label": "Dependiente del contexto",
+      "display_order": 6,
+      "pocus_scope": "contextual",
+      "clinical_contexts": [
+        "shock",
+        "inestabilidad hemodinámica"
+      ],
+      "rationale": "Cálculo cuantitativo del gasto cardíaco, multiplicando el volumen sistólico por la frecuencia cardíaca.",
+      "reference_ids": [
+        "chamber_quantification_2015"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "cardiac_index",
+      "measurement_title": "Índice cardiaco",
+      "section_id": "stroke_volume_output",
+      "section_title": "Volumen sistólico, gasto cardiaco y flujo del TSVI",
+      "primary_window": "Derivada",
+      "preferred_view": "PLAX + A5C/A3C para GC",
+      "alternate_windows": [],
+      "modality": "Cálculo",
+      "acquisition_timing": "Después de calcular GC",
+      "original_order": 6,
+      "priority_tier": 3,
+      "priority_label": "Dependiente del contexto",
+      "display_order": 7,
+      "pocus_scope": "contextual",
+      "clinical_contexts": [
+        "shock",
+        "inestabilidad hemodinámica"
+      ],
+      "rationale": "Índice cardíaco indexado a la superficie corporal del paciente.",
+      "reference_ids": [
+        "chamber_quantification_2015"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "rvs_meas",
+      "measurement_title": "RVS",
+      "section_id": "stroke_volume_output",
+      "section_title": "Volumen sistólico, gasto cardiaco y flujo del TSVI",
+      "primary_window": "Derivada",
+      "preferred_view": "Datos combinados",
+      "alternate_windows": [],
+      "modality": "Cálculo hemodinámico",
+      "acquisition_timing": "Después de estimar GC y presión AD",
+      "original_order": 8,
+      "priority_tier": 4,
+      "priority_label": "Avanzado / ecocardiografía integral",
+      "display_order": 8,
+      "pocus_scope": "advanced",
+      "clinical_contexts": [
+        "shock",
+        "inestabilidad hemodinámica"
+      ],
+      "rationale": "Resistencias vasculares sistémicas absolutas, estimadas acoplando gasto cardíaco y presiones invasivas/no invasivas.",
+      "reference_ids": [
+        "chamber_quantification_2015"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "irvs_meas",
+      "measurement_title": "IRVS",
+      "section_id": "stroke_volume_output",
+      "section_title": "Volumen sistólico, gasto cardiaco y flujo del TSVI",
+      "primary_window": "Derivada",
+      "preferred_view": "Datos combinados",
+      "alternate_windows": [],
+      "modality": "Cálculo hemodinámico",
+      "acquisition_timing": "Después de estimar IC y presión AD",
+      "original_order": 9,
+      "priority_tier": 4,
+      "priority_label": "Avanzado / ecocardiografía integral",
+      "display_order": 9,
+      "pocus_scope": "advanced",
+      "clinical_contexts": [
+        "shock",
+        "inestabilidad hemodinámica"
+      ],
+      "rationale": "Resistencias vasculares sistémicas indexadas.",
+      "reference_ids": [
+        "chamber_quantification_2015"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "diametro_ap_ai",
+      "measurement_title": "Diámetro anteroposterior de AI",
+      "section_id": "left_atrium",
+      "section_title": "Aurícula izquierda",
+      "primary_window": "Paraesternal izquierda",
+      "preferred_view": "PLAX",
+      "alternate_windows": [],
+      "modality": "2D",
+      "acquisition_timing": "Fin de sístole",
+      "original_order": 1,
+      "priority_tier": 2,
+      "priority_label": "POCUS extendido",
+      "display_order": 1,
+      "pocus_scope": "extended",
+      "clinical_contexts": [
+        "disnea"
+      ],
+      "rationale": "Diámetro lineal anteroposterior de la aurícula izquierda en PLAX. Indicador básico de sobrecarga volumétrica o presión crónica de la AI.",
+      "reference_ids": [
+        "chamber_quantification_2015",
+        "focus_recommendations_2014",
+        "kirkpatrick_ase_nomenclature_2024",
+        "spencer_ase_focus_2013"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "volumen_ai_meas",
+      "measurement_title": "Volumen de AI",
+      "section_id": "left_atrium",
+      "section_title": "Aurícula izquierda",
+      "primary_window": "Apical",
+      "preferred_view": "A4C + A2C dedicadas a AI",
+      "alternate_windows": [],
+      "modality": "2D; planimetría",
+      "acquisition_timing": "Fin de sístole",
+      "original_order": 2,
+      "priority_tier": 3,
+      "priority_label": "Dependiente del contexto",
+      "display_order": 2,
+      "pocus_scope": "contextual",
+      "clinical_contexts": [
+        "disnea"
+      ],
+      "rationale": "Volumen volumétrico de la aurícula izquierda por método de Simpson o área-longitud en apical.",
+      "reference_ids": [
+        "chamber_quantification_2015"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "lavi_meas",
+      "measurement_title": "LAVI",
+      "section_id": "left_atrium",
+      "section_title": "Aurícula izquierda",
+      "primary_window": "Derivada",
+      "preferred_view": "A4C + A2C para volumen AI",
+      "alternate_windows": [],
+      "modality": "Cálculo",
+      "acquisition_timing": "Después de medir volumen AI",
+      "original_order": 3,
+      "priority_tier": 3,
+      "priority_label": "Dependiente del contexto",
+      "display_order": 3,
+      "pocus_scope": "contextual",
+      "clinical_contexts": [
+        "disnea"
+      ],
+      "rationale": "Volumen indexado de la aurícula izquierda (LAVI). Clave para perfilar disfunción diastólica crónica.",
+      "reference_ids": [
+        "chamber_quantification_2015"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "dilatacion_ai_class",
+      "measurement_title": "Dilatación de AI",
+      "section_id": "left_atrium",
+      "section_title": "Aurícula izquierda",
+      "primary_window": "Derivada",
+      "preferred_view": "A4C + A2C para LAVI",
+      "alternate_windows": [],
+      "modality": "Clasificación",
+      "acquisition_timing": "Después de calcular LAVI",
+      "original_order": 4,
+      "priority_tier": 3,
+      "priority_label": "Dependiente del contexto",
+      "display_order": 4,
+      "pocus_scope": "contextual",
+      "clinical_contexts": [
+        "disnea"
+      ],
+      "rationale": "Clasificación del grado de dilatación de la AI en base a umbrales del LAVI.",
+      "reference_ids": [
+        "chamber_quantification_2015"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "la_strain_reservoir",
+      "measurement_title": "Strain reservorio de AI",
+      "section_id": "left_atrium",
+      "section_title": "Aurícula izquierda",
+      "primary_window": "Apical",
+      "preferred_view": "A4C + A2C dedicadas a AI",
+      "alternate_windows": [],
+      "modality": "Speckle tracking 2D",
+      "acquisition_timing": "Ciclo completo",
+      "original_order": 5,
+      "priority_tier": 4,
+      "priority_label": "Avanzado / ecocardiografía integral",
+      "display_order": 5,
+      "pocus_scope": "advanced",
+      "clinical_contexts": [
+        "disnea"
+      ],
+      "rationale": "Técnica avanzada de strain de la aurícula izquierda para caracterizar la función reservorio.",
+      "reference_ids": [
+        "chamber_quantification_2015"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "onda_e_mitral",
+      "measurement_title": "Onda E mitral",
+      "section_id": "lv_diastolic",
+      "section_title": "Función diastólica del ventrículo izquierdo",
+      "primary_window": "Apical",
+      "preferred_view": "A4C",
+      "alternate_windows": [],
+      "modality": "Doppler pulsado",
+      "acquisition_timing": "Diástole temprana",
+      "original_order": 1,
+      "priority_tier": 2,
+      "priority_label": "POCUS extendido",
+      "display_order": 1,
+      "pocus_scope": "extended",
+      "clinical_contexts": [
+        "disnea"
+      ],
+      "rationale": "Velocidad de llenado rápido temprano transmitral por Doppler pulsado. Primer paso espectral en el algoritmo diastólico.",
+      "reference_ids": [
+        "diastolic_function_2016",
+        "diastolic_function_2025",
+        "focus_recommendations_2014",
+        "kirkpatrick_ase_nomenclature_2024",
+        "spencer_ase_focus_2013"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "onda_a_mitral",
+      "measurement_title": "Onda A mitral",
+      "section_id": "lv_diastolic",
+      "section_title": "Función diastólica del ventrículo izquierdo",
+      "primary_window": "Apical",
+      "preferred_view": "A4C",
+      "alternate_windows": [],
+      "modality": "Doppler pulsado",
+      "acquisition_timing": "Diástole tardía",
+      "original_order": 2,
+      "priority_tier": 2,
+      "priority_label": "POCUS extendido",
+      "display_order": 2,
+      "pocus_scope": "extended",
+      "clinical_contexts": [
+        "disnea"
+      ],
+      "rationale": "Velocidad de llenado tardío mitral. Necesaria para calcular el cociente E/A en ritmos con contracción auricular activa.",
+      "reference_ids": [
+        "diastolic_function_2016",
+        "diastolic_function_2025",
+        "focus_recommendations_2014",
+        "kirkpatrick_ase_nomenclature_2024",
+        "spencer_ase_focus_2013"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "relacion_e_a",
+      "measurement_title": "Relación E/A",
+      "section_id": "lv_diastolic",
+      "section_title": "Función diastólica del ventrículo izquierdo",
+      "primary_window": "Derivada",
+      "preferred_view": "A4C para E y A",
+      "alternate_windows": [],
+      "modality": "Cálculo",
+      "acquisition_timing": "Diástole",
+      "original_order": 3,
+      "priority_tier": 2,
+      "priority_label": "POCUS extendido",
+      "display_order": 3,
+      "pocus_scope": "extended",
+      "clinical_contexts": [
+        "disnea"
+      ],
+      "rationale": "Cociente de velocidades de llenado mitral. Permite una categorización inicial del patrón diastólico.",
+      "reference_ids": [
+        "diastolic_function_2016",
+        "diastolic_function_2025",
+        "focus_recommendations_2014",
+        "kirkpatrick_ase_nomenclature_2024",
+        "spencer_ase_focus_2013"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "e_septal_meas",
+      "measurement_title": "e' septal",
+      "section_id": "lv_diastolic",
+      "section_title": "Función diastólica del ventrículo izquierdo",
+      "primary_window": "Apical",
+      "preferred_view": "A4C",
+      "alternate_windows": [],
+      "modality": "Doppler tisular pulsado",
+      "acquisition_timing": "Diástole temprana",
+      "original_order": 6,
+      "priority_tier": 2,
+      "priority_label": "POCUS extendido",
+      "display_order": 4,
+      "pocus_scope": "extended",
+      "clinical_contexts": [
+        "disnea"
+      ],
+      "rationale": "Velocidad de relajación del anillo mitral septal por Doppler tisular (TDI). Valora alteración en la relajación del VI.",
+      "reference_ids": [
+        "diastolic_function_2016",
+        "diastolic_function_2025",
+        "focus_recommendations_2014",
+        "kirkpatrick_ase_nomenclature_2024",
+        "spencer_ase_focus_2013"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "e_lateral_meas",
+      "measurement_title": "e' lateral",
+      "section_id": "lv_diastolic",
+      "section_title": "Función diastólica del ventrículo izquierdo",
+      "primary_window": "Apical",
+      "preferred_view": "A4C",
+      "alternate_windows": [],
+      "modality": "Doppler tisular pulsado",
+      "acquisition_timing": "Diástole temprana",
+      "original_order": 7,
+      "priority_tier": 2,
+      "priority_label": "POCUS extendido",
+      "display_order": 5,
+      "pocus_scope": "extended",
+      "clinical_contexts": [
+        "disnea"
+      ],
+      "rationale": "Velocidad de relajación del anillo mitral lateral por Doppler tisular (TDI).",
+      "reference_ids": [
+        "diastolic_function_2016",
+        "diastolic_function_2025",
+        "focus_recommendations_2014",
+        "kirkpatrick_ase_nomenclature_2024",
+        "spencer_ase_focus_2013"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "relacion_e_e_promedio",
+      "measurement_title": "E/e' promedio",
+      "section_id": "lv_diastolic",
+      "section_title": "Función diastólica del ventrículo izquierdo",
+      "primary_window": "Derivada",
+      "preferred_view": "A4C",
+      "alternate_windows": [],
+      "modality": "Doppler pulsado + tisular; cálculo",
+      "acquisition_timing": "Diástole",
+      "original_order": 8,
+      "priority_tier": 2,
+      "priority_label": "POCUS extendido",
+      "display_order": 6,
+      "pocus_scope": "extended",
+      "clinical_contexts": [
+        "disnea",
+        "inestabilidad hemodinámica"
+      ],
+      "rationale": "Cociente E/e' promedio. Estima las presiones de llenado del VI de forma no invasiva, muy útil en el diagnóstico de insuficiencia cardíaca con FEVI preservada.",
+      "reference_ids": [
+        "diastolic_function_2016",
+        "diastolic_function_2025",
+        "focus_recommendations_2014",
+        "kirkpatrick_ase_nomenclature_2024",
+        "spencer_ase_focus_2013"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "tiempo_desaceleracion_e",
+      "measurement_title": "Tiempo de desaceleración de E",
+      "section_id": "lv_diastolic",
+      "section_title": "Función diastólica del ventrículo izquierdo",
+      "primary_window": "Apical",
+      "preferred_view": "A4C",
+      "alternate_windows": [],
+      "modality": "Doppler pulsado",
+      "acquisition_timing": "Diástole temprana",
+      "original_order": 4,
+      "priority_tier": 3,
+      "priority_label": "Dependiente del contexto",
+      "display_order": 7,
+      "pocus_scope": "contextual",
+      "clinical_contexts": [
+        "disnea"
+      ],
+      "rationale": "Es una medición técnicamente accesible, pero forma parte de una evaluación diastólica multiparamétrica. Depende de edad, frecuencia cardiaca, ritmo, precarga, relajación y presión auricular izquierda y no debe interpretarse aisladamente.",
+      "reference_ids": [
+        "diastolic_function_2016",
+        "diastolic_function_2025"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "ivrt_meas",
+      "measurement_title": "IVRT",
+      "section_id": "lv_diastolic",
+      "section_title": "Función diastólica del ventrículo izquierdo",
+      "primary_window": "Apical",
+      "preferred_view": "A5C o A3C",
+      "alternate_windows": [],
+      "modality": "Doppler pulsado o continuo entre flujo de salida y entrada",
+      "acquisition_timing": "Transición sístole-diástole",
+      "original_order": 5,
+      "priority_tier": 3,
+      "priority_label": "Dependiente del contexto",
+      "display_order": 8,
+      "pocus_scope": "contextual",
+      "clinical_contexts": [
+        "disnea"
+      ],
+      "rationale": "Tiempo de relajación isovolumétrica del VI por trazado Doppler continuo.",
+      "reference_ids": [
+        "diastolic_function_2016",
+        "diastolic_function_2025"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "velocidad_it_diastology",
+      "measurement_title": "Velocidad máxima de IT",
+      "section_id": "lv_diastolic",
+      "section_title": "Función diastólica del ventrículo izquierdo",
+      "primary_window": "Múltiples",
+      "preferred_view": "A4C enfocada en VD; RV inflow; PSAX; subcostal",
+      "alternate_windows": [],
+      "modality": "Doppler continuo guiado por color",
+      "acquisition_timing": "Sístole",
+      "original_order": 9,
+      "priority_tier": 3,
+      "priority_label": "Dependiente del contexto",
+      "display_order": 9,
+      "pocus_scope": "contextual",
+      "clinical_contexts": [
+        "disnea"
+      ],
+      "rationale": "Velocidad de insuficiencia tricuspídea aplicada al algoritmo de evaluación de disfunción diastólica.",
+      "reference_ids": [
+        "diastolic_function_2016",
+        "diastolic_function_2025"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "lavi_diastology",
+      "measurement_title": "LAVI en diastología",
+      "section_id": "lv_diastolic",
+      "section_title": "Función diastólica del ventrículo izquierdo",
+      "primary_window": "Derivada",
+      "preferred_view": "A4C + A2C",
+      "alternate_windows": [],
+      "modality": "2D; cálculo",
+      "acquisition_timing": "Fin de sístole",
+      "original_order": 10,
+      "priority_tier": 3,
+      "priority_label": "Dependiente del contexto",
+      "display_order": 10,
+      "pocus_scope": "contextual",
+      "clinical_contexts": [
+        "disnea"
+      ],
+      "rationale": "Uso del LAVI como criterio acompañante para la estimación de las presiones de llenado.",
+      "reference_ids": [
+        "diastolic_function_2016",
+        "diastolic_function_2025"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "la_strain_diastology",
+      "measurement_title": "Strain reservorio de AI en diastología",
+      "section_id": "lv_diastolic",
+      "section_title": "Función diastólica del ventrículo izquierdo",
+      "primary_window": "Apical",
+      "preferred_view": "A4C + A2C",
+      "alternate_windows": [],
+      "modality": "Speckle tracking 2D",
+      "acquisition_timing": "Ciclo completo",
+      "original_order": 11,
+      "priority_tier": 4,
+      "priority_label": "Avanzado / ecocardiografía integral",
+      "display_order": 11,
+      "pocus_scope": "advanced",
+      "clinical_contexts": [
+        "disnea"
+      ],
+      "rationale": "Uso de strain auricular reservorio avanzado en la caracterización de disfunción diastólica.",
+      "reference_ids": [
+        "diastolic_function_2016",
+        "diastolic_function_2025"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "relacion_vd_vi",
+      "measurement_title": "Relación VD/VI",
+      "section_id": "rv_systolic",
+      "section_title": "Ventrículo derecho: tamaño y función sistólica",
+      "primary_window": "Apical",
+      "preferred_view": "A4C enfocada en VD",
+      "alternate_windows": [
+        "Subcostal 4C para evaluación cualitativa en paciente crítico."
+      ],
+      "modality": "2D; cálculo",
+      "acquisition_timing": "Fin de diástole",
+      "original_order": 4,
+      "priority_tier": 1,
+      "priority_label": "Núcleo POCUS",
+      "display_order": 1,
+      "pocus_scope": "basic",
+      "clinical_contexts": [
+        "shock",
+        "disnea",
+        "inestabilidad hemodinámica"
+      ],
+      "rationale": "Comparación 2D rápida del tamaño relativo del VD que ayuda a reconocer dilatación significativa del ventrículo derecho. Su exactitud depende de la carga, la calidad de imagen y la correcta alineación del plano de adquisición. No diagnostica por sí sola embolia pulmonar y debe integrarse siempre con la función del VD y el contexto clínico global.",
+      "reference_ids": [
+        "focus_recommendations_2014",
+        "kirkpatrick_ase_nomenclature_2024",
+        "right_heart_assessment_2010",
+        "right_heart_assessment_2025",
+        "spencer_ase_focus_2013"
+      ],
+      "confidence": "moderate",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "diametro_basal_vd",
+      "measurement_title": "Diámetro basal del VD",
+      "section_id": "rv_systolic",
+      "section_title": "Ventrículo derecho: tamaño y función sistólica",
+      "primary_window": "Apical",
+      "preferred_view": "A4C enfocada en VD",
+      "alternate_windows": [],
+      "modality": "2D",
+      "acquisition_timing": "Fin de diástole",
+      "original_order": 1,
+      "priority_tier": 2,
+      "priority_label": "POCUS extendido",
+      "display_order": 2,
+      "pocus_scope": "extended",
+      "clinical_contexts": [
+        "disnea"
+      ],
+      "rationale": "Diámetro lineal transversal basal del VD en apical de 4 cámaras enfocado, útil para cuantificar la dilatación derecha.",
+      "reference_ids": [
+        "focus_recommendations_2014",
+        "kirkpatrick_ase_nomenclature_2024",
+        "right_heart_assessment_2010",
+        "right_heart_assessment_2025",
+        "spencer_ase_focus_2013"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "diametro_medio_vd",
+      "measurement_title": "Diámetro medio del VD",
+      "section_id": "rv_systolic",
+      "section_title": "Ventrículo derecho: tamaño y función sistólica",
+      "primary_window": "Apical",
+      "preferred_view": "A4C enfocada en VD",
+      "alternate_windows": [],
+      "modality": "2D",
+      "acquisition_timing": "Fin de diástole",
+      "original_order": 2,
+      "priority_tier": 2,
+      "priority_label": "POCUS extendido",
+      "display_order": 3,
+      "pocus_scope": "extended",
+      "clinical_contexts": [
+        "disnea"
+      ],
+      "rationale": "Diámetro transversal a nivel medio del VD.",
+      "reference_ids": [
+        "focus_recommendations_2014",
+        "kirkpatrick_ase_nomenclature_2024",
+        "right_heart_assessment_2010",
+        "right_heart_assessment_2025",
+        "spencer_ase_focus_2013"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "rv_length",
+      "measurement_title": "Longitud del VD",
+      "section_id": "rv_systolic",
+      "section_title": "Ventrículo derecho: tamaño y función sistólica",
+      "primary_window": "Apical",
+      "preferred_view": "A4C enfocada en VD",
+      "alternate_windows": [],
+      "modality": "2D",
+      "acquisition_timing": "Fin de diástole",
+      "original_order": 3,
+      "priority_tier": 2,
+      "priority_label": "POCUS extendido",
+      "display_order": 4,
+      "pocus_scope": "extended",
+      "clinical_contexts": [
+        "disnea"
+      ],
+      "rationale": "Longitud longitudinal del VD desde la base hasta el ápex.",
+      "reference_ids": [
+        "focus_recommendations_2014",
+        "kirkpatrick_ase_nomenclature_2024",
+        "right_heart_assessment_2010",
+        "right_heart_assessment_2025",
+        "spencer_ase_focus_2013"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "tapse_meas",
+      "measurement_title": "TAPSE",
+      "section_id": "rv_systolic",
+      "section_title": "Ventrículo derecho: tamaño y función sistólica",
+      "primary_window": "Apical",
+      "preferred_view": "A4C enfocada en VD",
+      "alternate_windows": [],
+      "modality": "Modo M",
+      "acquisition_timing": "Sístole",
+      "original_order": 6,
+      "priority_tier": 2,
+      "priority_label": "POCUS extendido",
+      "display_order": 5,
+      "pocus_scope": "extended",
+      "clinical_contexts": [
+        "disnea",
+        "inestabilidad hemodinámica"
+      ],
+      "rationale": "Excursión sistólica del anillo tricuspídeo por modo M. Medida cuantitativa lineal de la función longitudinal derecha, no reemplaza la valoración cualitativa global ni la integración multiparamétrica.",
+      "reference_ids": [
+        "focus_recommendations_2014",
+        "kirkpatrick_ase_nomenclature_2024",
+        "right_heart_assessment_2010",
+        "right_heart_assessment_2025",
+        "spencer_ase_focus_2013"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "s_prima_vd",
+      "measurement_title": "s' del VD",
+      "section_id": "rv_systolic",
+      "section_title": "Ventrículo derecho: tamaño y función sistólica",
+      "primary_window": "Apical",
+      "preferred_view": "A4C enfocada en VD",
+      "alternate_windows": [],
+      "modality": "Doppler tisular pulsado",
+      "acquisition_timing": "Sístole",
+      "original_order": 7,
+      "priority_tier": 2,
+      "priority_label": "POCUS extendido",
+      "display_order": 6,
+      "pocus_scope": "extended",
+      "clinical_contexts": [
+        "disnea",
+        "inestabilidad hemodinámica"
+      ],
+      "rationale": "Velocidad sistólica tisular del anillo tricuspídeo por TDI. Valora la contractilidad longitudinal derecha de forma complementaria al TAPSE.",
+      "reference_ids": [
+        "focus_recommendations_2014",
+        "kirkpatrick_ase_nomenclature_2024",
+        "right_heart_assessment_2010",
+        "right_heart_assessment_2025",
+        "spencer_ase_focus_2013"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "grosor_pared_vd",
+      "measurement_title": "Grosor de pared libre del VD",
+      "section_id": "rv_systolic",
+      "section_title": "Ventrículo derecho: tamaño y función sistólica",
+      "primary_window": "Subcostal",
+      "preferred_view": "Subcostal 4C o eje largo de VD",
+      "alternate_windows": [
+        "PLAX enfocada en pared anterior del VD si la subcostal es deficiente."
+      ],
+      "modality": "2D o modo M",
+      "acquisition_timing": "Fin de diástole",
+      "original_order": 5,
+      "priority_tier": 3,
+      "priority_label": "Dependiente del contexto",
+      "display_order": 7,
+      "pocus_scope": "contextual",
+      "clinical_contexts": [
+        "disnea"
+      ],
+      "rationale": "Es una medición lineal técnicamente accesible, pero se utiliza principalmente en contextos específicos de hipertrofia del VD, hipertensión pulmonar o sobrecarga crónica. No distingue por sí sola enfermedad aguda de crónica y debe integrarse con el resto de la evaluación derecha.",
+      "reference_ids": [
+        "right_heart_assessment_2010",
+        "right_heart_assessment_2025"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "fac_vd_meas",
+      "measurement_title": "FAC del VD",
+      "section_id": "rv_systolic",
+      "section_title": "Ventrículo derecho: tamaño y función sistólica",
+      "primary_window": "Apical",
+      "preferred_view": "A4C enfocada en VD",
+      "alternate_windows": [],
+      "modality": "2D; planimetría",
+      "acquisition_timing": "Fin de diástole y fin de sístole",
+      "original_order": 8,
+      "priority_tier": 3,
+      "priority_label": "Dependiente del contexto",
+      "display_order": 8,
+      "pocus_scope": "contextual",
+      "clinical_contexts": [
+        "disnea"
+      ],
+      "rationale": "Cambio de área fraccional del VD. Estimador global de la función sistólica derecha pero dependiente de una adecuada ventana apical.",
+      "reference_ids": [
+        "right_heart_assessment_2010",
+        "right_heart_assessment_2025"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "vti_tsvd_meas",
+      "measurement_title": "VTI del TSVD",
+      "section_id": "rv_systolic",
+      "section_title": "Ventrículo derecho: tamaño y función sistólica",
+      "primary_window": "Paraesternal izquierda",
+      "preferred_view": "PSAX a nivel de grandes vasos / RVOT",
+      "alternate_windows": [
+        "Subcostal eje corto del RVOT cuando la ventana paraesternal es limitada."
+      ],
+      "modality": "Doppler pulsado",
+      "acquisition_timing": "Sístole",
+      "original_order": 12,
+      "priority_tier": 3,
+      "priority_label": "Dependiente del contexto",
+      "display_order": 9,
+      "pocus_scope": "contextual",
+      "clinical_contexts": [
+        "disnea"
+      ],
+      "rationale": "Integral de velocidad-tiempo del TSVD.",
+      "reference_ids": [
+        "right_heart_assessment_2010",
+        "right_heart_assessment_2025"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "paat_tsvd",
+      "measurement_title": "PAAT / AccT del TSVD",
+      "section_id": "rv_systolic",
+      "section_title": "Ventrículo derecho: tamaño y función sistólica",
+      "primary_window": "Paraesternal izquierda",
+      "preferred_view": "PSAX a nivel de grandes vasos / RVOT",
+      "alternate_windows": [
+        "Subcostal eje corto del RVOT."
+      ],
+      "modality": "Doppler pulsado",
+      "acquisition_timing": "Sístole",
+      "original_order": 13,
+      "priority_tier": 3,
+      "priority_label": "Dependiente del contexto",
+      "display_order": 10,
+      "pocus_scope": "contextual",
+      "clinical_contexts": [
+        "disnea",
+        "inestabilidad hemodinámica"
+      ],
+      "rationale": "Tiempo de aceleración pulmonar por Doppler pulsado en el TSVD. Se utiliza principalmente ante sospecha de hipertensión pulmonar, aumento de resistencia vascular pulmonar o determinados contextos de disfunción derecha. No debe presentarse como prueba aislada diagnóstica de embolia pulmonar.",
+      "reference_ids": [
+        "right_heart_assessment_2010",
+        "right_heart_assessment_2025"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "tapse_pasp_ratio",
+      "measurement_title": "TAPSE/PASP",
+      "section_id": "rv_systolic",
+      "section_title": "Ventrículo derecho: tamaño y función sistólica",
+      "primary_window": "Derivada",
+      "preferred_view": "A4C enfocada en VD + mejor ventana de IT",
+      "alternate_windows": [],
+      "modality": "Modo M + Doppler continuo; cálculo",
+      "acquisition_timing": "Sístole",
+      "original_order": 14,
+      "priority_tier": 3,
+      "priority_label": "Dependiente del contexto",
+      "display_order": 11,
+      "pocus_scope": "contextual",
+      "clinical_contexts": [
+        "disnea",
+        "inestabilidad hemodinámica"
+      ],
+      "rationale": "Índice de acoplamiento ventrículo-arterial derecho. Refleja la reserva contráctil derecha frente a la poscarga pulmonar.",
+      "reference_ids": [
+        "right_heart_assessment_2010",
+        "right_heart_assessment_2025"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "fevd_3d",
+      "measurement_title": "FEVD 3D",
+      "section_id": "rv_systolic",
+      "section_title": "Ventrículo derecho: tamaño y función sistólica",
+      "primary_window": "Apical",
+      "preferred_view": "A4C enfocada en VD, volumen completo",
+      "alternate_windows": [],
+      "modality": "3D",
+      "acquisition_timing": "Varios ciclos o un latido según equipo",
+      "original_order": 9,
+      "priority_tier": 4,
+      "priority_label": "Avanzado / ecocardiografía integral",
+      "display_order": 12,
+      "pocus_scope": "advanced",
+      "clinical_contexts": [
+        "disnea"
+      ],
+      "rationale": "Fracción de eyección del VD tridimensional.",
+      "reference_ids": [
+        "right_heart_assessment_2010",
+        "right_heart_assessment_2025"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "strain_rv",
+      "measurement_title": "Strain de pared libre del VD",
+      "section_id": "rv_systolic",
+      "section_title": "Ventrículo derecho: tamaño y función sistólica",
+      "primary_window": "Apical",
+      "preferred_view": "A4C enfocada en VD",
+      "alternate_windows": [],
+      "modality": "Speckle tracking 2D",
+      "acquisition_timing": "Ciclo completo",
+      "original_order": 10,
+      "priority_tier": 4,
+      "priority_label": "Avanzado / ecocardiografía integral",
+      "display_order": 13,
+      "pocus_scope": "advanced",
+      "clinical_contexts": [
+        "disnea"
+      ],
+      "rationale": "Strain longitudinal de la pared libre del VD por speckle tracking.",
+      "reference_ids": [
+        "right_heart_assessment_2010",
+        "right_heart_assessment_2025"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "indice_tei_vd",
+      "measurement_title": "Índice de Tei del VD",
+      "section_id": "rv_systolic",
+      "section_title": "Ventrículo derecho: tamaño y función sistólica",
+      "primary_window": "Apical / paraesternal",
+      "preferred_view": "A4C para TDI; RV inflow + PSAX/RVOT para PW",
+      "alternate_windows": [],
+      "modality": "Doppler tisular o pulsado",
+      "acquisition_timing": "Ciclo completo",
+      "original_order": 11,
+      "priority_tier": 4,
+      "priority_label": "Avanzado / ecocardiografía integral",
+      "display_order": 14,
+      "pocus_scope": "advanced",
+      "clinical_contexts": [
+        "disnea"
+      ],
+      "rationale": "Índice de rendimiento miocárdico derecho que evalúa la función global sistólica y diastólica combinada.",
+      "reference_ids": [
+        "right_heart_assessment_2010",
+        "right_heart_assessment_2025"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "diametro_vci_meas",
+      "measurement_title": "Diámetro de VCI",
+      "section_id": "ra_ivc",
+      "section_title": "Aurícula derecha, vena cava inferior y presión auricular derecha",
+      "primary_window": "Subcostal",
+      "preferred_view": "Eje largo de VCI",
+      "alternate_windows": [
+        "Transhepática derecha lateral; vista transversal para confirmar el diámetro máximo."
+      ],
+      "modality": "2D; modo M opcional",
+      "acquisition_timing": "Máximo diámetro, usualmente espiración",
+      "original_order": 4,
+      "priority_tier": 1,
+      "priority_label": "Núcleo POCUS",
+      "display_order": 1,
+      "pocus_scope": "basic",
+      "clinical_contexts": [
+        "shock",
+        "inestabilidad hemodinámica"
+      ],
+      "rationale": "Medición 2D rápida de la VCI que, integrada con su variación respiratoria, función del corazón derecho, tipo de ventilación y contexto clínico, contribuye a estimar la presión auricular derecha y evaluar congestión venosa. No constituye por sí sola una medición directa de la volemia absoluta ni de la respuesta a la administración de líquidos.",
+      "reference_ids": [
+        "focus_recommendations_2014",
+        "kirkpatrick_ase_nomenclature_2024",
+        "right_heart_assessment_2010",
+        "right_heart_assessment_2025",
+        "spencer_ase_focus_2013"
+      ],
+      "confidence": "moderate",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "colapsabilidad_vci_meas",
+      "measurement_title": "Colapsabilidad de VCI",
+      "section_id": "ra_ivc",
+      "section_title": "Aurícula derecha, vena cava inferior y presión auricular derecha",
+      "primary_window": "Subcostal",
+      "preferred_view": "Eje largo de VCI",
+      "alternate_windows": [
+        "Vista transversal de confirmación."
+      ],
+      "modality": "2D cine o modo M",
+      "acquisition_timing": "Ciclo respiratorio",
+      "original_order": 5,
+      "priority_tier": 1,
+      "priority_label": "Núcleo POCUS",
+      "display_order": 2,
+      "pocus_scope": "basic",
+      "clinical_contexts": [
+        "shock",
+        "inestabilidad hemodinámica"
+      ],
+      "rationale": "Porcentaje de colapso respiratorio que forma parte de la evaluación básica de la VCI. Se aplica principalmente a pacientes en respiración espontánea, siendo muy dependiente de la técnica de adquisición y del esfuerzo inspiratorio realizado. No debe extrapolarse directamente a ventilación mecánica ni demuestra de forma aislada respuesta a líquidos.",
+      "reference_ids": [
+        "focus_recommendations_2014",
+        "kirkpatrick_ase_nomenclature_2024",
+        "right_heart_assessment_2010",
+        "right_heart_assessment_2025",
+        "spencer_ase_focus_2013"
+      ],
+      "confidence": "moderate",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "area_ad_meas",
+      "measurement_title": "Área de AD",
+      "section_id": "ra_ivc",
+      "section_title": "Aurícula derecha, vena cava inferior y presión auricular derecha",
+      "primary_window": "Apical",
+      "preferred_view": "A4C enfocada en VD/AD",
+      "alternate_windows": [],
+      "modality": "2D; planimetría",
+      "acquisition_timing": "Fin de sístole",
+      "original_order": 1,
+      "priority_tier": 2,
+      "priority_label": "POCUS extendido",
+      "display_order": 3,
+      "pocus_scope": "extended",
+      "clinical_contexts": [
+        "disnea"
+      ],
+      "rationale": "Área telesistólica de la aurícula derecha por planimetría 2D.",
+      "reference_ids": [
+        "focus_recommendations_2014",
+        "kirkpatrick_ase_nomenclature_2024",
+        "right_heart_assessment_2010",
+        "right_heart_assessment_2025",
+        "spencer_ase_focus_2013"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "presion_ad_estimada_meas",
+      "measurement_title": "Presión AD estimada",
+      "section_id": "ra_ivc",
+      "section_title": "Aurícula derecha, vena cava inferior y presión auricular derecha",
+      "primary_window": "Derivada",
+      "preferred_view": "Subcostal eje largo de VCI",
+      "alternate_windows": [],
+      "modality": "2D + integración",
+      "acquisition_timing": "Ciclo respiratorio",
+      "original_order": 7,
+      "priority_tier": 2,
+      "priority_label": "POCUS extendido",
+      "display_order": 4,
+      "pocus_scope": "extended",
+      "clinical_contexts": [
+        "shock",
+        "inestabilidad hemodinámica"
+      ],
+      "rationale": "Estimación indirecta de la presión en la aurícula derecha a partir de la VCI (diámetro y colapso), necesaria para calcular la PASP.",
+      "reference_ids": [
+        "focus_recommendations_2014",
+        "kirkpatrick_ase_nomenclature_2024",
+        "right_heart_assessment_2010",
+        "right_heart_assessment_2025",
+        "spencer_ase_focus_2013"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "longitud_ad",
+      "measurement_title": "Longitud de AD",
+      "section_id": "ra_ivc",
+      "section_title": "Aurícula derecha, vena cava inferior y presión auricular derecha",
+      "primary_window": "Apical",
+      "preferred_view": "A4C enfocada en VD/AD",
+      "alternate_windows": [],
+      "modality": "2D",
+      "acquisition_timing": "Fin de sístole",
+      "original_order": 2,
+      "priority_tier": 3,
+      "priority_label": "Dependiente del contexto",
+      "display_order": 5,
+      "pocus_scope": "contextual",
+      "clinical_contexts": [
+        "disnea"
+      ],
+      "rationale": "Longitud lineal de la aurícula derecha desde el plano anular tricuspídeo.",
+      "reference_ids": [
+        "right_heart_assessment_2010",
+        "right_heart_assessment_2025"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "diametro_menor_ad",
+      "measurement_title": "Diámetro menor de AD",
+      "section_id": "ra_ivc",
+      "section_title": "Aurícula derecha, vena cava inferior y presión auricular derecha",
+      "primary_window": "Apical",
+      "preferred_view": "A4C enfocada en VD/AD",
+      "alternate_windows": [],
+      "modality": "2D",
+      "acquisition_timing": "Fin de sístole",
+      "original_order": 3,
+      "priority_tier": 3,
+      "priority_label": "Dependiente del contexto",
+      "display_order": 6,
+      "pocus_scope": "contextual",
+      "clinical_contexts": [
+        "disnea"
+      ],
+      "rationale": "Diámetro transversal menor de la aurícula derecha.",
+      "reference_ids": [
+        "right_heart_assessment_2010",
+        "right_heart_assessment_2025"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "distensibilidad_vci_meas",
+      "measurement_title": "Distensibilidad de VCI",
+      "section_id": "ra_ivc",
+      "section_title": "Aurícula derecha, vena cava inferior y presión auricular derecha",
+      "primary_window": "Subcostal",
+      "preferred_view": "Eje largo de VCI",
+      "alternate_windows": [],
+      "modality": "2D cine o modo M",
+      "acquisition_timing": "Ciclo ventilatorio",
+      "original_order": 6,
+      "priority_tier": 3,
+      "priority_label": "Dependiente del contexto",
+      "display_order": 7,
+      "pocus_scope": "contextual",
+      "clinical_contexts": [
+        "shock",
+        "inestabilidad hemodinámica"
+      ],
+      "rationale": "Índice de distensibilidad respiratoria de la VCI. Su interpretación corresponde principalmente a pacientes con ventilación mecánica controlada y depende de volumen corriente, presión intratorácica, esfuerzo respiratorio, función derecha y técnica de adquisición. No debe presentarse como prueba aislada de respuesta a líquidos.",
+      "reference_ids": [
+        "right_heart_assessment_2010",
+        "right_heart_assessment_2025"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "gradiente_vd_ad",
+      "measurement_title": "Gradiente VD-AD",
+      "section_id": "pulmonary_hemodynamics",
+      "section_title": "Presión pulmonar y hemodinámica derecha",
+      "primary_window": "Múltiples",
+      "preferred_view": "Mejor sobre de IT: A4C VD, RV inflow, PSAX o subcostal",
+      "alternate_windows": [],
+      "modality": "Doppler continuo",
+      "acquisition_timing": "Sístole",
+      "original_order": 1,
+      "priority_tier": 2,
+      "priority_label": "POCUS extendido",
+      "display_order": 1,
+      "pocus_scope": "extended",
+      "clinical_contexts": [
+        "disnea",
+        "inestabilidad hemodinámica"
+      ],
+      "rationale": "Gradiente de presión sistólica transvalvular tricuspídeo derivado de la velocidad máxima de IT. Base para estimar la PASP.",
+      "reference_ids": [
+        "focus_recommendations_2014",
+        "kirkpatrick_ase_nomenclature_2024",
+        "right_heart_assessment_2010",
+        "right_heart_assessment_2025",
+        "spencer_ase_focus_2013"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "pasp_meas",
+      "measurement_title": "PSVD / PASP",
+      "section_id": "pulmonary_hemodynamics",
+      "section_title": "Presión pulmonar y hemodinámica derecha",
+      "primary_window": "Combinada",
+      "preferred_view": "Mejor ventana de IT + VCI subcostal",
+      "alternate_windows": [],
+      "modality": "Doppler continuo + estimación de RAP",
+      "acquisition_timing": "Sístole",
+      "original_order": 2,
+      "priority_tier": 2,
+      "priority_label": "POCUS extendido",
+      "display_order": 2,
+      "pocus_scope": "extended",
+      "clinical_contexts": [
+        "disnea",
+        "inestabilidad hemodinámica"
+      ],
+      "rationale": "Presión sistólica de la arteria pulmonar estimada. Parámetro clave en la evaluación de hipertensión pulmonar y disfunción derecha.",
+      "reference_ids": [
+        "focus_recommendations_2014",
+        "kirkpatrick_ase_nomenclature_2024",
+        "right_heart_assessment_2010",
+        "right_heart_assessment_2025",
+        "spencer_ase_focus_2013"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "aplanamiento_septal_meas",
+      "measurement_title": "Aplanamiento septal",
+      "section_id": "pulmonary_hemodynamics",
+      "section_title": "Presión pulmonar y hemodinámica derecha",
+      "primary_window": "Paraesternal izquierda",
+      "preferred_view": "PSAX medio ventricular",
+      "alternate_windows": [
+        "Subcostal eje corto."
+      ],
+      "modality": "2D cine",
+      "acquisition_timing": "Sístole y diástole",
+      "original_order": 7,
+      "priority_tier": 2,
+      "priority_label": "POCUS extendido",
+      "display_order": 3,
+      "pocus_scope": "extended",
+      "clinical_contexts": [
+        "shock",
+        "inestabilidad hemodinámica"
+      ],
+      "rationale": "Evaluación semicuantitativa del tabique aplanado (VI en D) en eje corto paraesternal. Denota sobrecarga derecha de volumen/presión en shock obstructivo.",
+      "reference_ids": [
+        "focus_recommendations_2014",
+        "kirkpatrick_ase_nomenclature_2024",
+        "right_heart_assessment_2010",
+        "right_heart_assessment_2025",
+        "spencer_ase_focus_2013"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "presion_media_pulmonar",
+      "measurement_title": "Presión media pulmonar por PR",
+      "section_id": "pulmonary_hemodynamics",
+      "section_title": "Presión pulmonar y hemodinámica derecha",
+      "primary_window": "Paraesternal izquierda",
+      "preferred_view": "PSAX grandes vasos / RVOT",
+      "alternate_windows": [
+        "Subcostal RVOT si la alineación es mejor."
+      ],
+      "modality": "Doppler continuo guiado por color",
+      "acquisition_timing": "Protodiástole",
+      "original_order": 3,
+      "priority_tier": 3,
+      "priority_label": "Dependiente del contexto",
+      "display_order": 4,
+      "pocus_scope": "contextual",
+      "clinical_contexts": [
+        "disnea"
+      ],
+      "rationale": "Presión media de la arteria pulmonar a partir del espectro Doppler de insuficiencia pulmonar.",
+      "reference_ids": [
+        "right_heart_assessment_2010",
+        "right_heart_assessment_2025"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "presion_diastolica_pulmonar",
+      "measurement_title": "Presión diastólica pulmonar",
+      "section_id": "pulmonary_hemodynamics",
+      "section_title": "Presión pulmonar y hemodinámica derecha",
+      "primary_window": "Paraesternal izquierda",
+      "preferred_view": "PSAX grandes vasos / RVOT",
+      "alternate_windows": [
+        "Subcostal RVOT."
+      ],
+      "modality": "Doppler continuo guiado por color",
+      "acquisition_timing": "Fin de diástole",
+      "original_order": 4,
+      "priority_tier": 3,
+      "priority_label": "Dependiente del contexto",
+      "display_order": 5,
+      "pocus_scope": "contextual",
+      "clinical_contexts": [
+        "disnea"
+      ],
+      "rationale": "Presión diastólica pulmonar estimada a partir de la velocidad final de insuficiencia pulmonar.",
+      "reference_ids": [
+        "right_heart_assessment_2010",
+        "right_heart_assessment_2025"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "indice_excentricidad_vi",
+      "measurement_title": "Índice de excentricidad del VI",
+      "section_id": "pulmonary_hemodynamics",
+      "section_title": "Presión pulmonar y hemodinámica derecha",
+      "primary_window": "Paraesternal izquierda",
+      "preferred_view": "PSAX medio ventricular a nivel de músculos papilares",
+      "alternate_windows": [
+        "Subcostal eje corto cuando PSAX es deficiente."
+      ],
+      "modality": "2D",
+      "acquisition_timing": "Fin de sístole y fin de diástole",
+      "original_order": 6,
+      "priority_tier": 3,
+      "priority_label": "Dependiente del contexto",
+      "display_order": 6,
+      "pocus_scope": "contextual",
+      "clinical_contexts": [
+        "disnea"
+      ],
+      "rationale": "Cuantificación geométrica del aplanamiento septal en diástole o sístole.",
+      "reference_ids": [
+        "right_heart_assessment_2010",
+        "right_heart_assessment_2025"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "rvp_ecografica",
+      "measurement_title": "RVP ecográfica",
+      "section_id": "pulmonary_hemodynamics",
+      "section_title": "Presión pulmonar y hemodinámica derecha",
+      "primary_window": "Combinada",
+      "preferred_view": "Mejor ventana de IT + PSAX/RVOT",
+      "alternate_windows": [],
+      "modality": "Doppler continuo + pulsado; cálculo",
+      "acquisition_timing": "Sístole",
+      "original_order": 5,
+      "priority_tier": 4,
+      "priority_label": "Avanzado / ecocardiografía integral",
+      "display_order": 7,
+      "pocus_scope": "advanced",
+      "clinical_contexts": [
+        "disnea",
+        "inestabilidad hemodinámica"
+      ],
+      "rationale": "Resistencia vascular pulmonar estimada por ecuación Doppler. Requiere acoplar medidas de TSVD e insuficiencia tricuspídea.",
+      "reference_ids": [
+        "right_heart_assessment_2010",
+        "right_heart_assessment_2025"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "velocidad_max_aortica",
+      "measurement_title": "Velocidad máxima aórtica",
+      "section_id": "aortic_valve_lvot",
+      "section_title": "Válvula aórtica y tracto de salida del ventrículo izquierdo",
+      "primary_window": "Múltiples",
+      "preferred_view": "A5C/A3C, paraesternal derecha alta y supraesternal",
+      "alternate_windows": [
+        "Apical; paraesternal derecha; supraesternal."
+      ],
+      "modality": "Doppler continuo",
+      "acquisition_timing": "Sístole",
+      "original_order": 1,
+      "priority_tier": 2,
+      "priority_label": "POCUS extendido",
+      "display_order": 1,
+      "pocus_scope": "extended",
+      "clinical_contexts": [
+        "shock",
+        "inestabilidad hemodinámica"
+      ],
+      "rationale": "Velocidad sistólica máxima a través de la válvula aórtica por Doppler continuo. Clave para descartar estenosis aórtica severa como causa de shock.",
+      "reference_ids": [
+        "chamber_quantification_2015",
+        "focus_recommendations_2014",
+        "kirkpatrick_ase_nomenclature_2024",
+        "spencer_ase_focus_2013",
+        "valvular_regurgitation_2017"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "gradiente_max_aortico",
+      "measurement_title": "Gradiente máximo aórtico",
+      "section_id": "aortic_valve_lvot",
+      "section_title": "Válvula aórtica y tracto de salida del ventrículo izquierdo",
+      "primary_window": "Derivada",
+      "preferred_view": "Misma ventana que Vmax aórtica",
+      "alternate_windows": [],
+      "modality": "Cálculo desde Doppler continuo",
+      "acquisition_timing": "Sístole",
+      "original_order": 2,
+      "priority_tier": 2,
+      "priority_label": "POCUS extendido",
+      "display_order": 2,
+      "pocus_scope": "extended",
+      "clinical_contexts": [
+        "shock"
+      ],
+      "rationale": "Gradiente transvalvular aórtico pico derivado de la velocidad aórtica.",
+      "reference_ids": [
+        "chamber_quantification_2015",
+        "focus_recommendations_2014",
+        "kirkpatrick_ase_nomenclature_2024",
+        "spencer_ase_focus_2013",
+        "valvular_regurgitation_2017"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "gradiente_medio_aortico",
+      "measurement_title": "Gradiente medio aórtico",
+      "section_id": "aortic_valve_lvot",
+      "section_title": "Válvula aórtica y tracto de salida del ventrículo izquierdo",
+      "primary_window": "Múltiples",
+      "preferred_view": "Ventana con mayor señal aórtica",
+      "alternate_windows": [],
+      "modality": "Doppler continuo; trazado",
+      "acquisition_timing": "Sístole",
+      "original_order": 3,
+      "priority_tier": 2,
+      "priority_label": "POCUS extendido",
+      "display_order": 3,
+      "pocus_scope": "extended",
+      "clinical_contexts": [
+        "shock"
+      ],
+      "rationale": "Gradiente transvalvular medio obtenido por integración espectral de flujo aórtico.",
+      "reference_ids": [
+        "chamber_quantification_2015",
+        "focus_recommendations_2014",
+        "kirkpatrick_ase_nomenclature_2024",
+        "spencer_ase_focus_2013",
+        "valvular_regurgitation_2017"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "ava_meas",
+      "measurement_title": "Área valvular aórtica (AVA)",
+      "section_id": "aortic_valve_lvot",
+      "section_title": "Válvula aórtica y tracto de salida del ventrículo izquierdo",
+      "primary_window": "Combinada",
+      "preferred_view": "PLAX + A5C/A3C + mejor ventana CW aórtica",
+      "alternate_windows": [],
+      "modality": "2D + PW + CW; cálculo",
+      "acquisition_timing": "Sístole",
+      "original_order": 4,
+      "priority_tier": 3,
+      "priority_label": "Dependiente del contexto",
+      "display_order": 4,
+      "pocus_scope": "contextual",
+      "clinical_contexts": [
+        "shock"
+      ],
+      "rationale": "Área valvular aórtica calculada por ecuación de continuidad. Necesaria para la tipificación formal de estenosis severa.",
+      "reference_ids": [
+        "chamber_quantification_2015",
+        "valvular_regurgitation_2017"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "ava_indexed",
+      "measurement_title": "AVA indexada",
+      "section_id": "aortic_valve_lvot",
+      "section_title": "Válvula aórtica y tracto de salida del ventrículo izquierdo",
+      "primary_window": "Derivada",
+      "preferred_view": "Mismas ventanas que AVA",
+      "alternate_windows": [],
+      "modality": "Cálculo",
+      "acquisition_timing": "Después de calcular AVA",
+      "original_order": 5,
+      "priority_tier": 3,
+      "priority_label": "Dependiente del contexto",
+      "display_order": 5,
+      "pocus_scope": "contextual",
+      "clinical_contexts": [
+        "shock"
+      ],
+      "rationale": "Área valvular aórtica indexada a la superficie corporal del paciente.",
+      "reference_ids": [
+        "chamber_quantification_2015",
+        "valvular_regurgitation_2017"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "dvi_meas",
+      "measurement_title": "Índice adimensional (DVI)",
+      "section_id": "aortic_valve_lvot",
+      "section_title": "Válvula aórtica y tracto de salida del ventrículo izquierdo",
+      "primary_window": "Combinada",
+      "preferred_view": "A5C/A3C + mejor ventana CW aórtica",
+      "alternate_windows": [],
+      "modality": "Doppler pulsado y continuo; cálculo",
+      "acquisition_timing": "Sístole",
+      "original_order": 6,
+      "priority_tier": 3,
+      "priority_label": "Dependiente del contexto",
+      "display_order": 6,
+      "pocus_scope": "contextual",
+      "clinical_contexts": [
+        "shock"
+      ],
+      "rationale": "Índice de velocidad adimensional. Útil en sospecha de estenosis aórtica cuando la ventana del TSVI es deficiente.",
+      "reference_ids": [
+        "chamber_quantification_2015",
+        "valvular_regurgitation_2017"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "velocidad_tsvi",
+      "measurement_title": "Velocidad del TSVI",
+      "section_id": "aortic_valve_lvot",
+      "section_title": "Válvula aórtica y tracto de salida del ventrículo izquierdo",
+      "primary_window": "Apical",
+      "preferred_view": "A5C o A3C",
+      "alternate_windows": [],
+      "modality": "Doppler pulsado",
+      "acquisition_timing": "Sístole",
+      "original_order": 7,
+      "priority_tier": 3,
+      "priority_label": "Dependiente del contexto",
+      "display_order": 7,
+      "pocus_scope": "contextual",
+      "clinical_contexts": [
+        "shock"
+      ],
+      "rationale": "Aunque la velocidad máxima del TSVI puede obtenerse fácilmente durante una adquisición Doppler del TSVI, su utilidad aislada es limitada y depende de una pregunta hemodinámica o clínica específica. No tiene la misma aplicabilidad general que el VTI del TSVI.",
+      "reference_ids": [
+        "chamber_quantification_2015",
+        "valvular_regurgitation_2017"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "area_mitral_pht",
+      "measurement_title": "Área mitral por PHT",
+      "section_id": "mitral_valve",
+      "section_title": "Válvula mitral",
+      "primary_window": "Apical",
+      "preferred_view": "A4C",
+      "alternate_windows": [],
+      "modality": "Doppler continuo transmitral",
+      "acquisition_timing": "Diástole",
+      "original_order": 2,
+      "priority_tier": 3,
+      "priority_label": "Dependiente del contexto",
+      "display_order": 1,
+      "pocus_scope": "contextual",
+      "clinical_contexts": [
+        "disnea"
+      ],
+      "rationale": "Área valvular mitral calculada por el método del tiempo de hemipresión (PHT).",
+      "reference_ids": [
+        "chamber_quantification_2015",
+        "valvular_regurgitation_2017"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "gradiente_medio_mitral",
+      "measurement_title": "Gradiente medio mitral",
+      "section_id": "mitral_valve",
+      "section_title": "Válvula mitral",
+      "primary_window": "Apical",
+      "preferred_view": "A4C",
+      "alternate_windows": [],
+      "modality": "Doppler continuo",
+      "acquisition_timing": "Diástole",
+      "original_order": 3,
+      "priority_tier": 3,
+      "priority_label": "Dependiente del contexto",
+      "display_order": 2,
+      "pocus_scope": "contextual",
+      "clinical_contexts": [
+        "disnea"
+      ],
+      "rationale": "Gradiente de presión medio transvalvular mitral por Doppler continuo. Se utiliza ante sospecha de estenosis mitral, obstrucción transmitral o evaluación de prótesis, y depende de frecuencia cardiaca, ritmo y flujo.",
+      "reference_ids": [
+        "chamber_quantification_2015",
+        "valvular_regurgitation_2017"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "pht_meas",
+      "measurement_title": "PHT",
+      "section_id": "mitral_valve",
+      "section_title": "Válvula mitral",
+      "primary_window": "Apical",
+      "preferred_view": "A4C",
+      "alternate_windows": [],
+      "modality": "Doppler continuo",
+      "acquisition_timing": "Diástole temprana",
+      "original_order": 4,
+      "priority_tier": 3,
+      "priority_label": "Dependiente del contexto",
+      "display_order": 3,
+      "pocus_scope": "contextual",
+      "clinical_contexts": [
+        "disnea"
+      ],
+      "rationale": "Tiempo de hemipresión de la pendiente mitral por Doppler pulsado/continuo.",
+      "reference_ids": [
+        "chamber_quantification_2015",
+        "valvular_regurgitation_2017"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "area_mitral_planimetria",
+      "measurement_title": "Área valvular mitral por planimetría",
+      "section_id": "mitral_valve",
+      "section_title": "Válvula mitral",
+      "primary_window": "Paraesternal izquierda",
+      "preferred_view": "PSAX a nivel de las puntas mitrales",
+      "alternate_windows": [],
+      "modality": "2D zoom",
+      "acquisition_timing": "Máxima apertura en diástole",
+      "original_order": 1,
+      "priority_tier": 4,
+      "priority_label": "Avanzado / ecocardiografía integral",
+      "display_order": 4,
+      "pocus_scope": "advanced",
+      "clinical_contexts": [
+        "disnea"
+      ],
+      "rationale": "Medición directa del orificio mitral por planimetría bidimensional en eje corto paraesternal.",
+      "reference_ids": [
+        "chamber_quantification_2015",
+        "valvular_regurgitation_2017"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "relacion_vti_mitral_tsvi",
+      "measurement_title": "Relación VTI mitral/VTI TSVI",
+      "section_id": "mitral_valve",
+      "section_title": "Válvula mitral",
+      "primary_window": "Combinada",
+      "preferred_view": "A4C para VTI mitral + A5C/A3C para VTI TSVI",
+      "alternate_windows": [],
+      "modality": "Doppler pulsado/continuo; cálculo",
+      "acquisition_timing": "Diástole y sístole",
+      "original_order": 5,
+      "priority_tier": 4,
+      "priority_label": "Avanzado / ecocardiografía integral",
+      "display_order": 5,
+      "pocus_scope": "advanced",
+      "clinical_contexts": [
+        "disnea"
+      ],
+      "rationale": "Relación de integrales mitral/aórtico, usada en evaluaciones de Shunt o sobrecarga.",
+      "reference_ids": [
+        "chamber_quantification_2015",
+        "valvular_regurgitation_2017"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "vena_contracta_meas",
+      "measurement_title": "Vena contracta (VC)",
+      "section_id": "valvular_regurgitation",
+      "section_title": "Insuficiencias valvulares",
+      "primary_window": "Dependiente de válvula",
+      "preferred_view": "IM: PLAX/A4C/A2C; IA: PLAX; IT: A4C VD/RV inflow",
+      "alternate_windows": [
+        "Usar varias vistas para jets excéntricos."
+      ],
+      "modality": "Color Doppler 2D con zoom",
+      "acquisition_timing": "Sístole para IM/IT; diástole para IA",
+      "original_order": 1,
+      "priority_tier": 3,
+      "priority_label": "Dependiente del contexto",
+      "display_order": 1,
+      "pocus_scope": "contextual",
+      "clinical_contexts": [
+        "disnea"
+      ],
+      "rationale": "La vena contracta es una medición semicuantitativa que se aplica cuando existe sospecha de regurgitación valvular y debe integrarse con otros criterios.",
+      "reference_ids": [
+        "chamber_quantification_2015",
+        "valvular_regurgitation_2017"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "insuficiencia_mitral_severa_meas",
+      "measurement_title": "Insuficiencia mitral severa",
+      "section_id": "valvular_regurgitation",
+      "section_title": "Insuficiencias valvulares",
+      "primary_window": "Múltiples",
+      "preferred_view": "PLAX, A4C, A2C, A3C; venas pulmonares",
+      "alternate_windows": [],
+      "modality": "2D, color, PW y CW",
+      "acquisition_timing": "Sístole",
+      "original_order": 6,
+      "priority_tier": 3,
+      "priority_label": "Dependiente del contexto",
+      "display_order": 2,
+      "pocus_scope": "contextual",
+      "clinical_contexts": [
+        "disnea",
+        "inestabilidad hemodinámica"
+      ],
+      "rationale": "La clasificación de insuficiencia mitral severa requiere integración multiparamétrica y una sospecha clínica o valvular específica.",
+      "reference_ids": [
+        "chamber_quantification_2015",
+        "valvular_regurgitation_2017"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "insuficiencia_aortica_severa_meas",
+      "measurement_title": "Insuficiencia aórtica severa",
+      "section_id": "valvular_regurgitation",
+      "section_title": "Insuficiencias valvulares",
+      "primary_window": "Múltiples",
+      "preferred_view": "PLAX para VC; A5C/A3C para CW; supraesternal para aorta descendente",
+      "alternate_windows": [
+        "Subcostal para flujo aórtico abdominal como apoyo."
+      ],
+      "modality": "2D, color, PW y CW",
+      "acquisition_timing": "Diástole",
+      "original_order": 7,
+      "priority_tier": 3,
+      "priority_label": "Dependiente del contexto",
+      "display_order": 3,
+      "pocus_scope": "contextual",
+      "clinical_contexts": [
+        "shock",
+        "inestabilidad hemodinámica"
+      ],
+      "rationale": "La clasificación de insuficiencia aórtica severa requiere integrar Doppler color, Doppler espectral, flujo reverso y otros hallazgos.",
+      "reference_ids": [
+        "chamber_quantification_2015",
+        "valvular_regurgitation_2017"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "insuficiencia_tricuspidea_severa_meas",
+      "measurement_title": "Insuficiencia tricuspídea severa",
+      "section_id": "valvular_regurgitation",
+      "section_title": "Insuficiencias valvulares",
+      "primary_window": "Múltiples",
+      "preferred_view": "A4C enfocada en VD, RV inflow, PSAX; venas hepáticas subcostales",
+      "alternate_windows": [],
+      "modality": "2D, color, PW y CW",
+      "acquisition_timing": "Sístole",
+      "original_order": 8,
+      "priority_tier": 3,
+      "priority_label": "Dependiente del contexto",
+      "display_order": 4,
+      "pocus_scope": "contextual",
+      "clinical_contexts": [
+        "disnea",
+        "inestabilidad hemodinámica"
+      ],
+      "rationale": "La clasificación de insuficiencia tricuspídea severa requiere integración de vena contracta, Doppler, flujo de venas hepáticas, tamaño de cavidades y función derecha.",
+      "reference_ids": [
+        "chamber_quantification_2015",
+        "valvular_regurgitation_2017"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "flujo_pisa_meas",
+      "measurement_title": "Flujo PISA",
+      "section_id": "valvular_regurgitation",
+      "section_title": "Insuficiencias valvulares",
+      "primary_window": "Dependiente de válvula",
+      "preferred_view": "IM: apical; IA: PLAX/apical; IT: A4C VD",
+      "alternate_windows": [],
+      "modality": "Color Doppler con línea basal desplazada",
+      "acquisition_timing": "Pico de regurgitación",
+      "original_order": 2,
+      "priority_tier": 4,
+      "priority_label": "Avanzado / ecocardiografía integral",
+      "display_order": 5,
+      "pocus_scope": "advanced",
+      "clinical_contexts": [
+        "disnea"
+      ],
+      "rationale": "Técnica avanzada de área de isovelocidad proximal (PISA) para cuantificación de reflujo.",
+      "reference_ids": [
+        "chamber_quantification_2015",
+        "valvular_regurgitation_2017"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "eroa_meas",
+      "measurement_title": "EROA",
+      "section_id": "valvular_regurgitation",
+      "section_title": "Insuficiencias valvulares",
+      "primary_window": "Combinada",
+      "preferred_view": "Vista PISA + mejor CW del jet",
+      "alternate_windows": [],
+      "modality": "Color Doppler + Doppler continuo; cálculo",
+      "acquisition_timing": "Mismo momento del ciclo",
+      "original_order": 3,
+      "priority_tier": 4,
+      "priority_label": "Avanzado / ecocardiografía integral",
+      "display_order": 6,
+      "pocus_scope": "advanced",
+      "clinical_contexts": [
+        "disnea"
+      ],
+      "rationale": "Área del orificio regurgitante efectivo obtenido por método PISA.",
+      "reference_ids": [
+        "chamber_quantification_2015",
+        "valvular_regurgitation_2017"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "volumen_regurgitante_meas",
+      "measurement_title": "Volumen regurgitante",
+      "section_id": "valvular_regurgitation",
+      "section_title": "Insuficiencias valvulares",
+      "primary_window": "Derivada",
+      "preferred_view": "Mismas vistas que EROA y VTI del jet",
+      "alternate_windows": [],
+      "modality": "Cálculo",
+      "acquisition_timing": "Ciclo completo del jet",
+      "original_order": 4,
+      "priority_tier": 4,
+      "priority_label": "Avanzado / ecocardiografía integral",
+      "display_order": 7,
+      "pocus_scope": "advanced",
+      "clinical_contexts": [
+        "disnea"
+      ],
+      "rationale": "Volumen regurgitante total calculado cuantitativamente.",
+      "reference_ids": [
+        "chamber_quantification_2015",
+        "valvular_regurgitation_2017"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "fraccion_regurgitante_meas",
+      "measurement_title": "Fracción regurgitante",
+      "section_id": "valvular_regurgitation",
+      "section_title": "Insuficiencias valvulares",
+      "primary_window": "Derivada",
+      "preferred_view": "Datos volumétricos combinados",
+      "alternate_windows": [],
+      "modality": "Cálculo",
+      "acquisition_timing": "Después de obtener volúmenes",
+      "original_order": 5,
+      "priority_tier": 4,
+      "priority_label": "Avanzado / ecocardiografía integral",
+      "display_order": 8,
+      "pocus_scope": "advanced",
+      "clinical_contexts": [
+        "disnea"
+      ],
+      "rationale": "Fracción de regurgitación calculada para definir la sobrecarga de volumen.",
+      "reference_ids": [
+        "chamber_quantification_2015",
+        "valvular_regurgitation_2017"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "derrame_pericardico_pequeno",
+      "measurement_title": "Derrame pericárdico pequeño",
+      "section_id": "pericardium_tamponade",
+      "section_title": "Pericardio y signos ecográficos de taponamiento",
+      "primary_window": "Múltiples",
+      "preferred_view": "PLAX, PSAX, A4C y subcostal",
+      "alternate_windows": [],
+      "modality": "2D",
+      "acquisition_timing": "Fin de diástole",
+      "original_order": 1,
+      "priority_tier": 2,
+      "priority_label": "POCUS extendido",
+      "display_order": 1,
+      "pocus_scope": "extended",
+      "clinical_contexts": [
+        "shock",
+        "inestabilidad hemodinámica"
+      ],
+      "rationale": "Graduación cuantitativa/semicuantitativa del derrame pericárdico leve (<10 mm). Debe integrarse con la repercusión mecánica y no valorarse de forma aislada.",
+      "reference_ids": [
+        "clinical_tamponade_consensus",
+        "focus_recommendations_2014",
+        "kirkpatrick_ase_nomenclature_2024",
+        "spencer_ase_focus_2013"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "derrame_pericardico_moderado",
+      "measurement_title": "Derrame pericárdico moderado",
+      "section_id": "pericardium_tamponade",
+      "section_title": "Pericardio y signos ecográficos de taponamiento",
+      "primary_window": "Múltiples",
+      "preferred_view": "PLAX, PSAX, A4C y subcostal",
+      "alternate_windows": [],
+      "modality": "2D",
+      "acquisition_timing": "Fin de diástole",
+      "original_order": 2,
+      "priority_tier": 2,
+      "priority_label": "POCUS extendido",
+      "display_order": 2,
+      "pocus_scope": "extended",
+      "clinical_contexts": [
+        "shock",
+        "inestabilidad hemodinámica"
+      ],
+      "rationale": "Graduación del derrame pericárdico moderado (10-20 mm).",
+      "reference_ids": [
+        "clinical_tamponade_consensus",
+        "focus_recommendations_2014",
+        "kirkpatrick_ase_nomenclature_2024",
+        "spencer_ase_focus_2013"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "derrame_pericardico_grande",
+      "measurement_title": "Derrame pericárdico grande",
+      "section_id": "pericardium_tamponade",
+      "section_title": "Pericardio y signos ecográficos de taponamiento",
+      "primary_window": "Múltiples",
+      "preferred_view": "PLAX, PSAX, A4C y subcostal",
+      "alternate_windows": [],
+      "modality": "2D",
+      "acquisition_timing": "Fin de diástole",
+      "original_order": 3,
+      "priority_tier": 2,
+      "priority_label": "POCUS extendido",
+      "display_order": 3,
+      "pocus_scope": "extended",
+      "clinical_contexts": [
+        "shock",
+        "inestabilidad hemodinámica"
+      ],
+      "rationale": "Graduación del derrame pericárdico grande (>20 mm), con alto riesgo de compromiso mecánico.",
+      "reference_ids": [
+        "clinical_tamponade_consensus",
+        "focus_recommendations_2014",
+        "kirkpatrick_ase_nomenclature_2024",
+        "spencer_ase_focus_2013"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "colapso_ad_meas",
+      "measurement_title": "Colapso de AD",
+      "section_id": "pericardium_tamponade",
+      "section_title": "Pericardio y signos ecográficos de taponamiento",
+      "primary_window": "Apical / subcostal",
+      "preferred_view": "A4C o subcostal 4C",
+      "alternate_windows": [
+        "PLAX puede complementar según localización del derrame."
+      ],
+      "modality": "2D cine; modo M opcional",
+      "acquisition_timing": "Sístole",
+      "original_order": 4,
+      "priority_tier": 2,
+      "priority_label": "POCUS extendido",
+      "display_order": 4,
+      "pocus_scope": "extended",
+      "clinical_contexts": [
+        "shock",
+        "inestabilidad hemodinámica"
+      ],
+      "rationale": "Signo de repercusión hemodinámica caracterizado por el colapso sistólico de la aurícula derecha. Debe integrarse con el contexto clínico; no es un diagnóstico definitivo aislado de taponamiento.",
+      "reference_ids": [
+        "clinical_tamponade_consensus",
+        "focus_recommendations_2014",
+        "kirkpatrick_ase_nomenclature_2024",
+        "spencer_ase_focus_2013"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "colapso_vd_meas",
+      "measurement_title": "Colapso de VD",
+      "section_id": "pericardium_tamponade",
+      "section_title": "Pericardio y signos ecográficos de taponamiento",
+      "primary_window": "Múltiples",
+      "preferred_view": "PLAX, A4C y subcostal 4C",
+      "alternate_windows": [],
+      "modality": "2D cine; modo M opcional",
+      "acquisition_timing": "Diástole temprana",
+      "original_order": 5,
+      "priority_tier": 2,
+      "priority_label": "POCUS extendido",
+      "display_order": 5,
+      "pocus_scope": "extended",
+      "clinical_contexts": [
+        "shock",
+        "inestabilidad hemodinámica"
+      ],
+      "rationale": "Signo de repercusión caracterizado por el colapso diastólico de la pared libre del VD.",
+      "reference_ids": [
+        "clinical_tamponade_consensus",
+        "focus_recommendations_2014",
+        "kirkpatrick_ase_nomenclature_2024",
+        "spencer_ase_focus_2013"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "vci_pletorica_meas",
+      "measurement_title": "VCI pletórica",
+      "section_id": "pericardium_tamponade",
+      "section_title": "Pericardio y signos ecográficos de taponamiento",
+      "primary_window": "Subcostal",
+      "preferred_view": "Eje largo de VCI",
+      "alternate_windows": [],
+      "modality": "2D cine",
+      "acquisition_timing": "Ciclo respiratorio",
+      "original_order": 8,
+      "priority_tier": 2,
+      "priority_label": "POCUS extendido",
+      "display_order": 6,
+      "pocus_scope": "extended",
+      "clinical_contexts": [
+        "shock",
+        "inestabilidad hemodinámica"
+      ],
+      "rationale": "VCI dilatada con colapso ausente, con alto valor predictivo negativo para descartar taponamiento en sospecha clínica activa.",
+      "reference_ids": [
+        "clinical_tamponade_consensus",
+        "focus_recommendations_2014",
+        "kirkpatrick_ase_nomenclature_2024",
+        "spencer_ase_focus_2013"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "variacion_mitral_respiratoria",
+      "measurement_title": "Variación mitral respiratoria",
+      "section_id": "pericardium_tamponade",
+      "section_title": "Pericardio y signos ecográficos de taponamiento",
+      "primary_window": "Apical",
+      "preferred_view": "A4C",
+      "alternate_windows": [],
+      "modality": "Doppler pulsado",
+      "acquisition_timing": "Varios ciclos respiratorios",
+      "original_order": 6,
+      "priority_tier": 3,
+      "priority_label": "Dependiente del contexto",
+      "display_order": 7,
+      "pocus_scope": "contextual",
+      "clinical_contexts": [
+        "shock",
+        "inestabilidad hemodinámica"
+      ],
+      "rationale": "Medición Doppler dirigida a evaluar la interdependencia ventricular y posible repercusión hemodinámica en un contexto pericárdico específico.",
+      "reference_ids": [
+        "clinical_tamponade_consensus"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "variacion_tricuspidea_respiratoria",
+      "measurement_title": "Variación tricuspídea respiratoria",
+      "section_id": "pericardium_tamponade",
+      "section_title": "Pericardio y signos ecográficos de taponamiento",
+      "primary_window": "Apical",
+      "preferred_view": "A4C enfocada en VD",
+      "alternate_windows": [],
+      "modality": "Doppler pulsado",
+      "acquisition_timing": "Varios ciclos respiratorios",
+      "original_order": 7,
+      "priority_tier": 3,
+      "priority_label": "Dependiente del contexto",
+      "display_order": 8,
+      "pocus_scope": "contextual",
+      "clinical_contexts": [
+        "shock",
+        "inestabilidad hemodinámica"
+      ],
+      "rationale": "Medición Doppler del flujo transtricuspídeo dirigida a evaluar la interdependencia ventricular y la posible repercusión hemodinámica en el taponamiento cardíaco.",
+      "reference_ids": [
+        "clinical_tamponade_consensus"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    },
+    {
+      "measurement_id": "movimiento_pendular_meas",
+      "measurement_title": "Movimiento pendular del corazón",
+      "section_id": "pericardium_tamponade",
+      "section_title": "Pericardio y signos ecográficos de taponamiento",
+      "primary_window": "Múltiples",
+      "preferred_view": "Subcostal 4C, A4C y PLAX",
+      "alternate_windows": [],
+      "modality": "2D cine",
+      "acquisition_timing": "Varios ciclos",
+      "original_order": 9,
+      "priority_tier": 3,
+      "priority_label": "Dependiente del contexto",
+      "display_order": 9,
+      "pocus_scope": "contextual",
+      "clinical_contexts": [
+        "shock",
+        "inestabilidad hemodinámica"
+      ],
+      "rationale": "Vaivén del corazón en derrames grandes ('swinging heart'), signo cualitativo contextual.",
+      "reference_ids": [
+        "clinical_tamponade_consensus"
+      ],
+      "confidence": "high",
+      "review_status": "pending"
+    }
+  ]
+}

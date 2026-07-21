@@ -358,6 +358,23 @@ const Router = {
         const measurements = await DataLoader.getMeasurements() || [];
         const filtered = measurements.filter(m => m.section_id === sectionId);
 
+        // Ordenar tarjetas dentro de la sección por display_order, priority_tier, original_order y measurement_id
+        filtered.sort((a, b) => {
+            const displayA = a.display_order !== undefined ? a.display_order : 9999;
+            const displayB = b.display_order !== undefined ? b.display_order : 9999;
+            if (displayA !== displayB) return displayA - displayB;
+
+            const tierA = a.priority_tier !== undefined ? a.priority_tier : 99;
+            const tierB = b.priority_tier !== undefined ? b.priority_tier : 99;
+            if (tierA !== tierB) return tierA - tierB;
+
+            const origA = a.original_order !== undefined ? a.original_order : (a.order || 9999);
+            const origB = b.original_order !== undefined ? b.original_order : (b.order || 9999);
+            if (origA !== origB) return origA - origB;
+
+            return (a.id || "").localeCompare(b.id || "");
+        });
+
         let html = `
             <div class="navigation-header">
                 <a href="#/mediciones" class="btn-back">← Banco</a>
