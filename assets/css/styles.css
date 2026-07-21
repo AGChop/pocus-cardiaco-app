@@ -749,5 +749,127 @@ body.dark-mode .measurement-accordion-content {
     margin-bottom: 0.25rem;
 }
 
+/* --- Acordeón Genérico Reutilizable (Fase 3C) --- */
 
+/* Contenedor Grid para acordeones */
+.content-accordion-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    width: 100%;
+}
 
+@media (min-width: 768px) {
+    .content-accordion-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Tarjeta en Acordeón */
+.content-accordion {
+    padding: 0 !important;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Control interactivo (summary) */
+.content-accordion-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.25rem;
+    font-weight: 600;
+    cursor: pointer;
+    user-select: none;
+    list-style: none;
+    background-color: var(--card-bg-light);
+    color: var(--text-main-light);
+    transition: background-color 0.2s ease;
+}
+
+body.dark-mode .content-accordion-summary {
+    background-color: var(--card-bg-dark);
+    color: var(--text-main-dark);
+}
+
+.content-accordion-summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Foco visible al navegar con teclado */
+.content-accordion-summary:focus-visible {
+    outline: 3px solid var(--primary-medium);
+    outline-offset: -3px;
+    background-color: rgba(30, 58, 138, 0.08);
+}
+
+body.dark-mode .content-accordion-summary:focus-visible {
+    outline: 3px solid var(--primary-light);
+    background-color: rgba(59, 130, 246, 0.15);
+}
+
+/* Hover interactivo */
+.content-accordion-summary:hover {
+    background-color: rgba(30, 58, 138, 0.04);
+}
+body.dark-mode .content-accordion-summary:hover {
+    background-color: rgba(255, 255, 255, 0.04);
+}
+
+/* Título */
+.content-accordion-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+}
+
+/* Subtítulo u otros elementos textuales */
+.content-accordion-subtitle {
+    font-size: 0.9rem;
+    color: var(--text-muted-light);
+}
+
+body.dark-mode .content-accordion-subtitle {
+    color: var(--text-muted-dark);
+}
+
+/* Indicador visual de apertura */
+.content-accordion-arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    font-size: 1.1rem;
+    color: var(--text-muted-light);
+    transition: transform 0.2s ease;
+}
+
+body.dark-mode .content-accordion-arrow {
+    color: var(--text-muted-dark);
+}
+
+.content-accordion-arrow::after {
+    content: "▾";
+}
+
+.content-accordion[open] .content-accordion-arrow::after {
+    content: "▴";
+}
+
+/* Cuerpo desplegado */
+.content-accordion-body {
+    padding: 1.25rem;
+    border-top: 1px solid var(--border-light);
+    background-color: var(--card-bg-light);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+body.dark-mode .content-accordion-body {
+    border-top: 1px solid var(--border-dark);
+    background-color: var(--card-bg-dark);
+}

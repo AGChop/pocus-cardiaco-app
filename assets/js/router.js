@@ -189,18 +189,7 @@ const Router = {
                 <h2>Glosario de Términos</h2>
             </div>
 
-            <!-- Vista de Computadora (Tabla) -->
-            <div class="desktop-view">
-                <table class="clinical-table">
-                    <thead>
-                        <tr>
-                            <th>Término</th>
-                            <th>Definición</th>
-                            <th>Adquisición, Utilidad o Limitación</th>
-                            <th>Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+            <div class="content-accordion-grid cards-list">
         `;
 
         glossary.forEach(item => {
@@ -208,56 +197,30 @@ const Router = {
             const copyData = `Término: ${item.term}\nDefinición: ${item.definition}\nAdquisición/Utilidad: ${item.acquisition_utility_limitation}\nFuente: ${item.source_document} (Pág. ${item.source_page})`;
 
             html += `
-                <tr>
-                    <td><strong>${item.term}</strong></td>
-                    <td>${item.definition}</td>
-                    <td>${item.acquisition_utility_limitation}</td>
-                    <td>
-                        <div class="table-actions">
-                            <a href="#/glosario/${item.id}" class="btn-table-action">Detalle</a>
-                            <button class="btn-table-action" onclick="Router.copyText(\`${copyData.replace(/`/g, '\\`').replace(/\n/g, '\\n')}\`, 'copy-t-${item.id}')" id="copy-t-${item.id}">Copiar</button>
+                <details class="content-accordion glossary-accordion card clinical-card">
+                    <summary class="content-accordion-summary">
+                        <span class="content-accordion-title">${item.term}</span>
+                        <span class="content-accordion-arrow"></span>
+                    </summary>
+                    <div class="content-accordion-body">
+                        ${item.category ? `<p><strong>Categoría:</strong> ${item.category}</p>` : ''}
+                        <p class="card-definition"><strong>Definición:</strong> ${item.definition}</p>
+                        <p class="card-acquisition"><strong>Adquisición/Utilidad:</strong> ${item.acquisition_utility_limitation}</p>
+                        ${item.aliases && item.aliases.length > 0 ? `<p class="card-aliases"><strong>Sinónimos / Aliases:</strong> ${item.aliases.join(", ")}</p>` : ''}
+                        <div class="card-meta">Página origen: ${item.source_page}</div>
+                        <div class="card-actions">
+                            <a href="#/glosario/${item.id}" class="btn-card-action">Detalle</a>
+                            <button class="btn-card-action" onclick="Router.copyText(\`${copyData.replace(/`/g, '\\`').replace(/\n/g, '\\n')}\`, 'copy-m-t-${item.id}')" id="copy-m-t-${item.id}">Copiar</button>
+                            <button class="btn-card-action" onclick="Router.toggleFav('término', '${item.id}', '${item.term}', 'fav-t-${item.id}')" id="fav-t-${item.id}">
+                                ${isFav ? "★ Quitar" : "☆ Favorito"}
+                            </button>
                         </div>
-                    </td>
-                </tr>
+                    </div>
+                </details>
             `;
         });
 
         html += `
-                    </tbody>
-                </table>
-            </div>
-
-            <!-- Vista de Teléfono (Tarjetas) -->
-            <div class="mobile-view">
-                <div class="cards-list">
-        `;
-
-        glossary.forEach(item => {
-            const isFav = Storage.isFavorite("término", item.id);
-            const copyData = `Término: ${item.term}\nDefinición: ${item.definition}\nAdquisición/Utilidad: ${item.acquisition_utility_limitation}\nFuente: ${item.source_document} (Pág. ${item.source_page})`;
-
-            html += `
-                <div class="card clinical-card">
-                    <div class="card-header">
-                        <h3>${item.term}</h3>
-                        <span class="card-category">${item.category}</span>
-                    </div>
-                    <p class="card-definition"><strong>Definición:</strong> ${item.definition}</p>
-                    <p class="card-acquisition"><strong>Adquisición/Utilidad:</strong> ${item.acquisition_utility_limitation}</p>
-                    <div class="card-meta">Página origen: ${item.source_page}</div>
-                    <div class="card-actions">
-                        <a href="#/glosario/${item.id}" class="btn-card-action">Detalle</a>
-                        <button class="btn-card-action" onclick="Router.copyText(\`${copyData.replace(/`/g, '\\`').replace(/\n/g, '\\n')}\`, 'copy-m-t-${item.id}')" id="copy-m-t-${item.id}">Copiar</button>
-                        <button class="btn-card-action" onclick="Router.toggleFav('término', '${item.id}', '${item.term}', 'fav-t-${item.id}')" id="fav-t-${item.id}">
-                            ${isFav ? "★ Quitar" : "☆ Favorito"}
-                        </button>
-                    </div>
-                </div>
-            `;
-        });
-
-        html += `
-                </div>
             </div>
         `;
         container.innerHTML = html;
@@ -621,58 +584,33 @@ const Router = {
                 <h2>Ventanas Ecocardiográficas</h2>
             </div>
 
-            <div class="desktop-view">
-                <table class="clinical-table">
-                    <thead>
-                        <tr>
-                            <th>Ventana</th>
-                            <th>Abreviatura</th>
-                            <th>Estructuras Favorecidas</th>
-                            <th>Acción</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+            <div class="content-accordion-grid cards-list">
         `;
 
         windows.forEach(item => {
             html += `
-                <tr>
-                    <td><strong>${escapeHTML(item.window)}</strong></td>
-                    <td><span class="unit-badge">${escapeHTML(item.abbreviation)}</span></td>
-                    <td>${escapeHTML(item.favored_structures)}</td>
-                    <td>
-                        <a href="#/ventanas/${item.id}" class="btn-table-action">Detalle</a>
-                    </td>
-                </tr>
+                <details class="content-accordion window-accordion card clinical-card">
+                    <summary class="content-accordion-summary">
+                        <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+                            <span class="content-accordion-title">${escapeHTML(item.window)}</span>
+                            ${item.abbreviation ? `<span class="unit-badge">${escapeHTML(item.abbreviation)}</span>` : ''}
+                        </div>
+                        <span class="content-accordion-arrow"></span>
+                    </summary>
+                    <div class="content-accordion-body">
+                        ${item.favored_structures ? `<p><strong>Estructuras favorecidas:</strong> ${escapeHTML(item.favored_structures)}</p>` : ''}
+                        ${item.typical_probe_position ? `<p><strong>Posición del transductor:</strong> ${escapeHTML(item.typical_probe_position)}</p>` : ''}
+                        ${item.typical_marker_orientation ? `<p><strong>Orientación del marcador:</strong> ${escapeHTML(item.typical_marker_orientation)}</p>` : ''}
+                        ${item.favored_measurements ? `<p><strong>Mediciones asociadas:</strong> ${escapeHTML(item.favored_measurements)}</p>` : ''}
+                        <div class="card-actions">
+                            <a href="#/ventanas/${item.id}" class="btn-card-action">Detalle</a>
+                        </div>
+                    </div>
+                </details>
             `;
         });
 
         html += `
-                    </tbody>
-                </table>
-            </div>
-
-            <div class="mobile-view">
-                <div class="cards-list">
-        `;
-
-        windows.forEach(item => {
-            html += `
-                <div class="card clinical-card">
-                    <div class="card-header">
-                        <h3>${escapeHTML(item.window)}</h3>
-                        <span class="unit-badge">${escapeHTML(item.abbreviation)}</span>
-                    </div>
-                    <p><strong>Estructuras favorecidas:</strong> ${escapeHTML(item.favored_structures)}</p>
-                    <div class="card-actions">
-                        <a href="#/ventanas/${item.id}" class="btn-card-action">Detalle</a>
-                    </div>
-                </div>
-            `;
-        });
-
-        html += `
-                </div>
             </div>
         `;
 
