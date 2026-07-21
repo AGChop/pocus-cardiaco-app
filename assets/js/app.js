@@ -93,6 +93,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 title = item.window;
                 description = `<strong>Abreviatura:</strong> ${item.abbreviation}<br><strong>Estructuras favorecidas:</strong> ${item.favored_structures}`;
                 link = `#/ventanas/${item.id}`;
+            } else if (type === "protocolo") {
+                title = item.name_es;
+                description = `<strong>Acrónimo:</strong> ${item.acronym}<br><strong>Propósito:</strong> ${item.purpose}`;
+                link = `#/protocolos/${item.id}`;
             }
 
             html += `

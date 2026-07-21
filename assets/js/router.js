@@ -54,6 +54,17 @@ const Router = {
             return;
         }
 
+        // Rutas de Protocolos
+        if (hash === '#/protocolos') {
+            await this.renderProtocolsList(container);
+            return;
+        }
+        if (hash.startsWith('#/protocolos/')) {
+            const id = hash.replace('#/protocolos/', '');
+            await this.renderProtocolDetail(container, id);
+            return;
+        }
+
         // 4. Otras Secciones
         if (hash === '#/abreviaturas') {
             await this.renderAbbreviations(container);
@@ -148,6 +159,10 @@ const Router = {
                 <a href="#/ventanas" class="nav-card">
                     <h2>Ventanas ecocardiográficas</h2>
                     <p>Guía de posición del transductor, orientación del marcador, estructuras visibles y mediciones asociadas.</p>
+                </a>
+                <a href="#/protocolos" class="nav-card">
+                    <h2>Protocolos POCUS</h2>
+                    <p>Protocolos estructurados para la evaluación ecográfica dirigida en escenarios clínicos específicos.</p>
                 </a>
             </div>
 
@@ -741,6 +756,257 @@ const Router = {
                     <span class="detail-label">Mediciones favorecidas</span>
                     <p class="detail-text">${favoredMeasurementsHTML}</p>
                 </div>` : ''}
+            </div>
+        `;
+
+        container.innerHTML = html;
+    },
+
+    // LISTADO DE PROTOCOLOS
+    async renderProtocolsList(container) {
+        let data = null;
+        try {
+            data = await DataLoader.fetchResource("protocols");
+            if (!data || !data.protocols || data.protocols.length === 0) {
+                throw new Error("No se encontraron protocolos o el archivo está vacío.");
+            }
+        } catch (error) {
+            console.error("Error al cargar protocolos:", error);
+            container.innerHTML = `
+                <div class="card error-card">
+                    <h2>Error al cargar los protocolos</h2>
+                    <p>Lo sentimos, no pudimos cargar la lista de protocolos POCUS. Por favor, intente nuevamente más tarde.</p>
+                    <a href="#/" class="btn-primary">Volver al Inicio</a>
+                </div>
+            `;
+            return;
+        }
+
+        const escapeHTML = (str) => {
+            if (!str) return "";
+            return str.toString()
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        };
+
+        let html = `
+            <div class="navigation-header">
+                <a href="#/" class="btn-back">← Inicio</a>
+                <h2>Protocolos POCUS</h2>
+            </div>
+
+            <div class="safety-banner" role="alert">
+                <strong>Aviso de seguridad clínica:</strong> Los protocolos estructurados son herramientas didácticas y complementarias. No sustituyen la valoración clínica del paciente, la reanimación ni el juicio médico oportuno.
+            </div>
+
+            <div style="margin-bottom: 1.5rem;">
+                <p style="font-size: 0.95rem; color: var(--text-muted-light);">
+                    Protocolos estructurados para la evaluación ecográfica dirigida en escenarios clínicos específicos.
+                </p>
+            </div>
+
+            <div class="content-accordion-grid cards-list">
+        `;
+
+        data.protocols.forEach(proto => {
+            html += `
+                <details class="content-accordion protocol-accordion card clinical-card">
+                    <summary class="content-accordion-summary">
+                        <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+                            <span class="content-accordion-title">${escapeHTML(proto.name_es)}</span>
+                            <span class="unit-badge">${escapeHTML(proto.acronym)}</span>
+                        </div>
+                        <span class="content-accordion-arrow"></span>
+                    </summary>
+                    <div class="content-accordion-body">
+                        <p><strong>Propósito:</strong> ${escapeHTML(proto.purpose)}</p>
+                        <p><strong>Contexto clínico:</strong> ${escapeHTML(proto.clinical_context)}</p>
+                        <p><strong>Población objetivo:</strong> ${escapeHTML(proto.target_population)}</p>
+                        <p><strong>Componentes:</strong> ${proto.components.map(c => escapeHTML(c.name_es)).join(", ")}</p>
+                        <div class="card-actions">
+                            <a href="#/protocolos/${proto.id}" class="btn-card-action">Detalle</a>
+                        </div>
+                    </div>
+                </details>
+            `;
+        });
+
+        html += `
+            </div>
+        `;
+
+        container.innerHTML = html;
+    },
+
+    // DETALLE DE PROTOCOLO
+    async renderProtocolDetail(container, id) {
+        let data = null;
+        let windows = [];
+        let measurements = [];
+        try {
+            data = await DataLoader.fetchResource("protocols");
+            windows = await DataLoader.getWindows() || [];
+            measurements = await DataLoader.getMeasurements() || [];
+            if (!data || !data.protocols) {
+                throw new Error("No se pudo cargar la base de datos de protocolos.");
+            }
+        } catch (error) {
+            console.error("Error al cargar detalle de protocolo:", error);
+            container.innerHTML = `
+                <div class="card error-card">
+                    <h2>Error al cargar el protocolo</h2>
+                    <p>No se pudo obtener la información detallada del protocolo.</p>
+                    <a href="#/protocolos" class="btn-primary">Volver a Protocolos</a>
+                </div>
+            `;
+            return;
+        }
+
+        const proto = data.protocols.find(p => p.id === id);
+        if (!proto) {
+            this.render404(container);
+            return;
+        }
+
+        const escapeHTML = (str) => {
+            if (!str) return "";
+            return str.toString()
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        };
+
+        const resolveWindowName = (wId) => {
+            const w = windows.find(item => item.id === wId);
+            return w ? `${w.window} (${w.abbreviation})` : wId;
+        };
+
+        const resolveMeasurementName = (mId) => {
+            const m = measurements.find(item => item.id === mId);
+            return m ? `${m.measurement} (${m.abbreviation || m.measurement})` : mId;
+        };
+
+        const protoRefs = data.references || [];
+
+        let html = `
+            <div class="navigation-header">
+                <a href="#/protocolos" class="btn-back">← Protocolos</a>
+                <h2>${escapeHTML(proto.name_es)} (${escapeHTML(proto.acronym)})</h2>
+            </div>
+
+            <div class="protocol-detail">
+                <div class="protocol-hero card">
+                    <p class="subtitle-en" style="font-style: italic; margin-bottom: 0.5rem; color: var(--text-muted-light);">${escapeHTML(proto.name_en)}</p>
+                    <p><strong>Propósito:</strong> ${escapeHTML(proto.purpose)}</p>
+                    <p><strong>Contexto clínico:</strong> ${escapeHTML(proto.clinical_context)}</p>
+                    <p><strong>Población objetivo:</strong> ${escapeHTML(proto.target_population)}</p>
+                    <div class="protocol-disclaimer" style="margin-top: 1rem; padding: 0.75rem; border-left: 4px solid var(--primary-medium); background: rgba(30, 58, 138, 0.04); font-size: 0.9rem;">
+                        <strong>Aviso educativo:</strong> ${escapeHTML(proto.integration)}
+                    </div>
+                </div>
+
+                <div class="card" style="margin-top: 1rem;">
+                    <h3>Secuencia de Adquisición</h3>
+                    <p>${escapeHTML(proto.sequence_note)}</p>
+                </div>
+
+                <div class="protocol-components-grid" style="margin-top: 1rem; display: grid; grid-template-columns: 1fr; gap: 1rem;">
+        `;
+
+        proto.components.forEach(comp => {
+            const linkedWindowsHTML = comp.linked_window_ids && comp.linked_window_ids.length > 0
+                ? comp.linked_window_ids.map(wId => {
+                    const name = resolveWindowName(wId);
+                    return `<a href="#/ventanas/${wId}" class="clinical-link" style="color: var(--primary-medium); font-weight: 600; text-decoration: underline;">${escapeHTML(name)}</a>`;
+                  }).join(", ")
+                : "No hay elementos vinculados en la base actual.";
+
+            const linkedMeasurementsHTML = comp.linked_measurement_ids && comp.linked_measurement_ids.length > 0
+                ? comp.linked_measurement_ids.map(mId => {
+                    const name = resolveMeasurementName(mId);
+                    return `<a href="#/medicion/${mId}" class="clinical-link" style="color: var(--primary-medium); font-weight: 600; text-decoration: underline;">${escapeHTML(name)}</a>`;
+                  }).join(", ")
+                : "No hay elementos vinculados en la base actual.";
+
+            html += `
+                <div class="protocol-component-card card">
+                    <h3>${escapeHTML(comp.name_es)}</h3>
+                    <p style="font-style: italic; font-size: 0.9rem; color: var(--text-muted-light);">${escapeHTML(comp.name_en)}</p>
+
+                    <div style="margin-top: 0.75rem;">
+                        <strong>Preguntas clínicas clave:</strong>
+                        <ul style="margin-top: 0.25rem; padding-left: 1.25rem;">
+                            ${comp.clinical_questions.map(q => `<li>${escapeHTML(q)}</li>`).join("")}
+                        </ul>
+                    </div>
+
+                    <div style="margin-top: 0.5rem;">
+                        <strong>Objetivos de evaluación:</strong>
+                        <ul style="margin-top: 0.25rem; padding-left: 1.25rem;">
+                            ${comp.targets.map(t => `<li>${escapeHTML(t)}</li>`).join("")}
+                        </ul>
+                    </div>
+
+                    <p style="margin-top: 0.5rem;"><strong>Vistas sugeridas:</strong> ${comp.suggested_views.map(v => escapeHTML(v)).join(", ")}</p>
+
+                    <div class="protocol-linked-items" style="margin-top: 0.75rem; padding: 0.75rem; background: rgba(0,0,0,0.02); border-radius: 6px; border: 1px solid var(--border-light);">
+                        <p style="margin: 0 0 0.5rem 0;"><strong>Ventanas vinculadas:</strong> ${linkedWindowsHTML}</p>
+                        <p style="margin: 0;"><strong>Mediciones vinculadas:</strong> ${linkedMeasurementsHTML}</p>
+                    </div>
+
+                    <div style="margin-top: 0.75rem;">
+                        <strong>Hallazgos posibles:</strong>
+                        <ul style="margin-top: 0.25rem; padding-left: 1.25rem;">
+                            ${comp.possible_findings.map(f => `<li>${escapeHTML(f)}</li>`).join("")}
+                        </ul>
+                    </div>
+
+                    <p style="margin-top: 0.75rem; padding: 0.75rem; border-left: 4px solid var(--primary-medium); background: rgba(30, 58, 138, 0.02); font-size: 0.9rem; font-style: italic;">
+                        <strong>Límites de interpretación:</strong> ${escapeHTML(comp.interpretation_limits)}
+                    </p>
+                </div>
+            `;
+        });
+
+        const activeRefIds = new Set(proto.reference_ids || []);
+        const filteredRefs = protoRefs.filter(ref => activeRefIds.has(ref.id));
+
+        html += `
+                </div>
+
+                <div class="card" style="margin-top: 1rem;">
+                    <h3>Límites Generales</h3>
+                    <p>${escapeHTML(proto.limitations)}</p>
+                </div>
+
+                <div class="card" style="margin-top: 1rem;">
+                    <h3>Seguridad y Flujo de Trabajo</h3>
+                    <p>${escapeHTML(proto.safety_and_workflow_notes)}</p>
+                </div>
+
+                <div class="protocol-references card" style="margin-top: 1rem;">
+                    <h3>Referencias Bibliográficas</h3>
+                    <ol style="padding-left: 1.25rem; margin-top: 0.5rem;">
+                        ${filteredRefs.map(ref => `
+                            <li style="margin-bottom: 0.75rem; font-size: 0.9rem;">
+                                ${escapeHTML(ref.citation)}
+                                ${ref.pmid ? `<br><small style="color: var(--text-muted-light);">PMID: ${escapeHTML(ref.pmid)}</small>` : ''}
+                                ${ref.pmcid ? `<br><small style="color: var(--text-muted-light);">PMCID: ${escapeHTML(ref.pmcid)}</small>` : ''}
+                                ${ref.doi ? `<br><small style="color: var(--text-muted-light);">DOI: ${escapeHTML(ref.doi)}</small>` : ''}
+                            </li>
+                        `).join("")}
+                    </ol>
+                </div>
+
+                <div style="margin-top: 1.5rem; display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem;">
+                    <a href="#/protocolos" class="btn-primary">Volver a Protocolos</a>
+                    <a href="#/" class="btn-secondary">Inicio</a>
+                </div>
             </div>
         `;
 

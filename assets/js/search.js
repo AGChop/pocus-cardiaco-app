@@ -56,6 +56,8 @@ const Search = {
         const abbreviations = await DataLoader.getAbbreviations() || [];
         const classifications = await DataLoader.getClassifications() || [];
         const windows = await DataLoader.getWindows() || [];
+        const protocolsData = await DataLoader.fetchResource("protocols") || { protocols: [] };
+        const protocols = protocolsData.protocols || [];
 
         const results = [];
 
@@ -107,6 +109,21 @@ const Search = {
                     item.typical_marker_orientation || "",
                     item.favored_structures || "",
                     item.favored_measurements || ""
+                ].join(" ");
+            } else if (type === "protocolo") {
+                name = item.name_es;
+                abbreviation = item.acronym;
+                aliases = [item.name_en || ""];
+                definition = [
+                    item.purpose || "",
+                    item.clinical_context || "",
+                    item.target_population || "",
+                    Array.isArray(item.components) ? item.components.map(c => [
+                        c.name_es || "",
+                        c.name_en || "",
+                        (c.clinical_questions || []).join(" "),
+                        (c.targets || []).join(" ")
+                    ].join(" ")).join(" ") : ""
                 ].join(" ");
             }
 
@@ -189,6 +206,12 @@ const Search = {
         windows.forEach(item => {
             const score = calculateScore(item, "ventana");
             if (score > 0) results.push({ type: "ventana", item, score });
+        });
+
+        // Procesar protocolos
+        protocols.forEach(item => {
+            const score = calculateScore(item, "protocolo");
+            if (score > 0) results.push({ type: "protocolo", item, score });
         });
 
         // Ordenar de mayor a menor puntuación (relevancia). Desempate secundario por prioridad clínica.
