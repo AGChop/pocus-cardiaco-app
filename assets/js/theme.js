@@ -4,7 +4,7 @@ const Theme = {
 
     init() {
         const themeSelect = document.getElementById("theme-select");
-        const savedTheme = localStorage.getItem(this.KEY) || 'auto';
+        const savedTheme = Storage.getPreference(this.KEY, 'auto');
 
         if (themeSelect) {
             themeSelect.value = savedTheme;
@@ -18,14 +18,14 @@ const Theme = {
 
         // Escuchar cambios del sistema en tiempo real si está en modo automático
         window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
-            if (localStorage.getItem(this.KEY) === 'auto' || !localStorage.getItem(this.KEY)) {
+            if (Storage.getPreference(this.KEY) === 'auto' || !Storage.getPreference(this.KEY)) {
                 this.applySystemTheme();
             }
         });
     },
 
     setTheme(theme) {
-        localStorage.setItem(this.KEY, theme);
+        Storage.setPreference(this.KEY, theme);
         
         if (theme === 'dark') {
             document.documentElement.setAttribute('data-theme', 'dark');

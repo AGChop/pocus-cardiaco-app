@@ -1298,11 +1298,7 @@ const Router = {
                     btn.classList.add("active");
                     btn.style.borderBottom = "2px solid var(--primary-medium)";
                     // Save to sessionStorage
-                    try {
-                        sessionStorage.setItem(`pocus-protocol-tab-${protocolId}`, btn.id);
-                    } catch (e) {
-                        console.warn("sessionStorage no disponible:", e);
-                    }
+                    Storage.setSessionState(`pocus-protocol-tab-${protocolId}`, btn.id);
                 } else {
                     btn.classList.remove("active");
                     btn.style.borderBottom = "2px solid transparent";
@@ -1347,16 +1343,12 @@ const Router = {
         });
 
         // Restaurar pestaña activa de sessionStorage
-        try {
-            const storedTabId = sessionStorage.getItem(`pocus-protocol-tab-${protocolId}`);
-            if (storedTabId) {
-                const storedIndex = Array.from(tabButtons).findIndex(btn => btn.id === storedTabId);
-                if (storedIndex !== -1) {
-                    selectTab(storedIndex);
-                }
+        const storedTabId = Storage.getSessionState(`pocus-protocol-tab-${protocolId}`);
+        if (storedTabId) {
+            const storedIndex = Array.from(tabButtons).findIndex(btn => btn.id === storedTabId);
+            if (storedIndex !== -1) {
+                selectTab(storedIndex);
             }
-        } catch (e) {
-            console.warn("Error al restaurar pestaña de sessionStorage:", e);
         }
     },
 
@@ -1375,27 +1367,20 @@ const Router = {
         let currentStep = 0;
 
         // Restore from sessionStorage
-        try {
-            const storedStep = sessionStorage.getItem(`pocus-protocol-step-${protocolId}`);
-            if (storedStep !== null) {
-                const parsed = parseInt(storedStep, 10);
-                if (!isNaN(parsed) && parsed >= 0 && parsed < steps.length) {
-                    currentStep = parsed;
-                }
+        // Restore from sessionStorage
+        const storedStep = Storage.getSessionState(`pocus-protocol-step-${protocolId}`);
+        if (storedStep !== null) {
+            const parsed = parseInt(storedStep, 10);
+            if (!isNaN(parsed) && parsed >= 0 && parsed < steps.length) {
+                currentStep = parsed;
             }
-        } catch (e) {
-            console.warn("Error al restaurar paso de sessionStorage:", e);
         }
 
         const showStep = (index, focusTitle = false) => {
             currentStep = index;
 
             // Save to sessionStorage
-            try {
-                sessionStorage.setItem(`pocus-protocol-step-${protocolId}`, currentStep.toString());
-            } catch (e) {
-                console.warn("sessionStorage no disponible:", e);
-            }
+            Storage.setSessionState(`pocus-protocol-step-${protocolId}`, currentStep.toString());
 
             // Hide all step cards, show active
             stepCards.forEach((card, i) => {
