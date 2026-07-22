@@ -90,7 +90,7 @@ def test_service_worker_protocols_integration():
     assert "./data/protocols.json" in content or "data/protocols.json" in content
 
     # 17. CACHE_NAME fue incrementado
-    assert "pocus-cardiaco-cache-v12" in content or "pocus-cardiaco-cache-v13" in content or "pocus-cardiaco-cache-v14" in content or "pocus-cardiaco-cache-v15" in content
+    assert "pocus-cardiaco-cache-v12" in content or "pocus-cardiaco-cache-v13" in content or "pocus-cardiaco-cache-v14" in content or "pocus-cardiaco-cache-v15" in content or "pocus-cardiaco-cache-v16" in content
 
 def test_styles_css_protocols_integration():
     path = "assets/css/styles.css"

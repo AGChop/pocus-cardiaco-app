@@ -108,5 +108,18 @@ const DataLoader = {
             console.warn("DataLoader: Error al cargar media-resources.json:", error);
             return [];
         }
+    },
+    async getQuizzes() {
+        try {
+            const data = await this.fetchResource('quizzes');
+            if (data && typeof data === 'object' && Array.isArray(data.quizzes)) {
+                return data.quizzes;
+            }
+            console.warn("DataLoader: Estructura de quizzes inválida, se esperaba un objeto con una lista 'quizzes'.");
+            return [];
+        } catch (error) {
+            console.warn("DataLoader: Error al cargar quizzes.json:", error);
+            return [];
+        }
     }
 };
