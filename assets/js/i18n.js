@@ -50,6 +50,15 @@ const I18n = {
         // Sincronizar selector visual
         this.refreshLanguageSelector();
 
+        // Aplicar traducciones estáticas del documento
+        this.applyTranslations(document);
+
+        // Actualizar título del documento
+        const docTitle = this.translate('app.document_title');
+        if (docTitle && docTitle !== 'app.document_title') {
+            document.title = docTitle;
+        }
+
         // Emitir evento si es solicitado
         if (triggerEvent) {
             const event = new CustomEvent('pocus-language-changed', {
@@ -128,6 +137,58 @@ const I18n = {
         if (selector) {
             selector.value = this._currentLanguage;
         }
+    },
+
+    applyTranslations(root = document) {
+        if (!root) return;
+
+        // 1. TextContent: data-i18n
+        const textElements = root.querySelectorAll('[data-i18n]');
+        textElements.forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            if (key) {
+                const translation = this.translate(key);
+                if (translation !== key || (this._translations[key] !== undefined)) {
+                    el.textContent = translation;
+                }
+            }
+        });
+
+        // 2. Placeholder: data-i18n-placeholder
+        const placeholderElements = root.querySelectorAll('[data-i18n-placeholder]');
+        placeholderElements.forEach(el => {
+            const key = el.getAttribute('data-i18n-placeholder');
+            if (key) {
+                const translation = this.translate(key);
+                if (translation !== key || (this._translations[key] !== undefined)) {
+                    el.setAttribute('placeholder', translation);
+                }
+            }
+        });
+
+        // 3. Aria-label: data-i18n-aria-label
+        const ariaElements = root.querySelectorAll('[data-i18n-aria-label]');
+        ariaElements.forEach(el => {
+            const key = el.getAttribute('data-i18n-aria-label');
+            if (key) {
+                const translation = this.translate(key);
+                if (translation !== key || (this._translations[key] !== undefined)) {
+                    el.setAttribute('aria-label', translation);
+                }
+            }
+        });
+
+        // 4. Title: data-i18n-title
+        const titleElements = root.querySelectorAll('[data-i18n-title]');
+        titleElements.forEach(el => {
+            const key = el.getAttribute('data-i18n-title');
+            if (key) {
+                const translation = this.translate(key);
+                if (translation !== key || (this._translations[key] !== undefined)) {
+                    el.setAttribute('title', translation);
+                }
+            }
+        });
     }
 };
 

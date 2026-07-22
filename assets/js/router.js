@@ -1,6 +1,6 @@
 // Enrutador de la aplicación basado en Hash Routing
 const Router = {
-    // Definición de las rutas y sus respectivos controladores
+    // ${I18n.translate("label.definition")} de las rutas y sus respectivos controladores
     async route() {
         const hash = window.location.hash || '#/';
         const container = document.getElementById("app-content");
@@ -8,7 +8,7 @@ const Router = {
         if (!container) return;
 
         // Limpiar contenido previo
-        container.innerHTML = `<div class="loading">Cargando contenido médico...</div>`;
+        container.innerHTML = `<div class="loading">${I18n.translate("state.loading_content")}</div>`;
 
         // 1. Ruta de Inicio
         if (hash === '#/' || hash === '#') {
@@ -143,7 +143,7 @@ const Router = {
         const added = Storage.toggleFavorite(type, id, title);
         const btn = document.getElementById(btnId);
         if (btn) {
-            btn.innerHTML = added ? "★ Quitar Favorito" : "☆ Guardar Favorito";
+            btn.innerHTML = added ? "★ ${I18n.translate("label.quitar")} Favorito" : "☆ ${I18n.translate("action.save_favorite")}";
         }
     },
 
@@ -168,47 +168,47 @@ const Router = {
         container.innerHTML = `
             <div style="text-align: center; margin-bottom: 1.5rem; margin-top: 1rem;">
                 <p style="font-size: 0.95rem; color: var(--text-muted-light);">
-                    Herramienta educativa de consulta rápida para residentes y médicos en formación en ultrasonido POCUS cardiaco.
+                    ${I18n.translate("label.sub_menu_desc")}
                 </p>
             </div>
 
             <div class="main-nav">
                 <a href="#/glosario" class="nav-card">
-                    <h2>Glosario de Términos</h2>
-                    <p>Definición de parámetros, ventanas de adquisición y vocabulario clínico de POCUS.</p>
+                    <h2>${I18n.translate("nav.glossary")}</h2>
+                    <p>${I18n.translate("label.glossary_desc")}</p>
                 </a>
                 <a href="#/mediciones" class="nav-card">
-                    <h2>Banco de Mediciones</h2>
-                    <p>12 secciones con valores normales, fórmulas y puntos de corte ecocardiográficos.</p>
+                    <h2>${I18n.translate("nav.measurements")}</h2>
+                    <p>${I18n.translate("label.measurements_desc")}</p>
                 </a>
                 <a href="#/ventanas" class="nav-card">
-                    <h2>Ventanas ecocardiográficas</h2>
-                    <p>Guía de posición del transductor, orientación del marcador, estructuras visibles y mediciones asociadas.</p>
+                    <h2>${I18n.translate("nav.windows")}</h2>
+                    <p>${I18n.translate("label.windows_desc")}</p>
                 </a>
                 <a href="#/protocolos" class="nav-card">
-                    <h2>Protocolos POCUS</h2>
-                    <p>Protocolos estructurados para la evaluación ecográfica dirigida en escenarios clínicos específicos.</p>
+                    <h2>${I18n.translate("nav.protocols")}</h2>
+                    <p>${I18n.translate("label.protocols_desc")}</p>
                 </a>
                 ${showQuizzesCard ? `
                 <a href="#/cuestionarios" class="nav-card">
-                    <h2>Cuestionarios</h2>
-                    <p>Ponga a prueba sus conocimientos teóricos y de interpretación con autoevaluaciones formativas.</p>
+                    <h2>${I18n.translate("label.quizzes")}</h2>
+                    <p>${I18n.translate("label.quizzes_desc")}</p>
                 </a>` : ''}
             </div>
 
             <div class="secondary-nav" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-top: 1rem;">
-                <a href="#/abreviaturas" class="btn-secondary">Abreviaturas</a>
-                <a href="#/clasificaciones" class="btn-secondary">Clasificaciones</a>
-                <a href="#/conjunto-minimo" class="btn-secondary">Conjunto Mínimo</a>
-                <a href="#/unidades-y-errores" class="btn-secondary">Unidades y Errores</a>
-                <a href="#/favoritos" class="btn-secondary">Mis Favoritos</a>
-                <a href="#/recientes" class="btn-secondary">Recientes</a>
-                <a href="#/referencias" class="btn-secondary">Referencias</a>
-                <a href="#/acerca" class="btn-secondary">Acerca de</a>
+                <a href="#/abreviaturas" class="btn-secondary">${I18n.translate("label.abbreviation")}</a>
+                <a href="#/clasificaciones" class="btn-secondary">${I18n.translate("label.classification")}</a>
+                <a href="#/conjunto-minimo" class="btn-secondary">${I18n.translate("label.minimum_set")}</a>
+                <a href="#/unidades-y-errores" class="btn-secondary">${I18n.translate("label.unit_warnings")}</a>
+                <a href="#/favoritos" class="btn-secondary">${I18n.translate("nav.favorites")}</a>
+                <a href="#/recientes" class="btn-secondary">${I18n.translate("nav.recents")}</a>
+                <a href="#/referencias" class="btn-secondary">${I18n.translate("label.clinical_references_title")}</a>
+                <a href="#/acerca" class="btn-secondary">${I18n.translate("nav.about")}</a>
             </div>
 
             <div style="text-align: center; margin-top: 1.5rem;">
-                <a href="#/instalar" class="btn-install">📲 Instalar en iPhone</a>
+                <a href="#/instalar" class="btn-install">${I18n.translate("label.inst_iphone")}</a>
             </div>
         `;
     },
@@ -217,9 +217,9 @@ const Router = {
     render404(container) {
         container.innerHTML = `
             <div class="card error-card">
-                <h2>Ruta no encontrada</h2>
-                <p>Lo sentimos, la sección o página que buscas no existe o fue movida.</p>
-                <a href="#/" class="btn-primary">Volver al Inicio</a>
+                <h2>${I18n.translate("error.not_found_title")}</h2>
+                <p>${I18n.translate("error.not_found_message")}</p>
+                <a href="#/" class="btn-primary">${I18n.translate("error.go_home")}</a>
             </div>
         `;
     },
@@ -230,8 +230,8 @@ const Router = {
 
         let html = `
             <div class="navigation-header">
-                <a href="#/" class="btn-back">← Inicio</a>
-                <h2>Glosario de Términos</h2>
+                <a href="#/" class="btn-back">← ${I18n.translate("nav.home")}</a>
+                <h2>${I18n.translate("nav.glossary")}</h2>
             </div>
 
             <div class="content-accordion-grid cards-list">
@@ -239,7 +239,7 @@ const Router = {
 
         glossary.forEach(item => {
             const isFav = Storage.isFavorite("término", item.id);
-            const copyData = `Término: ${item.term}\nDefinición: ${item.definition}\nAdquisición/Utilidad: ${item.acquisition_utility_limitation}\nFuente: ${item.source_document} (Pág. ${item.source_page})`;
+            const copyData = `${I18n.translate("label.term")}: ${item.term}\n${I18n.translate("label.definition")}: ${item.definition}\n${I18n.translate("label.acquisition_details")}: ${item.acquisition_utility_limitation}\n${I18n.translate("label.references")}: ${item.source_document} (P. ${item.source_page})`;
 
             html += `
                 <details class="content-accordion glossary-accordion card clinical-card">
@@ -248,16 +248,16 @@ const Router = {
                         <span class="content-accordion-arrow"></span>
                     </summary>
                     <div class="content-accordion-body">
-                        ${item.category ? `<p><strong>Categoría:</strong> ${item.category}</p>` : ''}
-                        <p class="card-definition"><strong>Definición:</strong> ${item.definition}</p>
-                        <p class="card-acquisition"><strong>Adquisición/Utilidad:</strong> ${item.acquisition_utility_limitation}</p>
-                        ${item.aliases && item.aliases.length > 0 ? `<p class="card-aliases"><strong>Sinónimos / Aliases:</strong> ${item.aliases.join(", ")}</p>` : ''}
-                        <div class="card-meta">Página origen: ${item.source_page}</div>
+                        ${item.category ? `<p><strong>${I18n.translate("label.categoria")}:</strong> ${item.category}</p>` : ''}
+                        <p class="card-definition"><strong>${I18n.translate("label.definition")}:</strong> ${item.definition}</p>
+                        <p class="card-acquisition"><strong>${I18n.translate("label.acquisition_details")}:</strong> ${item.acquisition_utility_limitation}</p>
+                        ${item.aliases && item.aliases.length > 0 ? `<p class="card-aliases"><strong>${I18n.translate("label.sinonimos")}:</strong> ${item.aliases.join(", ")}</p>` : ''}
+                        <div class="card-meta">${I18n.translate("label.origen")}: ${item.source_page}</div>
                         <div class="card-actions">
-                            <a href="#/glosario/${item.id}" class="btn-card-action">Detalle</a>
-                            <button class="btn-card-action" onclick="Router.copyText(\`${copyData.replace(/`/g, '\\`').replace(/\n/g, '\\n')}\`, 'copy-m-t-${item.id}')" id="copy-m-t-${item.id}">Copiar</button>
+                            <a href="#/glosario/${item.id}" class="btn-card-action">${I18n.translate("label.detalles")}</a>
+                            <button class="btn-card-action" onclick="Router.copyText(\`${copyData.replace(/`/g, '\\`').replace(/\n/g, '\\n')}\`, 'copy-m-t-${item.id}')" id="copy-m-t-${item.id}">${I18n.translate("label.copiar")}</button>
                             <button class="btn-card-action" onclick="Router.toggleFav('término', '${item.id}', '${item.term}', 'fav-t-${item.id}')" id="fav-t-${item.id}">
-                                ${isFav ? "★ Quitar" : "☆ Favorito"}
+                                ${isFav ? "★ ${I18n.translate("label.quitar")}" : "☆ ${I18n.translate("label.favorito")}"}
                             </button>
                         </div>
                     </div>
@@ -283,21 +283,21 @@ const Router = {
 
         Storage.addRecent("término", term.id, term.term);
         const isFav = Storage.isFavorite("término", term.id);
-        const copyData = `Término: ${term.term}\nDefinición: ${term.definition}\nAdquisición/Utilidad: ${term.acquisition_utility_limitation}\nFuente: ${term.source_document} (Pág. ${term.source_page})`;
+        const copyData = `${I18n.translate("label.term")}: ${term.term}\n${I18n.translate("label.definition")}: ${term.definition}\n${I18n.translate("label.acquisition_details")}: ${term.acquisition_utility_limitation}\n${I18n.translate("label.references")}: ${term.source_document} (P. ${term.source_page})`;
 
         let html = `
             <div class="navigation-header">
-                <a href="#/glosario" class="btn-back">← Glosario</a>
+                <a href="#/glosario" class="btn-back">← ${I18n.translate("nav.glossary")}</a>
                 <h2>${term.term}</h2>
             </div>
 
             <div class="card clinical-detail-card">
                 <div class="card-section">
-                    <span class="detail-label">Categoría</span>
+                    <span class="detail-label">${I18n.translate("label.categoria")}</span>
                     <span class="detail-value">${term.category}</span>
                 </div>
                 <div class="card-section">
-                    <span class="detail-label">Definición</span>
+                    <span class="detail-label">${I18n.translate("label.definition")}</span>
                     <p class="detail-text">${term.definition}</p>
                 </div>
                 <div class="card-section">
@@ -315,9 +315,9 @@ const Router = {
                 </div>
 
                 <div class="detail-actions">
-                    <button class="btn-primary" onclick="Router.copyText(\`${copyData.replace(/`/g, '\\`').replace(/\n/g, '\\n')}\`, 'copy-det-t')" id="copy-det-t">Copiar Contenido</button>
+                    <button class="btn-primary" onclick="Router.copyText(\`${copyData.replace(/`/g, '\\`').replace(/\n/g, '\\n')}\`, 'copy-det-t')" id="copy-det-t">${I18n.translate("label.copiar")} Contenido</button>
                     <button class="btn-secondary" onclick="Router.toggleFav('término', '${term.id}', '${term.term}', 'fav-det-t')" id="fav-det-t">
-                        ${isFav ? "★ Quitar Favorito" : "☆ Guardar Favorito"}
+                        ${isFav ? "★ ${I18n.translate("label.quitar")} Favorito" : "☆ ${I18n.translate("action.save_favorite")}"}
                     </button>
                 </div>
             </div>
@@ -332,8 +332,8 @@ const Router = {
 
         let html = `
             <div class="navigation-header">
-                <a href="#/" class="btn-back">← Inicio</a>
-                <h2>Banco de Mediciones</h2>
+                <a href="#/" class="btn-back">← ${I18n.translate("nav.home")}</a>
+                <h2>${I18n.translate("nav.measurements")}</h2>
             </div>
             <div class="sections-list">
         `;
@@ -341,10 +341,10 @@ const Router = {
         sections.forEach(sec => {
             html += `
                 <a href="#/mediciones/${sec.id}" class="section-card">
-                    <div class="section-num">Sección ${sec.number}</div>
+                    <div class="section-num">${I18n.translate("label.section")} ${sec.number}</div>
                     <h3>${sec.title}</h3>
                     <p>${sec.description}</p>
-                    ${sec.clinical_warning ? `<span class="warning-badge">⚠️ Advertencia</span>` : ''}
+                    ${sec.clinical_warning ? `<span class="warning-badge">⚠️ ${I18n.translate("label.clinical_warning")}</span>` : ''}
                 </a>
             `;
         });
@@ -386,7 +386,7 @@ const Router = {
         let html = `
             <div class="navigation-header">
                 <a href="#/mediciones" class="btn-back">← Banco</a>
-                <h2>Sección ${section.number}: ${section.short_title}</h2>
+                <h2>${I18n.translate("label.section")} ${section.number}: ${section.short_title}</h2>
             </div>
 
             ${section.clinical_warning ? `
@@ -400,7 +400,7 @@ const Router = {
 
         filtered.forEach(item => {
             const isFav = Storage.isFavorite("medición", item.id);
-            const copyData = `Medición: ${item.measurement}\nFórmula/Método: ${item.formula_or_method}\nValores normales: ${item.normal_values}\nLimitaciones: ${item.interpretation_limitations}\nUnidad: ${item.units}\nFuente: ${item.source_document} (Pág. ${item.source_page})`;
+            const copyData = `Medición: ${item.measurement}\nFórmula/${I18n.translate("label.method")}: ${item.formula_or_method}\n${I18n.translate("label.normal_values")}: ${item.normal_values}\nLimitaciones: ${item.interpretation_limitations}\nUnidad: ${item.units}\n${I18n.translate("label.references")}: ${item.source_document} (P. ${item.source_page})`;
 
             html += `
                 <details class="measurement-accordion card clinical-card">
@@ -413,14 +413,14 @@ const Router = {
                             <span class="unit-badge">${item.units}</span>
                         </div>
                         <p><strong>Fórmula/Adquisición:</strong> ${item.formula_or_method}</p>
-                        <p class="normal-values"><strong>Valores normales / Corte:</strong> ${item.normal_values}</p>
+                        <p class="normal-values"><strong>${I18n.translate("label.normal_values")} / Corte:</strong> ${item.normal_values}</p>
                         <p class="limitations"><strong>Limitaciones:</strong> ${item.interpretation_limitations}</p>
-                        <div class="card-meta">Página origen: ${item.source_page}</div>
+                        <div class="card-meta">${I18n.translate("label.origen")}: ${item.source_page}</div>
                         <div class="card-actions">
-                            <a href="#/medicion/${item.id}" class="btn-card-action">Detalle</a>
-                            <button class="btn-card-action" onclick="Router.copyText(\`${copyData.replace(/`/g, '\\`').replace(/\n/g, '\\n')}\`, 'copy-m-m-${item.id}')" id="copy-m-m-${item.id}">Copiar</button>
+                            <a href="#/medicion/${item.id}" class="btn-card-action">${I18n.translate("label.detalles")}</a>
+                            <button class="btn-card-action" onclick="Router.copyText(\`${copyData.replace(/`/g, '\\`').replace(/\n/g, '\\n')}\`, 'copy-m-m-${item.id}')" id="copy-m-m-${item.id}">${I18n.translate("label.copiar")}</button>
                             <button class="btn-card-action" onclick="Router.toggleFav('medición', '${item.id}', '${item.measurement}', 'fav-m-${item.id}')" id="fav-m-${item.id}">
-                                ${isFav ? "★ Quitar" : "☆ Favorito"}
+                                ${isFav ? "★ ${I18n.translate("label.quitar")}" : "☆ ${I18n.translate("label.favorito")}"}
                             </button>
                         </div>
                     </div>
@@ -451,7 +451,7 @@ const Router = {
 
         Storage.addRecent("medición", item.id, item.measurement);
         const isFav = Storage.isFavorite("medición", item.id);
-        const copyData = `Medición: ${item.measurement}\nFórmula/Método: ${item.formula_or_method}\nValores normales: ${item.normal_values}\nLimitaciones: ${item.interpretation_limitations}\nUnidad: ${item.units}\nFuente: ${item.source_document} (Pág. ${item.source_page})`;
+        const copyData = `Medición: ${item.measurement}\nFórmula/${I18n.translate("label.method")}: ${item.formula_or_method}\n${I18n.translate("label.normal_values")}: ${item.normal_values}\nLimitaciones: ${item.interpretation_limitations}\nUnidad: ${item.units}\n${I18n.translate("label.references")}: ${item.source_document} (P. ${item.source_page})`;
 
         const escapeHTML = (str) => {
             if (!str) return "";
@@ -526,7 +526,7 @@ const Router = {
 
                         ${item.modality ? `
                         <div class="card-section">
-                            <span class="detail-label">Modalidad ecográfica</span>
+                            <span class="detail-label">${I18n.translate("label.modality")} ecográfica</span>
                             <p class="detail-text">${escapeHTML(item.modality)}</p>
                         </div>` : ''}
 
@@ -559,15 +559,15 @@ const Router = {
 
             <div class="card clinical-detail-card">
                 <div class="card-section">
-                    <span class="detail-label">Fórmula o Método de Adquisición</span>
+                    <span class="detail-label">Fórmula o ${I18n.translate("label.method")} de Adquisición</span>
                     <p class="detail-text">${item.formula_or_method}</p>
                 </div>
                 <div class="card-section">
-                    <span class="detail-label">Valores de Referencia / Puntos de Corte</span>
+                    <span class="detail-label">${I18n.translate("label.reference_values")} / Puntos de Corte</span>
                     <p class="detail-text highlight-text">${item.normal_values}</p>
                 </div>
                 <div class="card-section">
-                    <span class="detail-label">Unidades de Medida</span>
+                    <span class="detail-label">${I18n.translate("label.unidades")} de Medida</span>
                     <span class="unit-badge large-badge">${item.units}</span>
                 </div>
                 ${mediaHTML ? `
@@ -591,9 +591,9 @@ const Router = {
                 ${windowsHtml}
 
                 <div class="detail-actions">
-                    <button class="btn-primary" onclick="Router.copyText(\`${copyData.replace(/`/g, '\\`').replace(/\n/g, '\\n')}\`, 'copy-det-m')" id="copy-det-m">Copiar Contenido</button>
+                    <button class="btn-primary" onclick="Router.copyText(\`${copyData.replace(/`/g, '\\`').replace(/\n/g, '\\n')}\`, 'copy-det-m')" id="copy-det-m">${I18n.translate("label.copiar")} Contenido</button>
                     <button class="btn-secondary" onclick="Router.toggleFav('medición', '${item.id}', '${item.measurement}', 'fav-det-m')" id="fav-det-m">
-                        ${isFav ? "★ Quitar Favorito" : "☆ Guardar Favorito"}
+                        ${isFav ? "★ ${I18n.translate("label.quitar")} Favorito" : "☆ ${I18n.translate("action.save_favorite")}"}
                     </button>
                 </div>
             </div>
@@ -616,7 +616,7 @@ const Router = {
                 <div class="card error-card">
                     <h2>Error al cargar las ventanas</h2>
                     <p>Lo sentimos, no pudimos cargar la lista de ventanas ecocardiográficas. Por favor, intente nuevamente más tarde.</p>
-                    <a href="#/" class="btn-primary">Volver al Inicio</a>
+                    <a href="#/" class="btn-primary">${I18n.translate("error.go_home")}</a>
                 </div>
             `;
             return;
@@ -634,7 +634,7 @@ const Router = {
 
         let html = `
             <div class="navigation-header">
-                <a href="#/" class="btn-back">← Inicio</a>
+                <a href="#/" class="btn-back">← ${I18n.translate("nav.home")}</a>
                 <h2>Ventanas Ecocardiográficas</h2>
             </div>
 
@@ -652,12 +652,12 @@ const Router = {
                         <span class="content-accordion-arrow"></span>
                     </summary>
                     <div class="content-accordion-body">
-                        ${item.favored_structures ? `<p><strong>Estructuras favorecidas:</strong> ${escapeHTML(item.favored_structures)}</p>` : ''}
-                        ${item.typical_probe_position ? `<p><strong>Posición del transductor:</strong> ${escapeHTML(item.typical_probe_position)}</p>` : ''}
-                        ${item.typical_marker_orientation ? `<p><strong>Orientación del marcador:</strong> ${escapeHTML(item.typical_marker_orientation)}</p>` : ''}
-                        ${item.favored_measurements ? `<p><strong>Mediciones asociadas:</strong> ${escapeHTML(item.favored_measurements)}</p>` : ''}
+                        ${item.favored_structures ? `<p><strong>${I18n.translate("label.est_favorecidas")}:</strong> ${escapeHTML(item.favored_structures)}</p>` : ''}
+                        ${item.typical_probe_position ? `<p><strong>${I18n.translate("label.pos_transductor")}:</strong> ${escapeHTML(item.typical_probe_position)}</p>` : ''}
+                        ${item.typical_marker_orientation ? `<p><strong>${I18n.translate("label.ori_marcador")}:</strong> ${escapeHTML(item.typical_marker_orientation)}</p>` : ''}
+                        ${item.favored_measurements ? `<p><strong>${I18n.translate("label.med_asociadas")}:</strong> ${escapeHTML(item.favored_measurements)}</p>` : ''}
                         <div class="card-actions">
-                            <a href="#/ventanas/${item.id}" class="btn-card-action">Detalle</a>
+                            <a href="#/ventanas/${item.id}" class="btn-card-action">${I18n.translate("label.detalles")}</a>
                         </div>
                     </div>
                 </details>
@@ -766,7 +766,7 @@ const Router = {
 
         let html = `
             <div class="navigation-header">
-                <a href="#/ventanas" class="btn-back">← Ventanas</a>
+                <a href="#/ventanas" class="btn-back">← ${I18n.translate("nav.windows")}</a>
                 <h2>${escapeHTML(item.window)}</h2>
             </div>
 
@@ -779,19 +779,19 @@ const Router = {
 
                 ${item.typical_probe_position ? `
                 <div class="card-section">
-                    <span class="detail-label">Posición del transductor</span>
+                    <span class="detail-label">${I18n.translate("label.pos_transductor")}</span>
                     <p class="detail-text">${escapeHTML(item.typical_probe_position)}</p>
                 </div>` : ''}
 
                 ${item.typical_marker_orientation ? `
                 <div class="card-section">
-                    <span class="detail-label">Orientación del marcador</span>
+                    <span class="detail-label">${I18n.translate("label.ori_marcador")}</span>
                     <p class="detail-text">${escapeHTML(item.typical_marker_orientation)}</p>
                 </div>` : ''}
 
                 ${item.favored_structures ? `
                 <div class="card-section">
-                    <span class="detail-label">Estructuras favorecidas</span>
+                    <span class="detail-label">${I18n.translate("label.est_favorecidas")}</span>
                     <p class="detail-text">${escapeHTML(item.favored_structures)}</p>
                 </div>` : ''}
 
@@ -826,7 +826,7 @@ const Router = {
                 <div class="card error-card">
                     <h2>Error al cargar los protocolos</h2>
                     <p>Lo sentimos, no pudimos cargar la lista de protocolos POCUS. Por favor, intente nuevamente más tarde.</p>
-                    <a href="#/" class="btn-primary">Volver al Inicio</a>
+                    <a href="#/" class="btn-primary">${I18n.translate("error.go_home")}</a>
                 </div>
             `;
             return;
@@ -844,8 +844,8 @@ const Router = {
 
         let html = `
             <div class="navigation-header">
-                <a href="#/" class="btn-back">← Inicio</a>
-                <h2>Protocolos POCUS</h2>
+                <a href="#/" class="btn-back">← ${I18n.translate("nav.home")}</a>
+                <h2>${I18n.translate("nav.protocols")}</h2>
             </div>
 
             <div class="safety-banner" role="alert">
@@ -854,7 +854,7 @@ const Router = {
 
             <div style="margin-bottom: 1.5rem;">
                 <p style="font-size: 0.95rem; color: var(--text-muted-light);">
-                    Protocolos estructurados para la evaluación ecográfica dirigida en escenarios clínicos específicos.
+                    ${I18n.translate("label.protocols_desc")}
                 </p>
             </div>
 
@@ -877,7 +877,7 @@ const Router = {
                         <p><strong>Población objetivo:</strong> ${escapeHTML(proto.target_population)}</p>
                         <p><strong>Componentes:</strong> ${proto.components.map(c => escapeHTML(c.name_es)).join(", ")}</p>
                         <div class="card-actions">
-                            <a href="#/protocolos/${proto.id}" class="btn-card-action">Detalle</a>
+                            <a href="#/protocolos/${proto.id}" class="btn-card-action">${I18n.translate("label.detalles")}</a>
                         </div>
                     </div>
                 </details>
@@ -891,40 +891,42 @@ const Router = {
         container.innerHTML = html;
     },
 
-    uiStrings: {
-        guideTab: "Guía interactiva",
-        contentTab: "Contenido completo",
-        referencesTab: "Referencias",
-        previousBtn: "← Anterior",
-        nextBtn: "Siguiente →",
-        resetBtn: "Reiniciar",
-        finishedBtn: "Finalizado",
-        startStep: "Inicio",
-        integrationStep: "Integración fisiológica",
-        summaryStep: "Resumen",
-        stepIndicator: "Paso {x} de {y}",
-        itemNotAvailable: "Elemento no disponible",
-        noLinkedItems: "No hay elementos vinculados en la base actual.",
-        clinicalWarningsTitle: "Advertencias Clínicas Esenciales",
-        clinicalPurposeLabel: "Propósito",
-        clinicalIntegrationLabel: "Integración",
-        clinicalSafetyLabel: "Seguridad",
-        clinicalWindowLabel: "Ventanas vinculadas",
-        clinicalMeasurementLabel: "Mediciones vinculadas",
-        clinicalViewsLabel: "Vistas sugeridas",
-        clinicalQuestionsLabel: "Preguntas clínicas clave",
-        clinicalTargetsLabel: "Objetivos de evaluación",
-        clinicalFindingsLabel: "Hallazgos posibles",
-        clinicalLimitsLabel: "Límites de interpretación",
-        clinicalSequenceTitle: "Secuencia y adaptación clínica",
-        clinicalGeneralLimitsTitle: "Límites Generales",
-        clinicalSafetyWorkflowTitle: "Seguridad y flujo de trabajo",
-        clinicalReferencesTitle: "Referencias Bibliográficas",
-        clinicalReturnToListBtn: "Volver a Protocolos",
-        clinicalReturnHomeBtn: "Inicio",
-        errorLoadingTitle: "Error al cargar el protocolo",
-        errorLoadingText: "No se pudo obtener la información detallada del protocolo.",
-        errorLoadingBackBtn: "Volver a Protocolos"
+    get uiStrings() {
+        return {
+            guideTab: I18n.translate("label.guide_tab"),
+            contentTab: I18n.translate("label.content_tab"),
+            referencesTab: I18n.translate("label.references_tab"),
+            previousBtn: I18n.translate("label.previous_btn"),
+            nextBtn: I18n.translate("label.next_btn"),
+            resetBtn: I18n.translate("label.reset_btn"),
+            finishedBtn: I18n.translate("label.finished_btn"),
+            startStep: I18n.translate("label.start_step"),
+            integrationStep: I18n.translate("label.integration_step"),
+            summaryStep: I18n.translate("label.summary_step"),
+            stepIndicator: I18n.translate("label.step_indicator"),
+            itemNotAvailable: I18n.translate("label.item_not_available"),
+            noLinkedItems: I18n.translate("label.no_linked_items"),
+            clinicalWarningsTitle: I18n.translate("label.clinical_warnings_title"),
+            clinicalPurposeLabel: I18n.translate("label.clinical_purpose_label"),
+            clinicalIntegrationLabel: I18n.translate("label.clinical_integration_label"),
+            clinicalSafetyLabel: I18n.translate("label.clinical_safety_label"),
+            clinicalWindowLabel: I18n.translate("label.clinical_window_label"),
+            clinicalMeasurementLabel: I18n.translate("label.clinical_measurement_label"),
+            clinicalViewsLabel: I18n.translate("label.clinical_views_label"),
+            clinicalQuestionsLabel: I18n.translate("label.clinical_questions_label"),
+            clinicalTargetsLabel: I18n.translate("label.clinical_targets_label"),
+            clinicalFindingsLabel: I18n.translate("label.clinical_findings_label"),
+            clinicalLimitsLabel: I18n.translate("label.clinical_limits_label"),
+            clinicalSequenceTitle: I18n.translate("label.clinical_sequence_title"),
+            clinicalGeneralLimitsTitle: I18n.translate("label.clinical_general_limits_title"),
+            clinicalSafetyWorkflowTitle: I18n.translate("label.clinical_safety_workflow_title"),
+            clinicalReferencesTitle: I18n.translate("label.clinical_references_title"),
+            clinicalReturnToListBtn: I18n.translate("label.clinical_return_to_list_btn"),
+            clinicalReturnHomeBtn: I18n.translate("label.clinical_return_home_btn"),
+            errorLoadingTitle: I18n.translate("label.error_loading_title"),
+            errorLoadingText: I18n.translate("label.error_loading_text"),
+            errorLoadingBackBtn: I18n.translate("label.error_loading_back_btn")
+        };
     },
 
     buildProtocolGuideSteps(protocol) {
@@ -1561,8 +1563,8 @@ const Router = {
 
         let html = `
             <div class="navigation-header">
-                <a href="#/" class="btn-back">← Inicio</a>
-                <h2>Lista de Abreviaturas</h2>
+                <a href="#/" class="btn-back">← ${I18n.translate("nav.home")}</a>
+                <h2>Lista de ${I18n.translate("label.abbreviation")}</h2>
             </div>
 
             <table class="clinical-table">
@@ -1581,7 +1583,7 @@ const Router = {
                 <tr>
                     <td><strong>${abbr.abbreviation}</strong></td>
                     <td>${abbr.meaning}</td>
-                    <td>Pág. ${abbr.source_page}</td>
+                    <td>P. ${abbr.source_page}</td>
                 </tr>
             `;
         });
@@ -1599,8 +1601,8 @@ const Router = {
 
         let html = `
             <div class="navigation-header">
-                <a href="#/" class="btn-back">← Inicio</a>
-                <h2>Clasificaciones Prácticas</h2>
+                <a href="#/" class="btn-back">← ${I18n.translate("nav.home")}</a>
+                <h2>${I18n.translate("label.classification")} Prácticas</h2>
             </div>
         `;
 
@@ -1611,9 +1613,9 @@ const Router = {
                     <table class="clinical-table" style="margin: 0.5rem 0;">
                         <thead>
                             <tr>
-                                <th>${c.items[0].range ? "Rango" : "Parámetro"}</th>
+                                <th>${c.items[0].range ? "${I18n.translate("label.rango")}" : "${I18n.translate("label.parameter")}"}</th>
                                 <th>${c.items[0].category ? "Clasificación" : "Punto de corte"}</th>
-                                ${c.items[0].method ? "<th>Método</th>" : ""}
+                                ${c.items[0].method ? "<th>${I18n.translate("label.method")}</th>" : ""}
                             </tr>
                         </thead>
                         <tbody>
@@ -1631,7 +1633,7 @@ const Router = {
                         </tbody>
                     </table>
                     ${c.note ? `<p style="font-size: 0.85rem; color: var(--text-muted-light); margin-top: 0.5rem;"><strong>Nota:</strong> ${c.note}</p>` : ""}
-                    <div style="font-size: 0.8rem; color: var(--text-muted-light); text-align: right; margin-top: 0.25rem;">Página origen: ${c.source_page}</div>
+                    <div style="font-size: 0.8rem; color: var(--text-muted-light); text-align: right; margin-top: 0.25rem;">${I18n.translate("label.origen")}: ${c.source_page}</div>
                 </div>
             `;
         });
@@ -1645,8 +1647,8 @@ const Router = {
 
         let html = `
             <div class="navigation-header">
-                <a href="#/" class="btn-back">← Inicio</a>
-                <h2>Conjunto Mínimo POCUS</h2>
+                <a href="#/" class="btn-back">← ${I18n.translate("nav.home")}</a>
+                <h2>${I18n.translate("label.minimum_set")} POCUS</h2>
             </div>
 
             <div style="background-color: var(--card-bg-light); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border-light);">
@@ -1660,7 +1662,7 @@ const Router = {
             html += `
                 <li style="font-size: 0.95rem;">
                     <strong>${item.skill}</strong>
-                    <span style="font-size: 0.8rem; color: var(--text-muted-light); margin-left: 0.5rem;">(Pág. ${item.source_page})</span>
+                    <span style="font-size: 0.8rem; color: var(--text-muted-light); margin-left: 0.5rem;">(P. ${item.source_page})</span>
                 </li>
             `;
         });
@@ -1681,8 +1683,8 @@ const Router = {
 
         let html = `
             <div class="navigation-header">
-                <a href="#/" class="btn-back">← Inicio</a>
-                <h2>Unidades y Errores Frecuentes</h2>
+                <a href="#/" class="btn-back">← ${I18n.translate("nav.home")}</a>
+                <h2>${I18n.translate("label.unit_warnings")} Frecuentes</h2>
             </div>
 
             <div class="cards-list">
@@ -1693,7 +1695,7 @@ const Router = {
                 <div class="card clinical-card warning-card" style="border-left: 4px solid #eab308; background-color: var(--card-bg-light);">
                     <h3 style="color: var(--warning-text); font-size: 1.1rem; margin-bottom: 0.25rem;">${w.parameter}</h3>
                     <p style="font-size: 0.95rem;">${w.warning}</p>
-                    <div style="font-size: 0.8rem; color: var(--text-muted-light); margin-top: 0.5rem; text-align: right;">Página origen: ${w.source_page}</div>
+                    <div style="font-size: 0.8rem; color: var(--text-muted-light); margin-top: 0.5rem; text-align: right;">${I18n.translate("label.origen")}: ${w.source_page}</div>
                 </div>
             `;
         });
@@ -1708,15 +1710,15 @@ const Router = {
 
         let html = `
             <div class="navigation-header">
-                <a href="#/" class="btn-back">← Inicio</a>
-                <h2>Mis Favoritos</h2>
+                <a href="#/" class="btn-back">← ${I18n.translate("nav.home")}</a>
+                <h2>${I18n.translate("nav.favorites")}</h2>
             </div>
         `;
 
         if (favs.length === 0) {
             html += `
                 <div class="card error-card">
-                    <p>Aún no has guardado ningún favorito. Pulsa sobre el botón "☆ Favorito" en cualquier ficha.</p>
+                    <p>Aún no has guardado ningún favorito. Pulsa sobre el botón "☆ ${I18n.translate("label.favorito")}" en cualquier ficha.</p>
                 </div>
             `;
             container.innerHTML = html;
@@ -1762,7 +1764,7 @@ const Router = {
 
         let html = `
             <div class="navigation-header">
-                <a href="#/" class="btn-back">← Inicio</a>
+                <a href="#/" class="btn-back">← ${I18n.translate("nav.home")}</a>
                 <h2>Vistos Recientemente</h2>
             </div>
         `;
@@ -1779,7 +1781,7 @@ const Router = {
 
         html += `
             <div style="text-align: right; margin-bottom: 1rem;">
-                <button id="clear-all-recs" class="btn-secondary" style="display: inline-flex; min-height: 38px; padding: 0.25rem 1rem;">Limpiar Historial</button>
+                <button id="clear-all-recs" class="btn-secondary" style="display: inline-flex; min-height: 38px; padding: 0.25rem 1rem;">${I18n.translate("action.clear_history")}</button>
             </div>
             <div class="cards-list">
         `;
@@ -1813,8 +1815,8 @@ const Router = {
 
         let html = `
             <div class="navigation-header">
-                <a href="#/" class="btn-back">← Inicio</a>
-                <h2>Referencias Bibliográficas</h2>
+                <a href="#/" class="btn-back">← ${I18n.translate("nav.home")}</a>
+                <h2>${I18n.translate("label.clinical_references_title")}</h2>
             </div>
 
             <div style="background-color: var(--card-bg-light); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border-light); display: flex; flex-direction: column; gap: 1rem;">
@@ -1842,8 +1844,8 @@ const Router = {
     renderAbout(container) {
         container.innerHTML = `
             <div class="navigation-header">
-                <a href="#/" class="btn-back">← Inicio</a>
-                <h2>Acerca de POCUS Cardíaco</h2>
+                <a href="#/" class="btn-back">← ${I18n.translate("nav.home")}</a>
+                <h2>${I18n.translate("label.about_title")}</h2>
             </div>
 
             <div style="background-color: var(--card-bg-light); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border-light); display: flex; flex-direction: column; gap: 1rem; font-size: 0.95rem;">
@@ -1929,23 +1931,23 @@ const Router = {
     renderInstall(container) {
         container.innerHTML = `
             <div class="navigation-header">
-                <a href="#/" class="btn-back">← Inicio</a>
-                <h2>Instalación en iPhone (PWA)</h2>
+                <a href="#/" class="btn-back">← ${I18n.translate("nav.home")}</a>
+                <h2>${I18n.translate("label.install_title")}</h2>
             </div>
 
             <div style="background-color: var(--card-bg-light); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border-light); font-size: 0.95rem;">
-                <p style="margin-bottom: 1rem; font-weight: 600;">Sigue estos pasos para instalar esta aplicación en la pantalla de inicio de tu iPhone:</p>
+                <p style="margin-bottom: 1rem; font-weight: 600;">${I18n.translate("label.inst_iphone_steps")}</p>
 
                 <ol style="padding-left: 1.25rem; display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.5rem;">
-                    <li>Abre el navegador <strong>Safari</strong> en tu iPhone e ingresa a este sitio web.</li>
-                    <li>Toca el botón <strong>Compartir</strong> <span style="font-size: 1.2rem;">📤</span> (el icono de caja con flecha hacia arriba) en la barra de navegación inferior de Safari.</li>
-                    <li>Desplázate hacia abajo en el menú y selecciona la opción <strong>"Agregar a pantalla de inicio"</strong>.</li>
-                    <li>Confirma el nombre de la aplicación (<strong>POCUS Cardíaco</strong>) y toca <strong>"Agregar"</strong> en la esquina superior derecha.</li>
-                    <li>Busca el icono de la aplicación en tu pantalla de inicio y ábrela.</li>
+                    <li>${I18n.translate("label.inst_iphone_step1")}</li>
+                    <li>${I18n.translate("label.inst_iphone_step2")}</li>
+                    <li>${I18n.translate("label.inst_iphone_step3")}</li>
+                    <li>${I18n.translate("label.inst_iphone_step4")}</li>
+                    <li>${I18n.translate("label.inst_iphone_step5")}</li>
                 </ol>
 
                 <div class="safety-banner">
-                    <strong>Nota de la PWA:</strong> Después de abrir la aplicación por primera vez con conexión a Internet, todos los datos médicos clínicos quedarán almacenados de manera segura en la memoria de tu dispositivo. Podrás consultarla sin conexión de red en cualquier momento.
+                    <strong>${I18n.translate("label.pwa_note_title")}:</strong> ${I18n.translate("label.pwa_note_text")}
                 </div>
             </div>
         `;
@@ -1954,3 +1956,15 @@ const Router = {
 
 // Escuchar cambios de hash en la URL
 window.addEventListener("hashchange", () => Router.route());
+
+// Escuchar cambios globales de idioma para volver a renderizar la vista actual sin alterar el historial ni recargar
+window.addEventListener("pocus-language-changed", () => {
+    const hash = window.location.hash || '#/';
+    // Proteger las rutas de cuestionarios activos frente a un rerender de la ruta completa
+    if (hash.startsWith('#/cuestionarios/') || hash.startsWith('#/cuestionario')) {
+        // En cuestionarios, permitimos que la interfaz de cabecera estática del documento cambie
+        // pero NO volvemos a enrutar/destruir el flujo del cuestionario.
+        return;
+    }
+    Router.route();
+});

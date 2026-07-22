@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>POCUS Cardíaco - Glosario y Mediciones</title>
+    <title data-i18n="app.document_title">POCUS Cardíaco - Glosario y Mediciones</title>
     <!-- Importar tipografía moderna Outfit de Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
     <!-- Enlace al archivo de estilos CSS -->
     <link rel="stylesheet" href="assets/css/styles.css">
-    
+
     <!-- Configuración para PWA (Manifiesto e iOS) -->
     <link rel="manifest" href="manifest.webmanifest">
     <meta name="theme-color" content="#1e3a8a">
@@ -40,64 +40,64 @@
         <!-- Cabecera principal con Logotipo de Fusión Biomédica Profesional -->
         <header style="position: relative; text-align: center; padding: 1rem 0 0.5rem 0;">
             <div style="position: absolute; right: 0.5rem; top: 0.5rem; z-index: 10; display: flex; align-items: center;">
-                <select id="language-select" aria-label="Seleccionar idioma" style="padding: 0.25rem 0.5rem; border-radius: 6px; border: 1px solid var(--border-light); font-size: 0.8rem; background-color: var(--card-bg-light); color: var(--text-main-light); cursor: pointer; margin-right: 0.5rem;">
-                    <option value="es">ES</option>
-                    <option value="en">EN</option>
+                <select id="language-select" aria-label="Seleccionar idioma" data-i18n-aria-label="language.selector_label" style="padding: 0.25rem 0.5rem; border-radius: 6px; border: 1px solid var(--border-light); font-size: 0.8rem; background-color: var(--card-bg-light); color: var(--text-main-light); cursor: pointer; margin-right: 0.5rem;">
+                    <option value="es" data-i18n="language.spanish">ES</option>
+                    <option value="en" data-i18n="language.english">EN</option>
                 </select>
-                <select id="theme-select" aria-label="Seleccionar tema visual" style="padding: 0.25rem 0.5rem; border-radius: 6px; border: 1px solid var(--border-light); font-size: 0.8rem; background-color: var(--card-bg-light); color: var(--text-main-light); cursor: pointer;">
-                    <option value="auto">🌓 Auto</option>
-                    <option value="light">☀️ Claro</option>
-                    <option value="dark">🌙 Oscuro</option>
+                <select id="theme-select" aria-label="Seleccionar tema visual" data-i18n-aria-label="theme.selector_label" style="padding: 0.25rem 0.5rem; border-radius: 6px; border: 1px solid var(--border-light); font-size: 0.8rem; background-color: var(--card-bg-light); color: var(--text-main-light); cursor: pointer;">
+                    <option value="auto" data-i18n="theme.auto">🌓 Auto</option>
+                    <option value="light" data-i18n="theme.light">☀️ Claro</option>
+                    <option value="dark" data-i18n="theme.dark">🌙 Oscuro</option>
                 </select>
             </div>
-            
+
             <!-- Logotipo Profesional Adaptable (Retorno a Inicio) -->
             <div class="header-logo" style="margin: 0 auto; max-width: 250px; width: 100%; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.08));">
-                <a href="#/" aria-label="Volver al inicio" style="display: block; text-decoration: none;">
-                    <img src="assets/images/pocus_fusion_branding.png" alt="POCUS Cardíaco - Glosario y banco de mediciones" style="width: 100%; height: auto; display: block; border-radius: 12px; border: 2px solid var(--border-light); transition: filter 0.3s; background-color: #ffffff;" class="brand-logo-img">
+                <a href="#/" aria-label="Volver al inicio" data-i18n-aria-label="nav.home" style="display: block; text-decoration: none;">
+                    <img src="assets/images/pocus_fusion_branding.png" alt="POCUS Cardíaco - Glosario y banco de mediciones" data-i18n-title="app.document_title" style="width: 100%; height: auto; display: block; border-radius: 12px; border: 2px solid var(--border-light); transition: filter 0.3s; background-color: #ffffff;" class="brand-logo-img">
                 </a>
             </div>
         </header>
 
         <!-- Descargo de Responsabilidad de Seguridad Clínica -->
-        <div class="safety-banner" role="alert">
-            <strong>Aviso de seguridad clínica:</strong> Esta herramienta es educativa y de consulta rápida. 
-            No sustituye un ecocardiograma formal, la valoración clínica, las guías vigentes ni el juicio 
+        <div class="safety-banner" role="alert" data-i18n="safety.notice">
+            Aviso de seguridad clínica: Esta herramienta es educativa y de consulta rápida.
+            No sustituye un ecocardiograma formal, la valoración clínica, las guías vigentes ni el juicio
             de un profesional capacitado.
         </div>
 
         <!-- Barra de Búsqueda Global -->
         <div class="search-container">
-            <input type="text" id="global-search" placeholder="🔍 Buscar FEVI, e', longitud VD, Simpson..." aria-label="Buscar en la aplicación">
-            <button id="clear-search" aria-label="Limpiar búsqueda" style="display: none;">&times;</button>
+            <input type="text" id="global-search" placeholder="🔍 Buscar FEVI, e', longitud VD, Simpson..." aria-label="Buscar en la aplicación" data-i18n-placeholder="search.placeholder" data-i18n-aria-label="search.aria_label">
+            <button id="clear-search" aria-label="Limpiar búsqueda" data-i18n-aria-label="search.clear" style="display: none;">&times;</button>
         </div>
 
         <!-- Sección de Contenido Principal -->
         <main id="app-content">
             <div class="main-nav">
                 <a href="#/glosario" class="nav-card">
-                    <h2>Glosario de Términos</h2>
-                    <p>Definición de parámetros, ventanas de adquisición y vocabulario clínico de POCUS.</p>
+                    <h2 data-i18n="nav.glossary">Glosario de Términos</h2>
+                    <p data-i18n="label.glossary_desc">Definición de parámetros, ventanas de adquisición y vocabulario clínico de POCUS.</p>
                 </a>
                 <a href="#/mediciones" class="nav-card">
-                    <h2>Banco de Mediciones</h2>
-                    <p>12 secciones con valores normales, fórmulas y puntos de corte ecocardiográficos.</p>
+                    <h2 data-i18n="nav.measurements">Banco de Mediciones</h2>
+                    <p data-i18n="label.measurements_desc">12 secciones con valores normales, fórmulas y puntos de corte ecocardiográficos.</p>
                 </a>
                 <a href="#/ventanas" class="nav-card">
-                    <h2>Ventanas ecocardiográficas</h2>
-                    <p>Guía de posición del transductor, orientación del marcador, estructuras visibles y mediciones asociadas.</p>
+                    <h2 data-i18n="nav.windows">Ventanas ecocardiográficas</h2>
+                    <p data-i18n="label.windows_desc">Guía de posición del transductor, orientación del marcador, estructuras visibles y mediciones asociadas.</p>
                 </a>
                 <a href="#/protocolos" class="nav-card">
-                    <h2>Protocolos POCUS</h2>
-                    <p>Protocolos estructurados para la evaluación ecográfica dirigida en escenarios clínicos específicos.</p>
+                    <h2 data-i18n="nav.protocols">Protocolos POCUS</h2>
+                    <p data-i18n="label.protocols_desc">Protocolos estructurados para la evaluación ecográfica dirigida en escenarios clínicos específicos.</p>
                 </a>
             </div>
         </main>
 
         <!-- Pie de página -->
         <footer>
-            <p>&copy; 2026 POCUS Cardíaco. Versión Inicial Mínima.</p>
-            <p>Desarrollado por Medicina Interna del HSRA - Dr. García R.</p>
+            <p data-i18n="footer.version">&copy; 2026 POCUS Cardíaco. Versión Inicial Mínima.</p>
+            <p data-i18n="footer.developed_by">Desarrollado por Medicina Interna del HSRA - Dr. García R.</p>
         </footer>
     </div>
 
