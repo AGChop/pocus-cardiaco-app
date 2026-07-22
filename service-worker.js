@@ -1,5 +1,5 @@
 // Service Worker de POCUS Cardíaco para soporte sin conexión (Offline)
-const CACHE_NAME = 'pocus-cardiaco-cache-v14';
+const CACHE_NAME = 'pocus-cardiaco-cache-v15';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
@@ -7,11 +7,13 @@ const ASSETS_TO_CACHE = [
   './assets/css/styles.css',
   './assets/js/app.js',
   './assets/js/analytics.js',
+  './assets/js/media-viewer.js',
   './assets/js/data-loader.js',
   './assets/js/storage.js',
   './assets/js/theme.js',
   './assets/js/search.js',
   './assets/js/router.js',
+  './data/media-resources.json',
   './data/sections.json',
   './data/measurements.json',
   './data/measurement-priority.json',
@@ -60,6 +62,24 @@ self.addEventListener('activate', (event) => {
 
 // Evento de recuperación (Fetch): Estrategia Cache-First (Red de respaldo)
 self.addEventListener('fetch', (event) => {
+  const url = event.request.url.toLowerCase();
+  const isVideo = event.request.destination === 'video' || url.endsWith('.mp4') || url.endsWith('.webm');
+  const isAudio = event.request.destination === 'audio' || url.endsWith('.mp3') || url.endsWith('.wav') || url.endsWith('.ogg');
+  const hasRange = event.request.headers.has('range');
+
+  if (isVideo || isAudio || hasRange) {
+    event.respondWith(
+      fetch(event.request).catch(() => {
+        return new Response("Multimedia no disponible sin conexión", {
+          status: 503,
+          statusText: "Service Unavailable",
+          headers: { "Content-Type": "text/plain; charset=utf-8" }
+        });
+      })
+    );
+    return;
+  }
+
   event.respondWith(
     caches.match(event.request).then((cachedResponse) => {
       // Retornar recurso cacheado si existe

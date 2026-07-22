@@ -408,12 +408,16 @@ const Router = {
     // DETALLE DE MEDICIÓN
     async renderMeasurementDetail(container, id) {
         const measurements = await DataLoader.getMeasurements() || [];
+        const mediaResources = await DataLoader.getMediaResources() || [];
         const item = measurements.find(m => m.id === id);
 
         if (!item) {
             this.render404(container);
             return;
         }
+
+        const relatedMedia = MediaViewer.getMediaForEntity(mediaResources, 'measurement', item.id);
+        const mediaHTML = MediaViewer.renderMediaSection(relatedMedia);
 
         Storage.addRecent("medición", item.id, item.measurement);
         const isFav = Storage.isFavorite("medición", item.id);
@@ -536,6 +540,10 @@ const Router = {
                     <span class="detail-label">Unidades de Medida</span>
                     <span class="unit-badge large-badge">${item.units}</span>
                 </div>
+                ${mediaHTML ? `
+                <div class="card-section media-card-section">
+                    ${mediaHTML}
+                </div>` : ''}
                 <div class="card-section">
                     <span class="detail-label">Limitaciones y Precauciones</span>
                     <p class="detail-text warning-text">${item.interpretation_limitations}</p>
@@ -562,6 +570,7 @@ const Router = {
         `;
 
         container.innerHTML = html;
+        MediaViewer.initializeMediaInteractions(container);
     },
 
     // LISTA DE VENTANAS ECOCARDIOGRÁFICAS
@@ -636,9 +645,11 @@ const Router = {
     async renderWindowDetail(container, id) {
         let windows = [];
         let measurements = [];
+        let mediaResources = [];
         try {
             windows = await DataLoader.getWindows() || [];
             measurements = await DataLoader.getMeasurements() || [];
+            mediaResources = await DataLoader.getMediaResources() || [];
         } catch (error) {
             container.innerHTML = `
                 <div class="card error-card">
@@ -655,6 +666,9 @@ const Router = {
             this.render404(container);
             return;
         }
+
+        const relatedMedia = MediaViewer.getMediaForEntity(mediaResources, 'window', item.id);
+        const mediaHTML = MediaViewer.renderMediaSection(relatedMedia);
 
         const escapeHTML = (str) => {
             if (!str) return "";
@@ -751,6 +765,11 @@ const Router = {
                     <p class="detail-text">${escapeHTML(item.favored_structures)}</p>
                 </div>` : ''}
 
+                ${mediaHTML ? `
+                <div class="card-section media-card-section">
+                    ${mediaHTML}
+                </div>` : ''}
+
                 ${favoredMeasurementsHTML ? `
                 <div class="card-section">
                     <span class="detail-label">Mediciones favorecidas</span>
@@ -760,6 +779,7 @@ const Router = {
         `;
 
         container.innerHTML = html;
+        MediaViewer.initializeMediaInteractions(container);
     },
 
     // LISTADO DE PROTOCOLOS
@@ -920,10 +940,12 @@ const Router = {
         let data = null;
         let windows = [];
         let measurements = [];
+        let mediaResources = [];
         try {
             data = await DataLoader.fetchResource("protocols");
             windows = await DataLoader.getWindows() || [];
             measurements = await DataLoader.getMeasurements() || [];
+            mediaResources = await DataLoader.getMediaResources() || [];
             if (!data || !data.protocols) {
                 throw new Error("No se pudo cargar la base de datos de protocolos.");
             }
@@ -978,6 +1000,9 @@ const Router = {
         const protoRefs = data.references || [];
         const activeRefIds = new Set(proto.reference_ids || []);
         const filteredRefs = protoRefs.filter(ref => activeRefIds.has(ref.id));
+
+        const protoMedia = MediaViewer.getMediaForEntity(mediaResources, 'protocol', proto.id);
+        const protoMediaHTML = MediaViewer.renderMediaSection(protoMedia);
 
         // Construir advertencias esenciales siempre visibles
         let html = `
@@ -1057,6 +1082,9 @@ const Router = {
                                             ? comp.linked_measurement_ids.map(mId => resolveMeasurementLink(mId)).join(", ")
                                             : escapeHTML(Router.uiStrings.noLinkedItems);
 
+                                        const compMedia = MediaViewer.getMediaForEntity(mediaResources, 'component', comp.id);
+                                        const compMediaHTML = MediaViewer.renderMediaSection(compMedia);
+
                                         return `
                                             <div class="protocol-step-card card" data-step="${idx}" hidden>
                                                 <h3 class="protocol-step-title" style="margin-top: 0;">Componente: ${escapeHTML(comp.name_es)}</h3>
@@ -1093,6 +1121,11 @@ const Router = {
                                                 <p style="margin-top: 0.75rem; padding: 0.75rem; border-left: 4px solid var(--primary-medium); background: rgba(30, 58, 138, 0.02); font-size: 0.9rem; font-style: italic;">
                                                     <strong>${escapeHTML(Router.uiStrings.clinicalLimitsLabel)}:</strong> ${escapeHTML(comp.interpretation_limits)}
                                                 </p>
+
+                                                ${compMediaHTML ? `
+                                                <div class="protocol-step-media" style="margin-top: 1rem;">
+                                                    ${compMediaHTML}
+                                                </div>` : ''}
                                             </div>
                                         `;
                                     } else if (step.type === "integration") {
@@ -1250,6 +1283,10 @@ const Router = {
                                     <p>${escapeHTML(proto.safety_and_workflow_notes)}</p>
                                 </div>
                             </details>
+                            ${protoMediaHTML ? `
+                            <div class="protocol-media-container" style="margin-top: 1rem;">
+                                ${protoMediaHTML}
+                            </div>` : ''}
                         </div>
                     </div>
 
@@ -1279,6 +1316,7 @@ const Router = {
         `;
 
         container.innerHTML = html;
+        MediaViewer.initializeMediaInteractions(container);
 
         // Inicializar controladores interactivos
         this.initializeProtocolTabs(id);

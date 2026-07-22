@@ -95,5 +95,18 @@ const DataLoader = {
     async getUnitWarnings() { return this.fetchResource('unit_warnings'); },
     async getReferences() { return this.fetchResource('references'); },
     async getMetadata() { return this.fetchResource('metadata'); },
-    async getWindows() { return this.fetchResource('windows'); }
+    async getWindows() { return this.fetchResource('windows'); },
+    async getMediaResources() {
+        try {
+            const data = await this.fetchResource('media-resources');
+            if (data && typeof data === 'object' && Array.isArray(data.resources)) {
+                return data.resources;
+            }
+            console.warn("DataLoader: Estructura de media-resources inválida, se esperaba un objeto con una lista 'resources'.");
+            return [];
+        } catch (error) {
+            console.warn("DataLoader: Error al cargar media-resources.json:", error);
+            return [];
+        }
+    }
 };

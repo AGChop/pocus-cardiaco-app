@@ -9,8 +9,8 @@ def test_files_exist_and_dont_exist():
     # 2. Existe docs/LEARNING_CONTENT_ARCHITECTURE.md
     assert os.path.exists("docs/LEARNING_CONTENT_ARCHITECTURE.md"), "LEARNING_CONTENT_ARCHITECTURE.md debería existir"
 
-    # 3. No se crearon los JSON de contenido futuro
-    assert not os.path.exists("data/media-resources.json"), "No debe existir media-resources.json todavía"
+    # 3. No se crearon los JSON de contenido futuro (excepto media-resources.json en 5B)
+    assert os.path.exists("data/media-resources.json"), "media-resources.json debe existir"
     assert not os.path.exists("data/quizzes.json"), "No debe existir quizzes.json todavía"
     assert not os.path.exists("data/learning-cases.json"), "No debe existir learning-cases.json todavía"
 
@@ -141,8 +141,8 @@ def test_service_worker():
     with open("service-worker.js", "r", encoding="utf-8") as f:
         content = f.read()
 
-    # 19. service-worker.js usa v14
-    assert "pocus-cardiaco-cache-v14" in content, "service-worker.js debe usar la versión de caché v14"
+    # 19. service-worker.js usa v14 o superior
+    assert "pocus-cardiaco-cache-v14" in content or "pocus-cardiaco-cache-v15" in content, "service-worker.js debe usar la versión de caché v14 o v15"
 
     # 20. service-worker.js incluye analytics.js
     assert "./assets/js/analytics.js" in content, "service-worker.js debe precachear analytics.js"

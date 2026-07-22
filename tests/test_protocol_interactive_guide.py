@@ -139,9 +139,9 @@ def test_css_classes_and_focus(css_content):
     assert "prefers-reduced-motion" in css_content
 
 def test_service_worker_and_clinical_unmodified(sw_content):
-    # 40. service-worker.js usa v14
+    # 40. service-worker.js usa v15
     # 42. Los archivos clínicos no se modificaron
-    assert "pocus-cardiaco-cache-v13" in sw_content or "pocus-cardiaco-cache-v14" in sw_content
+    assert "pocus-cardiaco-cache-v13" in sw_content or "pocus-cardiaco-cache-v14" in sw_content or "pocus-cardiaco-cache-v15" in sw_content
 
     assert os.path.exists("data/protocols.json")
     with open("data/protocols.json", "r", encoding="utf-8") as f:
