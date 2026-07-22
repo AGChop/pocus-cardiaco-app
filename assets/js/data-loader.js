@@ -121,5 +121,27 @@ const DataLoader = {
             console.warn("DataLoader: Error al cargar quizzes.json:", error);
             return [];
         }
+    },
+    async getTranslations() {
+        try {
+            const data = await this.fetchResource('translations');
+            if (data && typeof data === 'object' && data.translations) {
+                return data;
+            }
+            console.warn("DataLoader: Estructura de translations inválida, se esperaba un objeto con una clave 'translations'.");
+        } catch (error) {
+            console.warn("DataLoader: Error al cargar translations.json:", error);
+        }
+        // Retornar estructura mínima segura si falla la carga
+        return {
+            schema_version: "1.0",
+            default_language: "es",
+            supported_languages: ["es", "en"],
+            translations: {
+                "language.selector_label": { "es": "Seleccionar idioma", "en": "Select language" },
+                "language.spanish": { "es": "ES", "en": "ES" },
+                "language.english": { "es": "EN", "en": "EN" }
+            }
+        };
     }
 };

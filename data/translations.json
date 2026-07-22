@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0",
+  "default_language": "es",
+  "supported_languages": ["es", "en"],
+  "translations": {
+    "language.selector_label": {
+      "es": "Seleccionar idioma",
+      "en": "Select language"
+    },
+    "language.spanish": {
+      "es": "ES",
+      "en": "ES"
+    },
+    "language.english": {
+      "es": "EN",
+      "en": "EN"
+    }
+  }
+}

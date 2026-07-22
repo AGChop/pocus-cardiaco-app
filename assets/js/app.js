@@ -1,5 +1,18 @@
 // Archivo lógico principal de la aplicación POCUS Cardíaco
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
+    // Inicializar I18n
+    if (typeof I18n !== "undefined") {
+        await I18n.init();
+    }
+
+    // Conectar el selector de idioma
+    const languageSelect = document.getElementById("language-select");
+    if (languageSelect && typeof I18n !== "undefined") {
+        languageSelect.addEventListener("change", (e) => {
+            I18n.setLanguage(e.target.value);
+        });
+    }
+
     console.log("Aplicación POCUS Cardíaco inicializada correctamente.");
     
     // Iniciar la ruta actual al cargar la aplicación

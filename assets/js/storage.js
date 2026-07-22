@@ -132,6 +132,23 @@ const Storage = {
         delete this._memoryLocalStorage[key];
     },
 
+    // --- IDIOMA GLOBAL ---
+    getLanguage() {
+        const lang = this.getPreference('pocus_language', 'es');
+        if (lang === 'es' || lang === 'en') {
+            return lang;
+        }
+        return 'es';
+    },
+
+    setLanguage(language) {
+        if (language === 'es' || language === 'en') {
+            this.setPreference('pocus_language', language);
+        } else {
+            console.warn(`Storage: Intento de establecer idioma inválido: ${language}`);
+        }
+    },
+
     // --- ESTADO TEMPORAL (sessionStorage) ---
     getSessionState(key, fallback = null) {
         try {
