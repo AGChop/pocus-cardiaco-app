@@ -1167,3 +1167,130 @@ body.dark-mode .protocol-step-marker:hover {
     outline: 3px solid var(--primary-medium);
     outline-offset: 2px;
 }
+
+/* --- ESTILOS DE INTERFAZ DE CUESTIONARIOS (FASE 5D) --- */
+.quiz-page {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+.quiz-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+@media (min-width: 768px) {
+    .quiz-list {
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    }
+}
+
+.quiz-card {
+    display: flex;
+    flex-direction: column;
+    padding: 1.25rem;
+}
+
+.quiz-card .btn-primary {
+    margin-top: auto;
+}
+
+.quiz-empty-state {
+    text-align: center;
+    padding: 2.5rem 1rem;
+}
+
+.quiz-introduction {
+    padding: 1.5rem;
+}
+
+.quiz-question-card {
+    padding: 1.5rem;
+}
+
+.quiz-question-title {
+    margin-top: 0;
+}
+
+.quiz-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin: 1.5rem 0;
+}
+
+.quiz-option {
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.quiz-option:hover {
+    background-color: var(--primary-bg-light);
+}
+
+.dark-mode .quiz-option:hover {
+    background-color: var(--primary-bg-dark);
+}
+
+/* Foco en inputs de opción */
+.quiz-option input:focus-visible {
+    outline: 3px solid var(--primary-medium);
+    outline-offset: 4px;
+}
+
+.quiz-feedback {
+    margin: 1rem 0;
+    padding: 1rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.quiz-feedback-correct {
+    background-color: rgba(16, 185, 129, 0.1);
+    border-left: 4px solid #10b981;
+    color: #065f46;
+}
+
+.dark-mode .quiz-feedback-correct {
+    background-color: rgba(16, 185, 129, 0.15);
+    color: #a7f3d0;
+}
+
+.quiz-feedback-incorrect {
+    background-color: rgba(239, 68, 68, 0.1);
+    border-left: 4px solid #ef4444;
+    color: #991b1b;
+}
+
+.dark-mode .quiz-feedback-incorrect {
+    background-color: rgba(239, 68, 68, 0.15);
+    color: #fca5a5;
+}
+
+.quiz-progress {
+    overflow: hidden;
+}
+
+.quiz-progress-bar {
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.quiz-actions {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+}
+
+.quiz-summary {
+    padding: 1.5rem;
+}
+
+.quiz-score {
+    text-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.quiz-status {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}

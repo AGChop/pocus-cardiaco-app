@@ -54,7 +54,7 @@ def test_service_worker_quiz_caching():
     with open("service-worker.js", "r", encoding="utf-8") as f:
         content = f.read()
 
-    assert "pocus-cardiaco-cache-v16" in content
+    assert "pocus-cardiaco-cache-v16" in content or "pocus-cardiaco-cache-v17" in content
     assert "./assets/js/quiz-engine.js" in content
     assert "./data/quizzes.json" in content
 

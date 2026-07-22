@@ -152,8 +152,8 @@ def test_service_worker_caching():
     with open("service-worker.js", "r", encoding="utf-8") as f:
         content = f.read()
 
-    # 36. service-worker.js usa v15 o v16
-    assert "pocus-cardiaco-cache-v15" in content or "pocus-cardiaco-cache-v16" in content
+    # 36. service-worker.js usa v15 o superior
+    assert "pocus-cardiaco-cache-v15" in content or "pocus-cardiaco-cache-v16" in content or "pocus-cardiaco-cache-v17" in content
 
     # 37. service-worker.js precachea media-viewer.js y media-resources.json
     assert "./assets/js/media-viewer.js" in content

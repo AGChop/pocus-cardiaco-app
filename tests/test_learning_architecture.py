@@ -142,7 +142,7 @@ def test_service_worker():
         content = f.read()
 
     # 19. service-worker.js usa v14 o superior
-    assert "pocus-cardiaco-cache-v14" in content or "pocus-cardiaco-cache-v15" in content or "pocus-cardiaco-cache-v16" in content, "service-worker.js debe usar la versión de caché v14 o superior"
+    assert "pocus-cardiaco-cache-v14" in content or "pocus-cardiaco-cache-v15" in content or "pocus-cardiaco-cache-v16" in content or "pocus-cardiaco-cache-v17" in content, "service-worker.js debe usar la versión de caché v14 o superior"
 
     # 20. service-worker.js incluye analytics.js
     assert "./assets/js/analytics.js" in content, "service-worker.js debe precachear analytics.js"

@@ -12,7 +12,7 @@ const Router = {
 
         // 1. Ruta de Inicio
         if (hash === '#/' || hash === '#') {
-            this.renderHome(container);
+            await this.renderHome(container);
             return;
         }
 
@@ -51,6 +51,17 @@ const Router = {
         if (hash.startsWith('#/ventanas/')) {
             const id = hash.replace('#/ventanas/', '');
             await this.renderWindowDetail(container, id);
+            return;
+        }
+
+        // Rutas de Cuestionarios
+        if (hash === '#/cuestionarios') {
+            await this.renderQuizzesList(container);
+            return;
+        }
+        if (hash.startsWith('#/cuestionarios/')) {
+            const id = hash.replace('#/cuestionarios/', '');
+            await this.renderQuizFlow(container, id);
             return;
         }
 
@@ -139,7 +150,21 @@ const Router = {
     // --- RENDERIZADORES DE VISTAS ---
 
     // Menú Principal
-    renderHome(container) {
+    async renderHome(container) {
+        let quizzes = [];
+        try {
+            quizzes = await DataLoader.getQuizzes();
+        } catch (e) {
+            console.warn("Router: Error al cargar cuestionarios para renderHome:", e);
+        }
+
+        if (!Array.isArray(quizzes)) {
+            quizzes = [];
+        }
+
+        const approvedQuizzes = quizzes.filter(q => q.review_status === "approved" && QuizEngine.validateQuizDefinition(q));
+        const showQuizzesCard = approvedQuizzes.length > 0;
+
         container.innerHTML = `
             <div style="text-align: center; margin-bottom: 1.5rem; margin-top: 1rem;">
                 <p style="font-size: 0.95rem; color: var(--text-muted-light);">
@@ -164,6 +189,11 @@ const Router = {
                     <h2>Protocolos POCUS</h2>
                     <p>Protocolos estructurados para la evaluación ecográfica dirigida en escenarios clínicos específicos.</p>
                 </a>
+                ${showQuizzesCard ? `
+                <a href="#/cuestionarios" class="nav-card">
+                    <h2>Cuestionarios</h2>
+                    <p>Ponga a prueba sus conocimientos teóricos y de interpretación con autoevaluaciones formativas.</p>
+                </a>` : ''}
             </div>
 
             <div class="secondary-nav" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-top: 1rem;">
@@ -1823,6 +1853,76 @@ const Router = {
                 <p>Toda la información médica está compilada de manera estricta del documento fuente oficial <em>Mediciones POCUS Cardiaco Adultos - Glosario</em> revisado en Julio de 2026, sin alteraciones de los rangos o unidades.</p>
             </div>
         `;
+    },
+
+    async renderQuizzesList(container) {
+        let quizzes = [];
+        try {
+            quizzes = await DataLoader.getQuizzes();
+        } catch (e) {
+            console.error("Router: Error cargando cuestionarios:", e);
+        }
+        if (!Array.isArray(quizzes)) {
+            quizzes = [];
+        }
+        QuizEngine.renderQuizList(container, quizzes);
+    },
+
+    async renderQuizFlow(container, id) {
+        let decodedId = "";
+        try {
+            decodedId = decodeURIComponent(id || "");
+        } catch (e) {
+            decodedId = id || "";
+        }
+
+        if (!QuizEngine.isValidStableId(decodedId)) {
+            this.render404(container);
+            return;
+        }
+
+        let quizzes = [];
+        try {
+            quizzes = await DataLoader.getQuizzes();
+        } catch (e) {
+            console.error("Router: Error al inicializar flujo de cuestionario:", e);
+        }
+
+        if (!Array.isArray(quizzes)) {
+            quizzes = [];
+        }
+
+        const quiz = QuizEngine.getQuizById(quizzes, decodedId);
+        if (!quiz || quiz.review_status !== "approved" || !QuizEngine.validateQuizDefinition(quiz)) {
+            container.innerHTML = `
+                <div class="navigation-header">
+                    <a href="#/cuestionarios" class="btn-back">← Volver a Cuestionarios</a>
+                    <h2>Cuestionario no disponible</h2>
+                </div>
+                <div class="card error-card">
+                    <h3>Cuestionario no disponible</h3>
+                    <p>El cuestionario solicitado no está disponible o su formato no es válido.</p>
+                    <a href="#/cuestionarios" class="btn-primary" style="display: inline-block; margin-top: 1rem; text-decoration: none;">Volver a la lista</a>
+                </div>
+            `;
+            return;
+        }
+
+        let mediaResources = [];
+        const hasMedia = quiz.questions.some(q => Array.isArray(q.media_resource_ids) && q.media_resource_ids.length > 0);
+        if (hasMedia) {
+            try {
+                mediaResources = await DataLoader.getMediaResources() || [];
+                if (!Array.isArray(mediaResources)) {
+                    mediaResources = [];
+                }
+            } catch (e) {
+                console.warn("Router: Error cargando recursos multimedia:", e);
+            }
+        }
+
+        const session = QuizEngine.restoreQuizSession(quiz, decodedId);
+        QuizEngine.refreshQuizView(container, quiz, session, mediaResources);
     },
 
     // INSTALACIÓN
