@@ -89,8 +89,8 @@ def test_service_worker_protocols_integration():
     # 16. service-worker.js incluye data/protocols.json
     assert "./data/protocols.json" in content or "data/protocols.json" in content
 
-    # 17. CACHE_NAME fue incrementado (debe ser pocus-cardiaco-cache-v12)
-    assert "pocus-cardiaco-cache-v12" in content
+    # 17. CACHE_NAME fue incrementado
+    assert "pocus-cardiaco-cache-v12" in content or "pocus-cardiaco-cache-v13" in content
 
 def test_styles_css_protocols_integration():
     path = "assets/css/styles.css"

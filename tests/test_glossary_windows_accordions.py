@@ -101,4 +101,4 @@ def test_service_worker_cache_and_contents(sw_content):
     assert "styles.css" in sw_content
 
     # 15. La versión del caché fue incrementada a v11 o superior
-    assert "pocus-cardiaco-cache-v11" in sw_content or "pocus-cardiaco-cache-v12" in sw_content
+    assert "pocus-cardiaco-cache-v11" in sw_content or "pocus-cardiaco-cache-v12" in sw_content or "pocus-cardiaco-cache-v13" in sw_content

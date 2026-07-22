@@ -921,3 +921,82 @@ body.dark-mode .content-accordion-body {
     flex-direction: column;
     gap: 0.5rem;
 }
+
+/* --- Estilos del Sistema de Pestañas y Stepper (Fase 4D) --- */
+.protocol-tab-list {
+    border-bottom: 2px solid var(--border-light);
+}
+
+body.dark-mode .protocol-tab-list {
+    border-bottom: 2px solid var(--border-dark);
+}
+
+.protocol-tab-button {
+    color: var(--text-main);
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.protocol-tab-button:hover {
+    background-color: rgba(0, 0, 0, 0.03);
+}
+
+body.dark-mode .protocol-tab-button:hover {
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+.protocol-tab-button.active,
+.protocol-tab-button[aria-selected="true"] {
+    color: var(--primary-medium);
+    border-bottom: 2px solid var(--primary-medium) !important;
+}
+
+/* Stepper y Progreso */
+.protocol-progress-container {
+    background-color: var(--border-light);
+}
+
+body.dark-mode .protocol-progress-container {
+    background-color: var(--border-dark);
+}
+
+.protocol-step-marker {
+    color: var(--text-main);
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.protocol-step-marker:hover {
+    background-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+body.dark-mode .protocol-step-marker:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.protocol-step-marker.active {
+    background-color: var(--primary-medium) !important;
+    color: var(--bg-light) !important;
+}
+
+.protocol-step-card {
+    transition: transform 0.2s ease;
+}
+
+/* Foco Visible */
+.protocol-tab-button:focus-visible,
+.protocol-step-marker:focus-visible,
+.btn-primary:focus-visible,
+.btn-secondary:focus-visible,
+.protocol-step-title:focus-visible {
+    outline: 3px solid var(--primary-medium);
+    outline-offset: 2px;
+}
+
+/* Accesibilidad: Reducción de movimiento */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

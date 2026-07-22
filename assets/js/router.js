@@ -841,6 +841,80 @@ const Router = {
         container.innerHTML = html;
     },
 
+    uiStrings: {
+        guideTab: "Guía interactiva",
+        contentTab: "Contenido completo",
+        referencesTab: "Referencias",
+        previousBtn: "← Anterior",
+        nextBtn: "Siguiente →",
+        resetBtn: "Reiniciar",
+        finishedBtn: "Finalizado",
+        startStep: "Inicio",
+        integrationStep: "Integración fisiológica",
+        summaryStep: "Resumen",
+        stepIndicator: "Paso {x} de {y}",
+        itemNotAvailable: "Elemento no disponible",
+        noLinkedItems: "No hay elementos vinculados en la base actual.",
+        clinicalWarningsTitle: "Advertencias Clínicas Esenciales",
+        clinicalPurposeLabel: "Propósito",
+        clinicalIntegrationLabel: "Integración",
+        clinicalSafetyLabel: "Seguridad",
+        clinicalWindowLabel: "Ventanas vinculadas",
+        clinicalMeasurementLabel: "Mediciones vinculadas",
+        clinicalViewsLabel: "Vistas sugeridas",
+        clinicalQuestionsLabel: "Preguntas clínicas clave",
+        clinicalTargetsLabel: "Objetivos de evaluación",
+        clinicalFindingsLabel: "Hallazgos posibles",
+        clinicalLimitsLabel: "Límites de interpretación",
+        clinicalSequenceTitle: "Secuencia y adaptación clínica",
+        clinicalGeneralLimitsTitle: "Límites Generales",
+        clinicalSafetyWorkflowTitle: "Seguridad y flujo de trabajo",
+        clinicalReferencesTitle: "Referencias Bibliográficas",
+        clinicalReturnToListBtn: "Volver a Protocolos",
+        clinicalReturnHomeBtn: "Inicio",
+        errorLoadingTitle: "Error al cargar el protocolo",
+        errorLoadingText: "No se pudo obtener la información detallada del protocolo.",
+        errorLoadingBackBtn: "Volver a Protocolos"
+    },
+
+    buildProtocolGuideSteps(protocol) {
+        const steps = [];
+        steps.push({
+            type: "start",
+            title: Router.uiStrings.startStep,
+            name: protocol.name_es,
+            acronym: protocol.acronym,
+            purpose: protocol.purpose,
+            clinical_context: protocol.clinical_context,
+            target_population: protocol.target_population,
+            sequence_note: protocol.sequence_note
+        });
+
+        protocol.components.forEach(comp => {
+            steps.push({
+                type: "component",
+                title: comp.name_es,
+                component: comp
+            });
+        });
+
+        steps.push({
+            type: "integration",
+            title: Router.uiStrings.integrationStep,
+            integration: protocol.integration
+        });
+
+        steps.push({
+            type: "summary",
+            title: Router.uiStrings.summaryStep,
+            limitations: protocol.limitations,
+            safety_and_workflow_notes: protocol.safety_and_workflow_notes,
+            components_names: protocol.components.map(c => c.name_es)
+        });
+
+        return steps;
+    },
+
     // DETALLE DE PROTOCOLO
     async renderProtocolDetail(container, id) {
         let data = null;
@@ -857,9 +931,9 @@ const Router = {
             console.error("Error al cargar detalle de protocolo:", error);
             container.innerHTML = `
                 <div class="card error-card">
-                    <h2>Error al cargar el protocolo</h2>
-                    <p>No se pudo obtener la información detallada del protocolo.</p>
-                    <a href="#/protocolos" class="btn-primary">Volver a Protocolos</a>
+                    <h2>${escapeHTML(Router.uiStrings.errorLoadingTitle)}</h2>
+                    <p>${escapeHTML(Router.uiStrings.errorLoadingText)}</p>
+                    <a href="#/protocolos" class="btn-primary">${escapeHTML(Router.uiStrings.errorLoadingBackBtn)}</a>
                 </div>
             `;
             return;
@@ -881,136 +955,551 @@ const Router = {
                 .replace(/'/g, "&#039;");
         };
 
-        const resolveWindowName = (wId) => {
+        const resolveWindowLink = (wId) => {
             const w = windows.find(item => item.id === wId);
-            return w ? `${w.window} (${w.abbreviation})` : wId;
+            if (!w) {
+                console.warn(`Ventana no resuelta: ${wId}`);
+                return `<span class="element-not-available" style="color: var(--text-muted-light); font-style: italic;">${escapeHTML(wId)} (${escapeHTML(Router.uiStrings.itemNotAvailable)})</span>`;
+            }
+            return `<a href="#/ventanas/${wId}" class="clinical-link" style="color: var(--primary-medium); font-weight: 600; text-decoration: underline;">${escapeHTML(w.window)} (${escapeHTML(w.abbreviation)})</a>`;
         };
 
-        const resolveMeasurementName = (mId) => {
+        const resolveMeasurementLink = (mId) => {
             const m = measurements.find(item => item.id === mId);
-            return m ? `${m.measurement} (${m.abbreviation || m.measurement})` : mId;
+            if (!m) {
+                console.warn(`Medición no resuelta: ${mId}`);
+                return `<span class="element-not-available" style="color: var(--text-muted-light); font-style: italic;">${escapeHTML(mId)} (${escapeHTML(Router.uiStrings.itemNotAvailable)})</span>`;
+            }
+            const abbr = m.abbreviation || m.measurement;
+            return `<a href="#/medicion/${mId}" class="clinical-link" style="color: var(--primary-medium); font-weight: 600; text-decoration: underline;">${escapeHTML(m.measurement)} (${escapeHTML(abbr)})</a>`;
         };
 
+        const steps = this.buildProtocolGuideSteps(proto);
         const protoRefs = data.references || [];
+        const activeRefIds = new Set(proto.reference_ids || []);
+        const filteredRefs = protoRefs.filter(ref => activeRefIds.has(ref.id));
 
+        // Construir advertencias esenciales siempre visibles
         let html = `
             <div class="navigation-header">
-                <a href="#/protocolos" class="btn-back">← Protocolos</a>
+                <a href="#/protocolos" class="btn-back">← ${escapeHTML(Router.uiStrings.clinicalReturnToListBtn)}</a>
                 <h2>${escapeHTML(proto.name_es)} (${escapeHTML(proto.acronym)})</h2>
             </div>
 
             <div class="protocol-detail">
-                <div class="protocol-hero card">
-                    <p class="subtitle-en" style="font-style: italic; margin-bottom: 0.5rem; color: var(--text-muted-light);">${escapeHTML(proto.name_en)}</p>
-                    <p><strong>Propósito:</strong> ${escapeHTML(proto.purpose)}</p>
-                    <p><strong>Contexto clínico:</strong> ${escapeHTML(proto.clinical_context)}</p>
-                    <p><strong>Población objetivo:</strong> ${escapeHTML(proto.target_population)}</p>
-                    <div class="protocol-disclaimer" style="margin-top: 1rem; padding: 0.75rem; border-left: 4px solid var(--primary-medium); background: rgba(30, 58, 138, 0.04); font-size: 0.9rem;">
-                        <strong>Aviso educativo:</strong> ${escapeHTML(proto.integration)}
-                    </div>
+                <div class="protocol-safety-banner card" style="border-left: 4px solid #d97706; background: rgba(217, 119, 6, 0.05); padding: 0.75rem;">
+                    <p style="margin: 0 0 0.5rem 0; font-size: 0.95rem; font-weight: bold; color: #d97706;">${escapeHTML(Router.uiStrings.clinicalWarningsTitle)}</p>
+                    <ul style="margin: 0; padding-left: 1.25rem; font-size: 0.9rem; line-height: 1.4;">
+                        <li><strong>${escapeHTML(Router.uiStrings.clinicalPurposeLabel)}:</strong> ${escapeHTML(data.educational_disclaimer)}</li>
+                        <li><strong>${escapeHTML(Router.uiStrings.clinicalIntegrationLabel)}:</strong> ${escapeHTML(proto.integration)}</li>
+                        <li><strong>${escapeHTML(Router.uiStrings.clinicalSafetyLabel)}:</strong> ${escapeHTML(proto.safety_and_workflow_notes)}</li>
+                    </ul>
                 </div>
 
-                <div class="card" style="margin-top: 1rem;">
-                    <h3>Secuencia de Adquisición</h3>
-                    <p>${escapeHTML(proto.sequence_note)}</p>
-                </div>
-
-                <div class="protocol-components-grid" style="margin-top: 1rem; display: grid; grid-template-columns: 1fr; gap: 1rem;">
-        `;
-
-        proto.components.forEach(comp => {
-            const linkedWindowsHTML = comp.linked_window_ids && comp.linked_window_ids.length > 0
-                ? comp.linked_window_ids.map(wId => {
-                    const name = resolveWindowName(wId);
-                    return `<a href="#/ventanas/${wId}" class="clinical-link" style="color: var(--primary-medium); font-weight: 600; text-decoration: underline;">${escapeHTML(name)}</a>`;
-                  }).join(", ")
-                : "No hay elementos vinculados en la base actual.";
-
-            const linkedMeasurementsHTML = comp.linked_measurement_ids && comp.linked_measurement_ids.length > 0
-                ? comp.linked_measurement_ids.map(mId => {
-                    const name = resolveMeasurementName(mId);
-                    return `<a href="#/medicion/${mId}" class="clinical-link" style="color: var(--primary-medium); font-weight: 600; text-decoration: underline;">${escapeHTML(name)}</a>`;
-                  }).join(", ")
-                : "No hay elementos vinculados en la base actual.";
-
-            html += `
-                <div class="protocol-component-card card">
-                    <h3>${escapeHTML(comp.name_es)}</h3>
-                    <p style="font-style: italic; font-size: 0.9rem; color: var(--text-muted-light);">${escapeHTML(comp.name_en)}</p>
-
-                    <div style="margin-top: 0.75rem;">
-                        <strong>Preguntas clínicas clave:</strong>
-                        <ul style="margin-top: 0.25rem; padding-left: 1.25rem;">
-                            ${comp.clinical_questions.map(q => `<li>${escapeHTML(q)}</li>`).join("")}
-                        </ul>
+                <div class="protocol-tabs">
+                    <div role="tablist" aria-label="Secciones del protocolo" class="protocol-tab-list" style="display: flex; gap: 0.5rem; margin-bottom: 1rem; border-bottom: 2px solid var(--border-light); overflow-x: auto; padding-bottom: 0.25rem;">
+                        <button type="button" role="tab" aria-selected="true" aria-controls="protocol-guide-panel" id="protocol-guide-tab" tabindex="0" class="protocol-tab-button" data-protocol-tab="guide" style="padding: 0.5rem 1rem; border: none; background: none; font-weight: bold; cursor: pointer; border-bottom: 2px solid transparent;">
+                            ${escapeHTML(Router.uiStrings.guideTab)}
+                        </button>
+                        <button type="button" role="tab" aria-selected="false" aria-controls="protocol-full-panel" id="protocol-full-tab" tabindex="-1" class="protocol-tab-button" data-protocol-tab="content" style="padding: 0.5rem 1rem; border: none; background: none; font-weight: bold; cursor: pointer; border-bottom: 2px solid transparent;">
+                            ${escapeHTML(Router.uiStrings.contentTab)}
+                        </button>
+                        <button type="button" role="tab" aria-selected="false" aria-controls="protocol-references-panel" id="protocol-references-tab" tabindex="-1" class="protocol-tab-button" data-protocol-tab="references" style="padding: 0.5rem 1rem; border: none; background: none; font-weight: bold; cursor: pointer; border-bottom: 2px solid transparent;">
+                            ${escapeHTML(Router.uiStrings.referencesTab)}
+                        </button>
                     </div>
 
-                    <div style="margin-top: 0.5rem;">
-                        <strong>Objetivos de evaluación:</strong>
-                        <ul style="margin-top: 0.25rem; padding-left: 1.25rem;">
-                            ${comp.targets.map(t => `<li>${escapeHTML(t)}</li>`).join("")}
-                        </ul>
+                    <!-- PESTAÑA 1: GUÍA INTERACTIVA -->
+                    <div id="protocol-guide-panel" role="tabpanel" aria-labelledby="protocol-guide-tab" class="protocol-tab-panel">
+                        <div class="protocol-stepper" style="display: flex; flex-direction: column; gap: 1rem;">
+                            <!-- Progress Bar -->
+                            <div class="protocol-progress-container" style="background: var(--border-light); border-radius: 6px; height: 10px; overflow: hidden; position: relative; width: 100%;">
+                                <div id="stepper-progress-now" role="progressbar" aria-valuemin="1" aria-valuemax="${steps.length}" aria-valuenow="1" aria-valuetext="" style="background: var(--primary-medium); height: 100%; width: ${100 / steps.length}%; transition: width 0.2s ease;"></div>
+                            </div>
+
+                            <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.9rem; font-weight: bold; color: var(--text-muted-light);">
+                                <span id="stepper-progress-text"></span>
+                                <span id="stepper-live-announcer" aria-live="polite" class="sr-only" style="position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0;"></span>
+                            </div>
+
+                            <!-- Step Indicators / Markers -->
+                            <div class="protocol-step-markers" style="display: flex; gap: 0.25rem; justify-content: center; flex-wrap: wrap;">
+                                ${steps.map((step, idx) => `
+                                    <button class="protocol-step-marker" data-step="${idx}" aria-label="Ir al paso ${idx + 1}: ${escapeHTML(step.title)}" style="width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border-light); background: var(--bg-light); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: bold;">
+                                        ${idx + 1}
+                                    </button>
+                                `).join("")}
+                            </div>
+
+                            <!-- Step Cards -->
+                            <div class="protocol-step-cards">
+                                ${steps.map((step, idx) => {
+                                    if (step.type === "start") {
+                                        return `
+                                            <div class="protocol-step-card card" data-step="${idx}" ${idx === 0 ? "" : "hidden"}>
+                                                <h3 class="protocol-step-title" style="margin-top: 0;">${escapeHTML(step.name)} (${escapeHTML(step.acronym)})</h3>
+                                                <p style="font-style: italic; color: var(--text-muted-light);">${escapeHTML(proto.name_en)}</p>
+                                                <p><strong>${escapeHTML(Router.uiStrings.clinicalPurposeLabel)}:</strong> ${escapeHTML(step.purpose)}</p>
+                                                <p><strong>Contexto clínico:</strong> ${escapeHTML(step.clinical_context)}</p>
+                                                <p><strong>Población objetivo:</strong> ${escapeHTML(step.target_population)}</p>
+                                                <div style="margin-top: 0.5rem; padding: 0.5rem; background: rgba(0,0,0,0.02); border-left: 3px solid var(--primary-medium);">
+                                                    <strong>Secuencia de adquisición:</strong> ${escapeHTML(step.sequence_note)}
+                                                </div>
+                                            </div>
+                                        `;
+                                    } else if (step.type === "component") {
+                                        const comp = step.component;
+                                        const linkedWindowsHTML = comp.linked_window_ids && comp.linked_window_ids.length > 0
+                                            ? comp.linked_window_ids.map(wId => resolveWindowLink(wId)).join(", ")
+                                            : escapeHTML(Router.uiStrings.noLinkedItems);
+
+                                        const linkedMeasurementsHTML = comp.linked_measurement_ids && comp.linked_measurement_ids.length > 0
+                                            ? comp.linked_measurement_ids.map(mId => resolveMeasurementLink(mId)).join(", ")
+                                            : escapeHTML(Router.uiStrings.noLinkedItems);
+
+                                        return `
+                                            <div class="protocol-step-card card" data-step="${idx}" hidden>
+                                                <h3 class="protocol-step-title" style="margin-top: 0;">Componente: ${escapeHTML(comp.name_es)}</h3>
+                                                <p style="font-style: italic; color: var(--text-muted-light); font-size: 0.9rem;">${escapeHTML(comp.name_en)}</p>
+
+                                                <div style="margin-top: 0.5rem;">
+                                                    <strong>${escapeHTML(Router.uiStrings.clinicalQuestionsLabel)}:</strong>
+                                                    <ul style="margin: 0.25rem 0 0.5rem 0; padding-left: 1.25rem;">
+                                                        ${comp.clinical_questions.map(q => `<li>${escapeHTML(q)}</li>`).join("")}
+                                                    </ul>
+                                                </div>
+
+                                                <div style="margin-top: 0.5rem;">
+                                                    <strong>${escapeHTML(Router.uiStrings.clinicalTargetsLabel)}:</strong>
+                                                    <ul style="margin: 0.25rem 0 0.5rem 0; padding-left: 1.25rem;">
+                                                        ${comp.targets.map(t => `<li>${escapeHTML(t)}</li>`).join("")}
+                                                    </ul>
+                                                </div>
+
+                                                <p style="margin: 0.5rem 0;"><strong>${escapeHTML(Router.uiStrings.clinicalViewsLabel)}:</strong> ${comp.suggested_views.map(v => escapeHTML(v)).join(", ")}</p>
+
+                                                <div class="protocol-linked-items" style="margin: 0.75rem 0; padding: 0.75rem; background: rgba(0,0,0,0.02); border-radius: 6px; border: 1px solid var(--border-light);">
+                                                    <p style="margin: 0 0 0.5rem 0;"><strong>${escapeHTML(Router.uiStrings.clinicalWindowLabel)}:</strong> ${linkedWindowsHTML}</p>
+                                                    <p style="margin: 0;"><strong>${escapeHTML(Router.uiStrings.clinicalMeasurementLabel)}:</strong> ${linkedMeasurementsHTML}</p>
+                                                </div>
+
+                                                <div style="margin-top: 0.5rem;">
+                                                    <strong>${escapeHTML(Router.uiStrings.clinicalFindingsLabel)}:</strong>
+                                                    <ul style="margin: 0.25rem 0 0.5rem 0; padding-left: 1.25rem;">
+                                                        ${comp.possible_findings.map(f => `<li>${escapeHTML(f)}</li>`).join("")}
+                                                    </ul>
+                                                </div>
+
+                                                <p style="margin-top: 0.75rem; padding: 0.75rem; border-left: 4px solid var(--primary-medium); background: rgba(30, 58, 138, 0.02); font-size: 0.9rem; font-style: italic;">
+                                                    <strong>${escapeHTML(Router.uiStrings.clinicalLimitsLabel)}:</strong> ${escapeHTML(comp.interpretation_limits)}
+                                                </p>
+                                            </div>
+                                        `;
+                                    } else if (step.type === "integration") {
+                                        return `
+                                            <div class="protocol-step-card card" data-step="${idx}" hidden>
+                                                <h3 class="protocol-step-title" style="margin-top: 0;">${escapeHTML(Router.uiStrings.integrationStep)}</h3>
+                                                <p>${escapeHTML(step.integration)}</p>
+                                                <div style="margin-top: 1rem; padding: 0.75rem; border-left: 4px solid #d97706; background: rgba(217, 119, 6, 0.05); font-size: 0.9rem;">
+                                                    <strong>Recordatorio:</strong> Siempre integre los hallazgos con el contexto clínico del paciente.
+                                                </div>
+                                            </div>
+                                        `;
+                                    } else if (step.type === "summary") {
+                                        return `
+                                            <div class="protocol-step-card card" data-step="${idx}" hidden>
+                                                <h3 class="protocol-step-title" style="margin-top: 0;">${escapeHTML(Router.uiStrings.summaryStep)}</h3>
+                                                <p>Ha completado la guía de componentes: <strong>${step.components_names.map(name => escapeHTML(name)).join(", ")}</strong>.</p>
+
+                                                <div style="margin-top: 0.5rem;">
+                                                    <strong>${escapeHTML(Router.uiStrings.clinicalGeneralLimitsTitle)}:</strong>
+                                                    <p>${escapeHTML(step.limitations)}</p>
+                                                </div>
+
+                                                <div style="margin-top: 0.5rem;">
+                                                    <strong>${escapeHTML(Router.uiStrings.clinicalSafetyWorkflowTitle)}:</strong>
+                                                    <p>${escapeHTML(step.safety_and_workflow_notes)}</p>
+                                                </div>
+
+                                                <div style="margin-top: 1rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                                                    <button type="button" class="btn-secondary" onclick="document.getElementById('protocol-full-tab').click();" style="cursor: pointer;">${escapeHTML(Router.uiStrings.contentTab)}</button>
+                                                    <button type="button" class="btn-secondary" onclick="document.getElementById('protocol-references-tab').click();" style="cursor: pointer;">${escapeHTML(Router.uiStrings.referencesTab)}</button>
+                                                </div>
+                                            </div>
+                                        `;
+                                    }
+                                    return "";
+                                }).join("")}
+                            </div>
+
+                            <!-- Stepper Actions -->
+                            <div class="protocol-step-actions" style="display: flex; gap: 0.5rem; justify-content: space-between; align-items: center; margin-top: 0.5rem;">
+                                <button type="button" id="stepper-prev-btn" class="btn-secondary" data-guide-action="previous" style="cursor: pointer;">${escapeHTML(Router.uiStrings.previousBtn)}</button>
+                                <button type="button" id="stepper-reset-btn" class="btn-secondary" data-guide-action="restart" style="cursor: pointer;">${escapeHTML(Router.uiStrings.resetBtn)}</button>
+                                <button type="button" id="stepper-next-btn" class="btn-primary" data-guide-action="next" style="cursor: pointer;">${escapeHTML(Router.uiStrings.nextBtn)}</button>
+                            </div>
+                        </div>
                     </div>
 
-                    <p style="margin-top: 0.5rem;"><strong>Vistas sugeridas:</strong> ${comp.suggested_views.map(v => escapeHTML(v)).join(", ")}</p>
+                    <!-- PESTAÑA 2: CONTENIDO COMPLETO -->
+                    <div id="protocol-full-panel" role="tabpanel" aria-labelledby="protocol-full-tab" class="protocol-tab-panel" hidden>
+                        <div class="protocol-full-content content-accordion-grid">
+                            <details class="content-accordion card clinical-card">
+                                <summary class="content-accordion-summary">
+                                    <span class="content-accordion-title">Propósito y contexto</span>
+                                    <span class="content-accordion-arrow"></span>
+                                </summary>
+                                <div class="content-accordion-body">
+                                    <p class="subtitle-en" style="font-style: italic; color: var(--text-muted-light);">${escapeHTML(proto.name_en)}</p>
+                                    <p><strong>${escapeHTML(Router.uiStrings.clinicalPurposeLabel)}:</strong> ${escapeHTML(proto.purpose)}</p>
+                                    <p><strong>Contexto clínico:</strong> ${escapeHTML(proto.clinical_context)}</p>
+                                    <p><strong>Población objetivo:</strong> ${escapeHTML(proto.target_population)}</p>
+                                </div>
+                            </details>
 
-                    <div class="protocol-linked-items" style="margin-top: 0.75rem; padding: 0.75rem; background: rgba(0,0,0,0.02); border-radius: 6px; border: 1px solid var(--border-light);">
-                        <p style="margin: 0 0 0.5rem 0;"><strong>Ventanas vinculadas:</strong> ${linkedWindowsHTML}</p>
-                        <p style="margin: 0;"><strong>Mediciones vinculadas:</strong> ${linkedMeasurementsHTML}</p>
+                            <details class="content-accordion card clinical-card">
+                                <summary class="content-accordion-summary">
+                                    <span class="content-accordion-title">${escapeHTML(Router.uiStrings.clinicalSequenceTitle)}</span>
+                                    <span class="content-accordion-arrow"></span>
+                                </summary>
+                                <div class="content-accordion-body">
+                                    <p>${escapeHTML(proto.sequence_note)}</p>
+                                </div>
+                            </details>
+
+                            ${proto.components.map(comp => {
+                                const linkedWindowsHTML = comp.linked_window_ids && comp.linked_window_ids.length > 0
+                                    ? comp.linked_window_ids.map(wId => resolveWindowLink(wId)).join(", ")
+                                    : escapeHTML(Router.uiStrings.noLinkedItems);
+
+                                const linkedMeasurementsHTML = comp.linked_measurement_ids && comp.linked_measurement_ids.length > 0
+                                    ? comp.linked_measurement_ids.map(mId => resolveMeasurementLink(mId)).join(", ")
+                                    : escapeHTML(Router.uiStrings.noLinkedItems);
+
+                                return `
+                                    <details class="content-accordion card clinical-card">
+                                        <summary class="content-accordion-summary">
+                                            <span class="content-accordion-title">Componente: ${escapeHTML(comp.name_es)}</span>
+                                            <span class="content-accordion-arrow"></span>
+                                        </summary>
+                                        <div class="content-accordion-body">
+                                            <p style="font-style: italic; color: var(--text-muted-light);">${escapeHTML(comp.name_en)}</p>
+
+                                            <div style="margin-top: 0.5rem;">
+                                                <strong>${escapeHTML(Router.uiStrings.clinicalQuestionsLabel)}:</strong>
+                                                <ul style="margin: 0.25rem 0; padding-left: 1.25rem;">
+                                                    ${comp.clinical_questions.map(q => `<li>${escapeHTML(q)}</li>`).join("")}
+                                                </ul>
+                                            </div>
+
+                                            <div style="margin-top: 0.5rem;">
+                                                <strong>${escapeHTML(Router.uiStrings.clinicalTargetsLabel)}:</strong>
+                                                <ul style="margin: 0.25rem 0; padding-left: 1.25rem;">
+                                                    ${comp.targets.map(t => `<li>${escapeHTML(t)}</li>`).join("")}
+                                                </ul>
+                                            </div>
+
+                                            <p><strong>${escapeHTML(Router.uiStrings.clinicalViewsLabel)}:</strong> ${comp.suggested_views.map(v => escapeHTML(v)).join(", ")}</p>
+
+                                            <div class="protocol-linked-items" style="margin: 0.75rem 0; padding: 0.75rem; background: rgba(0,0,0,0.02); border-radius: 6px; border: 1px solid var(--border-light);">
+                                                <p style="margin: 0 0 0.5rem 0;"><strong>${escapeHTML(Router.uiStrings.clinicalWindowLabel)}:</strong> ${linkedWindowsHTML}</p>
+                                                <p style="margin: 0;"><strong>${escapeHTML(Router.uiStrings.clinicalMeasurementLabel)}:</strong> ${linkedMeasurementsHTML}</p>
+                                            </div>
+
+                                            <div style="margin-top: 0.5rem;">
+                                                <strong>${escapeHTML(Router.uiStrings.clinicalFindingsLabel)}:</strong>
+                                                <ul style="margin: 0.25rem 0; padding-left: 1.25rem;">
+                                                    ${comp.possible_findings.map(f => `<li>${escapeHTML(f)}</li>`).join("")}
+                                                </ul>
+                                            </div>
+
+                                            <p style="margin-top: 0.5rem; padding: 0.5rem; border-left: 3px solid var(--primary-medium); font-size: 0.95rem; font-style: italic;">
+                                                <strong>${escapeHTML(Router.uiStrings.clinicalLimitsLabel)}:</strong> ${escapeHTML(comp.interpretation_limits)}
+                                            </p>
+                                        </div>
+                                    </details>
+                                `;
+                            }).join("")}
+
+                            <details class="content-accordion card clinical-card">
+                                <summary class="content-accordion-summary">
+                                    <span class="content-accordion-title">${escapeHTML(Router.uiStrings.integrationStep)}</span>
+                                    <span class="content-accordion-arrow"></span>
+                                </summary>
+                                <div class="content-accordion-body">
+                                    <p>${escapeHTML(proto.integration)}</p>
+                                </div>
+                            </details>
+
+                            <details class="content-accordion card clinical-card">
+                                <summary class="content-accordion-summary">
+                                    <span class="content-accordion-title">${escapeHTML(Router.uiStrings.clinicalGeneralLimitsTitle)}</span>
+                                    <span class="content-accordion-arrow"></span>
+                                </summary>
+                                <div class="content-accordion-body">
+                                    <p>${escapeHTML(proto.limitations)}</p>
+                                </div>
+                            </details>
+
+                            <details class="content-accordion card clinical-card">
+                                <summary class="content-accordion-summary">
+                                    <span class="content-accordion-title">${escapeHTML(Router.uiStrings.clinicalSafetyWorkflowTitle)}</span>
+                                    <span class="content-accordion-arrow"></span>
+                                </summary>
+                                <div class="content-accordion-body">
+                                    <p>${escapeHTML(proto.safety_and_workflow_notes)}</p>
+                                </div>
+                            </details>
+                        </div>
                     </div>
 
-                    <div style="margin-top: 0.75rem;">
-                        <strong>Hallazgos posibles:</strong>
-                        <ul style="margin-top: 0.25rem; padding-left: 1.25rem;">
-                            ${comp.possible_findings.map(f => `<li>${escapeHTML(f)}</li>`).join("")}
-                        </ul>
+                    <!-- PESTAÑA 3: REFERENCIAS -->
+                    <div id="protocol-references-panel" role="tabpanel" aria-labelledby="protocol-references-tab" class="protocol-tab-panel" hidden>
+                        <div class="protocol-references card">
+                            <h3>${escapeHTML(Router.uiStrings.clinicalReferencesTitle)}</h3>
+                            <ol style="padding-left: 1.25rem; margin-top: 0.5rem; margin-bottom: 0;">
+                                ${filteredRefs.map(ref => `
+                                    <li style="margin-bottom: 0.75rem; font-size: 0.9rem;">
+                                        ${escapeHTML(ref.citation)}
+                                        ${ref.pmid ? `<br><small style="color: var(--text-muted-light);">PMID: ${escapeHTML(ref.pmid)}</small>` : ''}
+                                        ${ref.pmcid ? `<br><small style="color: var(--text-muted-light);">PMCID: ${escapeHTML(ref.pmcid)}</small>` : ''}
+                                        ${ref.doi ? `<br><small style="color: var(--text-muted-light);">DOI: ${escapeHTML(ref.doi)}</small>` : ''}
+                                    </li>
+                                `).join("")}
+                            </ol>
+                        </div>
                     </div>
-
-                    <p style="margin-top: 0.75rem; padding: 0.75rem; border-left: 4px solid var(--primary-medium); background: rgba(30, 58, 138, 0.02); font-size: 0.9rem; font-style: italic;">
-                        <strong>Límites de interpretación:</strong> ${escapeHTML(comp.interpretation_limits)}
-                    </p>
-                </div>
-            `;
-        });
-
-        const activeRefIds = new Set(proto.reference_ids || []);
-        const filteredRefs = protoRefs.filter(ref => activeRefIds.has(ref.id));
-
-        html += `
-                </div>
-
-                <div class="card" style="margin-top: 1rem;">
-                    <h3>Límites Generales</h3>
-                    <p>${escapeHTML(proto.limitations)}</p>
-                </div>
-
-                <div class="card" style="margin-top: 1rem;">
-                    <h3>Seguridad y Flujo de Trabajo</h3>
-                    <p>${escapeHTML(proto.safety_and_workflow_notes)}</p>
-                </div>
-
-                <div class="protocol-references card" style="margin-top: 1rem;">
-                    <h3>Referencias Bibliográficas</h3>
-                    <ol style="padding-left: 1.25rem; margin-top: 0.5rem;">
-                        ${filteredRefs.map(ref => `
-                            <li style="margin-bottom: 0.75rem; font-size: 0.9rem;">
-                                ${escapeHTML(ref.citation)}
-                                ${ref.pmid ? `<br><small style="color: var(--text-muted-light);">PMID: ${escapeHTML(ref.pmid)}</small>` : ''}
-                                ${ref.pmcid ? `<br><small style="color: var(--text-muted-light);">PMCID: ${escapeHTML(ref.pmcid)}</small>` : ''}
-                                ${ref.doi ? `<br><small style="color: var(--text-muted-light);">DOI: ${escapeHTML(ref.doi)}</small>` : ''}
-                            </li>
-                        `).join("")}
-                    </ol>
                 </div>
 
                 <div style="margin-top: 1.5rem; display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem;">
-                    <a href="#/protocolos" class="btn-primary">Volver a Protocolos</a>
-                    <a href="#/" class="btn-secondary">Inicio</a>
+                    <a href="#/protocolos" class="btn-primary">${escapeHTML(Router.uiStrings.clinicalReturnToListBtn)}</a>
+                    <a href="#/" class="btn-secondary">${escapeHTML(Router.uiStrings.clinicalReturnHomeBtn)}</a>
                 </div>
             </div>
         `;
 
         container.innerHTML = html;
+
+        // Inicializar controladores interactivos
+        this.initializeProtocolTabs(id);
+        this.initializeProtocolStepper(id, steps);
+    },
+
+    initializeProtocolTabs(protocolId) {
+        const tabButtons = document.querySelectorAll('[role="tab"]');
+        const tabPanels = document.querySelectorAll('[role="tabpanel"]');
+
+        const selectTab = (index) => {
+            tabButtons.forEach((btn, i) => {
+                const isSelected = i === index;
+                btn.setAttribute("aria-selected", isSelected ? "true" : "false");
+                btn.setAttribute("tabindex", isSelected ? "0" : "-1");
+                if (isSelected) {
+                    btn.classList.add("active");
+                    btn.style.borderBottom = "2px solid var(--primary-medium)";
+                    // Save to sessionStorage
+                    try {
+                        sessionStorage.setItem(`pocus-protocol-tab-${protocolId}`, btn.id);
+                    } catch (e) {
+                        console.warn("sessionStorage no disponible:", e);
+                    }
+                } else {
+                    btn.classList.remove("active");
+                    btn.style.borderBottom = "2px solid transparent";
+                }
+            });
+
+            tabPanels.forEach((panel, i) => {
+                const isSelected = i === index;
+                if (isSelected) {
+                    panel.removeAttribute("hidden");
+                } else {
+                    panel.setAttribute("hidden", "true");
+                }
+            });
+        };
+
+        tabButtons.forEach((btn, index) => {
+            btn.addEventListener("click", () => selectTab(index));
+
+            btn.addEventListener("keydown", (e) => {
+                let nextIndex = index;
+                if (e.key === "ArrowRight") {
+                    nextIndex = (index + 1) % tabButtons.length;
+                    e.preventDefault();
+                    selectTab(nextIndex);
+                    tabButtons[nextIndex].focus();
+                } else if (e.key === "ArrowLeft") {
+                    nextIndex = (index - 1 + tabButtons.length) % tabButtons.length;
+                    e.preventDefault();
+                    selectTab(nextIndex);
+                    tabButtons[nextIndex].focus();
+                } else if (e.key === "Home") {
+                    e.preventDefault();
+                    selectTab(0);
+                    tabButtons[0].focus();
+                } else if (e.key === "End") {
+                    e.preventDefault();
+                    selectTab(tabButtons.length - 1);
+                    tabButtons[tabButtons.length - 1].focus();
+                }
+            });
+        });
+
+        // Restaurar pestaña activa de sessionStorage
+        try {
+            const storedTabId = sessionStorage.getItem(`pocus-protocol-tab-${protocolId}`);
+            if (storedTabId) {
+                const storedIndex = Array.from(tabButtons).findIndex(btn => btn.id === storedTabId);
+                if (storedIndex !== -1) {
+                    selectTab(storedIndex);
+                }
+            }
+        } catch (e) {
+            console.warn("Error al restaurar pestaña de sessionStorage:", e);
+        }
+    },
+
+    initializeProtocolStepper(protocolId, steps) {
+        const stepCards = document.querySelectorAll(".protocol-step-card");
+        const progressNow = document.getElementById("stepper-progress-now");
+        const progressText = document.getElementById("stepper-progress-text");
+        const liveAnnouncer = document.getElementById("stepper-live-announcer");
+
+        const prevBtn = document.getElementById("stepper-prev-btn");
+        const nextBtn = document.getElementById("stepper-next-btn");
+        const resetBtn = document.getElementById("stepper-reset-btn");
+
+        const markers = document.querySelectorAll(".protocol-step-marker");
+
+        let currentStep = 0;
+
+        // Restore from sessionStorage
+        try {
+            const storedStep = sessionStorage.getItem(`pocus-protocol-step-${protocolId}`);
+            if (storedStep !== null) {
+                const parsed = parseInt(storedStep, 10);
+                if (!isNaN(parsed) && parsed >= 0 && parsed < steps.length) {
+                    currentStep = parsed;
+                }
+            }
+        } catch (e) {
+            console.warn("Error al restaurar paso de sessionStorage:", e);
+        }
+
+        const showStep = (index, focusTitle = false) => {
+            currentStep = index;
+
+            // Save to sessionStorage
+            try {
+                sessionStorage.setItem(`pocus-protocol-step-${protocolId}`, currentStep.toString());
+            } catch (e) {
+                console.warn("sessionStorage no disponible:", e);
+            }
+
+            // Hide all step cards, show active
+            stepCards.forEach((card, i) => {
+                if (i === currentStep) {
+                    card.removeAttribute("hidden");
+                    if (focusTitle) {
+                        const titleEl = card.querySelector(".protocol-step-title");
+                        if (titleEl) {
+                            titleEl.setAttribute("tabindex", "-1");
+                            titleEl.focus();
+                        }
+                    }
+                } else {
+                    card.setAttribute("hidden", "true");
+                }
+            });
+
+            // Update markers
+            markers.forEach((marker, i) => {
+                if (i === currentStep) {
+                    marker.classList.add("active");
+                    marker.style.background = "var(--primary-medium)";
+                    marker.style.color = "var(--bg-light)";
+                    marker.setAttribute("aria-current", "step");
+                } else {
+                    marker.classList.remove("active");
+                    marker.style.background = "var(--bg-light)";
+                    marker.style.color = "var(--text-main)";
+                    marker.removeAttribute("aria-current");
+                }
+            });
+
+            // Update buttons
+            if (prevBtn) {
+                prevBtn.disabled = currentStep === 0;
+            }
+            if (nextBtn) {
+                if (currentStep === steps.length - 1) {
+                    nextBtn.innerText = Router.uiStrings.finishedBtn;
+                    nextBtn.disabled = true;
+                } else {
+                    nextBtn.innerText = Router.uiStrings.nextBtn;
+                    nextBtn.disabled = false;
+                }
+            }
+
+            // Update progress bar
+            const progressPct = ((currentStep + 1) / steps.length) * 100;
+            if (progressNow) {
+                progressNow.style.width = `${progressPct}%`;
+                progressNow.setAttribute("aria-valuenow", (currentStep + 1).toString());
+                const stepText = Router.uiStrings.stepIndicator
+                    .replace("{x}", (currentStep + 1).toString())
+                    .replace("{y}", steps.length.toString());
+                const text = `${stepText}: ${steps[currentStep].title}`;
+                progressNow.setAttribute("aria-valuetext", text);
+            }
+            if (progressText) {
+                const stepText = Router.uiStrings.stepIndicator
+                    .replace("{x}", (currentStep + 1).toString())
+                    .replace("{y}", steps.length.toString());
+                progressText.innerText = stepText;
+            }
+
+            // Announce change to screen readers
+            if (liveAnnouncer) {
+                const stepText = Router.uiStrings.stepIndicator
+                    .replace("{x}", (currentStep + 1).toString())
+                    .replace("{y}", steps.length.toString());
+                liveAnnouncer.innerText = `${stepText}: ${steps[currentStep].title}`;
+            }
+        };
+
+        if (prevBtn) {
+            prevBtn.addEventListener("click", () => {
+                if (currentStep > 0) {
+                    showStep(currentStep - 1, true);
+                }
+            });
+        }
+
+        if (nextBtn) {
+            nextBtn.addEventListener("click", () => {
+                if (currentStep < steps.length - 1) {
+                    showStep(currentStep + 1, true);
+                }
+            });
+        }
+
+        if (resetBtn) {
+            resetBtn.addEventListener("click", () => {
+                showStep(0, true);
+            });
+        }
+
+        // Initialize markers clicks
+        markers.forEach((marker, i) => {
+            marker.addEventListener("click", () => {
+                showStep(i, true);
+            });
+        });
+
+        // Show initial step
+        showStep(currentStep, false);
     },
 
     // ABREVIATURAS
