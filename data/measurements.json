@@ -3233,15 +3233,36 @@
     "id": "velocidad_max_aortica",
     "section_id": "aortic_valve_lvot",
     "order": 1,
-    "measurement": "Velocidad máxima aórtica",
-    "abbreviation": "Vmax aórtica",
-    "aliases": [
-      "Aortic Vmax",
-      "Velocidad pico transaórtica"
-    ],
-    "formula_or_method": "Doppler continuo desde múltiples ventanas.",
-    "normal_values": "<2,0 m/s.",
-    "interpretation_limitations": "Usar la ventana con mayor velocidad y buena alineación.",
+    "measurement": {
+      "es": "Velocidad máxima aórtica",
+      "en": "Peak aortic velocity"
+    },
+    "abbreviation": {
+      "es": "Vmax aórtica",
+      "en": "Aortic Vmax"
+    },
+    "aliases": {
+      "es": [
+        "Aortic Vmax",
+        "Velocidad pico transaórtica"
+      ],
+      "en": [
+        "Aortic Vmax",
+        "Peak transaortic velocity"
+      ]
+    },
+    "formula_or_method": {
+      "es": "Doppler continuo desde múltiples ventanas.",
+      "en": "Continuous-wave Doppler from multiple windows."
+    },
+    "normal_values": {
+      "es": "<2,0 m/s.",
+      "en": "<2.0 m/s."
+    },
+    "interpretation_limitations": {
+      "es": "Usar la ventana con mayor velocidad y buena alineación.",
+      "en": "Use the window yielding the highest velocity with good Doppler alignment."
+    },
     "units": "m/s",
     "related_glossary_ids": [
       "vmax_aortica_term",
@@ -3249,28 +3270,69 @@
     ],
     "source_page": 9,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Múltiples",
-    "preferred_view": "A5C/A3C, paraesternal derecha alta y supraesternal",
-    "modality": "Doppler continuo",
-    "acquisition_timing": "Sístole",
-    "acquisition_key": "Interrogar todas las ventanas disponibles y conservar la señal de mayor velocidad con sobre completo.",
-    "alternate_windows": [
-      "Apical; paraesternal derecha; supraesternal."
-    ]
+    "primary_window": {
+      "es": "Múltiples",
+      "en": "Multiple"
+    },
+    "preferred_view": {
+      "es": "A5C/A3C, paraesternal derecha alta y supraesternal",
+      "en": "A5C/A3C, high right parasternal, and suprasternal views"
+    },
+    "modality": {
+      "es": "Doppler continuo",
+      "en": "Continuous-wave Doppler"
+    },
+    "acquisition_timing": {
+      "es": "Sístole",
+      "en": "Systole"
+    },
+    "acquisition_key": {
+      "es": "Interrogar todas las ventanas disponibles y conservar la señal de mayor velocidad con sobre completo.",
+      "en": "Interrogate all available windows and retain the highest-velocity signal with a complete spectral envelope."
+    },
+    "alternate_windows": {
+      "es": [
+        "Apical; paraesternal derecha; supraesternal."
+      ],
+      "en": [
+        "Apical; right parasternal; suprasternal."
+      ]
+    }
   },
   {
     "id": "gradiente_max_aortico",
     "section_id": "aortic_valve_lvot",
     "order": 2,
-    "measurement": "Gradiente máximo aórtico",
-    "abbreviation": "Gradiente máx aórtico",
-    "aliases": [
-      "Aortic max gradient",
-      "Gradiente instantáneo máximo transaórtico"
-    ],
-    "formula_or_method": "4 x Vmax².",
-    "normal_values": "<16 mmHg.",
-    "interpretation_limitations": "Gradiente instantáneo máximo; no equivale al gradiente pico-pico invasivo.",
+    "measurement": {
+      "es": "Gradiente máximo aórtico",
+      "en": "Peak aortic gradient"
+    },
+    "abbreviation": {
+      "es": "Gradiente máx aórtico",
+      "en": "Peak aortic gradient"
+    },
+    "aliases": {
+      "es": [
+        "Aortic max gradient",
+        "Gradiente instantáneo máximo transaórtico"
+      ],
+      "en": [
+        "Maximum aortic gradient",
+        "Peak instantaneous transaortic gradient"
+      ]
+    },
+    "formula_or_method": {
+      "es": "4 x Vmax².",
+      "en": "4 x Vmax²."
+    },
+    "normal_values": {
+      "es": "<16 mmHg.",
+      "en": "<16 mmHg."
+    },
+    "interpretation_limitations": {
+      "es": "Gradiente instantáneo máximo; no equivale al gradiente pico-pico invasivo.",
+      "en": "Peak instantaneous gradient; it is not equivalent to the invasive peak-to-peak gradient."
+    },
     "units": "mmHg",
     "related_glossary_ids": [
       "gradiente_max_term",
@@ -3279,26 +3341,65 @@
     ],
     "source_page": 9,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Derivada",
-    "preferred_view": "Misma ventana que Vmax aórtica",
-    "modality": "Cálculo desde Doppler continuo",
-    "acquisition_timing": "Sístole",
-    "acquisition_key": "Usar la Vmax más alta técnicamente válida.",
-    "alternate_windows": []
+    "primary_window": {
+      "es": "Derivada",
+      "en": "Derived"
+    },
+    "preferred_view": {
+      "es": "Misma ventana que Vmax aórtica",
+      "en": "Same window used for aortic Vmax"
+    },
+    "modality": {
+      "es": "Cálculo desde Doppler continuo",
+      "en": "Calculation from continuous-wave Doppler"
+    },
+    "acquisition_timing": {
+      "es": "Sístole",
+      "en": "Systole"
+    },
+    "acquisition_key": {
+      "es": "Usar la Vmax más alta técnicamente válida.",
+      "en": "Use the highest technically valid Vmax."
+    },
+    "alternate_windows": {
+      "es": [],
+      "en": []
+    }
   },
   {
     "id": "gradiente_medio_aortico",
     "section_id": "aortic_valve_lvot",
     "order": 3,
-    "measurement": "Gradiente medio aórtico",
-    "abbreviation": "Gradiente medio aórtico",
-    "aliases": [
-      "Aortic mean gradient",
-      "Gradiente medio transaórtico"
-    ],
-    "formula_or_method": "Integración de gradientes instantáneos durante la eyección.",
-    "normal_values": "<10-15 mmHg.",
-    "interpretation_limitations": "Depende del flujo y de la frecuencia cardiaca.",
+    "measurement": {
+      "es": "Gradiente medio aórtico",
+      "en": "Mean aortic gradient"
+    },
+    "abbreviation": {
+      "es": "Gradiente medio aórtico",
+      "en": "Mean aortic gradient"
+    },
+    "aliases": {
+      "es": [
+        "Aortic mean gradient",
+        "Gradiente medio transaórtico"
+      ],
+      "en": [
+        "Mean aortic gradient",
+        "Mean transaortic gradient"
+      ]
+    },
+    "formula_or_method": {
+      "es": "Integración de gradientes instantáneos durante la eyección.",
+      "en": "Integration of instantaneous gradients throughout ejection."
+    },
+    "normal_values": {
+      "es": "<10-15 mmHg.",
+      "en": "<10-15 mmHg."
+    },
+    "interpretation_limitations": {
+      "es": "Depende del flujo y de la frecuencia cardiaca.",
+      "en": "Depends on flow and heart rate."
+    },
     "units": "mmHg",
     "related_glossary_ids": [
       "gradiente_medio_term",
@@ -3306,27 +3407,67 @@
     ],
     "source_page": 9,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Múltiples",
-    "preferred_view": "Ventana con mayor señal aórtica",
-    "modality": "Doppler continuo; trazado",
-    "acquisition_timing": "Sístole",
-    "acquisition_key": "Trazar el borde denso del espectro completo, excluyendo ruido.",
-    "alternate_windows": []
+    "primary_window": {
+      "es": "Múltiples",
+      "en": "Multiple"
+    },
+    "preferred_view": {
+      "es": "Ventana con mayor señal aórtica",
+      "en": "Window yielding the highest aortic signal"
+    },
+    "modality": {
+      "es": "Doppler continuo; trazado",
+      "en": "Continuous-wave Doppler; tracing"
+    },
+    "acquisition_timing": {
+      "es": "Sístole",
+      "en": "Systole"
+    },
+    "acquisition_key": {
+      "es": "Trazar el borde denso del espectro completo, excluyendo ruido.",
+      "en": "Trace the dense outer edge of the complete spectral envelope, excluding noise."
+    },
+    "alternate_windows": {
+      "es": [],
+      "en": []
+    }
   },
   {
     "id": "ava_meas",
     "section_id": "aortic_valve_lvot",
     "order": 4,
-    "measurement": "Área valvular aórtica (AVA)",
-    "abbreviation": "AVA",
-    "aliases": [
-      "Aortic valve area",
-      "AVA por continuidad",
-      "Área de la válvula aórtica"
-    ],
-    "formula_or_method": "(Área TSVI x VTI TSVI) / VTI aórtico.",
-    "normal_values": "Aprox. 3-4 cm²; claramente normal >2 cm².",
-    "interpretation_limitations": "La medición del diámetro TSVI es la mayor fuente de error.",
+    "measurement": {
+      "es": "Área valvular aórtica (AVA)",
+      "en": "Aortic valve area (AVA)"
+    },
+    "abbreviation": {
+      "es": "AVA",
+      "en": "AVA"
+    },
+    "aliases": {
+      "es": [
+        "Aortic valve area",
+        "AVA por continuidad",
+        "Área de la válvula aórtica"
+      ],
+      "en": [
+        "Aortic valve area",
+        "Continuity equation AVA",
+        "Aortic valve area"
+      ]
+    },
+    "formula_or_method": {
+      "es": "(Área TSVI x VTI TSVI) / VTI aórtico.",
+      "en": "(LVOT area x LVOT VTI) / aortic VTI."
+    },
+    "normal_values": {
+      "es": "Aprox. 3-4 cm²; claramente normal >2 cm².",
+      "en": "Approx. 3-4 cm²; clearly normal >2 cm²."
+    },
+    "interpretation_limitations": {
+      "es": "La medición del diámetro TSVI es la mayor fuente de error.",
+      "en": "LVOT diameter measurement is the largest source of error."
+    },
     "units": "cm²",
     "related_glossary_ids": [
       "ava_term",
@@ -3335,26 +3476,65 @@
     ],
     "source_page": 9,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Combinada",
-    "preferred_view": "PLAX + A5C/A3C + mejor ventana CW aórtica",
-    "modality": "2D + PW + CW; cálculo",
-    "acquisition_timing": "Sístole",
-    "acquisition_key": "Medir diámetro y VTI del TSVI en sitios concordantes y usar el VTI aórtico de mayor velocidad.",
-    "alternate_windows": []
+    "primary_window": {
+      "es": "Combinada",
+      "en": "Combined"
+    },
+    "preferred_view": {
+      "es": "PLAX + A5C/A3C + mejor ventana CW aórtica",
+      "en": "PLAX + A5C/A3C + best aortic CW Doppler window"
+    },
+    "modality": {
+      "es": "2D + PW + CW; cálculo",
+      "en": "2D + PW + CW Doppler; calculation"
+    },
+    "acquisition_timing": {
+      "es": "Sístole",
+      "en": "Systole"
+    },
+    "acquisition_key": {
+      "es": "Medir diámetro y VTI del TSVI en sitios concordantes y usar el VTI aórtico de mayor velocidad.",
+      "en": "Measure LVOT diameter and VTI at concordant sites and use the highest-velocity aortic VTI."
+    },
+    "alternate_windows": {
+      "es": [],
+      "en": []
+    }
   },
   {
     "id": "ava_indexed",
     "section_id": "aortic_valve_lvot",
     "order": 5,
-    "measurement": "AVA indexada",
-    "abbreviation": "AVA indexada",
-    "aliases": [
-      "AVA indexada por superficie corporal",
-      "AVA/BSA"
-    ],
-    "formula_or_method": "AVA / superficie corporal.",
-    "normal_values": ">0,85 cm²/m².",
-    "interpretation_limitations": "Ayuda en pacientes de tamaño corporal extremo.",
+    "measurement": {
+      "es": "AVA indexada",
+      "en": "Indexed aortic valve area"
+    },
+    "abbreviation": {
+      "es": "AVA indexada",
+      "en": "Indexed AVA"
+    },
+    "aliases": {
+      "es": [
+        "AVA indexada por superficie corporal",
+        "AVA/BSA"
+      ],
+      "en": [
+        "AVA indexed to body surface area",
+        "AVA/BSA"
+      ]
+    },
+    "formula_or_method": {
+      "es": "AVA / superficie corporal.",
+      "en": "AVA / body surface area."
+    },
+    "normal_values": {
+      "es": ">0,85 cm²/m².",
+      "en": ">0.85 cm²/m²."
+    },
+    "interpretation_limitations": {
+      "es": "Ayuda en pacientes de tamaño corporal extremo.",
+      "en": "Useful in patients at the extremes of body size."
+    },
     "units": "cm²/m²",
     "related_glossary_ids": [
       "ava_term",
@@ -3363,28 +3543,71 @@
     ],
     "source_page": 9,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Derivada",
-    "preferred_view": "Mismas ventanas que AVA",
-    "modality": "Cálculo",
-    "acquisition_timing": "Después de calcular AVA",
-    "acquisition_key": "No requiere ventana adicional.",
-    "alternate_windows": []
+    "primary_window": {
+      "es": "Derivada",
+      "en": "Derived"
+    },
+    "preferred_view": {
+      "es": "Mismas ventanas que AVA",
+      "en": "Same windows used for AVA"
+    },
+    "modality": {
+      "es": "Cálculo",
+      "en": "Calculation"
+    },
+    "acquisition_timing": {
+      "es": "Después de calcular AVA",
+      "en": "After calculating AVA"
+    },
+    "acquisition_key": {
+      "es": "No requiere ventana adicional.",
+      "en": "No additional window is required."
+    },
+    "alternate_windows": {
+      "es": [],
+      "en": []
+    }
   },
   {
     "id": "dvi_meas",
     "section_id": "aortic_valve_lvot",
     "order": 6,
-    "measurement": "Índice adimensional (DVI)",
-    "abbreviation": "DVI",
-    "aliases": [
-      "Dimensionless velocity index",
-      "Índice adimensional de velocidad",
-      "Cociente de velocidades TSVI/Aorta"
-    ],
-    "formula_or_method": "VTI TSVI / VTI aórtico o Vmax TSVI / Vmax aórtica.",
-    "normal_values": ">0,50.",
-    "interpretation_limitations": "Evita medir el diámetro TSVI; <0,25 apoya estenosis severa.",
-    "units": "adimensional",
+    "measurement": {
+      "es": "Índice adimensional (DVI)",
+      "en": "Doppler velocity index (DVI)"
+    },
+    "abbreviation": {
+      "es": "DVI",
+      "en": "DVI"
+    },
+    "aliases": {
+      "es": [
+        "Dimensionless velocity index",
+        "Índice adimensional de velocidad",
+        "Cociente de velocidades TSVI/Aorta"
+      ],
+      "en": [
+        "Dimensionless velocity index",
+        "Dimensionless velocity index",
+        "LVOT-to-aortic velocity ratio"
+      ]
+    },
+    "formula_or_method": {
+      "es": "VTI TSVI / VTI aórtico o Vmax TSVI / Vmax aórtica.",
+      "en": "LVOT VTI / aortic VTI or LVOT Vmax / aortic Vmax."
+    },
+    "normal_values": {
+      "es": ">0,50.",
+      "en": ">0.50."
+    },
+    "interpretation_limitations": {
+      "es": "Evita medir el diámetro TSVI; <0,25 apoya estenosis severa.",
+      "en": "Avoids the need to measure LVOT diameter; <0.25 supports severe aortic stenosis."
+    },
+    "units": {
+      "es": "adimensional",
+      "en": "dimensionless"
+    },
     "related_glossary_ids": [
       "dvi_term",
       "vti_term",
@@ -3392,26 +3615,65 @@
     ],
     "source_page": 9,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Combinada",
-    "preferred_view": "A5C/A3C + mejor ventana CW aórtica",
-    "modality": "Doppler pulsado y continuo; cálculo",
-    "acquisition_timing": "Sístole",
-    "acquisition_key": "Usar señales bien alineadas y preferiblemente del mismo estado hemodinámico.",
-    "alternate_windows": []
+    "primary_window": {
+      "es": "Combinada",
+      "en": "Combined"
+    },
+    "preferred_view": {
+      "es": "A5C/A3C + mejor ventana CW aórtica",
+      "en": "A5C/A3C + best aortic CW Doppler window"
+    },
+    "modality": {
+      "es": "Doppler pulsado y continuo; cálculo",
+      "en": "Pulsed-wave and continuous-wave Doppler; calculation"
+    },
+    "acquisition_timing": {
+      "es": "Sístole",
+      "en": "Systole"
+    },
+    "acquisition_key": {
+      "es": "Usar señales bien alineadas y preferiblemente del mismo estado hemodinámico.",
+      "en": "Use well-aligned signals, preferably obtained during the same hemodynamic state."
+    },
+    "alternate_windows": {
+      "es": [],
+      "en": []
+    }
   },
   {
     "id": "velocidad_tsvi",
     "section_id": "aortic_valve_lvot",
     "order": 7,
-    "measurement": "Velocidad del TSVI",
-    "abbreviation": "Velocidad TSVI",
-    "aliases": [
-      "LVOT velocity",
-      "Velocidad en el tracto de salida del VI"
-    ],
-    "formula_or_method": "Doppler pulsado proximal a la válvula aórtica.",
-    "normal_values": "Aprox. 0,7-1,1 m/s.",
-    "interpretation_limitations": "La muestra debe colocarse antes de la zona de aceleración.",
+    "measurement": {
+      "es": "Velocidad del TSVI",
+      "en": "LVOT velocity"
+    },
+    "abbreviation": {
+      "es": "Velocidad TSVI",
+      "en": "LVOT velocity"
+    },
+    "aliases": {
+      "es": [
+        "LVOT velocity",
+        "Velocidad en el tracto de salida del VI"
+      ],
+      "en": [
+        "LVOT velocity",
+        "Left ventricular outflow tract velocity"
+      ]
+    },
+    "formula_or_method": {
+      "es": "Doppler pulsado proximal a la válvula aórtica.",
+      "en": "Pulsed-wave Doppler proximal to the aortic valve."
+    },
+    "normal_values": {
+      "es": "Aprox. 0,7-1,1 m/s.",
+      "en": "Approx. 0.7-1.1 m/s."
+    },
+    "interpretation_limitations": {
+      "es": "La muestra debe colocarse antes de la zona de aceleración.",
+      "en": "The sample volume must be placed proximal to the zone of flow acceleration."
+    },
     "units": "m/s",
     "related_glossary_ids": [
       "tsvi_term",
@@ -3419,12 +3681,30 @@
     ],
     "source_page": 9,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Apical",
-    "preferred_view": "A5C o A3C",
-    "modality": "Doppler pulsado",
-    "acquisition_timing": "Sístole",
-    "acquisition_key": "Mover la muestra desde la válvula hacia el ápex hasta desaparecer el clic valvular y obtener flujo laminar.",
-    "alternate_windows": []
+    "primary_window": {
+      "es": "Apical",
+      "en": "Apical"
+    },
+    "preferred_view": {
+      "es": "A5C o A3C",
+      "en": "A5C or A3C"
+    },
+    "modality": {
+      "es": "Doppler pulsado",
+      "en": "Pulsed-wave Doppler"
+    },
+    "acquisition_timing": {
+      "es": "Sístole",
+      "en": "Systole"
+    },
+    "acquisition_key": {
+      "es": "Mover la muestra desde la válvula hacia el ápex hasta desaparecer el clic valvular y obtener flujo laminar.",
+      "en": "Move the sample volume from the valve toward the apex until the valve click disappears and laminar flow is obtained."
+    },
+    "alternate_windows": {
+      "es": [],
+      "en": []
+    }
   },
   {
     "id": "area_mitral_planimetria",
