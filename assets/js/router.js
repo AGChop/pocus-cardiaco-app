@@ -2026,43 +2026,137 @@ const Router = {
 
     // MIS FAVORITOS
     async renderFavorites(container) {
-        const favs = Storage.getFavorites();
+        let measurements = [];
+        let glossary = [];
+        try {
+            measurements = await DataLoader.getMeasurements();
+        } catch (e) {
+            console.warn("DataLoader.getMeasurements failed in renderFavorites", e);
+        }
+        try {
+            glossary = await DataLoader.getGlossary();
+        } catch (e) {
+            console.warn("DataLoader.getGlossary failed in renderFavorites", e);
+        }
+        if (!Array.isArray(measurements)) measurements = [];
+        if (!Array.isArray(glossary)) glossary = [];
+
+        const measurementMap = {};
+        measurements.forEach(m => {
+            if (m && typeof m === "object" && typeof m.id === "string" && m.id.trim()) {
+                measurementMap[m.id] = m;
+            }
+        });
+        const glossaryMap = {};
+        glossary.forEach(g => {
+            if (g && typeof g === "object" && typeof g.id === "string" && g.id.trim()) {
+                glossaryMap[g.id] = g;
+            }
+        });
+
+        const escapeHTML = (value) => {
+            if (value === null || value === undefined) return "";
+            return String(value)
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        };
+
+        const resolveCurrentTitle = (entry) => {
+            if (!entry || typeof entry !== "object") return "";
+            let current = "";
+            if (entry.type === "medición") {
+                const resource = measurementMap[entry.id];
+                if (resource) {
+                    current = I18n.localize(resource.measurement);
+                }
+            } else if (entry.type === "término") {
+                const resource = glossaryMap[entry.id];
+                if (resource) {
+                    current = I18n.localize(resource.term);
+                }
+            }
+
+            if (typeof current === "string" && current.trim()) {
+                return current;
+            }
+
+            const fallbackTitle = I18n.localize(entry.title);
+            if (typeof fallbackTitle === "string" && fallbackTitle.trim()) {
+                return fallbackTitle;
+            }
+
+            return typeof entry.id === "string" ? entry.id : "";
+        };
+
+        const getLocalizedTypeLabel = (type) => {
+            if (type === "medición") {
+                return I18n.translate("label.measurement");
+            }
+            if (type === "término") {
+                return I18n.translate("label.term");
+            }
+            return I18n.localize({
+                es: "Elemento",
+                en: "Item"
+            });
+        };
+
+        const favs = Storage.getFavorites() || [];
 
         let html = `
             <div class="navigation-header">
-                <a href="#/" class="btn-back">← ${I18n.translate("nav.home")}</a>
-                <h2>${I18n.translate("nav.favorites")}</h2>
+                <a href="#/" class="btn-back">← ${escapeHTML(I18n.translate("nav.home"))}</a>
+                <h2>${escapeHTML(I18n.translate("nav.favorites"))}</h2>
             </div>
         `;
 
         if (favs.length === 0) {
             html += `
                 <div class="card error-card">
-                    <p>Aún no has guardado ningún favorito. Pulsa sobre el botón "☆ ${I18n.translate("label.favorito")}" en cualquier ficha.</p>
+                    <p>${escapeHTML(I18n.translate("state.no_favorites"))}</p>
                 </div>
             `;
             container.innerHTML = html;
             return;
         }
 
+        const labelClearFavs = escapeHTML(I18n.localize({
+            es: "Limpiar favoritos",
+            en: "Clear favorites"
+        }));
+
         html += `
             <div style="text-align: right; margin-bottom: 1rem;">
-                <button id="clear-all-favs" class="btn-secondary" style="display: inline-flex; min-height: 38px; padding: 0.25rem 1rem;">Limpiar Todos</button>
+                <button id="clear-all-favs" class="btn-secondary" style="display: inline-flex; min-height: 38px; padding: 0.25rem 1rem;">${labelClearFavs}</button>
             </div>
             <div class="cards-list">
         `;
 
-        favs.forEach(f => {
-            const link = f.type === "medición" ? `#/medicion/${f.id}` : `#/glosario/${f.id}`;
-            const badgeClass = f.type === "medición" ? "badge-medicion" : "badge-termino";
+        favs.forEach((f, index) => {
+            const resolvedTitle = resolveCurrentTitle(f);
+            let link = "#/";
+            let badgeClass = "";
+
+            if (f.type === "medición") {
+                link = `#/medicion/${f.id}`;
+                badgeClass = "badge-medicion";
+            } else if (f.type === "término") {
+                link = `#/glosario/${f.id}`;
+                badgeClass = "badge-termino";
+            }
+
+            const labelRemove = escapeHTML(I18n.translate("action.remove_favorite"));
 
             html += `
                 <div class="card clinical-card" style="display: flex; flex-direction: row; justify-content: space-between; align-items: center; padding: 1rem;">
                     <div>
-                        <a href="${link}" style="text-decoration: none; font-weight: 600; color: var(--primary-light); font-size: 1.05rem;">${f.title}</a>
-                        <span class="result-badge ${badgeClass}" style="margin-left: 0.5rem;">${f.type}</span>
+                        <a href="${escapeHTML(link)}" style="text-decoration: none; font-weight: 600; color: var(--primary-light); font-size: 1.05rem;">${escapeHTML(resolvedTitle)}</a>
+                        <span class="result-badge ${escapeHTML(badgeClass)}" style="margin-left: 0.5rem;">${escapeHTML(getLocalizedTypeLabel(f.type))}</span>
                     </div>
-                    <button class="btn-table-action" onclick="Storage.toggleFavorite('${f.type}', '${f.id}', '${f.title}'); Router.route();" style="background-color: #fee2e2; color: #991b1b; border: none; border-radius: 6px; padding: 0.35rem 0.75rem; cursor: pointer;">Eliminar</button>
+                    <button class="btn-table-action" data-favorite-index="${index}" style="background-color: #fee2e2; color: #991b1b; border: none; border-radius: 6px; padding: 0.35rem 0.75rem; cursor: pointer;">${labelRemove}</button>
                 </div>
             `;
         });
@@ -2070,29 +2164,124 @@ const Router = {
         html += `</div>`;
         container.innerHTML = html;
 
+        const labelConfirm = I18n.localize({
+            es: "¿Estás seguro de que deseas borrar todos tus favoritos guardados?",
+            en: "Are you sure you want to delete all your saved favorites?"
+        });
+
         document.getElementById("clear-all-favs")?.addEventListener("click", () => {
-            if (confirm("¿Estás seguro de que deseas borrar todos tus favoritos guardados?")) {
+            if (confirm(labelConfirm)) {
                 Storage.clearFavorites();
                 Router.route();
             }
+        });
+
+        container.querySelectorAll("button[data-favorite-index]").forEach(btn => {
+            btn.addEventListener("click", () => {
+                const idx = parseInt(btn.getAttribute("data-favorite-index"), 10);
+                const originalEntry = favs[idx];
+                if (originalEntry) {
+                    const resolvedTitle = resolveCurrentTitle(originalEntry);
+                    Storage.toggleFavorite(originalEntry.type, originalEntry.id, resolvedTitle);
+                    Router.route();
+                }
+            });
         });
     },
 
     // VISTOS RECIENTEMENTE
     async renderRecents(container) {
-        const recents = Storage.getRecents();
+        let measurements = [];
+        let glossary = [];
+        try {
+            measurements = await DataLoader.getMeasurements();
+        } catch (e) {
+            console.warn("DataLoader.getMeasurements failed in renderRecents", e);
+        }
+        try {
+            glossary = await DataLoader.getGlossary();
+        } catch (e) {
+            console.warn("DataLoader.getGlossary failed in renderRecents", e);
+        }
+        if (!Array.isArray(measurements)) measurements = [];
+        if (!Array.isArray(glossary)) glossary = [];
+
+        const measurementMap = {};
+        measurements.forEach(m => {
+            if (m && typeof m === "object" && typeof m.id === "string" && m.id.trim()) {
+                measurementMap[m.id] = m;
+            }
+        });
+        const glossaryMap = {};
+        glossary.forEach(g => {
+            if (g && typeof g === "object" && typeof g.id === "string" && g.id.trim()) {
+                glossaryMap[g.id] = g;
+            }
+        });
+
+        const escapeHTML = (value) => {
+            if (value === null || value === undefined) return "";
+            return String(value)
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        };
+
+        const resolveCurrentTitle = (entry) => {
+            if (!entry || typeof entry !== "object") return "";
+            let current = "";
+            if (entry.type === "medición") {
+                const resource = measurementMap[entry.id];
+                if (resource) {
+                    current = I18n.localize(resource.measurement);
+                }
+            } else if (entry.type === "término") {
+                const resource = glossaryMap[entry.id];
+                if (resource) {
+                    current = I18n.localize(resource.term);
+                }
+            }
+
+            if (typeof current === "string" && current.trim()) {
+                return current;
+            }
+
+            const fallbackTitle = I18n.localize(entry.title);
+            if (typeof fallbackTitle === "string" && fallbackTitle.trim()) {
+                return fallbackTitle;
+            }
+
+            return typeof entry.id === "string" ? entry.id : "";
+        };
+
+        const getLocalizedTypeLabel = (type) => {
+            if (type === "medición") {
+                return I18n.translate("label.measurement");
+            }
+            if (type === "término") {
+                return I18n.translate("label.term");
+            }
+            return I18n.localize({
+                es: "Elemento",
+                en: "Item"
+            });
+        };
+
+        const recents = Storage.getRecents() || [];
 
         let html = `
             <div class="navigation-header">
-                <a href="#/" class="btn-back">← ${I18n.translate("nav.home")}</a>
-                <h2>Vistos Recientemente</h2>
+                <a href="#/" class="btn-back">← ${escapeHTML(I18n.translate("nav.home"))}</a>
+                <h2>${escapeHTML(I18n.translate("nav.recents"))}</h2>
             </div>
         `;
 
         if (recents.length === 0) {
             html += `
                 <div class="card error-card">
-                    <p>No tienes elementos vistos recientemente en el historial.</p>
+                    <p>${escapeHTML(I18n.translate("state.no_recents"))}</p>
                 </div>
             `;
             container.innerHTML = html;
@@ -2101,20 +2290,29 @@ const Router = {
 
         html += `
             <div style="text-align: right; margin-bottom: 1rem;">
-                <button id="clear-all-recs" class="btn-secondary" style="display: inline-flex; min-height: 38px; padding: 0.25rem 1rem;">${I18n.translate("action.clear_history")}</button>
+                <button id="clear-all-recs" class="btn-secondary" style="display: inline-flex; min-height: 38px; padding: 0.25rem 1rem;">${escapeHTML(I18n.translate("action.clear_history"))}</button>
             </div>
             <div class="cards-list">
         `;
 
         recents.forEach(r => {
-            const link = r.type === "medición" ? `#/medicion/${r.id}` : `#/glosario/${r.id}`;
-            const badgeClass = r.type === "medición" ? "badge-medicion" : "badge-termino";
+            const resolvedTitle = resolveCurrentTitle(r);
+            let link = "#/";
+            let badgeClass = "";
+
+            if (r.type === "medición") {
+                link = `#/medicion/${r.id}`;
+                badgeClass = "badge-medicion";
+            } else if (r.type === "término") {
+                link = `#/glosario/${r.id}`;
+                badgeClass = "badge-termino";
+            }
 
             html += `
                 <div class="card clinical-card" style="display: flex; flex-direction: row; justify-content: space-between; align-items: center; padding: 1rem;">
                     <div>
-                        <a href="${link}" style="text-decoration: none; font-weight: 600; color: var(--primary-light); font-size: 1.05rem;">${r.title}</a>
-                        <span class="result-badge ${badgeClass}" style="margin-left: 0.5rem;">${r.type}</span>
+                        <a href="${escapeHTML(link)}" style="text-decoration: none; font-weight: 600; color: var(--primary-light); font-size: 1.05rem;">${escapeHTML(resolvedTitle)}</a>
+                        <span class="result-badge ${escapeHTML(badgeClass)}" style="margin-left: 0.5rem;">${escapeHTML(getLocalizedTypeLabel(r.type))}</span>
                     </div>
                 </div>
             `;
