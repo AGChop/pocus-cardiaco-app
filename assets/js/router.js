@@ -329,6 +329,15 @@ const Router = {
     // BANCO DE MEDICIONES - SECCIONES
     async renderMeasurementsSections(container) {
         const sections = await DataLoader.getSections() || [];
+        const escapeHTML = (str) => {
+            if (!str) return "";
+            return String(str)
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        };
 
         let html = `
             <div class="navigation-header">
@@ -339,12 +348,16 @@ const Router = {
         `;
 
         sections.forEach(sec => {
+            const titleLoc = I18n.localize(sec.title);
+            const descLoc = I18n.localize(sec.description);
+            const warningLoc = I18n.localize(sec.clinical_warning);
+
             html += `
                 <a href="#/mediciones/${sec.id}" class="section-card">
                     <div class="section-num">${I18n.translate("label.section")} ${sec.number}</div>
-                    <h3>${sec.title}</h3>
-                    <p>${sec.description}</p>
-                    ${sec.clinical_warning ? `<span class="warning-badge">⚠️ ${I18n.translate("label.clinical_warning")}</span>` : ''}
+                    <h3>${escapeHTML(titleLoc)}</h3>
+                    <p>${escapeHTML(descLoc)}</p>
+                    ${warningLoc ? `<span class="warning-badge">⚠️ ${I18n.translate("label.clinical_warning")}</span>` : ''}
                 </a>
             `;
         });
@@ -383,15 +396,29 @@ const Router = {
             return (a.id || "").localeCompare(b.id || "");
         });
 
+        const escapeHTML = (str) => {
+            if (!str) return "";
+            return String(str)
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        };
+
+        const titleLoc = I18n.localize(section.title);
+        const shortTitleLoc = I18n.localize(section.short_title);
+        const warningLoc = I18n.localize(section.clinical_warning);
+
         let html = `
             <div class="navigation-header">
                 <a href="#/mediciones" class="btn-back">← Banco</a>
-                <h2>${I18n.translate("label.section")} ${section.number}: ${section.short_title}</h2>
+                <h2>${I18n.translate("label.section")} ${section.number}: ${escapeHTML(shortTitleLoc)}</h2>
             </div>
 
-            ${section.clinical_warning ? `
+            ${warningLoc ? `
             <div class="safety-banner" role="alert">
-                <strong>Advertencia de Seguridad:</strong> ${section.clinical_warning}
+                <strong>Advertencia de Seguridad:</strong> ${escapeHTML(warningLoc)}
             </div>` : ''}
 
             <!-- Lista de Mediciones en Acordeón -->
@@ -1560,6 +1587,15 @@ const Router = {
     // ABREVIATURAS
     async renderAbbreviations(container) {
         const abbreviations = await DataLoader.getAbbreviations() || [];
+        const escapeHTML = (str) => {
+            if (!str) return "";
+            return String(str)
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        };
 
         let html = `
             <div class="navigation-header">
@@ -1570,19 +1606,20 @@ const Router = {
             <table class="clinical-table">
                 <thead>
                     <tr>
-                        <th>Abreviatura</th>
-                        <th>Significado Clínico</th>
-                        <th>Página</th>
+                        <th>${I18n.translate("label.abbreviation")}</th>
+                        <th>${I18n.translate("label.definition")}</th>
+                        <th>${I18n.translate("label.origen")}</th>
                     </tr>
                 </thead>
                 <tbody>
         `;
 
         abbreviations.forEach(abbr => {
+            const meaningLoc = I18n.localize(abbr.meaning);
             html += `
                 <tr>
-                    <td><strong>${abbr.abbreviation}</strong></td>
-                    <td>${abbr.meaning}</td>
+                    <td><strong>${escapeHTML(abbr.abbreviation)}</strong></td>
+                    <td>${escapeHTML(meaningLoc)}</td>
                     <td>P. ${abbr.source_page}</td>
                 </tr>
             `;

@@ -3,6 +3,11 @@ import os
 import subprocess
 import pytest
 
+def get_spanish_text(value):
+    if isinstance(value, dict):
+        return value.get("es") or value.get("en") or ""
+    return value if isinstance(value, str) else ""
+
 def test_priority_draft_validity():
     draft_path = "data/measurement-priority.draft.json"
     meas_path = "data/measurements.json"
@@ -22,7 +27,7 @@ def test_priority_draft_validity():
         sections_data = json.load(f)
 
     real_section_ids = {s["id"] for s in sections_data}
-    real_section_titles = {s["title"] for s in sections_data}
+    real_section_titles = {get_spanish_text(s["title"]) for s in sections_data}
 
     # 1. Existen exactamente 101 mediciones en measurements.json y priorities
     assert len(measurements) == 101, f"Se esperaban 101 mediciones, pero hay {len(measurements)}."
@@ -122,7 +127,7 @@ def test_priority_draft_validity():
         # 20. section_id no se sustituye por la ventana
         assert p["section_id"] == orig["section_id"], f"Medición '{m_id}' tiene section_id incorrecto."
         assert p["section_id"] in real_section_ids, f"Medición '{m_id}' tiene section_id inexistente."
-        assert p["section_title"] in real_section_titles, f"Medición '{m_id}' tiene section_title inexistente."
+        assert get_spanish_text(p["section_title"]) in real_section_titles, f"Medición '{m_id}' tiene section_title inexistente."
 
         # Agrupar display orders por sección
         s_id = p["section_id"]

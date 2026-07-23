@@ -376,11 +376,23 @@ def get_refs_for_item(m_id, s_id):
 
     return list(sorted(list(set(refs))))
 
+def get_spanish_text(value):
+    if isinstance(value, dict):
+        return value.get("es") or value.get("en") or ""
+    return value if isinstance(value, str) else ""
+
 def main():
     # Leer secciones originales
     with open("data/sections.json", "r", encoding="utf-8") as f:
         sections_data = json.load(f)
-    section_titles = {s["id"]: s["title"] for s in sections_data}
+
+    section_titles = {}
+    for s in sections_data:
+        s_id = s.get("id")
+        title = get_spanish_text(s.get("title"))
+        if not title:
+            raise ValueError(f"Error: la sección '{s_id}' no tiene un título válido (vacío o no es string).")
+        section_titles[s_id] = title
 
     # Leer mediciones originales
     with open("data/measurements.json", "r", encoding="utf-8") as f:
