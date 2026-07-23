@@ -3624,146 +3624,367 @@
     "id": "derrame_pericardico_pequeno",
     "section_id": "pericardium_tamponade",
     "order": 1,
-    "measurement": "Derrame pericárdico pequeño",
-    "abbreviation": "Derrame pequeño",
-    "aliases": [
-      "Small pericardial effusion"
-    ],
-    "formula_or_method": "Separación eco-libre máxima en diástole.",
-    "normal_values": "<10 mm.",
-    "interpretation_limitations": "La distribución puede ser circunferencial o loculada.",
+    "measurement": {
+      "es": "Derrame pericárdico pequeño",
+      "en": "Small pericardial effusion"
+    },
+    "abbreviation": {
+      "es": "Derrame pequeño",
+      "en": "Small effusion"
+    },
+    "aliases": {
+      "es": [
+        "Small pericardial effusion"
+      ],
+      "en": [
+        "Small pericardial effusion"
+      ]
+    },
+    "formula_or_method": {
+      "es": "Separación eco-libre máxima en diástole.",
+      "en": "Maximum echo-free separation in diastole."
+    },
+    "normal_values": {
+      "es": "<10 mm.",
+      "en": "<10 mm."
+    },
+    "interpretation_limitations": {
+      "es": "La distribución puede ser circunferencial o loculada.",
+      "en": "The distribution may be circumferential or loculated."
+    },
     "units": "mm",
     "related_glossary_ids": [
       "derrame_pericardico_term"
     ],
     "source_page": 10,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Múltiples",
-    "preferred_view": "PLAX, PSAX, A4C y subcostal",
-    "modality": "2D",
-    "acquisition_timing": "Fin de diástole",
-    "acquisition_key": "Medir perpendicularmente la separación máxima y describir localización; confirmar en más de una ventana.",
-    "alternate_windows": []
+    "primary_window": {
+      "es": "Múltiples",
+      "en": "Multiple"
+    },
+    "preferred_view": {
+      "es": "PLAX, PSAX, A4C y subcostal",
+      "en": "PLAX, PSAX, A4C, and subcostal"
+    },
+    "modality": {
+      "es": "2D",
+      "en": "2D"
+    },
+    "acquisition_timing": {
+      "es": "Fin de diástole",
+      "en": "End-diastole"
+    },
+    "acquisition_key": {
+      "es": "Medir perpendicularmente la separación máxima y describir localización; confirmar en más de una ventana.",
+      "en": "Measure the maximum separation perpendicularly and describe its location; confirm in more than one view."
+    },
+    "alternate_windows": {
+      "es": [],
+      "en": []
+    }
   },
   {
     "id": "derrame_pericardico_moderado",
     "section_id": "pericardium_tamponade",
     "order": 2,
-    "measurement": "Derrame pericárdico moderado",
-    "abbreviation": "Derrame moderado",
-    "aliases": [
-      "Moderate pericardial effusion"
-    ],
-    "formula_or_method": "Separación máxima.",
-    "normal_values": "10-20 mm.",
-    "interpretation_limitations": "El tamaño no determina por sí solo la repercusión hemodinámica.",
+    "measurement": {
+      "es": "Derrame pericárdico moderado",
+      "en": "Moderate pericardial effusion"
+    },
+    "abbreviation": {
+      "es": "Derrame moderado",
+      "en": "Moderate effusion"
+    },
+    "aliases": {
+      "es": [
+        "Moderate pericardial effusion"
+      ],
+      "en": [
+        "Moderate pericardial effusion"
+      ]
+    },
+    "formula_or_method": {
+      "es": "Separación máxima.",
+      "en": "Maximum separation."
+    },
+    "normal_values": {
+      "es": "10-20 mm.",
+      "en": "10-20 mm."
+    },
+    "interpretation_limitations": {
+      "es": "El tamaño no determina por sí solo la repercusión hemodinámica.",
+      "en": "Size alone does not determine hemodynamic significance."
+    },
     "units": "mm",
     "related_glossary_ids": [
       "derrame_pericardico_term"
     ],
     "source_page": 10,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Múltiples",
-    "preferred_view": "PLAX, PSAX, A4C y subcostal",
-    "modality": "2D",
-    "acquisition_timing": "Fin de diástole",
-    "acquisition_key": "Confirmar distribución y medir en el sitio de mayor separación.",
-    "alternate_windows": []
+    "primary_window": {
+      "es": "Múltiples",
+      "en": "Multiple"
+    },
+    "preferred_view": {
+      "es": "PLAX, PSAX, A4C y subcostal",
+      "en": "PLAX, PSAX, A4C, and subcostal"
+    },
+    "modality": {
+      "es": "2D",
+      "en": "2D"
+    },
+    "acquisition_timing": {
+      "es": "Fin de diástole",
+      "en": "End-diastole"
+    },
+    "acquisition_key": {
+      "es": "Confirmar distribución y medir en el sitio de mayor separación.",
+      "en": "Confirm the distribution and measure at the site of greatest separation."
+    },
+    "alternate_windows": {
+      "es": [],
+      "en": []
+    }
   },
   {
     "id": "derrame_pericardico_grande",
     "section_id": "pericardium_tamponade",
     "order": 3,
-    "measurement": "Derrame pericárdico grande",
-    "abbreviation": "Derrame grande",
-    "aliases": [
-      "Large pericardial effusion"
-    ],
-    "formula_or_method": "Separación máxima.",
-    "normal_values": ">20 mm.",
-    "interpretation_limitations": "Puede existir sin taponamiento si se acumula lentamente.",
+    "measurement": {
+      "es": "Derrame pericárdico grande",
+      "en": "Large pericardial effusion"
+    },
+    "abbreviation": {
+      "es": "Derrame grande",
+      "en": "Large effusion"
+    },
+    "aliases": {
+      "es": [
+        "Large pericardial effusion"
+      ],
+      "en": [
+        "Large pericardial effusion"
+      ]
+    },
+    "formula_or_method": {
+      "es": "Separación máxima.",
+      "en": "Maximum separation."
+    },
+    "normal_values": {
+      "es": ">20 mm.",
+      "en": ">20 mm."
+    },
+    "interpretation_limitations": {
+      "es": "Puede existir sin taponamiento si se acumula lentamente.",
+      "en": "It may be present without tamponade if it accumulates slowly."
+    },
     "units": "mm",
     "related_glossary_ids": [
       "derrame_pericardico_term"
     ],
     "source_page": 10,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Múltiples",
-    "preferred_view": "PLAX, PSAX, A4C y subcostal",
-    "modality": "2D",
-    "acquisition_timing": "Fin de diástole",
-    "acquisition_key": "Evaluar circunferencialidad, loculaciones y signos de repercusión.",
-    "alternate_windows": []
+    "primary_window": {
+      "es": "Múltiples",
+      "en": "Multiple"
+    },
+    "preferred_view": {
+      "es": "PLAX, PSAX, A4C y subcostal",
+      "en": "PLAX, PSAX, A4C, and subcostal"
+    },
+    "modality": {
+      "es": "2D",
+      "en": "2D"
+    },
+    "acquisition_timing": {
+      "es": "Fin de diástole",
+      "en": "End-diastole"
+    },
+    "acquisition_key": {
+      "es": "Evaluar circunferencialidad, loculaciones y signos de repercusión.",
+      "en": "Assess circumferential distribution, loculations, and signs of hemodynamic significance."
+    },
+    "alternate_windows": {
+      "es": [],
+      "en": []
+    }
   },
   {
     "id": "colapso_ad_meas",
     "section_id": "pericardium_tamponade",
     "order": 4,
-    "measurement": "Colapso de AD",
-    "abbreviation": "Colapso AD",
-    "aliases": [
-      "Colapso sistólico de la aurícula derecha",
-      "RA collapse"
-    ],
-    "formula_or_method": "Colapso sistólico de la pared de AD.",
-    "normal_values": "Ausente normalmente.",
-    "interpretation_limitations": "La duración del colapso aumenta su especificidad.",
-    "units": "adimensional",
+    "measurement": {
+      "es": "Colapso de AD",
+      "en": "Right atrial collapse"
+    },
+    "abbreviation": {
+      "es": "Colapso AD",
+      "en": "RA collapse"
+    },
+    "aliases": {
+      "es": [
+        "Colapso sistólico de la aurícula derecha",
+        "RA collapse"
+      ],
+      "en": [
+        "Systolic collapse of the right atrium",
+        "RA collapse"
+      ]
+    },
+    "formula_or_method": {
+      "es": "Colapso sistólico de la pared de AD.",
+      "en": "Systolic collapse of the right atrial wall."
+    },
+    "normal_values": {
+      "es": "Ausente normalmente.",
+      "en": "Normally absent."
+    },
+    "interpretation_limitations": {
+      "es": "La duración del colapso aumenta su especificidad.",
+      "en": "Longer collapse duration increases specificity."
+    },
+    "units": {
+      "es": "adimensional",
+      "en": "dimensionless"
+    },
     "related_glossary_ids": [
       "colapso_sistolico_ad_term",
       "ad_term"
     ],
     "source_page": 10,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Apical / subcostal",
-    "preferred_view": "A4C o subcostal 4C",
-    "modality": "2D cine; modo M opcional",
-    "acquisition_timing": "Sístole",
-    "acquisition_key": "Observar inversión de la pared libre y su duración relativa durante el ciclo.",
-    "alternate_windows": [
-      "PLAX puede complementar según localización del derrame."
-    ]
+    "primary_window": {
+      "es": "Apical / subcostal",
+      "en": "Apical / subcostal"
+    },
+    "preferred_view": {
+      "es": "A4C o subcostal 4C",
+      "en": "A4C or subcostal 4C"
+    },
+    "modality": {
+      "es": "2D cine; modo M opcional",
+      "en": "2D cine; optional M-mode"
+    },
+    "acquisition_timing": {
+      "es": "Sístole",
+      "en": "Systole"
+    },
+    "acquisition_key": {
+      "es": "Observar inversión de la pared libre y su duración relativa durante el ciclo.",
+      "en": "Observe free-wall inversion and its relative duration during the cardiac cycle."
+    },
+    "alternate_windows": {
+      "es": [
+        "PLAX puede complementar según localización del derrame."
+      ],
+      "en": [
+        "PLAX may complement the assessment depending on the effusion location."
+      ]
+    }
   },
   {
     "id": "colapso_vd_meas",
     "section_id": "pericardium_tamponade",
     "order": 5,
-    "measurement": "Colapso de VD",
-    "abbreviation": "Colapso VD",
-    "aliases": [
-      "Colapso diastólico del ventrículo derecho",
-      "RV collapse"
-    ],
-    "formula_or_method": "Colapso diastólico temprano de la pared libre.",
-    "normal_values": "Ausente normalmente.",
-    "interpretation_limitations": "Puede no aparecer con hipertensión pulmonar o presión derecha elevada.",
-    "units": "adimensional",
+    "measurement": {
+      "es": "Colapso de VD",
+      "en": "Right ventricular collapse"
+    },
+    "abbreviation": {
+      "es": "Colapso VD",
+      "en": "RV collapse"
+    },
+    "aliases": {
+      "es": [
+        "Colapso diastólico del ventrículo derecho",
+        "RV collapse"
+      ],
+      "en": [
+        "Diastolic collapse of the right ventricle",
+        "RV collapse"
+      ]
+    },
+    "formula_or_method": {
+      "es": "Colapso diastólico temprano de la pared libre.",
+      "en": "Early diastolic collapse of the free wall."
+    },
+    "normal_values": {
+      "es": "Ausente normalmente.",
+      "en": "Normally absent."
+    },
+    "interpretation_limitations": {
+      "es": "Puede no aparecer con hipertensión pulmonar o presión derecha elevada.",
+      "en": "It may be absent in pulmonary hypertension or elevated right-sided pressure."
+    },
+    "units": {
+      "es": "adimensional",
+      "en": "dimensionless"
+    },
     "related_glossary_ids": [
       "colapso_diastolico_vd_term",
       "vd_term"
     ],
     "source_page": 10,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Múltiples",
-    "preferred_view": "PLAX, A4C y subcostal 4C",
-    "modality": "2D cine; modo M opcional",
-    "acquisition_timing": "Diástole temprana",
-    "acquisition_key": "Identificar inversión de la pared libre inmediatamente después de apertura mitral.",
-    "alternate_windows": []
+    "primary_window": {
+      "es": "Múltiples",
+      "en": "Multiple"
+    },
+    "preferred_view": {
+      "es": "PLAX, A4C y subcostal 4C",
+      "en": "PLAX, A4C, and subcostal 4C"
+    },
+    "modality": {
+      "es": "2D cine; modo M opcional",
+      "en": "2D cine; optional M-mode"
+    },
+    "acquisition_timing": {
+      "es": "Diástole temprana",
+      "en": "Early diastole"
+    },
+    "acquisition_key": {
+      "es": "Identificar inversión de la pared libre inmediatamente después de apertura mitral.",
+      "en": "Identify free-wall inversion immediately after mitral valve opening."
+    },
+    "alternate_windows": {
+      "es": [],
+      "en": []
+    }
   },
   {
     "id": "variacion_mitral_respiratoria",
     "section_id": "pericardium_tamponade",
     "order": 6,
-    "measurement": "Variación mitral respiratoria",
-    "abbreviation": "Variación mitral respiratoria",
-    "aliases": [
-      "Mitral respiratory variation",
-      "Variación mitral"
-    ],
-    "formula_or_method": "Cambio respiratorio de la velocidad E mitral.",
-    "normal_values": "Normal <25%.",
-    "interpretation_limitations": "Mayor variación apoya interacción ventricular exagerada en el contexto adecuado.",
+    "measurement": {
+      "es": "Variación mitral respiratoria",
+      "en": "Mitral respiratory variation"
+    },
+    "abbreviation": {
+      "es": "Variación mitral respiratoria",
+      "en": "Mitral respiratory variation"
+    },
+    "aliases": {
+      "es": [
+        "Mitral respiratory variation",
+        "Variación mitral"
+      ],
+      "en": [
+        "Mitral respiratory variation",
+        "Mitral inflow variation"
+      ]
+    },
+    "formula_or_method": {
+      "es": "Cambio respiratorio de la velocidad E mitral.",
+      "en": "Respiratory change in mitral E-wave velocity."
+    },
+    "normal_values": {
+      "es": "Normal <25%.",
+      "en": "Normal <25%."
+    },
+    "interpretation_limitations": {
+      "es": "Mayor variación apoya interacción ventricular exagerada en el contexto adecuado.",
+      "en": "Greater variation supports exaggerated ventricular interdependence in the appropriate context."
+    },
     "units": "%",
     "related_glossary_ids": [
       "variacion_respiratoria_transmitral_term",
@@ -3771,90 +3992,231 @@
     ],
     "source_page": 10,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Apical",
-    "preferred_view": "A4C",
-    "modality": "Doppler pulsado",
-    "acquisition_timing": "Varios ciclos respiratorios",
-    "acquisition_key": "Muestra en puntas mitrales; registrar inspiración y espiración sin mover la muestra.",
-    "alternate_windows": []
+    "primary_window": {
+      "es": "Apical",
+      "en": "Apical"
+    },
+    "preferred_view": {
+      "es": "A4C",
+      "en": "A4C"
+    },
+    "modality": {
+      "es": "Doppler pulsado",
+      "en": "Pulsed-wave Doppler"
+    },
+    "acquisition_timing": {
+      "es": "Varios ciclos respiratorios",
+      "en": "Several respiratory cycles"
+    },
+    "acquisition_key": {
+      "es": "Muestra en puntas mitrales; registrar inspiración y espiración sin mover la muestra.",
+      "en": "Place the sample volume at the mitral leaflet tips; record inspiration and expiration without moving the sample volume."
+    },
+    "alternate_windows": {
+      "es": [],
+      "en": []
+    }
   },
   {
     "id": "variacion_tricuspidea_respiratoria",
     "section_id": "pericardium_tamponade",
     "order": 7,
-    "measurement": "Variación tricuspídea respiratoria",
-    "abbreviation": "Variación tricuspídea respiratoria",
-    "aliases": [
-      "Tricuspid respiratory variation",
-      "Variación tricuspídea"
-    ],
-    "formula_or_method": "Cambio respiratorio de la velocidad E tricuspídea.",
-    "normal_values": "Normal <40%.",
-    "interpretation_limitations": "Interpretar según patrón respiratorio y ventilación.",
+    "measurement": {
+      "es": "Variación tricuspídea respiratoria",
+      "en": "Tricuspid respiratory variation"
+    },
+    "abbreviation": {
+      "es": "Variación tricuspídea respiratoria",
+      "en": "Tricuspid respiratory variation"
+    },
+    "aliases": {
+      "es": [
+        "Tricuspid respiratory variation",
+        "Variación tricuspídea"
+      ],
+      "en": [
+        "Tricuspid respiratory variation",
+        "Tricuspid inflow variation"
+      ]
+    },
+    "formula_or_method": {
+      "es": "Cambio respiratorio de la velocidad E tricuspídea.",
+      "en": "Respiratory change in tricuspid E-wave velocity."
+    },
+    "normal_values": {
+      "es": "Normal <40%.",
+      "en": "Normal <40%."
+    },
+    "interpretation_limitations": {
+      "es": "Interpretar según patrón respiratorio y ventilación.",
+      "en": "Interpret according to the respiratory pattern and ventilation."
+    },
     "units": "%",
     "related_glossary_ids": [
       "variacion_respiratoria_trantricuspidea_term"
     ],
     "source_page": 10,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Apical",
-    "preferred_view": "A4C enfocada en VD",
-    "modality": "Doppler pulsado",
-    "acquisition_timing": "Varios ciclos respiratorios",
-    "acquisition_key": "Muestra en puntas tricuspídeas; registrar variación con respiración.",
-    "alternate_windows": []
+    "primary_window": {
+      "es": "Apical",
+      "en": "Apical"
+    },
+    "preferred_view": {
+      "es": "A4C enfocada en VD",
+      "en": "RV-focused A4C"
+    },
+    "modality": {
+      "es": "Doppler pulsado",
+      "en": "Pulsed-wave Doppler"
+    },
+    "acquisition_timing": {
+      "es": "Varios ciclos respiratorios",
+      "en": "Several respiratory cycles"
+    },
+    "acquisition_key": {
+      "es": "Muestra en puntas tricuspídeas; registrar variación con respiración.",
+      "en": "Place the sample volume at the tricuspid leaflet tips; record variation with respiration."
+    },
+    "alternate_windows": {
+      "es": [],
+      "en": []
+    }
   },
   {
     "id": "vci_pletorica_meas",
     "section_id": "pericardium_tamponade",
     "order": 8,
-    "measurement": "VCI pletórica",
-    "abbreviation": "VCI pletórica",
-    "aliases": [
-      "Dilatación fija de VCI",
-      "VCI sin colapso"
-    ],
-    "formula_or_method": "VCI >2,1 cm con escaso colapso.",
-    "normal_values": "No es normal; apoya presión AD elevada.",
-    "interpretation_limitations": "Es sensible, pero poco específica para taponamiento.",
-    "units": "adimensional",
+    "measurement": {
+      "es": "VCI pletórica",
+      "en": "Plethoric inferior vena cava"
+    },
+    "abbreviation": {
+      "es": "VCI pletórica",
+      "en": "Plethoric IVC"
+    },
+    "aliases": {
+      "es": [
+        "Dilatación fija de VCI",
+        "VCI sin colapso"
+      ],
+      "en": [
+        "Fixed IVC dilation",
+        "IVC without collapse"
+      ]
+    },
+    "formula_or_method": {
+      "es": "VCI >2,1 cm con escaso colapso.",
+      "en": "IVC >2.1 cm with minimal collapse."
+    },
+    "normal_values": {
+      "es": "No es normal; apoya presión AD elevada.",
+      "en": "Not normal; supports elevated right atrial pressure."
+    },
+    "interpretation_limitations": {
+      "es": "Es sensible, pero poco específica para taponamiento.",
+      "en": "It is sensitive but has low specificity for tamponade."
+    },
+    "units": {
+      "es": "adimensional",
+      "en": "dimensionless"
+    },
     "related_glossary_ids": [
       "vci_pletorica_term",
       "vci_term"
     ],
     "source_page": 10,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Subcostal",
-    "preferred_view": "Eje largo de VCI",
-    "modality": "2D cine",
-    "acquisition_timing": "Ciclo respiratorio",
-    "acquisition_key": "Medir diámetro y colapso 1-2 cm de la AD.",
-    "alternate_windows": []
+    "primary_window": {
+      "es": "Subcostal",
+      "en": "Subcostal"
+    },
+    "preferred_view": {
+      "es": "Eje largo de VCI",
+      "en": "Long-axis view of the IVC"
+    },
+    "modality": {
+      "es": "2D cine",
+      "en": "2D cine"
+    },
+    "acquisition_timing": {
+      "es": "Ciclo respiratorio",
+      "en": "Respiratory cycle"
+    },
+    "acquisition_key": {
+      "es": "Medir diámetro y colapso 1-2 cm de la AD.",
+      "en": "Measure diameter and collapse 1-2 cm from the right atrium."
+    },
+    "alternate_windows": {
+      "es": [],
+      "en": []
+    }
   },
   {
     "id": "movimiento_pendular_meas",
     "section_id": "pericardium_tamponade",
     "order": 9,
-    "measurement": "Movimiento pendular del corazón",
-    "abbreviation": "Movimiento pendular",
-    "aliases": [
-      "Swinging heart",
-      "Corazón pendular"
-    ],
-    "formula_or_method": "Movimiento global dentro de un derrame grande.",
-    "normal_values": "Ausente normalmente.",
-    "interpretation_limitations": "Puede asociarse a alternancia eléctrica, pero no es requisito diagnóstico.",
-    "units": "adimensional",
+    "measurement": {
+      "es": "Movimiento pendular del corazón",
+      "en": "Swinging heart motion"
+    },
+    "abbreviation": {
+      "es": "Movimiento pendular",
+      "en": "Swinging heart"
+    },
+    "aliases": {
+      "es": [
+        "Swinging heart",
+        "Corazón pendular"
+      ],
+      "en": [
+        "Swinging heart",
+        "Pendular heart motion"
+      ]
+    },
+    "formula_or_method": {
+      "es": "Movimiento global dentro de un derrame grande.",
+      "en": "Global cardiac motion within a large effusion."
+    },
+    "normal_values": {
+      "es": "Ausente normalmente.",
+      "en": "Normally absent."
+    },
+    "interpretation_limitations": {
+      "es": "Puede asociarse a alternancia eléctrica, pero no es requisito diagnóstico.",
+      "en": "It may be associated with electrical alternans but is not a diagnostic requirement."
+    },
+    "units": {
+      "es": "adimensional",
+      "en": "dimensionless"
+    },
     "related_glossary_ids": [
       "movimiento_pendular_term"
     ],
     "source_page": 10,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Múltiples",
-    "preferred_view": "Subcostal 4C, A4C y PLAX",
-    "modality": "2D cine",
-    "acquisition_timing": "Varios ciclos",
-    "acquisition_key": "Documentar movimiento global dentro del saco pericárdico; no usar como criterio aislado.",
-    "alternate_windows": []
+    "primary_window": {
+      "es": "Múltiples",
+      "en": "Multiple"
+    },
+    "preferred_view": {
+      "es": "Subcostal 4C, A4C y PLAX",
+      "en": "Subcostal 4C, A4C, and PLAX"
+    },
+    "modality": {
+      "es": "2D cine",
+      "en": "2D cine"
+    },
+    "acquisition_timing": {
+      "es": "Varios ciclos",
+      "en": "Several cardiac cycles"
+    },
+    "acquisition_key": {
+      "es": "Documentar movimiento global dentro del saco pericárdico; no usar como criterio aislado.",
+      "en": "Document global cardiac motion within the pericardial sac; do not use it as an isolated criterion."
+    },
+    "alternate_windows": {
+      "es": [],
+      "en": []
+    }
   }
 ]
