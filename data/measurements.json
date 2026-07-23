@@ -2650,15 +2650,36 @@
     "id": "area_mitral_planimetria",
     "section_id": "mitral_valve",
     "order": 1,
-    "measurement": "Área valvular mitral por planimetría",
-    "abbreviation": "Área mitral por planimetría",
-    "aliases": [
-      "Mitral valve planimetry",
-      "Área mitro-anatómica"
-    ],
-    "formula_or_method": "Planimetría directa en eje corto al nivel de las puntas.",
-    "normal_values": "Aprox. 4-6 cm².",
-    "interpretation_limitations": "Preferible cuando el plano es perpendicular al orificio.",
+    "measurement": {
+      "es": "Área valvular mitral por planimetría",
+      "en": "Mitral valve area by planimetry"
+    },
+    "abbreviation": {
+      "es": "Área mitral por planimetría",
+      "en": "Mitral valve area by planimetry"
+    },
+    "aliases": {
+      "es": [
+        "Mitral valve planimetry",
+        "Área mitro-anatómica"
+      ],
+      "en": [
+        "Mitral valve planimetry",
+        "Anatomic mitral valve area"
+      ]
+    },
+    "formula_or_method": {
+      "es": "Planimetría directa en eje corto al nivel de las puntas.",
+      "en": "Direct planimetry in the short-axis view at the level of the mitral leaflet tips."
+    },
+    "normal_values": {
+      "es": "Aprox. 4-6 cm².",
+      "en": "Approximately 4-6 cm²."
+    },
+    "interpretation_limitations": {
+      "es": "Preferible cuando el plano es perpendicular al orificio.",
+      "en": "Preferred when the imaging plane is perpendicular to the orifice."
+    },
     "units": "cm²",
     "related_glossary_ids": [
       "area_mitral_term",
@@ -2666,26 +2687,65 @@
     ],
     "source_page": 9,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Paraesternal izquierda",
-    "preferred_view": "PSAX a nivel de las puntas mitrales",
-    "modality": "2D zoom",
-    "acquisition_timing": "Máxima apertura en diástole",
-    "acquisition_key": "Barrido fino hasta el orificio mínimo; trazar el borde interno del orificio.",
-    "alternate_windows": []
+    "primary_window": {
+      "es": "Paraesternal izquierda",
+      "en": "Left parasternal"
+    },
+    "preferred_view": {
+      "es": "PSAX a nivel de las puntas mitrales",
+      "en": "PSAX at the level of the mitral leaflet tips"
+    },
+    "modality": {
+      "es": "2D zoom",
+      "en": "2D zoom"
+    },
+    "acquisition_timing": {
+      "es": "Máxima apertura en diástole",
+      "en": "Maximum opening in diastole"
+    },
+    "acquisition_key": {
+      "es": "Barrido fino hasta el orificio mínimo; trazar el borde interno del orificio.",
+      "en": "Perform a fine sweep to identify the smallest orifice; trace the inner border of the orifice."
+    },
+    "alternate_windows": {
+      "es": [],
+      "en": []
+    }
   },
   {
     "id": "area_mitral_pht",
     "section_id": "mitral_valve",
     "order": 2,
-    "measurement": "Área mitral por PHT",
-    "abbreviation": "Área mitral por PHT",
-    "aliases": [
-      "MVA por PHT",
-      "Área valvular mitral calculada por tiempo de hemipresión"
-    ],
-    "formula_or_method": "220 / PHT.",
-    "normal_values": ">4 cm².",
-    "interpretation_limitations": "Puede ser inexacta tras valvuloplastia, con cambios de compliance o insuficiencia aórtica.",
+    "measurement": {
+      "es": "Área mitral por PHT",
+      "en": "Mitral valve area by pressure half-time"
+    },
+    "abbreviation": {
+      "es": "Área mitral por PHT",
+      "en": "Mitral valve area by PHT"
+    },
+    "aliases": {
+      "es": [
+        "MVA por PHT",
+        "Área valvular mitral calculada por tiempo de hemipresión"
+      ],
+      "en": [
+        "MVA by PHT",
+        "Mitral valve area calculated by pressure half-time"
+      ]
+    },
+    "formula_or_method": {
+      "es": "220 / PHT.",
+      "en": "220 / PHT."
+    },
+    "normal_values": {
+      "es": ">4 cm².",
+      "en": ">4 cm²."
+    },
+    "interpretation_limitations": {
+      "es": "Puede ser inexacta tras valvuloplastia, con cambios de compliance o insuficiencia aórtica.",
+      "en": "May be inaccurate after valvuloplasty, with changes in compliance, or with aortic regurgitation."
+    },
     "units": "cm²",
     "related_glossary_ids": [
       "area_mitral_term",
@@ -2693,26 +2753,65 @@
     ],
     "source_page": 9,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Apical",
-    "preferred_view": "A4C",
-    "modality": "Doppler continuo transmitral",
-    "acquisition_timing": "Diástole",
-    "acquisition_key": "Alinear con el flujo mitral y medir PHT en el descenso de la onda E.",
-    "alternate_windows": []
+    "primary_window": {
+      "es": "Apical",
+      "en": "Apical"
+    },
+    "preferred_view": {
+      "es": "A4C",
+      "en": "A4C"
+    },
+    "modality": {
+      "es": "Doppler continuo transmitral",
+      "en": "Continuous-wave transmitral Doppler"
+    },
+    "acquisition_timing": {
+      "es": "Diástole",
+      "en": "Diastole"
+    },
+    "acquisition_key": {
+      "es": "Alinear con el flujo mitral y medir PHT en el descenso de la onda E.",
+      "en": "Align with mitral inflow and measure PHT on the downslope of the E wave."
+    },
+    "alternate_windows": {
+      "es": [],
+      "en": []
+    }
   },
   {
     "id": "gradiente_medio_mitral",
     "section_id": "mitral_valve",
     "order": 3,
-    "measurement": "Gradiente medio mitral",
-    "abbreviation": "Gradiente medio mitral",
-    "aliases": [
-      "Mitral mean gradient",
-      "Gradiente medio transmitral"
-    ],
-    "formula_or_method": "Doppler continuo con trazado diastólico.",
-    "normal_values": "<2-3 mmHg.",
-    "interpretation_limitations": "Reportar frecuencia cardiaca porque el gradiente depende del flujo y la diástole.",
+    "measurement": {
+      "es": "Gradiente medio mitral",
+      "en": "Mean mitral gradient"
+    },
+    "abbreviation": {
+      "es": "Gradiente medio mitral",
+      "en": "Mean mitral gradient"
+    },
+    "aliases": {
+      "es": [
+        "Mitral mean gradient",
+        "Gradiente medio transmitral"
+      ],
+      "en": [
+        "Mitral mean gradient",
+        "Mean transmitral gradient"
+      ]
+    },
+    "formula_or_method": {
+      "es": "Doppler continuo con trazado diastólico.",
+      "en": "Continuous-wave Doppler with tracing of the diastolic spectral envelope."
+    },
+    "normal_values": {
+      "es": "<2-3 mmHg.",
+      "en": "<2-3 mmHg."
+    },
+    "interpretation_limitations": {
+      "es": "Reportar frecuencia cardiaca porque el gradiente depende del flujo y la diástole.",
+      "en": "Report heart rate because the gradient depends on flow and diastolic duration."
+    },
     "units": "mmHg",
     "related_glossary_ids": [
       "gradiente_mitral_medio_term",
@@ -2720,64 +2819,160 @@
     ],
     "source_page": 9,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Apical",
-    "preferred_view": "A4C",
-    "modality": "Doppler continuo",
-    "acquisition_timing": "Diástole",
-    "acquisition_key": "Trazar todo el espectro diastólico y documentar frecuencia cardiaca.",
-    "alternate_windows": []
+    "primary_window": {
+      "es": "Apical",
+      "en": "Apical"
+    },
+    "preferred_view": {
+      "es": "A4C",
+      "en": "A4C"
+    },
+    "modality": {
+      "es": "Doppler continuo",
+      "en": "Continuous-wave Doppler"
+    },
+    "acquisition_timing": {
+      "es": "Diástole",
+      "en": "Diastole"
+    },
+    "acquisition_key": {
+      "es": "Trazar todo el espectro diastólico y documentar frecuencia cardiaca.",
+      "en": "Trace the entire diastolic spectral envelope and document heart rate."
+    },
+    "alternate_windows": {
+      "es": [],
+      "en": []
+    }
   },
   {
     "id": "pht_meas",
     "section_id": "mitral_valve",
     "order": 4,
-    "measurement": "PHT",
+    "measurement": {
+      "es": "PHT",
+      "en": "Pressure half-time (PHT)"
+    },
     "abbreviation": "PHT",
-    "aliases": [
-      "Pressure half-time",
-      "Tiempo de hemipresión"
-    ],
-    "formula_or_method": "Tiempo para que el gradiente transmitral inicial se reduzca a la mitad.",
-    "normal_values": "<50-60 ms.",
-    "interpretation_limitations": "Se prolonga con estenosis mitral, pero depende de compliance.",
+    "aliases": {
+      "es": [
+        "Pressure half-time",
+        "Tiempo de hemipresión"
+      ],
+      "en": [
+        "Pressure half-time",
+        "Mitral pressure half-time"
+      ]
+    },
+    "formula_or_method": {
+      "es": "Tiempo para que el gradiente transmitral inicial se reduzca a la mitad.",
+      "en": "Time required for the initial transmitral gradient to decrease by half."
+    },
+    "normal_values": {
+      "es": "<50-60 ms.",
+      "en": "<50-60 ms."
+    },
+    "interpretation_limitations": {
+      "es": "Se prolonga con estenosis mitral, pero depende de compliance.",
+      "en": "Prolonged in mitral stenosis but dependent on compliance."
+    },
     "units": "ms",
     "related_glossary_ids": [
       "pht_term"
     ],
     "source_page": 9,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Apical",
-    "preferred_view": "A4C",
-    "modality": "Doppler continuo",
-    "acquisition_timing": "Diástole temprana",
-    "acquisition_key": "Medir sobre el descenso de E; evitar espectros fusionados o mal alineados.",
-    "alternate_windows": []
+    "primary_window": {
+      "es": "Apical",
+      "en": "Apical"
+    },
+    "preferred_view": {
+      "es": "A4C",
+      "en": "A4C"
+    },
+    "modality": {
+      "es": "Doppler continuo",
+      "en": "Continuous-wave Doppler"
+    },
+    "acquisition_timing": {
+      "es": "Diástole temprana",
+      "en": "Early diastole"
+    },
+    "acquisition_key": {
+      "es": "Medir sobre el descenso de E; evitar espectros fusionados o mal alineados.",
+      "en": "Measure on the downslope of the E wave; avoid fused or misaligned spectra."
+    },
+    "alternate_windows": {
+      "es": [],
+      "en": []
+    }
   },
   {
     "id": "relacion_vti_mitral_tsvi",
     "section_id": "mitral_valve",
     "order": 5,
-    "measurement": "Relación VTI mitral/VTI TSVI",
-    "abbreviation": "VTI mitral/VTI TSVI",
-    "aliases": [
-      "Mitral VTI / LVOT VTI ratio",
-      "Cociente VTI mitral y TSVI"
-    ],
-    "formula_or_method": "VTI mitral / VTI TSVI.",
-    "normal_values": "<1,0-1,3.",
-    "interpretation_limitations": "Puede apoyar la evaluación de obstrucción o regurgitación en contexto adecuado.",
-    "units": "adimensional",
+    "measurement": {
+      "es": "Relación VTI mitral/VTI TSVI",
+      "en": "Mitral VTI/LVOT VTI ratio"
+    },
+    "abbreviation": {
+      "es": "VTI mitral/VTI TSVI",
+      "en": "Mitral VTI/LVOT VTI"
+    },
+    "aliases": {
+      "es": [
+        "Mitral VTI / LVOT VTI ratio",
+        "Cociente VTI mitral y TSVI"
+      ],
+      "en": [
+        "Mitral VTI / LVOT VTI ratio",
+        "Mitral-to-LVOT VTI ratio"
+      ]
+    },
+    "formula_or_method": {
+      "es": "VTI mitral / VTI TSVI.",
+      "en": "Mitral VTI / LVOT VTI."
+    },
+    "normal_values": {
+      "es": "<1,0-1,3.",
+      "en": "<1.0-1.3."
+    },
+    "interpretation_limitations": {
+      "es": "Puede apoyar la evaluación de obstrucción o regurgitación en contexto adecuado.",
+      "en": "May support the assessment of obstruction or regurgitation in the appropriate context."
+    },
+    "units": {
+      "es": "adimensional",
+      "en": "dimensionless"
+    },
     "related_glossary_ids": [
       "vti_term"
     ],
     "source_page": 9,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Combinada",
-    "preferred_view": "A4C para VTI mitral + A5C/A3C para VTI TSVI",
-    "modality": "Doppler pulsado/continuo; cálculo",
-    "acquisition_timing": "Diástole y sístole",
-    "acquisition_key": "Usar trazados completos y condiciones hemodinámicas comparables.",
-    "alternate_windows": []
+    "primary_window": {
+      "es": "Combinada",
+      "en": "Combined"
+    },
+    "preferred_view": {
+      "es": "A4C para VTI mitral + A5C/A3C para VTI TSVI",
+      "en": "A4C for mitral VTI + A5C/A3C for LVOT VTI"
+    },
+    "modality": {
+      "es": "Doppler pulsado/continuo; cálculo",
+      "en": "Pulsed-wave/continuous-wave Doppler; calculation"
+    },
+    "acquisition_timing": {
+      "es": "Diástole y sístole",
+      "en": "Diastole and systole"
+    },
+    "acquisition_key": {
+      "es": "Usar trazados completos y condiciones hemodinámicas comparables.",
+      "en": "Use complete spectral tracings and comparable hemodynamic conditions."
+    },
+    "alternate_windows": {
+      "es": [],
+      "en": []
+    }
   },
   {
     "id": "vena_contracta_meas",
