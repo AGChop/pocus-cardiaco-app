@@ -1363,15 +1363,36 @@
     "id": "onda_e_mitral",
     "section_id": "lv_diastolic",
     "order": 1,
-    "measurement": "Onda E mitral",
-    "abbreviation": "Onda E",
-    "aliases": [
-      "Velocidad de onda E mitral",
-      "Llenado mitral temprano"
-    ],
-    "formula_or_method": "Doppler pulsado en puntas de las valvas mitrales.",
-    "normal_values": "Frecuentemente 50-100 cm/s; dependiente de edad y carga.",
-    "interpretation_limitations": "Representa el llenado ventricular temprano.",
+    "measurement": {
+      "es": "Onda E mitral",
+      "en": "Mitral E wave"
+    },
+    "abbreviation": {
+      "es": "Onda E",
+      "en": "E wave"
+    },
+    "aliases": {
+      "es": [
+        "Velocidad de onda E mitral",
+        "Llenado mitral temprano"
+      ],
+      "en": [
+        "Mitral E-wave velocity",
+        "Early mitral filling"
+      ]
+    },
+    "formula_or_method": {
+      "es": "Doppler pulsado en puntas de las valvas mitrales.",
+      "en": "Pulsed-wave Doppler at the tips of the mitral leaflets."
+    },
+    "normal_values": {
+      "es": "Frecuentemente 50-100 cm/s; dependiente de edad y carga.",
+      "en": "Frequently 50-100 cm/s; dependent on age and loading conditions."
+    },
+    "interpretation_limitations": {
+      "es": "Representa el llenado ventricular temprano.",
+      "en": "Represents early ventricular filling."
+    },
     "units": "cm/s",
     "related_glossary_ids": [
       "onda_e_term",
@@ -1379,26 +1400,65 @@
     ],
     "source_page": 6,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Apical",
-    "preferred_view": "A4C",
-    "modality": "Doppler pulsado",
-    "acquisition_timing": "Diástole temprana",
-    "acquisition_key": "Muestra de 1-3 mm entre las puntas de las valvas; alinear con el flujo transmitral.",
-    "alternate_windows": []
+    "primary_window": {
+      "es": "Apical",
+      "en": "Apical"
+    },
+    "preferred_view": {
+      "es": "A4C",
+      "en": "A4C"
+    },
+    "modality": {
+      "es": "Doppler pulsado",
+      "en": "Pulsed-wave Doppler"
+    },
+    "acquisition_timing": {
+      "es": "Diástole temprana",
+      "en": "Early diastole"
+    },
+    "acquisition_key": {
+      "es": "Muestra de 1-3 mm entre las puntas de las valvas; alinear con el flujo transmitral.",
+      "en": "Place a 1-3 mm sample volume between the leaflet tips; align with transmitral flow."
+    },
+    "alternate_windows": {
+      "es": [],
+      "en": []
+    }
   },
   {
     "id": "onda_a_mitral",
     "section_id": "lv_diastolic",
     "order": 2,
-    "measurement": "Onda A mitral",
-    "abbreviation": "Onda A",
-    "aliases": [
-      "Velocidad de onda A mitral",
-      "Llenado mitral auricular"
-    ],
-    "formula_or_method": "Doppler pulsado transmitral durante la contracción auricular.",
-    "normal_values": "Variable con edad y carga; ausente en fibrilación auricular.",
-    "interpretation_limitations": "No interpretar si no existe contracción auricular organizada.",
+    "measurement": {
+      "es": "Onda A mitral",
+      "en": "Mitral A wave"
+    },
+    "abbreviation": {
+      "es": "Onda A",
+      "en": "A wave"
+    },
+    "aliases": {
+      "es": [
+        "Velocidad de onda A mitral",
+        "Llenado mitral auricular"
+      ],
+      "en": [
+        "Mitral A-wave velocity",
+        "Atrial mitral filling"
+      ]
+    },
+    "formula_or_method": {
+      "es": "Doppler pulsado transmitral durante la contracción auricular.",
+      "en": "Pulsed-wave transmitral Doppler during atrial contraction."
+    },
+    "normal_values": {
+      "es": "Variable con edad y carga; ausente en fibrilación auricular.",
+      "en": "Variable with age and loading conditions; absent in atrial fibrillation."
+    },
+    "interpretation_limitations": {
+      "es": "No interpretar si no existe contracción auricular organizada.",
+      "en": "Do not interpret when organized atrial contraction is absent."
+    },
     "units": "cm/s",
     "related_glossary_ids": [
       "onda_a_term",
@@ -1406,27 +1466,66 @@
     ],
     "source_page": 6,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Apical",
-    "preferred_view": "A4C",
-    "modality": "Doppler pulsado",
-    "acquisition_timing": "Diástole tardía",
-    "acquisition_key": "Usar el mismo espectro transmitral que para onda E.",
-    "alternate_windows": []
+    "primary_window": {
+      "es": "Apical",
+      "en": "Apical"
+    },
+    "preferred_view": {
+      "es": "A4C",
+      "en": "A4C"
+    },
+    "modality": {
+      "es": "Doppler pulsado",
+      "en": "Pulsed-wave Doppler"
+    },
+    "acquisition_timing": {
+      "es": "Diástole tardía",
+      "en": "Late diastole"
+    },
+    "acquisition_key": {
+      "es": "Usar el mismo espectro transmitral que para onda E.",
+      "en": "Use the same transmitral spectral tracing as for the E wave."
+    },
+    "alternate_windows": {
+      "es": [],
+      "en": []
+    }
   },
   {
     "id": "relacion_e_a",
     "section_id": "lv_diastolic",
     "order": 3,
-    "measurement": "Relación E/A",
+    "measurement": {
+      "es": "Relación E/A",
+      "en": "E/A ratio"
+    },
     "abbreviation": "E/A",
-    "aliases": [
-      "Relación velocidad E/A mitral",
-      "Cociente E/A"
-    ],
-    "formula_or_method": "Velocidad E / velocidad A.",
-    "normal_values": "Aprox. 0,8-2,0; dependiente de edad.",
-    "interpretation_limitations": "No diagnostica por sí sola el grado de disfunción diastólica.",
-    "units": "adimensional",
+    "aliases": {
+      "es": [
+        "Relación velocidad E/A mitral",
+        "Cociente E/A"
+      ],
+      "en": [
+        "Mitral E/A velocity ratio",
+        "E/A ratio"
+      ]
+    },
+    "formula_or_method": {
+      "es": "Velocidad E / velocidad A.",
+      "en": "E velocity / A velocity."
+    },
+    "normal_values": {
+      "es": "Aprox. 0,8-2,0; dependiente de edad.",
+      "en": "Approximately 0.8-2.0; age-dependent."
+    },
+    "interpretation_limitations": {
+      "es": "No diagnostica por sí sola el grado de disfunción diastólica.",
+      "en": "Does not by itself diagnose the grade of diastolic dysfunction."
+    },
+    "units": {
+      "es": "adimensional",
+      "en": "dimensionless"
+    },
     "related_glossary_ids": [
       "relacion_e_a_term",
       "onda_e_term",
@@ -1434,27 +1533,64 @@
     ],
     "source_page": 6,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Derivada",
-    "preferred_view": "A4C para E y A",
-    "modality": "Cálculo",
-    "acquisition_timing": "Diástole",
-    "acquisition_key": "Usar velocidades del mismo ciclo o ciclos comparables.",
-    "alternate_windows": []
+    "primary_window": {
+      "es": "Derivada",
+      "en": "Derived"
+    },
+    "preferred_view": {
+      "es": "A4C para E y A",
+      "en": "A4C for E and A"
+    },
+    "modality": {
+      "es": "Cálculo",
+      "en": "Calculation"
+    },
+    "acquisition_timing": {
+      "es": "Diástole",
+      "en": "Diastole"
+    },
+    "acquisition_key": {
+      "es": "Usar velocidades del mismo ciclo o ciclos comparables.",
+      "en": "Use velocities from the same cardiac cycle or comparable cycles."
+    },
+    "alternate_windows": {
+      "es": [],
+      "en": []
+    }
   },
   {
     "id": "tiempo_desaceleracion_e",
     "section_id": "lv_diastolic",
     "order": 4,
-    "measurement": "Tiempo de desaceleración de E",
+    "measurement": {
+      "es": "Tiempo de desaceleración de E",
+      "en": "E-wave deceleration time"
+    },
     "abbreviation": "DT",
-    "aliases": [
-      "DT",
-      "Deceleration time",
-      "Tiempo de desaceleración de la onda E"
-    ],
-    "formula_or_method": "Desde el pico E hasta la extrapolación a la línea basal.",
-    "normal_values": "Aprox. 160-240 ms.",
-    "interpretation_limitations": "Se acorta con llenado restrictivo y puede prolongarse con relajación alterada.",
+    "aliases": {
+      "es": [
+        "DT",
+        "Deceleration time",
+        "Tiempo de desaceleración de la onda E"
+      ],
+      "en": [
+        "DT",
+        "Deceleration time",
+        "E-wave deceleration time"
+      ]
+    },
+    "formula_or_method": {
+      "es": "Desde el pico E hasta la extrapolación a la línea basal.",
+      "en": "From the E-wave peak to extrapolation to the baseline."
+    },
+    "normal_values": {
+      "es": "Aprox. 160-240 ms.",
+      "en": "Approximately 160-240 ms."
+    },
+    "interpretation_limitations": {
+      "es": "Se acorta con llenado restrictivo y puede prolongarse con relajación alterada.",
+      "en": "Shortens with restrictive filling and may be prolonged with impaired relaxation."
+    },
     "units": "ms",
     "related_glossary_ids": [
       "tiempo_desaceleracion_e_term",
@@ -1462,52 +1598,127 @@
     ],
     "source_page": 6,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Apical",
-    "preferred_view": "A4C",
-    "modality": "Doppler pulsado",
-    "acquisition_timing": "Diástole temprana",
-    "acquisition_key": "Trazar la pendiente descendente de E hasta la línea basal.",
-    "alternate_windows": []
+    "primary_window": {
+      "es": "Apical",
+      "en": "Apical"
+    },
+    "preferred_view": {
+      "es": "A4C",
+      "en": "A4C"
+    },
+    "modality": {
+      "es": "Doppler pulsado",
+      "en": "Pulsed-wave Doppler"
+    },
+    "acquisition_timing": {
+      "es": "Diástole temprana",
+      "en": "Early diastole"
+    },
+    "acquisition_key": {
+      "es": "Trazar la pendiente descendente de E hasta la línea basal.",
+      "en": "Trace the downslope of the E wave to the baseline."
+    },
+    "alternate_windows": {
+      "es": [],
+      "en": []
+    }
   },
   {
     "id": "ivrt_meas",
     "section_id": "lv_diastolic",
     "order": 5,
-    "measurement": "IVRT",
+    "measurement": {
+      "es": "IVRT",
+      "en": "Isovolumetric relaxation time (IVRT)"
+    },
     "abbreviation": "IVRT",
-    "aliases": [
-      "Isovolumetric relaxation time",
-      "Tiempo de relajación isovolumétrica"
-    ],
-    "formula_or_method": "Intervalo entre cierre aórtico y apertura mitral.",
-    "normal_values": "Aprox. 70-100 ms.",
-    "interpretation_limitations": "Depende de frecuencia cardiaca y presiones de relajación/llenado.",
+    "aliases": {
+      "es": [
+        "Isovolumetric relaxation time",
+        "Tiempo de relajación isovolumétrica"
+      ],
+      "en": [
+        "Isovolumetric relaxation time",
+        "IVRT"
+      ]
+    },
+    "formula_or_method": {
+      "es": "Intervalo entre cierre aórtico y apertura mitral.",
+      "en": "Interval between aortic valve closure and mitral valve opening."
+    },
+    "normal_values": {
+      "es": "Aprox. 70-100 ms.",
+      "en": "Approximately 70-100 ms."
+    },
+    "interpretation_limitations": {
+      "es": "Depende de frecuencia cardiaca y presiones de relajación/llenado.",
+      "en": "Depends on heart rate and relaxation/filling pressures."
+    },
     "units": "ms",
     "related_glossary_ids": [
       "ivrt_term"
     ],
     "source_page": 6,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Apical",
-    "preferred_view": "A5C o A3C",
-    "modality": "Doppler pulsado o continuo entre flujo de salida y entrada",
-    "acquisition_timing": "Transición sístole-diástole",
-    "acquisition_key": "Ubicar la muestra para registrar simultáneamente cierre aórtico y apertura mitral cuando sea posible.",
-    "alternate_windows": []
+    "primary_window": {
+      "es": "Apical",
+      "en": "Apical"
+    },
+    "preferred_view": {
+      "es": "A5C o A3C",
+      "en": "A5C or A3C"
+    },
+    "modality": {
+      "es": "Doppler pulsado o continuo entre flujo de salida y entrada",
+      "en": "Pulsed-wave or continuous-wave Doppler between outflow and inflow"
+    },
+    "acquisition_timing": {
+      "es": "Transición sístole-diástole",
+      "en": "Systole-diastole transition"
+    },
+    "acquisition_key": {
+      "es": "Ubicar la muestra para registrar simultáneamente cierre aórtico y apertura mitral cuando sea posible.",
+      "en": "Position the sample volume to record aortic valve closure and mitral valve opening simultaneously when possible."
+    },
+    "alternate_windows": {
+      "es": [],
+      "en": []
+    }
   },
   {
     "id": "e_septal_meas",
     "section_id": "lv_diastolic",
     "order": 6,
-    "measurement": "e' septal",
-    "abbreviation": "e' septal",
-    "aliases": [
-      "e' del anillo septal mitral",
-      "e prima septal"
-    ],
-    "formula_or_method": "Doppler tisular en el anillo mitral septal.",
-    "normal_values": "Valor reducido sugiere relajación alterada; usar umbrales ajustados por edad y guía.",
-    "interpretation_limitations": "No usar aislado; puede alterarse por enfermedad regional o cirugía.",
+    "measurement": {
+      "es": "e' septal",
+      "en": "Septal e'"
+    },
+    "abbreviation": {
+      "es": "e' septal",
+      "en": "Septal e'"
+    },
+    "aliases": {
+      "es": [
+        "e' del anillo septal mitral",
+        "e prima septal"
+      ],
+      "en": [
+        "Septal mitral annular e'",
+        "Septal e-prime"
+      ]
+    },
+    "formula_or_method": {
+      "es": "Doppler tisular en el anillo mitral septal.",
+      "en": "Tissue Doppler at the septal mitral annulus."
+    },
+    "normal_values": {
+      "es": "Valor reducido sugiere relajación alterada; usar umbrales ajustados por edad y guía.",
+      "en": "A reduced value suggests impaired relaxation; use age- and guideline-adjusted thresholds."
+    },
+    "interpretation_limitations": {
+      "es": "No usar aislado; puede alterarse por enfermedad regional o cirugía.",
+      "en": "Do not use in isolation; it may be altered by regional disease or surgery."
+    },
     "units": "cm/s",
     "related_glossary_ids": [
       "e_prima_term",
@@ -1515,26 +1726,65 @@
     ],
     "source_page": 6,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Apical",
-    "preferred_view": "A4C",
-    "modality": "Doppler tisular pulsado",
-    "acquisition_timing": "Diástole temprana",
-    "acquisition_key": "Muestra en el anillo septal, haz paralelo al movimiento longitudinal.",
-    "alternate_windows": []
+    "primary_window": {
+      "es": "Apical",
+      "en": "Apical"
+    },
+    "preferred_view": {
+      "es": "A4C",
+      "en": "A4C"
+    },
+    "modality": {
+      "es": "Doppler tisular pulsado",
+      "en": "Pulsed-wave tissue Doppler"
+    },
+    "acquisition_timing": {
+      "es": "Diástole temprana",
+      "en": "Early diastole"
+    },
+    "acquisition_key": {
+      "es": "Muestra en el anillo septal, haz paralelo al movimiento longitudinal.",
+      "en": "Place the sample volume at the septal annulus, with the beam parallel to longitudinal motion."
+    },
+    "alternate_windows": {
+      "es": [],
+      "en": []
+    }
   },
   {
     "id": "e_lateral_meas",
     "section_id": "lv_diastolic",
     "order": 7,
-    "measurement": "e' lateral",
-    "abbreviation": "e' lateral",
-    "aliases": [
-      "e' del anillo lateral mitral",
-      "e prima lateral"
-    ],
-    "formula_or_method": "Doppler tisular en el anillo mitral lateral.",
-    "normal_values": "Valor reducido sugiere relajación alterada; usar umbrales ajustados por edad y guía.",
-    "interpretation_limitations": "Sensible a alineación y movimiento de traslación.",
+    "measurement": {
+      "es": "e' lateral",
+      "en": "Lateral e'"
+    },
+    "abbreviation": {
+      "es": "e' lateral",
+      "en": "Lateral e'"
+    },
+    "aliases": {
+      "es": [
+        "e' del anillo lateral mitral",
+        "e prima lateral"
+      ],
+      "en": [
+        "Lateral mitral annular e'",
+        "Lateral e-prime"
+      ]
+    },
+    "formula_or_method": {
+      "es": "Doppler tisular en el anillo mitral lateral.",
+      "en": "Tissue Doppler at the lateral mitral annulus."
+    },
+    "normal_values": {
+      "es": "Valor reducido sugiere relajación alterada; usar umbrales ajustados por edad y guía.",
+      "en": "A reduced value suggests impaired relaxation; use age- and guideline-adjusted thresholds."
+    },
+    "interpretation_limitations": {
+      "es": "Sensible a alineación y movimiento de traslación.",
+      "en": "Sensitive to alignment and translational motion."
+    },
     "units": "cm/s",
     "related_glossary_ids": [
       "e_prima_term",
@@ -1542,28 +1792,71 @@
     ],
     "source_page": 6,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Apical",
-    "preferred_view": "A4C",
-    "modality": "Doppler tisular pulsado",
-    "acquisition_timing": "Diástole temprana",
-    "acquisition_key": "Muestra en el anillo lateral, evitando pared basal adyacente.",
-    "alternate_windows": []
+    "primary_window": {
+      "es": "Apical",
+      "en": "Apical"
+    },
+    "preferred_view": {
+      "es": "A4C",
+      "en": "A4C"
+    },
+    "modality": {
+      "es": "Doppler tisular pulsado",
+      "en": "Pulsed-wave tissue Doppler"
+    },
+    "acquisition_timing": {
+      "es": "Diástole temprana",
+      "en": "Early diastole"
+    },
+    "acquisition_key": {
+      "es": "Muestra en el anillo lateral, evitando pared basal adyacente.",
+      "en": "Place the sample volume at the lateral annulus, avoiding the adjacent basal wall."
+    },
+    "alternate_windows": {
+      "es": [],
+      "en": []
+    }
   },
   {
     "id": "relacion_e_e_promedio",
     "section_id": "lv_diastolic",
     "order": 8,
-    "measurement": "E/e' promedio",
-    "abbreviation": "E/e' promedio",
-    "aliases": [
-      "E/e'",
-      "E/e' ratio",
-      "Cociente E/e'"
-    ],
-    "formula_or_method": "E / promedio de e' septal y lateral.",
-    "normal_values": ">14 sugiere presión de llenado elevada.",
-    "interpretation_limitations": "Interpretación multiparamétrica; valores intermedios son indeterminados.",
-    "units": "adimensional",
+    "measurement": {
+      "es": "E/e' promedio",
+      "en": "Average E/e' ratio"
+    },
+    "abbreviation": {
+      "es": "E/e' promedio",
+      "en": "Average E/e'"
+    },
+    "aliases": {
+      "es": [
+        "E/e'",
+        "E/e' ratio",
+        "Cociente E/e'"
+      ],
+      "en": [
+        "E/e'",
+        "E/e' ratio",
+        "Transmitral E-to-e' ratio"
+      ]
+    },
+    "formula_or_method": {
+      "es": "E / promedio de e' septal y lateral.",
+      "en": "E / average of septal and lateral e'."
+    },
+    "normal_values": {
+      "es": ">14 sugiere presión de llenado elevada.",
+      "en": ">14 suggests elevated filling pressure."
+    },
+    "interpretation_limitations": {
+      "es": "Interpretación multiparamétrica; valores intermedios son indeterminados.",
+      "en": "Multiparametric interpretation is required; intermediate values are indeterminate."
+    },
+    "units": {
+      "es": "adimensional",
+      "en": "dimensionless"
+    },
     "related_glossary_ids": [
       "relacion_e_e_term",
       "onda_e_term",
@@ -1571,26 +1864,65 @@
     ],
     "source_page": 6,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Derivada",
-    "preferred_view": "A4C",
-    "modality": "Doppler pulsado + tisular; cálculo",
-    "acquisition_timing": "Diástole",
-    "acquisition_key": "Usar E transmitral y e’ septal/lateral del mismo estudio y condiciones hemodinámicas.",
-    "alternate_windows": []
+    "primary_window": {
+      "es": "Derivada",
+      "en": "Derived"
+    },
+    "preferred_view": {
+      "es": "A4C",
+      "en": "A4C"
+    },
+    "modality": {
+      "es": "Doppler pulsado + tisular; cálculo",
+      "en": "Pulsed-wave Doppler + tissue Doppler; calculation"
+    },
+    "acquisition_timing": {
+      "es": "Diástole",
+      "en": "Diastole"
+    },
+    "acquisition_key": {
+      "es": "Usar E transmitral y e’ septal/lateral del mismo estudio y condiciones hemodinámicas.",
+      "en": "Use transmitral E and septal/lateral e’ from the same study and under the same hemodynamic conditions."
+    },
+    "alternate_windows": {
+      "es": [],
+      "en": []
+    }
   },
   {
     "id": "velocidad_it_diastology",
     "section_id": "lv_diastolic",
     "order": 9,
-    "measurement": "Velocidad máxima de IT",
-    "abbreviation": "Velocidad IT",
-    "aliases": [
-      "TR velocity",
-      "Velocidad de la insuficiencia tricuspídea"
-    ],
-    "formula_or_method": "Doppler continuo del jet de insuficiencia tricuspídea.",
-    "normal_values": "<2,8 m/s como referencia tradicional; integrar con guía vigente y otros signos.",
-    "interpretation_limitations": "Una señal incompleta o mal alineada subestima la velocidad.",
+    "measurement": {
+      "es": "Velocidad máxima de IT",
+      "en": "Peak TR velocity"
+    },
+    "abbreviation": {
+      "es": "Velocidad IT",
+      "en": "TR velocity"
+    },
+    "aliases": {
+      "es": [
+        "TR velocity",
+        "Velocidad de la insuficiencia tricuspídea"
+      ],
+      "en": [
+        "TR velocity",
+        "Tricuspid regurgitation velocity"
+      ]
+    },
+    "formula_or_method": {
+      "es": "Doppler continuo del jet de insuficiencia tricuspídea.",
+      "en": "Continuous-wave Doppler of the tricuspid regurgitation jet."
+    },
+    "normal_values": {
+      "es": "<2,8 m/s como referencia tradicional; integrar con guía vigente y otros signos.",
+      "en": "<2.8 m/s as a traditional reference; integrate with current guidelines and other signs."
+    },
+    "interpretation_limitations": {
+      "es": "Una señal incompleta o mal alineada subestima la velocidad.",
+      "en": "An incomplete or misaligned signal underestimates velocity."
+    },
     "units": "m/s",
     "related_glossary_ids": [
       "it_term",
@@ -1598,25 +1930,60 @@
     ],
     "source_page": 6,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Múltiples",
-    "preferred_view": "A4C enfocada en VD; RV inflow; PSAX; subcostal",
-    "modality": "Doppler continuo guiado por color",
-    "acquisition_timing": "Sístole",
-    "acquisition_key": "Registrar el sobre completo de mayor velocidad entre todas las ventanas disponibles.",
-    "alternate_windows": []
+    "primary_window": {
+      "es": "Múltiples",
+      "en": "Multiple"
+    },
+    "preferred_view": {
+      "es": "A4C enfocada en VD; RV inflow; PSAX; subcostal",
+      "en": "RV-focused A4C; RV inflow; PSAX; subcostal"
+    },
+    "modality": {
+      "es": "Doppler continuo guiado por color",
+      "en": "Color-guided continuous-wave Doppler"
+    },
+    "acquisition_timing": {
+      "es": "Sístole",
+      "en": "Systole"
+    },
+    "acquisition_key": {
+      "es": "Registrar el sobre completo de mayor velocidad entre todas las ventanas disponibles.",
+      "en": "Record the complete spectral envelope with the highest velocity from all available windows."
+    },
+    "alternate_windows": {
+      "es": [],
+      "en": []
+    }
   },
   {
     "id": "lavi_diastology",
     "section_id": "lv_diastolic",
     "order": 10,
-    "measurement": "LAVI en diastología",
+    "measurement": {
+      "es": "LAVI en diastología",
+      "en": "LAVI in diastolic assessment"
+    },
     "abbreviation": "LAVI",
-    "aliases": [
-      "Índice de volumen de la AI en diastología"
-    ],
-    "formula_or_method": "Volumen AI / superficie corporal.",
-    "normal_values": "≤34 mL/m².",
-    "interpretation_limitations": "Marcador de carga crónica, no de cambios agudos aislados.",
+    "aliases": {
+      "es": [
+        "Índice de volumen de la AI en diastología"
+      ],
+      "en": [
+        "Left atrial volume index in diastolic assessment"
+      ]
+    },
+    "formula_or_method": {
+      "es": "Volumen AI / superficie corporal.",
+      "en": "LA volume / body surface area."
+    },
+    "normal_values": {
+      "es": "≤34 mL/m².",
+      "en": "≤34 mL/m²."
+    },
+    "interpretation_limitations": {
+      "es": "Marcador de carga crónica, no de cambios agudos aislados.",
+      "en": "Marker of chronic loading conditions, not of isolated acute changes."
+    },
     "units": "mL/m²",
     "related_glossary_ids": [
       "lavi_term",
@@ -1625,25 +1992,63 @@
     ],
     "source_page": 6,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Derivada",
-    "preferred_view": "A4C + A2C",
-    "modality": "2D; cálculo",
-    "acquisition_timing": "Fin de sístole",
-    "acquisition_key": "Usar vistas auriculares dedicadas no acortadas.",
-    "alternate_windows": []
+    "primary_window": {
+      "es": "Derivada",
+      "en": "Derived"
+    },
+    "preferred_view": {
+      "es": "A4C + A2C",
+      "en": "A4C + A2C"
+    },
+    "modality": {
+      "es": "2D; cálculo",
+      "en": "2D; calculation"
+    },
+    "acquisition_timing": {
+      "es": "Fin de sístole",
+      "en": "End-systole"
+    },
+    "acquisition_key": {
+      "es": "Usar vistas auriculares dedicadas no acortadas.",
+      "en": "Use dedicated non-foreshortened left atrial views."
+    },
+    "alternate_windows": {
+      "es": [],
+      "en": []
+    }
   },
   {
     "id": "la_strain_diastology",
     "section_id": "lv_diastolic",
     "order": 11,
-    "measurement": "Strain reservorio de AI en diastología",
-    "abbreviation": "LA Strain Reservorio",
-    "aliases": [
-      "LA reservoir strain en diastología"
-    ],
-    "formula_or_method": "Speckle tracking auricular.",
-    "normal_values": ">18% orienta a function conservada; ≤18% apoya disfunción/presión AI elevada.",
-    "interpretation_limitations": "Complementario; no reemplaza el algoritmo multiparamétrico.",
+    "measurement": {
+      "es": "Strain reservorio de AI en diastología",
+      "en": "LA reservoir strain in diastolic assessment"
+    },
+    "abbreviation": {
+      "es": "LA Strain Reservorio",
+      "en": "LA reservoir strain"
+    },
+    "aliases": {
+      "es": [
+        "LA reservoir strain en diastología"
+      ],
+      "en": [
+        "LA reservoir strain in diastolic assessment"
+      ]
+    },
+    "formula_or_method": {
+      "es": "Speckle tracking auricular.",
+      "en": "Atrial speckle tracking."
+    },
+    "normal_values": {
+      "es": ">18% orienta a function conservada; ≤18% apoya disfunción/presión AI elevada.",
+      "en": ">18% suggests preserved function; ≤18% supports dysfunction or elevated LA pressure."
+    },
+    "interpretation_limitations": {
+      "es": "Complementario; no reemplaza el algoritmo multiparamétrico.",
+      "en": "Adjunctive; does not replace the multiparametric algorithm."
+    },
     "units": "%",
     "related_glossary_ids": [
       "la_strain_reservoir_term",
@@ -1651,12 +2056,30 @@
     ],
     "source_page": 6,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Apical",
-    "preferred_view": "A4C + A2C",
-    "modality": "Speckle tracking 2D",
-    "acquisition_timing": "Ciclo completo",
-    "acquisition_key": "Asegurar seguimiento de pared auricular y referencia temporal estandarizada.",
-    "alternate_windows": []
+    "primary_window": {
+      "es": "Apical",
+      "en": "Apical"
+    },
+    "preferred_view": {
+      "es": "A4C + A2C",
+      "en": "A4C + A2C"
+    },
+    "modality": {
+      "es": "Speckle tracking 2D",
+      "en": "2D speckle tracking"
+    },
+    "acquisition_timing": {
+      "es": "Ciclo completo",
+      "en": "Full cardiac cycle"
+    },
+    "acquisition_key": {
+      "es": "Asegurar seguimiento de pared auricular y referencia temporal estandarizada.",
+      "en": "Ensure atrial wall tracking and a standardized temporal reference."
+    },
+    "alternate_windows": {
+      "es": [],
+      "en": []
+    }
   },
   {
     "id": "diametro_basal_vd",
