@@ -35,16 +35,51 @@ def test_files_exist():
 def test_sections():
     with open("data/sections.json", "r", encoding="utf-8") as f:
         sections = json.load(f)
-        
+
     assert len(sections) == 12
     ids = [s["id"] for s in sections]
     slugs = [s["slug"] for s in sections]
     numbers = [s["number"] for s in sections]
-    
+
     assert len(ids) == len(set(ids))
     assert len(slugs) == len(set(slugs))
     assert len(numbers) == len(set(numbers))
     assert numbers == sorted(numbers)
+
+def get_localized_text(value, language="es"):
+    if isinstance(value, dict):
+        selected = value.get(language)
+        if isinstance(selected, str) and selected.strip():
+            return selected
+        fallback_es = value.get("es")
+        if isinstance(fallback_es, str) and fallback_es.strip():
+            return fallback_es
+        fallback_en = value.get("en")
+        if isinstance(fallback_en, str) and fallback_en.strip():
+            return fallback_en
+        return ""
+    return value if isinstance(value, str) else ""
+
+def collect_text_variants(value):
+    if not value:
+        return []
+    if isinstance(value, str):
+        return [value]
+    if isinstance(value, list):
+        res = []
+        for item in value:
+            res.extend(collect_text_variants(item))
+        return res
+    if isinstance(value, dict):
+        res = []
+        for key in ["es", "en"]:
+            if key in value:
+                res.extend(collect_text_variants(value[key]))
+        for k, v in value.items():
+            if k not in ["es", "en"]:
+                res.extend(collect_text_variants(v))
+        return res
+    return []
 
 # C. PRUEBAS DE MEDICIONES
 def test_measurements():
@@ -57,11 +92,14 @@ def test_measurements():
 
     for m in measurements:
         assert m["id"]
-        assert m["measurement"]
+        assert get_localized_text(m["measurement"])
         assert m["section_id"] in section_ids
         assert 1 <= m["source_page"] <= 18
-        assert m["units"]
-        assert isinstance(m["aliases"], list)
+        assert get_localized_text(m["units"])
+
+        # aliases can be list or dict of lists
+        aliases_list = collect_text_variants(m.get("aliases", []))
+        assert isinstance(aliases_list, list)
 
 # D. PRUEBAS DE BÚSQUEDA (Normalización en Python)
 @pytest.mark.parametrize("query,expected_substring", [
@@ -79,13 +117,13 @@ def test_search_normalization(query, expected_substring):
     # Cargar mediciones
     with open("data/measurements.json", "r", encoding="utf-8") as f:
         measurements = json.load(f)
-    
+
     # Cargar glosario
     with open("data/glossary.json", "r", encoding="utf-8") as f:
         glossary = json.load(f)
 
     query_norm = normalize_text(query)
-    
+
     # Mapeo manual de alias para emular el diccionario de equivalencias
     equivalences = {
         "fevi": "fevi",
@@ -98,32 +136,26 @@ def test_search_normalization(query, expected_substring):
         "lvot": "tsvi",
         "pvr": "rvp"
     }
-    
+
     mapped_query = equivalences.get(query_norm, query_norm)
     mapped_query_norm = normalize_text(mapped_query)
-    
+
     match_found = False
-    
+
     # Buscar en mediciones
     for m in measurements:
-        name_norm = normalize_text(m["measurement"])
-        abbr_norm = normalize_text(m["abbreviation"])
-        aliases_norm = [normalize_text(a) for a in m["aliases"]]
-        
-        if (mapped_query_norm in name_norm or 
-            mapped_query_norm in abbr_norm or 
-            any(mapped_query_norm in alias for alias in aliases_norm) or
+        m_variants = [normalize_text(v) for v in collect_text_variants(m.get("measurement")) + collect_text_variants(m.get("abbreviation")) + collect_text_variants(m.get("aliases"))]
+
+        if (any(mapped_query_norm in v for v in m_variants) or
             expected_substring.lower() in m["id"].lower()):
             match_found = True
             break
-            
+
     # Buscar en glosario
     if not match_found:
         for g in glossary:
-            term_norm = normalize_text(g["term"])
-            aliases_norm = [normalize_text(a) for a in g["aliases"]]
-            if (mapped_query_norm in term_norm or 
-                any(mapped_query_norm in alias for alias in aliases_norm) or
+            g_variants = [normalize_text(v) for v in collect_text_variants(g.get("term")) + collect_text_variants(g.get("aliases"))]
+            if (any(mapped_query_norm in v for v in g_variants) or
                 expected_substring.lower() in g["id"].lower()):
                 match_found = True
                 break

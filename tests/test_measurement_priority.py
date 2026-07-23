@@ -122,7 +122,7 @@ def test_priority_draft_validity():
 
         # 19. primary_window se conserva
         orig = next(m for m in measurements if m["id"] == m_id)
-        assert p["primary_window"] == orig.get("primary_window", ""), f"Medición '{m_id}' no conserva primary_window."
+        assert p["primary_window"] == get_spanish_text(orig.get("primary_window", "")), f"Medición '{m_id}' no conserva primary_window."
 
         # 20. section_id no se sustituye por la ventana
         assert p["section_id"] == orig["section_id"], f"Medición '{m_id}' tiene section_id incorrecto."

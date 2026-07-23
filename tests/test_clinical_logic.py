@@ -24,7 +24,7 @@ def test_rvp_formula_logic():
     rvp_meas = next((m for m in measurements if m["id"] == "rvp_ecografica"), None)
     assert rvp_meas is not None, "La medición 'rvp_ecografica' (Resistencia Vascular Pulmonar) no existe"
     
-    formula = rvp_meas["formula_or_method"].lower()
+    formula = get_localized_text(rvp_meas["formula_or_method"]).lower()
     
     # Debe mencionar VTI del TSVD o VTI TSVD o TSVD
     assert "tsvd" in formula or "vti_tsvd" in formula or "vti del tsvd" in formula
@@ -38,7 +38,7 @@ def test_tapse_values():
     tapse = next((m for m in measurements if m["id"] == "tapse_meas"), None)
     assert tapse is not None, "El parámetro TAPSE no existe"
     
-    normal_values = tapse["normal_values"].lower()
+    normal_values = get_localized_text(tapse["normal_values"]).lower()
     # Debe especificar que es anormal si es menor a 17 mm (o 1.7 cm)
     assert "17" in normal_values or "1.7" in normal_values
 

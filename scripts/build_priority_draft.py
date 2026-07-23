@@ -378,8 +378,27 @@ def get_refs_for_item(m_id, s_id):
 
 def get_spanish_text(value):
     if isinstance(value, dict):
-        return value.get("es") or value.get("en") or ""
+        es_val = value.get("es")
+        if isinstance(es_val, str) and es_val.strip():
+            return es_val
+        en_val = value.get("en")
+        if isinstance(en_val, str) and en_val.strip():
+            return en_val
+        return ""
     return value if isinstance(value, str) else ""
+
+def get_spanish_list(value):
+    if isinstance(value, list):
+        return value
+    if isinstance(value, dict):
+        es_val = value.get("es")
+        if isinstance(es_val, list):
+            return es_val
+        en_val = value.get("en")
+        if isinstance(en_val, list):
+            return en_val
+        return []
+    return []
 
 def main():
     # Leer secciones originales
@@ -421,7 +440,7 @@ def main():
         )
         for idx, item in enumerate(sorted_items):
             m_id = item['id']
-            m_title = item['measurement']
+            m_title = get_spanish_text(item['measurement'])
             orig_order = item['order']
 
             tier_info = TIERS.get(m_id)
@@ -443,11 +462,11 @@ def main():
                 "measurement_title": m_title,
                 "section_id": s_id,
                 "section_title": section_titles[s_id],
-                "primary_window": item.get("primary_window", ""),
-                "preferred_view": item.get("preferred_view", ""),
-                "alternate_windows": item.get("alternate_windows", []),
-                "modality": item.get("modality", ""),
-                "acquisition_timing": item.get("acquisition_timing", ""),
+                "primary_window": get_spanish_text(item.get("primary_window", "")),
+                "preferred_view": get_spanish_text(item.get("preferred_view", "")),
+                "alternate_windows": get_spanish_list(item.get("alternate_windows", [])),
+                "modality": get_spanish_text(item.get("modality", "")),
+                "acquisition_timing": get_spanish_text(item.get("acquisition_timing", "")),
                 "original_order": orig_order,
                 "priority_tier": tier,
                 "priority_label": labels[tier],
