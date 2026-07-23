@@ -1856,22 +1856,33 @@ const Router = {
     // UNIDADES Y ERRORES FRECUENTES
     async renderUnitWarnings(container) {
         const warnings = await DataLoader.getUnitWarnings() || [];
+        const escapeHTML = (str) => {
+            if (str === null || str === undefined) return "";
+            return str.toString()
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        };
 
         let html = `
             <div class="navigation-header">
                 <a href="#/" class="btn-back">← ${I18n.translate("nav.home")}</a>
-                <h2>${I18n.translate("label.unit_warnings")} Frecuentes</h2>
+                <h2>${I18n.translate("label.unit_warnings")}</h2>
             </div>
 
             <div class="cards-list">
         `;
 
         warnings.forEach(w => {
+            const parameter = I18n.localize(w.parameter);
+            const warning = I18n.localize(w.warning);
             html += `
                 <div class="card clinical-card warning-card" style="border-left: 4px solid #eab308; background-color: var(--card-bg-light);">
-                    <h3 style="color: var(--warning-text); font-size: 1.1rem; margin-bottom: 0.25rem;">${w.parameter}</h3>
-                    <p style="font-size: 0.95rem;">${w.warning}</p>
-                    <div style="font-size: 0.8rem; color: var(--text-muted-light); margin-top: 0.5rem; text-align: right;">${I18n.translate("label.origen")}: ${w.source_page}</div>
+                    <h3 style="color: var(--warning-text); font-size: 1.1rem; margin-bottom: 0.25rem;">${escapeHTML(parameter)}</h3>
+                    <p style="font-size: 0.95rem;">${escapeHTML(warning)}</p>
+                    <div style="font-size: 0.8rem; color: var(--text-muted-light); margin-top: 0.5rem; text-align: right;">${I18n.translate("label.origen")}: ${escapeHTML(w.source_page)}</div>
                 </div>
             `;
         });
