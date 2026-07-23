@@ -710,30 +710,37 @@ const Router = {
                 .replace(/'/g, "&#039;");
         };
 
+        const isEs = I18n.getLanguage() === "es";
         let html = `
             <div class="navigation-header">
                 <a href="#/" class="btn-back">← ${I18n.translate("nav.home")}</a>
-                <h2>Ventanas Ecocardiográficas</h2>
+                <h2>${isEs ? "Ventanas Ecocardiográficas" : "Echocardiographic Windows"}</h2>
             </div>
 
             <div class="content-accordion-grid cards-list">
         `;
 
         windows.forEach(item => {
+            const windowLoc = I18n.localize(item.window);
+            const structLoc = I18n.localize(item.favored_structures);
+            const posLoc = I18n.localize(item.typical_probe_position);
+            const oriLoc = I18n.localize(item.typical_marker_orientation);
+            const measLoc = I18n.localize(item.favored_measurements);
+
             html += `
                 <details class="content-accordion window-accordion card clinical-card">
                     <summary class="content-accordion-summary">
                         <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
-                            <span class="content-accordion-title">${escapeHTML(item.window)}</span>
+                            <span class="content-accordion-title">${escapeHTML(windowLoc)}</span>
                             ${item.abbreviation ? `<span class="unit-badge">${escapeHTML(item.abbreviation)}</span>` : ''}
                         </div>
                         <span class="content-accordion-arrow"></span>
                     </summary>
                     <div class="content-accordion-body">
-                        ${item.favored_structures ? `<p><strong>${I18n.translate("label.est_favorecidas")}:</strong> ${escapeHTML(item.favored_structures)}</p>` : ''}
-                        ${item.typical_probe_position ? `<p><strong>${I18n.translate("label.pos_transductor")}:</strong> ${escapeHTML(item.typical_probe_position)}</p>` : ''}
-                        ${item.typical_marker_orientation ? `<p><strong>${I18n.translate("label.ori_marcador")}:</strong> ${escapeHTML(item.typical_marker_orientation)}</p>` : ''}
-                        ${item.favored_measurements ? `<p><strong>${I18n.translate("label.med_asociadas")}:</strong> ${escapeHTML(item.favored_measurements)}</p>` : ''}
+                        ${structLoc ? `<p><strong>${I18n.translate("label.est_favorecidas")}:</strong> ${escapeHTML(structLoc)}</p>` : ''}
+                        ${posLoc ? `<p><strong>${I18n.translate("label.pos_transductor")}:</strong> ${escapeHTML(posLoc)}</p>` : ''}
+                        ${oriLoc ? `<p><strong>${I18n.translate("label.ori_marcador")}:</strong> ${escapeHTML(oriLoc)}</p>` : ''}
+                        ${measLoc ? `<p><strong>${I18n.translate("label.med_asociadas")}:</strong> ${escapeHTML(measLoc)}</p>` : ''}
                         <div class="card-actions">
                             <a href="#/ventanas/${item.id}" class="btn-card-action">${I18n.translate("label.detalles")}</a>
                         </div>
@@ -788,20 +795,63 @@ const Router = {
                 .replace(/'/g, "&#039;");
         };
 
+        const collectTextVariants = (value) => {
+            if (value === null || value === undefined) return [];
+            if (typeof value === "string") {
+                const s = value.trim();
+                return s ? [s] : [];
+            }
+            if (Array.isArray(value)) {
+                let res = [];
+                value.forEach(sub => {
+                    res = res.concat(collectTextVariants(sub));
+                });
+                return res;
+            }
+            if (typeof value === "object") {
+                let res = [];
+                for (const key in value) {
+                    if (Object.prototype.hasOwnProperty.call(value, key)) {
+                        res = res.concat(collectTextVariants(value[key]));
+                    }
+                }
+                return res;
+            }
+            return [];
+        };
+
+        const normalizeComparable = (value) => {
+            if (value === null || value === undefined) return "";
+            return String(value)
+                .trim()
+                .toLowerCase()
+                .normalize("NFD")
+                .replace(/[\u0300-\u036f]/g, "")
+                .replace(/\s+/g, " ");
+        };
+
+        const windowLoc = I18n.localize(item.window);
+        const posLoc = I18n.localize(item.typical_probe_position);
+        const oriLoc = I18n.localize(item.typical_marker_orientation);
+        const structLoc = I18n.localize(item.favored_structures);
+        const measLoc = I18n.localize(item.favored_measurements);
+
         // Relación con mediciones
         let favoredMeasurementsHTML = "";
-        if (item.favored_measurements) {
-            const parts = item.favored_measurements.split(",").map(p => p.trim());
+        if (measLoc) {
+            const parts = measLoc.split(",").map(p => p.trim());
             const linkedParts = parts.map(part => {
-                const part_lower = part.toLowerCase();
+                const part_normalized = normalizeComparable(part);
                 let found = null;
 
                 for (const m of measurements) {
-                    const m_name = m.measurement.toLowerCase();
-                    const m_abbr = (m.abbreviation || "").toLowerCase();
-                    const aliases = (m.aliases || []).map(a => a.toLowerCase());
+                    const measurementVariants = [
+                        ...collectTextVariants(m.measurement),
+                        ...collectTextVariants(m.abbreviation),
+                        ...collectTextVariants(m.aliases)
+                    ].map(normalizeComparable).filter(Boolean);
 
-                    if (part_lower === m_abbr || part_lower === m_name || aliases.includes(part_lower)) {
+                    if (measurementVariants.includes(part_normalized)) {
                         found = m;
                         break;
                     }
@@ -810,8 +860,11 @@ const Router = {
                 if (!found) {
                     const manualMap = {
                         "dtdvi/dtsvi": "dtdvi",
+                        "lvidd/lvids": "dtdvi",
                         "dtdvi": "dtdvi",
+                        "lvidd": "dtdvi",
                         "dtsvi": "dtsvi",
+                        "lvids": "dtsvi",
                         "ivsd": "ivsd",
                         "pwtd": "pwtd",
                         "rwt": "rwt_meas",
@@ -819,22 +872,27 @@ const Router = {
                         "mapse": "mapse",
                         "tapse": "tapse_meas",
                         "grosor pared vd": "grosor_pared_vd",
+                        "rv wall thickness": "grosor_pared_vd",
                         "planimetría mitral": "area_mitral_planimetria",
+                        "mitral planimetry": "area_mitral_planimetria",
                         "diámetro tsvi": "area_tsvi_meas",
+                        "lvot diameter": "area_tsvi_meas",
                         "diámetro ai": "diametro_ap_ai",
+                        "la diameter": "diametro_ap_ai",
                         "lavi": "lavi_meas",
                         "flujo mitral": "onda_e_mitral",
+                        "mitral flow": "onda_e_mitral",
                         "gls": "gls_vi",
                         "wmsi": "wmsi",
                         "subcostal": "derrame_pericardico_pequeno"
                     };
-                    if (manualMap[part_lower]) {
-                        found = measurements.find(m => m.id === manualMap[part_lower]);
+                    if (manualMap[part_normalized]) {
+                        found = measurements.find(m => m.id === manualMap[part_normalized]);
                     }
                 }
 
                 if (found) {
-                    return `<a href="#/medicion/${found.id}" class="clinical-link" style="color: var(--primary-medium); font-weight: 600; text-decoration: underline;">${escapeHTML(part)}</a>`;
+                    return `<a href="#/medicion/${escapeHTML(found.id)}" class="clinical-link" style="color: var(--primary-medium); font-weight: 600; text-decoration: underline;">${escapeHTML(part)}</a>`;
                 } else {
                     return escapeHTML(part);
                 }
@@ -842,35 +900,45 @@ const Router = {
             favoredMeasurementsHTML = linkedParts.join(", ");
         }
 
+        const labelAbbreviation = escapeHTML(I18n.localize({
+            es: "Abreviatura",
+            en: "Abbreviation"
+        }));
+
+        const labelFavoredMeasurements = escapeHTML(I18n.localize({
+            es: "Mediciones favorecidas",
+            en: "Favored measurements"
+        }));
+
         let html = `
             <div class="navigation-header">
                 <a href="#/ventanas" class="btn-back">← ${I18n.translate("nav.windows")}</a>
-                <h2>${escapeHTML(item.window)}</h2>
+                <h2>${escapeHTML(windowLoc)}</h2>
             </div>
 
             <div class="card clinical-detail-card">
                 ${item.abbreviation ? `
                 <div class="card-section">
-                    <span class="detail-label">Abreviatura</span>
+                    <span class="detail-label">${labelAbbreviation}</span>
                     <span class="unit-badge large-badge" style="width: fit-content;">${escapeHTML(item.abbreviation)}</span>
                 </div>` : ''}
 
-                ${item.typical_probe_position ? `
+                ${posLoc ? `
                 <div class="card-section">
                     <span class="detail-label">${I18n.translate("label.pos_transductor")}</span>
-                    <p class="detail-text">${escapeHTML(item.typical_probe_position)}</p>
+                    <p class="detail-text">${escapeHTML(posLoc)}</p>
                 </div>` : ''}
 
-                ${item.typical_marker_orientation ? `
+                ${oriLoc ? `
                 <div class="card-section">
                     <span class="detail-label">${I18n.translate("label.ori_marcador")}</span>
-                    <p class="detail-text">${escapeHTML(item.typical_marker_orientation)}</p>
+                    <p class="detail-text">${escapeHTML(oriLoc)}</p>
                 </div>` : ''}
 
-                ${item.favored_structures ? `
+                ${structLoc ? `
                 <div class="card-section">
                     <span class="detail-label">${I18n.translate("label.est_favorecidas")}</span>
-                    <p class="detail-text">${escapeHTML(item.favored_structures)}</p>
+                    <p class="detail-text">${escapeHTML(structLoc)}</p>
                 </div>` : ''}
 
                 ${mediaHTML ? `
@@ -880,7 +948,7 @@ const Router = {
 
                 ${favoredMeasurementsHTML ? `
                 <div class="card-section">
-                    <span class="detail-label">Mediciones favorecidas</span>
+                    <span class="detail-label">${labelFavoredMeasurements}</span>
                     <p class="detail-text">${favoredMeasurementsHTML}</p>
                 </div>` : ''}
             </div>
