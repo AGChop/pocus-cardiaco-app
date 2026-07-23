@@ -1037,15 +1037,36 @@
     "id": "diametro_ap_ai",
     "section_id": "left_atrium",
     "order": 1,
-    "measurement": "Diámetro anteroposterior de AI",
-    "abbreviation": "Diámetro AP de AI",
-    "aliases": [
-      "LA diameter",
-      "Diámetro anteroposterior de la aurícula izquierda"
-    ],
-    "formula_or_method": "PLAX al final de la sístole ventricular.",
-    "normal_values": "Aprox. 27-40 mm.",
-    "interpretation_limitations": "Menos representativo que el volumen porque la dilatación auricular no es simétrica.",
+    "measurement": {
+      "es": "Diámetro anteroposterior de AI",
+      "en": "Anteroposterior left atrial diameter"
+    },
+    "abbreviation": {
+      "es": "Diámetro AP de AI",
+      "en": "LA AP diameter"
+    },
+    "aliases": {
+      "es": [
+        "LA diameter",
+        "Diámetro anteroposterior de la aurícula izquierda"
+      ],
+      "en": [
+        "LA diameter",
+        "Anteroposterior diameter of the left atrium"
+      ]
+    },
+    "formula_or_method": {
+      "es": "PLAX al final de la sístole ventricular.",
+      "en": "PLAX at end-systole."
+    },
+    "normal_values": {
+      "es": "Aprox. 27-40 mm.",
+      "en": "Approximately 27-40 mm."
+    },
+    "interpretation_limitations": {
+      "es": "Menos representativo que el volumen porque la dilatación auricular no es simétrica.",
+      "en": "Less representative than volume because atrial enlargement is not symmetric."
+    },
     "units": "mm",
     "related_glossary_ids": [
       "ai_term",
@@ -1053,26 +1074,65 @@
     ],
     "source_page": 5,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Paraesternal izquierda",
-    "preferred_view": "PLAX",
-    "modality": "2D",
-    "acquisition_timing": "Fin de sístole",
-    "acquisition_key": "Medir perpendicular al eje largo; preferir volumen auricular para cuantificación.",
-    "alternate_windows": []
+    "primary_window": {
+      "es": "Paraesternal izquierda",
+      "en": "Left parasternal"
+    },
+    "preferred_view": {
+      "es": "PLAX",
+      "en": "PLAX"
+    },
+    "modality": {
+      "es": "2D",
+      "en": "2D"
+    },
+    "acquisition_timing": {
+      "es": "Fin de sístole",
+      "en": "End-systole"
+    },
+    "acquisition_key": {
+      "es": "Medir perpendicular al eje largo; preferir volumen auricular para cuantificación.",
+      "en": "Measure perpendicular to the long axis; prefer atrial volume for quantification."
+    },
+    "alternate_windows": {
+      "es": [],
+      "en": []
+    }
   },
   {
     "id": "volumen_ai_meas",
     "section_id": "left_atrium",
     "order": 2,
-    "measurement": "Volumen de AI",
-    "abbreviation": "Volumen AI",
-    "aliases": [
-      "Left atrial volume",
-      "Volumen de la aurícula izquierda"
-    ],
-    "formula_or_method": "Simpson biplano o método área-longitud. Debe indexarse.",
-    "normal_values": "Debe indexarse.",
-    "interpretation_limitations": "Medir al final de la sístole, antes de la apertura mitral.",
+    "measurement": {
+      "es": "Volumen de AI",
+      "en": "Left atrial volume"
+    },
+    "abbreviation": {
+      "es": "Volumen AI",
+      "en": "LA volume"
+    },
+    "aliases": {
+      "es": [
+        "Left atrial volume",
+        "Volumen de la aurícula izquierda"
+      ],
+      "en": [
+        "Left atrial volume",
+        "LA volume"
+      ]
+    },
+    "formula_or_method": {
+      "es": "Simpson biplano o método área-longitud. Debe indexarse.",
+      "en": "Biplane Simpson's method or the area-length method. It should be indexed."
+    },
+    "normal_values": {
+      "es": "Debe indexarse.",
+      "en": "Should be indexed."
+    },
+    "interpretation_limitations": {
+      "es": "Medir al final de la sístole, antes de la apertura mitral.",
+      "en": "Measure at end-systole, before mitral valve opening."
+    },
     "units": "mL",
     "related_glossary_ids": [
       "ai_term",
@@ -1080,26 +1140,62 @@
     ],
     "source_page": 5,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Apical",
-    "preferred_view": "A4C + A2C dedicadas a AI",
-    "modality": "2D; planimetría",
-    "acquisition_timing": "Fin de sístole",
-    "acquisition_key": "Evitar foreshortening; excluir venas pulmonares y orejuela; trazar hasta el borde del anillo mitral.",
-    "alternate_windows": []
+    "primary_window": {
+      "es": "Apical",
+      "en": "Apical"
+    },
+    "preferred_view": {
+      "es": "A4C + A2C dedicadas a AI",
+      "en": "Dedicated LA A4C + A2C views"
+    },
+    "modality": {
+      "es": "2D; planimetría",
+      "en": "2D; planimetry"
+    },
+    "acquisition_timing": {
+      "es": "Fin de sístole",
+      "en": "End-systole"
+    },
+    "acquisition_key": {
+      "es": "Evitar foreshortening; excluir venas pulmonares y orejuela; trazar hasta el borde del anillo mitral.",
+      "en": "Avoid foreshortening; exclude the pulmonary veins and left atrial appendage; trace to the mitral annular border."
+    },
+    "alternate_windows": {
+      "es": [],
+      "en": []
+    }
   },
   {
     "id": "lavi_meas",
     "section_id": "left_atrium",
     "order": 3,
-    "measurement": "LAVI",
+    "measurement": {
+      "es": "LAVI",
+      "en": "Left atrial volume index (LAVI)"
+    },
     "abbreviation": "LAVI",
-    "aliases": [
-      "Índice de volumen auricular izquierdo",
-      "LA volume index"
-    ],
-    "formula_or_method": "Volumen AI / superficie corporal.",
-    "normal_values": "≤34 mL/m².",
-    "interpretation_limitations": "Refleja exposición crónica a presiones de llenado elevadas, con excepciones clínicas.",
+    "aliases": {
+      "es": [
+        "Índice de volumen auricular izquierdo",
+        "LA volume index"
+      ],
+      "en": [
+        "Left atrial volume index",
+        "LA volume index"
+      ]
+    },
+    "formula_or_method": {
+      "es": "Volumen AI / superficie corporal.",
+      "en": "LA volume / body surface area."
+    },
+    "normal_values": {
+      "es": "≤34 mL/m².",
+      "en": "≤34 mL/m²."
+    },
+    "interpretation_limitations": {
+      "es": "Refleja exposición crónica a presiones de llenado elevadas, con excepciones clínicas.",
+      "en": "Reflects chronic exposure to elevated filling pressures, with clinical exceptions."
+    },
     "units": "mL/m²",
     "related_glossary_ids": [
       "lavi_term",
@@ -1108,25 +1204,63 @@
     ],
     "source_page": 5,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Derivada",
-    "preferred_view": "A4C + A2C para volumen AI",
-    "modality": "Cálculo",
-    "acquisition_timing": "Después de medir volumen AI",
-    "acquisition_key": "No requiere ventana adicional.",
-    "alternate_windows": []
+    "primary_window": {
+      "es": "Derivada",
+      "en": "Derived"
+    },
+    "preferred_view": {
+      "es": "A4C + A2C para volumen AI",
+      "en": "A4C + A2C for LA volume"
+    },
+    "modality": {
+      "es": "Cálculo",
+      "en": "Calculation"
+    },
+    "acquisition_timing": {
+      "es": "Después de medir volumen AI",
+      "en": "After measuring LA volume"
+    },
+    "acquisition_key": {
+      "es": "No requiere ventana adicional.",
+      "en": "No additional window is required."
+    },
+    "alternate_windows": {
+      "es": [],
+      "en": []
+    }
   },
   {
     "id": "dilatacion_ai_class",
     "section_id": "left_atrium",
     "order": 4,
-    "measurement": "Dilatación de AI",
-    "abbreviation": "Dilatación AI",
-    "aliases": [
-      "Clasificación de dilatación de la aurícula izquierda"
-    ],
-    "formula_or_method": "Clasificación según LAVI.",
-    "normal_values": "Leve 35-41; moderada 42-48; severa >48 mL/m².",
-    "interpretation_limitations": "La interpretación debe considerar fibrilación auricular y enfermedad valvular.",
+    "measurement": {
+      "es": "Dilatación de AI",
+      "en": "Left atrial enlargement"
+    },
+    "abbreviation": {
+      "es": "Dilatación AI",
+      "en": "LA enlargement"
+    },
+    "aliases": {
+      "es": [
+        "Clasificación de dilatación de la aurícula izquierda"
+      ],
+      "en": [
+        "Left atrial enlargement classification"
+      ]
+    },
+    "formula_or_method": {
+      "es": "Clasificación según LAVI.",
+      "en": "Classification according to LAVI."
+    },
+    "normal_values": {
+      "es": "Leve 35-41; moderada 42-48; severa >48 mL/m².",
+      "en": "Mild 35-41; moderate 42-48; severe >48 mL/m²."
+    },
+    "interpretation_limitations": {
+      "es": "La interpretación debe considerar fibrilación auricular y enfermedad valvular.",
+      "en": "Interpretation should consider atrial fibrillation and valvular disease."
+    },
     "units": "mL/m²",
     "related_glossary_ids": [
       "lavi_term",
@@ -1134,26 +1268,65 @@
     ],
     "source_page": 5,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Derivada",
-    "preferred_view": "A4C + A2C para LAVI",
-    "modality": "Clasificación",
-    "acquisition_timing": "Después de calcular LAVI",
-    "acquisition_key": "No requiere ventana adicional.",
-    "alternate_windows": []
+    "primary_window": {
+      "es": "Derivada",
+      "en": "Derived"
+    },
+    "preferred_view": {
+      "es": "A4C + A2C para LAVI",
+      "en": "A4C + A2C for LAVI"
+    },
+    "modality": {
+      "es": "Clasificación",
+      "en": "Classification"
+    },
+    "acquisition_timing": {
+      "es": "Después de calcular LAVI",
+      "en": "After calculating LAVI"
+    },
+    "acquisition_key": {
+      "es": "No requiere ventana adicional.",
+      "en": "No additional window is required."
+    },
+    "alternate_windows": {
+      "es": [],
+      "en": []
+    }
   },
   {
     "id": "la_strain_reservoir",
     "section_id": "left_atrium",
     "order": 5,
-    "measurement": "Strain reservorio de AI",
-    "abbreviation": "LA Strain Reservorio",
-    "aliases": [
-      "Strain de la aurícula izquierda",
-      "LA reservoir strain"
-    ],
-    "formula_or_method": "Speckle tracking durante la phase de reservorio.",
-    "normal_values": "Habitualmente >18-23%; ≤18% es anormal.",
-    "interpretation_limitations": "Dependiente del software y de la calidad del seguimiento miocárdico.",
+    "measurement": {
+      "es": "Strain reservorio de AI",
+      "en": "Left atrial reservoir strain"
+    },
+    "abbreviation": {
+      "es": "LA Strain Reservorio",
+      "en": "LA reservoir strain"
+    },
+    "aliases": {
+      "es": [
+        "Strain de la aurícula izquierda",
+        "LA reservoir strain"
+      ],
+      "en": [
+        "Left atrial strain",
+        "LA reservoir strain"
+      ]
+    },
+    "formula_or_method": {
+      "es": "Speckle tracking durante la phase de reservorio.",
+      "en": "Speckle tracking during the reservoir phase."
+    },
+    "normal_values": {
+      "es": "Habitualmente >18-23%; ≤18% es anormal.",
+      "en": "Usually >18-23%; ≤18% is abnormal."
+    },
+    "interpretation_limitations": {
+      "es": "Dependiente del software y de la calidad del seguimiento miocárdico.",
+      "en": "Dependent on software and myocardial tracking quality."
+    },
     "units": "%",
     "related_glossary_ids": [
       "la_strain_reservoir_term",
@@ -1161,12 +1334,30 @@
     ],
     "source_page": 5,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Apical",
-    "preferred_view": "A4C + A2C dedicadas a AI",
-    "modality": "Speckle tracking 2D",
-    "acquisition_timing": "Ciclo completo",
-    "acquisition_key": "Optimizar la pared auricular, evitar foreshortening y usar una referencia temporal consistente.",
-    "alternate_windows": []
+    "primary_window": {
+      "es": "Apical",
+      "en": "Apical"
+    },
+    "preferred_view": {
+      "es": "A4C + A2C dedicadas a AI",
+      "en": "Dedicated LA A4C + A2C views"
+    },
+    "modality": {
+      "es": "Speckle tracking 2D",
+      "en": "2D speckle tracking"
+    },
+    "acquisition_timing": {
+      "es": "Ciclo completo",
+      "en": "Full cardiac cycle"
+    },
+    "acquisition_key": {
+      "es": "Optimizar la pared auricular, evitar foreshortening y usar una referencia temporal consistente.",
+      "en": "Optimize visualization of the atrial wall, avoid foreshortening, and use a consistent temporal reference."
+    },
+    "alternate_windows": {
+      "es": [],
+      "en": []
+    }
   },
   {
     "id": "onda_e_mitral",
