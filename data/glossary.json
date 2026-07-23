@@ -1,16 +1,36 @@
 [
   {
     "id": "a4c",
-    "category": "Términos técnicos y unidades",
+    "category": {
+      "es": "Términos técnicos y unidades",
+      "en": "Technical terms and units"
+    },
     "order": 1,
-    "term": "A4C / A2C",
-    "aliases": [
-      "Vistas apicales de cuatro y dos cámaras",
-      "Apical four chamber",
-      "Apical two chamber"
-    ],
-    "definition": "Vistas apicales de cuatro y dos cámaras.",
-    "acquisition_utility_limitation": "Se utilizan para Simpson biplano, volumen auricular y evaluación segmentaria.",
+    "term": {
+      "es": "A4C / A2C",
+      "en": "A4C / A2C"
+    },
+    "aliases": {
+      "es": [
+        "Vistas apicales de cuatro y dos cámaras",
+        "Apical four chamber",
+        "Apical two chamber"
+      ],
+      "en": [
+        "Apical four-chamber view",
+        "Apical two-chamber view",
+        "A4C",
+        "A2C"
+      ]
+    },
+    "definition": {
+      "es": "Vistas apicales de cuatro y dos cámaras.",
+      "en": "Apical four and two-chamber views."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Se utilizan para Simpson biplano, volumen auricular y evaluación segmentaria.",
+      "en": "Used for biplane Simpson's method, atrial volume, and segment assessment."
+    },
     "related_measurement_ids": [
       "vtdvi",
       "vtsvi_meas",
@@ -23,15 +43,33 @@
   },
   {
     "id": "dtdvi_term",
-    "category": "Ventrículo izquierdo",
+    "category": {
+      "es": "Ventrículo izquierdo",
+      "en": "Left ventricle"
+    },
     "order": 2,
-    "term": "DTDVI / LVIDd",
-    "aliases": [
-      "LVIDd",
-      "Diámetro telediastólico del ventrículo izquierdo"
-    ],
-    "definition": "Diámetro interno del ventrículo izquierdo al final de la diástole.",
-    "acquisition_utility_limitation": "Representa el tamaño lineal del VI cuando se encuentra con mayor llenado.",
+    "term": {
+      "es": "DTDVI / LVIDd",
+      "en": "DTDVI / LVIDd"
+    },
+    "aliases": {
+      "es": [
+        "LVIDd",
+        "Diámetro telediastólico del ventrículo izquierdo"
+      ],
+      "en": [
+        "LVIDd",
+        "Left ventricular internal diameter in diastole"
+      ]
+    },
+    "definition": {
+      "es": "Diámetro interno del ventrículo izquierdo al final de la diástole.",
+      "en": "Left ventricular internal diameter at end-diastole."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Representa el tamaño lineal del VI cuando se encuentra con mayor llenado.",
+      "en": "Represents the linear size of the LV when it is most filled."
+    },
     "related_measurement_ids": [
       "dtdvi"
     ],
@@ -40,15 +78,33 @@
   },
   {
     "id": "dtsvi_term",
-    "category": "Ventrículo izquierdo",
+    "category": {
+      "es": "Ventrículo izquierdo",
+      "en": "Left ventricle"
+    },
     "order": 3,
-    "term": "DTSVI / LVIDs",
-    "aliases": [
-      "LVIDs",
-      "Diámetro telesistólico del ventrículo izquierdo"
-    ],
-    "definition": "Diámetro interno del ventrículo izquierdo al final de la sístole.",
-    "acquisition_utility_limitation": "Refleja el tamaño residual del VI después de la contracción.",
+    "term": {
+      "es": "DTSVI / LVIDs",
+      "en": "DTSVI / LVIDs"
+    },
+    "aliases": {
+      "es": [
+        "LVIDs",
+        "Diámetro telesistólico del ventrículo izquierdo"
+      ],
+      "en": [
+        "LVIDs",
+        "Left ventricular internal diameter in systole"
+      ]
+    },
+    "definition": {
+      "es": "Diámetro interno del ventrículo izquierdo al final de la sístole.",
+      "en": "Left ventricular internal diameter at end-systole."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Refleja el tamaño residual del VI después de la contracción.",
+      "en": "Reflects the residual size of the LV after contraction."
+    },
     "related_measurement_ids": [
       "dtsvi"
     ],
@@ -57,14 +113,32 @@
   },
   {
     "id": "vtdvi_term",
-    "category": "Ventrículo izquierdo",
+    "category": {
+      "es": "Ventrículo izquierdo",
+      "en": "Left ventricle"
+    },
     "order": 4,
-    "term": "VTDVI",
-    "aliases": [
-      "Volumen telediastólico del VI"
-    ],
-    "definition": "Volumen telediastólico del VI.",
-    "acquisition_utility_limitation": "Volumen contenido en el VI antes de la eyección; es el denominador de la FEVI.",
+    "term": {
+      "es": "VTDVI",
+      "en": "LVEDV"
+    },
+    "aliases": {
+      "es": [
+        "Volumen telediastólico del VI"
+      ],
+      "en": [
+        "LVEDV",
+        "Left ventricular end-diastolic volume"
+      ]
+    },
+    "definition": {
+      "es": "Volumen telediastólico del VI.",
+      "en": "Left ventricular end-diastolic volume."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Volumen contenido en el VI antes de la eyección; es el denominador de la FEVI.",
+      "en": "Volume contained in the LV before ejection; it is the denominator of LVEF."
+    },
     "related_measurement_ids": [
       "vtdvi",
       "vtdvi_indexed"
@@ -74,14 +148,32 @@
   },
   {
     "id": "vtsvi_term",
-    "category": "Ventrículo izquierdo",
+    "category": {
+      "es": "Ventrículo izquierdo",
+      "en": "Left ventricle"
+    },
     "order": 5,
-    "term": "VTSVI",
-    "aliases": [
-      "Volumen telesistólico del VI"
-    ],
-    "definition": "Volumen telesistólico del VI.",
-    "acquisition_utility_limitation": "Volumen que permanece en el VI después de la eyección.",
+    "term": {
+      "es": "VTSVI",
+      "en": "LVESV"
+    },
+    "aliases": {
+      "es": [
+        "Volumen telesistólico del VI"
+      ],
+      "en": [
+        "LVESV",
+        "Left ventricular end-systolic volume"
+      ]
+    },
+    "definition": {
+      "es": "Volumen telesistólico del VI.",
+      "en": "Left ventricular end-systolic volume."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Volumen que permanece en el VI después de la eyección.",
+      "en": "Volume remaining in the LV after ejection."
+    },
     "related_measurement_ids": [
       "vtsvi_meas",
       "vtsvi_indexed"
@@ -91,15 +183,33 @@
   },
   {
     "id": "fevi_term",
-    "category": "Ventrículo izquierdo",
+    "category": {
+      "es": "Ventrículo izquierdo",
+      "en": "Left ventricle"
+    },
     "order": 6,
-    "term": "FEVI",
-    "aliases": [
-      "Fracción de eyección del ventrículo izquierdo",
-      "LVEF"
-    ],
-    "definition": "Fracción de eyección del ventrículo izquierdo.",
-    "acquisition_utility_limitation": "Porcentaje del VTDVI expulsado en cada latido; mide función sistólica global, no contractilidad pura.",
+    "term": {
+      "es": "FEVI",
+      "en": "LVEF"
+    },
+    "aliases": {
+      "es": [
+        "Fracción de eyección del ventrículo izquierdo",
+        "LVEF"
+      ],
+      "en": [
+        "LVEF",
+        "Left ventricular ejection fraction"
+      ]
+    },
+    "definition": {
+      "es": "Fracción de eyección del ventrículo izquierdo.",
+      "en": "Left ventricular ejection fraction."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Porcentaje del VTDVI expulsado en cada latido; mide función sistólica global, no contractilidad pura.",
+      "en": "Percentage of LVEDV ejected in each beat; measures global systolic function, not pure contractility."
+    },
     "related_measurement_ids": [
       "fevi"
     ],
@@ -108,14 +218,32 @@
   },
   {
     "id": "fraccion_acortamiento_term",
-    "category": "Ventrículo izquierdo",
+    "category": {
+      "es": "Ventrículo izquierdo",
+      "en": "Left ventricle"
+    },
     "order": 7,
-    "term": "Fracción de acortamiento",
-    "aliases": [
-      "Fractional shortening"
-    ],
-    "definition": "Porcentaje de reducción del diámetro del VI entre diástole y sístole.",
-    "acquisition_utility_limitation": "Es una medición lineal rápida, menos fiable con alteraciones segmentarias.",
+    "term": {
+      "es": "Fracción de acortamiento",
+      "en": "Fractional shortening"
+    },
+    "aliases": {
+      "es": [
+        "Fractional shortening"
+      ],
+      "en": [
+        "Fractional shortening",
+        "FS"
+      ]
+    },
+    "definition": {
+      "es": "Porcentaje de reducción del diámetro del VI entre diástole y sístole.",
+      "en": "Percentage reduction of LV diameter between diastole and systole."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Es una medición lineal rápida, menos fiable con alteraciones segmentarias.",
+      "en": "A quick linear measurement, less reliable in the presence of regional wall motion abnormalities."
+    },
     "related_measurement_ids": [
       "fraccion_acortamiento_meas"
     ],
@@ -124,15 +252,33 @@
   },
   {
     "id": "epss_term",
-    "category": "Ventrículo izquierdo",
+    "category": {
+      "es": "Ventrículo izquierdo",
+      "en": "Left ventricle"
+    },
     "order": 8,
-    "term": "EPSS",
-    "aliases": [
-      "Separación punto E-septo",
-      "E-point septal separation"
-    ],
-    "definition": "Separación entre el punto E de la valva mitral anterior y el septo interventricular.",
-    "acquisition_utility_limitation": "Una distancia aumentada sugiere menor apertura mitral relativa o dilatación/disfunción del VI.",
+    "term": {
+      "es": "EPSS",
+      "en": "EPSS"
+    },
+    "aliases": {
+      "es": [
+        "Separación punto E-septo",
+        "E-point septal separation"
+      ],
+      "en": [
+        "E-point septal separation",
+        "EPSS"
+      ]
+    },
+    "definition": {
+      "es": "Separación entre el punto E de la valva mitral anterior y el septo interventricular.",
+      "en": "Separation between the E-point of the anterior mitral leaflet and the interventricular septum."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Una distancia aumentada sugiere menor apertura mitral relativa o dilatación/disfunción del VI.",
+      "en": "An increased distance suggests reduced relative mitral opening or LV dilation/dysfunction."
+    },
     "related_measurement_ids": [
       "epss"
     ],
@@ -141,15 +287,33 @@
   },
   {
     "id": "mapse_term",
-    "category": "Ventrículo izquierdo",
+    "category": {
+      "es": "Ventrículo izquierdo",
+      "en": "Left ventricle"
+    },
     "order": 9,
-    "term": "MAPSE",
-    "aliases": [
-      "Excursión sistólica del plano del anillo mitral",
-      "Mitral annular plane systolic excursion"
-    ],
-    "definition": "Excursión sistólica del plano del anillo mitral.",
-    "acquisition_utility_limitation": "Cuantifica el desplazamiento longitudinal del anillo hacia el ápex durante la sístole.",
+    "term": {
+      "es": "MAPSE",
+      "en": "MAPSE"
+    },
+    "aliases": {
+      "es": [
+        "Excursión sistólica del plano del anillo mitral",
+        "Mitral annular plane systolic excursion"
+      ],
+      "en": [
+        "Mitral annular plane systolic excursion",
+        "MAPSE"
+      ]
+    },
+    "definition": {
+      "es": "Excursión sistólica del plano del anillo mitral.",
+      "en": "Mitral annular plane systolic excursion."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Cuantifica el desplazamiento longitudinal del anillo hacia el ápex durante la sístole.",
+      "en": "Quantifies the longitudinal displacement of the annulus toward the apex during systole."
+    },
     "related_measurement_ids": [
       "mapse"
     ],
@@ -158,15 +322,34 @@
   },
   {
     "id": "s_prima_mitral_term",
-    "category": "Ventrículo izquierdo",
+    "category": {
+      "es": "Ventrículo izquierdo",
+      "en": "Left ventricle"
+    },
     "order": 10,
-    "term": "s' mitral",
-    "aliases": [
-      "s' mitral",
-      "s prima mitral"
-    ],
-    "definition": "Velocidad sistólica del anillo mitral por Doppler tisular.",
-    "acquisition_utility_limitation": "Marcador de la función longitudinal del VI.",
+    "term": {
+      "es": "s' mitral",
+      "en": "Mitral s'"
+    },
+    "aliases": {
+      "es": [
+        "s' mitral",
+        "s prima mitral"
+      ],
+      "en": [
+        "Mitral s'",
+        "Mitral s wave",
+        "s' mitral"
+      ]
+    },
+    "definition": {
+      "es": "Velocidad sistólica del anillo mitral por Doppler tisular.",
+      "en": "Systolic velocity of the mitral annulus by tissue Doppler."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Marcador de la función longitudinal del VI.",
+      "en": "Marker of LV longitudinal function."
+    },
     "related_measurement_ids": [
       "s_prima_mitral"
     ],
@@ -175,15 +358,34 @@
   },
   {
     "id": "gls_term",
-    "category": "Ventrículo izquierdo",
+    "category": {
+      "es": "Ventrículo izquierdo",
+      "en": "Left ventricle"
+    },
     "order": 11,
-    "term": "GLS",
-    "aliases": [
-      "Strain longitudinal global del VI",
-      "Global longitudinal strain"
-    ],
-    "definition": "Strain longitudinal global del VI.",
-    "acquisition_utility_limitation": "Porcentaje de deformación longitudinal; valores más negativos representan mayor acortamiento.",
+    "term": {
+      "es": "GLS",
+      "en": "GLS"
+    },
+    "aliases": {
+      "es": [
+        "Strain longitudinal global del VI",
+        "Global longitudinal strain"
+      ],
+      "en": [
+        "Global longitudinal strain",
+        "GLS",
+        "LV GLS"
+      ]
+    },
+    "definition": {
+      "es": "Strain longitudinal global del VI.",
+      "en": "LV global longitudinal strain."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Porcentaje de deformación longitudinal; valores más negativos representan mayor acortamiento.",
+      "en": "Percentage of longitudinal deformation; more negative values represent greater shortening."
+    },
     "related_measurement_ids": [
       "gls_vi"
     ],
@@ -192,15 +394,33 @@
   },
   {
     "id": "wmsi_term",
-    "category": "Ventrículo izquierdo",
+    "category": {
+      "es": "Ventrículo izquierdo",
+      "en": "Left ventricle"
+    },
     "order": 12,
-    "term": "WMSI",
-    "aliases": [
-      "Índice de puntuación de movilidad parietal",
-      "Wall motion score index"
-    ],
-    "definition": "Índice de puntuación de movilidad parietal.",
-    "acquisition_utility_limitation": "Promedio de la puntuación de los segmentos; 1 es normal y valores mayores indican alteración regional.",
+    "term": {
+      "es": "WMSI",
+      "en": "WMSI"
+    },
+    "aliases": {
+      "es": [
+        "Índice de puntuación de movilidad parietal",
+        "Wall motion score index"
+      ],
+      "en": [
+        "Wall motion score index",
+        "WMSI"
+      ]
+    },
+    "definition": {
+      "es": "Índice de puntuación de movilidad parietal.",
+      "en": "Wall motion score index."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Promedio de la puntuación de los segmentos; 1 es normal y valores mayores indican alteración regional.",
+      "en": "Average score of segments; 1 is normal, and higher values indicate regional abnormalities."
+    },
     "related_measurement_ids": [
       "wmsi"
     ],
@@ -209,14 +429,33 @@
   },
   {
     "id": "simpson_biplano",
-    "category": "Ventrículo izquierdo",
+    "category": {
+      "es": "Ventrículo izquierdo",
+      "en": "Left ventricle"
+    },
     "order": 13,
-    "term": "Simpson biplano",
-    "aliases": [
-      "Método de discos de Simpson"
-    ],
-    "definition": "Método de discos para calcular volúmenes ventriculares desde A4C y A2C.",
-    "acquisition_utility_limitation": "Reduce supuestos geométricos, pero exige buena delimitación endocárdica y evitar acortamiento apical.",
+    "term": {
+      "es": "Simpson biplano",
+      "en": "Biplane Simpson"
+    },
+    "aliases": {
+      "es": [
+        "Método de discos de Simpson"
+      ],
+      "en": [
+        "Simpson's rule",
+        "Simpson's biplane method",
+        "Method of discs"
+      ]
+    },
+    "definition": {
+      "es": "Método de discos para calcular volúmenes ventriculares desde A4C y A2C.",
+      "en": "Method of discs to calculate ventricular volumes from A4C and A2C views."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Reduce supuestos geométricos, pero exige buena delimitación endocárdica y evitar acortamiento apical.",
+      "en": "Reduces geometric assumptions, but requires good endocardial definition and avoiding apical foreshortening."
+    },
     "related_measurement_ids": [
       "vtdvi",
       "vtsvi_meas"
@@ -226,14 +465,32 @@
   },
   {
     "id": "ivsd_term",
-    "category": "Grosor, masa y geometría",
+    "category": {
+      "es": "Grosor, masa y geometría",
+      "en": "Thickness, mass, and geometry"
+    },
     "order": 1,
-    "term": "IVSd",
-    "aliases": [
-      "Grosor del septo interventricular en diástole"
-    ],
-    "definition": "Grosor del septo interventricular en diástole.",
-    "acquisition_utility_limitation": "Se usa para calcular masa y valorar hipertrofia.",
+    "term": {
+      "es": "IVSd",
+      "en": "IVSd"
+    },
+    "aliases": {
+      "es": [
+        "Grosor del septo interventricular en diástole"
+      ],
+      "en": [
+        "IVSd",
+        "Interventricular septal end-diastole thickness"
+      ]
+    },
+    "definition": {
+      "es": "Grosor del septo interventricular en diástole.",
+      "en": "Interventricular septum thickness in diastole."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Se usa para calcular masa y valorar hipertrofia.",
+      "en": "Used to calculate mass and assess hypertrophy."
+    },
     "related_measurement_ids": [
       "ivsd"
     ],
@@ -242,14 +499,32 @@
   },
   {
     "id": "pwtd_term",
-    "category": "Grosor, masa y geometría",
+    "category": {
+      "es": "Grosor, masa y geometría",
+      "en": "Thickness, mass, and geometry"
+    },
     "order": 2,
-    "term": "PWTd",
-    "aliases": [
-      "Grosor de la pared posterior del VI en diástole"
-    ],
-    "definition": "Grosor de la pared posterior del VI en diástole.",
-    "acquisition_utility_limitation": "Junto con IVSd y DTDVI permite calcular masa y RWT.",
+    "term": {
+      "es": "PWTd",
+      "en": "PWTd"
+    },
+    "aliases": {
+      "es": [
+        "Grosor de la pared posterior del VI en diástole"
+      ],
+      "en": [
+        "PWTd",
+        "Posterior wall end-diastole thickness"
+      ]
+    },
+    "definition": {
+      "es": "Grosor de la pared posterior del VI en diástole.",
+      "en": "LV posterior wall thickness in diastole."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Junto con IVSd y DTDVI permite calcular masa y RWT.",
+      "en": "Along with IVSd and LVIDd, allows mass and RWT calculation."
+    },
     "related_measurement_ids": [
       "pwtd"
     ],
@@ -258,14 +533,32 @@
   },
   {
     "id": "rwt_term",
-    "category": "Grosor, masa y geometría",
+    "category": {
+      "es": "Grosor, masa y geometría",
+      "en": "Thickness, mass, and geometry"
+    },
     "order": 3,
-    "term": "RWT",
-    "aliases": [
-      "Grosor relativo de pared"
-    ],
-    "definition": "Grosor relativo de pared.",
-    "acquisition_utility_limitation": "Relaciona el grosor de pared posterior con el diámetro del VI y define geometría concéntrica.",
+    "term": {
+      "es": "RWT",
+      "en": "RWT"
+    },
+    "aliases": {
+      "es": [
+        "Grosor relativo de pared"
+      ],
+      "en": [
+        "Relative wall thickness",
+        "RWT"
+      ]
+    },
+    "definition": {
+      "es": "Grosor relativo de pared.",
+      "en": "Relative wall thickness."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Relaciona el grosor de pared posterior con el diámetro del VI y define geometría concéntrica.",
+      "en": "Relates posterior wall thickness to LV diameter and defines concentric geometry."
+    },
     "related_measurement_ids": [
       "rwt_meas"
     ],
@@ -274,14 +567,32 @@
   },
   {
     "id": "masa_vi_term",
-    "category": "Grosor, masa y geometría",
+    "category": {
+      "es": "Grosor, masa y geometría",
+      "en": "Thickness, mass, and geometry"
+    },
     "order": 4,
-    "term": "Masa del VI",
-    "aliases": [
-      "Estimación de la cantidad de miocardio del VI"
-    ],
-    "definition": "Estimación de la cantidad de miocardio del VI.",
-    "acquisition_utility_limitation": "Se calcula con dimensiones lineales; debe indexarse y requiere medidas en cm.",
+    "term": {
+      "es": "Masa del VI",
+      "en": "LV Mass"
+    },
+    "aliases": {
+      "es": [
+        "Estimación de la cantidad de miocardio del VI"
+      ],
+      "en": [
+        "LV mass",
+        "Left ventricular mass"
+      ]
+    },
+    "definition": {
+      "es": "Estimación de la cantidad de miocardio del VI.",
+      "en": "Estimation of the amount of LV myocardium."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Se calcula con dimensiones lineales; debe indexarse y requiere medidas en cm.",
+      "en": "Calculated with linear dimensions; must be indexed and requires measurements in cm."
+    },
     "related_measurement_ids": [
       "masa_vi_meas"
     ],
@@ -290,14 +601,32 @@
   },
   {
     "id": "indice_masa_vi_term",
-    "category": "Grosor, masa y geometría",
+    "category": {
+      "es": "Grosor, masa y geometría",
+      "en": "Thickness, mass, and geometry"
+    },
     "order": 5,
-    "term": "Índice de masa del VI",
-    "aliases": [
-      "Masa del VI dividida por superficie corporal"
-    ],
-    "definition": "Masa del VI dividida por superficie corporal.",
-    "acquisition_utility_limitation": "Determina si existe hipertrofia ajustada al tamaño corporal.",
+    "term": {
+      "es": "Índice de masa del VI",
+      "en": "LV Mass Index"
+    },
+    "aliases": {
+      "es": [
+        "Masa del VI dividida por superficie corporal"
+      ],
+      "en": [
+        "LV mass index",
+        "LVMI"
+      ]
+    },
+    "definition": {
+      "es": "Masa del VI dividida por superficie corporal.",
+      "en": "LV mass divided by body surface area."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Determina si existe hipertrofia ajustada al tamaño corporal.",
+      "en": "Determines if hypertrophy is present adjusted for body size."
+    },
     "related_measurement_ids": [
       "lv_mass_index"
     ],
@@ -306,14 +635,31 @@
   },
   {
     "id": "remodelado_concentrico",
-    "category": "Grosor, masa y geometría",
+    "category": {
+      "es": "Grosor, masa y geometría",
+      "en": "Thickness, mass, and geometry"
+    },
     "order": 6,
-    "term": "Remodelado concéntrico",
-    "aliases": [
-      "Patrón de remodelado concéntrico del VI"
-    ],
-    "definition": "RWT aumentado con masa VI normal.",
-    "acquisition_utility_limitation": "Describe paredes relativamente gruesas sin cumplir criterios de hipertrofia.",
+    "term": {
+      "es": "Remodelado concéntrico",
+      "en": "Concentric remodeling"
+    },
+    "aliases": {
+      "es": [
+        "Patrón de remodelado concéntrico del VI"
+      ],
+      "en": [
+        "Concentric remodeling"
+      ]
+    },
+    "definition": {
+      "es": "RWT aumentado con masa VI normal.",
+      "en": "Increased RWT with normal LV mass."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Describe paredes relativamente gruesas sin cumplir criterios de hipertrofia.",
+      "en": "Describes relatively thick walls without meeting hypertrophy criteria."
+    },
     "related_measurement_ids": [
       "geometria_vi_meas"
     ],
@@ -322,14 +668,31 @@
   },
   {
     "id": "hipertrofia_concentrica",
-    "category": "Grosor, masa y geometría",
+    "category": {
+      "es": "Grosor, masa y geometría",
+      "en": "Thickness, mass, and geometry"
+    },
     "order": 7,
-    "term": "Hipertrofia concéntrica",
-    "aliases": [
-      "Patrón de hipertrofia concéntrica del VI"
-    ],
-    "definition": "Masa VI aumentada y RWT aumentado.",
-    "acquisition_utility_limitation": "Patrón frecuente en sobrecarga crónica de presión.",
+    "term": {
+      "es": "Hipertrofia concéntrica",
+      "en": "Concentric hypertrophy"
+    },
+    "aliases": {
+      "es": [
+        "Patrón de hipertrofia concéntrica del VI"
+      ],
+      "en": [
+        "Concentric hypertrophy"
+      ]
+    },
+    "definition": {
+      "es": "Masa VI aumentada y RWT aumentado.",
+      "en": "Increased LV mass and increased RWT."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Patrón frecuente en sobrecarga crónica de presión.",
+      "en": "Frequent pattern in chronic pressure overload."
+    },
     "related_measurement_ids": [
       "geometria_vi_meas"
     ],
@@ -338,14 +701,31 @@
   },
   {
     "id": "hipertrofia_excentrica",
-    "category": "Grosor, masa y geometría",
+    "category": {
+      "es": "Grosor, masa y geometría",
+      "en": "Thickness, mass, and geometry"
+    },
     "order": 8,
-    "term": "Hipertrofia excéntrica",
-    "aliases": [
-      "Patrón de hipertrofia excéntrica del VI"
-    ],
-    "definition": "Masa VI aumentada con RWT normal o bajo.",
-    "acquisition_utility_limitation": "Patrón asociado con dilatación y sobrecarga de volumen.",
+    "term": {
+      "es": "Hipertrofia excéntrica",
+      "en": "Eccentric hypertrophy"
+    },
+    "aliases": {
+      "es": [
+        "Patrón de hipertrofia excéntrica del VI"
+      ],
+      "en": [
+        "Eccentric hypertrophy"
+      ]
+    },
+    "definition": {
+      "es": "Masa VI aumentada con RWT normal o bajo.",
+      "en": "Increased LV mass with normal or low RWT."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Patrón asociado con dilatación y sobrecarga de volumen.",
+      "en": "Pattern associated with dilation and volume overload."
+    },
     "related_measurement_ids": [
       "geometria_vi_meas"
     ],
@@ -354,15 +734,33 @@
   },
   {
     "id": "tsvi_term",
-    "category": "Flujo y gasto cardiaco",
+    "category": {
+      "es": "Flujo y gasto cardiaco",
+      "en": "Flow and cardiac output"
+    },
     "order": 1,
-    "term": "TSVI / LVOT",
-    "aliases": [
-      "LVOT",
-      "Tracto de salida del ventrículo izquierdo"
-    ],
-    "definition": "Tracto de salida del ventrículo izquierdo.",
-    "acquisition_utility_limitation": "Zona entre el VI y la válvula aórtica donde se mide diámetro y VTI para calcular volumen sistólico.",
+    "term": {
+      "es": "TSVI / LVOT",
+      "en": "TSVI / LVOT"
+    },
+    "aliases": {
+      "es": [
+        "LVOT",
+        "Tracto de salida del ventrículo izquierdo"
+      ],
+      "en": [
+        "LVOT",
+        "Left ventricular outflow tract"
+      ]
+    },
+    "definition": {
+      "es": "Tracto de salida del ventrículo izquierdo.",
+      "en": "Left ventricular outflow tract."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Zona entre el VI y la válvula aórtica donde se mide diámetro y VTI para calcular volumen sistólico.",
+      "en": "Zone between the LV and the aortic valve where diameter and VTI are measured to calculate stroke volume."
+    },
     "related_measurement_ids": [
       "area_tsvi_meas",
       "vti_tsvi_meas",
@@ -373,14 +771,32 @@
   },
   {
     "id": "vti_term",
-    "category": "Flujo y gasto cardiaco",
+    "category": {
+      "es": "Flujo y gasto cardiaco",
+      "en": "Flow and cardiac output"
+    },
     "order": 2,
-    "term": "VTI",
-    "aliases": [
-      "Integral velocidad-tiempo"
-    ],
-    "definition": "Integral velocidad-tiempo.",
-    "acquisition_utility_limitation": "Distancia sistólica recorrida por una columna de sangre; corresponde al área bajo la curva Doppler.",
+    "term": {
+      "es": "VTI",
+      "en": "VTI"
+    },
+    "aliases": {
+      "es": [
+        "Integral velocidad-tiempo"
+      ],
+      "en": [
+        "Velocity time integral",
+        "VTI"
+      ]
+    },
+    "definition": {
+      "es": "Integral velocidad-tiempo.",
+      "en": "Velocity-time integral."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Distancia sistólica recorrida por una columna de sangre; corresponde al área bajo la curva Doppler.",
+      "en": "Systolic distance traveled by a column of blood; corresponds to the area under the Doppler curve."
+    },
     "related_measurement_ids": [
       "vti_tsvi_meas",
       "vti_tsvd_meas",
@@ -391,14 +807,32 @@
   },
   {
     "id": "area_tsvi_term",
-    "category": "Flujo y gasto cardiaco",
+    "category": {
+      "es": "Flujo y gasto cardiaco",
+      "en": "Flow and cardiac output"
+    },
     "order": 3,
-    "term": "Área del TSVI",
-    "aliases": [
-      "Área transversal del TSVI"
-    ],
-    "definition": "Área transversal calculada a partir del diámetro del TSVI.",
-    "acquisition_utility_limitation": "Se asume circular; pequeños errores del diámetro producen grandes errores del área.",
+    "term": {
+      "es": "Área del TSVI",
+      "en": "LVOT Area"
+    },
+    "aliases": {
+      "es": [
+        "Área transversal del TSVI"
+      ],
+      "en": [
+        "LVOT area",
+        "LVOT cross-sectional area"
+      ]
+    },
+    "definition": {
+      "es": "Área transversal calculada a partir del diámetro del TSVI.",
+      "en": "Cross-sectional area calculated from the LVOT diameter."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Se asume circular; pequeños errores del diámetro producen grandes errores del área.",
+      "en": "Assumed circular; small errors in diameter lead to large errors in area."
+    },
     "related_measurement_ids": [
       "area_tsvi_meas"
     ],
@@ -407,15 +841,33 @@
   },
   {
     "id": "volumen_sistolico_term",
-    "category": "Flujo y gasto cardiaco",
+    "category": {
+      "es": "Flujo y gasto cardiaco",
+      "en": "Flow and cardiac output"
+    },
     "order": 4,
-    "term": "Volumen sistólico",
-    "aliases": [
-      "Stroke volume",
-      "Volumen latido"
-    ],
-    "definition": "Volumen expulsado por un ventrículo en cada latido.",
-    "acquisition_utility_limitation": "Se calcula como área del tracto de salida por VTI.",
+    "term": {
+      "es": "Volumen sistólico",
+      "en": "Stroke volume"
+    },
+    "aliases": {
+      "es": [
+        "Stroke volume",
+        "Volumen latido"
+      ],
+      "en": [
+        "Stroke volume",
+        "SV"
+      ]
+    },
+    "definition": {
+      "es": "Volumen expulsado por un ventrículo en cada latido.",
+      "en": "Volume ejected by a ventricle in each heartbeat."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Se calcula como área del tracto de salida por VTI.",
+      "en": "Calculated as outflow tract area multiplied by VTI."
+    },
     "related_measurement_ids": [
       "volumen_sistolico_meas",
       "sv_index"
@@ -425,14 +877,32 @@
   },
   {
     "id": "indice_volumen_sistolico_term",
-    "category": "Flujo y gasto cardiaco",
+    "category": {
+      "es": "Flujo y gasto cardiaco",
+      "en": "Flow and cardiac output"
+    },
     "order": 5,
-    "term": "Índice de volumen sistólico",
-    "aliases": [
-      "SVI"
-    ],
-    "definition": "Volumen sistólico ajustado por superficie corporal.",
-    "acquisition_utility_limitation": "Permite identificar bajo flujo independientemente del tamaño del paciente.",
+    "term": {
+      "es": "Índice de volumen sistólico",
+      "en": "Stroke volume index"
+    },
+    "aliases": {
+      "es": [
+        "SVI"
+      ],
+      "en": [
+        "Stroke volume index",
+        "SVI"
+      ]
+    },
+    "definition": {
+      "es": "Volumen sistólico ajustado por superficie corporal.",
+      "en": "Stroke volume indexed by body surface area."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Permite identificar bajo flujo independientemente del tamaño del paciente.",
+      "en": "Allows identification of low flow independently of patient size."
+    },
     "related_measurement_ids": [
       "sv_index"
     ],
@@ -441,14 +911,32 @@
   },
   {
     "id": "gasto_cardiaco_term",
-    "category": "Flujo y gasto cardiaco",
+    "category": {
+      "es": "Flujo y gasto cardiaco",
+      "en": "Flow and cardiac output"
+    },
     "order": 6,
-    "term": "Gasto cardiaco",
-    "aliases": [
-      "Cardiac output"
-    ],
-    "definition": "Volumen de sangre bombeado por minuto.",
-    "acquisition_utility_limitation": "Producto del volumen sistólico por la frecuencia cardiaca.",
+    "term": {
+      "es": "Gasto cardiaco",
+      "en": "Cardiac output"
+    },
+    "aliases": {
+      "es": [
+        "Cardiac output"
+      ],
+      "en": [
+        "Cardiac output",
+        "CO"
+      ]
+    },
+    "definition": {
+      "es": "Volumen de sangre bombeado por minuto.",
+      "en": "Volume of blood pumped per minute."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Producto del volumen sistólico por la frecuencia cardiaca.",
+      "en": "Product of stroke volume multiplied by heart rate."
+    },
     "related_measurement_ids": [
       "gasto_cardiaco_meas",
       "cardiac_index"
@@ -458,14 +946,32 @@
   },
   {
     "id": "indice_cardiaco_term",
-    "category": "Flujo y gasto cardiaco",
+    "category": {
+      "es": "Flujo y gasto cardiaco",
+      "en": "Flow and cardiac output"
+    },
     "order": 7,
-    "term": "Índice cardiaco",
-    "aliases": [
-      "Cardiac index"
-    ],
-    "definition": "Gasto cardiaco ajustado por superficie corporal.",
-    "acquisition_utility_limitation": "Facilita comparación entre pacientes de diferente tamaño.",
+    "term": {
+      "es": "Índice cardiaco",
+      "en": "Cardiac index"
+    },
+    "aliases": {
+      "es": [
+        "Cardiac index"
+      ],
+      "en": [
+        "Cardiac index",
+        "CI"
+      ]
+    },
+    "definition": {
+      "es": "Gasto cardiaco ajustado por superficie corporal.",
+      "en": "Cardiac output adjusted by body surface area."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Facilita comparación entre pacientes de diferente tamaño.",
+      "en": "Facilitates comparison between patients of different sizes."
+    },
     "related_measurement_ids": [
       "cardiac_index"
     ],
@@ -474,15 +980,33 @@
   },
   {
     "id": "plr_term",
-    "category": "Flujo y gasto cardiaco",
+    "category": {
+      "es": "Flujo y gasto cardiaco",
+      "en": "Flow and cardiac output"
+    },
     "order": 8,
-    "term": "Elevación pasiva de piernas",
-    "aliases": [
-      "Passive leg raising",
-      "PLR"
-    ],
-    "definition": "Maniobra reversible de autotransfusión.",
-    "acquisition_utility_limitation": "El aumento del VTI tras la maniobra puede sugerir respuesta a precarga.",
+    "term": {
+      "es": "Elevación pasiva de piernas",
+      "en": "Passive leg raising"
+    },
+    "aliases": {
+      "es": [
+        "Passive leg raising",
+        "PLR"
+      ],
+      "en": [
+        "Passive leg raising",
+        "PLR"
+      ]
+    },
+    "definition": {
+      "es": "Maniobra reversible de autotransfusión.",
+      "en": "Reversible autotransfusion maneuver."
+    },
+    "acquisition_utility_limitation": {
+      "es": "El aumento del VTI tras la maniobra puede sugerir respuesta a precarga.",
+      "en": "An increase in VTI after the maneuver suggests preload responsiveness."
+    },
     "related_measurement_ids": [
       "plr_vti_change"
     ],
@@ -491,15 +1015,33 @@
   },
   {
     "id": "rvs_term",
-    "category": "Flujo y gasto cardiaco",
+    "category": {
+      "es": "Flujo y gasto cardiaco",
+      "en": "Flow and cardiac output"
+    },
     "order": 9,
-    "term": "RVS",
-    "aliases": [
-      "Resistencia vascular sistémica",
-      "SVR"
-    ],
-    "definition": "Resistencia vascular sistémica.",
-    "acquisition_utility_limitation": "Estimación de la poscarga vascular sistémica a partir de presión y gasto cardiaco.",
+    "term": {
+      "es": "RVS",
+      "en": "SVR"
+    },
+    "aliases": {
+      "es": [
+        "Resistencia vascular sistémica",
+        "SVR"
+      ],
+      "en": [
+        "Systemic vascular resistance",
+        "SVR"
+      ]
+    },
+    "definition": {
+      "es": "Resistencia vascular sistémica.",
+      "en": "Systemic vascular resistance."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Estimación de la poscarga vascular sistémica a partir de presión y gasto cardiaco.",
+      "en": "Estimation of systemic vascular afterload from pressure and cardiac output."
+    },
     "related_measurement_ids": [
       "rvs_meas"
     ],
@@ -508,14 +1050,32 @@
   },
   {
     "id": "irvs_term",
-    "category": "Flujo y gasto cardiaco",
+    "category": {
+      "es": "Flujo y gasto cardiaco",
+      "en": "Flow and cardiac output"
+    },
     "order": 10,
-    "term": "IRVS",
-    "aliases": [
-      "Índice de resistencia vascular sistémica"
-    ],
-    "definition": "Índice de resistencia vascular sistémica.",
-    "acquisition_utility_limitation": "RVS expresada en relación con el índice cardiaco.",
+    "term": {
+      "es": "IRVS",
+      "en": "SVRI"
+    },
+    "aliases": {
+      "es": [
+        "Índice de resistencia vascular sistémica"
+      ],
+      "en": [
+        "Systemic vascular resistance index",
+        "SVRI"
+      ]
+    },
+    "definition": {
+      "es": "Índice de resistencia vascular sistémica.",
+      "en": "Systemic vascular resistance index."
+    },
+    "acquisition_utility_limitation": {
+      "es": "RVS expresada en relación con el índice cardiaco.",
+      "en": "SVR expressed in relation to the cardiac index."
+    },
     "related_measurement_ids": [
       "irvs_meas"
     ],
@@ -524,15 +1084,33 @@
   },
   {
     "id": "pam_term",
-    "category": "Flujo y gasto cardiaco",
+    "category": {
+      "es": "Flujo y gasto cardiaco",
+      "en": "Flow and cardiac output"
+    },
     "order": 11,
-    "term": "PAM",
-    "aliases": [
-      "Presión arterial media",
-      "MAP"
-    ],
-    "definition": "Presión promedio efectiva que impulsa el flujo sistémico durante el ciclo cardiaco.",
-    "acquisition_utility_limitation": "Utilizada en fórmulas de resistencias vasculares.",
+    "term": {
+      "es": "PAM",
+      "en": "MAP"
+    },
+    "aliases": {
+      "es": [
+        "Presión arterial media",
+        "MAP"
+      ],
+      "en": [
+        "Mean arterial pressure",
+        "MAP"
+      ]
+    },
+    "definition": {
+      "es": "Presión promedio efectiva que impulsa el flujo sistémico durante el ciclo cardiaco.",
+      "en": "Mean effective pressure driving systemic flow during the cardiac cycle."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Utilizada en fórmulas de resistencias vasculares.",
+      "en": "Used in formulas for vascular resistance."
+    },
     "related_measurement_ids": [
       "rvs_meas",
       "irvs_meas"
@@ -542,15 +1120,33 @@
   },
   {
     "id": "ai_term",
-    "category": "Aurícula izquierda y diastología",
+    "category": {
+      "es": "Aurícula izquierda y diastología",
+      "en": "Left atrium and diastology"
+    },
     "order": 1,
-    "term": "AI",
-    "aliases": [
-      "Aurícula izquierda",
-      "LA"
-    ],
-    "definition": "Aurícula izquierda.",
-    "acquisition_utility_limitation": "Recibe sangre de las venas pulmonares y contribuye al llenado del VI.",
+    "term": {
+      "es": "AI",
+      "en": "LA"
+    },
+    "aliases": {
+      "es": [
+        "Aurícula izquierda",
+        "LA"
+      ],
+      "en": [
+        "Left atrium",
+        "LA"
+      ]
+    },
+    "definition": {
+      "es": "Aurícula izquierda.",
+      "en": "Left atrium."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Recibe sangre de las venas pulmonares y contribuye al llenado del VI.",
+      "en": "Receives blood from pulmonary veins and contributes to LV filling."
+    },
     "related_measurement_ids": [
       "diametro_ap_ai",
       "volumen_ai_meas"
@@ -560,15 +1156,33 @@
   },
   {
     "id": "lavi_term",
-    "category": "Aurícula izquierda y diastología",
+    "category": {
+      "es": "Aurícula izquierda y diastología",
+      "en": "Left atrium and diastology"
+    },
     "order": 2,
-    "term": "LAVI",
-    "aliases": [
-      "Índice de volumen de la aurícula izquierda",
-      "Left atrial volume index"
-    ],
-    "definition": "Índice de volumen de la aurícula izquierda.",
-    "acquisition_utility_limitation": "Volumen auricular ajustado por superficie corporal; marcador de exposición crónica a presión elevada.",
+    "term": {
+      "es": "LAVI",
+      "en": "LAVI"
+    },
+    "aliases": {
+      "es": [
+        "Índice de volumen de la aurícula izquierda",
+        "Left atrial volume index"
+      ],
+      "en": [
+        "Left atrial volume index",
+        "LAVI"
+      ]
+    },
+    "definition": {
+      "es": "Índice de volumen de la aurícula izquierda.",
+      "en": "Left atrial volume index."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Volumen auricular ajustado por superficie corporal; marcador de exposición crónica a presión elevada.",
+      "en": "Atrial volume adjusted for body surface area; marker of chronic exposure to elevated pressure."
+    },
     "related_measurement_ids": [
       "lavi_meas",
       "dilatacion_ai_class",
@@ -579,15 +1193,33 @@
   },
   {
     "id": "onda_e_term",
-    "category": "Aurícula izquierda y diastología",
+    "category": {
+      "es": "Aurícula izquierda y diastología",
+      "en": "Left atrium and diastology"
+    },
     "order": 3,
-    "term": "Onda E",
-    "aliases": [
-      "Velocidad E transmitral",
-      "Llenado mitral rápido"
-    ],
-    "definition": "Velocidad del llenado mitral temprano.",
-    "acquisition_utility_limitation": "Aumenta o disminuye según relajación, gradiente AI-VI y condiciones de carga.",
+    "term": {
+      "es": "Onda E",
+      "en": "E wave"
+    },
+    "aliases": {
+      "es": [
+        "Velocidad E transmitral",
+        "Llenado mitral rápido"
+      ],
+      "en": [
+        "Mitral E wave",
+        "Early diastolic mitral velocity"
+      ]
+    },
+    "definition": {
+      "es": "Velocidad del llenado mitral temprano.",
+      "en": "Velocity of early mitral filling."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Aumenta o disminuye según relajación, gradiente AI-VI y condiciones de carga.",
+      "en": "Increases or decreases based on relaxation, LA-LV gradient, and loading conditions."
+    },
     "related_measurement_ids": [
       "onda_e_mitral",
       "relacion_e_a",
@@ -598,15 +1230,33 @@
   },
   {
     "id": "onda_a_term",
-    "category": "Aurícula izquierda y diastología",
+    "category": {
+      "es": "Aurícula izquierda y diastología",
+      "en": "Left atrium and diastology"
+    },
     "order": 4,
-    "term": "Onda A",
-    "aliases": [
-      "Velocidad A transmitral",
-      "Llenado mitral auricular"
-    ],
-    "definition": "Velocidad del llenado mitral durante contracción auricular.",
-    "acquisition_utility_limitation": "No está presente en fibrilación auricular.",
+    "term": {
+      "es": "Onda A",
+      "en": "A wave"
+    },
+    "aliases": {
+      "es": [
+        "Velocidad A transmitral",
+        "Llenado mitral auricular"
+      ],
+      "en": [
+        "Mitral A wave",
+        "Late diastolic mitral velocity"
+      ]
+    },
+    "definition": {
+      "es": "Velocidad del llenado mitral durante contracción auricular.",
+      "en": "Velocity of mitral filling during atrial contraction."
+    },
+    "acquisition_utility_limitation": {
+      "es": "No está presente en fibrilación auricular.",
+      "en": "Not present in atrial fibrillation."
+    },
     "related_measurement_ids": [
       "onda_a_mitral",
       "relacion_e_a"
@@ -616,14 +1266,32 @@
   },
   {
     "id": "relacion_e_a_term",
-    "category": "Aurícula izquierda y diastología",
+    "category": {
+      "es": "Aurícula izquierda y diastología",
+      "en": "Left atrium and diastology"
+    },
     "order": 5,
-    "term": "Relación E/A",
-    "aliases": [
-      "Cociente E/A mitral"
-    ],
-    "definition": "Cociente entre las ondas E y A.",
-    "acquisition_utility_limitation": "Describe el patrón de llenado, pero cambia con la edad y no debe interpretarse aislado.",
+    "term": {
+      "es": "Relación E/A",
+      "en": "E/A ratio"
+    },
+    "aliases": {
+      "es": [
+        "Cociente E/A mitral"
+      ],
+      "en": [
+        "E/A ratio",
+        "Mitral E/A ratio"
+      ]
+    },
+    "definition": {
+      "es": "Cociente entre las ondas E y A.",
+      "en": "Ratio between E and A waves."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Describe el patrón de llenado, pero cambia con la edad y no debe interpretarse aislado.",
+      "en": "Describes filling pattern, but changes with age and should not be interpreted in isolation."
+    },
     "related_measurement_ids": [
       "relacion_e_a"
     ],
@@ -632,15 +1300,33 @@
   },
   {
     "id": "tiempo_desaceleracion_e_term",
-    "category": "Aurícula izquierda y diastología",
+    "category": {
+      "es": "Aurícula izquierda y diastología",
+      "en": "Left atrium and diastology"
+    },
     "order": 6,
-    "term": "Tiempo de desaceleración de E",
-    "aliases": [
-      "Deceleration time of E wave",
-      "DT of E"
-    ],
-    "definition": "Tiempo en que la onda E desciende desde su pico hasta la línea basal.",
-    "acquisition_utility_limitation": "Refleja la rapidez de igualación de presiones entre AI y VI.",
+    "term": {
+      "es": "Tiempo de desaceleración de E",
+      "en": "E deceleration time"
+    },
+    "aliases": {
+      "es": [
+        "Deceleration time of E wave",
+        "DT of E"
+      ],
+      "en": [
+        "Mitral E-wave deceleration time",
+        "DT"
+      ]
+    },
+    "definition": {
+      "es": "Tiempo en que la onda E desciende desde su pico hasta la línea basal.",
+      "en": "Time for the E wave to decelerate from its peak to baseline."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Refleja la rapidez de igualación de presiones entre AI y VI.",
+      "en": "Reflects the rapidity of pressure equalization between LA and LV."
+    },
     "related_measurement_ids": [
       "tiempo_desaceleracion_e"
     ],
@@ -649,15 +1335,33 @@
   },
   {
     "id": "ivrt_term",
-    "category": "Aurícula izquierda y diastología",
+    "category": {
+      "es": "Aurícula izquierda y diastología",
+      "en": "Left atrium and diastology"
+    },
     "order": 7,
-    "term": "IVRT",
-    "aliases": [
-      "Isovolumetric relaxation time",
-      "Tiempo de relajación isovolumétrica"
-    ],
-    "definition": "Tiempo de relajación isovolumétrica.",
-    "acquisition_utility_limitation": "Intervalo entre cierre aórtico y apertura mitral, cuando el VI se relaja sin cambiar de volumen.",
+    "term": {
+      "es": "IVRT",
+      "en": "IVRT"
+    },
+    "aliases": {
+      "es": [
+        "Isovolumetric relaxation time",
+        "Tiempo de relajación isovolumétrica"
+      ],
+      "en": [
+        "Isovolumetric relaxation time",
+        "IVRT"
+      ]
+    },
+    "definition": {
+      "es": "Tiempo de relajación isovolumétrica.",
+      "en": "Isovolumetric relaxation time."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Intervalo entre cierre aórtico y apertura mitral, cuando el VI se relaja sin cambiar de volumen.",
+      "en": "Interval between aortic closure and mitral opening, when the LV relaxes without changing volume."
+    },
     "related_measurement_ids": [
       "ivrt_meas"
     ],
@@ -666,16 +1370,35 @@
   },
   {
     "id": "e_prima_term",
-    "category": "Aurícula izquierda y diastología",
+    "category": {
+      "es": "Aurícula izquierda y diastología",
+      "en": "Left atrium and diastology"
+    },
     "order": 8,
-    "term": "e'",
-    "aliases": [
-      "e prima",
-      "e' mitral tisular",
-      "velocidad diastólica del anillo mitral"
-    ],
-    "definition": "Velocidad diastólica temprana del anillo mitral por Doppler tisular.",
-    "acquisition_utility_limitation": "Marcador de relajación miocárdica relativamente menos dependiente de precarga que la onda E.",
+    "term": {
+      "es": "e'",
+      "en": "e'"
+    },
+    "aliases": {
+      "es": [
+        "e prima",
+        "e' mitral tisular",
+        "velocidad diastólica del anillo mitral"
+      ],
+      "en": [
+        "Mitral e'",
+        "Mitral e' velocity",
+        "e prima"
+      ]
+    },
+    "definition": {
+      "es": "Velocidad diastólica temprana del anillo mitral por Doppler tisular.",
+      "en": "Early diastolic velocity of the mitral annulus by tissue Doppler."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Marcador de relajación miocárdica relativamente menos dependiente de precarga que la onda E.",
+      "en": "Diastolic velocity of the mitral annulus; marker of myocardial relaxation relatively less dependent on preload."
+    },
     "related_measurement_ids": [
       "e_septal_meas",
       "e_lateral_meas"
@@ -685,14 +1408,32 @@
   },
   {
     "id": "relacion_e_e_term",
-    "category": "Aurícula izquierda y diastología",
+    "category": {
+      "es": "Aurícula izquierda y diastología",
+      "en": "Left atrium and diastology"
+    },
     "order": 9,
-    "term": "E/e'",
-    "aliases": [
-      "Cociente E/e'"
-    ],
-    "definition": "Relación entre velocidad transmitral E y velocidad tisular e'.",
-    "acquisition_utility_limitation": "Estimador indirecto de presión de llenado del VI; requiere integración con otros parámetros.",
+    "term": {
+      "es": "E/e'",
+      "en": "E/e'"
+    },
+    "aliases": {
+      "es": [
+        "Cociente E/e'"
+      ],
+      "en": [
+        "E/e' ratio",
+        "E/e' quotient"
+      ]
+    },
+    "definition": {
+      "es": "Relación entre velocidad transmitral E y velocidad tisular e'.",
+      "en": "Ratio of transmitral early velocity E to tissue velocity e'."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Estimador indirecto de presión de llenado del VI; requiere integración con otros parámetros.",
+      "en": "Indirect estimator of LV filling pressure; requires integration with other parameters."
+    },
     "related_measurement_ids": [
       "relacion_e_e_promedio"
     ],
@@ -701,14 +1442,32 @@
   },
   {
     "id": "la_strain_reservoir_term",
-    "category": "Aurícula izquierda y diastología",
+    "category": {
+      "es": "Aurícula izquierda y diastología",
+      "en": "Left atrium and diastology"
+    },
     "order": 10,
-    "term": "Strain reservorio de AI",
-    "aliases": [
-      "LA reservoir strain"
-    ],
-    "definition": "Deformación de la AI durante el llenado auricular.",
-    "acquisition_utility_limitation": "Evalúa la capacidad de reservorio y complementa el análisis diastólico.",
+    "term": {
+      "es": "Strain reservorio de AI",
+      "en": "LA reservoir strain"
+    },
+    "aliases": {
+      "es": [
+        "LA reservoir strain"
+      ],
+      "en": [
+        "Left atrial reservoir strain",
+        "LA reservoir strain"
+      ]
+    },
+    "definition": {
+      "es": "Deformación de la AI durante el llenado auricular.",
+      "en": "Deformation of the LA during the filling phase."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Evalúa la capacidad de reservorio y complementa el análisis diastólico.",
+      "en": "Evaluates reservoir function and complements diastolic analysis."
+    },
     "related_measurement_ids": [
       "la_strain_reservoir",
       "la_strain_diastology"
@@ -718,29 +1477,65 @@
   },
   {
     "id": "flujo_pulmonar_term",
-    "category": "Aurícula izquierda y diastología",
+    "category": {
+      "es": "Aurícula izquierda y diastología",
+      "en": "Left atrium and diastology"
+    },
     "order": 11,
-    "term": "Flujo venoso pulmonar",
-    "aliases": [
-      "Doppler venoso pulmonar"
-    ],
-    "definition": "Patrón Doppler de las venas pulmonares.",
-    "acquisition_utility_limitation": "Sus ondas sistólica, diastólica y reversa auricular ayudan a estimar presión y función auricular.",
+    "term": {
+      "es": "Flujo venoso pulmonar",
+      "en": "Pulmonary venous flow"
+    },
+    "aliases": {
+      "es": [
+        "Doppler venoso pulmonar"
+      ],
+      "en": [
+        "Pulmonary venous flow",
+        "Pulmonary venous Doppler"
+      ]
+    },
+    "definition": {
+      "es": "Patrón Doppler de las venas pulmonares.",
+      "en": "Doppler flow pattern of pulmonary veins."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Sus ondas sistólica, diastólica y reversa auricular ayudan a estimar presión y función auricular.",
+      "en": "Its systolic, diastolic, and atrial reversal waves help estimate pressure and atrial function."
+    },
     "related_measurement_ids": [],
     "source_page": 15,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "vd_term",
-    "category": "Ventrículo derecho y circulación pulmonar",
+    "category": {
+      "es": "Ventrículo derecho y circulación pulmonar",
+      "en": "Right ventricle and pulmonary circulation"
+    },
     "order": 1,
-    "term": "VD",
-    "aliases": [
-      "Ventrículo derecho",
-      "RV"
-    ],
-    "definition": "Ventrículo derecho.",
-    "acquisition_utility_limitation": "Bombea sangre hacia la circulación pulmonar; su geometría compleja exige evaluación multiparamétrica.",
+    "term": {
+      "es": "VD",
+      "en": "RV"
+    },
+    "aliases": {
+      "es": [
+        "Ventrículo derecho",
+        "RV"
+      ],
+      "en": [
+        "Right ventricle",
+        "RV"
+      ]
+    },
+    "definition": {
+      "es": "Ventrículo derecho.",
+      "en": "Right ventricle."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Bombea sangre hacia la circulación pulmonar; su geometría compleja exige evaluación multiparamétrica.",
+      "en": "Pumps blood to pulmonary circulation; complex geometry requires multiparametric evaluation."
+    },
     "related_measurement_ids": [
       "diametro_basal_vd",
       "diametro_medio_vd",
@@ -755,15 +1550,33 @@
   },
   {
     "id": "vi_term",
-    "category": "Ventrículo izquierdo",
+    "category": {
+      "es": "Ventrículo izquierdo",
+      "en": "Left ventricle"
+    },
     "order": 2,
-    "term": "VI",
-    "aliases": [
-      "Ventrículo izquierdo",
-      "LV"
-    ],
-    "definition": "Ventrículo izquierdo.",
-    "acquisition_utility_limitation": "Cámara principal de bombeo cardiaco.",
+    "term": {
+      "es": "VI",
+      "en": "LV"
+    },
+    "aliases": {
+      "es": [
+        "Ventrículo izquierdo",
+        "LV"
+      ],
+      "en": [
+        "Left ventricle",
+        "LV"
+      ]
+    },
+    "definition": {
+      "es": "Ventrículo izquierdo.",
+      "en": "Left ventricle."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Cámara principal de bombeo cardiaco.",
+      "en": "Main pumping chamber of the heart."
+    },
     "related_measurement_ids": [
       "dtdvi",
       "dtsvi",
@@ -775,14 +1588,32 @@
   },
   {
     "id": "relacion_vd_vi_term",
-    "category": "Ventrículo derecho y circulación pulmonar",
+    "category": {
+      "es": "Ventrículo derecho y circulación pulmonar",
+      "en": "Right ventricle and pulmonary circulation"
+    },
     "order": 3,
-    "term": "Relación VD/VI",
-    "aliases": [
-      "RV/LV ratio"
-    ],
-    "definition": "Comparación entre diámetros basales de ambos ventrículos.",
-    "acquisition_utility_limitation": "Una relación elevada sugiere dilatación relativa del VD.",
+    "term": {
+      "es": "Relación VD/VI",
+      "en": "RV/LV ratio"
+    },
+    "aliases": {
+      "es": [
+        "RV/LV ratio"
+      ],
+      "en": [
+        "RV/LV ratio",
+        "RV/LV basal ratio"
+      ]
+    },
+    "definition": {
+      "es": "Comparación entre diámetros basales de ambos ventrículos.",
+      "en": "Comparison between basal diameters of both ventircles."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Una relación elevada sugiere dilatación relativa del VD.",
+      "en": "An elevated ratio suggests relative dilation of the RV."
+    },
     "related_measurement_ids": [
       "relacion_vd_vi"
     ],
@@ -791,15 +1622,33 @@
   },
   {
     "id": "tapse_term",
-    "category": "Ventrículo derecho y circulación pulmonar",
+    "category": {
+      "es": "Ventrículo derecho y circulación pulmonar",
+      "en": "Right ventricle and pulmonary circulation"
+    },
     "order": 4,
-    "term": "TAPSE",
-    "aliases": [
-      "Excursión sistólica del plano del anillo tricuspídeo",
-      "Tricuspid annular plane systolic excursion"
-    ],
-    "definition": "Excursión sistólica del plano del anillo tricuspídeo.",
-    "acquisition_utility_limitation": "Mide desplazamiento longitudinal basal del VD.",
+    "term": {
+      "es": "TAPSE",
+      "en": "TAPSE"
+    },
+    "aliases": {
+      "es": [
+        "Excursión sistólica del plano del anillo tricuspídeo",
+        "Tricuspid annular plane systolic excursion"
+      ],
+      "en": [
+        "Tricuspid annular plane systolic excursion",
+        "TAPSE"
+      ]
+    },
+    "definition": {
+      "es": "Excursión sistólica del plano del anillo tricuspídeo.",
+      "en": "Tricuspid annular plane systolic excursion."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Mide desplazamiento longitudinal basal del VD.",
+      "en": "Measures the longitudinal excursion of the tricuspid annulus toward the apex."
+    },
     "related_measurement_ids": [
       "tapse_meas",
       "tapse_pasp_ratio"
@@ -809,15 +1658,34 @@
   },
   {
     "id": "s_prima_vd_term",
-    "category": "Ventrículo derecho y circulación pulmonar",
+    "category": {
+      "es": "Ventrículo derecho y circulación pulmonar",
+      "en": "Right ventricle and pulmonary circulation"
+    },
     "order": 5,
-    "term": "s' del VD",
-    "aliases": [
-      "s' tricuspídea",
-      "s prima del VD"
-    ],
-    "definition": "Velocidad sistólica tisular del anillo tricuspídeo lateral.",
-    "acquisition_utility_limitation": "Marcador de velocidad sistólica longitudinal basal del VD.",
+    "term": {
+      "es": "s' del VD",
+      "en": "Tricuspid s'"
+    },
+    "aliases": {
+      "es": [
+        "s' tricuspídea",
+        "s prima del VD"
+      ],
+      "en": [
+        "Tricuspid s'",
+        "Tricuspid s wave",
+        "s' tricuspídea"
+      ]
+    },
+    "definition": {
+      "es": "Velocidad sistólica tisular del anillo tricuspídeo lateral.",
+      "en": "Systolic velocity of the lateral tricuspid annulus by tissue Doppler."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Marcador de velocidad sistólica longitudinal basal del VD.",
+      "en": "Measures longitudinal velocity of the lateral tricuspid annulus; fast and reproducible."
+    },
     "related_measurement_ids": [
       "s_prima_vd"
     ],
@@ -826,15 +1694,33 @@
   },
   {
     "id": "fac_term",
-    "category": "Ventrículo derecho y circulación pulmonar",
+    "category": {
+      "es": "Ventrículo derecho y circulación pulmonar",
+      "en": "Right ventricle and pulmonary circulation"
+    },
     "order": 6,
-    "term": "FAC",
-    "aliases": [
-      "Cambio fraccional de área del VD",
-      "Fractional area change"
-    ],
-    "definition": "Cambio fraccional de área del VD.",
-    "acquisition_utility_limitation": "Porcentaje de reducción del área del VD desde diástole a sístole.",
+    "term": {
+      "es": "FAC",
+      "en": "FAC"
+    },
+    "aliases": {
+      "es": [
+        "Cambio fraccional de área del VD",
+        "Fractional area change"
+      ],
+      "en": [
+        "Fractional area change",
+        "FAC"
+      ]
+    },
+    "definition": {
+      "es": "Cambio fraccional de área del VD.",
+      "en": "Fractional area change."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Porcentaje de reducción del área del VD desde diástole a sístole.",
+      "en": "Surrogate for RVEF, measures area change in A4C view."
+    },
     "related_measurement_ids": [
       "fac_vd_meas"
     ],
@@ -843,15 +1729,33 @@
   },
   {
     "id": "fevd_term",
-    "category": "Ventrículo derecho y circulación pulmonar",
+    "category": {
+      "es": "Ventrículo derecho y circulación pulmonar",
+      "en": "Right ventricle and pulmonary circulation"
+    },
     "order": 7,
-    "term": "FEVD",
-    "aliases": [
-      "Fracción de eyección del ventrículo derecho",
-      "RVEF"
-    ],
-    "definition": "Fracción de eyección del ventrículo derecho.",
-    "acquisition_utility_limitation": "Porcentaje del volumen telediastólico derecho expulsado en sístole.",
+    "term": {
+      "es": "FEVD",
+      "en": "RVEF"
+    },
+    "aliases": {
+      "es": [
+        "Fracción de eyección del ventrículo derecho",
+        "RVEF"
+      ],
+      "en": [
+        "Right ventricular ejection fraction",
+        "RVEF"
+      ]
+    },
+    "definition": {
+      "es": "Fracción de eyección del ventrículo derecho.",
+      "en": "Right ventricular ejection fraction."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Porcentaje del volumen telediastólico derecho expulsado en sístole.",
+      "en": "Measures global RV systolic function; complex calculation due to RV geometry."
+    },
     "related_measurement_ids": [
       "fevd_3d"
     ],
@@ -860,14 +1764,32 @@
   },
   {
     "id": "strain_rv_term",
-    "category": "Ventrículo derecho y circulación pulmonar",
+    "category": {
+      "es": "Ventrículo derecho y circulación pulmonar",
+      "en": "Right ventricle and pulmonary circulation"
+    },
     "order": 8,
-    "term": "Strain de pared libre del VD",
-    "aliases": [
-      "RV free wall strain"
-    ],
-    "definition": "Deformación longitudinal de los segmentos de la pared libre del VD.",
-    "acquisition_utility_limitation": "Valores más negativos indican mayor acortamiento.",
+    "term": {
+      "es": "Strain de pared libre del VD",
+      "en": "RV Free Wall Strain"
+    },
+    "aliases": {
+      "es": [
+        "RV free wall strain"
+      ],
+      "en": [
+        "RV free wall strain",
+        "Right ventricular free wall strain"
+      ]
+    },
+    "definition": {
+      "es": "Deformación longitudinal de los segmentos de la pared libre del VD.",
+      "en": "Myocardial strain of the RV free wall."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Valores más negativos indican mayor acortamiento.",
+      "en": "Measures localized longitudinal deformation of the free wall; early marker of dysfunction."
+    },
     "related_measurement_ids": [
       "strain_rv"
     ],
@@ -876,16 +1798,35 @@
   },
   {
     "id": "indice_tei_term",
-    "category": "Ventrículo derecho y circulación pulmonar",
+    "category": {
+      "es": "Ventrículo derecho y circulación pulmonar",
+      "en": "Right ventricle and pulmonary circulation"
+    },
     "order": 9,
-    "term": "Índice de Tei / MPI",
-    "aliases": [
-      "MPI",
-      "Myocardial performance index",
-      "Índice de rendimiento miocárdico del VD"
-    ],
-    "definition": "Índice de rendimiento miocárdico.",
-    "acquisition_utility_limitation": "Integra tiempos isovolumétricos y de eyección para reflejar función global.",
+    "term": {
+      "es": "Índice de Tei / MPI",
+      "en": "Tei Index (MPI)"
+    },
+    "aliases": {
+      "es": [
+        "MPI",
+        "Myocardial performance index",
+        "Índice de rendimiento miocárdico del VD"
+      ],
+      "en": [
+        "Tei index",
+        "Myocardial performance index",
+        "MPI"
+      ]
+    },
+    "definition": {
+      "es": "Índice de rendimiento miocárdico.",
+      "en": "Myocardial performance index combining systolic and diastolic time intervals."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Integra tiempos isovolumétricos y de eyección para reflejar función global.",
+      "en": "Used as an indicator of global ventricular function."
+    },
     "related_measurement_ids": [
       "indice_tei_vd"
     ],
@@ -894,15 +1835,33 @@
   },
   {
     "id": "tsvd_term",
-    "category": "Ventrículo derecho y circulación pulmonar",
+    "category": {
+      "es": "Ventrículo derecho y circulación pulmonar",
+      "en": "Right ventricle and pulmonary circulation"
+    },
     "order": 10,
-    "term": "TSVD / RVOT",
-    "aliases": [
-      "RVOT",
-      "Tracto de salida del ventrículo derecho"
-    ],
-    "definition": "Tracto de salida del ventrículo derecho.",
-    "acquisition_utility_limitation": "Zona donde se adquieren el VTI y el tiempo de aceleración pulmonar.",
+    "term": {
+      "es": "TSVD / RVOT",
+      "en": "TSVD / RVOT"
+    },
+    "aliases": {
+      "es": [
+        "RVOT",
+        "Tracto de salida del ventrículo derecho"
+      ],
+      "en": [
+        "RVOT",
+        "Right ventricular outflow tract"
+      ]
+    },
+    "definition": {
+      "es": "Tracto de salida del ventrículo derecho.",
+      "en": "Right ventricular outflow tract."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Zona donde se adquieren el VTI y el tiempo de aceleración pulmonar.",
+      "en": "Anterior region of the RV through which blood is ejected to the pulmonary artery."
+    },
     "related_measurement_ids": [
       "vti_tsvd_meas",
       "paat_tsvd",
@@ -913,16 +1872,34 @@
   },
   {
     "id": "paat_term",
-    "category": "Ventrículo derecho y circulación pulmonar",
+    "category": {
+      "es": "Ventrículo derecho y circulación pulmonar",
+      "en": "Right ventricle and pulmonary circulation"
+    },
     "order": 11,
-    "term": "PAAT / AccT",
-    "aliases": [
-      "Tiempo de aceleración del flujo pulmonar",
-      "AccT",
-      "PAAT"
-    ],
-    "definition": "Tiempo de aceleración del flujo pulmonar.",
-    "acquisition_utility_limitation": "Intervalo desde el inicio del flujo en TSVD hasta su velocidad máxima.",
+    "term": {
+      "es": "PAAT / AccT",
+      "en": "PAAT"
+    },
+    "aliases": {
+      "es": [
+        "Tiempo de aceleración del flujo pulmonar",
+        "AccT",
+        "PAAT"
+      ],
+      "en": [
+        "Pulmonary artery acceleration time",
+        "PAAT"
+      ]
+    },
+    "definition": {
+      "es": "Tiempo de aceleración del flujo pulmonar.",
+      "en": "Pulmonary artery acceleration time."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Intervalo desde el inicio del flujo en TSVD hasta su velocidad máxima.",
+      "en": "Shorter times indicate higher pulmonary pressures or resistances."
+    },
     "related_measurement_ids": [
       "paat_tsvd"
     ],
@@ -931,15 +1908,33 @@
   },
   {
     "id": "it_term",
-    "category": "Ventrículo derecho y circulación pulmonar",
+    "category": {
+      "es": "Ventrículo derecho y circulación pulmonar",
+      "en": "Right ventricle and pulmonary circulation"
+    },
     "order": 12,
-    "term": "IT / TR",
-    "aliases": [
-      "Insuficiencia tricuspídea",
-      "Tricuspid regurgitation"
-    ],
-    "definition": "Insuficiencia tricuspídea.",
-    "acquisition_utility_limitation": "El jet permite estimar el gradiente VD-AD mediante Bernoulli.",
+    "term": {
+      "es": "IT / TR",
+      "en": "Tricuspid Regurgitation (TR)"
+    },
+    "aliases": {
+      "es": [
+        "Insuficiencia tricuspídea",
+        "Tricuspid regurgitation"
+      ],
+      "en": [
+        "Tricuspid regurgitation",
+        "TR"
+      ]
+    },
+    "definition": {
+      "es": "Insuficiencia tricuspídea.",
+      "en": "Backward flow of blood from RV to RA during systole; used to estimate pulmonary pressures."
+    },
+    "acquisition_utility_limitation": {
+      "es": "El jet permite estimar el gradiente VD-AD mediante Bernoulli.",
+      "en": "Systolic pressure gradient between RV and RA."
+    },
     "related_measurement_ids": [
       "velocidad_it_diastology",
       "gradiente_vd_ad",
@@ -952,15 +1947,33 @@
   },
   {
     "id": "pr_term",
-    "category": "Ventrículo derecho y circulación pulmonar",
+    "category": {
+      "es": "Ventrículo derecho y circulación pulmonar",
+      "en": "Right ventricle and pulmonary circulation"
+    },
     "order": 13,
-    "term": "PR",
-    "aliases": [
-      "Insuficiencia pulmonar",
-      "Pulmonary regurgitation"
-    ],
-    "definition": "Insuficiencia pulmonar.",
-    "acquisition_utility_limitation": "Las velocidades protodiastólica y telediastólica pueden estimar presiones pulmonares.",
+    "term": {
+      "es": "PR",
+      "en": "Pulmonary Regurgitation (PR)"
+    },
+    "aliases": {
+      "es": [
+        "Insuficiencia pulmonar",
+        "Pulmonary regurgitation"
+      ],
+      "en": [
+        "Pulmonary regurgitation",
+        "PR"
+      ]
+    },
+    "definition": {
+      "es": "Insuficiencia pulmonar.",
+      "en": "Backward flow of blood from pulmonary artery to RV during diastole."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Las velocidades protodiastólica y telediastólica pueden estimar presiones pulmonares.",
+      "en": "Used to estimate pulmonary artery diastolic pressure."
+    },
     "related_measurement_ids": [
       "presion_media_pulmonar",
       "presion_diastolica_pulmonar"
@@ -970,14 +1983,32 @@
   },
   {
     "id": "psvd_term",
-    "category": "Ventrículo derecho y circulación pulmonar",
+    "category": {
+      "es": "Ventrículo derecho y circulación pulmonar",
+      "en": "Right ventricle and pulmonary circulation"
+    },
     "order": 14,
-    "term": "PSVD / RVSP",
-    "aliases": [
-      "Presión sistólica del ventrículo derecho"
-    ],
-    "definition": "Presión sistólica estimada del VD.",
-    "acquisition_utility_limitation": "Suma del gradiente del jet de IT y la presión AD estimada.",
+    "term": {
+      "es": "PSVD / RVSP",
+      "en": "RVSP"
+    },
+    "aliases": {
+      "es": [
+        "Presión sistólica del ventrículo derecho"
+      ],
+      "en": [
+        "Right ventricular systolic pressure",
+        "RVSP"
+      ]
+    },
+    "definition": {
+      "es": "Presión sistólica estimada del VD.",
+      "en": "Right ventricular systolic pressure."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Suma del gradiente del jet de IT y la presión AD estimada.",
+      "en": "Equivalent to pulmonary artery systolic pressure in the absence of RVOT obstruction."
+    },
     "related_measurement_ids": [
       "pasp_meas"
     ],
@@ -986,14 +2017,32 @@
   },
   {
     "id": "pasp_term",
-    "category": "Ventrículo derecho y circulación pulmonar",
+    "category": {
+      "es": "Ventrículo derecho y circulación pulmonar",
+      "en": "Right ventricle and pulmonary circulation"
+    },
     "order": 15,
-    "term": "PASP",
-    "aliases": [
-      "Presión sistólica de la arteria pulmonar"
-    ],
-    "definition": "Presión sistólica de la arteria pulmonar.",
-    "acquisition_utility_limitation": "Se aproxima a la PSVD si no existe obstrucción del TSVD o válvula pulmonar.",
+    "term": {
+      "es": "PASP",
+      "en": "PASP"
+    },
+    "aliases": {
+      "es": [
+        "Presión sistólica de la arteria pulmonar"
+      ],
+      "en": [
+        "Pulmonary artery systolic pressure",
+        "PASP"
+      ]
+    },
+    "definition": {
+      "es": "Presión sistólica de la arteria pulmonar.",
+      "en": "Pulmonary artery systolic pressure."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Se aproxima a la PSVD si no existe obstrucción del TSVD o válvula pulmonar.",
+      "en": "Estimated from the TR gradient and RAP."
+    },
     "related_measurement_ids": [
       "pasp_meas",
       "tapse_pasp_ratio"
@@ -1003,15 +2052,33 @@
   },
   {
     "id": "mpap_term",
-    "category": "Ventrículo derecho y circulación pulmonar",
+    "category": {
+      "es": "Ventrículo derecho y circulación pulmonar",
+      "en": "Right ventricle and pulmonary circulation"
+    },
     "order": 16,
-    "term": "mPAP",
-    "aliases": [
-      "Presión arterial pulmonar media",
-      "Mean pulmonary artery pressure"
-    ],
-    "definition": "Presión arterial pulmonar media.",
-    "acquisition_utility_limitation": "La hipertensión pulmonar hemodinámica se define invasivamente; la ecografía estima probabilidad y presiones.",
+    "term": {
+      "es": "mPAP",
+      "en": "MPAP"
+    },
+    "aliases": {
+      "es": [
+        "Presión arterial pulmonar media",
+        "Mean pulmonary artery pressure"
+      ],
+      "en": [
+        "Mean pulmonary artery pressure",
+        "MPAP"
+      ]
+    },
+    "definition": {
+      "es": "Presión arterial pulmonar media.",
+      "en": "Pulmonary artery mean pressure."
+    },
+    "acquisition_utility_limitation": {
+      "es": "La hipertensión pulmonar hemodinámica se define invasivamente; la ecografía estima probabilidad y presiones.",
+      "en": "Used to evaluate pulmonary hypertension."
+    },
     "related_measurement_ids": [
       "presion_media_pulmonar"
     ],
@@ -1020,15 +2087,33 @@
   },
   {
     "id": "rvp_term",
-    "category": "Ventrículo derecho y circulación pulmonar",
+    "category": {
+      "es": "Ventrículo derecho y circulación pulmonar",
+      "en": "Right ventricle and pulmonary circulation"
+    },
     "order": 17,
-    "term": "RVP / PVR",
-    "aliases": [
-      "Resistencia vascular pulmonar",
-      "Pulmonary vascular resistance"
-    ],
-    "definition": "Resistencia vascular pulmonar.",
-    "acquisition_utility_limitation": "Poscarga resistiva del VD; la fórmula Doppler usa Vmax IT y VTI del TSVD.",
+    "term": {
+      "es": "RVP / PVR",
+      "en": "PVR"
+    },
+    "aliases": {
+      "es": [
+        "Resistencia vascular pulmonar",
+        "Pulmonary vascular resistance"
+      ],
+      "en": [
+        "Pulmonary vascular resistance",
+        "PVR"
+      ]
+    },
+    "definition": {
+      "es": "Resistencia vascular pulmonar.",
+      "en": "Pulmonary vascular resistance."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Poscarga resistiva del VD; la fórmula Doppler usa Vmax IT y VTI del TSVD.",
+      "en": "Estimated from the ratio of TR velocity to RVOT VTI."
+    },
     "related_measurement_ids": [
       "rvp_ecografica"
     ],
@@ -1037,14 +2122,32 @@
   },
   {
     "id": "tapse_pasp_term",
-    "category": "Ventrículo derecho y circulación pulmonar",
+    "category": {
+      "es": "Ventrículo derecho y circulación pulmonar",
+      "en": "Right ventricle and pulmonary circulation"
+    },
     "order": 18,
-    "term": "TAPSE/PASP",
-    "aliases": [
-      "Acoplamiento ventriculo-arterial pulmonar"
-    ],
-    "definition": "Relación entre función longitudinal del VD y su poscarga estimada.",
-    "acquisition_utility_limitation": "Marcador no invasivo de acoplamiento VD-arteria pulmonar.",
+    "term": {
+      "es": "TAPSE/PASP",
+      "en": "TAPSE/PASP ratio"
+    },
+    "aliases": {
+      "es": [
+        "Acoplamiento ventriculo-arterial pulmonar"
+      ],
+      "en": [
+        "TAPSE/PASP",
+        "TAPSE/PASP ratio"
+      ]
+    },
+    "definition": {
+      "es": "Relación entre función longitudinal del VD y su poscarga estimada.",
+      "en": "Ratio of tricuspid excursion to systolic pulmonary pressure."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Marcador no invasivo de acoplamiento VD-arteria pulmonar.",
+      "en": "Surrogate of right ventricle-pulmonary arterial coupling."
+    },
     "related_measurement_ids": [
       "tapse_pasp_ratio"
     ],
@@ -1053,15 +2156,33 @@
   },
   {
     "id": "indice_excentricidad_term",
-    "category": "Ventrículo derecho y circulación pulmonar",
+    "category": {
+      "es": "Ventrículo derecho y circulación pulmonar",
+      "en": "Right ventricle and pulmonary circulation"
+    },
     "order": 19,
-    "term": "Índice de excentricidad",
-    "aliases": [
-      "Eccentricity index",
-      "Índice de excentricidad del VI"
-    ],
-    "definition": "Relación entre diámetros del VI en eje corto.",
-    "acquisition_utility_limitation": "Cuantifica aplanamiento septal por sobrecarga derecha.",
+    "term": {
+      "es": "Índice de excentricidad",
+      "en": "Eccentricity Index"
+    },
+    "aliases": {
+      "es": [
+        "Eccentricity index",
+        "Índice de excentricidad del VI"
+      ],
+      "en": [
+        "Eccentricity index",
+        "LV eccentricity index"
+      ]
+    },
+    "definition": {
+      "es": "Relación entre diámetros del VI en eje corto.",
+      "en": "Ratio of LV perpendicular diameters to evaluate septal flattening."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Cuantifica aplanamiento septal por sobrecarga derecha.",
+      "en": "Values > 1 indicate RV pressure or volume overload."
+    },
     "related_measurement_ids": [
       "indice_excentricidad_vi"
     ],
@@ -1070,15 +2191,33 @@
   },
   {
     "id": "ad_term",
-    "category": "Aurícula derecha y vena cava inferior",
+    "category": {
+      "es": "Aurícula derecha y vena cava inferior",
+      "en": "Aurícula derecha y vena cava inferior"
+    },
     "order": 1,
-    "term": "AD",
-    "aliases": [
-      "Aurícula derecha",
-      "RA"
-    ],
-    "definition": "Aurícula derecha.",
-    "acquisition_utility_limitation": "Recibe el retorno venoso sistémico y participa en el llenado del VD.",
+    "term": {
+      "es": "AD",
+      "en": "RA"
+    },
+    "aliases": {
+      "es": [
+        "Aurícula derecha",
+        "RA"
+      ],
+      "en": [
+        "Right atrium",
+        "RA"
+      ]
+    },
+    "definition": {
+      "es": "Aurícula derecha.",
+      "en": "Right atrium."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Recibe el retorno venoso sistémico y participa en el llenado del VD.",
+      "en": "Receives systemic venous return."
+    },
     "related_measurement_ids": [
       "area_ad_meas",
       "longitud_ad",
@@ -1091,15 +2230,33 @@
   },
   {
     "id": "vci_term",
-    "category": "Aurícula derecha y vena cava inferior",
+    "category": {
+      "es": "Aurícula derecha y vena cava inferior",
+      "en": "Aurícula derecha y vena cava inferior"
+    },
     "order": 2,
-    "term": "VCI",
-    "aliases": [
-      "Vena cava inferior",
-      "IVC"
-    ],
-    "definition": "Vena cava inferior.",
-    "acquisition_utility_limitation": "Su diámetro y variación respiratoria se usan para estimar presión AD en condiciones apropiadas.",
+    "term": {
+      "es": "VCI",
+      "en": "IVC"
+    },
+    "aliases": {
+      "es": [
+        "Vena cava inferior",
+        "IVC"
+      ],
+      "en": [
+        "Inferior vena cava",
+        "IVC"
+      ]
+    },
+    "definition": {
+      "es": "Vena cava inferior.",
+      "en": "Inferior vena cava."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Su diámetro y variación respiratoria se usan para estimar presión AD en condiciones apropiadas.",
+      "en": "Venous conduit returning blood to the RA."
+    },
     "related_measurement_ids": [
       "diametro_vci_meas",
       "colapsabilidad_vci_meas",
@@ -1112,14 +2269,32 @@
   },
   {
     "id": "colapsabilidad_vci_term",
-    "category": "Aurícula derecha y vena cava inferior",
+    "category": {
+      "es": "Aurícula derecha y vena cava inferior",
+      "en": "Aurícula derecha y vena cava inferior"
+    },
     "order": 3,
-    "term": "Colapsabilidad de VCI",
-    "aliases": [
-      "Índice de colapsabilidad de VCI"
-    ],
-    "definition": "Reducción porcentual del diámetro de la VCI durante inspiración espontánea.",
-    "acquisition_utility_limitation": "Mayor colapso suele asociarse con menor presión AD.",
+    "term": {
+      "es": "Colapsabilidad de VCI",
+      "en": "IVC Collapsibility"
+    },
+    "aliases": {
+      "es": [
+        "Índice de colapsabilidad de VCI"
+      ],
+      "en": [
+        "IVC collapsibility index",
+        "IVC collapse"
+      ]
+    },
+    "definition": {
+      "es": "Reducción porcentual del diámetro de la VCI durante inspiración espontánea.",
+      "en": "Percentage reduction of IVC diameter during respiration."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Mayor colapso suele asociarse con menor presión AD.",
+      "en": "Used to estimate RAP."
+    },
     "related_measurement_ids": [
       "colapsabilidad_vci_meas"
     ],
@@ -1128,14 +2303,32 @@
   },
   {
     "id": "distensibilidad_vci_term",
-    "category": "Aurícula derecha y vena cava inferior",
+    "category": {
+      "es": "Aurícula derecha y vena cava inferior",
+      "en": "Aurícula derecha y vena cava inferior"
+    },
     "order": 4,
-    "term": "Distensibilidad de VCI",
-    "aliases": [
-      "Índice de distensibilidad de VCI"
-    ],
-    "definition": "Aumento porcentual del diámetro de VCI durante ventilación positiva.",
-    "acquisition_utility_limitation": "Su interpretación depende de modalidad ventilatoria, volumen corriente y presión abdominal.",
+    "term": {
+      "es": "Distensibilidad de VCI",
+      "en": "IVC Distensibility"
+    },
+    "aliases": {
+      "es": [
+        "Índice de distensibilidad de VCI"
+      ],
+      "en": [
+        "IVC distensibility index",
+        "IVC distensibility"
+      ]
+    },
+    "definition": {
+      "es": "Aumento porcentual del diámetro de VCI durante ventilación positiva.",
+      "en": "Percentage increase of IVC diameter in mechanically ventilated patients."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Su interpretación depende de modalidad ventilatoria, volumen corriente y presión abdominal.",
+      "en": "Used to estimate fluid responsiveness in ICU."
+    },
     "related_measurement_ids": [
       "distensibilidad_vci_meas"
     ],
@@ -1144,15 +2337,34 @@
   },
   {
     "id": "presion_ad_term",
-    "category": "Aurícula derecha y vena cava inferior",
+    "category": {
+      "es": "Aurícula derecha y vena cava inferior",
+      "en": "Aurícula derecha y vena cava inferior"
+    },
     "order": 5,
-    "term": "Presión AD / RAP",
-    "aliases": [
-      "RAP",
-      "Presión auricular derecha"
-    ],
-    "definition": "Presión de la aurícula derecha.",
-    "acquisition_utility_limitation": "Se estima de forma semicuantitativa con VCI, pero no sustituye medición invasiva.",
+    "term": {
+      "es": "Presión AD / RAP",
+      "en": "Right Atrial Pressure (RAP)"
+    },
+    "aliases": {
+      "es": [
+        "RAP",
+        "Presión auricular derecha"
+      ],
+      "en": [
+        "Right atrial pressure",
+        "RAP",
+        "PAD"
+      ]
+    },
+    "definition": {
+      "es": "Presión de la aurícula derecha.",
+      "en": "Pressure in the right atrium, estimated from IVC diameter and collapsibility."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Se estima de forma semicuantitativa con VCI, pero no sustituye medición invasiva.",
+      "en": "Used as baseline pressure to calculate pulmonary pressures."
+    },
     "related_measurement_ids": [
       "presion_ad_estimada_meas"
     ],
@@ -1161,14 +2373,32 @@
   },
   {
     "id": "vmax_aortica_term",
-    "category": "Válvula aórtica y mitral",
+    "category": {
+      "es": "Válvula aórtica y mitral",
+      "en": "Válvula aórtica y mitral"
+    },
     "order": 1,
-    "term": "Vmax aórtica",
-    "aliases": [
-      "Velocidad máxima transvalvular aórtica"
-    ],
-    "definition": "Velocidad máxima transvalvular aórtica.",
-    "acquisition_utility_limitation": "Se incrementa con estenosis o estados de alto flujo.",
+    "term": {
+      "es": "Vmax aórtica",
+      "en": "Aortic Vmax"
+    },
+    "aliases": {
+      "es": [
+        "Velocidad máxima transvalvular aórtica"
+      ],
+      "en": [
+        "Aortic Vmax",
+        "Maximum aortic velocity"
+      ]
+    },
+    "definition": {
+      "es": "Velocidad máxima transvalvular aórtica.",
+      "en": "Maximum velocity of aortic flow."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Se incrementa con estenosis o estados de alto flujo.",
+      "en": "Direct marker of aortic stenosis severity."
+    },
     "related_measurement_ids": [
       "velocidad_max_aortica",
       "gradiente_max_aortico",
@@ -1180,14 +2410,32 @@
   },
   {
     "id": "gradiente_max_term",
-    "category": "Válvula aórtica y mitral",
+    "category": {
+      "es": "Válvula aórtica y mitral",
+      "en": "Válvula aórtica y mitral"
+    },
     "order": 2,
-    "term": "Gradiente máximo",
-    "aliases": [
-      "Gradiente instantáneo máximo transaórtico"
-    ],
-    "definition": "Gradiente instantáneo derivado de la Vmax.",
-    "acquisition_utility_limitation": "Se calcula con 4V².",
+    "term": {
+      "es": "Gradiente máximo",
+      "en": "Peak Gradient"
+    },
+    "aliases": {
+      "es": [
+        "Gradiente instantáneo máximo transaórtico"
+      ],
+      "en": [
+        "Peak gradient",
+        "Maximum gradient"
+      ]
+    },
+    "definition": {
+      "es": "Gradiente instantáneo derivado de la Vmax.",
+      "en": "Maximum pressure gradient across a valve calculated with Bernoulli equation."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Se calcula con 4V².",
+      "en": "Reflects maximum instantaneous pressure difference."
+    },
     "related_measurement_ids": [
       "gradiente_max_aortico"
     ],
@@ -1196,14 +2444,32 @@
   },
   {
     "id": "gradiente_medio_term",
-    "category": "Válvula aórtica y mitral",
+    "category": {
+      "es": "Válvula aórtica y mitral",
+      "en": "Válvula aórtica y mitral"
+    },
     "order": 3,
-    "term": "Gradiente medio",
-    "aliases": [
-      "Gradiente transvalvular medio aórtico"
-    ],
-    "definition": "Promedio temporal de los gradientes instantáneos durante la eyección.",
-    "acquisition_utility_limitation": "Es un criterio principal para graduar estenosis aórtica.",
+    "term": {
+      "es": "Gradiente medio",
+      "en": "Mean Gradient"
+    },
+    "aliases": {
+      "es": [
+        "Gradiente transvalvular medio aórtico"
+      ],
+      "en": [
+        "Mean gradient",
+        "Mean pressure gradient"
+      ]
+    },
+    "definition": {
+      "es": "Promedio temporal de los gradientes instantáneos durante la eyección.",
+      "en": "Average pressure gradient across a valve during the flow period."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Es un criterio principal para graduar estenosis aórtica.",
+      "en": "Key parameter for severity in aortic and mitral stenosis."
+    },
     "related_measurement_ids": [
       "gradiente_medio_aortico"
     ],
@@ -1212,15 +2478,33 @@
   },
   {
     "id": "ava_term",
-    "category": "Válvula aórtica y mitral",
+    "category": {
+      "es": "Válvula aórtica y mitral",
+      "en": "Válvula aórtica y mitral"
+    },
     "order": 4,
-    "term": "AVA",
-    "aliases": [
-      "Área valvular aórtica",
-      "AVA por continuidad"
-    ],
-    "definition": "Área valvular aórtica.",
-    "acquisition_utility_limitation": "Se calcula por ecuación de continuidad comparando flujo del TSVI y flujo transaórtico.",
+    "term": {
+      "es": "AVA",
+      "en": "AVA"
+    },
+    "aliases": {
+      "es": [
+        "Área valvular aórtica",
+        "AVA por continuidad"
+      ],
+      "en": [
+        "Aortic valve area",
+        "AVA"
+      ]
+    },
+    "definition": {
+      "es": "Área valvular aórtica.",
+      "en": "Aortic valve area."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Se calcula por ecuación de continuidad comparando flujo del TSVI y flujo transaórtico.",
+      "en": "Calculated by continuity equation to assess stenosis severity."
+    },
     "related_measurement_ids": [
       "ava_meas",
       "ava_indexed"
@@ -1230,15 +2514,33 @@
   },
   {
     "id": "dvi_term",
-    "category": "Válvula aórtica y mitral",
+    "category": {
+      "es": "Válvula aórtica y mitral",
+      "en": "Válvula aórtica y mitral"
+    },
     "order": 5,
-    "term": "DVI",
-    "aliases": [
-      "Dimensionless velocity index",
-      "Índice de velocidad"
-    ],
-    "definition": "Índice de velocidad o índice adimensional.",
-    "acquisition_utility_limitation": "Relación entre flujo del TSVI y flujo aórtico; valores bajos indican obstrucción más severa.",
+    "term": {
+      "es": "DVI",
+      "en": "DVI"
+    },
+    "aliases": {
+      "es": [
+        "Dimensionless velocity index",
+        "Índice de velocidad"
+      ],
+      "en": [
+        "Dimensionless velocity index",
+        "DVI"
+      ]
+    },
+    "definition": {
+      "es": "Índice de velocidad o índice adimensional.",
+      "en": "Dimensionless velocity index."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Relación entre flujo del TSVI y flujo aórtico; valores bajos indican obstrucción más severa.",
+      "en": "Ratio of LVOT velocity to aortic velocity; independent of LVOT area."
+    },
     "related_measurement_ids": [
       "dvi_meas"
     ],
@@ -1247,15 +2549,33 @@
   },
   {
     "id": "area_mitral_term",
-    "category": "Válvula aórtica y mitral",
+    "category": {
+      "es": "Válvula aórtica y mitral",
+      "en": "Válvula aórtica y mitral"
+    },
     "order": 6,
-    "term": "Área valvular mitral",
-    "aliases": [
-      "Mitral valve area",
-      "MVA"
-    ],
-    "definition": "Área anatómica o funcional del orificio mitral.",
-    "acquisition_utility_limitation": "Puede medirse por planimetría o estimarse con PHT.",
+    "term": {
+      "es": "Área valvular mitral",
+      "en": "MVA"
+    },
+    "aliases": {
+      "es": [
+        "Mitral valve area",
+        "MVA"
+      ],
+      "en": [
+        "Mitral valve area",
+        "MVA"
+      ]
+    },
+    "definition": {
+      "es": "Área anatómica o funcional del orificio mitral.",
+      "en": "Mitral valve area."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Puede medirse por planimetría o estimarse con PHT.",
+      "en": "Mitral valve area; assessed in stenosis."
+    },
     "related_measurement_ids": [
       "area_mitral_planimetria",
       "area_mitral_pht"
@@ -1265,15 +2585,33 @@
   },
   {
     "id": "pht_term",
-    "category": "Válvula aórtica y mitral",
+    "category": {
+      "es": "Válvula aórtica y mitral",
+      "en": "Válvula aórtica y mitral"
+    },
     "order": 7,
-    "term": "PHT",
-    "aliases": [
-      "Pressure half-time",
-      "Tiempo de hemipresión"
-    ],
-    "definition": "Tiempo de hemipresión.",
-    "acquisition_utility_limitation": "Tiempo para que el gradiente transmitral inicial disminuya a la mitad; se usa para estimar área mitral.",
+    "term": {
+      "es": "PHT",
+      "en": "PHT"
+    },
+    "aliases": {
+      "es": [
+        "Pressure half-time",
+        "Tiempo de hemipresión"
+      ],
+      "en": [
+        "Mitral pressure half-time",
+        "PHT"
+      ]
+    },
+    "definition": {
+      "es": "Tiempo de hemipresión.",
+      "en": "Mitral pressure half-time."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Tiempo para que el gradiente transmitral inicial disminuya a la mitad; se usa para estimar área mitral.",
+      "en": "Used to estimate MVA; longer times indicate severe stenosis."
+    },
     "related_measurement_ids": [
       "area_mitral_pht",
       "pht_meas"
@@ -1283,14 +2621,32 @@
   },
   {
     "id": "gradiente_mitral_medio_term",
-    "category": "Válvula aórtica y mitral",
+    "category": {
+      "es": "Válvula aórtica y mitral",
+      "en": "Válvula aórtica y mitral"
+    },
     "order": 8,
-    "term": "Gradiente mitral medio",
-    "aliases": [
-      "Mitral mean gradient"
-    ],
-    "definition": "Promedio del gradiente diastólico a través de la válvula mitral.",
-    "acquisition_utility_limitation": "Depende de frecuencia cardiaca y flujo, por lo que deben reportarse ambos.",
+    "term": {
+      "es": "Gradiente mitral medio",
+      "en": "Mitral Mean Gradient"
+    },
+    "aliases": {
+      "es": [
+        "Mitral mean gradient"
+      ],
+      "en": [
+        "Mitral mean gradient",
+        "Mean mitral gradient"
+      ]
+    },
+    "definition": {
+      "es": "Promedio del gradiente diastólico a través de la válvula mitral.",
+      "en": "Average pressure gradient across the mitral valve."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Depende de frecuencia cardiaca y flujo, por lo que deben reportarse ambos.",
+      "en": "Used to assess severity of mitral stenosis."
+    },
     "related_measurement_ids": [
       "gradiente_medio_mitral"
     ],
@@ -1299,15 +2655,33 @@
   },
   {
     "id": "vena_contracta_term",
-    "category": "Insuficiencias valvulares",
+    "category": {
+      "es": "Insuficiencias valvulares",
+      "en": "Insuficiencias valvulares"
+    },
     "order": 1,
-    "term": "Vena contracta",
-    "aliases": [
-      "Vena contracta width",
-      "VC width"
-    ],
-    "definition": "Porción más estrecha del jet regurgitante.",
-    "acquisition_utility_limitation": "Su ancho se relaciona con el tamaño del orificio, pero puede fallar con orificios múltiples o no circulares.",
+    "term": {
+      "es": "Vena contracta",
+      "en": "Vena Contracta"
+    },
+    "aliases": {
+      "es": [
+        "Vena contracta width",
+        "VC width"
+      ],
+      "en": [
+        "Vena contracta",
+        "VC"
+      ]
+    },
+    "definition": {
+      "es": "Porción más estrecha del jet regurgitante.",
+      "en": "Narrowest portion of a regurgitant jet."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Su ancho se relaciona con el tamaño del orificio, pero puede fallar con orificios múltiples o no circulares.",
+      "en": "Jet width at its origin; reflects orifice size."
+    },
     "related_measurement_ids": [
       "vena_contracta_meas"
     ],
@@ -1316,15 +2690,33 @@
   },
   {
     "id": "pisa_term",
-    "category": "Insuficiencias valvulares",
+    "category": {
+      "es": "Insuficiencias valvulares",
+      "en": "Insuficiencias valvulares"
+    },
     "order": 2,
-    "term": "PISA",
-    "aliases": [
-      "Proximal isovelocity surface area",
-      "Área de superficie de isovelocidad proximal"
-    ],
-    "definition": "Área de superficie de isovelocidad proximal.",
-    "acquisition_utility_limitation": "Describe hemisferios de convergencia de flujo antes del orificio regurgitante.",
+    "term": {
+      "es": "PISA",
+      "en": "PISA"
+    },
+    "aliases": {
+      "es": [
+        "Proximal isovelocity surface area",
+        "Área de superficie de isovelocidad proximal"
+      ],
+      "en": [
+        "Proximal isovelocity surface area",
+        "PISA"
+      ]
+    },
+    "definition": {
+      "es": "Área de superficie de isovelocidad proximal.",
+      "en": "Proximal isovelocity surface area."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Describe hemisferios de convergencia de flujo antes del orificio regurgitante.",
+      "en": "Flow convergence method to calculate EROA and regurgitant volume."
+    },
     "related_measurement_ids": [
       "flujo_pisa_meas",
       "eroa_meas"
@@ -1334,15 +2726,33 @@
   },
   {
     "id": "eroa_term",
-    "category": "Insuficiencias valvulares",
+    "category": {
+      "es": "Insuficiencias valvulares",
+      "en": "Insuficiencias valvulares"
+    },
     "order": 3,
-    "term": "EROA",
-    "aliases": [
-      "Área efectiva del orificio regurgitante",
-      "Effective regurgitant orifice area"
-    ],
-    "definition": "Área efectiva del orificio regurgitante.",
-    "acquisition_utility_limitation": "Representa el tamaño funcional del orificio por donde ocurre la regurgitación.",
+    "term": {
+      "es": "EROA",
+      "en": "EROA"
+    },
+    "aliases": {
+      "es": [
+        "Área efectiva del orificio regurgitante",
+        "Effective regurgitant orifice area"
+      ],
+      "en": [
+        "Effective regurgitant orifice area",
+        "EROA"
+      ]
+    },
+    "definition": {
+      "es": "Área efectiva del orificio regurgitante.",
+      "en": "Effective regurgitant orifice area."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Representa el tamaño funcional del orificio por donde ocurre la regurgitación.",
+      "en": "Key marker of regurgitation severity."
+    },
     "related_measurement_ids": [
       "eroa_meas",
       "insuficiencia_mitral_severa_meas",
@@ -1354,15 +2764,33 @@
   },
   {
     "id": "volumen_regurgitante_term",
-    "category": "Insuficiencias valvulares",
+    "category": {
+      "es": "Insuficiencias valvulares",
+      "en": "Insuficiencias valvulares"
+    },
     "order": 4,
-    "term": "Volumen regurgitante",
-    "aliases": [
-      "Regurgitant volume",
-      "VR"
-    ],
-    "definition": "Cantidad de sangre que regresa por la válvula en cada latido.",
-    "acquisition_utility_limitation": "Se calcula a partir de EROA y VTI del jet, o por diferencias volumétricas.",
+    "term": {
+      "es": "Volumen regurgitante",
+      "en": "Regurgitant Volume"
+    },
+    "aliases": {
+      "es": [
+        "Regurgitant volume",
+        "VR"
+      ],
+      "en": [
+        "Regurgitant volume",
+        "RV"
+      ]
+    },
+    "definition": {
+      "es": "Cantidad de sangre que regresa por la válvula en cada latido.",
+      "en": "Volume of blood regurgitated per beat."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Se calcula a partir de EROA y VTI del jet, o por diferencias volumétricas.",
+      "en": "Volume of blood regurgitated per beat."
+    },
     "related_measurement_ids": [
       "volumen_regurgitante_meas",
       "insuficiencia_mitral_severa_meas",
@@ -1374,15 +2802,33 @@
   },
   {
     "id": "fraccion_regurgitante_term",
-    "category": "Insuficiencias valvulares",
+    "category": {
+      "es": "Insuficiencias valvulares",
+      "en": "Insuficiencias valvulares"
+    },
     "order": 5,
-    "term": "Fracción regurgitante",
-    "aliases": [
-      "Regurgitant fraction",
-      "FR"
-    ],
-    "definition": "Porcentaje del volumen sistólico total que regurgita.",
-    "acquisition_utility_limitation": "Cuantifica la proporción de flujo retrógrado.",
+    "term": {
+      "es": "Fracción regurgitante",
+      "en": "Regurgitant Fraction"
+    },
+    "aliases": {
+      "es": [
+        "Regurgitant fraction",
+        "FR"
+      ],
+      "en": [
+        "Regurgitant fraction",
+        "RF"
+      ]
+    },
+    "definition": {
+      "es": "Porcentaje del volumen sistólico total que regurgita.",
+      "en": "Regurgitant volume divided by stroke volume."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Cuantifica la proporción de flujo retrógrado.",
+      "en": "Reflects the proportion of stroke volume that regurgitates."
+    },
     "related_measurement_ids": [
       "fraccion_regurgitante_meas",
       "insuficiencia_mitral_severa_meas",
@@ -1393,15 +2839,33 @@
   },
   {
     "id": "reversion_sistolica_hepatica_term",
-    "category": "Insuficiencias valvulares",
+    "category": {
+      "es": "Insuficiencias valvulares",
+      "en": "Insuficiencias valvulares"
+    },
     "order": 6,
-    "term": "Reversión sistólica hepática",
-    "aliases": [
-      "Flujo hepático sistólico retrógrado",
-      "Systolic hepatic vein reversal"
-    ],
-    "definition": "Flujo retrógrado sistólico en venas hepáticas.",
-    "acquisition_utility_limitation": "Hallazgo que apoya insuficiencia tricuspídea severa en el contexto adecuado.",
+    "term": {
+      "es": "Reversión sistólica hepática",
+      "en": "Hepatic Vein Systolic Reversal"
+    },
+    "aliases": {
+      "es": [
+        "Flujo hepático sistólico retrógrado",
+        "Systolic hepatic vein reversal"
+      ],
+      "en": [
+        "Hepatic vein systolic reversal",
+        "Systolic reversal"
+      ]
+    },
+    "definition": {
+      "es": "Flujo retrógrado sistólico en venas hepáticas.",
+      "en": "Retrograde flow in hepatic veins during systole."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Hallazgo que apoya insuficiencia tricuspídea severa en el contexto adecuado.",
+      "en": "Specific sign of severe tricuspid regurgitation."
+    },
     "related_measurement_ids": [
       "insuficiencia_tricuspidea_severa_meas"
     ],
@@ -1410,15 +2874,33 @@
   },
   {
     "id": "reversion_holodiastolica_aortica_term",
-    "category": "Insuficiencias valvulares",
+    "category": {
+      "es": "Insuficiencias valvulares",
+      "en": "Insuficiencias valvulares"
+    },
     "order": 7,
-    "term": "Reversión holodiastólica aórtica",
-    "aliases": [
-      "Flujo holodiastólico retrógrado en aorta descendente",
-      "Holodiastolic aortic flow reversal"
-    ],
-    "definition": "Flujo retrógrado durante toda la diástole en aorta descendente.",
-    "acquisition_utility_limitation": "Apoya insuficiencia aórtica importante.",
+    "term": {
+      "es": "Reversión holodiastólica aórtica",
+      "en": "Aortic Holodiastolic Reversal"
+    },
+    "aliases": {
+      "es": [
+        "Flujo holodiastólico retrógrado en aorta descendente",
+        "Holodiastolic aortic flow reversal"
+      ],
+      "en": [
+        "Aortic holodiastolic reversal",
+        "Holodiastolic reversal"
+      ]
+    },
+    "definition": {
+      "es": "Flujo retrógrado durante toda la diástole en aorta descendente.",
+      "en": "Retrograde flow throughout diastole in the descending aorta."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Apoya insuficiencia aórtica importante.",
+      "en": "Specific sign of severe aortic regurgitation."
+    },
     "related_measurement_ids": [
       "insuficiencia_aortica_severa_meas"
     ],
@@ -1427,14 +2909,32 @@
   },
   {
     "id": "insuficiencia_mitral_severa_term",
-    "category": "Insuficiencias valvulares",
+    "category": {
+      "es": "Insuficiencias valvulares",
+      "en": "Insuficiencias valvulares"
+    },
     "order": 8,
-    "term": "Insuficiencia mitral severa",
-    "aliases": [
-      "Severe mitral regurgitation criteria"
-    ],
-    "definition": "Criterios integrados para definir severidad mitral.",
-    "acquisition_utility_limitation": "Requiere correlación con síntomas, tamaño ventricular y etiología.",
+    "term": {
+      "es": "Insuficiencia mitral severa",
+      "en": "Severe Mitral Regurgitation"
+    },
+    "aliases": {
+      "es": [
+        "Severe mitral regurgitation criteria"
+      ],
+      "en": [
+        "Severe mitral regurgitation",
+        "Severe MR"
+      ]
+    },
+    "definition": {
+      "es": "Criterios integrados para definir severidad mitral.",
+      "en": "Mitral regurgitation meeting severity criteria (EROA >= 0.4 cm2)."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Requiere correlación con síntomas, tamaño ventricular y etiología.",
+      "en": "Requires clinical integration and valve assessment."
+    },
     "related_measurement_ids": [
       "insuficiencia_mitral_severa_meas"
     ],
@@ -1443,14 +2943,32 @@
   },
   {
     "id": "insuficiencia_aortica_severa_term",
-    "category": "Insuficiencias valvulares",
+    "category": {
+      "es": "Insuficiencias valvulares",
+      "en": "Insuficiencias valvulares"
+    },
     "order": 9,
-    "term": "Insuficiencia aórtica severa",
-    "aliases": [
-      "Severe aortic regurgitation criteria"
-    ],
-    "definition": "Criterios integrados para definir severidad aórtica.",
-    "acquisition_utility_limitation": "Requiere reversión holodiastólica y repercusión ventricular.",
+    "term": {
+      "es": "Insuficiencia aórtica severa",
+      "en": "Severe Aortic Regurgitation"
+    },
+    "aliases": {
+      "es": [
+        "Severe aortic regurgitation criteria"
+      ],
+      "en": [
+        "Severe aortic regurgitation",
+        "Severe AR"
+      ]
+    },
+    "definition": {
+      "es": "Criterios integrados para definir severidad aórtica.",
+      "en": "Aortic regurgitation meeting severity criteria (EROA >= 0.3 cm2)."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Requiere reversión holodiastólica y repercusión ventricular.",
+      "en": "Requires clinical integration and valve assessment."
+    },
     "related_measurement_ids": [
       "insuficiencia_aortica_severa_meas"
     ],
@@ -1459,14 +2977,32 @@
   },
   {
     "id": "insuficiencia_tricuspidea_severa_term",
-    "category": "Insuficiencias valvulares",
+    "category": {
+      "es": "Insuficiencias valvulares",
+      "en": "Insuficiencias valvulares"
+    },
     "order": 10,
-    "term": "Insuficiencia tricuspídea severa",
-    "aliases": [
-      "Severe tricuspid regurgitation criteria"
-    ],
-    "definition": "Criterios integrados para definir severidad tricuspídea.",
-    "acquisition_utility_limitation": "Requiere reversión sistólica hepática.",
+    "term": {
+      "es": "Insuficiencia tricuspídea severa",
+      "en": "Severe Tricuspid Regurgitation"
+    },
+    "aliases": {
+      "es": [
+        "Severe tricuspid regurgitation criteria"
+      ],
+      "en": [
+        "Severe tricuspid regurgitation",
+        "Severe TR"
+      ]
+    },
+    "definition": {
+      "es": "Criterios integrados para definir severidad tricuspídea.",
+      "en": "Tricuspid regurgitation meeting severity criteria (EROA >= 0.4 cm2)."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Requiere reversión sistólica hepática.",
+      "en": "Associated with hepatic congestion and right heart failure."
+    },
     "related_measurement_ids": [
       "insuficiencia_tricuspidea_severa_meas"
     ],
@@ -1475,15 +3011,33 @@
   },
   {
     "id": "derrame_pericardico_term",
-    "category": "Pericardio y taponamiento",
+    "category": {
+      "es": "Pericardio y taponamiento",
+      "en": "Pericardio y taponamiento"
+    },
     "order": 1,
-    "term": "Derrame pericárdico",
-    "aliases": [
-      "Pericardial effusion",
-      "Líquido pericárdico"
-    ],
-    "definition": "Acumulación de líquido en el espacio pericárdico.",
-    "acquisition_utility_limitation": "Se cuantifica por separación eco-libre y se describe su distribución.",
+    "term": {
+      "es": "Derrame pericárdico",
+      "en": "Pericardial Effusion"
+    },
+    "aliases": {
+      "es": [
+        "Pericardial effusion",
+        "Líquido pericárdico"
+      ],
+      "en": [
+        "Pericardial effusion",
+        "PE"
+      ]
+    },
+    "definition": {
+      "es": "Acumulación de líquido en el espacio pericárdico.",
+      "en": "Accumulation of fluid in the pericardial space."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Se cuantifica por separación eco-libre y se describe su distribución.",
+      "en": "Graded by echo as mild, moderate, or severe."
+    },
     "related_measurement_ids": [
       "derrame_pericardico_pequeno",
       "derrame_pericardico_moderado",
@@ -1494,14 +3048,32 @@
   },
   {
     "id": "colapso_sistolico_ad_term",
-    "category": "Pericardio y taponamiento",
+    "category": {
+      "es": "Pericardio y taponamiento",
+      "en": "Pericardio y taponamiento"
+    },
     "order": 2,
-    "term": "Colapso sistólico de AD",
-    "aliases": [
-      "RA systolic collapse"
-    ],
-    "definition": "Inversión de la pared de AD durante la sístole.",
-    "acquisition_utility_limitation": "Sugiere que la presión pericárdica supera transitoriamente la presión auricular.",
+    "term": {
+      "es": "Colapso sistólico de AD",
+      "en": "RA Systolic Collapse"
+    },
+    "aliases": {
+      "es": [
+        "RA systolic collapse"
+      ],
+      "en": [
+        "RA systolic collapse",
+        "Right atrial collapse"
+      ]
+    },
+    "definition": {
+      "es": "Inversión de la pared de AD durante la sístole.",
+      "en": "Inward motion of the RA wall during systole."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Sugiere que la presión pericárdica supera transitoriamente la presión auricular.",
+      "en": "Early sign of cardiac tamponade."
+    },
     "related_measurement_ids": [
       "colapso_ad_meas"
     ],
@@ -1510,14 +3082,32 @@
   },
   {
     "id": "colapso_diastolico_vd_term",
-    "category": "Pericardio y taponamiento",
+    "category": {
+      "es": "Pericardio y taponamiento",
+      "en": "Pericardio y taponamiento"
+    },
     "order": 3,
-    "term": "Colapso diastólico de VD",
-    "aliases": [
-      "RV diastolic collapse"
-    ],
-    "definition": "Inversión de la pared libre del VD al inicio de la diástole.",
-    "acquisition_utility_limitation": "Apoya compromiso hemodinámico cuando se integra con clínica y otros signos.",
+    "term": {
+      "es": "Colapso diastólico de VD",
+      "en": "RV Diastolic Collapse"
+    },
+    "aliases": {
+      "es": [
+        "RV diastolic collapse"
+      ],
+      "en": [
+        "RV diastolic collapse",
+        "Right ventricular collapse"
+      ]
+    },
+    "definition": {
+      "es": "Inversión de la pared libre del VD al inicio de la diástole.",
+      "en": "Inward motion of the RV free wall during diastole."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Apoya compromiso hemodinámico cuando se integra con clínica y otros signos.",
+      "en": "Specific sign of cardiac tamponade."
+    },
     "related_measurement_ids": [
       "colapso_vd_meas"
     ],
@@ -1526,14 +3116,31 @@
   },
   {
     "id": "variacion_respiratoria_transmitral_term",
-    "category": "Pericardio y taponamiento",
+    "category": {
+      "es": "Pericardio y taponamiento",
+      "en": "Pericardio y taponamiento"
+    },
     "order": 4,
-    "term": "Variación respiratoria transmitral",
-    "aliases": [
-      "Mitral respiratory variation"
-    ],
-    "definition": "Cambio respiratorio de la velocidad E mitral.",
-    "acquisition_utility_limitation": "Una variación exagerada refleja mayor interdependencia ventricular.",
+    "term": {
+      "es": "Variación respiratoria transmitral",
+      "en": "Transmitral Respiratory Variation"
+    },
+    "aliases": {
+      "es": [
+        "Mitral respiratory variation"
+      ],
+      "en": [
+        "Transmitral respiratory variation"
+      ]
+    },
+    "definition": {
+      "es": "Cambio respiratorio de la velocidad E mitral.",
+      "en": "Respiratory variation of mitral E-wave velocity."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Una variación exagerada refleja mayor interdependencia ventricular.",
+      "en": "Mitral E velocity variation during breathing; indicates interdependence."
+    },
     "related_measurement_ids": [
       "variacion_mitral_respiratoria"
     ],
@@ -1542,14 +3149,31 @@
   },
   {
     "id": "variacion_respiratoria_trantricuspidea_term",
-    "category": "Pericardio y taponamiento",
+    "category": {
+      "es": "Pericardio y taponamiento",
+      "en": "Pericardio y taponamiento"
+    },
     "order": 5,
-    "term": "Variación respiratoria transtricuspídea",
-    "aliases": [
-      "Tricuspid respiratory variation"
-    ],
-    "definition": "Cambio respiratorio de la velocidad E tricuspídea.",
-    "acquisition_utility_limitation": "Aumenta en taponamiento, pero depende del patrón respiratorio.",
+    "term": {
+      "es": "Variación respiratoria transtricuspídea",
+      "en": "Transtricuspid Respiratory Variation"
+    },
+    "aliases": {
+      "es": [
+        "Tricuspid respiratory variation"
+      ],
+      "en": [
+        "Transtricuspid respiratory variation"
+      ]
+    },
+    "definition": {
+      "es": "Cambio respiratorio de la velocidad E tricuspídea.",
+      "en": "Respiratory variation of tricuspid E-wave velocity."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Aumenta en taponamiento, pero depende del patrón respiratorio.",
+      "en": "Tricuspid E velocity variation during breathing."
+    },
     "related_measurement_ids": [
       "variacion_tricuspidea_respiratoria"
     ],
@@ -1558,14 +3182,32 @@
   },
   {
     "id": "vci_pletorica_term",
-    "category": "Pericardio y taponamiento",
+    "category": {
+      "es": "Pericardio y taponamiento",
+      "en": "Pericardio y taponamiento"
+    },
     "order": 6,
-    "term": "VCI pletórica",
-    "aliases": [
-      "Pletora de vena cava inferior"
-    ],
-    "definition": "VCI dilatada con poco colapso respiratorio.",
-    "acquisition_utility_limitation": "Sugiere presión AD elevada; es sensible, pero no específica.",
+    "term": {
+      "es": "VCI pletórica",
+      "en": "Plethoric IVC"
+    },
+    "aliases": {
+      "es": [
+        "Pletora de vena cava inferior"
+      ],
+      "en": [
+        "Plethoric IVC",
+        "IVC plethora"
+      ]
+    },
+    "definition": {
+      "es": "VCI dilatada con poco colapso respiratorio.",
+      "en": "Dilated IVC with minimal respiratory variation."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Sugiere presión AD elevada; es sensible, pero no específica.",
+      "en": "Sign of elevated right heart pressures."
+    },
     "related_measurement_ids": [
       "vci_pletorica_meas"
     ],
@@ -1574,15 +3216,33 @@
   },
   {
     "id": "movimiento_pendular_term",
-    "category": "Pericardio y taponamiento",
+    "category": {
+      "es": "Pericardio y taponamiento",
+      "en": "Pericardio y taponamiento"
+    },
     "order": 7,
-    "term": "Movimiento pendular",
-    "aliases": [
-      "Swinging heart",
-      "Movimiento oscilante"
-    ],
-    "definition": "Movimiento oscilante del corazón dentro de un derrame grande.",
-    "acquisition_utility_limitation": "Puede aparecer en derrames voluminosos y favorecer alternancia eléctrica.",
+    "term": {
+      "es": "Movimiento pendular",
+      "en": "Swinging Heart"
+    },
+    "aliases": {
+      "es": [
+        "Swinging heart",
+        "Movimiento oscilante"
+      ],
+      "en": [
+        "Swinging heart",
+        "Movimiento pendular"
+      ]
+    },
+    "definition": {
+      "es": "Movimiento oscilante del corazón dentro de un derrame grande.",
+      "en": "Pendular motion of the heart within a large pericardial effusion."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Puede aparecer en derrames voluminosos y favorecer alternancia eléctrica.",
+      "en": "Associated with electrical alternans."
+    },
     "related_measurement_ids": [
       "movimiento_pendular_meas"
     ],
@@ -1591,14 +3251,32 @@
   },
   {
     "id": "taponamiento_cardiaco_term",
-    "category": "Pericardio y taponamiento",
+    "category": {
+      "es": "Pericardio y taponamiento",
+      "en": "Pericardio y taponamiento"
+    },
     "order": 8,
-    "term": "Taponamiento cardiaco",
-    "aliases": [
-      "Cardiac tamponade"
-    ],
-    "definition": "Compromiso hemodinámico por aumento de presión pericárdica.",
-    "acquisition_utility_limitation": "Es un diagnóstico clínico-hemodinámico; la ecografía identifica signos de apoyo y urgencia.",
+    "term": {
+      "es": "Taponamiento cardiaco",
+      "en": "Cardiac Tamponade"
+    },
+    "aliases": {
+      "es": [
+        "Cardiac tamponade"
+      ],
+      "en": [
+        "Cardiac tamponade",
+        "Tamponade"
+      ]
+    },
+    "definition": {
+      "es": "Compromiso hemodinámico por aumento de presión pericárdica.",
+      "en": "Compression of cardiac chambers due to fluid accumulation."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Es un diagnóstico clínico-hemodinámico; la ecografía identifica signos de apoyo y urgencia.",
+      "en": "Requires clinical diagnosis and urgent drainage."
+    },
     "related_measurement_ids": [
       "colapso_ad_meas",
       "colapso_vd_meas",
@@ -1610,15 +3288,33 @@
   },
   {
     "id": "plax",
-    "category": "Términos técnicos y unidades",
+    "category": {
+      "es": "Términos técnicos y unidades",
+      "en": "Technical terms and units"
+    },
     "order": 1,
-    "term": "PLAX",
-    "aliases": [
-      "Parasternal long axis",
-      "Eje largo paraesternal"
-    ],
-    "definition": "Vista paraesternal de eje largo.",
-    "acquisition_utility_limitation": "Permite evaluar VI, AI, válvulas mitral/aórtica, raíz aórtica y pericardio.",
+    "term": {
+      "es": "PLAX",
+      "en": "PLAX view"
+    },
+    "aliases": {
+      "es": [
+        "Parasternal long axis",
+        "Eje largo paraesternal"
+      ],
+      "en": [
+        "Parasternal long axis",
+        "PLAX"
+      ]
+    },
+    "definition": {
+      "es": "Vista paraesternal de eje largo.",
+      "en": "Parasternal long axis view."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Permite evaluar VI, AI, válvulas mitral/aórtica, raíz aórtica y pericardio.",
+      "en": "Standard view to assess LV, LA, RVOT, and aortic/mitral valves."
+    },
     "related_measurement_ids": [
       "dtdvi",
       "dtsvi",
@@ -1632,15 +3328,33 @@
   },
   {
     "id": "psax",
-    "category": "Términos técnicos y unidades",
+    "category": {
+      "es": "Términos técnicos y unidades",
+      "en": "Technical terms and units"
+    },
     "order": 2,
-    "term": "PSAX",
-    "aliases": [
-      "Parasternal short axis",
-      "Eje corto paraesternal"
-    ],
-    "definition": "Vista paraesternal de eje corto.",
-    "acquisition_utility_limitation": "Permite evaluar geometría ventricular, válvulas y TSVD según el nivel.",
+    "term": {
+      "es": "PSAX",
+      "en": "PSAX view"
+    },
+    "aliases": {
+      "es": [
+        "Parasternal short axis",
+        "Eje corto paraesternal"
+      ],
+      "en": [
+        "Parasternal short axis",
+        "PSAX"
+      ]
+    },
+    "definition": {
+      "es": "Vista paraesternal de eje corto.",
+      "en": "Parasternal short axis view."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Permite evaluar geometría ventricular, válvulas y TSVD según el nivel.",
+      "en": "Standard view to assess LV geometry and RV size/flattening."
+    },
     "related_measurement_ids": [
       "aplanamiento_septal_meas",
       "area_mitral_planimetria"
@@ -1650,15 +3364,33 @@
   },
   {
     "id": "subcostal",
-    "category": "Términos técnicos y unidades",
+    "category": {
+      "es": "Términos técnicos y unidades",
+      "en": "Technical terms and units"
+    },
     "order": 3,
-    "term": "Subcostal",
-    "aliases": [
-      "Vista subcostal",
-      "Subcostal window"
-    ],
-    "definition": "Ventana ecocardiográfica debajo del reborde costal.",
-    "acquisition_utility_limitation": "Permite visualizar las cuatro cámaras, el pericardio y la vena cava inferior.",
+    "term": {
+      "es": "Subcostal",
+      "en": "Subcostal view"
+    },
+    "aliases": {
+      "es": [
+        "Vista subcostal",
+        "Subcostal window"
+      ],
+      "en": [
+        "Subcostal window",
+        "Subcostal"
+      ]
+    },
+    "definition": {
+      "es": "Ventana ecocardiográfica debajo del reborde costal.",
+      "en": "Subcostal window views."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Permite visualizar las cuatro cámaras, el pericardio y la vena cava inferior.",
+      "en": "Used to assess IVC and pericardial effusion."
+    },
     "related_measurement_ids": [
       "diametro_vci_meas"
     ],
@@ -1667,15 +3399,33 @@
   },
   {
     "id": "modo_m",
-    "category": "Términos técnicos y unidades",
+    "category": {
+      "es": "Términos técnicos y unidades",
+      "en": "Technical terms and units"
+    },
     "order": 4,
-    "term": "Modo M",
-    "aliases": [
-      "Motion mode",
-      "M-mode"
-    ],
-    "definition": "Registro unidimensional de estructuras a lo largo del tiempo.",
-    "acquisition_utility_limitation": "Ofrece alta resolución temporal para excursiones y diámetros.",
+    "term": {
+      "es": "Modo M",
+      "en": "M-mode"
+    },
+    "aliases": {
+      "es": [
+        "Motion mode",
+        "M-mode"
+      ],
+      "en": [
+        "M-mode",
+        "Motion mode"
+      ]
+    },
+    "definition": {
+      "es": "Registro unidimensional de estructuras a lo largo del tiempo.",
+      "en": "Motion mode displaying moving structures over time."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Ofrece alta resolución temporal para excursiones y diámetros.",
+      "en": "High temporal resolution; used for EPSS, TAPSE, and MAPSE."
+    },
     "related_measurement_ids": [
       "epss",
       "mapse",
@@ -1686,15 +3436,33 @@
   },
   {
     "id": "pw_doppler",
-    "category": "Términos técnicos y unidades",
+    "category": {
+      "es": "Términos técnicos y unidades",
+      "en": "Technical terms and units"
+    },
     "order": 5,
-    "term": "Doppler pulsado",
-    "aliases": [
-      "Pulsed wave Doppler",
-      "PW Doppler"
-    ],
-    "definition": "Mide velocidades en una ubicación específica.",
-    "acquisition_utility_limitation": "Tiene límite de Nyquist y puede presentar aliasing.",
+    "term": {
+      "es": "Doppler pulsado",
+      "en": "Pulsed-wave Doppler (PW)"
+    },
+    "aliases": {
+      "es": [
+        "Pulsed wave Doppler",
+        "PW Doppler"
+      ],
+      "en": [
+        "Pulsed wave Doppler",
+        "PW Doppler"
+      ]
+    },
+    "definition": {
+      "es": "Mide velocidades en una ubicación específica.",
+      "en": "Doppler measuring blood flow velocities at a specific site."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Tiene límite de Nyquist y puede presentar aliasing.",
+      "en": "Used for transmitral flow, tissue velocities, and LVOT flow."
+    },
     "related_measurement_ids": [
       "vti_tsvi_meas",
       "onda_e_mitral",
@@ -1707,15 +3475,33 @@
   },
   {
     "id": "cw_doppler",
-    "category": "Términos técnicos y unidades",
+    "category": {
+      "es": "Términos técnicos y unidades",
+      "en": "Technical terms and units"
+    },
     "order": 6,
-    "term": "Doppler continuo",
-    "aliases": [
-      "Continuous wave Doppler",
-      "CW Doppler"
-    ],
-    "definition": "Mide velocidades altas a lo largo de todo el haz.",
-    "acquisition_utility_limitation": "No localiza con precisión la profundidad, pero evita aliasing en jets rápidos.",
+    "term": {
+      "es": "Doppler continuo",
+      "en": "Continuous-wave Doppler (CW)"
+    },
+    "aliases": {
+      "es": [
+        "Continuous wave Doppler",
+        "CW Doppler"
+      ],
+      "en": [
+        "Continuous wave Doppler",
+        "CW Doppler"
+      ]
+    },
+    "definition": {
+      "es": "Mide velocidades altas a lo largo de todo el haz.",
+      "en": "Doppler measuring high-velocity blood flows along the beam."
+    },
+    "acquisition_utility_limitation": {
+      "es": "No localiza con precisión la profundidad, pero evita aliasing en jets rápidos.",
+      "en": "Used for valvular gradients and regurgitation."
+    },
     "related_measurement_ids": [
       "velocidad_it_diastology",
       "velocidad_max_aortica",
@@ -1726,15 +3512,33 @@
   },
   {
     "id": "tdi",
-    "category": "Términos técnicos y unidades",
+    "category": {
+      "es": "Términos técnicos y unidades",
+      "en": "Technical terms and units"
+    },
     "order": 7,
-    "term": "Doppler tisular",
-    "aliases": [
-      "Tissue Doppler imaging",
-      "TDI"
-    ],
-    "definition": "Mide velocidades de movimiento miocárdico/anular.",
-    "acquisition_utility_limitation": "Usado para e' y s'.",
+    "term": {
+      "es": "Doppler tisular",
+      "en": "Tissue Doppler Imaging (TDI)"
+    },
+    "aliases": {
+      "es": [
+        "Tissue Doppler imaging",
+        "TDI"
+      ],
+      "en": [
+        "Tissue Doppler",
+        "TDI"
+      ]
+    },
+    "definition": {
+      "es": "Mide velocidades de movimiento miocárdico/anular.",
+      "en": "Doppler measuring velocity of myocardial motion."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Usado para e' y s'.",
+      "en": "Used to assess longitudinal systolic and diastolic function."
+    },
     "related_measurement_ids": [
       "s_prima_mitral",
       "e_septal_meas",
@@ -1746,15 +3550,33 @@
   },
   {
     "id": "speckle_tracking",
-    "category": "Términos técnicos y unidades",
+    "category": {
+      "es": "Términos técnicos y unidades",
+      "en": "Technical terms and units"
+    },
     "order": 8,
-    "term": "Speckle tracking",
-    "aliases": [
-      "Rastreo de marcas acústicas",
-      "Echocardiographic strain"
-    ],
-    "definition": "Seguimiento de patrones acústicos del miocardio cuadro a cuadro.",
-    "acquisition_utility_limitation": "Permite calcular strain y strain rate.",
+    "term": {
+      "es": "Speckle tracking",
+      "en": "Speckle Tracking Echocardiography"
+    },
+    "aliases": {
+      "es": [
+        "Rastreo de marcas acústicas",
+        "Echocardiographic strain"
+      ],
+      "en": [
+        "Speckle tracking",
+        "Myocardial strain"
+      ]
+    },
+    "definition": {
+      "es": "Seguimiento de patrones acústicos del miocardio cuadro a cuadro.",
+      "en": "Advanced technique measuring myocardial deformation (strain)."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Permite calcular strain y strain rate.",
+      "en": "Used to estimate longitudinal function and contractility."
+    },
     "related_measurement_ids": [
       "gls_vi",
       "la_strain_reservoir",
@@ -1765,15 +3587,33 @@
   },
   {
     "id": "bsa",
-    "category": "Términos técnicos y unidades",
+    "category": {
+      "es": "Términos técnicos y unidades",
+      "en": "Technical terms and units"
+    },
     "order": 9,
-    "term": "Superficie corporal",
-    "aliases": [
-      "Body surface area",
-      "BSA"
-    ],
-    "definition": "Estimación del tamaño corporal expresada en m².",
-    "acquisition_utility_limitation": "Se usa para indexar volúmenes, masas y áreas.",
+    "term": {
+      "es": "Superficie corporal",
+      "en": "BSA"
+    },
+    "aliases": {
+      "es": [
+        "Body surface area",
+        "BSA"
+      ],
+      "en": [
+        "Body surface area",
+        "BSA"
+      ]
+    },
+    "definition": {
+      "es": "Estimación del tamaño corporal expresada en m².",
+      "en": "Body surface area."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Se usa para indexar volúmenes, masas y áreas.",
+      "en": "Used to index cardiac chambers and measurements."
+    },
     "related_measurement_ids": [
       "vtdvi_indexed",
       "vtsvi_indexed",
@@ -1789,28 +3629,64 @@
   },
   {
     "id": "indexed",
-    "category": "Términos técnicos y unidades",
+    "category": {
+      "es": "Términos técnicos y unidades",
+      "en": "Technical terms and units"
+    },
     "order": 10,
-    "term": "Indexado",
-    "aliases": [
-      "Indexación corporal"
-    ],
-    "definition": "Valor dividido por superficie corporal u otra variable corporal.",
-    "acquisition_utility_limitation": "Reduce el sesgo por tamaño del paciente.",
+    "term": {
+      "es": "Indexado",
+      "en": "Indexed value"
+    },
+    "aliases": {
+      "es": [
+        "Indexación corporal"
+      ],
+      "en": [
+        "Indexed",
+        "Indexed value"
+      ]
+    },
+    "definition": {
+      "es": "Valor dividido por superficie corporal u otra variable corporal.",
+      "en": "Measurement adjusted by body surface area."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Reduce el sesgo por tamaño del paciente.",
+      "en": "Allows standardization of chambers and diameters."
+    },
     "related_measurement_ids": [],
     "source_page": 17,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf"
   },
   {
     "id": "bernoulli_term",
-    "category": "Términos técnicos y unidades",
+    "category": {
+      "es": "Términos técnicos y unidades",
+      "en": "Technical terms and units"
+    },
     "order": 11,
-    "term": "Bernoulli simplificada",
-    "aliases": [
-      "Ecuación de Bernoulli"
-    ],
-    "definition": "Ecuación ΔP = 4V².",
-    "acquisition_utility_limitation": "Convierte velocidad Doppler en gradiente de presión cuando V está en m/s.",
+    "term": {
+      "es": "Bernoulli simplificada",
+      "en": "Simplified Bernoulli Equation"
+    },
+    "aliases": {
+      "es": [
+        "Ecuación de Bernoulli"
+      ],
+      "en": [
+        "Bernoulli equation",
+        "Simplified Bernoulli"
+      ]
+    },
+    "definition": {
+      "es": "Ecuación ΔP = 4V².",
+      "en": "Formula (4 * V^2) converting flow velocity to pressure gradient."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Convierte velocidad Doppler en gradiente de presión cuando V está en m/s.",
+      "en": "Standard formula to calculate pressure gradients."
+    },
     "related_measurement_ids": [
       "gradiente_vd_ad",
       "gradiente_max_aortico"
@@ -1820,15 +3696,33 @@
   },
   {
     "id": "wood_unit",
-    "category": "Términos técnicos y unidades",
+    "category": {
+      "es": "Términos técnicos y unidades",
+      "en": "Technical terms and units"
+    },
     "order": 12,
-    "term": "UW / Wood",
-    "aliases": [
-      "Unidad Wood",
-      "Wood units"
-    ],
-    "definition": "Unidad Wood de resistencia vascular.",
-    "acquisition_utility_limitation": "1 UW equivale a 80 dyn·s·cm⁻⁵.",
+    "term": {
+      "es": "UW / Wood",
+      "en": "Wood Units (WU)"
+    },
+    "aliases": {
+      "es": [
+        "Unidad Wood",
+        "Wood units"
+      ],
+      "en": [
+        "Wood unit",
+        "Wood units"
+      ]
+    },
+    "definition": {
+      "es": "Unidad Wood de resistencia vascular.",
+      "en": "Unit of measurement for vascular resistance."
+    },
+    "acquisition_utility_limitation": {
+      "es": "1 UW equivale a 80 dyn·s·cm⁻⁵.",
+      "en": "1 WU = 80 dynes.sec.cm-5."
+    },
     "related_measurement_ids": [
       "rvp_ecografica"
     ],
@@ -1837,14 +3731,32 @@
   },
   {
     "id": "foreshortening",
-    "category": "Términos técnicos y unidades",
+    "category": {
+      "es": "Términos técnicos y unidades",
+      "en": "Technical terms and units"
+    },
     "order": 13,
-    "term": "Foreshortening",
-    "aliases": [
-      "Acortamiento apical"
-    ],
-    "definition": "Acortamiento artificial de una cavidad por corte apical incorrecto.",
-    "acquisition_utility_limitation": "Subestima longitudes y volúmenes.",
+    "term": {
+      "es": "Foreshortening",
+      "en": "Apical Foreshortening"
+    },
+    "aliases": {
+      "es": [
+        "Acortamiento apical"
+      ],
+      "en": [
+        "Foreshortening",
+        "Apical foreshortening"
+      ]
+    },
+    "definition": {
+      "es": "Acortamiento artificial de una cavidad por corte apical incorrecto.",
+      "en": "Technical error underestimating ventricular length and volume."
+    },
+    "acquisition_utility_limitation": {
+      "es": "Subestima longitudes y volúmenes.",
+      "en": "Avoided by optimizing transducer position and focus."
+    },
     "related_measurement_ids": [
       "vtdvi",
       "rv_length"

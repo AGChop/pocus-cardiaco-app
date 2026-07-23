@@ -227,6 +227,25 @@ const Router = {
     // GLOSARIO DE TÉRMINOS
     async renderGlossaryList(container) {
         const glossary = await DataLoader.getGlossary() || [];
+        const escapeHTML = (str) => {
+            if (!str) return "";
+            return String(str)
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        };
+
+        const getLocalizedAliases = (aliases) => {
+            if (!aliases) return [];
+            if (Array.isArray(aliases)) return aliases;
+            if (typeof aliases === "object") {
+                const activeLang = I18n.getLanguage();
+                return aliases[activeLang] || aliases["es"] || aliases["en"] || [];
+            }
+            return [];
+        };
 
         let html = `
             <div class="navigation-header">
@@ -239,25 +258,31 @@ const Router = {
 
         glossary.forEach(item => {
             const isFav = Storage.isFavorite("término", item.id);
-            const copyData = `${I18n.translate("label.term")}: ${item.term}\n${I18n.translate("label.definition")}: ${item.definition}\n${I18n.translate("label.acquisition_details")}: ${item.acquisition_utility_limitation}\n${I18n.translate("label.references")}: ${item.source_document} (P. ${item.source_page})`;
+            const termLoc = I18n.localize(item.term);
+            const defLoc = I18n.localize(item.definition);
+            const utilLoc = I18n.localize(item.acquisition_utility_limitation);
+            const catLoc = I18n.localize(item.category);
+            const activeAliases = getLocalizedAliases(item.aliases);
+
+            const copyData = `${I18n.translate("label.term")}: ${termLoc}\n${I18n.translate("label.definition")}: ${defLoc}\n${I18n.translate("label.acquisition_details")}: ${utilLoc}\n${I18n.translate("label.references")}: ${item.source_document} (P. ${item.source_page})`;
 
             html += `
                 <details class="content-accordion glossary-accordion card clinical-card">
                     <summary class="content-accordion-summary">
-                        <span class="content-accordion-title">${item.term}</span>
+                        <span class="content-accordion-title">${escapeHTML(termLoc)}</span>
                         <span class="content-accordion-arrow"></span>
                     </summary>
                     <div class="content-accordion-body">
-                        ${item.category ? `<p><strong>${I18n.translate("label.categoria")}:</strong> ${item.category}</p>` : ''}
-                        <p class="card-definition"><strong>${I18n.translate("label.definition")}:</strong> ${item.definition}</p>
-                        <p class="card-acquisition"><strong>${I18n.translate("label.acquisition_details")}:</strong> ${item.acquisition_utility_limitation}</p>
-                        ${item.aliases && item.aliases.length > 0 ? `<p class="card-aliases"><strong>${I18n.translate("label.sinonimos")}:</strong> ${item.aliases.join(", ")}</p>` : ''}
+                        ${catLoc ? `<p><strong>${I18n.translate("label.categoria")}:</strong> ${escapeHTML(catLoc)}</p>` : ''}
+                        <p class="card-definition"><strong>${I18n.translate("label.definition")}:</strong> ${escapeHTML(defLoc)}</p>
+                        <p class="card-acquisition"><strong>${I18n.translate("label.acquisition_details")}:</strong> ${escapeHTML(utilLoc)}</p>
+                        ${activeAliases && activeAliases.length > 0 ? `<p class="card-aliases"><strong>${I18n.translate("label.sinonimos")}:</strong> ${escapeHTML(activeAliases.join(", "))}</p>` : ''}
                         <div class="card-meta">${I18n.translate("label.origen")}: ${item.source_page}</div>
                         <div class="card-actions">
                             <a href="#/glosario/${item.id}" class="btn-card-action">${I18n.translate("label.detalles")}</a>
                             <button class="btn-card-action" onclick="Router.copyText(\`${copyData.replace(/`/g, '\\`').replace(/\n/g, '\\n')}\`, 'copy-m-t-${item.id}')" id="copy-m-t-${item.id}">${I18n.translate("label.copiar")}</button>
-                            <button class="btn-card-action" onclick="Router.toggleFav('término', '${item.id}', '${item.term}', 'fav-t-${item.id}')" id="fav-t-${item.id}">
-                                ${isFav ? "★ ${I18n.translate("label.quitar")}" : "☆ ${I18n.translate("label.favorito")}"}
+                            <button class="btn-card-action" onclick="Router.toggleFav('término', '${item.id}', '${termLoc.replace(/'/g, "\\'")}', 'fav-t-${item.id}')" id="fav-t-${item.id}">
+                                ${isFav ? "★ " + I18n.translate("label.quitar") : "☆ " + I18n.translate("label.favorito")}
                             </button>
                         </div>
                     </div>
@@ -281,43 +306,69 @@ const Router = {
             return;
         }
 
-        Storage.addRecent("término", term.id, term.term);
+        const escapeHTML = (str) => {
+            if (!str) return "";
+            return String(str)
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        };
+
+        const getLocalizedAliases = (aliases) => {
+            if (!aliases) return [];
+            if (Array.isArray(aliases)) return aliases;
+            if (typeof aliases === "object") {
+                const activeLang = I18n.getLanguage();
+                return aliases[activeLang] || aliases["es"] || aliases["en"] || [];
+            }
+            return [];
+        };
+
+        const termLoc = I18n.localize(term.term);
+        const defLoc = I18n.localize(term.definition);
+        const utilLoc = I18n.localize(term.acquisition_utility_limitation);
+        const catLoc = I18n.localize(term.category);
+        const activeAliases = getLocalizedAliases(term.aliases);
+
+        Storage.addRecent("término", term.id, termLoc);
         const isFav = Storage.isFavorite("término", term.id);
-        const copyData = `${I18n.translate("label.term")}: ${term.term}\n${I18n.translate("label.definition")}: ${term.definition}\n${I18n.translate("label.acquisition_details")}: ${term.acquisition_utility_limitation}\n${I18n.translate("label.references")}: ${term.source_document} (P. ${term.source_page})`;
+        const copyData = `${I18n.translate("label.term")}: ${termLoc}\n${I18n.translate("label.definition")}: ${defLoc}\n${I18n.translate("label.acquisition_details")}: ${utilLoc}\n${I18n.translate("label.references")}: ${term.source_document} (P. ${term.source_page})`;
 
         let html = `
             <div class="navigation-header">
                 <a href="#/glosario" class="btn-back">← ${I18n.translate("nav.glossary")}</a>
-                <h2>${term.term}</h2>
+                <h2>${escapeHTML(termLoc)}</h2>
             </div>
 
             <div class="card clinical-detail-card">
                 <div class="card-section">
                     <span class="detail-label">${I18n.translate("label.categoria")}</span>
-                    <span class="detail-value">${term.category}</span>
+                    <span class="detail-value">${escapeHTML(catLoc)}</span>
                 </div>
                 <div class="card-section">
                     <span class="detail-label">${I18n.translate("label.definition")}</span>
-                    <p class="detail-text">${term.definition}</p>
+                    <p class="detail-text">${escapeHTML(defLoc)}</p>
                 </div>
                 <div class="card-section">
-                    <span class="detail-label">Adquisición, Utilidad y Limitaciones</span>
-                    <p class="detail-text">${term.acquisition_utility_limitation}</p>
+                    <span class="detail-label">${I18n.translate("label.acquisition_details")}</span>
+                    <p class="detail-text">${escapeHTML(utilLoc)}</p>
                 </div>
-                ${term.aliases && term.aliases.length > 0 ? `
+                ${activeAliases && activeAliases.length > 0 ? `
                 <div class="card-section">
-                    <span class="detail-label">Alias / Sinonimia</span>
-                    <p class="detail-text">${term.aliases.join(", ")}</p>
+                    <span class="detail-label">${I18n.translate("label.sinonimos")}</span>
+                    <p class="detail-text">${escapeHTML(activeAliases.join(", "))}</p>
                 </div>` : ''}
                 <div class="card-section">
-                    <span class="detail-label">Fuente Autorizada</span>
-                    <p class="detail-text">${term.source_document} (Página ${term.source_page})</p>
+                    <span class="detail-label">${I18n.translate("label.references")}</span>
+                    <p class="detail-text">${escapeHTML(term.source_document)} (P. ${term.source_page})</p>
                 </div>
 
                 <div class="detail-actions">
                     <button class="btn-primary" onclick="Router.copyText(\`${copyData.replace(/`/g, '\\`').replace(/\n/g, '\\n')}\`, 'copy-det-t')" id="copy-det-t">${I18n.translate("label.copiar")} Contenido</button>
-                    <button class="btn-secondary" onclick="Router.toggleFav('término', '${term.id}', '${term.term}', 'fav-det-t')" id="fav-det-t">
-                        ${isFav ? "★ ${I18n.translate("label.quitar")} Favorito" : "☆ ${I18n.translate("action.save_favorite")}"}
+                    <button class="btn-secondary" onclick="Router.toggleFav('término', '${term.id}', '${termLoc.replace(/'/g, "\\'")}', 'fav-det-t')" id="fav-det-t">
+                        ${isFav ? "★ " + I18n.translate("label.quitar") + " " + I18n.translate("label.favorito") : "☆ " + I18n.translate("action.save_favorite")}
                     </button>
                 </div>
             </div>
@@ -1635,41 +1686,61 @@ const Router = {
     // CLASIFICACIONES
     async renderClassifications(container) {
         const classifications = await DataLoader.getClassifications() || [];
+        const escapeHTML = (str) => {
+            if (!str) return "";
+            return String(str)
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        };
 
+        const isEs = I18n.getLanguage() === "es";
         let html = `
             <div class="navigation-header">
                 <a href="#/" class="btn-back">← ${I18n.translate("nav.home")}</a>
-                <h2>${I18n.translate("label.classification")} Prácticas</h2>
+                <h2>${isEs ? "Clasificaciones Prácticas" : "Practical Classifications"}</h2>
             </div>
         `;
 
         classifications.forEach(c => {
+            const nameLoc = I18n.localize(c.name);
+            const noteLoc = I18n.localize(c.note);
+            const col1Header = c.items[0].range ? I18n.translate("label.rango") : I18n.translate("label.parameter");
+            const col2Header = c.items[0].category ? I18n.translate("label.classification") : (isEs ? "Punto de corte" : "Cutoff point");
+
             html += `
                 <div class="card" style="margin-bottom: 1.5rem; padding: 1.5rem; background-color: var(--card-bg-light); border: 1px solid var(--border-light); border-radius: 12px;">
-                    <h3 style="color: var(--primary-medium); margin-bottom: 0.5rem;">${c.name}</h3>
+                    <h3 style="color: var(--primary-medium); margin-bottom: 0.5rem;">${escapeHTML(nameLoc)}</h3>
                     <table class="clinical-table" style="margin: 0.5rem 0;">
                         <thead>
                             <tr>
-                                <th>${c.items[0].range ? "${I18n.translate("label.rango")}" : "${I18n.translate("label.parameter")}"}</th>
-                                <th>${c.items[0].category ? "Clasificación" : "Punto de corte"}</th>
-                                ${c.items[0].method ? "<th>${I18n.translate("label.method")}</th>" : ""}
+                                <th>${escapeHTML(col1Header)}</th>
+                                <th>${escapeHTML(col2Header)}</th>
+                                ${c.items[0].method ? `<th>${escapeHTML(I18n.translate("label.method"))}</th>` : ""}
                             </tr>
                         </thead>
                         <tbody>
             `;
             c.items.forEach(item => {
+                const paramLoc = I18n.localize(item.parameter);
+                const catLoc = I18n.localize(item.category);
+                const thresholdLoc = I18n.localize(item.threshold);
+                const methodLoc = I18n.localize(item.method);
+
                 html += `
                     <tr>
-                        <td><strong>${item.range || item.parameter}</strong></td>
-                        <td>${item.category || item.threshold}</td>
-                        ${item.method ? `<td>${item.method}</td>` : ""}
+                        <td><strong>${escapeHTML(item.range || paramLoc)}</strong></td>
+                        <td>${escapeHTML(catLoc || thresholdLoc)}</td>
+                        ${item.method ? `<td>${escapeHTML(methodLoc)}</td>` : ""}
                     </tr>
                 `;
             });
             html += `
                         </tbody>
                     </table>
-                    ${c.note ? `<p style="font-size: 0.85rem; color: var(--text-muted-light); margin-top: 0.5rem;"><strong>Nota:</strong> ${c.note}</p>` : ""}
+                    ${noteLoc ? `<p style="font-size: 0.85rem; color: var(--text-muted-light); margin-top: 0.5rem;"><strong>${isEs ? "Nota" : "Note"}:</strong> ${escapeHTML(noteLoc)}</p>` : ""}
                     <div style="font-size: 0.8rem; color: var(--text-muted-light); text-align: right; margin-top: 0.25rem;">${I18n.translate("label.origen")}: ${c.source_page}</div>
                 </div>
             `;
