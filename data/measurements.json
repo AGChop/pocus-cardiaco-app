@@ -378,15 +378,33 @@
     "id": "ivsd",
     "section_id": "lv_geometry",
     "order": 1,
-    "measurement": "Septum diastólico (IVSd)",
+    "measurement": {
+      "es": "Septum diastólico (IVSd)",
+      "en": "Interventricular septal thickness in diastole (IVSd)"
+    },
     "abbreviation": "IVSd",
-    "aliases": [
-      "Grosor del septo interventricular en diástole",
-      "Septo diastólico"
-    ],
-    "formula_or_method": "PLAX, fin de diástole.",
-    "normal_values": "Hombres 6-10 mm; mujeres 6-9 mm.",
-    "interpretation_limitations": "Medir perpendicular al eje largo y evitar incluir estructuras del VD.",
+    "aliases": {
+      "es": [
+        "Grosor del septo interventricular en diástole",
+        "Septo diastólico"
+      ],
+      "en": [
+        "Interventricular septal thickness in diastole",
+        "Diastolic septal thickness"
+      ]
+    },
+    "formula_or_method": {
+      "es": "PLAX, fin de diástole.",
+      "en": "PLAX, end-diastole."
+    },
+    "normal_values": {
+      "es": "Hombres 6-10 mm; mujeres 6-9 mm.",
+      "en": "Men 6-10 mm; women 6-9 mm."
+    },
+    "interpretation_limitations": {
+      "es": "Medir perpendicular al eje largo y evitar incluir estructuras del VD.",
+      "en": "Measure perpendicular to the long axis and avoid including RV structures."
+    },
     "units": "mm",
     "related_glossary_ids": [
       "ivsd_term",
@@ -394,26 +412,62 @@
     ],
     "source_page": 4,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Paraesternal izquierda",
-    "preferred_view": "PLAX",
-    "modality": "2D; modo M opcional",
-    "acquisition_timing": "Fin de diástole",
-    "acquisition_key": "Medir el septo perpendicular al eje largo a nivel de las puntas mitrales; no incluir banda moderadora ni trabeculaciones del VD.",
-    "alternate_windows": []
+    "primary_window": {
+      "es": "Paraesternal izquierda",
+      "en": "Left parasternal"
+    },
+    "preferred_view": {
+      "es": "PLAX",
+      "en": "PLAX"
+    },
+    "modality": {
+      "es": "2D; modo M opcional",
+      "en": "2D; optional M-mode"
+    },
+    "acquisition_timing": {
+      "es": "Fin de diástole",
+      "en": "End-diastole"
+    },
+    "acquisition_key": {
+      "es": "Medir el septo perpendicular al eje largo a nivel de las puntas mitrales; no incluir banda moderadora ni trabeculaciones del VD.",
+      "en": "Measure the septum perpendicular to the long axis at the level of the mitral leaflet tips; do not include the moderator band or RV trabeculations."
+    },
+    "alternate_windows": {
+      "es": [],
+      "en": []
+    }
   },
   {
     "id": "pwtd",
     "section_id": "lv_geometry",
     "order": 2,
-    "measurement": "Pared posterior (PWTd)",
+    "measurement": {
+      "es": "Pared posterior (PWTd)",
+      "en": "Posterior wall thickness in diastole (PWTd)"
+    },
     "abbreviation": "PWTd",
-    "aliases": [
-      "Grosor de la pared posterior del VI en diástole",
-      "Pared posterior diastólica"
-    ],
-    "formula_or_method": "PLAX, fin de diástole.",
-    "normal_values": "Hombres 6-10 mm; mujeres 6-9 mm.",
-    "interpretation_limitations": "Medición lineal de la pared inferolateral posterior.",
+    "aliases": {
+      "es": [
+        "Grosor de la pared posterior del VI en diástole",
+        "Pared posterior diastólica"
+      ],
+      "en": [
+        "LV posterior wall thickness in diastole",
+        "Diastolic posterior wall thickness"
+      ]
+    },
+    "formula_or_method": {
+      "es": "PLAX, fin de diástole.",
+      "en": "PLAX, end-diastole."
+    },
+    "normal_values": {
+      "es": "Hombres 6-10 mm; mujeres 6-9 mm.",
+      "en": "Men 6-10 mm; women 6-9 mm."
+    },
+    "interpretation_limitations": {
+      "es": "Medición lineal de la pared inferolateral posterior.",
+      "en": "Linear measurement of the posterior inferolateral wall."
+    },
     "units": "mm",
     "related_glossary_ids": [
       "pwtd_term",
@@ -421,28 +475,68 @@
     ],
     "source_page": 4,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Paraesternal izquierda",
-    "preferred_view": "PLAX",
-    "modality": "2D; modo M opcional",
-    "acquisition_timing": "Fin de diástole",
-    "acquisition_key": "Medir en el mismo nivel que IVSd y DTDVI, perpendicular a la pared.",
-    "alternate_windows": []
+    "primary_window": {
+      "es": "Paraesternal izquierda",
+      "en": "Left parasternal"
+    },
+    "preferred_view": {
+      "es": "PLAX",
+      "en": "PLAX"
+    },
+    "modality": {
+      "es": "2D; modo M opcional",
+      "en": "2D; optional M-mode"
+    },
+    "acquisition_timing": {
+      "es": "Fin de diástole",
+      "en": "End-diastole"
+    },
+    "acquisition_key": {
+      "es": "Medir en el mismo nivel que IVSd y DTDVI, perpendicular a la pared.",
+      "en": "Measure at the same level as IVSd and LVIDd, perpendicular to the wall."
+    },
+    "alternate_windows": {
+      "es": [],
+      "en": []
+    }
   },
   {
     "id": "rwt_meas",
     "section_id": "lv_geometry",
     "order": 3,
-    "measurement": "Grosor relativo de pared (RWT)",
+    "measurement": {
+      "es": "Grosor relativo de pared (RWT)",
+      "en": "Relative wall thickness (RWT)"
+    },
     "abbreviation": "RWT",
-    "aliases": [
-      "RWT",
-      "Grosor relativo de pared del VI",
-      "Relative wall thickness"
-    ],
-    "formula_or_method": "2 x PWTd / DTDVI.",
-    "normal_values": "≤0,42.",
-    "interpretation_limitations": "Distingue geometría concéntrica de excéntrica; es adimensional.",
-    "units": "adimensional",
+    "aliases": {
+      "es": [
+        "RWT",
+        "Grosor relativo de pared del VI",
+        "Relative wall thickness"
+      ],
+      "en": [
+        "RWT",
+        "LV relative wall thickness",
+        "Relative wall thickness"
+      ]
+    },
+    "formula_or_method": {
+      "es": "2 x PWTd / DTDVI.",
+      "en": "2 x PWTd / LVIDd."
+    },
+    "normal_values": {
+      "es": "≤0,42.",
+      "en": "≤0.42."
+    },
+    "interpretation_limitations": {
+      "es": "Distingue geometría concéntrica de excéntrica; es adimensional.",
+      "en": "Distinguishes concentric from eccentric geometry; it is dimensionless."
+    },
+    "units": {
+      "es": "adimensional",
+      "en": "dimensionless"
+    },
     "related_glossary_ids": [
       "rwt_term",
       "dtdvi_term",
@@ -450,26 +544,65 @@
     ],
     "source_page": 4,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Derivada",
-    "preferred_view": "PLAX para PWTd y DTDVI",
-    "modality": "Cálculo",
-    "acquisition_timing": "Fin de diástole",
-    "acquisition_key": "No requiere ventana adicional; asegurar que ambas medidas provengan del mismo plano y ciclo.",
-    "alternate_windows": []
+    "primary_window": {
+      "es": "Derivada",
+      "en": "Derived"
+    },
+    "preferred_view": {
+      "es": "PLAX para PWTd y DTDVI",
+      "en": "PLAX for PWTd and LVIDd"
+    },
+    "modality": {
+      "es": "Cálculo",
+      "en": "Calculation"
+    },
+    "acquisition_timing": {
+      "es": "Fin de diástole",
+      "en": "End-diastole"
+    },
+    "acquisition_key": {
+      "es": "No requiere ventana adicional; asegurar que ambas medidas provengan del mismo plano y ciclo.",
+      "en": "No additional window is required; ensure both measurements are obtained from the same plane and cardiac cycle."
+    },
+    "alternate_windows": {
+      "es": [],
+      "en": []
+    }
   },
   {
     "id": "masa_vi_meas",
     "section_id": "lv_geometry",
     "order": 4,
-    "measurement": "Masa del VI",
-    "abbreviation": "Masa del VI",
-    "aliases": [
-      "Estimación de masa del VI",
-      "Masa miocárdica del VI"
-    ],
-    "formula_or_method": "0,8 x 1,04 x [(DTDVI + IVSd + PWTd)³ - DTDVI³] + 0,6 g.",
-    "normal_values": "Debe indexarse por superficie corporal.",
-    "interpretation_limitations": "La fórmula requiere dimensiones en centímetros; convertir desde milímetros antes de calcular.",
+    "measurement": {
+      "es": "Masa del VI",
+      "en": "Left ventricular mass"
+    },
+    "abbreviation": {
+      "es": "Masa del VI",
+      "en": "LV mass"
+    },
+    "aliases": {
+      "es": [
+        "Estimación de masa del VI",
+        "Masa miocárdica del VI"
+      ],
+      "en": [
+        "Left ventricular mass estimation",
+        "LV myocardial mass"
+      ]
+    },
+    "formula_or_method": {
+      "es": "0,8 x 1,04 x [(DTDVI + IVSd + PWTd)³ - DTDVI³] + 0,6 g.",
+      "en": "0.8 x 1.04 x [(LVIDd + IVSd + PWTd)³ - LVIDd³] + 0.6 g."
+    },
+    "normal_values": {
+      "es": "Debe indexarse por superficie corporal.",
+      "en": "Should be indexed to body surface area."
+    },
+    "interpretation_limitations": {
+      "es": "La fórmula requiere dimensiones en centímetros; convertir desde milímetros antes de calcular.",
+      "en": "The formula requires dimensions in centimeters; convert from millimeters before calculation."
+    },
     "units": "g",
     "related_glossary_ids": [
       "masa_vi_term",
@@ -479,27 +612,67 @@
     ],
     "source_page": 4,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Paraesternal izquierda",
-    "preferred_view": "PLAX",
-    "modality": "2D; cálculo",
-    "acquisition_timing": "Fin de diástole",
-    "acquisition_key": "Usar DTDVI, IVSd y PWTd del mismo plano; convertir a cm antes de elevar al cubo.",
-    "alternate_windows": []
+    "primary_window": {
+      "es": "Paraesternal izquierda",
+      "en": "Left parasternal"
+    },
+    "preferred_view": {
+      "es": "PLAX",
+      "en": "PLAX"
+    },
+    "modality": {
+      "es": "2D; cálculo",
+      "en": "2D; calculation"
+    },
+    "acquisition_timing": {
+      "es": "Fin de diástole",
+      "en": "End-diastole"
+    },
+    "acquisition_key": {
+      "es": "Usar DTDVI, IVSd y PWTd del mismo plano; convertir a cm antes de elevar al cubo.",
+      "en": "Use LVIDd, IVSd, and PWTd from the same plane; convert to cm before cubing."
+    },
+    "alternate_windows": {
+      "es": [],
+      "en": []
+    }
   },
   {
     "id": "lv_mass_index",
     "section_id": "lv_geometry",
     "order": 5,
-    "measurement": "Índice de masa del VI",
-    "abbreviation": "Índice de masa del VI",
-    "aliases": [
-      "LVMI",
-      "Masa del VI indexada",
-      "Índice de masa miocárdica"
-    ],
-    "formula_or_method": "Masa VI / superficie corporal.",
-    "normal_values": "Hombres ≤115 g/m²; mujeres ≤95 g/m².",
-    "interpretation_limitations": "Permite clasificar hipertrofia del VI junto con el RWT.",
+    "measurement": {
+      "es": "Índice de masa del VI",
+      "en": "Left ventricular mass index"
+    },
+    "abbreviation": {
+      "es": "Índice de masa del VI",
+      "en": "LV mass index"
+    },
+    "aliases": {
+      "es": [
+        "LVMI",
+        "Masa del VI indexada",
+        "Índice de masa miocárdica"
+      ],
+      "en": [
+        "LVMI",
+        "Indexed LV mass",
+        "LV myocardial mass index"
+      ]
+    },
+    "formula_or_method": {
+      "es": "Masa VI / superficie corporal.",
+      "en": "LV mass / body surface area."
+    },
+    "normal_values": {
+      "es": "Hombres ≤115 g/m²; mujeres ≤95 g/m².",
+      "en": "Men ≤115 g/m²; women ≤95 g/m²."
+    },
+    "interpretation_limitations": {
+      "es": "Permite clasificar hipertrofia del VI junto con el RWT.",
+      "en": "Enables classification of LV hypertrophy together with RWT."
+    },
     "units": "g/m²",
     "related_glossary_ids": [
       "indice_masa_vi_term",
@@ -508,27 +681,69 @@
     ],
     "source_page": 4,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Derivada",
-    "preferred_view": "PLAX para masa del VI",
-    "modality": "Cálculo",
-    "acquisition_timing": "Después de calcular masa",
-    "acquisition_key": "No requiere ventana adicional; necesita superficie corporal válida.",
-    "alternate_windows": []
+    "primary_window": {
+      "es": "Derivada",
+      "en": "Derived"
+    },
+    "preferred_view": {
+      "es": "PLAX para masa del VI",
+      "en": "PLAX for LV mass"
+    },
+    "modality": {
+      "es": "Cálculo",
+      "en": "Calculation"
+    },
+    "acquisition_timing": {
+      "es": "Después de calcular masa",
+      "en": "After calculating LV mass"
+    },
+    "acquisition_key": {
+      "es": "No requiere ventana adicional; necesita superficie corporal válida.",
+      "en": "No additional window is required; a valid body surface area is needed."
+    },
+    "alternate_windows": {
+      "es": [],
+      "en": []
+    }
   },
   {
     "id": "geometria_vi_meas",
     "section_id": "lv_geometry",
     "order": 6,
-    "measurement": "Geometría del VI",
-    "abbreviation": "Geometría del VI",
-    "aliases": [
-      "Patrón geométrico del VI",
-      "Geometría ventricular izquierda"
-    ],
-    "formula_or_method": "Integración de índice de masa VI y RWT.",
-    "normal_values": "Normal, remodelado concéntrico, hipertrofia concéntrica o hipertrofia excéntrica.",
-    "interpretation_limitations": "No es una medición aislada, sino una clasificación derivada.",
-    "units": "adimensional",
+    "measurement": {
+      "es": "Geometría del VI",
+      "en": "Left ventricular geometry"
+    },
+    "abbreviation": {
+      "es": "Geometría del VI",
+      "en": "LV geometry"
+    },
+    "aliases": {
+      "es": [
+        "Patrón geométrico del VI",
+        "Geometría ventricular izquierda"
+      ],
+      "en": [
+        "LV geometric pattern",
+        "Left ventricular geometry"
+      ]
+    },
+    "formula_or_method": {
+      "es": "Integración de índice de masa VI y RWT.",
+      "en": "Integration of LV mass index and RWT."
+    },
+    "normal_values": {
+      "es": "Normal, remodelado concéntrico, hipertrofia concéntrica o hipertrofia excéntrica.",
+      "en": "Normal geometry, concentric remodeling, concentric hypertrophy, or eccentric hypertrophy."
+    },
+    "interpretation_limitations": {
+      "es": "No es una medición aislada, sino una clasificación derivada.",
+      "en": "This is not an isolated measurement but a derived classification."
+    },
+    "units": {
+      "es": "adimensional",
+      "en": "dimensionless"
+    },
     "related_glossary_ids": [
       "remodelado_concentrico",
       "hipertrofia_concentrica",
@@ -536,12 +751,30 @@
     ],
     "source_page": 4,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Derivada",
-    "preferred_view": "PLAX para medidas lineales",
-    "modality": "Clasificación",
-    "acquisition_timing": "Después de calcular IMVI y RWT",
-    "acquisition_key": "Interpretar con el contexto y confirmar que las medidas lineales sean técnicamente válidas.",
-    "alternate_windows": []
+    "primary_window": {
+      "es": "Derivada",
+      "en": "Derived"
+    },
+    "preferred_view": {
+      "es": "PLAX para medidas lineales",
+      "en": "PLAX for linear measurements"
+    },
+    "modality": {
+      "es": "Clasificación",
+      "en": "Classification"
+    },
+    "acquisition_timing": {
+      "es": "Después de calcular IMVI y RWT",
+      "en": "After calculating LVMI and RWT"
+    },
+    "acquisition_key": {
+      "es": "Interpretar con el contexto y confirmar que las medidas lineales sean técnicamente válidas.",
+      "en": "Interpret in clinical context and confirm that the linear measurements are technically valid."
+    },
+    "alternate_windows": {
+      "es": [],
+      "en": []
+    }
   },
   {
     "id": "area_tsvi_meas",
