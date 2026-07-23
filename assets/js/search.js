@@ -1,9 +1,32 @@
 // Motor de búsqueda inteligente simplificado
 const Search = {
+    // Función auxiliar defensiva para obtener todo el texto indexable de un valor
+    getSearchableText(value) {
+        if (value === null || value === undefined) return "";
+        if (typeof value === "string") return value;
+        if (typeof value === "number" || typeof value === "boolean") return value.toString();
+        if (Array.isArray(value)) {
+            return value.map(item => this.getSearchableText(item)).filter(t => t !== "").join(" ");
+        }
+        if (typeof value === "object") {
+            // Comprobar si es un objeto localizado con es o en
+            if ("es" in value || "en" in value) {
+                const parts = [];
+                if (value.es) parts.push(this.getSearchableText(value.es));
+                if (value.en) parts.push(this.getSearchableText(value.en));
+                return parts.join(" ");
+            }
+            // Objeto técnico no localizado: retornar una cadena vacía para evitar conversiones no deseadas de objetos
+            return "";
+        }
+        return "";
+    },
+
     // Función para normalizar texto (remueve tildes, minúsculas, espacios extra)
     normalizeText(text) {
-        if (!text) return "";
-        let normalized = text.toString().toLowerCase();
+        const searchable = this.getSearchableText(text);
+        if (!searchable) return "";
+        let normalized = searchable.toLowerCase();
         
         // Remover tildes y diacríticos comunes
         normalized = normalized.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
@@ -127,51 +150,71 @@ const Search = {
                 ].join(" ");
             }
 
-            const nName = this.normalizeText(name);
-            const nAbbr = this.normalizeText(abbreviation);
-            const nDef = this.normalizeText(definition);
-            const nForm = this.normalizeText(formula);
-            const nInterp = this.normalizeText(interpretation);
-            const nExtra = this.normalizeText(extraFields);
+            // Función auxiliar interna para ver si hay coincidencia exacta o parcial en campos bilingües/strings/arrays
+            const matchField = (field, queryNormalized, mode) => {
+                if (!field) return false;
+                if (typeof field === "string") {
+                    const norm = Search.normalizeText(field);
+                    if (mode === "exact") return norm === queryNormalized;
+                    if (mode === "startsWith") return norm.startsWith(queryNormalized);
+                    if (mode === "includes") return norm.includes(queryNormalized);
+                }
+                if (typeof field === "number" || typeof field === "boolean") {
+                    const norm = field.toString().toLowerCase();
+                    if (mode === "exact") return norm === queryNormalized;
+                    if (mode === "startsWith") return norm.startsWith(queryNormalized);
+                    if (mode === "includes") return norm.includes(queryNormalized);
+                }
+                if (Array.isArray(field)) {
+                    return field.some(item => matchField(item, queryNormalized, mode));
+                }
+                if (typeof field === "object") {
+                    if ("es" in field || "en" in field) {
+                        const normEs = Search.normalizeText(field.es);
+                        const normEn = Search.normalizeText(field.en);
+                        if (mode === "exact") return normEs === queryNormalized || normEn === queryNormalized;
+                        if (mode === "startsWith") return normEs.startsWith(queryNormalized) || normEn.startsWith(queryNormalized);
+                        if (mode === "includes") return normEs.includes(queryNormalized) || normEn.includes(queryNormalized);
+                    }
+                }
+                return false;
+            };
 
             // Reglas de puntuación basadas en prioridad
             // 1. Coincidencia exacta
-            if (nName === normalizedQuery || (normalizedEquiv && nName === normalizedEquiv)) {
+            if (matchField(name, normalizedQuery, "exact") || (normalizedEquiv && matchField(name, normalizedEquiv, "exact"))) {
                 score += 100;
             }
             // 2. Coincidencia en abreviatura
-            else if (abbreviation && (nAbbr === normalizedQuery || nAbbr.includes(normalizedQuery))) {
+            else if (abbreviation && (matchField(abbreviation, normalizedQuery, "exact") || matchField(abbreviation, normalizedQuery, "includes"))) {
                 score += 90;
             }
             // 3. Coincidencia en alias
-            else if (aliases.some(alias => {
-                const nAlias = this.normalizeText(alias);
-                return nAlias === normalizedQuery || nAlias.includes(normalizedQuery);
-            })) {
+            else if (aliases && matchField(aliases, normalizedQuery, "includes")) {
                 score += 85;
             }
             // 4. Coincidencia al inicio del nombre
-            else if (nName.startsWith(normalizedQuery)) {
+            else if (matchField(name, normalizedQuery, "startsWith")) {
                 score += 80;
             }
             // 5. Coincidencia parcial en nombre
-            else if (nName.includes(normalizedQuery)) {
+            else if (matchField(name, normalizedQuery, "includes")) {
                 score += 70;
             }
             // 6. Coincidencia en definición / estructuras / mediciones / posición / orientación
-            else if (nDef.includes(normalizedQuery)) {
+            else if (matchField(definition, normalizedQuery, "includes")) {
                 score += 50;
             }
             // 7. Coincidencia en campos adicionales de ventana en medición
-            else if (nExtra.includes(normalizedQuery)) {
+            else if (matchField(extraFields, normalizedQuery, "includes")) {
                 score += 45;
             }
             // 8. Coincidencia en fórmula
-            else if (nForm.includes(normalizedQuery)) {
+            else if (matchField(formula, normalizedQuery, "includes")) {
                 score += 40;
             }
             // 9. Coincidencia en interpretación o limitación
-            else if (nInterp.includes(normalizedQuery)) {
+            else if (matchField(interpretation, normalizedQuery, "includes")) {
                 score += 30;
             }
 

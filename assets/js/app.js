@@ -109,33 +109,33 @@ document.addEventListener("DOMContentLoaded", async () => {
             let translatedType = "";
 
             if (type === "medición") {
-                title = item.measurement;
-                description = `<strong>${escapeHTML(I18n.translate("label.formula_or_method"))}:</strong> ${escapeHTML(item.formula_or_method)}<br><strong>${escapeHTML(I18n.translate("label.normal_values"))}:</strong> ${escapeHTML(item.normal_values)}`;
+                title = I18n.localize(item.measurement);
+                description = `<strong>${escapeHTML(I18n.translate("label.formula_or_method"))}:</strong> ${escapeHTML(I18n.localize(item.formula_or_method))}<br><strong>${escapeHTML(I18n.translate("label.normal_values"))}:</strong> ${escapeHTML(I18n.localize(item.normal_values))}`;
                 link = `#/medicion/${item.id}`;
                 translatedType = I18n.translate("label.measurement");
             } else if (type === "término") {
-                title = item.term;
-                description = escapeHTML(item.definition);
+                title = I18n.localize(item.term);
+                description = escapeHTML(I18n.localize(item.definition));
                 link = `#/glosario/${item.id}`;
                 translatedType = I18n.translate("label.term");
             } else if (type === "abreviatura") {
-                title = item.abbreviation;
-                description = escapeHTML(item.meaning);
+                title = I18n.localize(item.abbreviation);
+                description = escapeHTML(I18n.localize(item.meaning));
                 link = `#/abreviaturas`;
                 translatedType = I18n.translate("label.abbreviation");
             } else if (type === "clasificación") {
-                title = item.name;
-                description = item.note ? escapeHTML(item.note) : escapeHTML(I18n.translate("label.classification"));
+                title = I18n.localize(item.name);
+                description = item.note ? escapeHTML(I18n.localize(item.note)) : escapeHTML(I18n.translate("label.classification"));
                 link = `#/clasificaciones`;
                 translatedType = I18n.translate("label.classification");
             } else if (type === "ventana") {
-                title = item.window;
-                description = `<strong>${escapeHTML(I18n.translate("label.abbreviation"))}:</strong> ${escapeHTML(item.abbreviation)}<br><strong>${escapeHTML(I18n.translate("label.targets"))}:</strong> ${escapeHTML(item.favored_structures)}`;
+                title = I18n.localize(item.window);
+                description = `<strong>${escapeHTML(I18n.translate("label.abbreviation"))}:</strong> ${escapeHTML(I18n.localize(item.abbreviation))}<br><strong>${escapeHTML(I18n.translate("label.targets"))}:</strong> ${escapeHTML(I18n.localize(item.favored_structures))}`;
                 link = `#/ventanas/${item.id}`;
                 translatedType = I18n.translate("label.window");
             } else if (type === "protocolo") {
                 title = I18n.localize({ es: item.name_es, en: item.name_en || item.name_es });
-                description = `<strong>${escapeHTML(I18n.translate("label.acronym"))}:</strong> ${escapeHTML(item.acronym)}<br><strong>${escapeHTML(I18n.translate("label.purpose"))}:</strong> ${escapeHTML(item.purpose)}`;
+                description = `<strong>${escapeHTML(I18n.translate("label.acronym"))}:</strong> ${escapeHTML(I18n.localize(item.acronym))}<br><strong>${escapeHTML(I18n.translate("label.purpose"))}:</strong> ${escapeHTML(I18n.localize(item.purpose))}`;
                 link = `#/protocolos/${item.id}`;
                 translatedType = I18n.translate("label.protocol");
             }
