@@ -780,15 +780,36 @@
     "id": "area_tsvi_meas",
     "section_id": "stroke_volume_output",
     "order": 1,
-    "measurement": "Área del TSVI",
-    "abbreviation": "Área del TSVI",
-    "aliases": [
-      "Área del tracto de salida del ventrículo izquierdo",
-      "LVOTA"
-    ],
-    "formula_or_method": "π x (diámetro TSVI / 2)² = 0,785 x diámetro².",
-    "normal_values": "Depende del diámetro.",
-    "interpretation_limitations": "Usar diámetro en cm; el error se eleva al cuadrado.",
+    "measurement": {
+      "es": "Área del TSVI",
+      "en": "LVOT area"
+    },
+    "abbreviation": {
+      "es": "Área del TSVI",
+      "en": "LVOT area"
+    },
+    "aliases": {
+      "es": [
+        "Área del tracto de salida del ventrículo izquierdo",
+        "LVOTA"
+      ],
+      "en": [
+        "Left ventricular outflow tract area",
+        "LVOTA"
+      ]
+    },
+    "formula_or_method": {
+      "es": "π x (diámetro TSVI / 2)² = 0,785 x diámetro².",
+      "en": "π x (LVOT diameter / 2)² = 0.785 x diameter²."
+    },
+    "normal_values": {
+      "es": "Depende del diámetro.",
+      "en": "Depends on the diameter."
+    },
+    "interpretation_limitations": {
+      "es": "Usar diámetro en cm; el error se eleva al cuadrado.",
+      "en": "Use the diameter in cm; measurement error is squared."
+    },
     "units": "cm²",
     "related_glossary_ids": [
       "area_tsvi_term",
@@ -796,26 +817,65 @@
     ],
     "source_page": 5,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Paraesternal izquierda",
-    "preferred_view": "PLAX ampliada del TSVI y válvula aórtica",
-    "modality": "2D zoom",
-    "acquisition_timing": "Mesosístole",
-    "acquisition_key": "Medir borde interno a borde interno, paralelo al plano valvular, en el sitio correspondiente a la muestra Doppler.",
-    "alternate_windows": []
+    "primary_window": {
+      "es": "Paraesternal izquierda",
+      "en": "Left parasternal"
+    },
+    "preferred_view": {
+      "es": "PLAX ampliada del TSVI y válvula aórtica",
+      "en": "Magnified PLAX view of the LVOT and aortic valve"
+    },
+    "modality": {
+      "es": "2D zoom",
+      "en": "2D zoom"
+    },
+    "acquisition_timing": {
+      "es": "Mesosístole",
+      "en": "Mid-systole"
+    },
+    "acquisition_key": {
+      "es": "Medir borde interno a borde interno, paralelo al plano valvular, en el sitio correspondiente a la muestra Doppler.",
+      "en": "Measure inner edge to inner edge, parallel to the valve plane, at the site corresponding to the Doppler sample volume."
+    },
+    "alternate_windows": {
+      "es": [],
+      "en": []
+    }
   },
   {
     "id": "vti_tsvi_meas",
     "section_id": "stroke_volume_output",
     "order": 2,
-    "measurement": "VTI del TSVI",
-    "abbreviation": "VTI del TSVI",
-    "aliases": [
-      "Integral velocidad-tiempo del TSVI",
-      "LVOT VTI"
-    ],
-    "formula_or_method": "Doppler pulsado justo proximal a la válvula aórtica.",
-    "normal_values": "Aprox. 18-22 cm.",
-    "interpretation_limitations": "El trazado debe incluir todo el espectro sistólico y estar alinedado con el flujo.",
+    "measurement": {
+      "es": "VTI del TSVI",
+      "en": "LVOT VTI"
+    },
+    "abbreviation": {
+      "es": "VTI del TSVI",
+      "en": "LVOT VTI"
+    },
+    "aliases": {
+      "es": [
+        "Integral velocidad-tiempo del TSVI",
+        "LVOT VTI"
+      ],
+      "en": [
+        "LVOT velocity-time integral",
+        "LVOT VTI"
+      ]
+    },
+    "formula_or_method": {
+      "es": "Doppler pulsado justo proximal a la válvula aórtica.",
+      "en": "Pulsed-wave Doppler immediately proximal to the aortic valve."
+    },
+    "normal_values": {
+      "es": "Aprox. 18-22 cm.",
+      "en": "Approx. 18-22 cm."
+    },
+    "interpretation_limitations": {
+      "es": "El trazado debe incluir todo el espectro sistólico y estar alinedado con el flujo.",
+      "en": "The tracing must include the entire systolic envelope and be aligned with blood flow."
+    },
     "units": "cm",
     "related_glossary_ids": [
       "vti_term",
@@ -824,29 +884,71 @@
     ],
     "source_page": 5,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Apical",
-    "preferred_view": "A5C o A3C",
-    "modality": "Doppler pulsado",
-    "acquisition_timing": "Sístole",
-    "acquisition_key": "Colocar la muestra 0,5-1 cm proximal a la válvula aórtica, antes de la aceleración; trazar el borde modal.",
-    "alternate_windows": [
-      "A4C con inclinación anterior para abrir el TSVI."
-    ]
+    "primary_window": {
+      "es": "Apical",
+      "en": "Apical"
+    },
+    "preferred_view": {
+      "es": "A5C o A3C",
+      "en": "A5C or A3C"
+    },
+    "modality": {
+      "es": "Doppler pulsado",
+      "en": "Pulsed-wave Doppler"
+    },
+    "acquisition_timing": {
+      "es": "Sístole",
+      "en": "Systole"
+    },
+    "acquisition_key": {
+      "es": "Colocar la muestra 0,5-1 cm proximal a la válvula aórtica, antes de la aceleración; trazar el borde modal.",
+      "en": "Place the sample volume 0.5-1 cm proximal to the aortic valve, before flow acceleration; trace the modal edge."
+    },
+    "alternate_windows": {
+      "es": [
+        "A4C con inclinación anterior para abrir el TSVI."
+      ],
+      "en": [
+        "A4C with anterior angulation to open the LVOT."
+      ]
+    }
   },
   {
     "id": "volumen_sistolico_meas",
     "section_id": "stroke_volume_output",
     "order": 3,
-    "measurement": "Volumen sistólico",
-    "abbreviation": "VS",
-    "aliases": [
-      "Stroke volume",
-      "VS",
-      "Volumen latido"
-    ],
-    "formula_or_method": "Área TSVI x VTI TSVI.",
-    "normal_values": "Aprox. 60-100 mL/latido.",
-    "interpretation_limitations": "Con área en cm² y VTI en cm, el resultado equivale a mL.",
+    "measurement": {
+      "es": "Volumen sistólico",
+      "en": "Stroke volume"
+    },
+    "abbreviation": {
+      "es": "VS",
+      "en": "SV"
+    },
+    "aliases": {
+      "es": [
+        "Stroke volume",
+        "VS",
+        "Volumen latido"
+      ],
+      "en": [
+        "Stroke volume",
+        "SV",
+        "Stroke volume"
+      ]
+    },
+    "formula_or_method": {
+      "es": "Área TSVI x VTI TSVI.",
+      "en": "LVOT area x LVOT VTI."
+    },
+    "normal_values": {
+      "es": "Aprox. 60-100 mL/latido.",
+      "en": "Approx. 60-100 mL/beat."
+    },
+    "interpretation_limitations": {
+      "es": "Con área en cm² y VTI en cm, el resultado equivale a mL.",
+      "en": "With area in cm² and VTI in cm, the result is equivalent to mL."
+    },
     "units": "mL",
     "related_glossary_ids": [
       "volumen_sistolico_term",
@@ -855,27 +957,67 @@
     ],
     "source_page": 5,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Combinada",
-    "preferred_view": "PLAX + A5C/A3C",
-    "modality": "2D + Doppler pulsado; cálculo",
-    "acquisition_timing": "Sístole",
-    "acquisition_key": "Combinar diámetro del TSVI en PLAX con VTI del mismo tracto desde ventana apical.",
-    "alternate_windows": []
+    "primary_window": {
+      "es": "Combinada",
+      "en": "Combined"
+    },
+    "preferred_view": {
+      "es": "PLAX + A5C/A3C",
+      "en": "PLAX + A5C/A3C"
+    },
+    "modality": {
+      "es": "2D + Doppler pulsado; cálculo",
+      "en": "2D + pulsed-wave Doppler; calculation"
+    },
+    "acquisition_timing": {
+      "es": "Sístole",
+      "en": "Systole"
+    },
+    "acquisition_key": {
+      "es": "Combinar diámetro del TSVI en PLAX con VTI del mismo tracto desde ventana apical.",
+      "en": "Combine the LVOT diameter measured in PLAX with the VTI from the same tract obtained from an apical window."
+    },
+    "alternate_windows": {
+      "es": [],
+      "en": []
+    }
   },
   {
     "id": "sv_index",
     "section_id": "stroke_volume_output",
     "order": 4,
-    "measurement": "Índice de volumen sistólico",
-    "abbreviation": "Índice de volumen sistólico",
-    "aliases": [
-      "SVI",
-      "Volumen sistólico indexado",
-      "Stroke volume index"
-    ],
-    "formula_or_method": "Volumen sistólico / superficie corporal.",
-    "normal_values": "35-65 mL/m²; bajo flujo ≤35 mL/m².",
-    "interpretation_limitations": "Útil para identificar estados de bajo flujo.",
+    "measurement": {
+      "es": "Índice de volumen sistólico",
+      "en": "Stroke volume index"
+    },
+    "abbreviation": {
+      "es": "Índice de volumen sistólico",
+      "en": "SVI"
+    },
+    "aliases": {
+      "es": [
+        "SVI",
+        "Volumen sistólico indexado",
+        "Stroke volume index"
+      ],
+      "en": [
+        "SVI",
+        "Indexed stroke volume",
+        "Stroke volume index"
+      ]
+    },
+    "formula_or_method": {
+      "es": "Volumen sistólico / superficie corporal.",
+      "en": "Stroke volume / body surface area."
+    },
+    "normal_values": {
+      "es": "35-65 mL/m²; bajo flujo ≤35 mL/m².",
+      "en": "35-65 mL/m²; low flow ≤35 mL/m²."
+    },
+    "interpretation_limitations": {
+      "es": "Útil para identificar estados de bajo flujo.",
+      "en": "Useful for identifying low-flow states."
+    },
     "units": "mL/m²",
     "related_glossary_ids": [
       "indice_volumen_sistolico_term",
@@ -884,27 +1026,67 @@
     ],
     "source_page": 5,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Derivada",
-    "preferred_view": "PLAX + A5C/A3C para VS",
-    "modality": "Cálculo",
-    "acquisition_timing": "Después de calcular VS",
-    "acquisition_key": "No requiere ventana adicional; necesita superficie corporal.",
-    "alternate_windows": []
+    "primary_window": {
+      "es": "Derivada",
+      "en": "Derived"
+    },
+    "preferred_view": {
+      "es": "PLAX + A5C/A3C para VS",
+      "en": "PLAX + A5C/A3C for stroke volume"
+    },
+    "modality": {
+      "es": "Cálculo",
+      "en": "Calculation"
+    },
+    "acquisition_timing": {
+      "es": "Después de calcular VS",
+      "en": "After calculating stroke volume"
+    },
+    "acquisition_key": {
+      "es": "No requiere ventana adicional; necesita superficie corporal.",
+      "en": "No additional window is required; body surface area is needed."
+    },
+    "alternate_windows": {
+      "es": [],
+      "en": []
+    }
   },
   {
     "id": "gasto_cardiaco_meas",
     "section_id": "stroke_volume_output",
     "order": 5,
-    "measurement": "Gasto cardiaco",
-    "abbreviation": "GC",
-    "aliases": [
-      "Cardiac output",
-      "CO",
-      "GC"
-    ],
-    "formula_or_method": "(Volumen sistólico en mL x frecuencia cardiaca) / 1000.",
-    "normal_values": "Aprox. 4-8 L/min.",
-    "interpretation_limitations": "Promediar varios ciclos si existe arritmia.",
+    "measurement": {
+      "es": "Gasto cardiaco",
+      "en": "Cardiac output"
+    },
+    "abbreviation": {
+      "es": "GC",
+      "en": "CO"
+    },
+    "aliases": {
+      "es": [
+        "Cardiac output",
+        "CO",
+        "GC"
+      ],
+      "en": [
+        "Cardiac output",
+        "CO",
+        "CO"
+      ]
+    },
+    "formula_or_method": {
+      "es": "(Volumen sistólico en mL x frecuencia cardiaca) / 1000.",
+      "en": "(Stroke volume in mL x heart rate) / 1000."
+    },
+    "normal_values": {
+      "es": "Aprox. 4-8 L/min.",
+      "en": "Approx. 4-8 L/min."
+    },
+    "interpretation_limitations": {
+      "es": "Promediar varios ciclos si existe arritmia.",
+      "en": "Average several cardiac cycles in the presence of arrhythmia."
+    },
     "units": "L/min",
     "related_glossary_ids": [
       "gasto_cardiaco_term",
@@ -912,26 +1094,65 @@
     ],
     "source_page": 5,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Derivada",
-    "preferred_view": "PLAX + A5C/A3C para VS",
-    "modality": "Cálculo",
-    "acquisition_timing": "Después de calcular VS",
-    "acquisition_key": "Usar frecuencia cardiaca del ciclo medido; promediar 3-5 latidos o más en arritmia.",
-    "alternate_windows": []
+    "primary_window": {
+      "es": "Derivada",
+      "en": "Derived"
+    },
+    "preferred_view": {
+      "es": "PLAX + A5C/A3C para VS",
+      "en": "PLAX + A5C/A3C for stroke volume"
+    },
+    "modality": {
+      "es": "Cálculo",
+      "en": "Calculation"
+    },
+    "acquisition_timing": {
+      "es": "Después de calcular VS",
+      "en": "After calculating stroke volume"
+    },
+    "acquisition_key": {
+      "es": "Usar frecuencia cardiaca del ciclo medido; promediar 3-5 latidos o más en arritmia.",
+      "en": "Use the heart rate corresponding to the measured cycle; average 3-5 beats or more in arrhythmia."
+    },
+    "alternate_windows": {
+      "es": [],
+      "en": []
+    }
   },
   {
     "id": "cardiac_index",
     "section_id": "stroke_volume_output",
     "order": 6,
-    "measurement": "Índice cardiaco",
-    "abbreviation": "Índice cardiaco",
-    "aliases": [
-      "CI",
-      "Cardiac index"
-    ],
-    "formula_or_method": "Gasto cardiaco / superficie corporal.",
-    "normal_values": "Aprox. 2,5-4,0 L/min/m².",
-    "interpretation_limitations": "Ajusta el gasto cardiaco al tamaño corporal.",
+    "measurement": {
+      "es": "Índice cardiaco",
+      "en": "Cardiac index"
+    },
+    "abbreviation": {
+      "es": "Índice cardiaco",
+      "en": "CI"
+    },
+    "aliases": {
+      "es": [
+        "CI",
+        "Cardiac index"
+      ],
+      "en": [
+        "CI",
+        "Cardiac index"
+      ]
+    },
+    "formula_or_method": {
+      "es": "Gasto cardiaco / superficie corporal.",
+      "en": "Cardiac output / body surface area."
+    },
+    "normal_values": {
+      "es": "Aprox. 2,5-4,0 L/min/m².",
+      "en": "Approx. 2.5-4.0 L/min/m²."
+    },
+    "interpretation_limitations": {
+      "es": "Ajusta el gasto cardiaco al tamaño corporal.",
+      "en": "Adjusts cardiac output for body size."
+    },
     "units": "L/min/m²",
     "related_glossary_ids": [
       "indice_cardiaco_term",
@@ -940,27 +1161,67 @@
     ],
     "source_page": 5,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Derivada",
-    "preferred_view": "PLAX + A5C/A3C para GC",
-    "modality": "Cálculo",
-    "acquisition_timing": "Después de calcular GC",
-    "acquisition_key": "No requiere ventana adicional.",
-    "alternate_windows": []
+    "primary_window": {
+      "es": "Derivada",
+      "en": "Derived"
+    },
+    "preferred_view": {
+      "es": "PLAX + A5C/A3C para GC",
+      "en": "PLAX + A5C/A3C for cardiac output"
+    },
+    "modality": {
+      "es": "Cálculo",
+      "en": "Calculation"
+    },
+    "acquisition_timing": {
+      "es": "Después de calcular GC",
+      "en": "After calculating cardiac output"
+    },
+    "acquisition_key": {
+      "es": "No requiere ventana adicional.",
+      "en": "No additional window is required."
+    },
+    "alternate_windows": {
+      "es": [],
+      "en": []
+    }
   },
   {
     "id": "plr_vti_change",
     "section_id": "stroke_volume_output",
     "order": 7,
-    "measurement": "Cambio de VTI tras elevación pasiva de piernas",
-    "abbreviation": "Cambio VTI tras PLR",
-    "aliases": [
-      "Elevación pasiva de piernas",
-      "Passive leg raise",
-      "PLR VTI"
-    ],
-    "formula_or_method": "[(VTI posterior - VTI basal) / VTI basal] x 100.",
-    "normal_values": "Aumento ≥10-15% sugiere respuesta a precarga.",
-    "interpretation_limitations": "Requiere mediciones consecutivas en el mismo sitio y condiciones estables.",
+    "measurement": {
+      "es": "Cambio de VTI tras elevación pasiva de piernas",
+      "en": "VTI change after passive leg raising"
+    },
+    "abbreviation": {
+      "es": "Cambio VTI tras PLR",
+      "en": "VTI change after PLR"
+    },
+    "aliases": {
+      "es": [
+        "Elevación pasiva de piernas",
+        "Passive leg raise",
+        "PLR VTI"
+      ],
+      "en": [
+        "Passive leg raising",
+        "Passive leg raise",
+        "PLR VTI"
+      ]
+    },
+    "formula_or_method": {
+      "es": "[(VTI posterior - VTI basal) / VTI basal] x 100.",
+      "en": "[(Post-PLR VTI - baseline VTI) / baseline VTI] x 100."
+    },
+    "normal_values": {
+      "es": "Aumento ≥10-15% sugiere respuesta a precarga.",
+      "en": "An increase ≥10-15% suggests preload responsiveness."
+    },
+    "interpretation_limitations": {
+      "es": "Requiere mediciones consecutivas en el mismo sitio y condiciones estables.",
+      "en": "Requires consecutive measurements at the same site under stable conditions."
+    },
     "units": "%",
     "related_glossary_ids": [
       "plr_term",
@@ -968,26 +1229,65 @@
     ],
     "source_page": 5,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Apical",
-    "preferred_view": "A5C o A3C",
-    "modality": "Doppler pulsado seriado",
-    "acquisition_timing": "Antes y 30-90 s después de la maniobra",
-    "acquisition_key": "Mantener exactamente la misma posición de la muestra y ángulo Doppler; usar el mismo número de ciclos.",
-    "alternate_windows": []
+    "primary_window": {
+      "es": "Apical",
+      "en": "Apical"
+    },
+    "preferred_view": {
+      "es": "A5C o A3C",
+      "en": "A5C or A3C"
+    },
+    "modality": {
+      "es": "Doppler pulsado seriado",
+      "en": "Serial pulsed-wave Doppler"
+    },
+    "acquisition_timing": {
+      "es": "Antes y 30-90 s después de la maniobra",
+      "en": "Before and 30-90 s after the maneuver"
+    },
+    "acquisition_key": {
+      "es": "Mantener exactamente la misma posición de la muestra y ángulo Doppler; usar el mismo número de ciclos.",
+      "en": "Maintain exactly the same sample-volume position and Doppler angle; use the same number of cardiac cycles."
+    },
+    "alternate_windows": {
+      "es": [],
+      "en": []
+    }
   },
   {
     "id": "rvs_meas",
     "section_id": "stroke_volume_output",
     "order": 8,
-    "measurement": "RVS",
-    "abbreviation": "RVS",
-    "aliases": [
-      "Resistencia vascular sistémica",
-      "SVR"
-    ],
-    "formula_or_method": "80 x (PAM - presión AD) / gasto cardiaco.",
-    "normal_values": "Aprox. 800-1200 dyn·s·cm⁻⁵.",
-    "interpretation_limitations": "Usar gasto cardiaco en L/min y presiones en mmHg.",
+    "measurement": {
+      "es": "RVS",
+      "en": "SVR"
+    },
+    "abbreviation": {
+      "es": "RVS",
+      "en": "SVR"
+    },
+    "aliases": {
+      "es": [
+        "Resistencia vascular sistémica",
+        "SVR"
+      ],
+      "en": [
+        "Systemic vascular resistance",
+        "SVR"
+      ]
+    },
+    "formula_or_method": {
+      "es": "80 x (PAM - presión AD) / gasto cardiaco.",
+      "en": "80 x (MAP - right atrial pressure) / cardiac output."
+    },
+    "normal_values": {
+      "es": "Aprox. 800-1200 dyn·s·cm⁻⁵.",
+      "en": "Approx. 800-1200 dyn·s·cm⁻⁵."
+    },
+    "interpretation_limitations": {
+      "es": "Usar gasto cardiaco en L/min y presiones en mmHg.",
+      "en": "Use cardiac output in L/min and pressures in mmHg."
+    },
     "units": "dyn·s·cm⁻⁵",
     "related_glossary_ids": [
       "rvs_term",
@@ -997,26 +1297,65 @@
     ],
     "source_page": 5,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Derivada",
-    "preferred_view": "Datos combinados",
-    "modality": "Cálculo hemodinámico",
-    "acquisition_timing": "Después de estimar GC y presión AD",
-    "acquisition_key": "La presión AD suele derivarse de VCI subcostal; reconocer las limitaciones de esa estimación.",
-    "alternate_windows": []
+    "primary_window": {
+      "es": "Derivada",
+      "en": "Derived"
+    },
+    "preferred_view": {
+      "es": "Datos combinados",
+      "en": "Combined data"
+    },
+    "modality": {
+      "es": "Cálculo hemodinámico",
+      "en": "Hemodynamic calculation"
+    },
+    "acquisition_timing": {
+      "es": "Después de estimar GC y presión AD",
+      "en": "After estimating cardiac output and right atrial pressure"
+    },
+    "acquisition_key": {
+      "es": "La presión AD suele derivarse de la VCI subcostal; reconocer sus limitaciones.",
+      "en": "Right atrial pressure is usually derived from the subcostal IVC; acknowledge its limitations."
+    },
+    "alternate_windows": {
+      "es": [],
+      "en": []
+    }
   },
   {
     "id": "irvs_meas",
     "section_id": "stroke_volume_output",
     "order": 9,
-    "measurement": "IRVS",
-    "abbreviation": "IRVS",
-    "aliases": [
-      "Índice de resistencia vascular sistémica",
-      "SVRI"
-    ],
-    "formula_or_method": "80 x (PAM - presión AD) / índice cardiaco.",
-    "normal_values": "Aprox. 1970-2390 dyn·s·cm⁻⁵·m².",
-    "interpretation_limitations": "Índice ajustado por superficie corporal.",
+    "measurement": {
+      "es": "IRVS",
+      "en": "SVRI"
+    },
+    "abbreviation": {
+      "es": "IRVS",
+      "en": "SVRI"
+    },
+    "aliases": {
+      "es": [
+        "Índice de resistencia vascular sistémica",
+        "SVRI"
+      ],
+      "en": [
+        "Systemic vascular resistance index",
+        "SVRI"
+      ]
+    },
+    "formula_or_method": {
+      "es": "80 x (PAM - presión AD) / índice cardiaco.",
+      "en": "80 x (MAP - right atrial pressure) / cardiac index."
+    },
+    "normal_values": {
+      "es": "Aprox. 1970-2390 dyn·s·cm⁻⁵·m².",
+      "en": "Approx. 1970-2390 dyn·s·cm⁻⁵·m²."
+    },
+    "interpretation_limitations": {
+      "es": "Índice ajustado por superficie corporal.",
+      "en": "Index adjusted for body surface area."
+    },
     "units": "dyn·s·cm⁻⁵·m²",
     "related_glossary_ids": [
       "irvs_term",
@@ -1026,12 +1365,30 @@
     ],
     "source_page": 5,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Derivada",
-    "preferred_view": "Datos combinados",
-    "modality": "Cálculo hemodinámico",
-    "acquisition_timing": "Después de estimar IC y presión AD",
-    "acquisition_key": "No requiere ventana adicional.",
-    "alternate_windows": []
+    "primary_window": {
+      "es": "Derivada",
+      "en": "Derived"
+    },
+    "preferred_view": {
+      "es": "Datos combinados",
+      "en": "Combined data"
+    },
+    "modality": {
+      "es": "Cálculo hemodinámico",
+      "en": "Hemodynamic calculation"
+    },
+    "acquisition_timing": {
+      "es": "Después de estimar IC y presión AD",
+      "en": "After estimating cardiac index and right atrial pressure"
+    },
+    "acquisition_key": {
+      "es": "No requiere una ventana adicional.",
+      "en": "No additional window is required."
+    },
+    "alternate_windows": {
+      "es": [],
+      "en": []
+    }
   },
   {
     "id": "diametro_ap_ai",
