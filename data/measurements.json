@@ -2972,16 +2972,38 @@
     "id": "diametro_basal_vd",
     "section_id": "rv_systolic",
     "order": 1,
-    "measurement": "Diámetro basal del VD",
-    "abbreviation": "Diámetro basal VD",
-    "aliases": [
-      "RV diameter 1",
-      "RVD1",
-      "Diámetro basal del ventrículo derecho"
-    ],
-    "formula_or_method": "A4C enfocada en VD, fin de diástole.",
-    "normal_values": "≤41 mm.",
-    "interpretation_limitations": "Medir en el tercio basal máximo, perpendicular al eje largo.",
+    "measurement": {
+      "es": "Diámetro basal del VD",
+      "en": "RV basal diameter"
+    },
+    "abbreviation": {
+      "es": "Diámetro basal VD",
+      "en": "RV basal diameter"
+    },
+    "aliases": {
+      "es": [
+        "RV diameter 1",
+        "RVD1",
+        "Diámetro basal del ventrículo derecho"
+      ],
+      "en": [
+        "RV diameter 1",
+        "RVD1",
+        "Right ventricular basal diameter"
+      ]
+    },
+    "formula_or_method": {
+      "es": "A4C enfocada en VD, fin de diástole.",
+      "en": "RV-focused A4C view at end-diastole."
+    },
+    "normal_values": {
+      "es": "≤41 mm.",
+      "en": "≤41 mm."
+    },
+    "interpretation_limitations": {
+      "es": "Medir en el tercio basal máximo, perpendicular al eje largo.",
+      "en": "Measure the maximal dimension in the basal third of the RV, perpendicular to the long axis."
+    },
     "units": "mm",
     "related_glossary_ids": [
       "vd_term",
@@ -2989,27 +3011,67 @@
     ],
     "source_page": 7,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Apical",
-    "preferred_view": "A4C enfocada en VD",
-    "modality": "2D",
-    "acquisition_timing": "Fin de diástole",
-    "acquisition_key": "Maximizar el VD sin foreshortening y medir basalmente de endocardio a endocardio.",
-    "alternate_windows": []
+    "primary_window": {
+      "es": "Apical",
+      "en": "Apical"
+    },
+    "preferred_view": {
+      "es": "A4C enfocada en VD",
+      "en": "RV-focused A4C"
+    },
+    "modality": {
+      "es": "2D",
+      "en": "2D"
+    },
+    "acquisition_timing": {
+      "es": "Fin de diástole",
+      "en": "End-diastole"
+    },
+    "acquisition_key": {
+      "es": "Maximizar el VD sin foreshortening y medir basalmente de endocardio a endocardio.",
+      "en": "Maximize visualization of the RV without apical foreshortening and measure endocardium to endocardium at the basal level."
+    },
+    "alternate_windows": {
+      "es": [],
+      "en": []
+    }
   },
   {
     "id": "diametro_medio_vd",
     "section_id": "rv_systolic",
     "order": 2,
-    "measurement": "Diámetro medio del VD",
-    "abbreviation": "Diámetro medio VD",
-    "aliases": [
-      "RV diameter 2",
-      "RVD2",
-      "Diámetro medio del ventrículo derecho"
-    ],
-    "formula_or_method": "A4C enfocada en VD, fin de diástole.",
-    "normal_values": "≤35 mm.",
-    "interpretation_limitations": "Medir a nivel medio de la cavidad.",
+    "measurement": {
+      "es": "Diámetro medio del VD",
+      "en": "RV midventricular diameter"
+    },
+    "abbreviation": {
+      "es": "Diámetro medio VD",
+      "en": "RV midventricular diameter"
+    },
+    "aliases": {
+      "es": [
+        "RV diameter 2",
+        "RVD2",
+        "Diámetro medio del ventrículo derecho"
+      ],
+      "en": [
+        "RV diameter 2",
+        "RVD2",
+        "Right ventricular midventricular diameter"
+      ]
+    },
+    "formula_or_method": {
+      "es": "A4C enfocada en VD, fin de diástole.",
+      "en": "RV-focused A4C view at end-diastole."
+    },
+    "normal_values": {
+      "es": "≤35 mm.",
+      "en": "≤35 mm."
+    },
+    "interpretation_limitations": {
+      "es": "Medir a nivel medio de la cavidad.",
+      "en": "Measure at the midventricular level."
+    },
     "units": "mm",
     "related_glossary_ids": [
       "vd_term",
@@ -3017,26 +3079,65 @@
     ],
     "source_page": 7,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Apical",
-    "preferred_view": "A4C enfocada en VD",
-    "modality": "2D",
-    "acquisition_timing": "Fin de diástole",
-    "acquisition_key": "Medir perpendicular al eje largo a nivel medio.",
-    "alternate_windows": []
+    "primary_window": {
+      "es": "Apical",
+      "en": "Apical"
+    },
+    "preferred_view": {
+      "es": "A4C enfocada en VD",
+      "en": "RV-focused A4C"
+    },
+    "modality": {
+      "es": "2D",
+      "en": "2D"
+    },
+    "acquisition_timing": {
+      "es": "Fin de diástole",
+      "en": "End-diastole"
+    },
+    "acquisition_key": {
+      "es": "Medir perpendicular al eje largo a nivel medio.",
+      "en": "Measure perpendicular to the RV long axis at the midventricular level."
+    },
+    "alternate_windows": {
+      "es": [],
+      "en": []
+    }
   },
   {
     "id": "rv_length",
     "section_id": "rv_systolic",
     "order": 3,
-    "measurement": "Longitud del VD",
-    "abbreviation": "Longitud VD",
-    "aliases": [
-      "Longitud del ventrículo derecho",
-      "RV length"
-    ],
-    "formula_or_method": "Anillo tricuspídeo al ápex.",
-    "normal_values": "≤83 mm.",
-    "interpretation_limitations": "Evitar acortamiento apical.",
+    "measurement": {
+      "es": "Longitud del VD",
+      "en": "RV longitudinal dimension"
+    },
+    "abbreviation": {
+      "es": "Longitud VD",
+      "en": "RV length"
+    },
+    "aliases": {
+      "es": [
+        "Longitud del ventrículo derecho",
+        "RV length"
+      ],
+      "en": [
+        "Right ventricular length",
+        "RV length"
+      ]
+    },
+    "formula_or_method": {
+      "es": "Anillo tricuspídeo al ápex.",
+      "en": "From the tricuspid annular plane to the RV apex."
+    },
+    "normal_values": {
+      "es": "≤83 mm.",
+      "en": "≤83 mm."
+    },
+    "interpretation_limitations": {
+      "es": "Evitar acortamiento apical.",
+      "en": "Avoid apical foreshortening."
+    },
     "units": "mm",
     "related_glossary_ids": [
       "vd_term",
@@ -3044,27 +3145,69 @@
     ],
     "source_page": 7,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Apical",
-    "preferred_view": "A4C enfocada en VD",
-    "modality": "2D",
-    "acquisition_timing": "Fin de diástole",
-    "acquisition_key": "Medir desde el plano del anillo tricuspídeo al ápex verdadero del VD.",
-    "alternate_windows": []
+    "primary_window": {
+      "es": "Apical",
+      "en": "Apical"
+    },
+    "preferred_view": {
+      "es": "A4C enfocada en VD",
+      "en": "RV-focused A4C"
+    },
+    "modality": {
+      "es": "2D",
+      "en": "2D"
+    },
+    "acquisition_timing": {
+      "es": "Fin de diástole",
+      "en": "End-diastole"
+    },
+    "acquisition_key": {
+      "es": "Medir desde el plano del anillo tricuspídeo al ápex verdadero del VD.",
+      "en": "Measure from the tricuspid annular plane to the true RV apex."
+    },
+    "alternate_windows": {
+      "es": [],
+      "en": []
+    }
   },
   {
     "id": "relacion_vd_vi",
     "section_id": "rv_systolic",
     "order": 4,
-    "measurement": "Relación VD/VI",
-    "abbreviation": "Relación VD/VI",
-    "aliases": [
-      "RV/LV ratio",
-      "Relación ventricular derecha-izquierda"
-    ],
-    "formula_or_method": "Diámetro basal VD / diámetro basal VI.",
-    "normal_values": "<0,6-0,7; ≥1 indica dilatación importante.",
-    "interpretation_limitations": "Útil como estimación rápida; depende del plano y de la carga.",
-    "units": "adimensional",
+    "measurement": {
+      "es": "Relación VD/VI",
+      "en": "RV/LV ratio"
+    },
+    "abbreviation": {
+      "es": "Relación VD/VI",
+      "en": "RV/LV ratio"
+    },
+    "aliases": {
+      "es": [
+        "RV/LV ratio",
+        "Relación ventricular derecha-izquierda"
+      ],
+      "en": [
+        "RV/LV ratio",
+        "Right ventricular-to-left ventricular ratio"
+      ]
+    },
+    "formula_or_method": {
+      "es": "Diámetro basal VD / diámetro basal VI.",
+      "en": "Basal RV diameter / basal LV diameter."
+    },
+    "normal_values": {
+      "es": "<0,6-0,7; ≥1 indica dilatación importante.",
+      "en": "<0.6-0.7; ≥1 indicates significant RV dilation."
+    },
+    "interpretation_limitations": {
+      "es": "Útil como estimación rápida; depende del plano y de la carga.",
+      "en": "Useful as a rapid estimate; depends on the imaging plane and loading conditions."
+    },
+    "units": {
+      "es": "adimensional",
+      "en": "dimensionless"
+    },
     "related_glossary_ids": [
       "relacion_vd_vi_term",
       "vd_term",
@@ -3072,28 +3215,69 @@
     ],
     "source_page": 7,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Apical",
-    "preferred_view": "A4C enfocada en VD",
-    "modality": "2D; cálculo",
-    "acquisition_timing": "Fin de diástole",
-    "acquisition_key": "Medir ambos diámetros en el mismo cuadro y plano.",
-    "alternate_windows": [
-      "Subcostal 4C para evaluación cualitativa en paciente crítico."
-    ]
+    "primary_window": {
+      "es": "Apical",
+      "en": "Apical"
+    },
+    "preferred_view": {
+      "es": "A4C enfocada en VD",
+      "en": "RV-focused A4C"
+    },
+    "modality": {
+      "es": "2D; cálculo",
+      "en": "2D; calculation"
+    },
+    "acquisition_timing": {
+      "es": "Fin de diástole",
+      "en": "End-diastole"
+    },
+    "acquisition_key": {
+      "es": "Medir ambos diámetros en el mismo cuadro y plano.",
+      "en": "Measure both diameters in the same frame and imaging plane."
+    },
+    "alternate_windows": {
+      "es": [
+        "Subcostal 4C para evaluación cualitativa en paciente crítico."
+      ],
+      "en": [
+        "Use the subcostal four-chamber view for qualitative assessment in critically ill patients."
+      ]
+    }
   },
   {
     "id": "grosor_pared_vd",
     "section_id": "rv_systolic",
     "order": 5,
-    "measurement": "Grosor de pared libre del VD",
-    "abbreviation": "Grosor pared VD",
-    "aliases": [
-      "RV wall thickness",
-      "Pared libre del ventrículo derecho"
-    ],
-    "formula_or_method": "Subcostal o PLAX, fin de diástole.",
-    "normal_values": "≤5 mm.",
-    "interpretation_limitations": "Evitar incluir grasa epicárdica o trabeculaciones.",
+    "measurement": {
+      "es": "Grosor de pared libre del VD",
+      "en": "RV free wall thickness"
+    },
+    "abbreviation": {
+      "es": "Grosor pared VD",
+      "en": "RV wall thickness"
+    },
+    "aliases": {
+      "es": [
+        "RV wall thickness",
+        "Pared libre del ventrículo derecho"
+      ],
+      "en": [
+        "RV wall thickness",
+        "Right ventricular free wall"
+      ]
+    },
+    "formula_or_method": {
+      "es": "Subcostal o PLAX, fin de diástole.",
+      "en": "Subcostal or PLAX view at end-diastole."
+    },
+    "normal_values": {
+      "es": "≤5 mm.",
+      "en": "≤5 mm."
+    },
+    "interpretation_limitations": {
+      "es": "Evitar incluir grasa epicárdica o trabeculaciones.",
+      "en": "Avoid including epicardial fat or trabeculations."
+    },
     "units": "mm",
     "related_glossary_ids": [
       "vd_term",
@@ -3101,28 +3285,69 @@
     ],
     "source_page": 7,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Subcostal",
-    "preferred_view": "Subcostal 4C o eje largo de VD",
-    "modality": "2D o modo M",
-    "acquisition_timing": "Fin de diástole",
-    "acquisition_key": "Medir la pared libre anteromedial perpendicularmente; excluir grasa epicárdica.",
-    "alternate_windows": [
-      "PLAX enfocada en pared anterior del VD si la subcostal es deficiente."
-    ]
+    "primary_window": {
+      "es": "Subcostal",
+      "en": "Subcostal"
+    },
+    "preferred_view": {
+      "es": "Subcostal 4C o eje largo de VD",
+      "en": "Subcostal four-chamber or RV long-axis view"
+    },
+    "modality": {
+      "es": "2D o modo M",
+      "en": "2D or M-mode"
+    },
+    "acquisition_timing": {
+      "es": "Fin de diástole",
+      "en": "End-diastole"
+    },
+    "acquisition_key": {
+      "es": "Medir la pared libre anteromedial perpendicularmente; excluir grasa epicárdica.",
+      "en": "Measure the anteromedial RV free wall perpendicularly and exclude epicardial fat."
+    },
+    "alternate_windows": {
+      "es": [
+        "PLAX enfocada en pared anterior del VD si la subcostal es deficiente."
+      ],
+      "en": [
+        "Use a PLAX view focused on the anterior RV wall when the subcostal window is inadequate."
+      ]
+    }
   },
   {
     "id": "tapse_meas",
     "section_id": "rv_systolic",
     "order": 6,
-    "measurement": "TAPSE",
-    "abbreviation": "TAPSE",
-    "aliases": [
-      "Tricuspid annular plane systolic excursion",
-      "Excursión sistólica del plano del anillo tricuspídeo"
-    ],
-    "formula_or_method": "Modo M del anillo tricuspídeo lateral.",
-    "normal_values": ">17 mm.",
-    "interpretation_limitations": "Mide función longitudinal; es dependiente de ángulo y carga.",
+    "measurement": {
+      "es": "TAPSE",
+      "en": "TAPSE"
+    },
+    "abbreviation": {
+      "es": "TAPSE",
+      "en": "TAPSE"
+    },
+    "aliases": {
+      "es": [
+        "Tricuspid annular plane systolic excursion",
+        "Excursión sistólica del plano del anillo tricuspídeo"
+      ],
+      "en": [
+        "Tricuspid annular plane systolic excursion",
+        "Tricuspid annular plane systolic excursion"
+      ]
+    },
+    "formula_or_method": {
+      "es": "Modo M del anillo tricuspídeo lateral.",
+      "en": "M-mode assessment of the lateral tricuspid annulus."
+    },
+    "normal_values": {
+      "es": ">17 mm.",
+      "en": ">17 mm."
+    },
+    "interpretation_limitations": {
+      "es": "Mide función longitudinal; es dependiente de ángulo y carga.",
+      "en": "Measures longitudinal RV function and is angle- and load-dependent."
+    },
     "units": "mm",
     "related_glossary_ids": [
       "tapse_term",
@@ -3130,27 +3355,67 @@
     ],
     "source_page": 7,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Apical",
-    "preferred_view": "A4C enfocada en VD",
-    "modality": "Modo M",
-    "acquisition_timing": "Sístole",
-    "acquisition_key": "Alinear el cursor con la dirección de desplazamiento del anillo tricuspídeo lateral.",
-    "alternate_windows": []
+    "primary_window": {
+      "es": "Apical",
+      "en": "Apical"
+    },
+    "preferred_view": {
+      "es": "A4C enfocada en VD",
+      "en": "RV-focused A4C"
+    },
+    "modality": {
+      "es": "Modo M",
+      "en": "M-mode"
+    },
+    "acquisition_timing": {
+      "es": "Sístole",
+      "en": "Systole"
+    },
+    "acquisition_key": {
+      "es": "Alinear el cursor con la dirección de desplazamiento del anillo tricuspídeo lateral.",
+      "en": "Align the M-mode cursor with the direction of displacement of the lateral tricuspid annulus."
+    },
+    "alternate_windows": {
+      "es": [],
+      "en": []
+    }
   },
   {
     "id": "s_prima_vd",
     "section_id": "rv_systolic",
     "order": 7,
-    "measurement": "s' del VD",
-    "abbreviation": "s' del VD",
-    "aliases": [
-      "s' tricuspídea",
-      "s prima del VD",
-      "RV s'"
-    ],
-    "formula_or_method": "Doppler tisular del anillo tricuspídeo lateral.",
-    "normal_values": ">9,5 cm/s.",
-    "interpretation_limitations": "Marcador de velocidad sistólica longitudinal basal.",
+    "measurement": {
+      "es": "s' del VD",
+      "en": "RV s'"
+    },
+    "abbreviation": {
+      "es": "s' del VD",
+      "en": "RV s'"
+    },
+    "aliases": {
+      "es": [
+        "s' tricuspídea",
+        "s prima del VD",
+        "RV s'"
+      ],
+      "en": [
+        "Tricuspid annular s'",
+        "RV s'",
+        "RV s'"
+      ]
+    },
+    "formula_or_method": {
+      "es": "Doppler tisular del anillo tricuspídeo lateral.",
+      "en": "Tissue Doppler imaging of the lateral tricuspid annulus."
+    },
+    "normal_values": {
+      "es": ">9,5 cm/s.",
+      "en": ">9.5 cm/s."
+    },
+    "interpretation_limitations": {
+      "es": "Marcador de velocidad sistólica longitudinal basal.",
+      "en": "Marker of basal longitudinal systolic velocity."
+    },
     "units": "cm/s",
     "related_glossary_ids": [
       "s_prima_vd_term",
@@ -3158,26 +3423,65 @@
     ],
     "source_page": 7,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Apical",
-    "preferred_view": "A4C enfocada en VD",
-    "modality": "Doppler tisular pulsado",
-    "acquisition_timing": "Sístole",
-    "acquisition_key": "Muestra en anillo lateral, alineada con el movimiento longitudinal.",
-    "alternate_windows": []
+    "primary_window": {
+      "es": "Apical",
+      "en": "Apical"
+    },
+    "preferred_view": {
+      "es": "A4C enfocada en VD",
+      "en": "RV-focused A4C"
+    },
+    "modality": {
+      "es": "Doppler tisular pulsado",
+      "en": "Pulsed-wave tissue Doppler"
+    },
+    "acquisition_timing": {
+      "es": "Sístole",
+      "en": "Systole"
+    },
+    "acquisition_key": {
+      "es": "Muestra en anillo lateral, alineada con el movimiento longitudinal.",
+      "en": "Place the sample volume at the lateral tricuspid annulus and align it with longitudinal annular motion."
+    },
+    "alternate_windows": {
+      "es": [],
+      "en": []
+    }
   },
   {
     "id": "fac_vd_meas",
     "section_id": "rv_systolic",
     "order": 8,
-    "measurement": "FAC del VD",
-    "abbreviation": "FAC del VD",
-    "aliases": [
-      "Fractional area change",
-      "Cambio fraccional de área del VD"
-    ],
-    "formula_or_method": "[(Área diastólica - área sistólica) / área diastólica] x 100.",
-    "normal_values": ">35%.",
-    "interpretation_limitations": "Incluye contracción longitudinal y radial, pero no el TSVD.",
+    "measurement": {
+      "es": "FAC del VD",
+      "en": "RV FAC"
+    },
+    "abbreviation": {
+      "es": "FAC del VD",
+      "en": "RV FAC"
+    },
+    "aliases": {
+      "es": [
+        "Fractional area change",
+        "Cambio fraccional de área del VD"
+      ],
+      "en": [
+        "Fractional area change",
+        "Right ventricular fractional area change"
+      ]
+    },
+    "formula_or_method": {
+      "es": "[(Área diastólica - área sistólica) / área diastólica] x 100.",
+      "en": "[(End-diastolic area - end-systolic area) / end-diastolic area] × 100."
+    },
+    "normal_values": {
+      "es": ">35%.",
+      "en": ">35%."
+    },
+    "interpretation_limitations": {
+      "es": "Incluye contracción longitudinal y radial, pero no el TSVD.",
+      "en": "Incorporates longitudinal and radial contraction but does not include the RVOT."
+    },
     "units": "%",
     "related_glossary_ids": [
       "fac_term",
@@ -3185,52 +3489,130 @@
     ],
     "source_page": 7,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Apical",
-    "preferred_view": "A4C enfocada en VD",
-    "modality": "2D; planimetría",
-    "acquisition_timing": "Fin de diástole y fin de sístole",
-    "acquisition_key": "Trazar endocardio desde anillo lateral a septal, incluyendo trabeculaciones en la cavidad y excluyendo TSVD.",
-    "alternate_windows": []
+    "primary_window": {
+      "es": "Apical",
+      "en": "Apical"
+    },
+    "preferred_view": {
+      "es": "A4C enfocada en VD",
+      "en": "RV-focused A4C"
+    },
+    "modality": {
+      "es": "2D; planimetría",
+      "en": "2D; planimetry"
+    },
+    "acquisition_timing": {
+      "es": "Fin de diástole y fin de sístole",
+      "en": "End-diastole and end-systole"
+    },
+    "acquisition_key": {
+      "es": "Trazar endocardio desde anillo lateral a septal, incluyendo trabeculaciones en la cavidad y excluyendo TSVD.",
+      "en": "Trace the endocardial border from the lateral to the septal tricuspid annulus, including trabeculations within the cavity and excluding the RVOT."
+    },
+    "alternate_windows": {
+      "es": [],
+      "en": []
+    }
   },
   {
     "id": "fevd_3d",
     "section_id": "rv_systolic",
     "order": 9,
-    "measurement": "FEVD 3D",
-    "abbreviation": "FEVD 3D",
-    "aliases": [
-      "RVEF 3D",
-      "Fracción de eyección del ventrículo derecho 3D"
-    ],
-    "formula_or_method": "[(VTDVD - VTSVD) / VTDVD] x 100.",
-    "normal_values": ">45%.",
-    "interpretation_limitations": "Requiere adquisición 3D adecuada; no suele ser POCUS básico.",
+    "measurement": {
+      "es": "FEVD 3D",
+      "en": "3D RVEF"
+    },
+    "abbreviation": {
+      "es": "FEVD 3D",
+      "en": "3D RVEF"
+    },
+    "aliases": {
+      "es": [
+        "RVEF 3D",
+        "Fracción de eyección del ventrículo derecho 3D"
+      ],
+      "en": [
+        "3D RVEF",
+        "Three-dimensional right ventricular ejection fraction"
+      ]
+    },
+    "formula_or_method": {
+      "es": "[(VTDVD - VTSVD) / VTDVD] x 100.",
+      "en": "[(RVEDV - RVESV) / RVEDV] × 100."
+    },
+    "normal_values": {
+      "es": ">45%.",
+      "en": ">45%."
+    },
+    "interpretation_limitations": {
+      "es": "Requiere adquisición 3D adecuada; no suele ser POCUS básico.",
+      "en": "Requires adequate 3D acquisition and is not usually part of basic POCUS."
+    },
     "units": "%",
     "related_glossary_ids": [
       "fevd_term"
     ],
     "source_page": 7,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Apical",
-    "preferred_view": "A4C enfocada en VD, volumen completo",
-    "modality": "3D",
-    "acquisition_timing": "Varios ciclos o un latido según equipo",
-    "acquisition_key": "Incluir todo el VD y TSVD, evitando stitching y pérdida de pared libre.",
-    "alternate_windows": []
+    "primary_window": {
+      "es": "Apical",
+      "en": "Apical"
+    },
+    "preferred_view": {
+      "es": "A4C enfocada en VD, volumen completo",
+      "en": "RV-focused A4C, full-volume data set"
+    },
+    "modality": {
+      "es": "3D",
+      "en": "3D"
+    },
+    "acquisition_timing": {
+      "es": "Varios ciclos o un latido según equipo",
+      "en": "Multiple cardiac cycles or a single beat, depending on the equipment"
+    },
+    "acquisition_key": {
+      "es": "Incluir todo el VD y TSVD, evitando stitching y pérdida de pared libre.",
+      "en": "Include the entire RV and RVOT while avoiding stitching artifacts and free wall dropout."
+    },
+    "alternate_windows": {
+      "es": [],
+      "en": []
+    }
   },
   {
     "id": "strain_rv",
     "section_id": "rv_systolic",
     "order": 10,
-    "measurement": "Strain de pared libre del VD",
-    "abbreviation": "RV Strain",
-    "aliases": [
-      "Strain de la pared libre del ventrículo derecho",
-      "RV free wall strain"
-    ],
-    "formula_or_method": "Promedio de tres segmentos de pared libre.",
-    "normal_values": "Más negativo que -20%.",
-    "interpretation_limitations": "No incluir septo si se informa strain de pared libre.",
+    "measurement": {
+      "es": "Strain de pared libre del VD",
+      "en": "RV free wall strain"
+    },
+    "abbreviation": {
+      "es": "RV Strain",
+      "en": "RV strain"
+    },
+    "aliases": {
+      "es": [
+        "Strain de la pared libre del ventrículo derecho",
+        "RV free wall strain"
+      ],
+      "en": [
+        "Right ventricular free wall strain",
+        "RV free wall strain"
+      ]
+    },
+    "formula_or_method": {
+      "es": "Promedio de tres segmentos de pared libre.",
+      "en": "Average of the three RV free wall segments."
+    },
+    "normal_values": {
+      "es": "Más negativo que -20%.",
+      "en": "More negative than -20%."
+    },
+    "interpretation_limitations": {
+      "es": "No incluir septo si se informa strain de pared libre.",
+      "en": "Do not include the interventricular septum when reporting RV free wall strain."
+    },
     "units": "%",
     "related_glossary_ids": [
       "strain_rv_term",
@@ -3238,53 +3620,135 @@
     ],
     "source_page": 7,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Apical",
-    "preferred_view": "A4C enfocada en VD",
-    "modality": "Speckle tracking 2D",
-    "acquisition_timing": "Ciclo completo",
-    "acquisition_key": "Optimizar pared libre y frecuencia de cuadro; verificar seguimiento basal, medio y apical.",
-    "alternate_windows": []
+    "primary_window": {
+      "es": "Apical",
+      "en": "Apical"
+    },
+    "preferred_view": {
+      "es": "A4C enfocada en VD",
+      "en": "RV-focused A4C"
+    },
+    "modality": {
+      "es": "Speckle tracking 2D",
+      "en": "2D speckle-tracking echocardiography"
+    },
+    "acquisition_timing": {
+      "es": "Ciclo completo",
+      "en": "Entire cardiac cycle"
+    },
+    "acquisition_key": {
+      "es": "Optimizar pared libre y frecuencia de cuadro; verificar seguimiento basal, medio y apical.",
+      "en": "Optimize visualization of the RV free wall and the frame rate; verify tracking of the basal, mid, and apical segments."
+    },
+    "alternate_windows": {
+      "es": [],
+      "en": []
+    }
   },
   {
     "id": "indice_tei_vd",
     "section_id": "rv_systolic",
     "order": 11,
-    "measurement": "Índice de Tei del VD",
-    "abbreviation": "Índice de Tei",
-    "aliases": [
-      "MPI del VD",
-      "Myocardial performance index",
-      "Índice de rendimiento miocárdico"
-    ],
-    "formula_or_method": "(Tiempo cierre-apertura - tiempo de eyección) / tiempo de eyección.",
-    "normal_values": "<0,40 por Doppler pulsado; <0,55 por TDI.",
-    "interpretation_limitations": "Índice combinado de función sistólica y diastólica; dependiente de carga y ritmo.",
-    "units": "adimensional",
+    "measurement": {
+      "es": "Índice de Tei del VD",
+      "en": "RV Tei index"
+    },
+    "abbreviation": {
+      "es": "Índice de Tei",
+      "en": "Tei index"
+    },
+    "aliases": {
+      "es": [
+        "MPI del VD",
+        "Myocardial performance index",
+        "Índice de rendimiento miocárdico"
+      ],
+      "en": [
+        "RV MPI",
+        "Myocardial performance index",
+        "Myocardial performance index"
+      ]
+    },
+    "formula_or_method": {
+      "es": "(Tiempo cierre-apertura - tiempo de eyección) / tiempo de eyección.",
+      "en": "(Valve closure-to-opening time - ejection time) / ejection time."
+    },
+    "normal_values": {
+      "es": "<0,40 por Doppler pulsado; <0,55 por TDI.",
+      "en": "<0.40 by pulsed-wave Doppler; <0.55 by TDI."
+    },
+    "interpretation_limitations": {
+      "es": "Índice combinado de función sistólica y diastólica; dependiente de carga y ritmo.",
+      "en": "Combined index of systolic and diastolic function; load- and rhythm-dependent."
+    },
+    "units": {
+      "es": "adimensional",
+      "en": "dimensionless"
+    },
     "related_glossary_ids": [
       "indice_tei_term"
     ],
     "source_page": 7,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Apical / paraesternal",
-    "preferred_view": "A4C para TDI; RV inflow + PSAX/RVOT para PW",
-    "modality": "Doppler tisular o pulsado",
-    "acquisition_timing": "Ciclo completo",
-    "acquisition_key": "Para TDI, medir intervalos en el anillo tricuspídeo lateral; para PW, integrar tiempos de inflow y outflow.",
-    "alternate_windows": []
+    "primary_window": {
+      "es": "Apical / paraesternal",
+      "en": "Apical / parasternal"
+    },
+    "preferred_view": {
+      "es": "A4C para TDI; RV inflow + PSAX/RVOT para PW",
+      "en": "A4C for TDI; RV inflow plus PSAX/RVOT for PW Doppler"
+    },
+    "modality": {
+      "es": "Doppler tisular o pulsado",
+      "en": "Tissue Doppler or pulsed-wave Doppler"
+    },
+    "acquisition_timing": {
+      "es": "Ciclo completo",
+      "en": "Entire cardiac cycle"
+    },
+    "acquisition_key": {
+      "es": "Para TDI, medir intervalos en el anillo tricuspídeo lateral; para PW, integrar tiempos de inflow y outflow.",
+      "en": "For TDI, measure time intervals at the lateral tricuspid annulus; for PW Doppler, integrate RV inflow and outflow time intervals."
+    },
+    "alternate_windows": {
+      "es": [],
+      "en": []
+    }
   },
   {
     "id": "vti_tsvd_meas",
     "section_id": "rv_systolic",
     "order": 12,
-    "measurement": "VTI del TSVD",
-    "abbreviation": "VTI del TSVD",
-    "aliases": [
-      "Integral velocidad-tiempo del TSVD",
-      "RVOT VTI"
-    ],
-    "formula_or_method": "Doppler pulsado justo proximal a la válvula pulmonar.",
-    "normal_values": ">18 cm.",
-    "interpretation_limitations": "Refleja eyección derecha y se usa en cálculos de volumen/PVR.",
+    "measurement": {
+      "es": "VTI del TSVD",
+      "en": "RVOT VTI"
+    },
+    "abbreviation": {
+      "es": "VTI del TSVD",
+      "en": "RVOT VTI"
+    },
+    "aliases": {
+      "es": [
+        "Integral velocidad-tiempo del TSVD",
+        "RVOT VTI"
+      ],
+      "en": [
+        "RVOT velocity-time integral",
+        "RVOT VTI"
+      ]
+    },
+    "formula_or_method": {
+      "es": "Doppler pulsado justo proximal a la válvula pulmonar.",
+      "en": "Pulsed-wave Doppler immediately proximal to the pulmonary valve."
+    },
+    "normal_values": {
+      "es": ">18 cm.",
+      "en": ">18 cm."
+    },
+    "interpretation_limitations": {
+      "es": "Refleja eyección derecha y se usa en cálculos de volumen/PVR.",
+      "en": "Reflects RV ejection and is used in stroke volume and PVR calculations."
+    },
     "units": "cm",
     "related_glossary_ids": [
       "vti_term",
@@ -3293,57 +3757,140 @@
     ],
     "source_page": 7,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Paraesternal izquierda",
-    "preferred_view": "PSAX a nivel de grandes vasos / RVOT",
-    "modality": "Doppler pulsado",
-    "acquisition_timing": "Sístole",
-    "acquisition_key": "Muestra en el TSVD proximal a la válvula pulmonar, con el haz paralelo al flujo.",
-    "alternate_windows": [
-      "Subcostal eje corto del RVOT cuando la ventana paraesternal es limitada."
-    ]
+    "primary_window": {
+      "es": "Paraesternal izquierda",
+      "en": "Left parasternal"
+    },
+    "preferred_view": {
+      "es": "PSAX a nivel de grandes vasos / RVOT",
+      "en": "PSAX at the great-vessel level / RVOT"
+    },
+    "modality": {
+      "es": "Doppler pulsado",
+      "en": "Pulsed-wave Doppler"
+    },
+    "acquisition_timing": {
+      "es": "Sístole",
+      "en": "Systole"
+    },
+    "acquisition_key": {
+      "es": "Muestra en el TSVD proximal a la válvula pulmonar, con el haz paralelo al flujo.",
+      "en": "Place the sample volume in the RVOT proximal to the pulmonary valve, with the Doppler beam parallel to flow."
+    },
+    "alternate_windows": {
+      "es": [
+        "Subcostal eje corto del RVOT cuando la ventana paraesternal es limitada."
+      ],
+      "en": [
+        "Use the subcostal short-axis RVOT view when the parasternal window is limited."
+      ]
+    }
   },
   {
     "id": "paat_tsvd",
     "section_id": "rv_systolic",
     "order": 13,
-    "measurement": "PAAT / AccT del TSVD",
-    "abbreviation": "PAAT",
-    "aliases": [
-      "Tiempo de aceleración pulmonar",
-      "Pulmonary artery acceleration time",
-      "AccT del TSVD"
-    ],
-    "formula_or_method": "Inicio del flujo pulmonar hasta la velocidad máxima.",
-    "normal_values": ">105 ms.",
-    "interpretation_limitations": "Se acorta con aumento de poscarga pulmonar; depende de frecuencia cardiaca.",
+    "measurement": {
+      "es": "PAAT / AccT del TSVD",
+      "en": "PAAT / RVOT AccT"
+    },
+    "abbreviation": {
+      "es": "PAAT",
+      "en": "PAAT"
+    },
+    "aliases": {
+      "es": [
+        "Tiempo de aceleración pulmonar",
+        "Pulmonary artery acceleration time",
+        "AccT del TSVD"
+      ],
+      "en": [
+        "Pulmonary acceleration time",
+        "Pulmonary artery acceleration time",
+        "RVOT acceleration time"
+      ]
+    },
+    "formula_or_method": {
+      "es": "Inicio del flujo pulmonar hasta la velocidad máxima.",
+      "en": "From the onset of pulmonary flow to peak velocity."
+    },
+    "normal_values": {
+      "es": ">105 ms.",
+      "en": ">105 ms."
+    },
+    "interpretation_limitations": {
+      "es": "Se acorta con aumento de poscarga pulmonar; depende de frecuencia cardiaca.",
+      "en": "Shortens with increased pulmonary afterload and is heart-rate dependent."
+    },
     "units": "ms",
     "related_glossary_ids": [
       "paat_term"
     ],
     "source_page": 7,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Paraesternal izquierda",
-    "preferred_view": "PSAX a nivel de grandes vasos / RVOT",
-    "modality": "Doppler pulsado",
-    "acquisition_timing": "Sístole",
-    "acquisition_key": "Usar el mismo espectro del VTI del TSVD y medir desde inicio de flujo hasta el pico.",
-    "alternate_windows": [
-      "Subcostal eje corto del RVOT."
-    ]
+    "primary_window": {
+      "es": "Paraesternal izquierda",
+      "en": "Left parasternal"
+    },
+    "preferred_view": {
+      "es": "PSAX a nivel de grandes vasos / RVOT",
+      "en": "PSAX at the great-vessel level / RVOT"
+    },
+    "modality": {
+      "es": "Doppler pulsado",
+      "en": "Pulsed-wave Doppler"
+    },
+    "acquisition_timing": {
+      "es": "Sístole",
+      "en": "Systole"
+    },
+    "acquisition_key": {
+      "es": "Usar el mismo espectro del VTI del TSVD y medir desde inicio de flujo hasta el pico.",
+      "en": "Use the same RVOT VTI spectral envelope and measure from flow onset to peak velocity."
+    },
+    "alternate_windows": {
+      "es": [
+        "Subcostal eje corto del RVOT."
+      ],
+      "en": [
+        "Subcostal short-axis RVOT view."
+      ]
+    }
   },
   {
     "id": "tapse_pasp_ratio",
     "section_id": "rv_systolic",
     "order": 14,
-    "measurement": "TAPSE/PASP",
-    "abbreviation": "TAPSE/PASP",
-    "aliases": [
-      "Cociente TAPSE/PASP",
-      "Relación TAPSE y PASP"
-    ],
-    "formula_or_method": "TAPSE en mm / PASP en mmHg.",
-    "normal_values": ">0,4-0,55 mm/mmHg.",
-    "interpretation_limitations": "Estimación no invasiva del acoplamiento VD-arteria pulmonar.",
+    "measurement": {
+      "es": "TAPSE/PASP",
+      "en": "TAPSE/PASP"
+    },
+    "abbreviation": {
+      "es": "TAPSE/PASP",
+      "en": "TAPSE/PASP"
+    },
+    "aliases": {
+      "es": [
+        "Cociente TAPSE/PASP",
+        "Relación TAPSE y PASP"
+      ],
+      "en": [
+        "TAPSE/PASP ratio",
+        "TAPSE-to-PASP ratio"
+      ]
+    },
+    "formula_or_method": {
+      "es": "TAPSE en mm / PASP en mmHg.",
+      "en": "TAPSE in mm / PASP in mmHg."
+    },
+    "normal_values": {
+      "es": ">0,4-0,55 mm/mmHg.",
+      "en": ">0.4-0.55 mm/mmHg."
+    },
+    "interpretation_limitations": {
+      "es": "Estimación no invasiva del acoplamiento VD-arteria pulmonar.",
+      "en": "Noninvasive estimate of RV-pulmonary arterial coupling."
+    },
     "units": "mm/mmHg",
     "related_glossary_ids": [
       "tapse_pasp_term",
@@ -3352,12 +3899,30 @@
     ],
     "source_page": 7,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Derivada",
-    "preferred_view": "A4C enfocada en VD + mejor ventana de IT",
-    "modality": "Modo M + Doppler continuo; cálculo",
-    "acquisition_timing": "Sístole",
-    "acquisition_key": "Combinar TAPSE y PASP obtenidos en condiciones hemodinámicas similares.",
-    "alternate_windows": []
+    "primary_window": {
+      "es": "Derivada",
+      "en": "Derived"
+    },
+    "preferred_view": {
+      "es": "A4C enfocada en VD + mejor ventana de IT",
+      "en": "RV-focused A4C plus the best window for the TR jet"
+    },
+    "modality": {
+      "es": "Modo M + Doppler continuo; cálculo",
+      "en": "M-mode plus continuous-wave Doppler; calculation"
+    },
+    "acquisition_timing": {
+      "es": "Sístole",
+      "en": "Systole"
+    },
+    "acquisition_key": {
+      "es": "Combinar TAPSE y PASP obtenidos en condiciones hemodinámicas similares.",
+      "en": "Combine TAPSE and PASP measurements obtained under similar hemodynamic conditions."
+    },
+    "alternate_windows": {
+      "es": [],
+      "en": []
+    }
   },
   {
     "id": "area_ad_meas",
