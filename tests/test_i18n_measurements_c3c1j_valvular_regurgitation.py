@@ -407,9 +407,12 @@ def test_bilingual_vs_pending_counts():
     with open(path, "r", encoding="utf-8") as f:
         data = json.load(f)
 
-    # 15. Que después de C3C1J existen exactamente 74 mediciones bilingües y 27 pendientes, usando measurement como criterio estructural.
+    # El bloque C3C1J estableció un mínimo acumulado de 74 mediciones bilingües y un máximo de 27 pendientes.
+    # Los bloques posteriores (como C3C1K) pueden aumentar el número de mediciones bilingües y reducir las pendientes.
+    # El total debe permanecer exactamente en 101.
+    # Los conteos exactos de cada fase posterior deben comprobarse en la prueba correspondiente a esa fase.
     bilingual_count = sum(1 for m in data if isinstance(m["measurement"], dict))
     pending_count = sum(1 for m in data if isinstance(m["measurement"], str))
-    assert bilingual_count == 74
-    assert pending_count == 27
+    assert bilingual_count >= 74
+    assert pending_count <= 27
     assert bilingual_count + pending_count == 101

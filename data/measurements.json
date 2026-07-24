@@ -3,16 +3,38 @@
     "id": "dtdvi",
     "section_id": "lv_systolic",
     "order": 1,
-    "measurement": "DTDVI / LVIDd",
-    "abbreviation": "DTDVI",
-    "aliases": [
-      "LVIDd",
-      "Diámetro telediastólico del ventrículo izquierdo",
-      "Diámetro interno del ventrículo izquierdo en diástole"
-    ],
-    "formula_or_method": "PLAX, perpendicular al eje largo, al final de la diástole.",
-    "normal_values": "Hombres 42-58 mm; mujeres 38-52 mm.",
-    "interpretation_limitations": "Cuantifica el tamaño lineal del VI. Confirmar que el corte no sea oblicuo.",
+    "measurement": {
+      "es": "DTDVI / LVIDd",
+      "en": "LV end-diastolic diameter / LVIDd"
+    },
+    "abbreviation": {
+      "es": "DTDVI",
+      "en": "LVIDd"
+    },
+    "aliases": {
+      "es": [
+        "LVIDd",
+        "Diámetro telediastólico del ventrículo izquierdo",
+        "Diámetro interno del ventrículo izquierdo en diástole"
+      ],
+      "en": [
+        "LVIDd",
+        "Left ventricular end-diastolic diameter",
+        "Left ventricular internal diameter in diastole"
+      ]
+    },
+    "formula_or_method": {
+      "es": "PLAX, perpendicular al eje largo, al final de la diástole.",
+      "en": "PLAX, perpendicular to the long axis, at end-diastole."
+    },
+    "normal_values": {
+      "es": "Hombres 42-58 mm; mujeres 38-52 mm.",
+      "en": "Men 42-58 mm; women 38-52 mm."
+    },
+    "interpretation_limitations": {
+      "es": "Cuantifica el tamaño lineal del VI. Confirmar que el corte no sea oblicuo.",
+      "en": "Quantifies linear LV size. Confirm that the imaging plane is not oblique."
+    },
     "units": "mm",
     "related_glossary_ids": [
       "dtdvi_term",
@@ -20,29 +42,71 @@
     ],
     "source_page": 4,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Paraesternal izquierda",
-    "preferred_view": "PLAX",
-    "modality": "2D; modo M opcional",
-    "acquisition_timing": "Fin de diástole",
-    "acquisition_key": "Medir perpendicular al eje largo, habitualmente a nivel de las puntas de las valvas mitrales; evitar cortes oblicuos.",
-    "alternate_windows": [
-      "Subcostal eje corto como alternativa si la ventana paraesternal es deficiente."
-    ]
+    "primary_window": {
+      "es": "Paraesternal izquierda",
+      "en": "Left parasternal"
+    },
+    "preferred_view": {
+      "es": "PLAX",
+      "en": "PLAX"
+    },
+    "modality": {
+      "es": "2D; modo M opcional",
+      "en": "2D; optional M-mode"
+    },
+    "acquisition_timing": {
+      "es": "Fin de diástole",
+      "en": "End-diastole"
+    },
+    "acquisition_key": {
+      "es": "Medir perpendicular al eje largo, habitualmente a nivel de las puntas de las valvas mitrales; evitar cortes oblicuos.",
+      "en": "Measure perpendicular to the LV long axis, usually at the level of the mitral leaflet tips; avoid oblique imaging planes."
+    },
+    "alternate_windows": {
+      "es": [
+        "Subcostal eje corto como alternativa si la ventana paraesternal es deficiente."
+      ],
+      "en": [
+        "Use the subcostal short-axis view as an alternative when the parasternal window is inadequate."
+      ]
+    }
   },
   {
     "id": "dtsvi",
     "section_id": "lv_systolic",
     "order": 2,
-    "measurement": "DTSVI / LVIDs",
-    "abbreviation": "DTSVI",
-    "aliases": [
-      "LVIDs",
-      "Diámetro telesistólico del ventrículo izquierdo",
-      "Diámetro interno del ventrículo izquierdo en sístole"
-    ],
-    "formula_or_method": "PLAX, al final de la sístole.",
-    "normal_values": "Hombres 25-40 mm; mujeres 22-35 mm.",
-    "interpretation_limitations": "Útil junto con el DTDVI para calcular la fracción de acortamiento.",
+    "measurement": {
+      "es": "DTSVI / LVIDs",
+      "en": "LV end-systolic diameter / LVIDs"
+    },
+    "abbreviation": {
+      "es": "DTSVI",
+      "en": "LVIDs"
+    },
+    "aliases": {
+      "es": [
+        "LVIDs",
+        "Diámetro telesistólico del ventrículo izquierdo",
+        "Diámetro interno del ventrículo izquierdo en sístole"
+      ],
+      "en": [
+        "LVIDs",
+        "Left ventricular end-systolic diameter",
+        "Left ventricular internal diameter in systole"
+      ]
+    },
+    "formula_or_method": {
+      "es": "PLAX, al final de la sístole.",
+      "en": "PLAX, at end-systole."
+    },
+    "normal_values": {
+      "es": "Hombres 25-40 mm; mujeres 22-35 mm.",
+      "en": "Men 25-40 mm; women 22-35 mm."
+    },
+    "interpretation_limitations": {
+      "es": "Útil junto con el DTDVI para calcular la fracción de acortamiento.",
+      "en": "Used with LVIDd to calculate fractional shortening."
+    },
     "units": "mm",
     "related_glossary_ids": [
       "dtsvi_term",
@@ -50,28 +114,69 @@
     ],
     "source_page": 4,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Paraesternal izquierda",
-    "preferred_view": "PLAX",
-    "modality": "2D; modo M opcional",
-    "acquisition_timing": "Fin de sístole",
-    "acquisition_key": "Usar el mismo plano y nivel anatómico que para DTDVI.",
-    "alternate_windows": [
-      "Subcostal eje corto si no hay PLAX adecuada."
-    ]
+    "primary_window": {
+      "es": "Paraesternal izquierda",
+      "en": "Left parasternal"
+    },
+    "preferred_view": {
+      "es": "PLAX",
+      "en": "PLAX"
+    },
+    "modality": {
+      "es": "2D; modo M opcional",
+      "en": "2D; optional M-mode"
+    },
+    "acquisition_timing": {
+      "es": "Fin de sístole",
+      "en": "End-systole"
+    },
+    "acquisition_key": {
+      "es": "Usar el mismo plano y nivel anatómico que para DTDVI.",
+      "en": "Use the same imaging plane and anatomic level used for LVIDd."
+    },
+    "alternate_windows": {
+      "es": [
+        "Subcostal eje corto si no hay PLAX adecuada."
+      ],
+      "en": [
+        "Use the subcostal short-axis view when an adequate PLAX view is unavailable."
+      ]
+    }
   },
   {
     "id": "vtdvi",
     "section_id": "lv_systolic",
     "order": 3,
-    "measurement": "VTDVI",
-    "abbreviation": "VTDVI",
-    "aliases": [
-      "Volumen telediastólico del ventrículo izquierdo",
-      "VTDVI"
-    ],
-    "formula_or_method": "Simpson biplano en A4C y A2C.",
-    "normal_values": "Hombres 62-150 mL; mujeres 46-106 mL.",
-    "interpretation_limitations": "Evitar foreshortening y excluir músculos papilares de la cavidad.",
+    "measurement": {
+      "es": "VTDVI",
+      "en": "LVEDV"
+    },
+    "abbreviation": {
+      "es": "VTDVI",
+      "en": "LVEDV"
+    },
+    "aliases": {
+      "es": [
+        "Volumen telediastólico del ventrículo izquierdo",
+        "VTDVI"
+      ],
+      "en": [
+        "Left ventricular end-diastolic volume",
+        "LVEDV"
+      ]
+    },
+    "formula_or_method": {
+      "es": "Simpson biplano en A4C y A2C.",
+      "en": "Biplane Simpson method using A4C and A2C views."
+    },
+    "normal_values": {
+      "es": "Hombres 62-150 mL; mujeres 46-106 mL.",
+      "en": "Men 62-150 mL; women 46-106 mL."
+    },
+    "interpretation_limitations": {
+      "es": "Evitar foreshortening y excluir músculos papilares de la cavidad.",
+      "en": "Avoid apical foreshortening and exclude the papillary muscles from the LV cavity."
+    },
     "units": "mL",
     "related_glossary_ids": [
       "vtdvi_term",
@@ -80,29 +185,71 @@
     ],
     "source_page": 4,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Apical",
-    "preferred_view": "A4C + A2C no acortadas",
-    "modality": "2D; trazado endocárdico",
-    "acquisition_timing": "Fin de diástole",
-    "acquisition_key": "Trazar el endocardio desde anillo mitral a ápex; excluir músculos papilares y trabeculaciones de la cavidad.",
-    "alternate_windows": [
-      "A3C puede complementar; contraste ecográfico si la delimitación endocárdica es insuficiente."
-    ]
+    "primary_window": {
+      "es": "Apical",
+      "en": "Apical"
+    },
+    "preferred_view": {
+      "es": "A4C + A2C no acortadas",
+      "en": "Nonforeshortened A4C and A2C views"
+    },
+    "modality": {
+      "es": "2D; trazado endocárdico",
+      "en": "2D; endocardial tracing"
+    },
+    "acquisition_timing": {
+      "es": "Fin de diástole",
+      "en": "End-diastole"
+    },
+    "acquisition_key": {
+      "es": "Trazar el endocardio desde anillo mitral a ápex; excluir músculos papilares y trabeculaciones de la cavidad.",
+      "en": "Trace the endocardial border from the mitral annulus to the apex; exclude papillary muscles and trabeculations from the LV cavity."
+    },
+    "alternate_windows": {
+      "es": [
+        "A3C puede complementar; contraste ecográfico si la delimitación endocárdica es insuficiente."
+      ],
+      "en": [
+        "A3C may provide complementary information; use ultrasound contrast when endocardial delineation is inadequate."
+      ]
+    }
   },
   {
     "id": "vtdvi_indexed",
     "section_id": "lv_systolic",
     "order": 4,
-    "measurement": "VTDVI indexado",
-    "abbreviation": "VTDVI indexado",
-    "aliases": [
-      "VTDVI indexado",
-      "Volumen telediastólico indexado del VI",
-      "LVEDVI"
-    ],
-    "formula_or_method": "VTDVI / superficie corporal.",
-    "normal_values": "Hombres 34-74 mL/m²; mujeres 29-61 mL/m².",
-    "interpretation_limitations": "Preferible para comparar entre pacientes de distinto tamaño corporal.",
+    "measurement": {
+      "es": "VTDVI indexado",
+      "en": "Indexed LVEDV"
+    },
+    "abbreviation": {
+      "es": "VTDVI indexado",
+      "en": "LVEDVi"
+    },
+    "aliases": {
+      "es": [
+        "VTDVI indexado",
+        "Volumen telediastólico indexado del VI",
+        "LVEDVI"
+      ],
+      "en": [
+        "Indexed LVEDV",
+        "Indexed left ventricular end-diastolic volume",
+        "LVEDVI"
+      ]
+    },
+    "formula_or_method": {
+      "es": "VTDVI / superficie corporal.",
+      "en": "LVEDV / body surface area."
+    },
+    "normal_values": {
+      "es": "Hombres 34-74 mL/m²; mujeres 29-61 mL/m².",
+      "en": "Men 34-74 mL/m²; women 29-61 mL/m²."
+    },
+    "interpretation_limitations": {
+      "es": "Preferible para comparar entre pacientes de distinto tamaño corporal.",
+      "en": "Preferred for comparisons among patients with different body sizes."
+    },
     "units": "mL/m²",
     "related_glossary_ids": [
       "vtdvi_term",
@@ -111,26 +258,65 @@
     ],
     "source_page": 4,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Derivada",
-    "preferred_view": "A4C + A2C para VTDVI",
-    "modality": "Cálculo",
-    "acquisition_timing": "Después de medir VTDVI",
-    "acquisition_key": "No requiere una ventana adicional: utiliza VTDVI por Simpson y superficie corporal.",
-    "alternate_windows": []
+    "primary_window": {
+      "es": "Derivada",
+      "en": "Derived"
+    },
+    "preferred_view": {
+      "es": "A4C + A2C para VTDVI",
+      "en": "A4C and A2C views for LVEDV"
+    },
+    "modality": {
+      "es": "Cálculo",
+      "en": "Calculation"
+    },
+    "acquisition_timing": {
+      "es": "Después de medir VTDVI",
+      "en": "After measuring LVEDV"
+    },
+    "acquisition_key": {
+      "es": "No requiere una ventana adicional: utiliza VTDVI por Simpson y superficie corporal.",
+      "en": "No additional acoustic window is required; it uses LVEDV obtained by the Simpson method and body surface area."
+    },
+    "alternate_windows": {
+      "es": [],
+      "en": []
+    }
   },
   {
     "id": "vtsvi_meas",
     "section_id": "lv_systolic",
     "order": 5,
-    "measurement": "VTSVI",
-    "abbreviation": "VTSVI",
-    "aliases": [
-      "Volumen telesistólico del ventrículo izquierdo",
-      "VTSVI"
-    ],
-    "formula_or_method": "Simpson biplano al final de la sístole.",
-    "normal_values": "Hombres 21-61 mL; mujeres 14-42 mL.",
-    "interpretation_limitations": "Depende de contractilidad y condiciones de carga.",
+    "measurement": {
+      "es": "VTSVI",
+      "en": "LVESV"
+    },
+    "abbreviation": {
+      "es": "VTSVI",
+      "en": "LVESV"
+    },
+    "aliases": {
+      "es": [
+        "Volumen telesistólico del ventrículo izquierdo",
+        "VTSVI"
+      ],
+      "en": [
+        "Left ventricular end-systolic volume",
+        "LVESV"
+      ]
+    },
+    "formula_or_method": {
+      "es": "Simpson biplano al final de la sístole.",
+      "en": "Biplane Simpson method at end-systole."
+    },
+    "normal_values": {
+      "es": "Hombres 21-61 mL; mujeres 14-42 mL.",
+      "en": "Men 21-61 mL; women 14-42 mL."
+    },
+    "interpretation_limitations": {
+      "es": "Depende de contractilidad y condiciones de carga.",
+      "en": "Depends on contractility and loading conditions."
+    },
     "units": "mL",
     "related_glossary_ids": [
       "vtsvi_term",
@@ -138,29 +324,71 @@
     ],
     "source_page": 4,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Apical",
-    "preferred_view": "A4C + A2C no acortadas",
-    "modality": "2D; trazado endocárdico",
-    "acquisition_timing": "Fin de sístole",
-    "acquisition_key": "Seleccionar el cuadro con menor cavidad ventricular y trazar el endocardio.",
-    "alternate_windows": [
-      "A3C puede complementar; contraste ecográfico si la delimitación es insuficiente."
-    ]
+    "primary_window": {
+      "es": "Apical",
+      "en": "Apical"
+    },
+    "preferred_view": {
+      "es": "A4C + A2C no acortadas",
+      "en": "Nonforeshortened A4C and A2C views"
+    },
+    "modality": {
+      "es": "2D; trazado endocárdico",
+      "en": "2D; endocardial tracing"
+    },
+    "acquisition_timing": {
+      "es": "Fin de sístole",
+      "en": "End-systole"
+    },
+    "acquisition_key": {
+      "es": "Seleccionar el cuadro con menor cavidad ventricular y trazar el endocardio.",
+      "en": "Select the frame with the smallest LV cavity and trace the endocardial border."
+    },
+    "alternate_windows": {
+      "es": [
+        "A3C puede complementar; contraste ecográfico si la delimitación es insuficiente."
+      ],
+      "en": [
+        "A3C may provide complementary information; use ultrasound contrast when endocardial delineation is inadequate."
+      ]
+    }
   },
   {
     "id": "vtsvi_indexed",
     "section_id": "lv_systolic",
     "order": 6,
-    "measurement": "VTSVI indexado",
-    "abbreviation": "VTSVI indexado",
-    "aliases": [
-      "VTSVI indexado",
-      "Volumen telesistólico indexado del VI",
-      "LVESVI"
-    ],
-    "formula_or_method": "VTSVI / superficie corporal.",
-    "normal_values": "Hombres 11-31 mL/m²; mujeres 8-24 mL/m².",
-    "interpretation_limitations": "Permite cuantificación ajustada por superficie corporal.",
+    "measurement": {
+      "es": "VTSVI indexado",
+      "en": "Indexed LVESV"
+    },
+    "abbreviation": {
+      "es": "VTSVI indexado",
+      "en": "LVESVi"
+    },
+    "aliases": {
+      "es": [
+        "VTSVI indexado",
+        "Volumen telesistólico indexado del VI",
+        "LVESVI"
+      ],
+      "en": [
+        "Indexed LVESV",
+        "Indexed left ventricular end-systolic volume",
+        "LVESVI"
+      ]
+    },
+    "formula_or_method": {
+      "es": "VTSVI / superficie corporal.",
+      "en": "LVESV / body surface area."
+    },
+    "normal_values": {
+      "es": "Hombres 11-31 mL/m²; mujeres 8-24 mL/m².",
+      "en": "Men 11-31 mL/m²; women 8-24 mL/m²."
+    },
+    "interpretation_limitations": {
+      "es": "Permite cuantificación ajustada por superficie corporal.",
+      "en": "Provides quantification adjusted for body surface area."
+    },
     "units": "mL/m²",
     "related_glossary_ids": [
       "vtsvi_term",
@@ -169,26 +397,65 @@
     ],
     "source_page": 4,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Derivada",
-    "preferred_view": "A4C + A2C para VTSVI",
-    "modality": "Cálculo",
-    "acquisition_timing": "Después de medir VTSVI",
-    "acquisition_key": "No requiere ventana adicional: utiliza VTSVI y superficie corporal.",
-    "alternate_windows": []
+    "primary_window": {
+      "es": "Derivada",
+      "en": "Derived"
+    },
+    "preferred_view": {
+      "es": "A4C + A2C para VTSVI",
+      "en": "A4C and A2C views for LVESV"
+    },
+    "modality": {
+      "es": "Cálculo",
+      "en": "Calculation"
+    },
+    "acquisition_timing": {
+      "es": "Después de medir VTSVI",
+      "en": "After measuring LVESV"
+    },
+    "acquisition_key": {
+      "es": "No requiere ventana adicional: utiliza VTSVI y superficie corporal.",
+      "en": "No additional acoustic window is required; it uses LVESV and body surface area."
+    },
+    "alternate_windows": {
+      "es": [],
+      "en": []
+    }
   },
   {
     "id": "fevi",
     "section_id": "lv_systolic",
     "order": 7,
-    "measurement": "FEVI",
-    "abbreviation": "FEVI",
-    "aliases": [
-      "LVEF",
-      "Fracción de eyección del ventrículo izquierdo"
-    ],
-    "formula_or_method": "[(VTDVI - VTSVI) / VTDVI] x 100.",
-    "normal_values": "53-73%; límite inferior: hombres 52%, mujeres 54%.",
-    "interpretation_limitations": "Integrar con contractilidad regional, carga y calidad de imagen.",
+    "measurement": {
+      "es": "FEVI",
+      "en": "LVEF"
+    },
+    "abbreviation": {
+      "es": "FEVI",
+      "en": "LVEF"
+    },
+    "aliases": {
+      "es": [
+        "LVEF",
+        "Fracción de eyección del ventrículo izquierdo"
+      ],
+      "en": [
+        "LVEF",
+        "Left ventricular ejection fraction"
+      ]
+    },
+    "formula_or_method": {
+      "es": "[(VTDVI - VTSVI) / VTDVI] x 100.",
+      "en": "[(LVEDV - LVESV) / LVEDV] × 100."
+    },
+    "normal_values": {
+      "es": "53-73%; límite inferior: hombres 52%, mujeres 54%.",
+      "en": "53-73%; lower reference limit: men 52%, women 54%."
+    },
+    "interpretation_limitations": {
+      "es": "Integrar con contractilidad regional, carga y calidad de imagen.",
+      "en": "Interpret together with regional wall motion, loading conditions, and image quality."
+    },
     "units": "%",
     "related_glossary_ids": [
       "fevi_term",
@@ -197,28 +464,69 @@
     ],
     "source_page": 4,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Apical",
-    "preferred_view": "A4C + A2C, Simpson biplano",
-    "modality": "2D; cálculo",
-    "acquisition_timing": "Fin de diástole y fin de sístole",
-    "acquisition_key": "Evitar foreshortening; usar los mismos ciclos y un contorno endocárdico adecuado.",
-    "alternate_windows": [
-      "Estimación visual multiparamétrica desde PLAX, PSAX, A4C y subcostal cuando no sea posible Simpson."
-    ]
+    "primary_window": {
+      "es": "Apical",
+      "en": "Apical"
+    },
+    "preferred_view": {
+      "es": "A4C + A2C, Simpson biplano",
+      "en": "A4C and A2C, biplane Simpson method"
+    },
+    "modality": {
+      "es": "2D; cálculo",
+      "en": "2D; calculation"
+    },
+    "acquisition_timing": {
+      "es": "Fin de diástole y fin de sístole",
+      "en": "End-diastole and end-systole"
+    },
+    "acquisition_key": {
+      "es": "Evitar foreshortening; usar los mismos ciclos y un contorno endocárdico adecuado.",
+      "en": "Avoid apical foreshortening; use the same cardiac cycles and ensure adequate endocardial border tracing."
+    },
+    "alternate_windows": {
+      "es": [
+        "Estimación visual multiparamétrica desde PLAX, PSAX, A4C y subcostal cuando no sea posible Simpson."
+      ],
+      "en": [
+        "Use multiparametric visual estimation from PLAX, PSAX, A4C, and subcostal views when the Simpson method cannot be performed."
+      ]
+    }
   },
   {
     "id": "fraccion_acortamiento_meas",
     "section_id": "lv_systolic",
     "order": 8,
-    "measurement": "Fracción de acortamiento",
-    "abbreviation": "FS",
-    "aliases": [
-      "FS",
-      "Fracción de acortamiento del VI"
-    ],
-    "formula_or_method": "[(DTDVI - DTSVI) / DTDVI] x 100.",
-    "normal_values": "25-45%.",
-    "interpretation_limitations": "Solo refleja acortamiento radial en un plano; pierde precisión con alteraciones segmentarias.",
+    "measurement": {
+      "es": "Fracción de acortamiento",
+      "en": "Fractional shortening"
+    },
+    "abbreviation": {
+      "es": "FS",
+      "en": "FS"
+    },
+    "aliases": {
+      "es": [
+        "FS",
+        "Fracción de acortamiento del VI"
+      ],
+      "en": [
+        "FS",
+        "LV fractional shortening"
+      ]
+    },
+    "formula_or_method": {
+      "es": "[(DTDVI - DTSVI) / DTDVI] x 100.",
+      "en": "[(LVIDd - LVIDs) / LVIDd] × 100."
+    },
+    "normal_values": {
+      "es": "25-45%.",
+      "en": "25-45%."
+    },
+    "interpretation_limitations": {
+      "es": "Solo refleja acortamiento radial en un plano; pierde precisión con alteraciones segmentarias.",
+      "en": "Reflects radial shortening in a single imaging plane only; accuracy is reduced in the presence of regional wall motion abnormalities."
+    },
     "units": "%",
     "related_glossary_ids": [
       "fraccion_acortamiento_term",
@@ -227,26 +535,65 @@
     ],
     "source_page": 4,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Paraesternal izquierda",
-    "preferred_view": "PLAX",
-    "modality": "2D o modo M",
-    "acquisition_timing": "Diástole y sístole",
-    "acquisition_key": "Usar DTDVI y DTSVI del mismo nivel y eje.",
-    "alternate_windows": []
+    "primary_window": {
+      "es": "Paraesternal izquierda",
+      "en": "Left parasternal"
+    },
+    "preferred_view": {
+      "es": "PLAX",
+      "en": "PLAX"
+    },
+    "modality": {
+      "es": "2D o modo M",
+      "en": "2D or M-mode"
+    },
+    "acquisition_timing": {
+      "es": "Diástole y sístole",
+      "en": "Diastole and systole"
+    },
+    "acquisition_key": {
+      "es": "Usar DTDVI y DTSVI del mismo nivel y eje.",
+      "en": "Use LVIDd and LVIDs obtained at the same anatomic level and along the same axis."
+    },
+    "alternate_windows": {
+      "es": [],
+      "en": []
+    }
   },
   {
     "id": "epss",
     "section_id": "lv_systolic",
     "order": 9,
-    "measurement": "EPSS",
-    "abbreviation": "EPSS",
-    "aliases": [
-      "Separación punto E-septo",
-      "E-point septal separation"
-    ],
-    "formula_or_method": "Distancia entre el punto E de la valva mitral anterior y el septo en modo M.",
-    "normal_values": "≤7 mm; >10 mm sugiere disfunción sistólica.",
-    "interpretation_limitations": "No usar de forma aislada; puede alterarse por enfermedad mitral o dilatación del VI.",
+    "measurement": {
+      "es": "EPSS",
+      "en": "EPSS"
+    },
+    "abbreviation": {
+      "es": "EPSS",
+      "en": "EPSS"
+    },
+    "aliases": {
+      "es": [
+        "Separación punto E-septo",
+        "E-point septal separation"
+      ],
+      "en": [
+        "E-point septal separation",
+        "E-point septal separation"
+      ]
+    },
+    "formula_or_method": {
+      "es": "Distancia entre el punto E de la valva mitral anterior y el septo en modo M.",
+      "en": "Distance between the E point of the anterior mitral leaflet and the interventricular septum on M-mode."
+    },
+    "normal_values": {
+      "es": "≤7 mm; >10 mm sugiere disfunción sistólica.",
+      "en": "≤7 mm; >10 mm suggests systolic dysfunction."
+    },
+    "interpretation_limitations": {
+      "es": "No usar de forma aislada; puede alterarse por enfermedad mitral o dilatación del VI.",
+      "en": "Do not use in isolation; it may be affected by mitral valve disease or LV dilation."
+    },
     "units": "mm",
     "related_glossary_ids": [
       "epss_term",
@@ -254,26 +601,65 @@
     ],
     "source_page": 4,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Paraesternal izquierda",
-    "preferred_view": "PLAX centrada en válvula mitral",
-    "modality": "Modo M",
-    "acquisition_timing": "Diástole temprana",
-    "acquisition_key": "Colocar el cursor a través de la punta de la valva mitral anterior y medir la mínima separación E-septo.",
-    "alternate_windows": []
+    "primary_window": {
+      "es": "Paraesternal izquierda",
+      "en": "Left parasternal"
+    },
+    "preferred_view": {
+      "es": "PLAX centrada en válvula mitral",
+      "en": "PLAX centered on the mitral valve"
+    },
+    "modality": {
+      "es": "Modo M",
+      "en": "M-mode"
+    },
+    "acquisition_timing": {
+      "es": "Diástole temprana",
+      "en": "Early diastole"
+    },
+    "acquisition_key": {
+      "es": "Colocar el cursor a través de la punta de la valva mitral anterior y medir la mínima separación E-septo.",
+      "en": "Position the M-mode cursor through the tip of the anterior mitral leaflet and measure the minimum E-point-to-septum distance."
+    },
+    "alternate_windows": {
+      "es": [],
+      "en": []
+    }
   },
   {
     "id": "mapse",
     "section_id": "lv_systolic",
     "order": 10,
-    "measurement": "MAPSE",
-    "abbreviation": "MAPSE",
-    "aliases": [
-      "Mitral annular plane systolic excursion",
-      "Excursión sistólica del plano del anillo mitral"
-    ],
-    "formula_or_method": "Excursión sistólica longitudinal del anillo mitral.",
-    "normal_values": "Habitualmente ≥10-12 mm.",
-    "interpretation_limitations": "Marcador sencillo de función longitudinal del VI.",
+    "measurement": {
+      "es": "MAPSE",
+      "en": "MAPSE"
+    },
+    "abbreviation": {
+      "es": "MAPSE",
+      "en": "MAPSE"
+    },
+    "aliases": {
+      "es": [
+        "Mitral annular plane systolic excursion",
+        "Excursión sistólica del plano del anillo mitral"
+      ],
+      "en": [
+        "Mitral annular plane systolic excursion",
+        "Mitral annular plane systolic excursion"
+      ]
+    },
+    "formula_or_method": {
+      "es": "Excursión sistólica longitudinal del anillo mitral.",
+      "en": "Longitudinal systolic excursion of the mitral annulus."
+    },
+    "normal_values": {
+      "es": "Habitualmente ≥10-12 mm.",
+      "en": "Usually ≥10-12 mm."
+    },
+    "interpretation_limitations": {
+      "es": "Marcador sencillo de función longitudinal del VI.",
+      "en": "Simple marker of longitudinal LV function."
+    },
     "units": "mm",
     "related_glossary_ids": [
       "mapse_term",
@@ -281,29 +667,71 @@
     ],
     "source_page": 4,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Apical",
-    "preferred_view": "A4C",
-    "modality": "Modo M",
-    "acquisition_timing": "Sístole",
-    "acquisition_key": "Alinear el cursor con el movimiento longitudinal del anillo mitral lateral o septal.",
-    "alternate_windows": [
-      "A2C para anillo anterior/inferior en valoración ampliada."
-    ]
+    "primary_window": {
+      "es": "Apical",
+      "en": "Apical"
+    },
+    "preferred_view": {
+      "es": "A4C",
+      "en": "A4C"
+    },
+    "modality": {
+      "es": "Modo M",
+      "en": "M-mode"
+    },
+    "acquisition_timing": {
+      "es": "Sístole",
+      "en": "Systole"
+    },
+    "acquisition_key": {
+      "es": "Alinear el cursor con el movimiento longitudinal del anillo mitral lateral o septal.",
+      "en": "Align the M-mode cursor with the longitudinal motion of the lateral or septal mitral annulus."
+    },
+    "alternate_windows": {
+      "es": [
+        "A2C para anillo anterior/inferior en valoración ampliada."
+      ],
+      "en": [
+        "Use A2C to assess the anterior and inferior mitral annulus in an extended evaluation."
+      ]
+    }
   },
   {
     "id": "s_prima_mitral",
     "section_id": "lv_systolic",
     "order": 11,
-    "measurement": "s' mitral",
-    "abbreviation": "s' mitral",
-    "aliases": [
-      "s' del anillo mitral",
-      "s prima mitral",
-      "s'"
-    ],
-    "formula_or_method": "Doppler tisular del anillo mitral.",
-    "normal_values": "Septal ≥7 cm/s; lateral ≥9-10 cm/s.",
-    "interpretation_limitations": "Depende de edad, alineación Doppler y función longitudinal.",
+    "measurement": {
+      "es": "s' mitral",
+      "en": "Mitral s'"
+    },
+    "abbreviation": {
+      "es": "s' mitral",
+      "en": "Mitral s'"
+    },
+    "aliases": {
+      "es": [
+        "s' del anillo mitral",
+        "s prima mitral",
+        "s'"
+      ],
+      "en": [
+        "Mitral annular s'",
+        "Mitral s'",
+        "s'"
+      ]
+    },
+    "formula_or_method": {
+      "es": "Doppler tisular del anillo mitral.",
+      "en": "Tissue Doppler imaging of the mitral annulus."
+    },
+    "normal_values": {
+      "es": "Septal ≥7 cm/s; lateral ≥9-10 cm/s.",
+      "en": "Septal ≥7 cm/s; lateral ≥9-10 cm/s."
+    },
+    "interpretation_limitations": {
+      "es": "Depende de edad, alineación Doppler y función longitudinal.",
+      "en": "Depends on age, Doppler alignment, and longitudinal function."
+    },
     "units": "cm/s",
     "related_glossary_ids": [
       "s_prima_mitral_term",
@@ -311,27 +739,67 @@
     ],
     "source_page": 4,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Apical",
-    "preferred_view": "A4C",
-    "modality": "Doppler tisular pulsado",
-    "acquisition_timing": "Sístole",
-    "acquisition_key": "Colocar la muestra en anillo septal y lateral; mantener el haz paralelo al movimiento anular.",
-    "alternate_windows": []
+    "primary_window": {
+      "es": "Apical",
+      "en": "Apical"
+    },
+    "preferred_view": {
+      "es": "A4C",
+      "en": "A4C"
+    },
+    "modality": {
+      "es": "Doppler tisular pulsado",
+      "en": "Pulsed-wave tissue Doppler"
+    },
+    "acquisition_timing": {
+      "es": "Sístole",
+      "en": "Systole"
+    },
+    "acquisition_key": {
+      "es": "Colocar la muestra en anillo septal y lateral; mantener el haz paralelo al movimiento anular.",
+      "en": "Place the sample volume at the septal and lateral mitral annulus; keep the Doppler beam parallel to annular motion."
+    },
+    "alternate_windows": {
+      "es": [],
+      "en": []
+    }
   },
   {
     "id": "gls_vi",
     "section_id": "lv_systolic",
     "order": 12,
-    "measurement": "GLS del VI",
-    "abbreviation": "GLS del VI",
-    "aliases": [
-      "Strain longitudinal global",
-      "GLS",
-      "Global longitudinal strain"
-    ],
-    "formula_or_method": "[(Longitud sistólica - longitud diastólica) / longitud diastólica] x 100.",
-    "normal_values": "Aprox. -18% a -22%; menos negativo que -16% suele ser anormal.",
-    "interpretation_limitations": "Los valores son negativos; comparar idealmente con el mismo equipo/software.",
+    "measurement": {
+      "es": "GLS del VI",
+      "en": "LV GLS"
+    },
+    "abbreviation": {
+      "es": "GLS del VI",
+      "en": "LV GLS"
+    },
+    "aliases": {
+      "es": [
+        "Strain longitudinal global",
+        "GLS",
+        "Global longitudinal strain"
+      ],
+      "en": [
+        "Global longitudinal strain",
+        "GLS",
+        "Global longitudinal strain"
+      ]
+    },
+    "formula_or_method": {
+      "es": "[(Longitud sistólica - longitud diastólica) / longitud diastólica] x 100.",
+      "en": "[(Systolic length - diastolic length) / diastolic length] × 100."
+    },
+    "normal_values": {
+      "es": "Aprox. -18% a -22%; menos negativo que -16% suele ser anormal.",
+      "en": "Approx. -18% to -22%; a value less negative than -16% is usually abnormal."
+    },
+    "interpretation_limitations": {
+      "es": "Los valores son negativos; comparar idealmente con el mismo equipo/software.",
+      "en": "Values are negative; ideally compare measurements obtained with the same equipment and software."
+    },
     "units": "%",
     "related_glossary_ids": [
       "gls_term",
@@ -339,40 +807,102 @@
     ],
     "source_page": 4,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Apical",
-    "preferred_view": "A4C + A2C + A3C",
-    "modality": "Speckle tracking 2D",
-    "acquisition_timing": "Ciclo completo",
-    "acquisition_key": "Evitar foreshortening, optimizar frecuencia de cuadro y asegurar seguimiento de todos los segmentos.",
-    "alternate_windows": []
+    "primary_window": {
+      "es": "Apical",
+      "en": "Apical"
+    },
+    "preferred_view": {
+      "es": "A4C + A2C + A3C",
+      "en": "A4C, A2C, and A3C"
+    },
+    "modality": {
+      "es": "Speckle tracking 2D",
+      "en": "2D speckle-tracking echocardiography"
+    },
+    "acquisition_timing": {
+      "es": "Ciclo completo",
+      "en": "Entire cardiac cycle"
+    },
+    "acquisition_key": {
+      "es": "Evitar foreshortening, optimizar frecuencia de cuadro y asegurar seguimiento de todos los segmentos.",
+      "en": "Avoid apical foreshortening, optimize the frame rate, and ensure adequate tracking of all myocardial segments."
+    },
+    "alternate_windows": {
+      "es": [],
+      "en": []
+    }
   },
   {
     "id": "wmsi",
     "section_id": "lv_systolic",
     "order": 13,
-    "measurement": "WMSI",
-    "abbreviation": "WMSI",
-    "aliases": [
-      "Índice de puntuación de movilidad parietal",
-      "Wall motion score index"
-    ],
-    "formula_or_method": "Suma de puntuaciones segmentarias / número de segmentos evaluados.",
-    "normal_values": "1,0 cuando todos los segmentos son normales.",
-    "interpretation_limitations": "Aumenta con mayor extensión o severidad de alteraciones regionales.",
-    "units": "adimensional",
+    "measurement": {
+      "es": "WMSI",
+      "en": "WMSI"
+    },
+    "abbreviation": {
+      "es": "WMSI",
+      "en": "WMSI"
+    },
+    "aliases": {
+      "es": [
+        "Índice de puntuación de movilidad parietal",
+        "Wall motion score index"
+      ],
+      "en": [
+        "Wall motion score index",
+        "Wall motion score index"
+      ]
+    },
+    "formula_or_method": {
+      "es": "Suma de puntuaciones segmentarias / número de segmentos evaluados.",
+      "en": "Sum of segmental wall motion scores / number of segments assessed."
+    },
+    "normal_values": {
+      "es": "1,0 cuando todos los segmentos son normales.",
+      "en": "1.0 when all segments have normal wall motion."
+    },
+    "interpretation_limitations": {
+      "es": "Aumenta con mayor extensión o severidad de alteraciones regionales.",
+      "en": "Increases with greater extent or severity of regional wall motion abnormalities."
+    },
+    "units": {
+      "es": "adimensional",
+      "en": "dimensionless"
+    },
     "related_glossary_ids": [
       "wmsi_term"
     ],
     "source_page": 4,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Múltiples",
-    "preferred_view": "A4C, A2C, A3C y PSAX basal/medio/apical",
-    "modality": "2D cine",
-    "acquisition_timing": "Ciclo completo",
-    "acquisition_key": "Evaluar cada segmento en más de una vista cuando sea posible; evitar atribuir artefacto a hipocinesia.",
-    "alternate_windows": [
-      "Subcostal eje corto en ventanas apicales o paraesternales deficientes."
-    ]
+    "primary_window": {
+      "es": "Múltiples",
+      "en": "Multiple"
+    },
+    "preferred_view": {
+      "es": "A4C, A2C, A3C y PSAX basal/medio/apical",
+      "en": "A4C, A2C, A3C, and basal/mid/apical PSAX views"
+    },
+    "modality": {
+      "es": "2D cine",
+      "en": "2D cine loops"
+    },
+    "acquisition_timing": {
+      "es": "Ciclo completo",
+      "en": "Entire cardiac cycle"
+    },
+    "acquisition_key": {
+      "es": "Evaluar cada segmento en más de una vista cuando sea posible; evitar atribuir artefacto a hipocinesia.",
+      "en": "Assess each segment in more than one view whenever possible; avoid misclassifying artifact as hypokinesis."
+    },
+    "alternate_windows": {
+      "es": [
+        "Subcostal eje corto en ventanas apicales o paraesternales deficientes."
+      ],
+      "en": [
+        "Use the subcostal short-axis view when apical or parasternal windows are inadequate."
+      ]
+    }
   },
   {
     "id": "ivsd",
