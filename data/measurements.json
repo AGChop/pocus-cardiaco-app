@@ -2833,15 +2833,35 @@
     "id": "area_ad_meas",
     "section_id": "ra_ivc",
     "order": 1,
-    "measurement": "Área de AD",
-    "abbreviation": "Área AD",
-    "aliases": [
-      "Right atrial area",
-      "Área de la aurícula derecha"
-    ],
-    "formula_or_method": "Planimetría en A4C al final de la sístole.",
-    "normal_values": "≤18 cm².",
-    "interpretation_limitations": "Evitar incluir venas cavas, seno coronario y apéndice.",
+    "measurement": {
+      "es": "Área de AD",
+      "en": "Right atrial area"
+    },
+    "abbreviation": {
+      "es": "Área AD",
+      "en": "RA area"
+    },
+    "aliases": {
+      "es": [
+        "Right atrial area",
+        "Área de la aurícula derecha"
+      ],
+      "en": [
+        "Right atrial area"
+      ]
+    },
+    "formula_or_method": {
+      "es": "Planimetría en A4C al final de la sístole.",
+      "en": "Planimetry in the A4C view at end-systole."
+    },
+    "normal_values": {
+      "es": "≤18 cm².",
+      "en": "≤18 cm²."
+    },
+    "interpretation_limitations": {
+      "es": "Evitar incluir venas cavas, seno coronario y apéndice.",
+      "en": "Exclude the venae cavae, coronary sinus, and right atrial appendage."
+    },
     "units": "cm²",
     "related_glossary_ids": [
       "ad_term",
@@ -2849,26 +2869,64 @@
     ],
     "source_page": 7,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Apical",
-    "preferred_view": "A4C enfocada en VD/AD",
-    "modality": "2D; planimetría",
-    "acquisition_timing": "Fin de sístole",
-    "acquisition_key": "Trazar desde anillo tricuspídeo y excluir entradas venosas y orejuela.",
-    "alternate_windows": []
+    "primary_window": {
+      "es": "Apical",
+      "en": "Apical"
+    },
+    "preferred_view": {
+      "es": "A4C enfocada en VD/AD",
+      "en": "RV/RA-focused A4C view"
+    },
+    "modality": {
+      "es": "2D; planimetría",
+      "en": "2D; planimetry"
+    },
+    "acquisition_timing": {
+      "es": "Fin de sístole",
+      "en": "End-systole"
+    },
+    "acquisition_key": {
+      "es": "Trazar desde anillo tricuspídeo y excluir entradas venosas y orejuela.",
+      "en": "Trace from the tricuspid annulus and exclude the venous inflows and right atrial appendage."
+    },
+    "alternate_windows": {
+      "es": [],
+      "en": []
+    }
   },
   {
     "id": "longitud_ad",
     "section_id": "ra_ivc",
     "order": 2,
-    "measurement": "Longitud de AD",
-    "abbreviation": "Longitud AD",
-    "aliases": [
-      "Right atrial length",
-      "Longitud de la aurícula derecha"
-    ],
-    "formula_or_method": "Techo de AD al centro del anillo tricuspídeo.",
-    "normal_values": "≤53 mm.",
-    "interpretation_limitations": "Medición longitudinal en A4C.",
+    "measurement": {
+      "es": "Longitud de AD",
+      "en": "Right atrial length"
+    },
+    "abbreviation": {
+      "es": "Longitud AD",
+      "en": "RA length"
+    },
+    "aliases": {
+      "es": [
+        "Right atrial length",
+        "Longitud de la aurícula derecha"
+      ],
+      "en": [
+        "Right atrial length"
+      ]
+    },
+    "formula_or_method": {
+      "es": "Techo de AD al centro del anillo tricuspídeo.",
+      "en": "From the roof of the right atrium to the center of the tricuspid annulus."
+    },
+    "normal_values": {
+      "es": "≤53 mm.",
+      "en": "≤53 mm."
+    },
+    "interpretation_limitations": {
+      "es": "Medición longitudinal en A4C.",
+      "en": "Longitudinal measurement in the A4C view."
+    },
     "units": "mm",
     "related_glossary_ids": [
       "ad_term",
@@ -2876,26 +2934,65 @@
     ],
     "source_page": 7,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Apical",
-    "preferred_view": "A4C enfocada en VD/AD",
-    "modality": "2D",
-    "acquisition_timing": "Fin de sístole",
-    "acquisition_key": "Medir eje mayor auricular desde el centro del anillo al techo.",
-    "alternate_windows": []
+    "primary_window": {
+      "es": "Apical",
+      "en": "Apical"
+    },
+    "preferred_view": {
+      "es": "A4C enfocada en VD/AD",
+      "en": "RV/RA-focused A4C view"
+    },
+    "modality": {
+      "es": "2D",
+      "en": "2D"
+    },
+    "acquisition_timing": {
+      "es": "Fin de sístole",
+      "en": "End-systole"
+    },
+    "acquisition_key": {
+      "es": "Medir eje mayor auricular desde el centro del anillo al techo.",
+      "en": "Measure the atrial long axis from the center of the tricuspid annulus to the atrial roof."
+    },
+    "alternate_windows": {
+      "es": [],
+      "en": []
+    }
   },
   {
     "id": "diametro_menor_ad",
     "section_id": "ra_ivc",
     "order": 3,
-    "measurement": "Diámetro menor de AD",
-    "abbreviation": "Diámetro menor AD",
-    "aliases": [
-      "Right atrial minor diameter",
-      "Diámetro transversal de la aurícula derecha"
-    ],
-    "formula_or_method": "Perpendicular al eje mayor.",
-    "normal_values": "≤44 mm.",
-    "interpretation_limitations": "Medición transversal en A4C.",
+    "measurement": {
+      "es": "Diámetro menor de AD",
+      "en": "Right atrial minor-axis diameter"
+    },
+    "abbreviation": {
+      "es": "Diámetro menor AD",
+      "en": "RA minor-axis diameter"
+    },
+    "aliases": {
+      "es": [
+        "Right atrial minor diameter",
+        "Diámetro transversal de la aurícula derecha"
+      ],
+      "en": [
+        "Right atrial minor diameter",
+        "Right atrial transverse diameter"
+      ]
+    },
+    "formula_or_method": {
+      "es": "Perpendicular al eje mayor.",
+      "en": "Perpendicular to the long axis."
+    },
+    "normal_values": {
+      "es": "≤44 mm.",
+      "en": "≤44 mm."
+    },
+    "interpretation_limitations": {
+      "es": "Medición transversal en A4C.",
+      "en": "Transverse measurement in the A4C view."
+    },
     "units": "mm",
     "related_glossary_ids": [
       "ad_term",
@@ -2903,26 +3000,65 @@
     ],
     "source_page": 7,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Apical",
-    "preferred_view": "A4C enfocada en VD/AD",
-    "modality": "2D",
-    "acquisition_timing": "Fin de sístole",
-    "acquisition_key": "Medir perpendicular al eje largo en el punto de mayor ancho.",
-    "alternate_windows": []
+    "primary_window": {
+      "es": "Apical",
+      "en": "Apical"
+    },
+    "preferred_view": {
+      "es": "A4C enfocada en VD/AD",
+      "en": "RV/RA-focused A4C view"
+    },
+    "modality": {
+      "es": "2D",
+      "en": "2D"
+    },
+    "acquisition_timing": {
+      "es": "Fin de sístole",
+      "en": "End-systole"
+    },
+    "acquisition_key": {
+      "es": "Medir perpendicular al eje largo en el punto de mayor ancho.",
+      "en": "Measure perpendicular to the long axis at the widest point."
+    },
+    "alternate_windows": {
+      "es": [],
+      "en": []
+    }
   },
   {
     "id": "diametro_vci_meas",
     "section_id": "ra_ivc",
     "order": 4,
-    "measurement": "Diámetro de VCI",
-    "abbreviation": "Diámetro VCI",
-    "aliases": [
-      "IVC diameter",
-      "Diámetro de la vena cava inferior"
-    ],
-    "formula_or_method": "Subcostal, 1-2 cm de la unión con AD.",
-    "normal_values": "≤2,1 cm.",
-    "interpretation_limitations": "Interpretar junto con la variación respiratoria.",
+    "measurement": {
+      "es": "Diámetro de VCI",
+      "en": "IVC diameter"
+    },
+    "abbreviation": {
+      "es": "Diámetro VCI",
+      "en": "IVC diameter"
+    },
+    "aliases": {
+      "es": [
+        "IVC diameter",
+        "Diámetro de la vena cava inferior"
+      ],
+      "en": [
+        "IVC diameter",
+        "Inferior vena cava diameter"
+      ]
+    },
+    "formula_or_method": {
+      "es": "Subcostal, 1-2 cm de la unión con AD.",
+      "en": "Subcostal view, 1-2 cm from the junction with the right atrium."
+    },
+    "normal_values": {
+      "es": "≤2,1 cm.",
+      "en": "≤2.1 cm."
+    },
+    "interpretation_limitations": {
+      "es": "Interpretar junto con la variación respiratoria.",
+      "en": "Interpret together with respiratory variation."
+    },
     "units": "cm",
     "related_glossary_ids": [
       "vci_term",
@@ -2930,28 +3066,68 @@
     ],
     "source_page": 7,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Subcostal",
-    "preferred_view": "Eje largo de VCI",
-    "modality": "2D; modo M opcional",
-    "acquisition_timing": "Máximo diámetro, usualmente espiración",
-    "acquisition_key": "Visualizar varios centímetros de VCI y medir 1-2 cm proximal a la unión con AD, evitando el ostium de vena hepática.",
-    "alternate_windows": [
-      "Transhepática derecha lateral; vista transversal para confirmar el diámetro máximo."
-    ]
+    "primary_window": {
+      "es": "Subcostal",
+      "en": "Subcostal"
+    },
+    "preferred_view": {
+      "es": "Eje largo de VCI",
+      "en": "Long-axis view of the IVC"
+    },
+    "modality": {
+      "es": "2D; modo M opcional",
+      "en": "2D; optional M-mode"
+    },
+    "acquisition_timing": {
+      "es": "Máximo diámetro, usualmente espiración",
+      "en": "Maximum diameter, usually during expiration"
+    },
+    "acquisition_key": {
+      "es": "Visualizar varios centímetros de VCI y medir 1-2 cm proximal a la unión con AD, evitando el ostium de vena hepática.",
+      "en": "Visualize several centimeters of the IVC and measure 1-2 cm proximal to the junction with the right atrium, avoiding the hepatic vein ostium."
+    },
+    "alternate_windows": {
+      "es": [
+        "Transhepática derecha lateral; vista transversal para confirmar el diámetro máximo."
+      ],
+      "en": [
+        "Right lateral transhepatic view; short-axis view to confirm the maximum diameter."
+      ]
+    }
   },
   {
     "id": "colapsabilidad_vci_meas",
     "section_id": "ra_ivc",
     "order": 5,
-    "measurement": "Colapsabilidad de VCI",
-    "abbreviation": "Colapsabilidad VCI",
-    "aliases": [
-      "IVC collapsibility index",
-      "Índice de colapsabilidad de VCI"
-    ],
-    "formula_or_method": "[(VCI espiratoria - VCI inspiratoria) / VCI espiratoria] x 100.",
-    "normal_values": ">50% en respiración espontánea.",
-    "interpretation_limitations": "No extrapolar directamente a ventilación mecánica.",
+    "measurement": {
+      "es": "Colapsabilidad de VCI",
+      "en": "IVC collapsibility"
+    },
+    "abbreviation": {
+      "es": "Colapsabilidad VCI",
+      "en": "IVC collapsibility"
+    },
+    "aliases": {
+      "es": [
+        "IVC collapsibility index",
+        "Índice de colapsabilidad de VCI"
+      ],
+      "en": [
+        "IVC collapsibility index"
+      ]
+    },
+    "formula_or_method": {
+      "es": "[(VCI espiratoria - VCI inspiratoria) / VCI espiratoria] x 100.",
+      "en": "[(Expiratory IVC - inspiratory IVC) / expiratory IVC] x 100."
+    },
+    "normal_values": {
+      "es": ">50% en respiración espontánea.",
+      "en": ">50% during spontaneous breathing."
+    },
+    "interpretation_limitations": {
+      "es": "No extrapolar directamente a ventilación mecánica.",
+      "en": "Do not directly extrapolate to mechanical ventilation."
+    },
     "units": "%",
     "related_glossary_ids": [
       "colapsabilidad_vci_term",
@@ -2959,28 +3135,68 @@
     ],
     "source_page": 7,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Subcostal",
-    "preferred_view": "Eje largo de VCI",
-    "modality": "2D cine o modo M",
-    "acquisition_timing": "Ciclo respiratorio",
-    "acquisition_key": "Registrar respiración espontánea normal y, si procede, inspiración rápida; evitar desplazamiento lateral del vaso.",
-    "alternate_windows": [
-      "Vista transversal de confirmación."
-    ]
+    "primary_window": {
+      "es": "Subcostal",
+      "en": "Subcostal"
+    },
+    "preferred_view": {
+      "es": "Eje largo de VCI",
+      "en": "Long-axis view of the IVC"
+    },
+    "modality": {
+      "es": "2D cine o modo M",
+      "en": "2D cine or M-mode"
+    },
+    "acquisition_timing": {
+      "es": "Ciclo respiratorio",
+      "en": "Respiratory cycle"
+    },
+    "acquisition_key": {
+      "es": "Registrar respiración espontánea normal y, si procede, inspiración rápida; evitar desplazamiento lateral del vaso.",
+      "en": "Record normal spontaneous breathing and, when appropriate, a sniff maneuver; avoid lateral displacement of the vessel."
+    },
+    "alternate_windows": {
+      "es": [
+        "Vista transversal de confirmación."
+      ],
+      "en": [
+        "Confirmatory short-axis view."
+      ]
+    }
   },
   {
     "id": "distensibilidad_vci_meas",
     "section_id": "ra_ivc",
     "order": 6,
-    "measurement": "Distensibilidad de VCI",
-    "abbreviation": "Distensibilidad VCI",
-    "aliases": [
-      "IVC distensibility index",
-      "Índice de distensibilidad de VCI"
-    ],
-    "formula_or_method": "[(VCI máxima - VCI mínima) / VCI mínima] x 100.",
-    "normal_values": "Sin punto universal; depende de condiciones ventilatorias.",
-    "interpretation_limitations": "La utilidad disminuye con respiración espontánea, bajo volumen corriente o hipertensión abdominal.",
+    "measurement": {
+      "es": "Distensibilidad de VCI",
+      "en": "IVC distensibility"
+    },
+    "abbreviation": {
+      "es": "Distensibilidad VCI",
+      "en": "IVC distensibility"
+    },
+    "aliases": {
+      "es": [
+        "IVC distensibility index",
+        "Índice de distensibilidad de VCI"
+      ],
+      "en": [
+        "IVC distensibility index"
+      ]
+    },
+    "formula_or_method": {
+      "es": "[(VCI máxima - VCI mínima) / VCI mínima] x 100.",
+      "en": "[(Maximum IVC - minimum IVC) / minimum IVC] x 100."
+    },
+    "normal_values": {
+      "es": "Sin punto universal; depende de condiciones ventilatorias.",
+      "en": "No universal cutoff; depends on ventilatory conditions."
+    },
+    "interpretation_limitations": {
+      "es": "La utilidad disminuye con respiración espontánea, bajo volumen corriente o hipertensión abdominal.",
+      "en": "Utility decreases during spontaneous breathing, with low tidal volume, or with intra-abdominal hypertension."
+    },
     "units": "%",
     "related_glossary_ids": [
       "distensibilidad_vci_term",
@@ -2988,27 +3204,67 @@
     ],
     "source_page": 7,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Subcostal",
-    "preferred_view": "Eje largo de VCI",
-    "modality": "2D cine o modo M",
-    "acquisition_timing": "Ciclo ventilatorio",
-    "acquisition_key": "Documentar modo ventilatorio, volumen corriente y PEEP; evitar aplicar umbrales universales.",
-    "alternate_windows": []
+    "primary_window": {
+      "es": "Subcostal",
+      "en": "Subcostal"
+    },
+    "preferred_view": {
+      "es": "Eje largo de VCI",
+      "en": "Long-axis view of the IVC"
+    },
+    "modality": {
+      "es": "2D cine o modo M",
+      "en": "2D cine or M-mode"
+    },
+    "acquisition_timing": {
+      "es": "Ciclo ventilatorio",
+      "en": "Ventilatory cycle"
+    },
+    "acquisition_key": {
+      "es": "Documentar modo ventilatorio, volumen corriente y PEEP; evitar aplicar umbrales universales.",
+      "en": "Document the ventilatory mode, tidal volume, and PEEP; avoid applying universal thresholds."
+    },
+    "alternate_windows": {
+      "es": [],
+      "en": []
+    }
   },
   {
     "id": "presion_ad_estimada_meas",
     "section_id": "ra_ivc",
     "order": 7,
-    "measurement": "Presión AD estimada",
-    "abbreviation": "Presión AD",
-    "aliases": [
-      "RAP estimada",
-      "Right atrial pressure",
-      "Estimación de la presión auricular derecha"
-    ],
-    "formula_or_method": "VCI ≤2,1 cm y colapso >50%: 3 mmHg; VCI >2,1 cm y colapso <50%: 15 mmHg; intermedio: 8 mmHg.",
-    "normal_values": "3, 8 o 15 mmHg según patrón.",
-    "interpretation_limitations": "Es una estimación; pierde precisión con ventilación positiva y otros estados.",
+    "measurement": {
+      "es": "Presión AD estimada",
+      "en": "Estimated right atrial pressure"
+    },
+    "abbreviation": {
+      "es": "Presión AD",
+      "en": "RAP"
+    },
+    "aliases": {
+      "es": [
+        "RAP estimada",
+        "Right atrial pressure",
+        "Estimación de la presión auricular derecha"
+      ],
+      "en": [
+        "Estimated RAP",
+        "Right atrial pressure",
+        "Right atrial pressure estimation"
+      ]
+    },
+    "formula_or_method": {
+      "es": "VCI ≤2,1 cm y colapso >50%: 3 mmHg; VCI >2,1 cm y colapso <50%: 15 mmHg; intermedio: 8 mmHg.",
+      "en": "IVC ≤2.1 cm and collapse >50%: 3 mmHg; IVC >2.1 cm and collapse <50%: 15 mmHg; intermediate: 8 mmHg."
+    },
+    "normal_values": {
+      "es": "3, 8 o 15 mmHg según patrón.",
+      "en": "3, 8, or 15 mmHg depending on the pattern."
+    },
+    "interpretation_limitations": {
+      "es": "Es una estimación; pierde precisión con ventilación positiva y otros estados.",
+      "en": "It is an estimation; it loses accuracy with positive pressure ventilation and other conditions."
+    },
     "units": "mmHg",
     "related_glossary_ids": [
       "presion_ad_term",
@@ -3017,12 +3273,30 @@
     ],
     "source_page": 7,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Derivada",
-    "preferred_view": "Subcostal eje largo de VCI",
-    "modality": "2D + integración",
-    "acquisition_timing": "Ciclo respiratorio",
-    "acquisition_key": "Integrar diámetro y colapso; considerar ventilación, presión abdominal, embarazo y atletismo.",
-    "alternate_windows": []
+    "primary_window": {
+      "es": "Derivada",
+      "en": "Derived"
+    },
+    "preferred_view": {
+      "es": "Subcostal eje largo de VCI",
+      "en": "Subcostal long-axis view of the IVC"
+    },
+    "modality": {
+      "es": "2D + integración",
+      "en": "2D + integration"
+    },
+    "acquisition_timing": {
+      "es": "Ciclo respiratorio",
+      "en": "Respiratory cycle"
+    },
+    "acquisition_key": {
+      "es": "Integrar diámetro y colapso; considerar ventilación, presión abdominal, embarazo y atletismo.",
+      "en": "Integrate diameter and collapse; consider ventilation, intra-abdominal pressure, pregnancy, and athletic training."
+    },
+    "alternate_windows": {
+      "es": [],
+      "en": []
+    }
   },
   {
     "id": "gradiente_vd_ad",
