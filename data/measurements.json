@@ -4607,69 +4607,170 @@
     "id": "vena_contracta_meas",
     "section_id": "valvular_regurgitation",
     "order": 1,
-    "measurement": "Vena contracta (VC)",
-    "abbreviation": "VC",
-    "aliases": [
-      "VC",
-      "Vena contracta de regurgitación"
-    ],
-    "formula_or_method": "Ancho de la porción más estrecha del jet inmediatamente distal al orificio.",
-    "normal_values": "Depende de la válvula; IM severa ≥7 mm, IA severa >6 mm, IT severa ≥7 mm.",
-    "interpretation_limitations": "Evitar usarla aislada en orificios múltiples o no circulares.",
+    "measurement": {
+      "es": "Vena contracta (VC)",
+      "en": "Vena contracta (VC)"
+    },
+    "abbreviation": {
+      "es": "VC",
+      "en": "VC"
+    },
+    "aliases": {
+      "es": [
+        "VC",
+        "Vena contracta de regurgitación"
+      ],
+      "en": [
+        "VC",
+        "Regurgitant vena contracta"
+      ]
+    },
+    "formula_or_method": {
+      "es": "Ancho de la porción más estrecha del jet inmediatamente distal al orificio.",
+      "en": "Width of the narrowest portion of the jet immediately distal to the regurgitant orifice."
+    },
+    "normal_values": {
+      "es": "Depende de la válvula; IM severa ≥7 mm, IA severa >6 mm, IT severa ≥7 mm.",
+      "en": "Valve-dependent; severe MR ≥7 mm, severe AR >6 mm, severe TR ≥7 mm."
+    },
+    "interpretation_limitations": {
+      "es": "Evitar usarla aislada en orificios múltiples o no circulares.",
+      "en": "Avoid using it in isolation in the presence of multiple or noncircular orifices."
+    },
     "units": "mm",
     "related_glossary_ids": [
       "vena_contracta_term"
     ],
     "source_page": 10,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Dependiente de válvula",
-    "preferred_view": "IM: PLAX/A4C/A2C; IA: PLAX; IT: A4C VD/RV inflow",
-    "modality": "Color Doppler 2D con zoom",
-    "acquisition_timing": "Sístole para IM/IT; diástole para IA",
-    "acquisition_key": "Elegir el plano que corte perpendicularmente la zona más estrecha del jet; reducir sector y optimizar Nyquist.",
-    "alternate_windows": [
-      "Usar varias vistas para jets excéntricos."
-    ]
+    "primary_window": {
+      "es": "Dependiente de válvula",
+      "en": "Valve-dependent"
+    },
+    "preferred_view": {
+      "es": "IM: PLAX/A4C/A2C; IA: PLAX; IT: A4C VD/RV inflow",
+      "en": "MR: PLAX/A4C/A2C; AR: PLAX; TR: RV-focused A4C/RV inflow"
+    },
+    "modality": {
+      "es": "Color Doppler 2D con zoom",
+      "en": "Zoomed 2D color Doppler"
+    },
+    "acquisition_timing": {
+      "es": "Sístole para IM/IT; diástole para IA",
+      "en": "Systole for MR/TR; diastole for AR"
+    },
+    "acquisition_key": {
+      "es": "Elegir el plano que corte perpendicularmente la zona más estrecha del jet; reducir sector y optimizar Nyquist.",
+      "en": "Select the imaging plane that transects the narrowest portion of the jet perpendicularly; narrow the sector and optimize the Nyquist limit."
+    },
+    "alternate_windows": {
+      "es": [
+        "Usar varias vistas para jets excéntricos."
+      ],
+      "en": [
+        "Use multiple views for eccentric jets."
+      ]
+    }
   },
   {
     "id": "flujo_pisa_meas",
     "section_id": "valvular_regurgitation",
     "order": 2,
-    "measurement": "Flujo PISA",
-    "abbreviation": "Flujo PISA",
-    "aliases": [
-      "PISA flow",
-      "Flujo por superficie de isovelocidad proximal"
-    ],
-    "formula_or_method": "2πr² x velocidad de aliasing.",
-    "normal_values": "Sin valor normal único.",
-    "interpretation_limitations": "Radio en cm y velocidad de aliasing en cm/s producen flujo en mL/s.",
+    "measurement": {
+      "es": "Flujo PISA",
+      "en": "PISA flow rate"
+    },
+    "abbreviation": {
+      "es": "Flujo PISA",
+      "en": "PISA flow"
+    },
+    "aliases": {
+      "es": [
+        "PISA flow",
+        "Flujo por superficie de isovelocidad proximal"
+      ],
+      "en": [
+        "PISA flow",
+        "Proximal isovelocity surface area flow"
+      ]
+    },
+    "formula_or_method": {
+      "es": "2πr² x velocidad de aliasing.",
+      "en": "2πr² × aliasing velocity."
+    },
+    "normal_values": {
+      "es": "Sin valor normal único.",
+      "en": "No single normal value."
+    },
+    "interpretation_limitations": {
+      "es": "Radio en cm y velocidad de aliasing en cm/s producen flujo en mL/s.",
+      "en": "A radius in cm and aliasing velocity in cm/s yield a flow rate in mL/s."
+    },
     "units": "mL/s",
     "related_glossary_ids": [
       "pisa_term"
     ],
     "source_page": 10,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Dependiente de válvula",
-    "preferred_view": "IM: apical; IA: PLAX/apical; IT: A4C VD",
-    "modality": "Color Doppler con línea basal desplazada",
-    "acquisition_timing": "Pico de regurgitación",
-    "acquisition_key": "Ampliar la zona de convergencia, medir radio desde el orificio al primer aliasing y documentar Va.",
-    "alternate_windows": []
+    "primary_window": {
+      "es": "Dependiente de válvula",
+      "en": "Valve-dependent"
+    },
+    "preferred_view": {
+      "es": "IM: apical; IA: PLAX/apical; IT: A4C VD",
+      "en": "MR: apical; AR: PLAX/apical; TR: RV-focused A4C"
+    },
+    "modality": {
+      "es": "Color Doppler con línea basal desplazada",
+      "en": "Color Doppler with a shifted baseline"
+    },
+    "acquisition_timing": {
+      "es": "Pico de regurgitación",
+      "en": "Peak regurgitation"
+    },
+    "acquisition_key": {
+      "es": "Ampliar la zona de convergencia, medir radio desde el orificio al primer aliasing y documentar Va.",
+      "en": "Enlarge the flow convergence zone, measure the radius from the regurgitant orifice to the first aliasing boundary, and document Va."
+    },
+    "alternate_windows": {
+      "es": [],
+      "en": []
+    }
   },
   {
     "id": "eroa_meas",
     "section_id": "valvular_regurgitation",
     "order": 3,
-    "measurement": "EROA",
-    "abbreviation": "EROA",
-    "aliases": [
-      "Effective regurgitant orifice area",
-      "Área del orificio regurgitante efectivo"
-    ],
-    "formula_or_method": "(2πr² x Va) / velocidad máxima regurgitante.",
-    "normal_values": "Depende de la válvula.",
-    "interpretation_limitations": "Usar velocidades en las mismas unidades; integrar con otros parámetros.",
+    "measurement": {
+      "es": "EROA",
+      "en": "EROA"
+    },
+    "abbreviation": {
+      "es": "EROA",
+      "en": "EROA"
+    },
+    "aliases": {
+      "es": [
+        "Effective regurgitant orifice area",
+        "Área del orificio regurgitante efectivo"
+      ],
+      "en": [
+        "Effective regurgitant orifice area",
+        "Effective regurgitant orifice area"
+      ]
+    },
+    "formula_or_method": {
+      "es": "(2πr² x Va) / velocidad máxima regurgitante.",
+      "en": "(2πr² × Va) / peak regurgitant velocity."
+    },
+    "normal_values": {
+      "es": "Depende de la válvula.",
+      "en": "Valve-dependent."
+    },
+    "interpretation_limitations": {
+      "es": "Usar velocidades en las mismas unidades; integrar con otros parámetros.",
+      "en": "Use velocities expressed in the same units and integrate the result with other parameters."
+    },
     "units": "cm²",
     "related_glossary_ids": [
       "eroa_term",
@@ -4677,27 +4778,67 @@
     ],
     "source_page": 10,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Combinada",
-    "preferred_view": "Vista PISA + mejor CW del jet",
-    "modality": "Color Doppler + Doppler continuo; cálculo",
-    "acquisition_timing": "Mismo momento del ciclo",
-    "acquisition_key": "Relacionar el radio PISA con la velocidad instantánea/peak correspondiente y un CW completo.",
-    "alternate_windows": []
+    "primary_window": {
+      "es": "Combinada",
+      "en": "Combined"
+    },
+    "preferred_view": {
+      "es": "Vista PISA + mejor CW del jet",
+      "en": "PISA view plus the best-aligned CW Doppler recording of the jet"
+    },
+    "modality": {
+      "es": "Color Doppler + Doppler continuo; cálculo",
+      "en": "Color Doppler plus continuous-wave Doppler; calculation"
+    },
+    "acquisition_timing": {
+      "es": "Mismo momento del ciclo",
+      "en": "Same point in the cardiac cycle"
+    },
+    "acquisition_key": {
+      "es": "Relacionar el radio PISA con la velocidad instantánea/peak correspondiente y un CW completo.",
+      "en": "Match the PISA radius to the corresponding instantaneous/peak velocity and a complete CW Doppler envelope."
+    },
+    "alternate_windows": {
+      "es": [],
+      "en": []
+    }
   },
   {
     "id": "volumen_regurgitante_meas",
     "section_id": "valvular_regurgitation",
     "order": 4,
-    "measurement": "Volumen regurgitante",
-    "abbreviation": "VR",
-    "aliases": [
-      "Regurgitant volume",
-      "VR",
-      "Volumen de regurgitación"
-    ],
-    "formula_or_method": "EROA x VTI del jet regurgitante.",
-    "normal_values": "Depende de la válvula.",
-    "interpretation_limitations": "Con EROA en cm² y VTI en cm, el resultado es mL.",
+    "measurement": {
+      "es": "Volumen regurgitante",
+      "en": "Regurgitant volume"
+    },
+    "abbreviation": {
+      "es": "VR",
+      "en": "RVol"
+    },
+    "aliases": {
+      "es": [
+        "Regurgitant volume",
+        "VR",
+        "Volumen de regurgitación"
+      ],
+      "en": [
+        "Regurgitant volume",
+        "RVol",
+        "Regurgitant volume"
+      ]
+    },
+    "formula_or_method": {
+      "es": "EROA x VTI del jet regurgitante.",
+      "en": "EROA × VTI of the regurgitant jet."
+    },
+    "normal_values": {
+      "es": "Depende de la válvula.",
+      "en": "Valve-dependent."
+    },
+    "interpretation_limitations": {
+      "es": "Con EROA en cm² y VTI en cm, el resultado es mL.",
+      "en": "With EROA in cm² and VTI in cm, the result is expressed in mL."
+    },
     "units": "mL",
     "related_glossary_ids": [
       "volumen_regurgitante_term",
@@ -4705,27 +4846,67 @@
     ],
     "source_page": 10,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Derivada",
-    "preferred_view": "Mismas vistas que EROA y VTI del jet",
-    "modality": "Cálculo",
-    "acquisition_timing": "Ciclo completo del jet",
-    "acquisition_key": "Usar el VTI del mismo jet y válvula.",
-    "alternate_windows": []
+    "primary_window": {
+      "es": "Derivada",
+      "en": "Derived"
+    },
+    "preferred_view": {
+      "es": "Mismas vistas que EROA y VTI del jet",
+      "en": "Same views as EROA and jet VTI"
+    },
+    "modality": {
+      "es": "Cálculo",
+      "en": "Calculation"
+    },
+    "acquisition_timing": {
+      "es": "Ciclo completo del jet",
+      "en": "Full duration of the jet"
+    },
+    "acquisition_key": {
+      "es": "Usar el VTI del mismo jet y válvula.",
+      "en": "Use the VTI of the same regurgitant jet and valve."
+    },
+    "alternate_windows": {
+      "es": [],
+      "en": []
+    }
   },
   {
     "id": "fraccion_regurgitante_meas",
     "section_id": "valvular_regurgitation",
     "order": 5,
-    "measurement": "Fracción regurgitante",
-    "abbreviation": "FR",
-    "aliases": [
-      "Regurgitant fraction",
-      "FR",
-      "Fracción de regurgitación"
-    ],
-    "formula_or_method": "(Volumen regurgitante / volumen sistólico total) x 100.",
-    "normal_values": "Sin regurgitación significativa en condiciones normales.",
-    "interpretation_limitations": "Es la proporción del volumen sistólico que regresa a la cavidad proximal.",
+    "measurement": {
+      "es": "Fracción regurgitante",
+      "en": "Regurgitant fraction"
+    },
+    "abbreviation": {
+      "es": "FR",
+      "en": "RF"
+    },
+    "aliases": {
+      "es": [
+        "Regurgitant fraction",
+        "FR",
+        "Fracción de regurgitación"
+      ],
+      "en": [
+        "Regurgitant fraction",
+        "RF",
+        "Regurgitant fraction"
+      ]
+    },
+    "formula_or_method": {
+      "es": "(Volumen regurgitante / volumen sistólico total) x 100.",
+      "en": "(Regurgitant volume / total stroke volume) × 100."
+    },
+    "normal_values": {
+      "es": "Sin regurgitación significativa en condiciones normales.",
+      "en": "No significant regurgitation is expected under normal conditions."
+    },
+    "interpretation_limitations": {
+      "es": "Es la proporción del volumen sistólico que regresa a la cavidad proximal.",
+      "en": "It is the proportion of total stroke volume that returns to the proximal chamber."
+    },
     "units": "%",
     "related_glossary_ids": [
       "fraccion_regurgitante_term",
@@ -4733,27 +4914,69 @@
     ],
     "source_page": 10,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Derivada",
-    "preferred_view": "Datos volumétricos combinados",
-    "modality": "Cálculo",
-    "acquisition_timing": "Después de obtener volúmenes",
-    "acquisition_key": "No requiere ventana adicional; depende de la exactitud de todos los componentes.",
-    "alternate_windows": []
+    "primary_window": {
+      "es": "Derivada",
+      "en": "Derived"
+    },
+    "preferred_view": {
+      "es": "Datos volumétricos combinados",
+      "en": "Combined volumetric data"
+    },
+    "modality": {
+      "es": "Cálculo",
+      "en": "Calculation"
+    },
+    "acquisition_timing": {
+      "es": "Después de obtener volúmenes",
+      "en": "After obtaining the required volumes"
+    },
+    "acquisition_key": {
+      "es": "No requiere ventana adicional; depende de la exactitud de todos los componentes.",
+      "en": "No additional acoustic window is required; accuracy depends on all calculation components."
+    },
+    "alternate_windows": {
+      "es": [],
+      "en": []
+    }
   },
   {
     "id": "insuficiencia_mitral_severa_meas",
     "section_id": "valvular_regurgitation",
     "order": 6,
-    "measurement": "Insuficiencia mitral severa",
-    "abbreviation": "IM Severa",
-    "aliases": [
-      "Severe mitral regurgitation",
-      "Insuficiencia mitral severa criterios"
-    ],
-    "formula_or_method": "Integración multiparamétrica.",
-    "normal_values": "VC ≥7 mm; EROA ≥0,40 cm²; VR ≥60 mL; FR ≥50%.",
-    "interpretation_limitations": "La etiología primaria o secundaria puede modificar la interpretación.",
-    "units": "multiparamétrico",
+    "measurement": {
+      "es": "Insuficiencia mitral severa",
+      "en": "Severe mitral regurgitation"
+    },
+    "abbreviation": {
+      "es": "IM Severa",
+      "en": "Severe MR"
+    },
+    "aliases": {
+      "es": [
+        "Severe mitral regurgitation",
+        "Insuficiencia mitral severa criterios"
+      ],
+      "en": [
+        "Severe mitral regurgitation",
+        "Criteria for severe mitral regurgitation"
+      ]
+    },
+    "formula_or_method": {
+      "es": "Integración multiparamétrica.",
+      "en": "Multiparametric integration."
+    },
+    "normal_values": {
+      "es": "VC ≥7 mm; EROA ≥0,40 cm²; VR ≥60 mL; FR ≥50%.",
+      "en": "VC ≥7 mm; EROA ≥0.40 cm²; RVol ≥60 mL; RF ≥50%."
+    },
+    "interpretation_limitations": {
+      "es": "La etiología primaria o secundaria puede modificar la interpretación.",
+      "en": "Primary or secondary etiology may affect interpretation."
+    },
+    "units": {
+      "es": "multiparamétrico",
+      "en": "multiparametric"
+    },
     "related_glossary_ids": [
       "insuficiencia_mitral_severa_term",
       "vena_contracta_term",
@@ -4762,27 +4985,69 @@
     ],
     "source_page": 10,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Múltiples",
-    "preferred_view": "PLAX, A4C, A2C, A3C; venas pulmonares",
-    "modality": "2D, color, PW y CW",
-    "acquisition_timing": "Sístole",
-    "acquisition_key": "Evaluar mecanismo, jet, VC/PISA, CW y repercusión; flujo venoso pulmonar desde A4C.",
-    "alternate_windows": []
+    "primary_window": {
+      "es": "Múltiples",
+      "en": "Multiple"
+    },
+    "preferred_view": {
+      "es": "PLAX, A4C, A2C, A3C; venas pulmonares",
+      "en": "PLAX, A4C, A2C, A3C; pulmonary veins"
+    },
+    "modality": {
+      "es": "2D, color, PW y CW",
+      "en": "2D, color Doppler, PW and CW Doppler"
+    },
+    "acquisition_timing": {
+      "es": "Sístole",
+      "en": "Systole"
+    },
+    "acquisition_key": {
+      "es": "Evaluar mecanismo, jet, VC/PISA, CW y repercusión; flujo venoso pulmonar desde A4C.",
+      "en": "Assess the mechanism, regurgitant jet, VC/PISA, CW Doppler envelope, and cardiac consequences; evaluate pulmonary venous flow from A4C."
+    },
+    "alternate_windows": {
+      "es": [],
+      "en": []
+    }
   },
   {
     "id": "insuficiencia_aortica_severa_meas",
     "section_id": "valvular_regurgitation",
     "order": 7,
-    "measurement": "Insuficiencia aórtica severa",
-    "abbreviation": "IA Severa",
-    "aliases": [
-      "Severe aortic regurgitation",
-      "Insuficiencia aórtica severa criterios"
-    ],
-    "formula_or_method": "Integración multiparamétrica.",
-    "normal_values": "VC >6 mm; EROA ≥0,30 cm²; VR ≥60 mL; FR ≥50%; PHT <200 ms.",
-    "interpretation_limitations": "Confirmar con reversión holodiastólica y repercusión ventricular.",
-    "units": "multiparamétrico",
+    "measurement": {
+      "es": "Insuficiencia aórtica severa",
+      "en": "Severe aortic regurgitation"
+    },
+    "abbreviation": {
+      "es": "IA Severa",
+      "en": "Severe AR"
+    },
+    "aliases": {
+      "es": [
+        "Severe aortic regurgitation",
+        "Insuficiencia aórtica severa criterios"
+      ],
+      "en": [
+        "Severe aortic regurgitation",
+        "Criteria for severe aortic regurgitation"
+      ]
+    },
+    "formula_or_method": {
+      "es": "Integración multiparamétrica.",
+      "en": "Multiparametric integration."
+    },
+    "normal_values": {
+      "es": "VC >6 mm; EROA ≥0,30 cm²; VR ≥60 mL; FR ≥50%; PHT <200 ms.",
+      "en": "VC >6 mm; EROA ≥0.30 cm²; RVol ≥60 mL; RF ≥50%; PHT <200 ms."
+    },
+    "interpretation_limitations": {
+      "es": "Confirmar con reversión holodiastólica y repercusión ventricular.",
+      "en": "Confirm with holodiastolic flow reversal and ventricular consequences."
+    },
+    "units": {
+      "es": "multiparamétrico",
+      "en": "multiparametric"
+    },
     "related_glossary_ids": [
       "insuficiencia_aortica_severa_term",
       "reversion_holodiastolica_aortica_term",
@@ -4790,41 +5055,103 @@
     ],
     "source_page": 10,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Múltiples",
-    "preferred_view": "PLAX para VC; A5C/A3C para CW; supraesternal para aorta descendente",
-    "modality": "2D, color, PW y CW",
-    "acquisition_timing": "Diástole",
-    "acquisition_key": "Integrar ancho/VC, PISA, PHT y reversión holodiastólica en aorta descendente.",
-    "alternate_windows": [
-      "Subcostal para flujo aórtico abdominal como apoyo."
-    ]
+    "primary_window": {
+      "es": "Múltiples",
+      "en": "Multiple"
+    },
+    "preferred_view": {
+      "es": "PLAX para VC; A5C/A3C para CW; supraesternal para aorta descendente",
+      "en": "PLAX for VC; A5C/A3C for CW Doppler; suprasternal view for the descending aorta"
+    },
+    "modality": {
+      "es": "2D, color, PW y CW",
+      "en": "2D, color Doppler, PW and CW Doppler"
+    },
+    "acquisition_timing": {
+      "es": "Diástole",
+      "en": "Diastole"
+    },
+    "acquisition_key": {
+      "es": "Integrar ancho/VC, PISA, PHT y reversión holodiastólica en aorta descendente.",
+      "en": "Integrate jet width/VC, PISA, PHT, and holodiastolic flow reversal in the descending aorta."
+    },
+    "alternate_windows": {
+      "es": [
+        "Subcostal para flujo aórtico abdominal como apoyo."
+      ],
+      "en": [
+        "Use the subcostal view to assess abdominal aortic flow as supportive evidence."
+      ]
+    }
   },
   {
     "id": "insuficiencia_tricuspidea_severa_meas",
     "section_id": "valvular_regurgitation",
     "order": 8,
-    "measurement": "Insuficiencia tricuspídea severa",
-    "abbreviation": "IT Severa",
-    "aliases": [
-      "Severe tricuspid regurgitation",
-      "Insuficiencia tricuspídea severa criterios"
-    ],
-    "formula_or_method": "Integración multiparamétrica.",
-    "normal_values": "VC ≥7 mm; EROA ≥0,40 cm²; VR ≥45 mL; reversión sistólica hepática.",
-    "interpretation_limitations": "Las categorías masiva y torrencial pueden requerir esquemas ampliados.",
-    "units": "multiparamétrico",
+    "measurement": {
+      "es": "Insuficiencia tricuspídea severa",
+      "en": "Severe tricuspid regurgitation"
+    },
+    "abbreviation": {
+      "es": "IT Severa",
+      "en": "Severe TR"
+    },
+    "aliases": {
+      "es": [
+        "Severe tricuspid regurgitation",
+        "Insuficiencia tricuspídea severa criterios"
+      ],
+      "en": [
+        "Severe tricuspid regurgitation",
+        "Criteria for severe tricuspid regurgitation"
+      ]
+    },
+    "formula_or_method": {
+      "es": "Integración multiparamétrica.",
+      "en": "Multiparametric integration."
+    },
+    "normal_values": {
+      "es": "VC ≥7 mm; EROA ≥0,40 cm²; VR ≥45 mL; reversión sistólica hepática.",
+      "en": "VC ≥7 mm; EROA ≥0.40 cm²; RVol ≥45 mL; hepatic vein systolic flow reversal."
+    },
+    "interpretation_limitations": {
+      "es": "Las categorías masiva y torrencial pueden requerir esquemas ampliados.",
+      "en": "Massive and torrential categories may require expanded grading schemes."
+    },
+    "units": {
+      "es": "multiparamétrico",
+      "en": "multiparametric"
+    },
     "related_glossary_ids": [
       "insuficiencia_tricuspidea_severa_term",
       "reversion_sistolica_hepatica_term"
     ],
     "source_page": 10,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Múltiples",
-    "preferred_view": "A4C enfocada en VD, RV inflow, PSAX; venas hepáticas subcostales",
-    "modality": "2D, color, PW y CW",
-    "acquisition_timing": "Sístole",
-    "acquisition_key": "Usar la mejor alineación del jet y buscar reversión sistólica en venas hepáticas.",
-    "alternate_windows": []
+    "primary_window": {
+      "es": "Múltiples",
+      "en": "Multiple"
+    },
+    "preferred_view": {
+      "es": "A4C enfocada en VD, RV inflow, PSAX; venas hepáticas subcostales",
+      "en": "RV-focused A4C, RV inflow, and PSAX; hepatic veins from the subcostal window"
+    },
+    "modality": {
+      "es": "2D, color, PW y CW",
+      "en": "2D, color Doppler, PW and CW Doppler"
+    },
+    "acquisition_timing": {
+      "es": "Sístole",
+      "en": "Systole"
+    },
+    "acquisition_key": {
+      "es": "Usar la mejor alineación del jet y buscar reversión sistólica en venas hepáticas.",
+      "en": "Use the best alignment with the regurgitant jet and assess for hepatic vein systolic flow reversal."
+    },
+    "alternate_windows": {
+      "es": [],
+      "en": []
+    }
   },
   {
     "id": "derrame_pericardico_pequeno",
