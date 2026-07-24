@@ -3302,15 +3302,36 @@
     "id": "gradiente_vd_ad",
     "section_id": "pulmonary_hemodynamics",
     "order": 1,
-    "measurement": "Gradiente VD-AD",
-    "abbreviation": "Gradiente VD-AD",
-    "aliases": [
-      "RV-RA gradient",
-      "Gradiente de insuficiencia tricuspídea"
-    ],
-    "formula_or_method": "4 x velocidad máxima de IT².",
-    "normal_values": "Depende de la velocidad.",
-    "interpretation_limitations": "Aplicar Bernoulli con velocidad en m/s para obtener mmHg.",
+    "measurement": {
+      "es": "Gradiente VD-AD",
+      "en": "RV-RA gradient"
+    },
+    "abbreviation": {
+      "es": "Gradiente VD-AD",
+      "en": "RV-RA gradient"
+    },
+    "aliases": {
+      "es": [
+        "RV-RA gradient",
+        "Gradiente de insuficiencia tricuspídea"
+      ],
+      "en": [
+        "RV-RA gradient",
+        "Tricuspid regurgitation gradient"
+      ]
+    },
+    "formula_or_method": {
+      "es": "4 x velocidad máxima de IT².",
+      "en": "4 x peak TR velocity²."
+    },
+    "normal_values": {
+      "es": "Depende de la velocidad.",
+      "en": "Depends on the measured velocity."
+    },
+    "interpretation_limitations": {
+      "es": "Aplicar Bernoulli con velocidad en m/s para obtener mmHg.",
+      "en": "Apply the modified Bernoulli equation using velocity in m/s to obtain mmHg."
+    },
     "units": "mmHg",
     "related_glossary_ids": [
       "bernoulli_term",
@@ -3318,28 +3339,69 @@
     ],
     "source_page": 8,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Múltiples",
-    "preferred_view": "Mejor sobre de IT: A4C VD, RV inflow, PSAX o subcostal",
-    "modality": "Doppler continuo",
-    "acquisition_timing": "Sístole",
-    "acquisition_key": "Usar el mayor valor de una señal completa y bien alineada.",
-    "alternate_windows": []
+    "primary_window": {
+      "es": "Múltiples",
+      "en": "Multiple"
+    },
+    "preferred_view": {
+      "es": "Mejor sobre de IT: A4C VD, RV inflow, PSAX o subcostal",
+      "en": "Best TR spectral envelope: RV-focused A4C, RV inflow, PSAX, or subcostal view"
+    },
+    "modality": {
+      "es": "Doppler continuo",
+      "en": "Continuous-wave Doppler"
+    },
+    "acquisition_timing": {
+      "es": "Sístole",
+      "en": "Systole"
+    },
+    "acquisition_key": {
+      "es": "Usar el mayor valor de una señal completa y bien alineada.",
+      "en": "Use the highest value obtained from a complete, well-aligned signal."
+    },
+    "alternate_windows": {
+      "es": [],
+      "en": []
+    }
   },
   {
     "id": "pasp_meas",
     "section_id": "pulmonary_hemodynamics",
     "order": 2,
-    "measurement": "PSVD / PASP",
-    "abbreviation": "PASP",
-    "aliases": [
-      "Presión sistólica de la arteria pulmonar",
-      "PSVD",
-      "Presión sistólica del ventrículo derecho",
-      "RVSP"
-    ],
-    "formula_or_method": "4 x VIT² + presión AD.",
-    "normal_values": "Habitualmente <35 mmHg.",
-    "interpretation_limitations": "PASP equivale a PSVD solo sin obstrucción pulmonar/TSVD significativa.",
+    "measurement": {
+      "es": "PSVD / PASP",
+      "en": "RVSP / PASP"
+    },
+    "abbreviation": {
+      "es": "PASP",
+      "en": "PASP"
+    },
+    "aliases": {
+      "es": [
+        "Presión sistólica de la arteria pulmonar",
+        "PSVD",
+        "Presión sistólica del ventrículo derecho",
+        "RVSP"
+      ],
+      "en": [
+        "Pulmonary artery systolic pressure",
+        "RVSP",
+        "Right ventricular systolic pressure",
+        "RVSP"
+      ]
+    },
+    "formula_or_method": {
+      "es": "4 x VIT² + presión AD.",
+      "en": "4 x peak TR velocity² + RAP."
+    },
+    "normal_values": {
+      "es": "Habitualmente <35 mmHg.",
+      "en": "Usually <35 mmHg."
+    },
+    "interpretation_limitations": {
+      "es": "PASP equivale a PSVD solo sin obstrucción pulmonar/TSVD significativa.",
+      "en": "PASP equals RVSP only in the absence of significant pulmonic valve or RVOT obstruction."
+    },
     "units": "mmHg",
     "related_glossary_ids": [
       "pasp_term",
@@ -3349,27 +3411,67 @@
     ],
     "source_page": 8,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Combinada",
-    "preferred_view": "Mejor ventana de IT + VCI subcostal",
-    "modality": "Doppler continuo + estimación de RAP",
-    "acquisition_timing": "Sístole",
-    "acquisition_key": "Confirmar ausencia de obstrucción pulmonar significativa y sumar presión AD estimada.",
-    "alternate_windows": []
+    "primary_window": {
+      "es": "Combinada",
+      "en": "Combined"
+    },
+    "preferred_view": {
+      "es": "Mejor ventana de IT + VCI subcostal",
+      "en": "Best TR window + subcostal IVC view"
+    },
+    "modality": {
+      "es": "Doppler continuo + estimación de RAP",
+      "en": "Continuous-wave Doppler + RAP estimation"
+    },
+    "acquisition_timing": {
+      "es": "Sístole",
+      "en": "Systole"
+    },
+    "acquisition_key": {
+      "es": "Confirmar ausencia de obstrucción pulmonar significativa y sumar presión AD estimada.",
+      "en": "Confirm the absence of significant pulmonary outflow obstruction and add the estimated RAP."
+    },
+    "alternate_windows": {
+      "es": [],
+      "en": []
+    }
   },
   {
     "id": "presion_media_pulmonar",
     "section_id": "pulmonary_hemodynamics",
     "order": 3,
-    "measurement": "Presión media pulmonar por PR",
-    "abbreviation": "mPAP",
-    "aliases": [
-      "Mean pulmonary artery pressure",
-      "Presión arterial pulmonar media",
-      "PR mPAP"
-    ],
-    "formula_or_method": "4 x velocidad protodiastólica de PR² + presión AD.",
-    "normal_values": "<20 mmHg.",
-    "interpretation_limitations": "La definición hemodinámica de hipertensión pulmonar requiere confirmación invasiva.",
+    "measurement": {
+      "es": "Presión media pulmonar por PR",
+      "en": "Mean pulmonary artery pressure from PR"
+    },
+    "abbreviation": {
+      "es": "mPAP",
+      "en": "mPAP"
+    },
+    "aliases": {
+      "es": [
+        "Mean pulmonary artery pressure",
+        "Presión arterial pulmonar media",
+        "PR mPAP"
+      ],
+      "en": [
+        "Mean pulmonary artery pressure",
+        "Mean pulmonary artery pressure",
+        "PR-derived mPAP"
+      ]
+    },
+    "formula_or_method": {
+      "es": "4 x velocidad protodiastólica de PR² + presión AD.",
+      "en": "4 x early diastolic PR velocity² + RAP."
+    },
+    "normal_values": {
+      "es": "<20 mmHg.",
+      "en": "<20 mmHg."
+    },
+    "interpretation_limitations": {
+      "es": "La definición hemodinámica de hipertensión pulmonar requiere confirmación invasiva.",
+      "en": "The hemodynamic definition of pulmonary hypertension requires invasive confirmation."
+    },
     "units": "mmHg",
     "related_glossary_ids": [
       "mpap_term",
@@ -3378,29 +3480,71 @@
     ],
     "source_page": 8,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Paraesternal izquierda",
-    "preferred_view": "PSAX grandes vasos / RVOT",
-    "modality": "Doppler continuo guiado por color",
-    "acquisition_timing": "Protodiástole",
-    "acquisition_key": "Alinear con el jet de insuficiencia pulmonar y medir la velocidad temprana.",
-    "alternate_windows": [
-      "Subcostal RVOT si la alineación es mejor."
-    ]
+    "primary_window": {
+      "es": "Paraesternal izquierda",
+      "en": "Left parasternal"
+    },
+    "preferred_view": {
+      "es": "PSAX grandes vasos / RVOT",
+      "en": "PSAX view at the great-vessel/RVOT level"
+    },
+    "modality": {
+      "es": "Doppler continuo guiado por color",
+      "en": "Color-guided continuous-wave Doppler"
+    },
+    "acquisition_timing": {
+      "es": "Protodiástole",
+      "en": "Early diastole"
+    },
+    "acquisition_key": {
+      "es": "Alinear con el jet de insuficiencia pulmonar y medir la velocidad temprana.",
+      "en": "Align with the pulmonary regurgitation jet and measure the early diastolic velocity."
+    },
+    "alternate_windows": {
+      "es": [
+        "Subcostal RVOT si la alineación es mejor."
+      ],
+      "en": [
+        "Subcostal RVOT view if alignment is better."
+      ]
+    }
   },
   {
     "id": "presion_diastolica_pulmonar",
     "section_id": "pulmonary_hemodynamics",
     "order": 4,
-    "measurement": "Presión diastólica pulmonar",
-    "abbreviation": "dPAP",
-    "aliases": [
-      "Diastolic pulmonary artery pressure",
-      "Presión diastólica de la arteria pulmonar",
-      "PR dPAP"
-    ],
-    "formula_or_method": "4 x velocidad telediastólica de PR² + presión AD.",
-    "normal_values": "Aprox. <15 mmHg.",
-    "interpretation_limitations": "Depende de una señal adecuada de insuficiencia pulmonar.",
+    "measurement": {
+      "es": "Presión diastólica pulmonar",
+      "en": "Pulmonary artery diastolic pressure"
+    },
+    "abbreviation": {
+      "es": "dPAP",
+      "en": "dPAP"
+    },
+    "aliases": {
+      "es": [
+        "Diastolic pulmonary artery pressure",
+        "Presión diastólica de la arteria pulmonar",
+        "PR dPAP"
+      ],
+      "en": [
+        "Diastolic pulmonary artery pressure",
+        "Pulmonary artery diastolic pressure",
+        "PR-derived dPAP"
+      ]
+    },
+    "formula_or_method": {
+      "es": "4 x velocidad telediastólica de PR² + presión AD.",
+      "en": "4 x end-diastolic PR velocity² + RAP."
+    },
+    "normal_values": {
+      "es": "Aprox. <15 mmHg.",
+      "en": "Approx. <15 mmHg."
+    },
+    "interpretation_limitations": {
+      "es": "Depende de una señal adecuada de insuficiencia pulmonar.",
+      "en": "Depends on an adequate pulmonary regurgitation signal."
+    },
     "units": "mmHg",
     "related_glossary_ids": [
       "pr_term",
@@ -3408,29 +3552,73 @@
     ],
     "source_page": 8,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Paraesternal izquierda",
-    "preferred_view": "PSAX grandes vasos / RVOT",
-    "modality": "Doppler continuo guiado por color",
-    "acquisition_timing": "Fin de diástole",
-    "acquisition_key": "Medir la velocidad de PR al final de la diástole y sumar RAP.",
-    "alternate_windows": [
-      "Subcostal RVOT."
-    ]
+    "primary_window": {
+      "es": "Paraesternal izquierda",
+      "en": "Left parasternal"
+    },
+    "preferred_view": {
+      "es": "PSAX grandes vasos / RVOT",
+      "en": "PSAX view at the great-vessel/RVOT level"
+    },
+    "modality": {
+      "es": "Doppler continuo guiado por color",
+      "en": "Color-guided continuous-wave Doppler"
+    },
+    "acquisition_timing": {
+      "es": "Fin de diástole",
+      "en": "End-diastole"
+    },
+    "acquisition_key": {
+      "es": "Medir la velocidad de PR al final de la diástole y sumar RAP.",
+      "en": "Measure the PR velocity at end-diastole and add RAP."
+    },
+    "alternate_windows": {
+      "es": [
+        "Subcostal RVOT."
+      ],
+      "en": [
+        "Subcostal RVOT view."
+      ]
+    }
   },
   {
     "id": "rvp_ecografica",
     "section_id": "pulmonary_hemodynamics",
     "order": 5,
-    "measurement": "RVP ecográfica",
-    "abbreviation": "RVP ecográfica",
-    "aliases": [
-      "Resistencia vascular pulmonar ecográfica",
-      "PVR ecográfica"
-    ],
-    "formula_or_method": "[(Vmax IT / VTI del TSVD) x 10] + 0,16.",
-    "normal_values": "Normal <1,5 UW; >2 UW es anormal.",
-    "interpretation_limitations": "Corrección importante: usa VTI del TSVD/RVOT, no VTI del TSVI. No sustituye cateterismo derecho.",
-    "units": "UW",
+    "measurement": {
+      "es": "RVP ecográfica",
+      "en": "Echocardiographic PVR"
+    },
+    "abbreviation": {
+      "es": "RVP ecográfica",
+      "en": "Echocardiographic PVR"
+    },
+    "aliases": {
+      "es": [
+        "Resistencia vascular pulmonar ecográfica",
+        "PVR ecográfica"
+      ],
+      "en": [
+        "Echocardiographic pulmonary vascular resistance",
+        "Echocardiographic PVR"
+      ]
+    },
+    "formula_or_method": {
+      "es": "[(Vmax IT / VTI del TSVD) x 10] + 0,16.",
+      "en": "[(Peak TR velocity / RVOT VTI) x 10] + 0.16."
+    },
+    "normal_values": {
+      "es": "Normal <1,5 UW; >2 UW es anormal.",
+      "en": "Normal <1.5 WU; >2 WU is abnormal."
+    },
+    "interpretation_limitations": {
+      "es": "Corrección importante: usa VTI del TSVD/RVOT, no VTI del TSVI. No sustituye cateterismo derecho.",
+      "en": "Important correction: uses RVOT VTI, not LVOT VTI. Does not replace right heart catheterization."
+    },
+    "units": {
+      "es": "UW",
+      "en": "WU"
+    },
     "related_glossary_ids": [
       "rvp_term",
       "it_term",
@@ -3438,70 +3626,177 @@
     ],
     "source_page": 8,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Combinada",
-    "preferred_view": "Mejor ventana de IT + PSAX/RVOT",
-    "modality": "Doppler continuo + pulsado; cálculo",
-    "acquisition_timing": "Sístole",
-    "acquisition_key": "Combinar Vmax de IT con VTI del TSVD; no usar VTI del TSVI.",
-    "alternate_windows": []
+    "primary_window": {
+      "es": "Combinada",
+      "en": "Combined"
+    },
+    "preferred_view": {
+      "es": "Mejor ventana de IT + PSAX/RVOT",
+      "en": "Best TR window + PSAX/RVOT view"
+    },
+    "modality": {
+      "es": "Doppler continuo + pulsado; cálculo",
+      "en": "Continuous-wave + pulsed-wave Doppler; calculation"
+    },
+    "acquisition_timing": {
+      "es": "Sístole",
+      "en": "Systole"
+    },
+    "acquisition_key": {
+      "es": "Combinar Vmax de IT con VTI del TSVD; no usar VTI del TSVI.",
+      "en": "Combine peak TR velocity with RVOT VTI; do not use LVOT VTI."
+    },
+    "alternate_windows": {
+      "es": [],
+      "en": []
+    }
   },
   {
     "id": "indice_excentricidad_vi",
     "section_id": "pulmonary_hemodynamics",
     "order": 6,
-    "measurement": "Índice de excentricidad del VI",
-    "abbreviation": "Índice de excentricidad",
-    "aliases": [
-      "Eccentricity index del VI",
-      "Aplanamiento septal",
-      "D-shape LV"
-    ],
-    "formula_or_method": "Diámetro paralelo al septo / diámetro perpendicular.",
-    "normal_values": "Aprox. 1,0.",
-    "interpretation_limitations": "Aplanamiento sistólico sugiere sobrecarga de presión; diastólico, sobrecarga de volumen.",
-    "units": "adimensional",
+    "measurement": {
+      "es": "Índice de excentricidad del VI",
+      "en": "LV eccentricity index"
+    },
+    "abbreviation": {
+      "es": "Índice de excentricidad",
+      "en": "Eccentricity index"
+    },
+    "aliases": {
+      "es": [
+        "Eccentricity index del VI",
+        "Aplanamiento septal",
+        "D-shape LV"
+      ],
+      "en": [
+        "LV eccentricity index",
+        "Septal flattening",
+        "D-shaped LV"
+      ]
+    },
+    "formula_or_method": {
+      "es": "Diámetro paralelo al septo / diámetro perpendicular.",
+      "en": "Diameter parallel to the septum / perpendicular diameter."
+    },
+    "normal_values": {
+      "es": "Aprox. 1,0.",
+      "en": "Approx. 1.0."
+    },
+    "interpretation_limitations": {
+      "es": "Aplanamiento sistólico sugiere sobrecarga de presión; diastólico, sobrecarga de volumen.",
+      "en": "Systolic flattening suggests pressure overload; diastolic flattening suggests volume overload."
+    },
+    "units": {
+      "es": "adimensional",
+      "en": "dimensionless"
+    },
     "related_glossary_ids": [
       "indice_excentricidad_term"
     ],
     "source_page": 8,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Paraesternal izquierda",
-    "preferred_view": "PSAX medio ventricular a nivel de músculos papilares",
-    "modality": "2D",
-    "acquisition_timing": "Fin de sístole y fin de diástole",
-    "acquisition_key": "Medir dos diámetros ortogonales del VI en un corte circular verdadero.",
-    "alternate_windows": [
-      "Subcostal eje corto cuando PSAX es deficiente."
-    ]
+    "primary_window": {
+      "es": "Paraesternal izquierda",
+      "en": "Left parasternal"
+    },
+    "preferred_view": {
+      "es": "PSAX medio ventricular a nivel de músculos papilares",
+      "en": "Midventricular PSAX view at the papillary muscle level"
+    },
+    "modality": {
+      "es": "2D",
+      "en": "2D"
+    },
+    "acquisition_timing": {
+      "es": "Fin de sístole y fin de diástole",
+      "en": "End-systole and end-diastole"
+    },
+    "acquisition_key": {
+      "es": "Medir dos diámetros ortogonales del VI en un corte circular verdadero.",
+      "en": "Measure two orthogonal LV diameters in a true circular short-axis view."
+    },
+    "alternate_windows": {
+      "es": [
+        "Subcostal eje corto cuando PSAX es deficiente."
+      ],
+      "en": [
+        "Subcostal short-axis view when the PSAX view is suboptimal."
+      ]
+    }
   },
   {
     "id": "aplanamiento_septal_meas",
     "section_id": "pulmonary_hemodynamics",
     "order": 7,
-    "measurement": "Aplanamiento septal",
-    "abbreviation": "Aplanamiento septal",
-    "aliases": [
-      "Septo rectificado",
-      "Rectificación del tabique interventricular"
-    ],
-    "formula_or_method": "Evaluación cualitativa en eje corto.",
-    "normal_values": "Ausente normalmente.",
-    "interpretation_limitations": "Interpretar la fase del ciclo en que aparece.",
-    "units": "adimensional",
+    "measurement": {
+      "es": "Aplanamiento septal",
+      "en": "Septal flattening"
+    },
+    "abbreviation": {
+      "es": "Aplanamiento septal",
+      "en": "Septal flattening"
+    },
+    "aliases": {
+      "es": [
+        "Septo rectificado",
+        "Rectificación del tabique interventricular"
+      ],
+      "en": [
+        "Flattened septum",
+        "Interventricular septal flattening"
+      ]
+    },
+    "formula_or_method": {
+      "es": "Evaluación cualitativa en eje corto.",
+      "en": "Qualitative assessment in the short-axis view."
+    },
+    "normal_values": {
+      "es": "Ausente normalmente.",
+      "en": "Normally absent."
+    },
+    "interpretation_limitations": {
+      "es": "Interpretar la fase del ciclo en que aparece.",
+      "en": "Interpret according to the phase of the cardiac cycle in which it appears."
+    },
+    "units": {
+      "es": "adimensional",
+      "en": "dimensionless"
+    },
     "related_glossary_ids": [
       "psax",
       "indice_excentricidad_term"
     ],
     "source_page": 8,
     "source_document": "Mediciones_POCUS_Cardiaco_Adultos_Glosario.pdf",
-    "primary_window": "Paraesternal izquierda",
-    "preferred_view": "PSAX medio ventricular",
-    "modality": "2D cine",
-    "acquisition_timing": "Sístole y diástole",
-    "acquisition_key": "Determinar si el VI adopta forma de D en sístole, diástole o ambas.",
-    "alternate_windows": [
-      "Subcostal eje corto."
-    ]
+    "primary_window": {
+      "es": "Paraesternal izquierda",
+      "en": "Left parasternal"
+    },
+    "preferred_view": {
+      "es": "PSAX medio ventricular",
+      "en": "Midventricular PSAX view"
+    },
+    "modality": {
+      "es": "2D cine",
+      "en": "2D cine"
+    },
+    "acquisition_timing": {
+      "es": "Sístole y diástole",
+      "en": "Systole and diastole"
+    },
+    "acquisition_key": {
+      "es": "Determinar si el VI adopta forma de D en sístole, diástole o ambas.",
+      "en": "Determine whether the LV becomes D-shaped during systole, diastole, or both."
+    },
+    "alternate_windows": {
+      "es": [
+        "Subcostal eje corto."
+      ],
+      "en": [
+        "Subcostal short-axis view."
+      ]
+    }
   },
   {
     "id": "velocidad_max_aortica",
