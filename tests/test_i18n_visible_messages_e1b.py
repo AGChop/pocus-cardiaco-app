@@ -13,24 +13,24 @@ def test_new_translation_keys_e1b():
     
     new_keys = {
         "error.windows_load_title": {
-            "es": "Error al cargar las ventanas",
-            "en": "Error loading echocardiographic windows"
+            "es": "Error al cargar las vistas",
+            "en": "Error loading echocardiographic views"
         },
         "error.windows_load_text": {
-            "es": "Lo sentimos, no pudimos cargar la lista de ventanas ecocardiográficas. Por favor, intente nuevamente más tarde.",
-            "en": "Sorry, we could not load the list of echocardiographic windows. Please try again later."
+            "es": "Lo sentimos, no pudimos cargar la lista de vistas ecocardiográficas. Por favor, intente nuevamente más tarde.",
+            "en": "Sorry, we could not load the list of echocardiographic views. Please try again later."
         },
         "error.window_detail_load_title": {
             "es": "Error al cargar la información",
             "en": "Error loading information"
         },
         "error.window_detail_load_text": {
-            "es": "No se pudo cargar la información de la ventana ecocardiográfica.",
-            "en": "The echocardiographic window information could not be loaded."
+            "es": "No se pudo cargar la información de la vista ecocardiográfica.",
+            "en": "The echocardiographic view information could not be loaded."
         },
         "nav.back_to_windows": {
-            "es": "Volver a Ventanas",
-            "en": "Back to Windows"
+            "es": "Volver a Vistas",
+            "en": "Back to Views"
         },
         "error.protocols_load_title": {
             "es": "Error al cargar los protocolos",
