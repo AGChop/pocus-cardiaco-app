@@ -248,12 +248,12 @@
       "en": "This application is a quick reference guide for adult POCUS echocardiography. Its purpose is strictly educational and training for residents and physicians in training. All clinical data and reference ranges are aligned with current ASE (American Society of Echocardiography) guidelines."
     },
     "label.install_title": {
-      "es": "Instalar Aplicación",
-      "en": "Install App"
+      "es": "Instalar LOCUS POCUS",
+      "en": "Install LOCUS POCUS"
     },
     "label.install_text": {
-      "es": "Puedes instalar esta aplicación en tu dispositivo móvil o de escritorio como una PWA para usarla de manera offline en cualquier momento.",
-      "en": "You can install this application on your mobile or desktop device as a PWA for offline use at any time."
+      "es": "Instala LOCUS POCUS en tu dispositivo móvil para acceder rápidamente y consultar el contenido disponible sin conexión después de la primera carga con Internet.",
+      "en": "Install LOCUS POCUS on your mobile device for quick access and to consult available content offline after the first load with an Internet connection."
     },
     "label.install_btn": {
       "es": "Instalar ahora",
@@ -640,40 +640,76 @@
       "en": "Associated measurements"
     },
     "label.inst_iphone": {
-      "es": "📲 Instalar en iPhone",
-      "en": "📲 Install on iPhone"
+      "es": "📲 Instalar LOCUS POCUS",
+      "en": "📲 Install LOCUS POCUS"
+    },
+    "label.install_ios_title": {
+      "es": "iPhone o iPad",
+      "en": "iPhone or iPad"
     },
     "label.inst_iphone_steps": {
-      "es": "Sigue estos pasos para instalar esta aplicación en la pantalla de inicio de tu iPhone:",
-      "en": "Follow these steps to install this app on your iPhone's home screen:"
+      "es": "Sigue estos pasos en Safari:",
+      "en": "Follow these steps in Safari:"
     },
     "label.inst_iphone_step1": {
-      "es": "Abre el navegador <strong>Safari</strong> en tu iPhone e ingresa a este sitio web.",
-      "en": "Open the <strong>Safari</strong> browser on your iPhone and go to this website."
+      "es": "Abre <strong>Safari</strong> en tu iPhone o iPad y visita este sitio web.",
+      "en": "Open <strong>Safari</strong> on your iPhone or iPad and visit this website."
     },
     "label.inst_iphone_step2": {
-      "es": "Toca el botón <strong>Compartir</strong> <span style=\"font-size: 1.2rem;\">📤</span> (el icono de caja con flecha hacia arriba) en la barra de navegación inferior de Safari.",
-      "en": "Tap the <strong>Share</strong> button <span style=\"font-size: 1.2rem;\">📤</span> (the box icon with an arrow pointing up) in Safari's bottom navigation bar."
+      "es": "Toca el botón <strong>Compartir</strong> <span style=\"font-size: 1.2rem;\">📤</span>. Según la disposición de Safari, puede aparecer directamente o dentro del menú <strong>Más</strong>.",
+      "en": "Tap the <strong>Share</strong> button <span style=\"font-size: 1.2rem;\">📤</span>. Depending on your Safari layout, it may appear directly or inside the <strong>More</strong> menu."
     },
     "label.inst_iphone_step3": {
-      "es": "Desplázate hacia abajo en el menú y selecciona la opción <strong>\"Agregar a pantalla de inicio\"</strong>.",
-      "en": "Scroll down the menu and select the <strong>\"Add to Home Screen\"</strong> option."
+      "es": "Selecciona <strong>\"Agregar a pantalla de inicio\"</strong>.",
+      "en": "Select <strong>\"Add to Home Screen\"</strong>."
     },
     "label.inst_iphone_step4": {
-      "es": "Confirma el nombre de la aplicación (<strong>LOCUS POCUS</strong>) y toca <strong>\"Agregar\"</strong> en la esquina superior derecha.",
-      "en": "Confirm the name of the app (<strong>LOCUS POCUS</strong>) and tap <strong>\"Add\"</strong> in the upper right corner."
+      "es": "Activa <strong>\"Abrir como app web\"</strong> si aparece esa opción.",
+      "en": "Turn on <strong>\"Open as Web App\"</strong> if that option appears."
     },
     "label.inst_iphone_step5": {
-      "es": "Busca el icono de la aplicación en tu pantalla de inicio y ábrela.",
-      "en": "Find the app icon on your home screen and open it."
+      "es": "Confirma el nombre <strong>LOCUS POCUS</strong> y toca <strong>\"Agregar\"</strong>.",
+      "en": "Confirm the name <strong>LOCUS POCUS</strong> and tap <strong>\"Add\"</strong>."
+    },
+    "label.inst_iphone_step6": {
+      "es": "Busca el icono de LOCUS POCUS en la pantalla de inicio y abre la aplicación.",
+      "en": "Find the LOCUS POCUS icon on the Home Screen and open the app."
+    },
+    "label.install_android_title": {
+      "es": "Android",
+      "en": "Android"
+    },
+    "label.install_android_steps": {
+      "es": "Sigue estos pasos en Chrome:",
+      "en": "Follow these steps in Chrome:"
+    },
+    "label.install_android_step1": {
+      "es": "Abre <strong>Chrome</strong> en tu dispositivo Android y visita este sitio web.",
+      "en": "Open <strong>Chrome</strong> on your Android device and visit this website."
+    },
+    "label.install_android_step2": {
+      "es": "Toca el menú <strong>Más</strong> <span style=\"font-size: 1.2rem;\">⋮</span> situado a la derecha de la barra de direcciones.",
+      "en": "Tap the <strong>More</strong> menu <span style=\"font-size: 1.2rem;\">⋮</span> to the right of the address bar."
+    },
+    "label.install_android_step3": {
+      "es": "Selecciona <strong>\"Agregar a pantalla de inicio\"</strong> y luego <strong>\"Instalar\"</strong>. En algunas versiones puede aparecer directamente <strong>\"Instalar aplicación\"</strong>.",
+      "en": "Select <strong>\"Add to home screen\"</strong> and then <strong>\"Install\"</strong>. In some versions, <strong>\"Install app\"</strong> may appear directly."
+    },
+    "label.install_android_step4": {
+      "es": "Sigue las instrucciones en pantalla para confirmar la instalación de LOCUS POCUS.",
+      "en": "Follow the on-screen instructions to confirm the installation of LOCUS POCUS."
+    },
+    "label.install_android_step5": {
+      "es": "Busca el icono de LOCUS POCUS en la pantalla de inicio o en el iniciador de aplicaciones y abre la aplicación.",
+      "en": "Find the LOCUS POCUS icon on the Home Screen or in the app launcher and open the app."
     },
     "label.pwa_note_title": {
-      "es": "Nota de la PWA",
-      "en": "PWA Note"
+      "es": "Uso sin conexión",
+      "en": "Offline use"
     },
     "label.pwa_note_text": {
-      "es": "Después de abrir la aplicación por primera vez con conexión a Internet, todos los datos médicos clínicos quedarán almacenados de manera segura en la memoria de tu dispositivo. Podrás consultarla sin conexión de red en cualquier momento.",
-      "en": "After opening the app for the first time with an Internet connection, all clinical medical data will be securely stored in your device's memory. You can consult it offline at any time."
+      "es": "Después de abrir LOCUS POCUS por primera vez con conexión a Internet, el contenido esencial quedará guardado en la caché del dispositivo para permitir consultas sin conexión. Algunas funciones o recursos pueden requerir conexión.",
+      "en": "After opening LOCUS POCUS for the first time with an Internet connection, essential content will be stored in the device cache for offline consultation. Some features or resources may require a connection."
     },
     "error.windows_load_title": {
       "es": "Error al cargar las vistas",

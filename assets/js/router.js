@@ -2524,18 +2524,39 @@ const Router = {
                 <h2>${I18n.translate("label.install_title")}</h2>
             </div>
 
-            <div style="background-color: var(--card-bg-light); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border-light); font-size: 0.95rem;">
-                <p style="margin-bottom: 1rem; font-weight: 600;">${I18n.translate("label.inst_iphone_steps")}</p>
+            <div style="background-color: var(--card-bg-light); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border-light); font-size: 0.95rem; display: flex; flex-direction: column; gap: 1.5rem;">
+                <p>${I18n.translate("label.install_text")}</p>
 
-                <ol style="padding-left: 1.25rem; display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.5rem;">
-                    <li>${I18n.translate("label.inst_iphone_step1")}</li>
-                    <li>${I18n.translate("label.inst_iphone_step2")}</li>
-                    <li>${I18n.translate("label.inst_iphone_step3")}</li>
-                    <li>${I18n.translate("label.inst_iphone_step4")}</li>
-                    <li>${I18n.translate("label.inst_iphone_step5")}</li>
-                </ol>
+                <div class="install-section">
+                    <h3 style="margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                        <span>🍎</span> ${I18n.translate("label.install_ios_title")}
+                    </h3>
+                    <p style="margin-bottom: 0.75rem; font-weight: 600;">${I18n.translate("label.inst_iphone_steps")}</p>
+                    <ol style="padding-left: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                        <li>${I18n.translate("label.inst_iphone_step1")}</li>
+                        <li>${I18n.translate("label.inst_iphone_step2")}</li>
+                        <li>${I18n.translate("label.inst_iphone_step3")}</li>
+                        <li>${I18n.translate("label.inst_iphone_step4")}</li>
+                        <li>${I18n.translate("label.inst_iphone_step5")}</li>
+                        <li>${I18n.translate("label.inst_iphone_step6")}</li>
+                    </ol>
+                </div>
 
-                <div class="safety-banner">
+                <div class="install-section">
+                    <h3 style="margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                        <span>🤖</span> ${I18n.translate("label.install_android_title")}
+                    </h3>
+                    <p style="margin-bottom: 0.75rem; font-weight: 600;">${I18n.translate("label.install_android_steps")}</p>
+                    <ol style="padding-left: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                        <li>${I18n.translate("label.install_android_step1")}</li>
+                        <li>${I18n.translate("label.install_android_step2")}</li>
+                        <li>${I18n.translate("label.install_android_step3")}</li>
+                        <li>${I18n.translate("label.install_android_step4")}</li>
+                        <li>${I18n.translate("label.install_android_step5")}</li>
+                    </ol>
+                </div>
+
+                <div class="safety-banner" style="margin-top: 0.5rem;">
                     <strong>${I18n.translate("label.pwa_note_title")}:</strong> ${I18n.translate("label.pwa_note_text")}
                 </div>
             </div>

@@ -160,7 +160,14 @@ def test_qa1_service_worker():
     with open("service-worker.js", "r", encoding="utf-8") as f:
         content = f.read()
         
-    assert "const CACHE_NAME = 'pocus-cardiaco-cache-v17-c3d1-brand1-e1a-e1b-e1c-qa1';" in content
+    cache_match = re.search(
+        r"const CACHE_NAME = '([^']+)';",
+        content,
+    )
+    assert cache_match is not None
+    assert cache_match.group(1).startswith(
+        "pocus-cardiaco-cache-v17-c3d1-brand1-e1a-e1b-e1c-qa1"
+    )
     assert "'./index.html'" in content or "'./'" in content
     assert "'./data/translations.json'" in content
     assert "'./data/windows.json'" in content

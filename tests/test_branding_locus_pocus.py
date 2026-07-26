@@ -67,8 +67,8 @@ def test_translations_locus_pocus():
     assert t["label.about_title"]["es"] == "Acerca de LOCUS POCUS"
     assert t["label.about_title"]["en"] == "About LOCUS POCUS"
 
-    assert "<strong>LOCUS POCUS</strong>" in t["label.inst_iphone_step4"]["es"]
-    assert "<strong>LOCUS POCUS</strong>" in t["label.inst_iphone_step4"]["en"]
+    assert "<strong>LOCUS POCUS</strong>" in t["label.inst_iphone_step5"]["es"]
+    assert "<strong>LOCUS POCUS</strong>" in t["label.inst_iphone_step5"]["en"]
 
     # Protocolos POCUS remains
     assert t["nav.protocols"]["es"] == "Protocolos POCUS"
