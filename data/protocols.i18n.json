@@ -1,0 +1,98 @@
+{
+  "version": "1.0.0",
+  "source_language": "es",
+  "target_language": "en",
+  "educational_disclaimer": {
+    "es": "Este contenido es educativo. El protocolo RUSH complementa y no sustituye la valoración clínica, la reanimación ni los estudios diagnósticos definitivos. Los hallazgos deben integrarse con el contexto clínico.",
+    "en": "This content is educational. The RUSH protocol complements and does not replace clinical assessment, resuscitation, or definitive diagnostic studies. Findings must be integrated with the clinical context."
+  },
+  "metadata": {
+    "title": "Draft POCUS Clinical Protocols",
+    "scope": "Point-of-care ultrasound (POCUS) for the assessment of critically ill patients.",
+    "intended_audience": "Residents and physicians in training in Emergency Medicine, Critical Care Medicine, and Internal Medicine.",
+    "disclaimer": "This is an educational and quick-reference tool. The RUSH examination complements and does not replace a comprehensive clinical assessment or formal echocardiography. Ultrasound findings should not be interpreted in isolation, and performing ultrasound must not delay cardiopulmonary or hemodynamic resuscitation. A negative protocol result does not by itself exclude all possible causes of shock."
+  },
+  "protocols": {
+    "rush": {
+      "clinical_context": "Rapid and systematic assessment of patients with shock or hypotension of unclear etiology.",
+      "purpose": "Help differentiate the major etiologies of shock (hypovolemic, distributive, cardiogenic, and obstructive) through a protocolized ultrasound examination.",
+      "target_population": "Critically ill adult patients with sustained systolic blood pressure below 90 mmHg or clinical signs of shock.",
+      "prerequisites": "Basic training in focused echocardiography and general point-of-care ultrasound (POCUS).",
+      "sequence_note": "The educational triad (Pump, Tank, and Pipes) does not constitute a mandatory or invariant sequence. The acquisition order should be actively adapted to patient instability, the priority diagnostic concern, the availability of adequate acoustic windows, and the urgency of immediate life-saving interventions.",
+      "integration": "RUSH protocol findings must be integrated within the patient's overall clinical context. Specific patterns (e.g., a hyperdynamic LV with IVC collapse and right-sided chamber collapse) may support specific physiologic hypotheses (e.g., hypovolemic or obstructive shock) but do not replace definitive diagnosis by laboratory testing or advanced imaging.",
+      "limitations": "Poor acoustic window quality, subcutaneous emphysema, inability to reposition the patient, and interobserver variability in visual assessment.",
+      "safety_and_workflow_notes": "The examination must not delay resuscitation or other life-saving interventions. When an invasive procedure is required and a validated ultrasound-guided technique is available, real-time ultrasound guidance by trained personnel should be considered whenever feasible and provided that it does not delay an urgent intervention.",
+      "components": {
+        "pump": {
+          "clinical_questions": [
+            "Is there a pericardial effusion with signs of hemodynamic compromise?",
+            "What is the global left ventricular systolic function?",
+            "Is the right ventricle dilated or are there signs of right ventricular overload?"
+          ],
+          "targets": [
+            "Pericardial effusion (small, moderate, or large) and diastolic collapse of the right-sided chambers.",
+            "Global LV contractility (hyperdynamic, normal, or reduced) and EPSS.",
+            "Ratio of right ventricular to left ventricular diameters (RV dilation)."
+          ],
+          "suggested_views": [
+            "Parasternal long-axis (PLAX)",
+            "Parasternal short-axis (PSAX)",
+            "Apical four-chamber (A4C)",
+            "Subcostal four-chamber (SC4C)"
+          ],
+          "possible_findings": [
+            "Significant pericardial effusion with RV diastolic collapse or RA systolic collapse (suggestive of cardiac tamponade).",
+            "Hyperdynamic left ventricle with systolic cavity obliteration ('kissing papillary muscles'), suggestive of hypovolemia or vasoplegia.",
+            "Severely hypokinetic or akinetic left ventricle, suggestive of cardiogenic shock.",
+            "Dilated right ventricle (RV/LV ratio >1.0) with septal flattening (paradoxical septal motion) or McConnell sign, suggestive of massive pulmonary embolism or acute right ventricular dysfunction."
+          ],
+          "interpretation_limits": "An elevated RV/LV ratio in isolation does not diagnose pulmonary embolism (chronicity and pulmonary hypertension must be assessed). The absence of pericardial effusion does not exclude other obstructive etiologies. Apparently preserved or hyperdynamic global LV systolic function does not by itself exclude cardiogenic shock, for example when acute RV dysfunction, acute valvular disease, or a mechanical complication is present. Findings must be integrated with cardiac output, loading conditions, and the clinical context. No single finding should be used in isolation to determine the etiology of shock."
+        },
+        "tank": {
+          "clinical_questions": [
+            "What are the diameter and collapsibility characteristics of the inferior vena cava?",
+            "Are there sonographic signs of pulmonary congestion or pneumothorax?",
+            "Is there free intraperitoneal fluid or a pleural effusion?"
+          ],
+          "targets": [
+            "IVC diameter and collapsibility/distensibility during spontaneous breathing or mechanical ventilation.",
+            "Lung and pleura: presence of A-lines, B-lines (alveolar/interstitial pattern), and pleural sliding.",
+            "Dependent abdominal spaces (Morison's pouch, splenorenal recess, and subvesical space) for free fluid."
+          ],
+          "suggested_views": [
+            "Subcostal long-axis view of the IVC (SC-IVC)",
+            "Anterior and lateral lung windows",
+            "FAST abdominal windows (right upper quadrant, left upper quadrant, and pelvis)"
+          ],
+          "possible_findings": [
+            "Small IVC (<1.5 cm) with complete inspiratory collapse, suggestive of extreme volume depletion.",
+            "Plethoric IVC (>2.1 cm) without inspiratory collapse, compatible with elevated RA pressures (tamponade, pulmonary embolism, RV dysfunction, or fluid overload).",
+            "Absent pleural sliding with A-lines ('lung point'), highly suggestive of pneumothorax.",
+            "Multiple diffuse bilateral B-lines, suggestive of cardiogenic pulmonary edema or ARDS.",
+            "Free intraperitoneal fluid (hepatorenal recess, splenorenal recess, or pelvis) in the setting of trauma or an acute abdomen."
+          ],
+          "interpretation_limits": "IVC assessment must be integrated with other parameters. IVC diameter and collapsibility in isolation do not accurately define volume status or predict fluid responsiveness in all patients, especially during mechanical ventilation or in the presence of elevated intrathoracic pressures. A small IVC alone does not mandate fluid administration, and a dilated IVC does not independently confirm congestion or tamponade."
+        },
+        "pipes": {
+          "clinical_questions": [
+            "Is there evidence of an abdominal aortic aneurysm or dissection?",
+            "Is there deep vein thrombosis (DVT) in the lower extremities?"
+          ],
+          "targets": [
+            "Abdominal aorta in its proximal, mid, and distal segments.",
+            "Common femoral and popliteal veins using two-point compression ultrasonography."
+          ],
+          "suggested_views": [
+            "Abdominal aortic sweep from the epigastrium to the iliac bifurcation",
+            "Transverse view of the femoral and popliteal vessels"
+          ],
+          "possible_findings": [
+            "Abdominal aortic aneurysm (diameter >3 cm) or the presence of an intimal dissection flap.",
+            "Incomplete compressibility of the femoral or popliteal vein under direct compression, indicative of acute DVT."
+          ],
+          "interpretation_limits": "A limited or negative examination does not completely exclude DVT in other venous segments. Inability to visualize the abdominal aorta, for example because of excessive bowel gas, does not exclude an aneurysm. Failure to detect DVT does not rule out an ongoing pulmonary embolism. The RUSH protocol does not replace definitive vascular diagnostic studies, such as CT angiography or comprehensive duplex ultrasonography."
+        }
+      }
+    }
+  }
+}

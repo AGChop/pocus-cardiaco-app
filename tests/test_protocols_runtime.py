@@ -50,7 +50,11 @@ def test_final_metadata_and_disclaimer(protocols_final):
 
     # 7. educational_disclaimer existe y no está vacío
     assert "educational_disclaimer" in protocols_final
-    assert len(protocols_final["educational_disclaimer"].strip()) > 0
+    assert isinstance(protocols_final["educational_disclaimer"], dict)
+    assert "es" in protocols_final["educational_disclaimer"]
+    assert "en" in protocols_final["educational_disclaimer"]
+    assert len(protocols_final["educational_disclaimer"]["es"].strip()) > 0
+    assert len(protocols_final["educational_disclaimer"]["en"].strip()) > 0
 
 def test_final_protocol_structure(protocols_final):
     # 8. Existe exactamente un protocolo
@@ -73,8 +77,17 @@ def test_draft_final_matching(protocols_final, protocols_draft):
     # 13. References del archivo final coinciden con las del draft
     assert protocols_final["references"] == protocols_draft["references"]
 
-    # 14. Protocols del archivo final coinciden con los del draft
-    assert protocols_final["protocols"] == protocols_draft["protocols"]
+    # 14. Protocols del archivo final coinciden con los del draft (en su parte española)
+    def extract_spanish(data):
+        if isinstance(data, dict):
+            if "es" in data and "en" in data:
+                return extract_spanish(data["es"])
+            return {k: extract_spanish(v) for k, v in data.items() if k not in ["name_en"]}
+        elif isinstance(data, list):
+            return [extract_spanish(item) for item in data]
+        return data
+
+    assert extract_spanish(protocols_final["protocols"]) == extract_spanish(protocols_draft["protocols"])
 
     # 14.1 El review_status del protocolo RUSH debe conservarse como "pending-clinical-review"
     assert protocols_final["protocols"][0]["review_status"] == "pending-clinical-review"
@@ -127,6 +140,7 @@ def test_promotion_script_and_sources_integrity():
     windows_path = "data/windows.json"
     measurements_path = "data/measurements.json"
     output_path = "data/protocols.json"
+    i18n_path = "data/protocols.i18n.json"
 
     # Guardar hashes antes
     # 23. data/protocols.draft.json no se modifica
@@ -135,6 +149,8 @@ def test_promotion_script_and_sources_integrity():
     win_hash_before = get_file_hash(windows_path)
     # 25. data/measurements.json no se modifica
     meas_hash_before = get_file_hash(measurements_path)
+    # i18n file also
+    i18n_hash_before = get_file_hash(i18n_path)
 
     # Hash del output final antes
     final_hash_before = get_file_hash(output_path) if os.path.exists(output_path) else None
@@ -152,3 +168,4 @@ def test_promotion_script_and_sources_integrity():
     assert draft_hash_before == get_file_hash(draft_path)
     assert win_hash_before == get_file_hash(windows_path)
     assert meas_hash_before == get_file_hash(measurements_path)
+    assert i18n_hash_before == get_file_hash(i18n_path)

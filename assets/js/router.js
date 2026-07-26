@@ -138,12 +138,13 @@ const Router = {
         });
     },
 
-    // Función para manejar favoritos
     toggleFav(type, id, title, btnId) {
         const added = Storage.toggleFavorite(type, id, title);
         const btn = document.getElementById(btnId);
         if (btn) {
-            btn.innerHTML = added ? "★ ${I18n.translate("label.quitar")} Favorito" : "☆ ${I18n.translate("action.save_favorite")}";
+            btn.innerHTML = added
+                ? `★ ${I18n.translate("action.remove_favorite")}`
+                : `☆ ${I18n.translate("action.save_favorite")}`;
         }
     },
 
@@ -1128,7 +1129,7 @@ const Router = {
             </div>
 
             <div class="safety-banner" role="alert">
-                <strong>Aviso de seguridad clínica:</strong> Los protocolos estructurados son herramientas didácticas y complementarias. No sustituyen la valoración clínica del paciente, la reanimación ni el juicio médico oportuno.
+                ${I18n.translate("safety.notice")}
             </div>
 
             <div style="margin-bottom: 1.5rem;">
@@ -1141,20 +1142,30 @@ const Router = {
         `;
 
         data.protocols.forEach(proto => {
+            const protoName = I18n.localize({ es: proto.name_es, en: proto.name_en });
+            const purposeLoc = I18n.localize(proto.purpose);
+            const contextLoc = I18n.localize(proto.clinical_context);
+            const targetLoc = I18n.localize(proto.target_population);
+            const compNames = proto.components.map(c => I18n.localize({ es: c.name_es, en: c.name_en })).join(", ");
+            const purposeLabel = I18n.translate("label.clinical_purpose_label");
+            const contextLabel = I18n.translate("label.clinical_context");
+            const targetLabel = I18n.translate("label.target_population");
+            const compLabel = I18n.translate("label.components");
+
             html += `
                 <details class="content-accordion protocol-accordion card clinical-card">
                     <summary class="content-accordion-summary">
                         <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
-                            <span class="content-accordion-title">${escapeHTML(proto.name_es)}</span>
+                            <span class="content-accordion-title">${escapeHTML(protoName)}</span>
                             <span class="unit-badge">${escapeHTML(proto.acronym)}</span>
                         </div>
                         <span class="content-accordion-arrow"></span>
                     </summary>
                     <div class="content-accordion-body">
-                        <p><strong>Propósito:</strong> ${escapeHTML(proto.purpose)}</p>
-                        <p><strong>Contexto clínico:</strong> ${escapeHTML(proto.clinical_context)}</p>
-                        <p><strong>Población objetivo:</strong> ${escapeHTML(proto.target_population)}</p>
-                        <p><strong>Componentes:</strong> ${proto.components.map(c => escapeHTML(c.name_es)).join(", ")}</p>
+                        <p><strong>${escapeHTML(purposeLabel)}:</strong> ${escapeHTML(purposeLoc)}</p>
+                        <p><strong>${escapeHTML(contextLabel)}:</strong> ${escapeHTML(contextLoc)}</p>
+                        <p><strong>${escapeHTML(targetLabel)}:</strong> ${escapeHTML(targetLoc)}</p>
+                        <p><strong>${escapeHTML(compLabel)}:</strong> ${escapeHTML(compNames)}</p>
                         <div class="card-actions">
                             <a href="#/protocolos/${proto.id}" class="btn-card-action">${I18n.translate("label.detalles")}</a>
                         </div>
@@ -1213,34 +1224,41 @@ const Router = {
         steps.push({
             type: "start",
             title: Router.uiStrings.startStep,
-            name: protocol.name_es,
+            name: I18n.localize({ es: protocol.name_es, en: protocol.name_en }),
             acronym: protocol.acronym,
-            purpose: protocol.purpose,
-            clinical_context: protocol.clinical_context,
-            target_population: protocol.target_population,
-            sequence_note: protocol.sequence_note
+            purpose: I18n.localize(protocol.purpose),
+            clinical_context: I18n.localize(protocol.clinical_context),
+            target_population: I18n.localize(protocol.target_population),
+            sequence_note: I18n.localize(protocol.sequence_note)
         });
 
         protocol.components.forEach(comp => {
             steps.push({
                 type: "component",
-                title: comp.name_es,
-                component: comp
+                title: I18n.localize({ es: comp.name_es, en: comp.name_en }),
+                component: {
+                    ...comp,
+                    clinical_questions: (comp.clinical_questions || []).map(q => I18n.localize(q)),
+                    targets: (comp.targets || []).map(t => I18n.localize(t)),
+                    suggested_views: (comp.suggested_views || []).map(v => I18n.localize(v)),
+                    possible_findings: (comp.possible_findings || []).map(f => I18n.localize(f)),
+                    interpretation_limits: I18n.localize(comp.interpretation_limits)
+                }
             });
         });
 
         steps.push({
             type: "integration",
             title: Router.uiStrings.integrationStep,
-            integration: protocol.integration
+            integration: I18n.localize(protocol.integration)
         });
 
         steps.push({
             type: "summary",
             title: Router.uiStrings.summaryStep,
-            limitations: protocol.limitations,
-            safety_and_workflow_notes: protocol.safety_and_workflow_notes,
-            components_names: protocol.components.map(c => c.name_es)
+            limitations: I18n.localize(protocol.limitations),
+            safety_and_workflow_notes: I18n.localize(protocol.safety_and_workflow_notes),
+            components_names: protocol.components.map(c => I18n.localize({ es: c.name_es, en: c.name_en }))
         });
 
         return steps;
@@ -1248,6 +1266,16 @@ const Router = {
 
     // DETALLE DE PROTOCOLO
     async renderProtocolDetail(container, id) {
+        const escapeHTML = (str) => {
+            if (!str) return "";
+            return str.toString()
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        };
+
         let data = null;
         let windows = [];
         let measurements = [];
@@ -1278,23 +1306,14 @@ const Router = {
             return;
         }
 
-        const escapeHTML = (str) => {
-            if (!str) return "";
-            return str.toString()
-                .replace(/&/g, "&amp;")
-                .replace(/</g, "&lt;")
-                .replace(/>/g, "&gt;")
-                .replace(/"/g, "&quot;")
-                .replace(/'/g, "&#039;");
-        };
-
         const resolveWindowLink = (wId) => {
             const w = windows.find(item => item.id === wId);
             if (!w) {
                 console.warn(`Ventana no resuelta: ${wId}`);
                 return `<span class="element-not-available" style="color: var(--text-muted-light); font-style: italic;">${escapeHTML(wId)} (${escapeHTML(Router.uiStrings.itemNotAvailable)})</span>`;
             }
-            return `<a href="#/ventanas/${wId}" class="clinical-link" style="color: var(--primary-medium); font-weight: 600; text-decoration: underline;">${escapeHTML(w.window)} (${escapeHTML(w.abbreviation)})</a>`;
+            const windowAbbreviation = I18n.localize(w.abbreviation) || I18n.localize(w.window);
+            return `<a href="#/ventanas/${wId}" class="clinical-link" style="color: var(--primary-medium); font-weight: 600; text-decoration: underline;">${escapeHTML(I18n.localize(w.window))} (${escapeHTML(windowAbbreviation)})</a>`;
         };
 
         const resolveMeasurementLink = (mId) => {
@@ -1303,8 +1322,8 @@ const Router = {
                 console.warn(`Medición no resuelta: ${mId}`);
                 return `<span class="element-not-available" style="color: var(--text-muted-light); font-style: italic;">${escapeHTML(mId)} (${escapeHTML(Router.uiStrings.itemNotAvailable)})</span>`;
             }
-            const abbr = m.abbreviation || m.measurement;
-            return `<a href="#/medicion/${mId}" class="clinical-link" style="color: var(--primary-medium); font-weight: 600; text-decoration: underline;">${escapeHTML(m.measurement)} (${escapeHTML(abbr)})</a>`;
+            const abbr = I18n.localize(m.abbreviation) || I18n.localize(m.measurement);
+            return `<a href="#/medicion/${mId}" class="clinical-link" style="color: var(--primary-medium); font-weight: 600; text-decoration: underline;">${escapeHTML(I18n.localize(m.measurement))} (${escapeHTML(abbr)})</a>`;
         };
 
         const steps = this.buildProtocolGuideSteps(proto);
@@ -1316,24 +1335,27 @@ const Router = {
         const protoMediaHTML = MediaViewer.renderMediaSection(protoMedia);
 
         // Construir advertencias esenciales siempre visibles
+        const protoName = I18n.localize({ es: proto.name_es, en: proto.name_en });
+        const altName = I18n.localize({ es: proto.name_en, en: proto.name_es });
+
         let html = `
             <div class="navigation-header">
                 <a href="#/protocolos" class="btn-back">← ${escapeHTML(Router.uiStrings.clinicalReturnToListBtn)}</a>
-                <h2>${escapeHTML(proto.name_es)} (${escapeHTML(proto.acronym)})</h2>
+                <h2>${escapeHTML(protoName)} (${escapeHTML(proto.acronym)})</h2>
             </div>
 
             <div class="protocol-detail">
                 <div class="protocol-safety-banner card" style="border-left: 4px solid #d97706; background: rgba(217, 119, 6, 0.05); padding: 0.75rem;">
                     <p style="margin: 0 0 0.5rem 0; font-size: 0.95rem; font-weight: bold; color: #d97706;">${escapeHTML(Router.uiStrings.clinicalWarningsTitle)}</p>
                     <ul style="margin: 0; padding-left: 1.25rem; font-size: 0.9rem; line-height: 1.4;">
-                        <li><strong>${escapeHTML(Router.uiStrings.clinicalPurposeLabel)}:</strong> ${escapeHTML(data.educational_disclaimer)}</li>
-                        <li><strong>${escapeHTML(Router.uiStrings.clinicalIntegrationLabel)}:</strong> ${escapeHTML(proto.integration)}</li>
-                        <li><strong>${escapeHTML(Router.uiStrings.clinicalSafetyLabel)}:</strong> ${escapeHTML(proto.safety_and_workflow_notes)}</li>
+                        <li><strong>${escapeHTML(Router.uiStrings.clinicalPurposeLabel)}:</strong> ${escapeHTML(I18n.localize(data.educational_disclaimer))}</li>
+                        <li><strong>${escapeHTML(Router.uiStrings.clinicalIntegrationLabel)}:</strong> ${escapeHTML(I18n.localize(proto.integration))}</li>
+                        <li><strong>${escapeHTML(Router.uiStrings.clinicalSafetyLabel)}:</strong> ${escapeHTML(I18n.localize(proto.safety_and_workflow_notes))}</li>
                     </ul>
                 </div>
 
                 <div class="protocol-tabs">
-                    <div role="tablist" aria-label="Secciones del protocolo" class="protocol-tab-list" style="display: flex; gap: 0.5rem; margin-bottom: 1rem; border-bottom: 2px solid var(--border-light); overflow-x: auto; padding-bottom: 0.25rem;">
+                    <div role="tablist" aria-label="${escapeHTML(I18n.translate("label.protocol_sections"))}" class="protocol-tab-list" style="display: flex; gap: 0.5rem; margin-bottom: 1rem; border-bottom: 2px solid var(--border-light); overflow-x: auto; padding-bottom: 0.25rem;">
                         <button type="button" role="tab" aria-selected="true" aria-controls="protocol-guide-panel" id="protocol-guide-tab" tabindex="0" class="protocol-tab-button" data-protocol-tab="guide" style="padding: 0.5rem 1rem; border: none; background: none; font-weight: bold; cursor: pointer; border-bottom: 2px solid transparent;">
                             ${escapeHTML(Router.uiStrings.guideTab)}
                         </button>
@@ -1361,7 +1383,7 @@ const Router = {
                             <!-- Step Indicators / Markers -->
                             <div class="protocol-step-markers" style="display: flex; gap: 0.25rem; justify-content: center; flex-wrap: wrap;">
                                 ${steps.map((step, idx) => `
-                                    <button class="protocol-step-marker" data-step="${idx}" aria-label="Ir al paso ${idx + 1}: ${escapeHTML(step.title)}" style="width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border-light); background: var(--bg-light); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: bold;">
+                                    <button class="protocol-step-marker" data-step="${idx}" aria-label="${escapeHTML(I18n.translate("label.go_to_step", { step: idx + 1, title: step.title }))}" style="width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border-light); background: var(--bg-light); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: bold;">
                                         ${idx + 1}
                                     </button>
                                 `).join("")}
@@ -1371,15 +1393,18 @@ const Router = {
                             <div class="protocol-step-cards">
                                 ${steps.map((step, idx) => {
                                     if (step.type === "start") {
+                                        const contextLabel = I18n.translate("label.clinical_context") + ":";
+                                        const targetLabel = I18n.translate("label.target_population") + ":";
+                                        const sequenceLabel = I18n.translate("label.acquisition_sequence") + ":";
                                         return `
                                             <div class="protocol-step-card card" data-step="${idx}" ${idx === 0 ? "" : "hidden"}>
                                                 <h3 class="protocol-step-title" style="margin-top: 0;">${escapeHTML(step.name)} (${escapeHTML(step.acronym)})</h3>
-                                                <p style="font-style: italic; color: var(--text-muted-light);">${escapeHTML(proto.name_en)}</p>
+                                                <p style="font-style: italic; color: var(--text-muted-light);">${escapeHTML(altName)}</p>
                                                 <p><strong>${escapeHTML(Router.uiStrings.clinicalPurposeLabel)}:</strong> ${escapeHTML(step.purpose)}</p>
-                                                <p><strong>Contexto clínico:</strong> ${escapeHTML(step.clinical_context)}</p>
-                                                <p><strong>Población objetivo:</strong> ${escapeHTML(step.target_population)}</p>
+                                                <p><strong>${escapeHTML(contextLabel)}</strong> ${escapeHTML(step.clinical_context)}</p>
+                                                <p><strong>${escapeHTML(targetLabel)}</strong> ${escapeHTML(step.target_population)}</p>
                                                 <div style="margin-top: 0.5rem; padding: 0.5rem; background: rgba(0,0,0,0.02); border-left: 3px solid var(--primary-medium);">
-                                                    <strong>Secuencia de adquisición:</strong> ${escapeHTML(step.sequence_note)}
+                                                    <strong>${escapeHTML(sequenceLabel)}</strong> ${escapeHTML(step.sequence_note)}
                                                 </div>
                                             </div>
                                         `;
@@ -1395,11 +1420,12 @@ const Router = {
 
                                         const compMedia = MediaViewer.getMediaForEntity(mediaResources, 'component', comp.id);
                                         const compMediaHTML = MediaViewer.renderMediaSection(compMedia);
+                                        const componentHeader = I18n.translate("label.component_with_name", { name: I18n.localize({ es: comp.name_es, en: comp.name_en }) });
 
                                         return `
                                             <div class="protocol-step-card card" data-step="${idx}" hidden>
-                                                <h3 class="protocol-step-title" style="margin-top: 0;">Componente: ${escapeHTML(comp.name_es)}</h3>
-                                                <p style="font-style: italic; color: var(--text-muted-light); font-size: 0.9rem;">${escapeHTML(comp.name_en)}</p>
+                                                <h3 class="protocol-step-title" style="margin-top: 0;">${escapeHTML(componentHeader)}</h3>
+                                                <p style="font-style: italic; color: var(--text-muted-light); font-size: 0.9rem;">${escapeHTML(I18n.localize({ es: comp.name_en, en: comp.name_es }))}</p>
 
                                                 <div style="margin-top: 0.5rem;">
                                                     <strong>${escapeHTML(Router.uiStrings.clinicalQuestionsLabel)}:</strong>
@@ -1445,7 +1471,7 @@ const Router = {
                                                 <h3 class="protocol-step-title" style="margin-top: 0;">${escapeHTML(Router.uiStrings.integrationStep)}</h3>
                                                 <p>${escapeHTML(step.integration)}</p>
                                                 <div style="margin-top: 1rem; padding: 0.75rem; border-left: 4px solid #d97706; background: rgba(217, 119, 6, 0.05); font-size: 0.9rem;">
-                                                    <strong>Recordatorio:</strong> Siempre integre los hallazgos con el contexto clínico del paciente.
+                                                    <strong>${escapeHTML(I18n.translate("label.reminder"))}:</strong> ${escapeHTML(I18n.translate("label.reminder_text"))}
                                                 </div>
                                             </div>
                                         `;
@@ -1490,14 +1516,14 @@ const Router = {
                         <div class="protocol-full-content content-accordion-grid">
                             <details class="content-accordion card clinical-card">
                                 <summary class="content-accordion-summary">
-                                    <span class="content-accordion-title">Propósito y contexto</span>
+                                    <span class="content-accordion-title">${escapeHTML(I18n.translate("label.purpose_and_context"))}</span>
                                     <span class="content-accordion-arrow"></span>
                                 </summary>
                                 <div class="content-accordion-body">
-                                    <p class="subtitle-en" style="font-style: italic; color: var(--text-muted-light);">${escapeHTML(proto.name_en)}</p>
-                                    <p><strong>${escapeHTML(Router.uiStrings.clinicalPurposeLabel)}:</strong> ${escapeHTML(proto.purpose)}</p>
-                                    <p><strong>Contexto clínico:</strong> ${escapeHTML(proto.clinical_context)}</p>
-                                    <p><strong>Población objetivo:</strong> ${escapeHTML(proto.target_population)}</p>
+                                    <p class="subtitle-en" style="font-style: italic; color: var(--text-muted-light);">${escapeHTML(altName)}</p>
+                                    <p><strong>${escapeHTML(Router.uiStrings.clinicalPurposeLabel)}:</strong> ${escapeHTML(I18n.localize(proto.purpose))}</p>
+                                    <p><strong>${escapeHTML(I18n.translate("label.clinical_context"))}:</strong> ${escapeHTML(I18n.localize(proto.clinical_context))}</p>
+                                    <p><strong>${escapeHTML(I18n.translate("label.target_population"))}:</strong> ${escapeHTML(I18n.localize(proto.target_population))}</p>
                                 </div>
                             </details>
 
@@ -1507,7 +1533,7 @@ const Router = {
                                     <span class="content-accordion-arrow"></span>
                                 </summary>
                                 <div class="content-accordion-body">
-                                    <p>${escapeHTML(proto.sequence_note)}</p>
+                                    <p>${escapeHTML(I18n.localize(proto.sequence_note))}</p>
                                 </div>
                             </details>
 
@@ -1520,30 +1546,34 @@ const Router = {
                                     ? comp.linked_measurement_ids.map(mId => resolveMeasurementLink(mId)).join(", ")
                                     : escapeHTML(Router.uiStrings.noLinkedItems);
 
+                                const componentLabel = I18n.translate("label.component_with_name", { name: "" }).replace(" :", "").replace(":", "").trim();
+                                const compName = I18n.localize({ es: comp.name_es, en: comp.name_en });
+                                const altCompName = I18n.localize({ es: comp.name_en, en: comp.name_es });
+
                                 return `
                                     <details class="content-accordion card clinical-card">
                                         <summary class="content-accordion-summary">
-                                            <span class="content-accordion-title">Componente: ${escapeHTML(comp.name_es)}</span>
+                                            <span class="content-accordion-title">${escapeHTML(componentLabel)} ${escapeHTML(compName)}</span>
                                             <span class="content-accordion-arrow"></span>
                                         </summary>
                                         <div class="content-accordion-body">
-                                            <p style="font-style: italic; color: var(--text-muted-light);">${escapeHTML(comp.name_en)}</p>
+                                            <p style="font-style: italic; color: var(--text-muted-light);">${escapeHTML(altCompName)}</p>
 
                                             <div style="margin-top: 0.5rem;">
                                                 <strong>${escapeHTML(Router.uiStrings.clinicalQuestionsLabel)}:</strong>
                                                 <ul style="margin: 0.25rem 0; padding-left: 1.25rem;">
-                                                    ${comp.clinical_questions.map(q => `<li>${escapeHTML(q)}</li>`).join("")}
+                                                    ${(comp.clinical_questions || []).map(q => `<li>${escapeHTML(I18n.localize(q))}</li>`).join("")}
                                                 </ul>
                                             </div>
 
                                             <div style="margin-top: 0.5rem;">
                                                 <strong>${escapeHTML(Router.uiStrings.clinicalTargetsLabel)}:</strong>
                                                 <ul style="margin: 0.25rem 0; padding-left: 1.25rem;">
-                                                    ${comp.targets.map(t => `<li>${escapeHTML(t)}</li>`).join("")}
+                                                    ${(comp.targets || []).map(t => `<li>${escapeHTML(I18n.localize(t))}</li>`).join("")}
                                                 </ul>
                                             </div>
 
-                                            <p><strong>${escapeHTML(Router.uiStrings.clinicalViewsLabel)}:</strong> ${comp.suggested_views.map(v => escapeHTML(v)).join(", ")}</p>
+                                            <p><strong>${escapeHTML(Router.uiStrings.clinicalViewsLabel)}:</strong> ${(comp.suggested_views || []).map(v => escapeHTML(I18n.localize(v))).join(", ")}</p>
 
                                             <div class="protocol-linked-items" style="margin: 0.75rem 0; padding: 0.75rem; background: rgba(0,0,0,0.02); border-radius: 6px; border: 1px solid var(--border-light);">
                                                 <p style="margin: 0 0 0.5rem 0;"><strong>${escapeHTML(Router.uiStrings.clinicalWindowLabel)}:</strong> ${linkedWindowsHTML}</p>
@@ -1553,12 +1583,12 @@ const Router = {
                                             <div style="margin-top: 0.5rem;">
                                                 <strong>${escapeHTML(Router.uiStrings.clinicalFindingsLabel)}:</strong>
                                                 <ul style="margin: 0.25rem 0; padding-left: 1.25rem;">
-                                                    ${comp.possible_findings.map(f => `<li>${escapeHTML(f)}</li>`).join("")}
+                                                    ${(comp.possible_findings || []).map(f => `<li>${escapeHTML(I18n.localize(f))}</li>`).join("")}
                                                 </ul>
                                             </div>
 
                                             <p style="margin-top: 0.5rem; padding: 0.5rem; border-left: 3px solid var(--primary-medium); font-size: 0.95rem; font-style: italic;">
-                                                <strong>${escapeHTML(Router.uiStrings.clinicalLimitsLabel)}:</strong> ${escapeHTML(comp.interpretation_limits)}
+                                                <strong>${escapeHTML(Router.uiStrings.clinicalLimitsLabel)}:</strong> ${escapeHTML(I18n.localize(comp.interpretation_limits))}
                                             </p>
                                         </div>
                                     </details>
@@ -1571,7 +1601,7 @@ const Router = {
                                     <span class="content-accordion-arrow"></span>
                                 </summary>
                                 <div class="content-accordion-body">
-                                    <p>${escapeHTML(proto.integration)}</p>
+                                    <p>${escapeHTML(I18n.localize(proto.integration))}</p>
                                 </div>
                             </details>
 
@@ -1581,7 +1611,7 @@ const Router = {
                                     <span class="content-accordion-arrow"></span>
                                 </summary>
                                 <div class="content-accordion-body">
-                                    <p>${escapeHTML(proto.limitations)}</p>
+                                    <p>${escapeHTML(I18n.localize(proto.limitations))}</p>
                                 </div>
                             </details>
 
@@ -1591,7 +1621,7 @@ const Router = {
                                     <span class="content-accordion-arrow"></span>
                                 </summary>
                                 <div class="content-accordion-body">
-                                    <p>${escapeHTML(proto.safety_and_workflow_notes)}</p>
+                                    <p>${escapeHTML(I18n.localize(proto.safety_and_workflow_notes))}</p>
                                 </div>
                             </details>
                             ${protoMediaHTML ? `

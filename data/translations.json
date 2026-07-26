@@ -535,6 +535,42 @@
       "es": "Volver a Protocolos",
       "en": "Back to Protocols"
     },
+    "label.protocol_sections": {
+      "es": "Secciones del protocolo",
+      "en": "Protocol sections"
+    },
+    "label.go_to_step": {
+      "es": "Ir al paso {step}: {title}",
+      "en": "Go to step {step}: {title}"
+    },
+    "label.clinical_context": {
+      "es": "Contexto clínico",
+      "en": "Clinical context"
+    },
+    "label.target_population": {
+      "es": "Población objetivo",
+      "en": "Target population"
+    },
+    "label.acquisition_sequence": {
+      "es": "Secuencia de adquisición",
+      "en": "Acquisition sequence"
+    },
+    "label.component_with_name": {
+      "es": "Componente: {name}",
+      "en": "Component: {name}"
+    },
+    "label.reminder": {
+      "es": "Recordatorio",
+      "en": "Reminder"
+    },
+    "label.reminder_text": {
+      "es": "Siempre integre los hallazgos con el contexto clínico del paciente.",
+      "en": "Always integrate findings with the patient's clinical context."
+    },
+    "label.purpose_and_context": {
+      "es": "Propósito y contexto",
+      "en": "Purpose and context"
+    },
     "label.copiar_def": {
       "es": "Copiar Definición",
       "en": "Copy Definition"

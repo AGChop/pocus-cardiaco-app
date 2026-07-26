@@ -141,13 +141,20 @@ const Search = {
                     item.purpose || "",
                     item.clinical_context || "",
                     item.target_population || "",
+                    item.sequence_note || "",
+                    item.integration || "",
+                    item.limitations || "",
+                    item.safety_and_workflow_notes || "",
                     Array.isArray(item.components) ? item.components.map(c => [
                         c.name_es || "",
                         c.name_en || "",
-                        (c.clinical_questions || []).join(" "),
-                        (c.targets || []).join(" ")
-                    ].join(" ")).join(" ") : ""
-                ].join(" ");
+                        c.clinical_questions || [],
+                        c.targets || [],
+                        c.suggested_views || [],
+                        c.possible_findings || [],
+                        c.interpretation_limits || ""
+                    ]) : []
+                ];
             }
 
             // Función auxiliar interna para ver si hay coincidencia exacta o parcial en campos bilingües/strings/arrays
