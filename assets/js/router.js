@@ -817,23 +817,6 @@ const Router = {
 
     // LISTA DE VENTANAS ECOCARDIOGRÁFICAS
     async renderWindowsList(container) {
-        let windows = [];
-        try {
-            windows = await DataLoader.getWindows();
-            if (!windows || windows.length === 0) {
-                throw new Error("No se encontraron ventanas o el archivo está vacío.");
-            }
-        } catch (error) {
-            container.innerHTML = `
-                <div class="card error-card">
-                    <h2>Error al cargar las ventanas</h2>
-                    <p>Lo sentimos, no pudimos cargar la lista de ventanas ecocardiográficas. Por favor, intente nuevamente más tarde.</p>
-                    <a href="#/" class="btn-primary">${I18n.translate("error.go_home")}</a>
-                </div>
-            `;
-            return;
-        }
-
         const escapeHTML = (str) => {
             if (!str) return "";
             return str.toString()
@@ -844,11 +827,27 @@ const Router = {
                 .replace(/'/g, "&#039;");
         };
 
-        const isEs = I18n.getLanguage() === "es";
+        let windows = [];
+        try {
+            windows = await DataLoader.getWindows();
+            if (!windows || windows.length === 0) {
+                throw new Error("No se encontraron ventanas o el archivo está vacío.");
+            }
+        } catch (error) {
+            container.innerHTML = `
+                <div class="card error-card">
+                    <h2>${escapeHTML(I18n.translate("error.windows_load_title"))}</h2>
+                    <p>${escapeHTML(I18n.translate("error.windows_load_text"))}</p>
+                    <a href="#/" class="btn-primary">${I18n.translate("error.go_home")}</a>
+                </div>
+            `;
+            return;
+        }
+
         let html = `
             <div class="navigation-header">
                 <a href="#/" class="btn-back">← ${I18n.translate("nav.home")}</a>
-                <h2>${isEs ? "Ventanas Ecocardiográficas" : "Echocardiographic Windows"}</h2>
+                <h2>${escapeHTML(I18n.translate("nav.windows"))}</h2>
             </div>
 
             <div class="content-accordion-grid cards-list">
@@ -892,6 +891,16 @@ const Router = {
 
     // DETALLE DE VENTANA ECOCARDIOGRÁFICA
     async renderWindowDetail(container, id) {
+        const escapeHTML = (str) => {
+            if (!str) return "";
+            return str.toString()
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        };
+
         let windows = [];
         let measurements = [];
         let mediaResources = [];
@@ -902,9 +911,9 @@ const Router = {
         } catch (error) {
             container.innerHTML = `
                 <div class="card error-card">
-                    <h2>Error al cargar la información</h2>
-                    <p>No se pudo cargar la información de la ventana ecocardiográfica.</p>
-                    <a href="#/ventanas" class="btn-primary">Volver a Ventanas</a>
+                    <h2>${escapeHTML(I18n.translate("error.window_detail_load_title"))}</h2>
+                    <p>${escapeHTML(I18n.translate("error.window_detail_load_text"))}</p>
+                    <a href="#/ventanas" class="btn-primary">${escapeHTML(I18n.translate("nav.back_to_windows"))}</a>
                 </div>
             `;
             return;
@@ -918,16 +927,6 @@ const Router = {
 
         const relatedMedia = MediaViewer.getMediaForEntity(mediaResources, 'window', item.id);
         const mediaHTML = MediaViewer.renderMediaSection(relatedMedia);
-
-        const escapeHTML = (str) => {
-            if (!str) return "";
-            return str.toString()
-                .replace(/&/g, "&amp;")
-                .replace(/</g, "&lt;")
-                .replace(/>/g, "&gt;")
-                .replace(/"/g, "&quot;")
-                .replace(/'/g, "&#039;");
-        };
 
         const collectTextVariants = (value) => {
             if (value === null || value === undefined) return [];
@@ -1094,6 +1093,16 @@ const Router = {
 
     // LISTADO DE PROTOCOLOS
     async renderProtocolsList(container) {
+        const escapeHTML = (str) => {
+            if (!str) return "";
+            return str.toString()
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        };
+
         let data = null;
         try {
             data = await DataLoader.fetchResource("protocols");
@@ -1104,23 +1113,13 @@ const Router = {
             console.error("Error al cargar protocolos:", error);
             container.innerHTML = `
                 <div class="card error-card">
-                    <h2>Error al cargar los protocolos</h2>
-                    <p>Lo sentimos, no pudimos cargar la lista de protocolos POCUS. Por favor, intente nuevamente más tarde.</p>
+                    <h2>${escapeHTML(I18n.translate("error.protocols_load_title"))}</h2>
+                    <p>${escapeHTML(I18n.translate("error.protocols_load_text"))}</p>
                     <a href="#/" class="btn-primary">${I18n.translate("error.go_home")}</a>
                 </div>
             `;
             return;
         }
-
-        const escapeHTML = (str) => {
-            if (!str) return "";
-            return str.toString()
-                .replace(/&/g, "&amp;")
-                .replace(/</g, "&lt;")
-                .replace(/>/g, "&gt;")
-                .replace(/"/g, "&quot;")
-                .replace(/'/g, "&#039;");
-        };
 
         let html = `
             <div class="navigation-header">
@@ -1479,7 +1478,7 @@ const Router = {
                                         return `
                                             <div class="protocol-step-card card" data-step="${idx}" hidden>
                                                 <h3 class="protocol-step-title" style="margin-top: 0;">${escapeHTML(Router.uiStrings.summaryStep)}</h3>
-                                                <p>Ha completado la guía de componentes: <strong>${step.components_names.map(name => escapeHTML(name)).join(", ")}</strong>.</p>
+                                                <p>${escapeHTML(I18n.translate("label.protocol_guide_completed"))}: <strong>${step.components_names.map(name => escapeHTML(name)).join(", ")}</strong>.</p>
 
                                                 <div style="margin-top: 0.5rem;">
                                                     <strong>${escapeHTML(Router.uiStrings.clinicalGeneralLimitsTitle)}:</strong>
@@ -1882,7 +1881,7 @@ const Router = {
         let html = `
             <div class="navigation-header">
                 <a href="#/" class="btn-back">← ${I18n.translate("nav.home")}</a>
-                <h2>Lista de ${I18n.translate("label.abbreviation")}</h2>
+                <h2>${escapeHTML(I18n.translate("label.abbreviations_list_title"))}</h2>
             </div>
 
             <table class="clinical-table">
@@ -1927,11 +1926,10 @@ const Router = {
                 .replace(/'/g, "&#039;");
         };
 
-        const isEs = I18n.getLanguage() === "es";
         let html = `
             <div class="navigation-header">
                 <a href="#/" class="btn-back">← ${I18n.translate("nav.home")}</a>
-                <h2>${isEs ? "Clasificaciones Prácticas" : "Practical Classifications"}</h2>
+                <h2>${escapeHTML(I18n.translate("label.practical_classifications"))}</h2>
             </div>
         `;
 
@@ -1939,7 +1937,7 @@ const Router = {
             const nameLoc = I18n.localize(c.name);
             const noteLoc = I18n.localize(c.note);
             const col1Header = c.items[0].range ? I18n.translate("label.rango") : I18n.translate("label.parameter");
-            const col2Header = c.items[0].category ? I18n.translate("label.classification") : (isEs ? "Punto de corte" : "Cutoff point");
+            const col2Header = c.items[0].category ? I18n.translate("label.classification") : I18n.translate("label.cutoff_point");
 
             html += `
                 <div class="card" style="margin-bottom: 1.5rem; padding: 1.5rem; background-color: var(--card-bg-light); border: 1px solid var(--border-light); border-radius: 12px;">
@@ -1971,7 +1969,7 @@ const Router = {
             html += `
                         </tbody>
                     </table>
-                    ${noteLoc ? `<p style="font-size: 0.85rem; color: var(--text-muted-light); margin-top: 0.5rem;"><strong>${isEs ? "Nota" : "Note"}:</strong> ${escapeHTML(noteLoc)}</p>` : ""}
+                    ${noteLoc ? `<p style="font-size: 0.85rem; color: var(--text-muted-light); margin-top: 0.5rem;"><strong>${escapeHTML(I18n.translate("label.note"))}:</strong> ${escapeHTML(noteLoc)}</p>` : ""}
                     <div style="font-size: 0.8rem; color: var(--text-muted-light); text-align: right; margin-top: 0.25rem;">${I18n.translate("label.origen")}: ${c.source_page}</div>
                 </div>
             `;
@@ -2373,12 +2371,22 @@ const Router = {
 
     // REFERENCIAS PRINCIPALES
     async renderReferences(container) {
+        const escapeHTML = (str) => {
+            if (!str) return "";
+            return str.toString()
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        };
+
         const refs = await DataLoader.getReferences() || [];
 
         let html = `
             <div class="navigation-header">
                 <a href="#/" class="btn-back">← ${I18n.translate("nav.home")}</a>
-                <h2>${I18n.translate("label.clinical_references_title")}</h2>
+                <h2>${escapeHTML(I18n.translate("label.clinical_references_title"))}</h2>
             </div>
 
             <div style="background-color: var(--card-bg-light); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border-light); display: flex; flex-direction: column; gap: 1rem;">
@@ -2387,15 +2395,15 @@ const Router = {
         refs.forEach(r => {
             html += `
                 <div style="border-bottom: 1px solid var(--border-light); padding-bottom: 0.75rem; font-size: 0.9rem;">
-                    <p style="margin-bottom: 0.25rem;">${r.citation}</p>
-                    <span style="font-size: 0.75rem; color: var(--text-muted-light);">Citado en Página ${r.source_page} del PDF.</span>
+                    <p style="margin-bottom: 0.25rem;">${escapeHTML(r.citation)}</p>
+                    <span style="font-size: 0.75rem; color: var(--text-muted-light);">${escapeHTML(I18n.translate("label.cited_on_pdf_page", { page: r.source_page }))}</span>
                 </div>
             `;
         });
 
         html += `
                 <p style="font-size: 0.8rem; color: var(--text-muted-light); font-style: italic; margin-top: 1rem;">
-                    <strong>Nota editorial:</strong> Los valores de referencia pueden variar entre guías, laboratorios, equipos y poblaciones. Para decisiones clínicas definitivas debe consultarse la publicación primaria y el protocolo institucional vigente.
+                    <strong>${escapeHTML(I18n.translate("label.editorial_note"))}:</strong> ${escapeHTML(I18n.translate("label.editorial_note_text"))}
                 </p>
             </div>
         `;
@@ -2432,6 +2440,16 @@ const Router = {
     },
 
     async renderQuizFlow(container, id) {
+        const escapeHTML = (str) => {
+            if (!str) return "";
+            return str.toString()
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        };
+
         let decodedId = "";
         try {
             decodedId = decodeURIComponent(id || "");
@@ -2459,13 +2477,13 @@ const Router = {
         if (!quiz || quiz.review_status !== "approved" || !QuizEngine.validateQuizDefinition(quiz)) {
             container.innerHTML = `
                 <div class="navigation-header">
-                    <a href="#/cuestionarios" class="btn-back">← Volver a Cuestionarios</a>
-                    <h2>Cuestionario no disponible</h2>
+                    <a href="#/cuestionarios" class="btn-back">← ${escapeHTML(I18n.translate("nav.back_to_quizzes"))}</a>
+                    <h2>${escapeHTML(I18n.translate("error.quiz_unavailable_title"))}</h2>
                 </div>
                 <div class="card error-card">
-                    <h3>Cuestionario no disponible</h3>
-                    <p>El cuestionario solicitado no está disponible o su formato no es válido.</p>
-                    <a href="#/cuestionarios" class="btn-primary" style="display: inline-block; margin-top: 1rem; text-decoration: none;">Volver a la lista</a>
+                    <h3>${escapeHTML(I18n.translate("error.quiz_unavailable_title"))}</h3>
+                    <p>${escapeHTML(I18n.translate("error.quiz_unavailable_text"))}</p>
+                    <a href="#/cuestionarios" class="btn-primary" style="display: inline-block; margin-top: 1rem; text-decoration: none;">${escapeHTML(I18n.translate("nav.back_to_list"))}</a>
                 </div>
             `;
             return;

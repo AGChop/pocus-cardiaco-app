@@ -674,6 +674,82 @@
     "label.pwa_note_text": {
       "es": "Después de abrir la aplicación por primera vez con conexión a Internet, todos los datos médicos clínicos quedarán almacenados de manera segura en la memoria de tu dispositivo. Podrás consultarla sin conexión de red en cualquier momento.",
       "en": "After opening the app for the first time with an Internet connection, all clinical medical data will be securely stored in your device's memory. You can consult it offline at any time."
+    },
+    "error.windows_load_title": {
+      "es": "Error al cargar las ventanas",
+      "en": "Error loading echocardiographic windows"
+    },
+    "error.windows_load_text": {
+      "es": "Lo sentimos, no pudimos cargar la lista de ventanas ecocardiográficas. Por favor, intente nuevamente más tarde.",
+      "en": "Sorry, we could not load the list of echocardiographic windows. Please try again later."
+    },
+    "error.window_detail_load_title": {
+      "es": "Error al cargar la información",
+      "en": "Error loading information"
+    },
+    "error.window_detail_load_text": {
+      "es": "No se pudo cargar la información de la ventana ecocardiográfica.",
+      "en": "The echocardiographic window information could not be loaded."
+    },
+    "nav.back_to_windows": {
+      "es": "Volver a Ventanas",
+      "en": "Back to Windows"
+    },
+    "error.protocols_load_title": {
+      "es": "Error al cargar los protocolos",
+      "en": "Error loading protocols"
+    },
+    "error.protocols_load_text": {
+      "es": "Lo sentimos, no pudimos cargar la lista de protocolos POCUS. Por favor, intente nuevamente más tarde.",
+      "en": "Sorry, we could not load the POCUS protocol list. Please try again later."
+    },
+    "label.protocol_guide_completed": {
+      "es": "Ha completado la guía de componentes",
+      "en": "You have completed the component guide"
+    },
+    "label.abbreviations_list_title": {
+      "es": "Lista de abreviaturas",
+      "en": "Abbreviations"
+    },
+    "label.practical_classifications": {
+      "es": "Clasificaciones Prácticas",
+      "en": "Practical Classifications"
+    },
+    "label.cutoff_point": {
+      "es": "Punto de corte",
+      "en": "Cutoff value"
+    },
+    "label.note": {
+      "es": "Nota",
+      "en": "Note"
+    },
+    "label.cited_on_pdf_page": {
+      "es": "Citado en Página {page} del PDF.",
+      "en": "Cited on page {page} of the PDF."
+    },
+    "label.editorial_note": {
+      "es": "Nota editorial",
+      "en": "Editorial note"
+    },
+    "label.editorial_note_text": {
+      "es": "Los valores de referencia pueden variar entre guías, laboratorios, equipos y poblaciones. Para decisiones clínicas definitivas debe consultarse la publicación primaria y el protocolo institucional vigente.",
+      "en": "Reference values may vary among guidelines, laboratories, equipment, and populations. For definitive clinical decisions, the primary publication and the current institutional protocol should be consulted."
+    },
+    "nav.back_to_quizzes": {
+      "es": "Volver a Cuestionarios",
+      "en": "Back to Quizzes"
+    },
+    "error.quiz_unavailable_title": {
+      "es": "Cuestionario no disponible",
+      "en": "Quiz unavailable"
+    },
+    "error.quiz_unavailable_text": {
+      "es": "El cuestionario solicitado no está disponible o su formato no es válido.",
+      "en": "The requested quiz is unavailable or its format is invalid."
+    },
+    "nav.back_to_list": {
+      "es": "Volver a la lista",
+      "en": "Back to the list"
     }
   }
 }
