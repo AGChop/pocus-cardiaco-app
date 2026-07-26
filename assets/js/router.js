@@ -1983,6 +1983,19 @@ const Router = {
     // CONJUNTO MÍNIMO POCUS
     async renderMinimumSet(container) {
         const minSet = await DataLoader.getMinimumPocusSet() || [];
+        const escapeHTML = (str) => {
+            if (!str) return "";
+            return str.toString()
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        };
+
+        const descText = I18n.translate("label.minimum_set_desc");
+        const principleLabel = I18n.translate("label.integration_principle");
+        const principleText = I18n.translate("label.integration_principle_text");
 
         let html = `
             <div class="navigation-header">
@@ -1992,15 +2005,16 @@ const Router = {
 
             <div style="background-color: var(--card-bg-light); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border-light);">
                 <p style="margin-bottom: 1rem; font-size: 0.95rem; color: var(--text-muted-light);">
-                    Habilidades y destrezas ecográficas básicas que el operador POCUS debe dominar para una evaluación cardiaca inicial completa.
+                    ${escapeHTML(descText)}
                 </p>
                 <ol style="padding-left: 1.25rem; display: flex; flex-direction: column; gap: 0.75rem;">
         `;
 
         minSet.forEach(item => {
+            const skillLoc = I18n.localize(item.skill);
             html += `
                 <li style="font-size: 0.95rem;">
-                    <strong>${item.skill}</strong>
+                    <strong>${escapeHTML(skillLoc)}</strong>
                     <span style="font-size: 0.8rem; color: var(--text-muted-light); margin-left: 0.5rem;">(P. ${item.source_page})</span>
                 </li>
             `;
@@ -2009,7 +2023,7 @@ const Router = {
         html += `
                 </ol>
                 <div class="safety-banner" style="margin-top: 1.5rem;">
-                    <strong>Principio de integración:</strong> La función diastólica, la función del VD, la hipertensión pulmonar, la severidad valvular y el taponamiento no deben definirse mediante una sola medición aislada.
+                    <strong>${escapeHTML(principleLabel)}:</strong> ${escapeHTML(principleText)}
                 </div>
             </div>
         `;

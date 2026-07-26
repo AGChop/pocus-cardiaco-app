@@ -1,5 +1,5 @@
 // Service Worker de POCUS Cardíaco para soporte sin conexión (Offline)
-const CACHE_NAME = 'pocus-cardiaco-cache-v17-c3d1-brand1';
+const CACHE_NAME = 'pocus-cardiaco-cache-v17-c3d1-brand1-e1a';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',

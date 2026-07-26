@@ -279,6 +279,18 @@
       "es": "Conjunto Mínimo POCUS",
       "en": "Minimum POCUS Set"
     },
+    "label.minimum_set_desc": {
+      "es": "Habilidades y destrezas ecográficas básicas que el operador POCUS debe dominar para una evaluación cardiaca inicial completa.",
+      "en": "Basic ultrasound skills and competencies that the POCUS operator should master for a complete initial cardiac assessment."
+    },
+    "label.integration_principle": {
+      "es": "Principio de integración",
+      "en": "Integration principle"
+    },
+    "label.integration_principle_text": {
+      "es": "La función diastólica, la función del VD, la hipertensión pulmonar, la severidad valvular y el taponamiento no deben definirse mediante una sola medición aislada.",
+      "en": "Diastolic function, RV function, pulmonary hypertension, valvular severity, and tamponade should not be defined by a single isolated measurement."
+    },
     "label.unit_warnings": {
       "es": "Unidades y Errores Comunes",
       "en": "Units and Common Errors"
