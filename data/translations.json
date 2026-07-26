@@ -4,12 +4,12 @@
   "supported_languages": ["es", "en"],
   "translations": {
     "app.document_title": {
-      "es": "POCUS Cardíaco - Glosario y Mediciones",
-      "en": "Cardiac POCUS - Glossary and Measurements"
+      "es": "LOCUS POCUS - Glosario y Mediciones",
+      "en": "LOCUS POCUS - Glossary and Measurements"
     },
     "app.name": {
-      "es": "POCUS Cardíaco",
-      "en": "Cardiac POCUS"
+      "es": "LOCUS POCUS",
+      "en": "LOCUS POCUS"
     },
     "language.selector_label": {
       "es": "Seleccionar idioma",
@@ -156,8 +156,8 @@
       "en": "Go to Home"
     },
     "footer.version": {
-      "es": "© 2026 POCUS Cardíaco. Versión Inicial Mínima.",
-      "en": "© 2026 Cardiac POCUS. Initial Minimum Version."
+      "es": "© 2026 LOCUS POCUS. Versión Inicial Mínima.",
+      "en": "© 2026 LOCUS POCUS. Initial Minimum Version."
     },
     "footer.developed_by": {
       "es": "Desarrollado por Medicina Interna del HSRA - Dr. García R.",
@@ -240,8 +240,8 @@
       "en": "Protocol"
     },
     "label.about_title": {
-      "es": "Acerca de POCUS Cardíaco",
-      "en": "About Cardiac POCUS"
+      "es": "Acerca de LOCUS POCUS",
+      "en": "About LOCUS POCUS"
     },
     "label.about_text": {
       "es": "Esta aplicación es una guía de referencia rápida para ecocardiografía POCUS en adultos. Su objetivo es netamente educativo y formativo para residentes y médicos en formación. Todos los datos clínicos y rangos de referencia están alineados con las guías vigentes de la ASE (American Society of Echocardiography).",
@@ -648,8 +648,8 @@
       "en": "Scroll down the menu and select the <strong>\"Add to Home Screen\"</strong> option."
     },
     "label.inst_iphone_step4": {
-      "es": "Confirma el nombre de la aplicación (<strong>POCUS Cardíaco</strong>) y toca <strong>\"Agregar\"</strong> en la esquina superior derecha.",
-      "en": "Confirm the name of the app (<strong>Cardiac POCUS</strong>) and tap <strong>\"Add\"</strong> in the upper right corner."
+      "es": "Confirma el nombre de la aplicación (<strong>LOCUS POCUS</strong>) y toca <strong>\"Agregar\"</strong> en la esquina superior derecha.",
+      "en": "Confirm the name of the app (<strong>LOCUS POCUS</strong>) and tap <strong>\"Add\"</strong> in the upper right corner."
     },
     "label.inst_iphone_step5": {
       "es": "Busca el icono de la aplicación en tu pantalla de inicio y ábrela.",

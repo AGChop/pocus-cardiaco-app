@@ -2388,7 +2388,6 @@ const Router = {
         container.innerHTML = html;
     },
 
-    // ACERCA DE
     renderAbout(container) {
         container.innerHTML = `
             <div class="navigation-header">
@@ -2397,7 +2396,7 @@ const Router = {
             </div>
 
             <div style="background-color: var(--card-bg-light); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border-light); display: flex; flex-direction: column; gap: 1rem; font-size: 0.95rem;">
-                <p><strong>POCUS Cardíaco</strong> es una aplicación web y PWA educativa, diseñada exclusivamente como una herramienta de consulta rápida y banco de mediciones.</p>
+                <p><strong>${I18n.translate("app.name")}</strong> es una aplicación web y PWA educativa, diseñada exclusivamente como una herramienta de consulta rápida y banco de mediciones.</p>
                 <p>Tiene como objetivo apoyar en la formación de médicos generales, residentes de especialidades médicas (Medicina Interna, Anestesiología, Urgencias, Cuidado Crítico) y estudiantes durante la adquisición de competencias en ultrasonido clínico enfocado en el punto de atención (POCUS).</p>
                 <p>Esta aplicación fue desarrollada y revisada por médicos internistas del <strong>Hospital San Rafael de Alajuela (HSRA)</strong> para el curso de POCUS del <strong>Posgrado de Medicina Interna de la Universidad de Costa Rica (UCR)</strong>.</p>
                 <p>Toda la información médica está compilada de manera estricta del documento fuente oficial <em>Mediciones POCUS Cardiaco Adultos - Glosario</em> revisado en Julio de 2026, sin alteraciones de los rangos o unidades.</p>
