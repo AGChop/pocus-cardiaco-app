@@ -2411,17 +2411,27 @@ const Router = {
     },
 
     renderAbout(container) {
+        const escapeHTML = (str) => {
+            if (!str) return "";
+            return str.toString()
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        };
+
         container.innerHTML = `
             <div class="navigation-header">
                 <a href="#/" class="btn-back">← ${I18n.translate("nav.home")}</a>
-                <h2>${I18n.translate("label.about_title")}</h2>
+                <h2>${escapeHTML(I18n.translate("label.about_title"))}</h2>
             </div>
 
             <div style="background-color: var(--card-bg-light); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border-light); display: flex; flex-direction: column; gap: 1rem; font-size: 0.95rem;">
-                <p><strong>${I18n.translate("app.name")}</strong> es una aplicación web y PWA educativa, diseñada exclusivamente como una herramienta de consulta rápida y banco de mediciones.</p>
-                <p>Tiene como objetivo apoyar en la formación de médicos generales, residentes de especialidades médicas (Medicina Interna, Anestesiología, Urgencias, Cuidado Crítico) y estudiantes durante la adquisición de competencias en ultrasonido clínico enfocado en el punto de atención (POCUS).</p>
-                <p>Esta aplicación fue desarrollada y revisada por médicos internistas del <strong>Hospital San Rafael de Alajuela (HSRA)</strong> para el curso de POCUS del <strong>Posgrado de Medicina Interna de la Universidad de Costa Rica (UCR)</strong>.</p>
-                <p>Toda la información médica está compilada de manera estricta del documento fuente oficial <em>Mediciones POCUS Cardiaco Adultos - Glosario</em> revisado en Julio de 2026, sin alteraciones de los rangos o unidades.</p>
+                <p><strong>${escapeHTML(I18n.translate("app.name"))}</strong> ${escapeHTML(I18n.translate("label.about_app_description"))}</p>
+                <p>${escapeHTML(I18n.translate("label.about_training_objective"))}</p>
+                <p>${escapeHTML(I18n.translate("label.about_development_prefix"))} <strong>Hospital San Rafael de Alajuela (HSRA)</strong> ${escapeHTML(I18n.translate("label.about_development_course"))} <strong>${escapeHTML(I18n.translate("label.about_internal_medicine_program"))}</strong>.</p>
+                <p>${escapeHTML(I18n.translate("label.about_source_prefix"))} <em>Mediciones POCUS Cardiaco Adultos - Glosario</em> ${escapeHTML(I18n.translate("label.about_source_suffix"))}</p>
             </div>
         `;
     },

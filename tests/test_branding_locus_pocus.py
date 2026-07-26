@@ -101,7 +101,8 @@ def test_router_locus_pocus():
         content = f.read()
 
     # Uses App name localization in renderAbout
-    assert '${I18n.translate("app.name")}</strong> es una aplicación' in content
+    assert '<strong>${escapeHTML(I18n.translate("app.name"))}</strong>' in content
+    assert 'I18n.translate("label.about_app_description")' in content
     assert "<strong>POCUS Cardíaco</strong>" not in content
     # Source document intact
     assert "Mediciones POCUS Cardiaco Adultos - Glosario" in content

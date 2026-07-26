@@ -180,12 +180,19 @@ def test_router_visible_messages_e1b():
     assert "nav.back_to_list" in bodies["renderQuizFlow"]
     assert "Volver a Cuestionarios" not in bodies["renderQuizFlow"]
     
-    # renderAbout paragraphs MUST remain intact in Spanish
+    # renderAbout paragraphs MUST be localized (updated for E1C)
     assert bodies["renderAbout"] is not None
-    assert "es una aplicación web y PWA educativa, diseñada exclusivamente como una herramienta de consulta rápida y banco de mediciones." in bodies["renderAbout"]
-    assert "Tiene como objetivo apoyar en la formación de médicos generales" in bodies["renderAbout"]
-    assert "Esta aplicación fue desarrollada y revisada por médicos internistas" in bodies["renderAbout"]
-    assert "Toda la información médica está compilada de manera estricta del documento fuente oficial" in bodies["renderAbout"]
+    assert 'I18n.translate("app.name")' in bodies["renderAbout"]
+    assert 'I18n.translate("label.about_title")' in bodies["renderAbout"]
+    assert 'I18n.translate("label.about_app_description")' in bodies["renderAbout"]
+    assert 'I18n.translate("label.about_training_objective")' in bodies["renderAbout"]
+    assert 'I18n.translate("label.about_development_prefix")' in bodies["renderAbout"]
+    assert 'I18n.translate("label.about_source_prefix")' in bodies["renderAbout"]
+
+    assert "es una aplicación web y PWA educativa, diseñada exclusivamente como una herramienta de consulta rápida y banco de mediciones." not in bodies["renderAbout"]
+    assert "Tiene como objetivo apoyar en la formación de médicos generales" not in bodies["renderAbout"]
+    assert "Esta aplicación fue desarrollada y revisada por médicos internistas" not in bodies["renderAbout"]
+    assert "Toda la información médica está compilada de manera estricta del documento fuente oficial" not in bodies["renderAbout"]
     assert "Acerca de" in content or "label.about_title" in content
 
 

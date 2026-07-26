@@ -750,6 +750,34 @@
     "nav.back_to_list": {
       "es": "Volver a la lista",
       "en": "Back to the list"
+    },
+    "label.about_app_description": {
+      "es": "es una aplicación web y PWA educativa, diseñada exclusivamente como una herramienta de consulta rápida y banco de mediciones.",
+      "en": "is an educational web application and PWA designed exclusively as a quick-reference tool and measurement database."
+    },
+    "label.about_training_objective": {
+      "es": "Tiene como objetivo apoyar en la formación de médicos generales, residentes de especialidades médicas (Medicina Interna, Anestesiología, Urgencias, Cuidado Crítico) y estudiantes durante la adquisición de competencias en ultrasonido clínico enfocado en el punto de atención (POCUS).",
+      "en": "Its purpose is to support the training of general physicians, residents in medical specialties (Internal Medicine, Anesthesiology, Emergency Medicine, and Critical Care), and students as they develop competencies in focused point-of-care ultrasound (POCUS)."
+    },
+    "label.about_development_prefix": {
+      "es": "Esta aplicación fue desarrollada y revisada por médicos internistas del",
+      "en": "This application was developed and reviewed by internal medicine physicians at"
+    },
+    "label.about_development_course": {
+      "es": "para el curso de POCUS del",
+      "en": "for the POCUS course in the"
+    },
+    "label.about_internal_medicine_program": {
+      "es": "Posgrado de Medicina Interna de la Universidad de Costa Rica (UCR)",
+      "en": "Internal Medicine Residency Program at the University of Costa Rica (UCR)"
+    },
+    "label.about_source_prefix": {
+      "es": "Toda la información médica está compilada de manera estricta del documento fuente oficial",
+      "en": "All medical information has been compiled strictly from the official source document"
+    },
+    "label.about_source_suffix": {
+      "es": "revisado en Julio de 2026, sin alteraciones de los rangos o unidades.",
+      "en": "revised in July 2026, without altering any ranges or units."
     }
   }
 }
