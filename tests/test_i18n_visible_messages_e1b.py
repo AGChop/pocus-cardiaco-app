@@ -8,9 +8,9 @@ def test_new_translation_keys_e1b():
     assert os.path.exists(path)
     with open(path, "r", encoding="utf-8") as f:
         data = json.load(f)
-    
+
     translations = data.get("translations", {})
-    
+
     new_keys = {
         "error.windows_load_title": {
             "es": "Error al cargar las vistas",
@@ -89,9 +89,9 @@ def test_new_translation_keys_e1b():
             "en": "Back to the list"
         }
     }
-    
+
     assert len(new_keys) == 19
-    
+
     for key, val in new_keys.items():
         assert key in translations, f"Missing translation key: {key}"
         assert translations[key]["es"] == val["es"]
@@ -123,9 +123,9 @@ def test_router_visible_messages_e1b():
         "renderQuizFlow",
         "renderAbout"
     ]
-    
+
     bodies = {f: get_function_body(content, f) for f in render_funcs}
-    
+
     # renderWindowsList
     assert bodies["renderWindowsList"] is not None
     assert "error.windows_load_title" in bodies["renderWindowsList"]
@@ -133,36 +133,36 @@ def test_router_visible_messages_e1b():
     assert "nav.windows" in bodies["renderWindowsList"]
     assert "isEs" not in bodies["renderWindowsList"]
     assert "Ventanas Ecocardiográficas" not in bodies["renderWindowsList"]
-    
+
     # renderWindowDetail
     assert bodies["renderWindowDetail"] is not None
     assert "error.window_detail_load_title" in bodies["renderWindowDetail"]
     assert "error.window_detail_load_text" in bodies["renderWindowDetail"]
     assert "nav.back_to_windows" in bodies["renderWindowDetail"]
-    
+
     # renderProtocolsList
     assert bodies["renderProtocolsList"] is not None
     assert "error.protocols_load_title" in bodies["renderProtocolsList"]
     assert "error.protocols_load_text" in bodies["renderProtocolsList"]
-    
+
     # RUSH guide completion in renderProtocolDetail
     proto_detail_body = get_function_body(content, "renderProtocolDetail")
     assert proto_detail_body is not None
     assert "label.protocol_guide_completed" in proto_detail_body
     assert "Ha completado la guía de componentes:" not in proto_detail_body
-    
+
     # renderAbbreviations
     assert bodies["renderAbbreviations"] is not None
     assert "label.abbreviations_list_title" in bodies["renderAbbreviations"]
     assert "Lista de " not in bodies["renderAbbreviations"]
-    
+
     # renderClassifications
     assert bodies["renderClassifications"] is not None
     assert "label.practical_classifications" in bodies["renderClassifications"]
     assert "label.cutoff_point" in bodies["renderClassifications"]
     assert "label.note" in bodies["renderClassifications"]
     assert "isEs" not in bodies["renderClassifications"]
-    
+
     # renderReferences
     assert bodies["renderReferences"] is not None
     assert "label.cited_on_pdf_page" in bodies["renderReferences"]
@@ -171,7 +171,7 @@ def test_router_visible_messages_e1b():
     assert "Citado en Página" not in bodies["renderReferences"]
     assert "Nota editorial" not in bodies["renderReferences"]
     assert "${escapeHTML(r.citation)}" in bodies["renderReferences"]
-    
+
     # renderQuizFlow
     assert bodies["renderQuizFlow"] is not None
     assert "nav.back_to_quizzes" in bodies["renderQuizFlow"]
@@ -179,7 +179,7 @@ def test_router_visible_messages_e1b():
     assert "error.quiz_unavailable_text" in bodies["renderQuizFlow"]
     assert "nav.back_to_list" in bodies["renderQuizFlow"]
     assert "Volver a Cuestionarios" not in bodies["renderQuizFlow"]
-    
+
     # renderAbout paragraphs MUST be localized (updated for E1C)
     assert bodies["renderAbout"] is not None
     assert 'I18n.translate("app.name")' in bodies["renderAbout"]
@@ -224,7 +224,7 @@ def test_cache_and_precache_e1b():
     assert os.path.exists(path)
     with open(path, "r", encoding="utf-8") as f:
         content = f.read()
-        
+
     assert "pocus-cardiaco-cache-v17-c3d1-brand1-e1a-e1b" in content
     assert "./assets/js/router.js" in content
     assert "./data/translations.json" in content
@@ -240,19 +240,19 @@ def test_clinical_data_protection_e1b():
     for item in min_set:
         assert "es" in item["skill"]
         assert "en" in item["skill"]
-        
+
     with open("data/measurements.json", "r", encoding="utf-8") as f:
         measurements = json.load(f)
     assert len(measurements) == 101
     for m in measurements:
         assert "es" in m["measurement"]
         assert "en" in m["measurement"]
-        
+
     with open("data/protocols.json", "r", encoding="utf-8") as f:
         protocols = json.load(f)["protocols"]
     assert len(protocols) == 1
     assert protocols[0]["id"] == "rush"
-    
+
     with open("data/translations.json", "r", encoding="utf-8") as f:
         translations = json.load(f)["translations"]
     assert translations["app.name"]["es"] == "LOCUS POCUS"

@@ -9,7 +9,7 @@ def test_left_atrium_measurements_structure_and_count():
         data = json.load(f)
     assert isinstance(data, list)
     assert len(data) == 101
-    
+
     ids = [m["id"] for m in data]
     assert len(ids) == len(set(ids))
 

@@ -153,4 +153,3 @@ def test_service_worker_cache_revision_e1a():
     assert "locus-pocus-icon-192.png" in content
     # Verify cache-first behavior is still present
     assert "caches.match" in content
-

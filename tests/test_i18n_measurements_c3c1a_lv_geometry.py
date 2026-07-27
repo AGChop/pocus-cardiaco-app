@@ -10,7 +10,7 @@ def test_measurements_structure_and_count():
     assert isinstance(data, list)
     # 2. Sigue teniendo exactamente 101 registros
     assert len(data) == 101
-    
+
     # 3. Todos los IDs globales siguen siendo únicos
     ids = [m["id"] for m in data]
     assert len(ids) == len(set(ids))
@@ -34,7 +34,7 @@ def test_migrated_items_details():
         "lv_mass_index": 5,
         "geometria_vi_meas": 6
     }
-    
+
     expected_related = {
         "ivsd": ["ivsd_term", "plax"],
         "pwtd": ["pwtd_term", "plax"],

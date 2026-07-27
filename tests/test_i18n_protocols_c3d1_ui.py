@@ -53,7 +53,7 @@ def run_js_in_chrome(js_payload):
                 stack: e.error ? e.error.stack : null
             };
             window.__harnessErrors.push(errInfo);
-            
+
             document.getElementById("results").textContent = JSON.stringify({
                 success: false,
                 error: "Global error: " + e.message,
@@ -331,11 +331,11 @@ def test_d1a_unmodified():
 def test_ui_localization_and_elements_headless():
     payload = """
     const container = document.getElementById("app");
-    
+
     // Resolve dynamic values from actual catalogs
     const windows = await DataLoader.getWindows();
     const plaxObj = windows.find(w => w.id === "plax");
-    
+
     const measurements = await DataLoader.getMeasurements();
     const feviObj = measurements.find(m => m.id === "fevi");
 
@@ -349,7 +349,7 @@ def test_ui_localization_and_elements_headless():
     const feviNameES = I18n.localize(feviObj.measurement, "es");
     const plaxAbbreviationES = I18n.localize(plaxObj.abbreviation, "es");
     const feviAbbreviationES = I18n.localize(feviObj.abbreviation, "es");
-    
+
     const hasWindowES = htmlES.includes(plaxNameES) && htmlES.includes(plaxAbbreviationES);
     const hasMeasurementES = htmlES.includes(feviNameES) && htmlES.includes(feviAbbreviationES);
 
@@ -404,7 +404,7 @@ def test_ui_localization_and_elements_headless():
     res = run_js_in_chrome(payload)
     assert res["success"]
     data = res["data"]
-    
+
     assert data["hasWindowES"], "Window link was not resolved or localized in Spanish"
     assert data["hasMeasurementES"], "Measurement link was not resolved or localized in Spanish"
     assert data["hasClinicalContextLabelES"], "Clinical context label was not found in Spanish"
@@ -432,7 +432,7 @@ def test_search_localization_and_indexing_headless():
     I18n.setLanguage("es");
     const resultsES = await Search.searchGlobal("La Bomba");
     const resultsDeepES = await Search.searchGlobal("tuberías");
-    
+
     // English search
     I18n.setLanguage("en");
     const resultsEN = await Search.searchGlobal("The Pump");
@@ -447,7 +447,7 @@ def test_search_localization_and_indexing_headless():
     // Localize result items
     I18n.setLanguage("es");
     const nameES = I18n.localize({ es: resultsES[0].item.name_es, en: resultsES[0].item.name_en });
-    
+
     I18n.setLanguage("en");
     const nameEN = I18n.localize({ es: resultsEN[0].item.name_es, en: resultsEN[0].item.name_en });
 

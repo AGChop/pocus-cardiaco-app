@@ -13,9 +13,9 @@ def test_new_translation_keys_e1c():
     assert os.path.exists(path)
     with open(path, "r", encoding="utf-8") as f:
         data = json.load(f)
-    
+
     translations = data.get("translations", {})
-    
+
     new_keys = {
         "label.about_app_description": {
             "es": "es una aplicación web y PWA educativa, diseñada exclusivamente como una herramienta de consulta rápida y banco de mediciones.",
@@ -46,9 +46,9 @@ def test_new_translation_keys_e1c():
             "en": "revised in July 2026, without altering any ranges or units."
         }
     }
-    
+
     assert len(new_keys) == 7
-    
+
     for key, val in new_keys.items():
         assert key in translations, f"Missing translation key: {key}"
         assert translations[key]["es"] == val["es"]
@@ -62,13 +62,13 @@ def test_router_render_about_e1c():
     assert os.path.exists(path)
     with open(path, "r", encoding="utf-8") as f:
         content = f.read()
-        
+
     body = get_function_body(content, "renderAbout")
     assert body is not None, "Function renderAbout body not found"
-    
+
     # 1. escapeHTML defined locally
     assert "const escapeHTML =" in body
-    
+
     # 2. Uses all 7 keys
     keys = [
         "label.about_app_description",
@@ -81,22 +81,22 @@ def test_router_render_about_e1c():
     ]
     for key in keys:
         assert key in body
-        
+
     # 3. Uses I18n.translate("app.name")
     assert 'I18n.translate("app.name")' in body
-    
+
     # 4. Uses I18n.translate("label.about_title")
     assert 'I18n.translate("label.about_title")' in body
-    
+
     # 5. Escapes the translated text
     assert 'escapeHTML(I18n.translate("label.about_title"))' in body
-    
+
     # 6. Checks tags structure
     assert '<strong>${escapeHTML(I18n.translate("app.name"))}</strong>' in body
     assert '<strong>Hospital San Rafael de Alajuela (HSRA)</strong>' in body
     assert '<strong>${escapeHTML(I18n.translate("label.about_internal_medicine_program"))}</strong>' in body
     assert '<em>Mediciones POCUS Cardiaco Adultos - Glosario</em>' in body
-    
+
     # 7. No raw Spanish paragraphs pre-existing in router.js
     removed_phrases = [
         "es una aplicación web y PWA educativa, diseñada exclusivamente como una herramienta de consulta rápida y banco de mediciones.",
@@ -106,7 +106,7 @@ def test_router_render_about_e1c():
     ]
     for phrase in removed_phrases:
         assert phrase not in body
-        
+
     # 8. No manual language switch ternaries in renderAbout
     assert "I18n.getLanguage()" not in body
 
@@ -115,10 +115,10 @@ def test_clinical_brand_and_terms_preservation_e1c():
     path = "assets/js/router.js"
     with open(path, "r", encoding="utf-8") as f:
         content = f.read()
-        
+
     body = get_function_body(content, "renderAbout")
     assert body is not None
-    
+
     # Exact invariant strings in renderAbout HTML
     assert "Hospital San Rafael de Alajuela (HSRA)" in body
     assert "Mediciones POCUS Cardiaco Adultos - Glosario" in body
@@ -141,7 +141,7 @@ def test_cache_config_e1c():
     assert os.path.exists(path)
     with open(path, "r", encoding="utf-8") as f:
         content = f.read()
-        
+
     assert "pocus-cardiaco-cache-v17-c3d1-brand1-e1a-e1b-e1c" in content
     assert "./assets/js/router.js" in content
     assert "./data/translations.json" in content
@@ -152,20 +152,20 @@ def test_protection_minset_measurements_e1c():
     with open("data/minimum_pocus_set.json", "r", encoding="utf-8") as f:
         min_set = json.load(f)
     assert len(min_set) == 10
-    
+
     with open("data/measurements.json", "r", encoding="utf-8") as f:
         measurements = json.load(f)
     assert len(measurements) == 101
-    
+
     with open("data/protocols.json", "r", encoding="utf-8") as f:
         protocols = json.load(f)["protocols"]
     assert len(protocols) == 1
     assert protocols[0]["id"] == "rush"
-    
+
     # E1B Keys Verification
     with open("data/translations.json", "r", encoding="utf-8") as f:
         translations = json.load(f)["translations"]
-        
+
     assert translations["label.cutoff_point"]["es"] == "Punto de corte"
     assert translations["label.cutoff_point"]["en"] == "Cutoff value"
     assert translations["label.abbreviations_list_title"]["es"] == "Lista de abreviaturas"

@@ -88,7 +88,7 @@ def test_compiled_data_structure(protocols_final, protocols_draft, protocols_i18
         assert isinstance(comp["interpretation_limits"], dict)
         assert "es" in comp["interpretation_limits"]
         assert "en" in comp["interpretation_limits"]
-        
+
         for lf in ["clinical_questions", "targets", "suggested_views", "possible_findings"]:
             lst = comp[lf]
             assert isinstance(lst, list)
@@ -120,7 +120,7 @@ def test_compiled_data_structure(protocols_final, protocols_draft, protocols_i18
     assert protocols_final["metadata"]["scope"]["en"] == protocols_i18n["metadata"]["scope"]
     assert protocols_final["metadata"]["intended_audience"]["en"] == protocols_i18n["metadata"]["intended_audience"]
     assert protocols_final["metadata"]["disclaimer"]["en"] == protocols_i18n["metadata"]["disclaimer"]
-    
+
     assert proto["clinical_context"]["en"] == i18n_rush["clinical_context"]
     assert proto["purpose"]["en"] == i18n_rush["purpose"]
     assert proto["target_population"]["en"] == i18n_rush["target_population"]

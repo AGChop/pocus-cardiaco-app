@@ -10,7 +10,7 @@ def test_pulmonary_hemodynamics_measurements_structure_and_count():
     assert isinstance(data, list)
     # The count should remain exactly 101 records
     assert len(data) == 101
-    
+
     ids = [m["id"] for m in data]
     assert len(ids) == len(set(ids))
 

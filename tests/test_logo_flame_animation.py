@@ -16,7 +16,7 @@ def test_ui1_html_accessible_logo():
 
     # Main logo image
     assert 'src="assets/images/locus_pocus_branding.png"' in content
-    
+
     # Flame overlay image
     assert 'src="assets/images/locus_pocus_flame_overlay.png"' in content
 
@@ -65,7 +65,7 @@ def test_ui1_css_styles():
                 sx, sy = scale_vals
                 assert sx <= 1.02, f"Scale X {sx} exceeds 1.02 limit"
                 assert sy <= 1.06, f"Scale Y {sy} exceeds 1.06 limit"
-        
+
         # TranslateY limit (val <= 0.8%)
         translate_match = re.search(r'translateY\(([^)]+)\)', t)
         if translate_match:

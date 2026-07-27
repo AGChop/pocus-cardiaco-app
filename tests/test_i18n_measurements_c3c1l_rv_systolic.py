@@ -8,10 +8,10 @@ def test_rv_systolic_measurements_structure_and_count():
     with open(path, "r", encoding="utf-8") as f:
         data = json.load(f)
     assert isinstance(data, list)
-    
+
     # 1. Que data/measurements.json contiene exactamente 101 registros.
     assert len(data) == 101
-    
+
     # 4. Que no existen IDs duplicados.
     ids = [m["id"] for m in data]
     assert len(ids) == len(set(ids))

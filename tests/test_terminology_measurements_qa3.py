@@ -166,7 +166,7 @@ def test_qa3_exact_english_values():
         # 4. Comprobar que en aliases.en no haya duplicados
         actual_aliases = m_map[m_id]["aliases"]["en"]
         assert len(actual_aliases) == len(set(actual_aliases)), f"Duplicate alias found for {m_id}"
-        
+
         # Verify that all expected aliases exist in the actual aliases list
         for alias in expected_alias_list:
             assert alias in actual_aliases, f"Alias {alias} not found in {m_id}"
