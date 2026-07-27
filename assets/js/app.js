@@ -15,6 +15,25 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     console.log("Aplicación POCUS Cardíaco inicializada correctamente.");
+
+    // Configurar la animación de la llama en el logotipo (UI1)
+    const headerLogoLink = document.querySelector(".header-logo a");
+    const logoStage = document.querySelector(".brand-logo-stage");
+    if (headerLogoLink && logoStage) {
+        headerLogoLink.addEventListener("click", () => {
+            if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+                return;
+            }
+            logoStage.classList.remove("is-flame-animating");
+            // Forzar reflow para reiniciar la animación
+            void logoStage.offsetWidth;
+            logoStage.classList.add("is-flame-animating");
+        });
+
+        logoStage.addEventListener("animationend", () => {
+            logoStage.classList.remove("is-flame-animating");
+        });
+    }
     
     // Iniciar la ruta actual al cargar la aplicación
     if (typeof Router !== "undefined") {

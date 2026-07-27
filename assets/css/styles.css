@@ -1294,3 +1294,55 @@ body.dark-mode .protocol-step-marker:hover {
 .quiz-status {
     box-shadow: 0 2px 4px rgba(0,0,0,0.02);
 }
+
+/* --- LOGO FLAME ANIMATION (UI1) --- */
+.brand-logo-flame-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    opacity: 0;
+    transform-origin: 50% 35%;
+}
+
+.dark-mode .brand-logo-flame-layer {
+    filter: invert(0.9) hue-rotate(180deg) brightness(1.1) contrast(1.1);
+}
+
+.is-flame-animating .brand-logo-flame-layer {
+    animation: flame-flicker 520ms ease-in-out 1;
+    opacity: 1;
+}
+
+@keyframes flame-flicker {
+    0% {
+        transform: scale(1) translateY(0) rotate(0deg);
+    }
+    25% {
+        transform: scale(1.02, 1.05) translateY(-0.8%) rotate(-0.5deg);
+    }
+    50% {
+        transform: scale(0.98, 1.03) translateY(-0.4%) rotate(0.4deg);
+    }
+    75% {
+        transform: scale(1.01, 1.06) translateY(-0.6%) rotate(-0.3deg);
+    }
+    100% {
+        transform: scale(1) translateY(0) rotate(0deg);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .brand-logo-flame-layer {
+        animation: none !important;
+        transform: none !important;
+        opacity: 0 !important;
+    }
+    .is-flame-animating .brand-logo-flame-layer {
+        animation: none !important;
+        transform: none !important;
+        opacity: 0 !important;
+    }
+}
