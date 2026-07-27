@@ -122,7 +122,7 @@ def test_aortic_valve_translations_exact():
     # 1. velocidad_max_aortica
     vmax = next(m for m in data if m["id"] == "velocidad_max_aortica")
     assert vmax["measurement"]["es"] == "Velocidad máxima aórtica"
-    assert vmax["measurement"]["en"] == "Peak aortic velocity"
+    assert vmax["measurement"]["en"] == "Peak aortic jet velocity"
     assert "<2,0 m/s." == vmax["normal_values"]["es"]
     assert "<2.0 m/s." == vmax["normal_values"]["en"]
 

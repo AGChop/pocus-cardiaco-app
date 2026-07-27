@@ -143,11 +143,11 @@ def test_lv_systolic_translations_exact():
     # 1. dtdvi
     dtdvi = next(m for m in data if m["id"] == "dtdvi")
     assert dtdvi["measurement"]["es"] == "DTDVI / LVIDd"
-    assert dtdvi["measurement"]["en"] == "LV end-diastolic diameter / LVIDd"
+    assert dtdvi["measurement"]["en"] == "LV internal dimension at end-diastole (LVIDd)"
     assert dtdvi["abbreviation"]["es"] == "DTDVI"
     assert dtdvi["abbreviation"]["en"] == "LVIDd"
     assert dtdvi["aliases"]["es"] == ["LVIDd", "Diámetro telediastólico del ventrículo izquierdo", "Diámetro interno del ventrículo izquierdo en diástole"]
-    assert dtdvi["aliases"]["en"] == ["LVIDd", "Left ventricular end-diastolic diameter", "Left ventricular internal diameter in diastole"]
+    assert dtdvi["aliases"]["en"] == ["LVIDd", "Left ventricular internal diameter at end-diastole", "LV internal dimension at end-diastole"]
     assert dtdvi["formula_or_method"]["es"] == "PLAX, perpendicular al eje largo, al final de la diástole."
     assert dtdvi["formula_or_method"]["en"] == "PLAX, perpendicular to the long axis, at end-diastole."
     assert dtdvi["normal_values"]["es"] == "Hombres 42-58 mm; mujeres 38-52 mm."
@@ -170,11 +170,11 @@ def test_lv_systolic_translations_exact():
     # 6. vtsvi_indexed
     vtsvi_idx = next(m for m in data if m["id"] == "vtsvi_indexed")
     assert vtsvi_idx["measurement"]["es"] == "VTSVI indexado"
-    assert vtsvi_idx["measurement"]["en"] == "Indexed LVESV"
+    assert vtsvi_idx["measurement"]["en"] == "LV end-systolic volume index"
     assert vtsvi_idx["abbreviation"]["es"] == "VTSVI indexado"
     assert vtsvi_idx["abbreviation"]["en"] == "LVESVi"
     assert vtsvi_idx["aliases"]["es"] == ["VTSVI indexado", "Volumen telesistólico indexado del VI", "LVESVI"]
-    assert vtsvi_idx["aliases"]["en"] == ["Indexed LVESV", "Indexed left ventricular end-systolic volume", "LVESVI"]
+    assert vtsvi_idx["aliases"]["en"] == ["LV end-systolic volume index", "Indexed left ventricular end-systolic volume", "LVESVi"]
     assert vtsvi_idx["formula_or_method"]["es"] == "VTSVI / superficie corporal."
     assert vtsvi_idx["formula_or_method"]["en"] == "LVESV / body surface area."
     assert vtsvi_idx["normal_values"]["es"] == "Hombres 11-31 mL/m²; mujeres 8-24 mL/m²."

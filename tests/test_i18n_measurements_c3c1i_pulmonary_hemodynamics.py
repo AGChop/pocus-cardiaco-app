@@ -177,9 +177,9 @@ def test_pulmonary_hemodynamics_translations_exact():
     # 5. rvp_ecografica
     rvp = next(m for m in data if m["id"] == "rvp_ecografica")
     assert rvp["measurement"]["es"] == "RVP ecográfica"
-    assert rvp["measurement"]["en"] == "Echocardiographic PVR"
+    assert rvp["measurement"]["en"] == "Echocardiographic estimate of pulmonary vascular resistance"
     assert rvp["abbreviation"]["es"] == "RVP ecográfica"
-    assert rvp["abbreviation"]["en"] == "Echocardiographic PVR"
+    assert rvp["abbreviation"]["en"] == "PVR"
     assert "[(Vmax IT / VTI del TSVD) x 10] + 0,16." in rvp["formula_or_method"]["es"]
     assert "[(Peak TR velocity / RVOT VTI) x 10] + 0.16." in rvp["formula_or_method"]["en"]
     assert "Normal <1,5 UW; >2 UW es anormal." in rvp["normal_values"]["es"]

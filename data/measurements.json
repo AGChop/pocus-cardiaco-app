@@ -5,7 +5,7 @@
     "order": 1,
     "measurement": {
       "es": "DTDVI / LVIDd",
-      "en": "LV end-diastolic diameter / LVIDd"
+      "en": "LV internal dimension at end-diastole (LVIDd)"
     },
     "abbreviation": {
       "es": "DTDVI",
@@ -19,8 +19,8 @@
       ],
       "en": [
         "LVIDd",
-        "Left ventricular end-diastolic diameter",
-        "Left ventricular internal diameter in diastole"
+        "Left ventricular internal diameter at end-diastole",
+        "LV internal dimension at end-diastole"
       ]
     },
     "formula_or_method": {
@@ -77,7 +77,7 @@
     "order": 2,
     "measurement": {
       "es": "DTSVI / LVIDs",
-      "en": "LV end-systolic diameter / LVIDs"
+      "en": "LV internal dimension at end-systole (LVIDs)"
     },
     "abbreviation": {
       "es": "DTSVI",
@@ -91,8 +91,8 @@
       ],
       "en": [
         "LVIDs",
-        "Left ventricular end-systolic diameter",
-        "Left ventricular internal diameter in systole"
+        "Left ventricular internal diameter at end-systole",
+        "LV internal dimension at end-systole"
       ]
     },
     "formula_or_method": {
@@ -220,7 +220,7 @@
     "order": 4,
     "measurement": {
       "es": "VTDVI indexado",
-      "en": "Indexed LVEDV"
+      "en": "LV end-diastolic volume index"
     },
     "abbreviation": {
       "es": "VTDVI indexado",
@@ -233,9 +233,9 @@
         "LVEDVI"
       ],
       "en": [
-        "Indexed LVEDV",
+        "LV end-diastolic volume index",
         "Indexed left ventricular end-diastolic volume",
-        "LVEDVI"
+        "LVEDVi"
       ]
     },
     "formula_or_method": {
@@ -359,7 +359,7 @@
     "order": 6,
     "measurement": {
       "es": "VTSVI indexado",
-      "en": "Indexed LVESV"
+      "en": "LV end-systolic volume index"
     },
     "abbreviation": {
       "es": "VTSVI indexado",
@@ -372,9 +372,9 @@
         "LVESVI"
       ],
       "en": [
-        "Indexed LVESV",
+        "LV end-systolic volume index",
         "Indexed left ventricular end-systolic volume",
-        "LVESVI"
+        "LVESVi"
       ]
     },
     "formula_or_method": {
@@ -702,11 +702,11 @@
     "order": 11,
     "measurement": {
       "es": "s' mitral",
-      "en": "Mitral s'"
+      "en": "Mitral annular peak systolic velocity (s′)"
     },
     "abbreviation": {
       "es": "s' mitral",
-      "en": "Mitral s'"
+      "en": "Mitral annular s′"
     },
     "aliases": {
       "es": [
@@ -715,9 +715,9 @@
         "s'"
       ],
       "en": [
-        "Mitral annular s'",
-        "Mitral s'",
-        "s'"
+        "Mitral annular peak systolic velocity (s′)",
+        "Mitral annular s′",
+        "s′"
       ]
     },
     "formula_or_method": {
@@ -2578,11 +2578,11 @@
     "order": 6,
     "measurement": {
       "es": "e' septal",
-      "en": "Septal e'"
+      "en": "Septal mitral annular e′ velocity"
     },
     "abbreviation": {
       "es": "e' septal",
-      "en": "Septal e'"
+      "en": "Septal e′"
     },
     "aliases": {
       "es": [
@@ -2590,8 +2590,8 @@
         "e prima septal"
       ],
       "en": [
-        "Septal mitral annular e'",
-        "Septal e-prime"
+        "Septal mitral annular e′ velocity",
+        "Septal e′"
       ]
     },
     "formula_or_method": {
@@ -2644,11 +2644,11 @@
     "order": 7,
     "measurement": {
       "es": "e' lateral",
-      "en": "Lateral e'"
+      "en": "Lateral mitral annular e′ velocity"
     },
     "abbreviation": {
       "es": "e' lateral",
-      "en": "Lateral e'"
+      "en": "Lateral e′"
     },
     "aliases": {
       "es": [
@@ -2656,8 +2656,8 @@
         "e prima lateral"
       ],
       "en": [
-        "Lateral mitral annular e'",
-        "Lateral e-prime"
+        "Lateral mitral annular e′ velocity",
+        "Lateral e′"
       ]
     },
     "formula_or_method": {
@@ -2710,11 +2710,11 @@
     "order": 8,
     "measurement": {
       "es": "E/e' promedio",
-      "en": "Average E/e' ratio"
+      "en": "Average E/e′ ratio"
     },
     "abbreviation": {
       "es": "E/e' promedio",
-      "en": "Average E/e'"
+      "en": "Average E/e′"
     },
     "aliases": {
       "es": [
@@ -2723,9 +2723,9 @@
         "Cociente E/e'"
       ],
       "en": [
-        "E/e'",
-        "E/e' ratio",
-        "Transmitral E-to-e' ratio"
+        "Average E/e′",
+        "Average E/e′ ratio",
+        "E/e′ ratio (average)"
       ]
     },
     "formula_or_method": {
@@ -2848,7 +2848,7 @@
     "order": 10,
     "measurement": {
       "es": "LAVI en diastología",
-      "en": "LAVI in diastolic assessment"
+      "en": "LA volume index for diastolic function assessment"
     },
     "abbreviation": "LAVI",
     "aliases": {
@@ -2910,7 +2910,7 @@
     "order": 11,
     "measurement": {
       "es": "Strain reservorio de AI en diastología",
-      "en": "LA reservoir strain in diastolic assessment"
+      "en": "LA reservoir strain for diastolic function assessment"
     },
     "abbreviation": {
       "es": "LA Strain Reservorio",
@@ -3386,11 +3386,11 @@
     "order": 7,
     "measurement": {
       "es": "s' del VD",
-      "en": "RV s'"
+      "en": "Tricuspid annular peak systolic velocity (s′)"
     },
     "abbreviation": {
       "es": "s' del VD",
-      "en": "RV s'"
+      "en": "Tricuspid annular s′"
     },
     "aliases": {
       "es": [
@@ -3399,9 +3399,9 @@
         "RV s'"
       ],
       "en": [
-        "Tricuspid annular s'",
-        "RV s'",
-        "RV s'"
+        "Tricuspid s′",
+        "Tricuspid annular peak systolic velocity (s′)",
+        "Tricuspid s′ velocity"
       ]
     },
     "formula_or_method": {
@@ -3585,11 +3585,11 @@
     "order": 10,
     "measurement": {
       "es": "Strain de pared libre del VD",
-      "en": "RV free wall strain"
+      "en": "RV free wall longitudinal strain"
     },
     "abbreviation": {
       "es": "RV Strain",
-      "en": "RV strain"
+      "en": "RVFWS"
     },
     "aliases": {
       "es": [
@@ -3597,7 +3597,7 @@
         "RV free wall strain"
       ],
       "en": [
-        "Right ventricular free wall strain",
+        "Right ventricular free wall longitudinal strain",
         "RV free wall strain"
       ]
     },
@@ -3651,11 +3651,11 @@
     "order": 11,
     "measurement": {
       "es": "Índice de Tei del VD",
-      "en": "RV Tei index"
+      "en": "RV myocardial performance index (Tei index)"
     },
     "abbreviation": {
       "es": "Índice de Tei",
-      "en": "Tei index"
+      "en": "RV MPI"
     },
     "aliases": {
       "es": [
@@ -3665,8 +3665,8 @@
       ],
       "en": [
         "RV MPI",
-        "Myocardial performance index",
-        "Myocardial performance index"
+        "RV myocardial performance index (Tei index)",
+        "RV Tei index"
       ]
     },
     "formula_or_method": {
@@ -3792,11 +3792,11 @@
     "order": 13,
     "measurement": {
       "es": "PAAT / AccT del TSVD",
-      "en": "PAAT / RVOT AccT"
+      "en": "RVOT acceleration time"
     },
     "abbreviation": {
       "es": "PAAT",
-      "en": "PAAT"
+      "en": "RVOT AccT"
     },
     "aliases": {
       "es": [
@@ -3805,9 +3805,9 @@
         "AccT del TSVD"
       ],
       "en": [
-        "Pulmonary acceleration time",
         "Pulmonary artery acceleration time",
-        "RVOT acceleration time"
+        "RVOT acceleration time",
+        "PAAT"
       ]
     },
     "formula_or_method": {
@@ -4682,11 +4682,11 @@
     "order": 5,
     "measurement": {
       "es": "RVP ecográfica",
-      "en": "Echocardiographic PVR"
+      "en": "Echocardiographic estimate of pulmonary vascular resistance"
     },
     "abbreviation": {
       "es": "RVP ecográfica",
-      "en": "Echocardiographic PVR"
+      "en": "PVR"
     },
     "aliases": {
       "es": [
@@ -4899,7 +4899,7 @@
     "order": 1,
     "measurement": {
       "es": "Velocidad máxima aórtica",
-      "en": "Peak aortic velocity"
+      "en": "Peak aortic jet velocity"
     },
     "abbreviation": {
       "es": "Vmax aórtica",
@@ -4969,7 +4969,7 @@
     "order": 2,
     "measurement": {
       "es": "Gradiente máximo aórtico",
-      "en": "Peak aortic gradient"
+      "en": "Peak instantaneous transaortic gradient"
     },
     "abbreviation": {
       "es": "Gradiente máx aórtico",
@@ -5036,7 +5036,7 @@
     "order": 3,
     "measurement": {
       "es": "Gradiente medio aórtico",
-      "en": "Mean aortic gradient"
+      "en": "Mean transaortic pressure gradient"
     },
     "abbreviation": {
       "es": "Gradiente medio aórtico",
@@ -6785,7 +6785,7 @@
     "order": 9,
     "measurement": {
       "es": "Movimiento pendular del corazón",
-      "en": "Swinging heart motion"
+      "en": "Swinging heart"
     },
     "abbreviation": {
       "es": "Movimiento pendular",

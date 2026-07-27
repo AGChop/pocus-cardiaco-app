@@ -201,11 +201,11 @@ def test_rv_systolic_translations_exact():
     # 11. indice_tei_vd
     tei = next(m for m in data if m["id"] == "indice_tei_vd")
     assert tei["measurement"]["es"] == "Índice de Tei del VD"
-    assert tei["measurement"]["en"] == "RV Tei index"
+    assert tei["measurement"]["en"] == "RV myocardial performance index (Tei index)"
     assert tei["abbreviation"]["es"] == "Índice de Tei"
-    assert tei["abbreviation"]["en"] == "Tei index"
+    assert tei["abbreviation"]["en"] == "RV MPI"
     assert tei["aliases"]["es"] == ["MPI del VD", "Myocardial performance index", "Índice de rendimiento miocárdico"]
-    assert tei["aliases"]["en"] == ["RV MPI", "Myocardial performance index", "Myocardial performance index"]
+    assert tei["aliases"]["en"] == ["RV MPI", "RV myocardial performance index (Tei index)", "RV Tei index"]
     assert tei["formula_or_method"]["es"] == "(Tiempo cierre-apertura - tiempo de eyección) / tiempo de eyección."
     assert tei["formula_or_method"]["en"] == "(Valve closure-to-opening time - ejection time) / ejection time."
     assert tei["normal_values"]["es"] == "<0,40 por Doppler pulsado; <0,55 por TDI."
