@@ -1,6 +1,6 @@
 // Enrutador de la aplicación basado en Hash Routing
 const Router = {
-    // Definición de las rutas y sus respectivos controladores
+    // ${I18n.translate("label.definition")} de las rutas y sus respectivos controladores
     async route() {
         const hash = window.location.hash || '#/';
         const container = document.getElementById("app-content");
@@ -8,7 +8,7 @@ const Router = {
         if (!container) return;
 
         // Limpiar contenido previo
-        container.innerHTML = `<div class="loading">Cargando contenido médico...</div>`;
+        container.innerHTML = `<div class="loading">${I18n.translate("state.loading_content")}</div>`;
 
         // 1. Ruta de Inicio
         if (hash === '#/' || hash === '#') {
@@ -138,12 +138,13 @@ const Router = {
         });
     },
 
-    // Función para manejar favoritos
     toggleFav(type, id, title, btnId) {
         const added = Storage.toggleFavorite(type, id, title);
         const btn = document.getElementById(btnId);
         if (btn) {
-            btn.innerHTML = added ? "★ Quitar Favorito" : "☆ Guardar Favorito";
+            btn.innerHTML = added
+                ? `★ ${I18n.translate("action.remove_favorite")}`
+                : `☆ ${I18n.translate("action.save_favorite")}`;
         }
     },
 
@@ -168,47 +169,47 @@ const Router = {
         container.innerHTML = `
             <div style="text-align: center; margin-bottom: 1.5rem; margin-top: 1rem;">
                 <p style="font-size: 0.95rem; color: var(--text-muted-light);">
-                    Herramienta educativa de consulta rápida para residentes y médicos en formación en ultrasonido POCUS cardiaco.
+                    ${I18n.translate("label.sub_menu_desc")}
                 </p>
             </div>
 
             <div class="main-nav">
                 <a href="#/glosario" class="nav-card">
-                    <h2>Glosario de Términos</h2>
-                    <p>Definición de parámetros, ventanas de adquisición y vocabulario clínico de POCUS.</p>
+                    <h2>${I18n.translate("nav.glossary")}</h2>
+                    <p>${I18n.translate("label.glossary_desc")}</p>
                 </a>
                 <a href="#/mediciones" class="nav-card">
-                    <h2>Banco de Mediciones</h2>
-                    <p>12 secciones con valores normales, fórmulas y puntos de corte ecocardiográficos.</p>
+                    <h2>${I18n.translate("nav.measurements")}</h2>
+                    <p>${I18n.translate("label.measurements_desc")}</p>
                 </a>
                 <a href="#/ventanas" class="nav-card">
-                    <h2>Ventanas ecocardiográficas</h2>
-                    <p>Guía de posición del transductor, orientación del marcador, estructuras visibles y mediciones asociadas.</p>
+                    <h2>${I18n.translate("nav.windows")}</h2>
+                    <p>${I18n.translate("label.windows_desc")}</p>
                 </a>
                 <a href="#/protocolos" class="nav-card">
-                    <h2>Protocolos POCUS</h2>
-                    <p>Protocolos estructurados para la evaluación ecográfica dirigida en escenarios clínicos específicos.</p>
+                    <h2>${I18n.translate("nav.protocols")}</h2>
+                    <p>${I18n.translate("label.protocols_desc")}</p>
                 </a>
                 ${showQuizzesCard ? `
                 <a href="#/cuestionarios" class="nav-card">
-                    <h2>Cuestionarios</h2>
-                    <p>Ponga a prueba sus conocimientos teóricos y de interpretación con autoevaluaciones formativas.</p>
+                    <h2>${I18n.translate("label.quizzes")}</h2>
+                    <p>${I18n.translate("label.quizzes_desc")}</p>
                 </a>` : ''}
             </div>
 
             <div class="secondary-nav" style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-top: 1rem;">
-                <a href="#/abreviaturas" class="btn-secondary">Abreviaturas</a>
-                <a href="#/clasificaciones" class="btn-secondary">Clasificaciones</a>
-                <a href="#/conjunto-minimo" class="btn-secondary">Conjunto Mínimo</a>
-                <a href="#/unidades-y-errores" class="btn-secondary">Unidades y Errores</a>
-                <a href="#/favoritos" class="btn-secondary">Mis Favoritos</a>
-                <a href="#/recientes" class="btn-secondary">Recientes</a>
-                <a href="#/referencias" class="btn-secondary">Referencias</a>
-                <a href="#/acerca" class="btn-secondary">Acerca de</a>
+                <a href="#/abreviaturas" class="btn-secondary">${I18n.translate("label.abbreviation")}</a>
+                <a href="#/clasificaciones" class="btn-secondary">${I18n.translate("label.classification")}</a>
+                <a href="#/conjunto-minimo" class="btn-secondary">${I18n.translate("label.minimum_set")}</a>
+                <a href="#/unidades-y-errores" class="btn-secondary">${I18n.translate("label.unit_warnings")}</a>
+                <a href="#/favoritos" class="btn-secondary">${I18n.translate("nav.favorites")}</a>
+                <a href="#/recientes" class="btn-secondary">${I18n.translate("nav.recents")}</a>
+                <a href="#/referencias" class="btn-secondary">${I18n.translate("label.clinical_references_title")}</a>
+                <a href="#/acerca" class="btn-secondary">${I18n.translate("nav.about")}</a>
             </div>
 
             <div style="text-align: center; margin-top: 1.5rem;">
-                <a href="#/instalar" class="btn-install">📲 Instalar en iPhone</a>
+                <a href="#/instalar" class="btn-install">${I18n.translate("label.inst_iphone")}</a>
             </div>
         `;
     },
@@ -217,9 +218,9 @@ const Router = {
     render404(container) {
         container.innerHTML = `
             <div class="card error-card">
-                <h2>Ruta no encontrada</h2>
-                <p>Lo sentimos, la sección o página que buscas no existe o fue movida.</p>
-                <a href="#/" class="btn-primary">Volver al Inicio</a>
+                <h2>${I18n.translate("error.not_found_title")}</h2>
+                <p>${I18n.translate("error.not_found_message")}</p>
+                <a href="#/" class="btn-primary">${I18n.translate("error.go_home")}</a>
             </div>
         `;
     },
@@ -227,11 +228,30 @@ const Router = {
     // GLOSARIO DE TÉRMINOS
     async renderGlossaryList(container) {
         const glossary = await DataLoader.getGlossary() || [];
+        const escapeHTML = (str) => {
+            if (!str) return "";
+            return String(str)
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        };
+
+        const getLocalizedAliases = (aliases) => {
+            if (!aliases) return [];
+            if (Array.isArray(aliases)) return aliases;
+            if (typeof aliases === "object") {
+                const activeLang = I18n.getLanguage();
+                return aliases[activeLang] || aliases["es"] || aliases["en"] || [];
+            }
+            return [];
+        };
 
         let html = `
             <div class="navigation-header">
-                <a href="#/" class="btn-back">← Inicio</a>
-                <h2>Glosario de Términos</h2>
+                <a href="#/" class="btn-back">← ${I18n.translate("nav.home")}</a>
+                <h2>${I18n.translate("nav.glossary")}</h2>
             </div>
 
             <div class="content-accordion-grid cards-list">
@@ -239,25 +259,31 @@ const Router = {
 
         glossary.forEach(item => {
             const isFav = Storage.isFavorite("término", item.id);
-            const copyData = `Término: ${item.term}\nDefinición: ${item.definition}\nAdquisición/Utilidad: ${item.acquisition_utility_limitation}\nFuente: ${item.source_document} (Pág. ${item.source_page})`;
+            const termLoc = I18n.localize(item.term);
+            const defLoc = I18n.localize(item.definition);
+            const utilLoc = I18n.localize(item.acquisition_utility_limitation);
+            const catLoc = I18n.localize(item.category);
+            const activeAliases = getLocalizedAliases(item.aliases);
+
+            const copyData = `${I18n.translate("label.term")}: ${termLoc}\n${I18n.translate("label.definition")}: ${defLoc}\n${I18n.translate("label.acquisition_details")}: ${utilLoc}\n${I18n.translate("label.references")}: ${item.source_document} (P. ${item.source_page})`;
 
             html += `
                 <details class="content-accordion glossary-accordion card clinical-card">
                     <summary class="content-accordion-summary">
-                        <span class="content-accordion-title">${item.term}</span>
+                        <span class="content-accordion-title">${escapeHTML(termLoc)}</span>
                         <span class="content-accordion-arrow"></span>
                     </summary>
                     <div class="content-accordion-body">
-                        ${item.category ? `<p><strong>Categoría:</strong> ${item.category}</p>` : ''}
-                        <p class="card-definition"><strong>Definición:</strong> ${item.definition}</p>
-                        <p class="card-acquisition"><strong>Adquisición/Utilidad:</strong> ${item.acquisition_utility_limitation}</p>
-                        ${item.aliases && item.aliases.length > 0 ? `<p class="card-aliases"><strong>Sinónimos / Aliases:</strong> ${item.aliases.join(", ")}</p>` : ''}
-                        <div class="card-meta">Página origen: ${item.source_page}</div>
+                        ${catLoc ? `<p><strong>${I18n.translate("label.categoria")}:</strong> ${escapeHTML(catLoc)}</p>` : ''}
+                        <p class="card-definition"><strong>${I18n.translate("label.definition")}:</strong> ${escapeHTML(defLoc)}</p>
+                        <p class="card-acquisition"><strong>${I18n.translate("label.acquisition_details")}:</strong> ${escapeHTML(utilLoc)}</p>
+                        ${activeAliases && activeAliases.length > 0 ? `<p class="card-aliases"><strong>${I18n.translate("label.sinonimos")}:</strong> ${escapeHTML(activeAliases.join(", "))}</p>` : ''}
+                        <div class="card-meta">${I18n.translate("label.origen")}: ${item.source_page}</div>
                         <div class="card-actions">
-                            <a href="#/glosario/${item.id}" class="btn-card-action">Detalle</a>
-                            <button class="btn-card-action" onclick="Router.copyText(\`${copyData.replace(/`/g, '\\`').replace(/\n/g, '\\n')}\`, 'copy-m-t-${item.id}')" id="copy-m-t-${item.id}">Copiar</button>
-                            <button class="btn-card-action" onclick="Router.toggleFav('término', '${item.id}', '${item.term}', 'fav-t-${item.id}')" id="fav-t-${item.id}">
-                                ${isFav ? "★ Quitar" : "☆ Favorito"}
+                            <a href="#/glosario/${item.id}" class="btn-card-action">${I18n.translate("label.detalles")}</a>
+                            <button class="btn-card-action" onclick="Router.copyText(\`${copyData.replace(/`/g, '\\`').replace(/\n/g, '\\n')}\`, 'copy-m-t-${item.id}')" id="copy-m-t-${item.id}">${I18n.translate("label.copiar")}</button>
+                            <button class="btn-card-action" onclick="Router.toggleFav('término', '${item.id}', '${termLoc.replace(/'/g, "\\'")}', 'fav-t-${item.id}')" id="fav-t-${item.id}">
+                                ${isFav ? "★ " + I18n.translate("label.quitar") : "☆ " + I18n.translate("label.favorito")}
                             </button>
                         </div>
                     </div>
@@ -281,43 +307,69 @@ const Router = {
             return;
         }
 
-        Storage.addRecent("término", term.id, term.term);
+        const escapeHTML = (str) => {
+            if (!str) return "";
+            return String(str)
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        };
+
+        const getLocalizedAliases = (aliases) => {
+            if (!aliases) return [];
+            if (Array.isArray(aliases)) return aliases;
+            if (typeof aliases === "object") {
+                const activeLang = I18n.getLanguage();
+                return aliases[activeLang] || aliases["es"] || aliases["en"] || [];
+            }
+            return [];
+        };
+
+        const termLoc = I18n.localize(term.term);
+        const defLoc = I18n.localize(term.definition);
+        const utilLoc = I18n.localize(term.acquisition_utility_limitation);
+        const catLoc = I18n.localize(term.category);
+        const activeAliases = getLocalizedAliases(term.aliases);
+
+        Storage.addRecent("término", term.id, termLoc);
         const isFav = Storage.isFavorite("término", term.id);
-        const copyData = `Término: ${term.term}\nDefinición: ${term.definition}\nAdquisición/Utilidad: ${term.acquisition_utility_limitation}\nFuente: ${term.source_document} (Pág. ${term.source_page})`;
+        const copyData = `${I18n.translate("label.term")}: ${termLoc}\n${I18n.translate("label.definition")}: ${defLoc}\n${I18n.translate("label.acquisition_details")}: ${utilLoc}\n${I18n.translate("label.references")}: ${term.source_document} (P. ${term.source_page})`;
 
         let html = `
             <div class="navigation-header">
-                <a href="#/glosario" class="btn-back">← Glosario</a>
-                <h2>${term.term}</h2>
+                <a href="#/glosario" class="btn-back">← ${I18n.translate("nav.glossary")}</a>
+                <h2>${escapeHTML(termLoc)}</h2>
             </div>
 
             <div class="card clinical-detail-card">
                 <div class="card-section">
-                    <span class="detail-label">Categoría</span>
-                    <span class="detail-value">${term.category}</span>
+                    <span class="detail-label">${I18n.translate("label.categoria")}</span>
+                    <span class="detail-value">${escapeHTML(catLoc)}</span>
                 </div>
                 <div class="card-section">
-                    <span class="detail-label">Definición</span>
-                    <p class="detail-text">${term.definition}</p>
+                    <span class="detail-label">${I18n.translate("label.definition")}</span>
+                    <p class="detail-text">${escapeHTML(defLoc)}</p>
                 </div>
                 <div class="card-section">
-                    <span class="detail-label">Adquisición, Utilidad y Limitaciones</span>
-                    <p class="detail-text">${term.acquisition_utility_limitation}</p>
+                    <span class="detail-label">${I18n.translate("label.acquisition_details")}</span>
+                    <p class="detail-text">${escapeHTML(utilLoc)}</p>
                 </div>
-                ${term.aliases && term.aliases.length > 0 ? `
+                ${activeAliases && activeAliases.length > 0 ? `
                 <div class="card-section">
-                    <span class="detail-label">Alias / Sinonimia</span>
-                    <p class="detail-text">${term.aliases.join(", ")}</p>
+                    <span class="detail-label">${I18n.translate("label.sinonimos")}</span>
+                    <p class="detail-text">${escapeHTML(activeAliases.join(", "))}</p>
                 </div>` : ''}
                 <div class="card-section">
-                    <span class="detail-label">Fuente Autorizada</span>
-                    <p class="detail-text">${term.source_document} (Página ${term.source_page})</p>
+                    <span class="detail-label">${I18n.translate("label.references")}</span>
+                    <p class="detail-text">${escapeHTML(term.source_document)} (P. ${term.source_page})</p>
                 </div>
 
                 <div class="detail-actions">
-                    <button class="btn-primary" onclick="Router.copyText(\`${copyData.replace(/`/g, '\\`').replace(/\n/g, '\\n')}\`, 'copy-det-t')" id="copy-det-t">Copiar Contenido</button>
-                    <button class="btn-secondary" onclick="Router.toggleFav('término', '${term.id}', '${term.term}', 'fav-det-t')" id="fav-det-t">
-                        ${isFav ? "★ Quitar Favorito" : "☆ Guardar Favorito"}
+                    <button class="btn-primary" onclick="Router.copyText(\`${copyData.replace(/`/g, '\\`').replace(/\n/g, '\\n')}\`, 'copy-det-t')" id="copy-det-t">${I18n.translate("label.copiar")} Contenido</button>
+                    <button class="btn-secondary" onclick="Router.toggleFav('término', '${term.id}', '${termLoc.replace(/'/g, "\\'")}', 'fav-det-t')" id="fav-det-t">
+                        ${isFav ? "★ " + I18n.translate("label.quitar") + " " + I18n.translate("label.favorito") : "☆ " + I18n.translate("action.save_favorite")}
                     </button>
                 </div>
             </div>
@@ -329,22 +381,35 @@ const Router = {
     // BANCO DE MEDICIONES - SECCIONES
     async renderMeasurementsSections(container) {
         const sections = await DataLoader.getSections() || [];
+        const escapeHTML = (str) => {
+            if (!str) return "";
+            return String(str)
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        };
 
         let html = `
             <div class="navigation-header">
-                <a href="#/" class="btn-back">← Inicio</a>
-                <h2>Banco de Mediciones</h2>
+                <a href="#/" class="btn-back">← ${I18n.translate("nav.home")}</a>
+                <h2>${I18n.translate("nav.measurements")}</h2>
             </div>
             <div class="sections-list">
         `;
 
         sections.forEach(sec => {
+            const titleLoc = I18n.localize(sec.title);
+            const descLoc = I18n.localize(sec.description);
+            const warningLoc = I18n.localize(sec.clinical_warning);
+
             html += `
                 <a href="#/mediciones/${sec.id}" class="section-card">
-                    <div class="section-num">Sección ${sec.number}</div>
-                    <h3>${sec.title}</h3>
-                    <p>${sec.description}</p>
-                    ${sec.clinical_warning ? `<span class="warning-badge">⚠️ Advertencia</span>` : ''}
+                    <div class="section-num">${I18n.translate("label.section")} ${sec.number}</div>
+                    <h3>${escapeHTML(titleLoc)}</h3>
+                    <p>${escapeHTML(descLoc)}</p>
+                    ${warningLoc ? `<span class="warning-badge">⚠️ ${I18n.translate("label.clinical_warning")}</span>` : ''}
                 </a>
             `;
         });
@@ -366,7 +431,6 @@ const Router = {
         const measurements = await DataLoader.getMeasurements() || [];
         const filtered = measurements.filter(m => m.section_id === sectionId);
 
-        // Ordenar tarjetas dentro de la sección por display_order, priority_tier, original_order y measurement_id
         filtered.sort((a, b) => {
             const displayA = a.display_order !== undefined ? a.display_order : 9999;
             const displayB = b.display_order !== undefined ? b.display_order : 9999;
@@ -383,44 +447,86 @@ const Router = {
             return (a.id || "").localeCompare(b.id || "");
         });
 
+        const escapeHTML = (str) => {
+            if (str === null || str === undefined) return "";
+            return String(str)
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        };
+
+        const shortTitleLoc = I18n.localize(section.short_title);
+        const warningLoc = I18n.localize(section.clinical_warning);
+
+        const labelSection = escapeHTML(I18n.translate("label.section"));
+        const labelSafetyWarning = escapeHTML(I18n.translate("label.clinical_warning"));
+        const labelFormulaMethod = escapeHTML(I18n.translate("label.formula_or_method"));
+        const labelNormalValues = escapeHTML(I18n.translate("label.normal_values"));
+        const labelLimitations = escapeHTML(I18n.translate("label.interpretation_limitations"));
+        const labelOrigin = escapeHTML(I18n.translate("label.origen"));
+        const labelDetails = escapeHTML(I18n.translate("label.detalles"));
+        const labelCopy = escapeHTML(I18n.translate("label.copiar"));
+        const labelRemove = escapeHTML(I18n.translate("label.quitar"));
+        const labelFav = escapeHTML(I18n.translate("label.favorito"));
+
         let html = `
             <div class="navigation-header">
-                <a href="#/mediciones" class="btn-back">← Banco</a>
-                <h2>Sección ${section.number}: ${section.short_title}</h2>
+                <a href="#/mediciones" class="btn-back">← ${escapeHTML(I18n.translate("nav.measurements"))}</a>
+                <h2>${labelSection} ${section.number}: ${escapeHTML(shortTitleLoc)}</h2>
             </div>
 
-            ${section.clinical_warning ? `
+            ${warningLoc ? `
             <div class="safety-banner" role="alert">
-                <strong>Advertencia de Seguridad:</strong> ${section.clinical_warning}
+                <strong>${labelSafetyWarning}:</strong> ${escapeHTML(warningLoc)}
             </div>` : ''}
 
-            <!-- Lista de Mediciones en Acordeón -->
             <div class="measurements-grid cards-list">
         `;
 
+        const encodeInlineValue = (value) =>
+            encodeURIComponent(String(value ?? "")).replace(/'/g, "%27");
+
         filtered.forEach(item => {
             const isFav = Storage.isFavorite("medición", item.id);
-            const copyData = `Medición: ${item.measurement}\nFórmula/Método: ${item.formula_or_method}\nValores normales: ${item.normal_values}\nLimitaciones: ${item.interpretation_limitations}\nUnidad: ${item.units}\nFuente: ${item.source_document} (Pág. ${item.source_page})`;
+            const measurementLoc = I18n.localize(item.measurement);
+            const formulaLoc = I18n.localize(item.formula_or_method);
+            const normalValuesLoc = I18n.localize(item.normal_values);
+            const limitationsLoc = I18n.localize(item.interpretation_limitations);
+            const unitsLoc = I18n.localize(item.units);
+
+            const copyData =
+                `${I18n.translate("label.measurement")}: ${measurementLoc}\n` +
+                `${labelFormulaMethod}: ${formulaLoc}\n` +
+                `${labelNormalValues}: ${normalValuesLoc}\n` +
+                `${labelLimitations}: ${limitationsLoc}\n` +
+                `${escapeHTML(I18n.translate("label.unidades"))}: ${unitsLoc}\n` +
+                `${escapeHTML(I18n.translate("label.references"))}: ${item.source_document} (P. ${item.source_page})`;
+
+            const encodedCopy = encodeInlineValue(copyData);
+            const encodedMeas = encodeInlineValue(measurementLoc);
+            const encodedItemId = encodeInlineValue(item.id);
 
             html += `
                 <details class="measurement-accordion card clinical-card">
                     <summary class="accordion-summary">
-                        <span class="measurement-title">${item.measurement}</span>
+                        <span class="measurement-title">${escapeHTML(measurementLoc)}</span>
                         <span class="accordion-arrow"></span>
                     </summary>
                     <div class="measurement-accordion-content">
                         <div class="measurement-header-content">
-                            <span class="unit-badge">${item.units}</span>
+                            <span class="unit-badge">${escapeHTML(unitsLoc)}</span>
                         </div>
-                        <p><strong>Fórmula/Adquisición:</strong> ${item.formula_or_method}</p>
-                        <p class="normal-values"><strong>Valores normales / Corte:</strong> ${item.normal_values}</p>
-                        <p class="limitations"><strong>Limitaciones:</strong> ${item.interpretation_limitations}</p>
-                        <div class="card-meta">Página origen: ${item.source_page}</div>
+                        <p><strong>${labelFormulaMethod}:</strong> ${escapeHTML(formulaLoc)}</p>
+                        <p class="normal-values"><strong>${labelNormalValues}:</strong> ${escapeHTML(normalValuesLoc)}</p>
+                        <p class="limitations"><strong>${labelLimitations}:</strong> ${escapeHTML(limitationsLoc)}</p>
+                        <div class="card-meta">${labelOrigin}: ${escapeHTML(item.source_page)}</div>
                         <div class="card-actions">
-                            <a href="#/medicion/${item.id}" class="btn-card-action">Detalle</a>
-                            <button class="btn-card-action" onclick="Router.copyText(\`${copyData.replace(/`/g, '\\`').replace(/\n/g, '\\n')}\`, 'copy-m-m-${item.id}')" id="copy-m-m-${item.id}">Copiar</button>
-                            <button class="btn-card-action" onclick="Router.toggleFav('medición', '${item.id}', '${item.measurement}', 'fav-m-${item.id}')" id="fav-m-${item.id}">
-                                ${isFav ? "★ Quitar" : "☆ Favorito"}
+                            <a href="#/medicion/${escapeHTML(item.id)}" class="btn-card-action">${labelDetails}</a>
+                            <button class="btn-card-action" onclick="Router.copyText(decodeURIComponent('${encodedCopy}'), 'copy-m-m-${escapeHTML(item.id)}')" id="copy-m-m-${escapeHTML(item.id)}">${labelCopy}</button>
+                            <button class="btn-card-action" onclick="Router.toggleFav('medición', decodeURIComponent('${encodedItemId}'), decodeURIComponent('${encodedMeas}'), 'fav-m-${escapeHTML(item.id)}')" id="fav-m-${escapeHTML(item.id)}">
+                                ${isFav ? "★ " + labelRemove : "☆ " + labelFav}
                             </button>
                         </div>
                     </div>
@@ -446,16 +552,9 @@ const Router = {
             return;
         }
 
-        const relatedMedia = MediaViewer.getMediaForEntity(mediaResources, 'measurement', item.id);
-        const mediaHTML = MediaViewer.renderMediaSection(relatedMedia);
-
-        Storage.addRecent("medición", item.id, item.measurement);
-        const isFav = Storage.isFavorite("medición", item.id);
-        const copyData = `Medición: ${item.measurement}\nFórmula/Método: ${item.formula_or_method}\nValores normales: ${item.normal_values}\nLimitaciones: ${item.interpretation_limitations}\nUnidad: ${item.units}\nFuente: ${item.source_document} (Pág. ${item.source_page})`;
-
-        const escapeHTML = (str) => {
-            if (!str) return "";
-            return str.toString()
+        const escapeHTML = (value) => {
+            if (value === null || value === undefined) return "";
+            return String(value)
                 .replace(/&/g, "&amp;")
                 .replace(/</g, "&lt;")
                 .replace(/>/g, "&gt;")
@@ -463,87 +562,190 @@ const Router = {
                 .replace(/'/g, "&#039;");
         };
 
+        const getLocalizedList = (value) => {
+            if (!value) return [];
+            if (Array.isArray(value)) {
+                return value.map(val => I18n.localize(val)).filter(Boolean);
+            }
+            if (typeof value === "object") {
+                const activeLang = I18n.getLanguage();
+                const list = value[activeLang] || value["es"] || value["en"] || [];
+                return Array.isArray(list) ? list.map(val => I18n.localize(val)).filter(Boolean) : [];
+            }
+            return [];
+        };
+
+        const collectTextVariants = (value) => {
+            if (value === null || value === undefined) return [];
+            if (typeof value === "string") {
+                const s = value.trim();
+                return s ? [s] : [];
+            }
+            if (Array.isArray(value)) {
+                let res = [];
+                value.forEach(sub => {
+                    res = res.concat(collectTextVariants(sub));
+                });
+                return res;
+            }
+            if (typeof value === "object") {
+                let res = [];
+                for (const key in value) {
+                    if (Object.prototype.hasOwnProperty.call(value, key)) {
+                        res = res.concat(collectTextVariants(value[key]));
+                    }
+                }
+                return res;
+            }
+            return [];
+        };
+
+        const normalizeComparable = (value) => {
+            if (value === null || value === undefined) return "";
+            return String(value)
+                .trim()
+                .toLowerCase()
+                .normalize("NFD")
+                .replace(/[\u0300-\u036f]/g, "")
+                .replace(/\s+/g, " ");
+        };
+
         const getLinkForWindow = (primary, view) => {
-            const p = (primary || "").toLowerCase();
-            const v = (view || "").toLowerCase();
-            if (v.includes("plax")) return "plax";
-            if (v.includes("psax")) return "psax";
-            if (v.includes("a4c-vd") || v.includes("enfoque vd") || v.includes("enfocada en vd")) return "rv_focused_a4c";
-            if (v.includes("a4c") || v.includes("4c")) return "a4c";
-            if (v.includes("a2c") || v.includes("2c")) return "a2c";
-            if (v.includes("a3c") || v.includes("3c")) return "a3c";
-            if (v.includes("a5c") || v.includes("5c")) return "a5c";
-            if (v.includes("vci") || v.includes("cava")) return "subcostal_ivc";
-            if (v.includes("subcostal 4c") || v.includes("sc4c")) return "subcostal_4c";
-            if (v.includes("inflow") || v.includes("entrada vd")) return "rv_inflow";
-            if (p.includes("derecha") || v.includes("rps")) return "right_parasternal";
-            if (p.includes("supraesternal") || v.includes("ssn")) return "suprasternal";
-            if (p.includes("subcostal")) return "subcostal_4c";
-            if (p.includes("paraesternal")) return "plax";
+            const primaryVariants = collectTextVariants(primary).map(normalizeComparable);
+            const viewVariants = collectTextVariants(view).map(normalizeComparable);
+
+            const checkMatch = (variants, keywords) => {
+                return variants.some(v => keywords.some(k => v.includes(k)));
+            };
+
+            if (checkMatch(viewVariants, ["plax"])) return "plax";
+            if (checkMatch(viewVariants, ["psax"])) return "psax";
+            if (checkMatch(viewVariants, ["a4c-vd", "enfoque vd", "enfocada en vd", "rv-focused a4c"])) return "rv_focused_a4c";
+            if (checkMatch(viewVariants, ["a4c", "4c"])) return "a4c";
+            if (checkMatch(viewVariants, ["a2c", "2c"])) return "a2c";
+            if (checkMatch(viewVariants, ["a3c", "3c"])) return "a3c";
+            if (checkMatch(viewVariants, ["a5c", "5c"])) return "a5c";
+            if (checkMatch(viewVariants, ["vci", "cava", "ivc"])) return "subcostal_ivc";
+            if (checkMatch(viewVariants, ["subcostal 4c", "sc4c"])) return "subcostal_4c";
+            if (checkMatch(viewVariants, ["inflow", "entrada vd", "rv inflow"])) return "rv_inflow";
+            if (checkMatch(primaryVariants, ["derecha", "right parasternal", "rps"]) || checkMatch(viewVariants, ["rps"])) return "right_parasternal";
+            if (checkMatch(primaryVariants, ["supraesternal", "ssn", "suprasternal"]) || checkMatch(viewVariants, ["ssn"])) return "suprasternal";
+            if (checkMatch(primaryVariants, ["subcostal"])) return "subcostal_4c";
+            if (checkMatch(primaryVariants, ["paraesternal"])) return "plax";
+
             return null;
         };
 
-        // Construir la sección de Ventana y técnica recomendadas
-        let windowsHtml = "";
-        const isAltArray = Array.isArray(item.alternate_windows);
-        const hasAlternate = isAltArray && item.alternate_windows.length > 0;
+        const measurementLoc = I18n.localize(item.measurement);
+        const formulaLoc = I18n.localize(item.formula_or_method);
+        const normalValuesLoc = I18n.localize(item.normal_values);
+        const limitationsLoc = I18n.localize(item.interpretation_limitations);
+        const unitsLoc = I18n.localize(item.units);
+        const primaryWindowLoc = I18n.localize(item.primary_window);
+        const preferredViewLoc = I18n.localize(item.preferred_view);
+        const modalityLoc = I18n.localize(item.modality);
+        const acquisitionTimingLoc = I18n.localize(item.acquisition_timing);
+        const acquisitionKeyLoc = I18n.localize(item.acquisition_key);
+        const activeAliases = getLocalizedList(item.aliases);
+        const activeAlternateWindows = getLocalizedList(item.alternate_windows);
 
-        if (item.primary_window || item.preferred_view || item.modality || item.acquisition_timing || item.acquisition_key || hasAlternate) {
+        Storage.addRecent("medición", item.id, measurementLoc);
+        const isFav = Storage.isFavorite("medición", item.id);
+
+        const copyData =
+            `${I18n.translate("label.measurement")}: ${measurementLoc}\n` +
+            `${I18n.translate("label.formula_or_method")}: ${formulaLoc}\n` +
+            `${I18n.translate("label.normal_values")}: ${normalValuesLoc}\n` +
+            `${I18n.translate("label.interpretation_limitations")}: ${limitationsLoc}\n` +
+            `${I18n.translate("label.unidades")}: ${unitsLoc}\n` +
+            `${I18n.translate("label.references")}: ${item.source_document} (P. ${item.source_page})`;
+
+        const encodeInlineValue = (value) =>
+            encodeURIComponent(String(value ?? "")).replace(/'/g, "%27");
+
+        const encodedCopyData = encodeInlineValue(copyData);
+        const encodedMeasurementTitle = encodeInlineValue(measurementLoc);
+        const encodedItemId = encodeInlineValue(item.id);
+
+        const relatedMedia = MediaViewer.getMediaForEntity(mediaResources, 'measurement', item.id);
+        const mediaHTML = MediaViewer.renderMediaSection(relatedMedia);
+
+        const labelSection = escapeHTML(I18n.translate("label.section"));
+        const labelAcqTechHeader = escapeHTML(I18n.localize({
+            es: "Ventana y técnica recomendadas",
+            en: "Recommended view and acquisition technique"
+        }));
+        const labelPrimaryWin = escapeHTML(I18n.translate("label.primary_window"));
+        const labelPreferredView = escapeHTML(I18n.translate("label.preferred_view"));
+        const labelModality = escapeHTML(I18n.translate("label.modality"));
+        const labelAcqTiming = escapeHTML(I18n.translate("label.acquisition_timing"));
+        const labelAcqKey = escapeHTML(I18n.translate("label.acquisition_key"));
+        const labelAltWindows = escapeHTML(I18n.translate("label.alternate_windows"));
+
+        const labelNoAlts = escapeHTML(I18n.localize({
+            es: "No se especifican ventanas alternativas.",
+            en: "No alternate windows are specified."
+        }));
+
+        let windowsHtml = "";
+        const hasAlternate = activeAlternateWindows.length > 0;
+
+        if (primaryWindowLoc || preferredViewLoc || modalityLoc || acquisitionTimingLoc || acquisitionKeyLoc || hasAlternate) {
             let altWindowsContent = "";
-            if (!isAltArray || item.alternate_windows.length === 0) {
-                altWindowsContent = '<p class="detail-text">No se especifican ventanas alternativas.</p>';
-            } else if (item.alternate_windows.length === 1) {
-                altWindowsContent = `<p class="detail-text">${escapeHTML(item.alternate_windows[0])}</p>`;
+            if (!hasAlternate) {
+                altWindowsContent = `<p class="detail-text">${labelNoAlts}</p>`;
+            } else if (activeAlternateWindows.length === 1) {
+                altWindowsContent = `<p class="detail-text">${escapeHTML(activeAlternateWindows[0])}</p>`;
             } else {
                 altWindowsContent = `<ul class="detail-list" style="margin: 0.25rem 0 0 1.25rem; padding-left: 0; color: var(--text-main-light); list-style-type: disc;">
-                    ${item.alternate_windows.map(win => `<li style="margin-bottom: 0.25rem;">${escapeHTML(win)}</li>`).join("")}
+                    ${activeAlternateWindows.map(win => `<li style="margin-bottom: 0.25rem;">${escapeHTML(win)}</li>`).join("")}
                 </ul>`;
             }
 
             const winId = getLinkForWindow(item.primary_window, item.preferred_view);
             const primaryWindowHTML = winId
-                ? `<a href="#/ventanas/${winId}" class="clinical-link" style="color: var(--primary-medium); font-weight: 600; text-decoration: underline;">${escapeHTML(item.primary_window)}</a>`
-                : escapeHTML(item.primary_window);
+                ? `<a href="#/ventanas/${escapeHTML(winId)}" class="clinical-link" style="color: var(--primary-medium); font-weight: 600; text-decoration: underline;">${escapeHTML(primaryWindowLoc)}</a>`
+                : escapeHTML(primaryWindowLoc);
 
             windowsHtml = `
                 <div class="card-section-divider" style="margin: 0.5rem 0; border-top: 1px dashed var(--border-light);"></div>
                 <details style="margin-top: 0.5rem;">
                     <summary style="font-size: 1.1rem; font-weight: 600; color: var(--primary-medium); cursor: pointer; padding: 0.25rem 0; outline: none; user-select: none;">
-                        Ventana y técnica recomendadas
+                        ${labelAcqTechHeader}
                     </summary>
                     <div style="display: flex; flex-direction: column; gap: 1.25rem; margin-top: 0.75rem; padding-left: 0.25rem;">
-                        ${item.primary_window ? `
+                        ${primaryWindowLoc ? `
                         <div class="card-section">
-                            <span class="detail-label">Ventana acústica primaria</span>
+                            <span class="detail-label">${labelPrimaryWin}</span>
                             <p class="detail-text">${primaryWindowHTML}</p>
                         </div>` : ''}
 
-                        ${item.preferred_view ? `
+                        ${preferredViewLoc ? `
                         <div class="card-section">
-                            <span class="detail-label">Vista recomendada</span>
-                            <p class="detail-text">${escapeHTML(item.preferred_view)}</p>
+                            <span class="detail-label">${labelPreferredView}</span>
+                            <p class="detail-text">${escapeHTML(preferredViewLoc)}</p>
                         </div>` : ''}
 
-                        ${item.modality ? `
+                        ${modalityLoc ? `
                         <div class="card-section">
-                            <span class="detail-label">Modalidad ecográfica</span>
-                            <p class="detail-text">${escapeHTML(item.modality)}</p>
+                            <span class="detail-label">${labelModality}</span>
+                            <p class="detail-text">${escapeHTML(modalityLoc)}</p>
                         </div>` : ''}
 
-                        ${item.acquisition_timing ? `
+                        ${acquisitionTimingLoc ? `
                         <div class="card-section">
-                            <span class="detail-label">Momento de adquisición</span>
-                            <p class="detail-text">${escapeHTML(item.acquisition_timing)}</p>
+                            <span class="detail-label">${labelAcqTiming}</span>
+                            <p class="detail-text">${escapeHTML(acquisitionTimingLoc)}</p>
                         </div>` : ''}
 
-                        ${item.acquisition_key ? `
+                        ${acquisitionKeyLoc ? `
                         <div class="card-section">
-                            <span class="detail-label">Consejo técnico de adquisición</span>
-                            <p class="detail-text" style="font-style: italic;">${escapeHTML(item.acquisition_key)}</p>
+                            <span class="detail-label">${labelAcqKey}</span>
+                            <p class="detail-text" style="font-style: italic;">${escapeHTML(acquisitionKeyLoc)}</p>
                         </div>` : ''}
 
                         <div class="card-section">
-                            <span class="detail-label">Ventanas alternativas</span>
+                            <span class="detail-label">${labelAltWindows}</span>
                             ${altWindowsContent}
                         </div>
                     </div>
@@ -551,49 +753,59 @@ const Router = {
             `;
         }
 
+        const labelMethod = escapeHTML(I18n.translate("label.formula_or_method"));
+        const labelRefValues = escapeHTML(I18n.translate("label.reference_values"));
+        const labelUnits = escapeHTML(I18n.translate("label.unidades"));
+        const labelLimitLabel = escapeHTML(I18n.translate("label.interpretation_limitations"));
+        const labelAliases = escapeHTML(I18n.translate("label.sinonimos"));
+        const labelRef = escapeHTML(I18n.translate("label.references"));
+        const labelCopy = escapeHTML(I18n.translate("label.copiar"));
+        const labelRemove = escapeHTML(I18n.translate("label.quitar"));
+        const labelSaveFav = escapeHTML(I18n.translate("action.save_favorite"));
+
         let html = `
             <div class="navigation-header">
-                <a href="#/mediciones/${item.section_id}" class="btn-back">← Sección</a>
-                <h2>${item.measurement}</h2>
+                <a href="#/mediciones/${escapeHTML(item.section_id)}" class="btn-back">← ${labelSection}</a>
+                <h2>${escapeHTML(measurementLoc)}</h2>
             </div>
 
             <div class="card clinical-detail-card">
                 <div class="card-section">
-                    <span class="detail-label">Fórmula o Método de Adquisición</span>
-                    <p class="detail-text">${item.formula_or_method}</p>
+                    <span class="detail-label">${labelMethod}</span>
+                    <p class="detail-text">${escapeHTML(formulaLoc)}</p>
                 </div>
                 <div class="card-section">
-                    <span class="detail-label">Valores de Referencia / Puntos de Corte</span>
-                    <p class="detail-text highlight-text">${item.normal_values}</p>
+                    <span class="detail-label">${labelRefValues}</span>
+                    <p class="detail-text highlight-text">${escapeHTML(normalValuesLoc)}</p>
                 </div>
                 <div class="card-section">
-                    <span class="detail-label">Unidades de Medida</span>
-                    <span class="unit-badge large-badge">${item.units}</span>
+                    <span class="detail-label">${labelUnits}</span>
+                    <span class="unit-badge large-badge">${escapeHTML(unitsLoc)}</span>
                 </div>
                 ${mediaHTML ? `
                 <div class="card-section media-card-section">
                     ${mediaHTML}
                 </div>` : ''}
                 <div class="card-section">
-                    <span class="detail-label">Limitaciones y Precauciones</span>
-                    <p class="detail-text warning-text">${item.interpretation_limitations}</p>
+                    <span class="detail-label">${labelLimitLabel}</span>
+                    <p class="detail-text warning-text">${escapeHTML(limitationsLoc)}</p>
                 </div>
-                ${item.aliases && item.aliases.length > 0 ? `
+                ${activeAliases.length > 0 ? `
                 <div class="card-section">
-                    <span class="detail-label">Alias comunes</span>
-                    <p class="detail-text">${item.aliases.join(", ")}</p>
+                    <span class="detail-label">${labelAliases}</span>
+                    <p class="detail-text">${escapeHTML(activeAliases.join(", "))}</p>
                 </div>` : ''}
                 <div class="card-section">
-                    <span class="detail-label">Fuente Autorizada</span>
-                    <p class="detail-text">${item.source_document} (Página ${item.source_page})</p>
+                    <span class="detail-label">${labelRef}</span>
+                    <p class="detail-text">${escapeHTML(item.source_document)} (P. ${escapeHTML(item.source_page)})</p>
                 </div>
 
                 ${windowsHtml}
 
                 <div class="detail-actions">
-                    <button class="btn-primary" onclick="Router.copyText(\`${copyData.replace(/`/g, '\\`').replace(/\n/g, '\\n')}\`, 'copy-det-m')" id="copy-det-m">Copiar Contenido</button>
-                    <button class="btn-secondary" onclick="Router.toggleFav('medición', '${item.id}', '${item.measurement}', 'fav-det-m')" id="fav-det-m">
-                        ${isFav ? "★ Quitar Favorito" : "☆ Guardar Favorito"}
+                    <button class="btn-primary" onclick="Router.copyText(decodeURIComponent('${encodedCopyData}'), 'copy-det-m')">${labelCopy}</button>
+                    <button class="btn-secondary" onclick="Router.toggleFav('medición', decodeURIComponent('${encodedItemId}'), decodeURIComponent('${encodedMeasurementTitle}'), 'fav-det-m')" id="fav-det-m">
+                        ${isFav ? "★ " + labelRemove : "☆ " + labelSaveFav}
                     </button>
                 </div>
             </div>
@@ -605,23 +817,6 @@ const Router = {
 
     // LISTA DE VENTANAS ECOCARDIOGRÁFICAS
     async renderWindowsList(container) {
-        let windows = [];
-        try {
-            windows = await DataLoader.getWindows();
-            if (!windows || windows.length === 0) {
-                throw new Error("No se encontraron ventanas o el archivo está vacío.");
-            }
-        } catch (error) {
-            container.innerHTML = `
-                <div class="card error-card">
-                    <h2>Error al cargar las ventanas</h2>
-                    <p>Lo sentimos, no pudimos cargar la lista de ventanas ecocardiográficas. Por favor, intente nuevamente más tarde.</p>
-                    <a href="#/" class="btn-primary">Volver al Inicio</a>
-                </div>
-            `;
-            return;
-        }
-
         const escapeHTML = (str) => {
             if (!str) return "";
             return str.toString()
@@ -632,32 +827,55 @@ const Router = {
                 .replace(/'/g, "&#039;");
         };
 
+        let windows = [];
+        try {
+            windows = await DataLoader.getWindows();
+            if (!windows || windows.length === 0) {
+                throw new Error("No se encontraron ventanas o el archivo está vacío.");
+            }
+        } catch (error) {
+            container.innerHTML = `
+                <div class="card error-card">
+                    <h2>${escapeHTML(I18n.translate("error.windows_load_title"))}</h2>
+                    <p>${escapeHTML(I18n.translate("error.windows_load_text"))}</p>
+                    <a href="#/" class="btn-primary">${I18n.translate("error.go_home")}</a>
+                </div>
+            `;
+            return;
+        }
+
         let html = `
             <div class="navigation-header">
-                <a href="#/" class="btn-back">← Inicio</a>
-                <h2>Ventanas Ecocardiográficas</h2>
+                <a href="#/" class="btn-back">← ${I18n.translate("nav.home")}</a>
+                <h2>${escapeHTML(I18n.translate("nav.windows"))}</h2>
             </div>
 
             <div class="content-accordion-grid cards-list">
         `;
 
         windows.forEach(item => {
+            const windowLoc = I18n.localize(item.window);
+            const structLoc = I18n.localize(item.favored_structures);
+            const posLoc = I18n.localize(item.typical_probe_position);
+            const oriLoc = I18n.localize(item.typical_marker_orientation);
+            const measLoc = I18n.localize(item.favored_measurements);
+
             html += `
                 <details class="content-accordion window-accordion card clinical-card">
                     <summary class="content-accordion-summary">
                         <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
-                            <span class="content-accordion-title">${escapeHTML(item.window)}</span>
+                            <span class="content-accordion-title">${escapeHTML(windowLoc)}</span>
                             ${item.abbreviation ? `<span class="unit-badge">${escapeHTML(item.abbreviation)}</span>` : ''}
                         </div>
                         <span class="content-accordion-arrow"></span>
                     </summary>
                     <div class="content-accordion-body">
-                        ${item.favored_structures ? `<p><strong>Estructuras favorecidas:</strong> ${escapeHTML(item.favored_structures)}</p>` : ''}
-                        ${item.typical_probe_position ? `<p><strong>Posición del transductor:</strong> ${escapeHTML(item.typical_probe_position)}</p>` : ''}
-                        ${item.typical_marker_orientation ? `<p><strong>Orientación del marcador:</strong> ${escapeHTML(item.typical_marker_orientation)}</p>` : ''}
-                        ${item.favored_measurements ? `<p><strong>Mediciones asociadas:</strong> ${escapeHTML(item.favored_measurements)}</p>` : ''}
+                        ${structLoc ? `<p><strong>${I18n.translate("label.est_favorecidas")}:</strong> ${escapeHTML(structLoc)}</p>` : ''}
+                        ${posLoc ? `<p><strong>${I18n.translate("label.pos_transductor")}:</strong> ${escapeHTML(posLoc)}</p>` : ''}
+                        ${oriLoc ? `<p><strong>${I18n.translate("label.ori_marcador")}:</strong> ${escapeHTML(oriLoc)}</p>` : ''}
+                        ${measLoc ? `<p><strong>${I18n.translate("label.med_asociadas")}:</strong> ${escapeHTML(measLoc)}</p>` : ''}
                         <div class="card-actions">
-                            <a href="#/ventanas/${item.id}" class="btn-card-action">Detalle</a>
+                            <a href="#/ventanas/${item.id}" class="btn-card-action">${I18n.translate("label.detalles")}</a>
                         </div>
                     </div>
                 </details>
@@ -673,6 +891,16 @@ const Router = {
 
     // DETALLE DE VENTANA ECOCARDIOGRÁFICA
     async renderWindowDetail(container, id) {
+        const escapeHTML = (str) => {
+            if (!str) return "";
+            return str.toString()
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        };
+
         let windows = [];
         let measurements = [];
         let mediaResources = [];
@@ -683,9 +911,9 @@ const Router = {
         } catch (error) {
             container.innerHTML = `
                 <div class="card error-card">
-                    <h2>Error al cargar la información</h2>
-                    <p>No se pudo cargar la información de la ventana ecocardiográfica.</p>
-                    <a href="#/ventanas" class="btn-primary">Volver a Ventanas</a>
+                    <h2>${escapeHTML(I18n.translate("error.window_detail_load_title"))}</h2>
+                    <p>${escapeHTML(I18n.translate("error.window_detail_load_text"))}</p>
+                    <a href="#/ventanas" class="btn-primary">${escapeHTML(I18n.translate("nav.back_to_windows"))}</a>
                 </div>
             `;
             return;
@@ -700,30 +928,63 @@ const Router = {
         const relatedMedia = MediaViewer.getMediaForEntity(mediaResources, 'window', item.id);
         const mediaHTML = MediaViewer.renderMediaSection(relatedMedia);
 
-        const escapeHTML = (str) => {
-            if (!str) return "";
-            return str.toString()
-                .replace(/&/g, "&amp;")
-                .replace(/</g, "&lt;")
-                .replace(/>/g, "&gt;")
-                .replace(/"/g, "&quot;")
-                .replace(/'/g, "&#039;");
+        const collectTextVariants = (value) => {
+            if (value === null || value === undefined) return [];
+            if (typeof value === "string") {
+                const s = value.trim();
+                return s ? [s] : [];
+            }
+            if (Array.isArray(value)) {
+                let res = [];
+                value.forEach(sub => {
+                    res = res.concat(collectTextVariants(sub));
+                });
+                return res;
+            }
+            if (typeof value === "object") {
+                let res = [];
+                for (const key in value) {
+                    if (Object.prototype.hasOwnProperty.call(value, key)) {
+                        res = res.concat(collectTextVariants(value[key]));
+                    }
+                }
+                return res;
+            }
+            return [];
         };
+
+        const normalizeComparable = (value) => {
+            if (value === null || value === undefined) return "";
+            return String(value)
+                .trim()
+                .toLowerCase()
+                .normalize("NFD")
+                .replace(/[\u0300-\u036f]/g, "")
+                .replace(/\s+/g, " ");
+        };
+
+        const windowLoc = I18n.localize(item.window);
+        const posLoc = I18n.localize(item.typical_probe_position);
+        const oriLoc = I18n.localize(item.typical_marker_orientation);
+        const structLoc = I18n.localize(item.favored_structures);
+        const measLoc = I18n.localize(item.favored_measurements);
 
         // Relación con mediciones
         let favoredMeasurementsHTML = "";
-        if (item.favored_measurements) {
-            const parts = item.favored_measurements.split(",").map(p => p.trim());
+        if (measLoc) {
+            const parts = measLoc.split(",").map(p => p.trim());
             const linkedParts = parts.map(part => {
-                const part_lower = part.toLowerCase();
+                const part_normalized = normalizeComparable(part);
                 let found = null;
 
                 for (const m of measurements) {
-                    const m_name = m.measurement.toLowerCase();
-                    const m_abbr = (m.abbreviation || "").toLowerCase();
-                    const aliases = (m.aliases || []).map(a => a.toLowerCase());
+                    const measurementVariants = [
+                        ...collectTextVariants(m.measurement),
+                        ...collectTextVariants(m.abbreviation),
+                        ...collectTextVariants(m.aliases)
+                    ].map(normalizeComparable).filter(Boolean);
 
-                    if (part_lower === m_abbr || part_lower === m_name || aliases.includes(part_lower)) {
+                    if (measurementVariants.includes(part_normalized)) {
                         found = m;
                         break;
                     }
@@ -732,8 +993,11 @@ const Router = {
                 if (!found) {
                     const manualMap = {
                         "dtdvi/dtsvi": "dtdvi",
+                        "lvidd/lvids": "dtdvi",
                         "dtdvi": "dtdvi",
+                        "lvidd": "dtdvi",
                         "dtsvi": "dtsvi",
+                        "lvids": "dtsvi",
                         "ivsd": "ivsd",
                         "pwtd": "pwtd",
                         "rwt": "rwt_meas",
@@ -741,22 +1005,27 @@ const Router = {
                         "mapse": "mapse",
                         "tapse": "tapse_meas",
                         "grosor pared vd": "grosor_pared_vd",
+                        "rv wall thickness": "grosor_pared_vd",
                         "planimetría mitral": "area_mitral_planimetria",
+                        "mitral planimetry": "area_mitral_planimetria",
                         "diámetro tsvi": "area_tsvi_meas",
+                        "lvot diameter": "area_tsvi_meas",
                         "diámetro ai": "diametro_ap_ai",
+                        "la diameter": "diametro_ap_ai",
                         "lavi": "lavi_meas",
                         "flujo mitral": "onda_e_mitral",
+                        "mitral flow": "onda_e_mitral",
                         "gls": "gls_vi",
                         "wmsi": "wmsi",
                         "subcostal": "derrame_pericardico_pequeno"
                     };
-                    if (manualMap[part_lower]) {
-                        found = measurements.find(m => m.id === manualMap[part_lower]);
+                    if (manualMap[part_normalized]) {
+                        found = measurements.find(m => m.id === manualMap[part_normalized]);
                     }
                 }
 
                 if (found) {
-                    return `<a href="#/medicion/${found.id}" class="clinical-link" style="color: var(--primary-medium); font-weight: 600; text-decoration: underline;">${escapeHTML(part)}</a>`;
+                    return `<a href="#/medicion/${escapeHTML(found.id)}" class="clinical-link" style="color: var(--primary-medium); font-weight: 600; text-decoration: underline;">${escapeHTML(part)}</a>`;
                 } else {
                     return escapeHTML(part);
                 }
@@ -764,35 +1033,45 @@ const Router = {
             favoredMeasurementsHTML = linkedParts.join(", ");
         }
 
+        const labelAbbreviation = escapeHTML(I18n.localize({
+            es: "Abreviatura",
+            en: "Abbreviation"
+        }));
+
+        const labelFavoredMeasurements = escapeHTML(I18n.localize({
+            es: "Mediciones favorecidas",
+            en: "Favored measurements"
+        }));
+
         let html = `
             <div class="navigation-header">
-                <a href="#/ventanas" class="btn-back">← Ventanas</a>
-                <h2>${escapeHTML(item.window)}</h2>
+                <a href="#/ventanas" class="btn-back">← ${I18n.translate("nav.windows")}</a>
+                <h2>${escapeHTML(windowLoc)}</h2>
             </div>
 
             <div class="card clinical-detail-card">
                 ${item.abbreviation ? `
                 <div class="card-section">
-                    <span class="detail-label">Abreviatura</span>
+                    <span class="detail-label">${labelAbbreviation}</span>
                     <span class="unit-badge large-badge" style="width: fit-content;">${escapeHTML(item.abbreviation)}</span>
                 </div>` : ''}
 
-                ${item.typical_probe_position ? `
+                ${posLoc ? `
                 <div class="card-section">
-                    <span class="detail-label">Posición del transductor</span>
-                    <p class="detail-text">${escapeHTML(item.typical_probe_position)}</p>
+                    <span class="detail-label">${I18n.translate("label.pos_transductor")}</span>
+                    <p class="detail-text">${escapeHTML(posLoc)}</p>
                 </div>` : ''}
 
-                ${item.typical_marker_orientation ? `
+                ${oriLoc ? `
                 <div class="card-section">
-                    <span class="detail-label">Orientación del marcador</span>
-                    <p class="detail-text">${escapeHTML(item.typical_marker_orientation)}</p>
+                    <span class="detail-label">${I18n.translate("label.ori_marcador")}</span>
+                    <p class="detail-text">${escapeHTML(oriLoc)}</p>
                 </div>` : ''}
 
-                ${item.favored_structures ? `
+                ${structLoc ? `
                 <div class="card-section">
-                    <span class="detail-label">Estructuras favorecidas</span>
-                    <p class="detail-text">${escapeHTML(item.favored_structures)}</p>
+                    <span class="detail-label">${I18n.translate("label.est_favorecidas")}</span>
+                    <p class="detail-text">${escapeHTML(structLoc)}</p>
                 </div>` : ''}
 
                 ${mediaHTML ? `
@@ -802,7 +1081,7 @@ const Router = {
 
                 ${favoredMeasurementsHTML ? `
                 <div class="card-section">
-                    <span class="detail-label">Mediciones favorecidas</span>
+                    <span class="detail-label">${labelFavoredMeasurements}</span>
                     <p class="detail-text">${favoredMeasurementsHTML}</p>
                 </div>` : ''}
             </div>
@@ -814,24 +1093,6 @@ const Router = {
 
     // LISTADO DE PROTOCOLOS
     async renderProtocolsList(container) {
-        let data = null;
-        try {
-            data = await DataLoader.fetchResource("protocols");
-            if (!data || !data.protocols || data.protocols.length === 0) {
-                throw new Error("No se encontraron protocolos o el archivo está vacío.");
-            }
-        } catch (error) {
-            console.error("Error al cargar protocolos:", error);
-            container.innerHTML = `
-                <div class="card error-card">
-                    <h2>Error al cargar los protocolos</h2>
-                    <p>Lo sentimos, no pudimos cargar la lista de protocolos POCUS. Por favor, intente nuevamente más tarde.</p>
-                    <a href="#/" class="btn-primary">Volver al Inicio</a>
-                </div>
-            `;
-            return;
-        }
-
         const escapeHTML = (str) => {
             if (!str) return "";
             return str.toString()
@@ -842,19 +1103,37 @@ const Router = {
                 .replace(/'/g, "&#039;");
         };
 
+        let data = null;
+        try {
+            data = await DataLoader.fetchResource("protocols");
+            if (!data || !data.protocols || data.protocols.length === 0) {
+                throw new Error("No se encontraron protocolos o el archivo está vacío.");
+            }
+        } catch (error) {
+            console.error("Error al cargar protocolos:", error);
+            container.innerHTML = `
+                <div class="card error-card">
+                    <h2>${escapeHTML(I18n.translate("error.protocols_load_title"))}</h2>
+                    <p>${escapeHTML(I18n.translate("error.protocols_load_text"))}</p>
+                    <a href="#/" class="btn-primary">${I18n.translate("error.go_home")}</a>
+                </div>
+            `;
+            return;
+        }
+
         let html = `
             <div class="navigation-header">
-                <a href="#/" class="btn-back">← Inicio</a>
-                <h2>Protocolos POCUS</h2>
+                <a href="#/" class="btn-back">← ${I18n.translate("nav.home")}</a>
+                <h2>${I18n.translate("nav.protocols")}</h2>
             </div>
 
             <div class="safety-banner" role="alert">
-                <strong>Aviso de seguridad clínica:</strong> Los protocolos estructurados son herramientas didácticas y complementarias. No sustituyen la valoración clínica del paciente, la reanimación ni el juicio médico oportuno.
+                ${I18n.translate("safety.notice")}
             </div>
 
             <div style="margin-bottom: 1.5rem;">
                 <p style="font-size: 0.95rem; color: var(--text-muted-light);">
-                    Protocolos estructurados para la evaluación ecográfica dirigida en escenarios clínicos específicos.
+                    ${I18n.translate("label.protocols_desc")}
                 </p>
             </div>
 
@@ -862,22 +1141,32 @@ const Router = {
         `;
 
         data.protocols.forEach(proto => {
+            const protoName = I18n.localize({ es: proto.name_es, en: proto.name_en });
+            const purposeLoc = I18n.localize(proto.purpose);
+            const contextLoc = I18n.localize(proto.clinical_context);
+            const targetLoc = I18n.localize(proto.target_population);
+            const compNames = proto.components.map(c => I18n.localize({ es: c.name_es, en: c.name_en })).join(", ");
+            const purposeLabel = I18n.translate("label.clinical_purpose_label");
+            const contextLabel = I18n.translate("label.clinical_context");
+            const targetLabel = I18n.translate("label.target_population");
+            const compLabel = I18n.translate("label.components");
+
             html += `
                 <details class="content-accordion protocol-accordion card clinical-card">
                     <summary class="content-accordion-summary">
                         <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
-                            <span class="content-accordion-title">${escapeHTML(proto.name_es)}</span>
+                            <span class="content-accordion-title">${escapeHTML(protoName)}</span>
                             <span class="unit-badge">${escapeHTML(proto.acronym)}</span>
                         </div>
                         <span class="content-accordion-arrow"></span>
                     </summary>
                     <div class="content-accordion-body">
-                        <p><strong>Propósito:</strong> ${escapeHTML(proto.purpose)}</p>
-                        <p><strong>Contexto clínico:</strong> ${escapeHTML(proto.clinical_context)}</p>
-                        <p><strong>Población objetivo:</strong> ${escapeHTML(proto.target_population)}</p>
-                        <p><strong>Componentes:</strong> ${proto.components.map(c => escapeHTML(c.name_es)).join(", ")}</p>
+                        <p><strong>${escapeHTML(purposeLabel)}:</strong> ${escapeHTML(purposeLoc)}</p>
+                        <p><strong>${escapeHTML(contextLabel)}:</strong> ${escapeHTML(contextLoc)}</p>
+                        <p><strong>${escapeHTML(targetLabel)}:</strong> ${escapeHTML(targetLoc)}</p>
+                        <p><strong>${escapeHTML(compLabel)}:</strong> ${escapeHTML(compNames)}</p>
                         <div class="card-actions">
-                            <a href="#/protocolos/${proto.id}" class="btn-card-action">Detalle</a>
+                            <a href="#/protocolos/${proto.id}" class="btn-card-action">${I18n.translate("label.detalles")}</a>
                         </div>
                     </div>
                 </details>
@@ -891,40 +1180,42 @@ const Router = {
         container.innerHTML = html;
     },
 
-    uiStrings: {
-        guideTab: "Guía interactiva",
-        contentTab: "Contenido completo",
-        referencesTab: "Referencias",
-        previousBtn: "← Anterior",
-        nextBtn: "Siguiente →",
-        resetBtn: "Reiniciar",
-        finishedBtn: "Finalizado",
-        startStep: "Inicio",
-        integrationStep: "Integración fisiológica",
-        summaryStep: "Resumen",
-        stepIndicator: "Paso {x} de {y}",
-        itemNotAvailable: "Elemento no disponible",
-        noLinkedItems: "No hay elementos vinculados en la base actual.",
-        clinicalWarningsTitle: "Advertencias Clínicas Esenciales",
-        clinicalPurposeLabel: "Propósito",
-        clinicalIntegrationLabel: "Integración",
-        clinicalSafetyLabel: "Seguridad",
-        clinicalWindowLabel: "Ventanas vinculadas",
-        clinicalMeasurementLabel: "Mediciones vinculadas",
-        clinicalViewsLabel: "Vistas sugeridas",
-        clinicalQuestionsLabel: "Preguntas clínicas clave",
-        clinicalTargetsLabel: "Objetivos de evaluación",
-        clinicalFindingsLabel: "Hallazgos posibles",
-        clinicalLimitsLabel: "Límites de interpretación",
-        clinicalSequenceTitle: "Secuencia y adaptación clínica",
-        clinicalGeneralLimitsTitle: "Límites Generales",
-        clinicalSafetyWorkflowTitle: "Seguridad y flujo de trabajo",
-        clinicalReferencesTitle: "Referencias Bibliográficas",
-        clinicalReturnToListBtn: "Volver a Protocolos",
-        clinicalReturnHomeBtn: "Inicio",
-        errorLoadingTitle: "Error al cargar el protocolo",
-        errorLoadingText: "No se pudo obtener la información detallada del protocolo.",
-        errorLoadingBackBtn: "Volver a Protocolos"
+    get uiStrings() {
+        return {
+            guideTab: I18n.translate("label.guide_tab"),
+            contentTab: I18n.translate("label.content_tab"),
+            referencesTab: I18n.translate("label.references_tab"),
+            previousBtn: I18n.translate("label.previous_btn"),
+            nextBtn: I18n.translate("label.next_btn"),
+            resetBtn: I18n.translate("label.reset_btn"),
+            finishedBtn: I18n.translate("label.finished_btn"),
+            startStep: I18n.translate("label.start_step"),
+            integrationStep: I18n.translate("label.integration_step"),
+            summaryStep: I18n.translate("label.summary_step"),
+            stepIndicator: I18n.translate("label.step_indicator"),
+            itemNotAvailable: I18n.translate("label.item_not_available"),
+            noLinkedItems: I18n.translate("label.no_linked_items"),
+            clinicalWarningsTitle: I18n.translate("label.clinical_warnings_title"),
+            clinicalPurposeLabel: I18n.translate("label.clinical_purpose_label"),
+            clinicalIntegrationLabel: I18n.translate("label.clinical_integration_label"),
+            clinicalSafetyLabel: I18n.translate("label.clinical_safety_label"),
+            clinicalWindowLabel: I18n.translate("label.clinical_window_label"),
+            clinicalMeasurementLabel: I18n.translate("label.clinical_measurement_label"),
+            clinicalViewsLabel: I18n.translate("label.clinical_views_label"),
+            clinicalQuestionsLabel: I18n.translate("label.clinical_questions_label"),
+            clinicalTargetsLabel: I18n.translate("label.clinical_targets_label"),
+            clinicalFindingsLabel: I18n.translate("label.clinical_findings_label"),
+            clinicalLimitsLabel: I18n.translate("label.clinical_limits_label"),
+            clinicalSequenceTitle: I18n.translate("label.clinical_sequence_title"),
+            clinicalGeneralLimitsTitle: I18n.translate("label.clinical_general_limits_title"),
+            clinicalSafetyWorkflowTitle: I18n.translate("label.clinical_safety_workflow_title"),
+            clinicalReferencesTitle: I18n.translate("label.clinical_references_title"),
+            clinicalReturnToListBtn: I18n.translate("label.clinical_return_to_list_btn"),
+            clinicalReturnHomeBtn: I18n.translate("label.clinical_return_home_btn"),
+            errorLoadingTitle: I18n.translate("label.error_loading_title"),
+            errorLoadingText: I18n.translate("label.error_loading_text"),
+            errorLoadingBackBtn: I18n.translate("label.error_loading_back_btn")
+        };
     },
 
     buildProtocolGuideSteps(protocol) {
@@ -932,34 +1223,41 @@ const Router = {
         steps.push({
             type: "start",
             title: Router.uiStrings.startStep,
-            name: protocol.name_es,
+            name: I18n.localize({ es: protocol.name_es, en: protocol.name_en }),
             acronym: protocol.acronym,
-            purpose: protocol.purpose,
-            clinical_context: protocol.clinical_context,
-            target_population: protocol.target_population,
-            sequence_note: protocol.sequence_note
+            purpose: I18n.localize(protocol.purpose),
+            clinical_context: I18n.localize(protocol.clinical_context),
+            target_population: I18n.localize(protocol.target_population),
+            sequence_note: I18n.localize(protocol.sequence_note)
         });
 
         protocol.components.forEach(comp => {
             steps.push({
                 type: "component",
-                title: comp.name_es,
-                component: comp
+                title: I18n.localize({ es: comp.name_es, en: comp.name_en }),
+                component: {
+                    ...comp,
+                    clinical_questions: (comp.clinical_questions || []).map(q => I18n.localize(q)),
+                    targets: (comp.targets || []).map(t => I18n.localize(t)),
+                    suggested_views: (comp.suggested_views || []).map(v => I18n.localize(v)),
+                    possible_findings: (comp.possible_findings || []).map(f => I18n.localize(f)),
+                    interpretation_limits: I18n.localize(comp.interpretation_limits)
+                }
             });
         });
 
         steps.push({
             type: "integration",
             title: Router.uiStrings.integrationStep,
-            integration: protocol.integration
+            integration: I18n.localize(protocol.integration)
         });
 
         steps.push({
             type: "summary",
             title: Router.uiStrings.summaryStep,
-            limitations: protocol.limitations,
-            safety_and_workflow_notes: protocol.safety_and_workflow_notes,
-            components_names: protocol.components.map(c => c.name_es)
+            limitations: I18n.localize(protocol.limitations),
+            safety_and_workflow_notes: I18n.localize(protocol.safety_and_workflow_notes),
+            components_names: protocol.components.map(c => I18n.localize({ es: c.name_es, en: c.name_en }))
         });
 
         return steps;
@@ -967,6 +1265,16 @@ const Router = {
 
     // DETALLE DE PROTOCOLO
     async renderProtocolDetail(container, id) {
+        const escapeHTML = (str) => {
+            if (!str) return "";
+            return str.toString()
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        };
+
         let data = null;
         let windows = [];
         let measurements = [];
@@ -997,23 +1305,14 @@ const Router = {
             return;
         }
 
-        const escapeHTML = (str) => {
-            if (!str) return "";
-            return str.toString()
-                .replace(/&/g, "&amp;")
-                .replace(/</g, "&lt;")
-                .replace(/>/g, "&gt;")
-                .replace(/"/g, "&quot;")
-                .replace(/'/g, "&#039;");
-        };
-
         const resolveWindowLink = (wId) => {
             const w = windows.find(item => item.id === wId);
             if (!w) {
                 console.warn(`Ventana no resuelta: ${wId}`);
                 return `<span class="element-not-available" style="color: var(--text-muted-light); font-style: italic;">${escapeHTML(wId)} (${escapeHTML(Router.uiStrings.itemNotAvailable)})</span>`;
             }
-            return `<a href="#/ventanas/${wId}" class="clinical-link" style="color: var(--primary-medium); font-weight: 600; text-decoration: underline;">${escapeHTML(w.window)} (${escapeHTML(w.abbreviation)})</a>`;
+            const windowAbbreviation = I18n.localize(w.abbreviation) || I18n.localize(w.window);
+            return `<a href="#/ventanas/${wId}" class="clinical-link" style="color: var(--primary-medium); font-weight: 600; text-decoration: underline;">${escapeHTML(I18n.localize(w.window))} (${escapeHTML(windowAbbreviation)})</a>`;
         };
 
         const resolveMeasurementLink = (mId) => {
@@ -1022,8 +1321,8 @@ const Router = {
                 console.warn(`Medición no resuelta: ${mId}`);
                 return `<span class="element-not-available" style="color: var(--text-muted-light); font-style: italic;">${escapeHTML(mId)} (${escapeHTML(Router.uiStrings.itemNotAvailable)})</span>`;
             }
-            const abbr = m.abbreviation || m.measurement;
-            return `<a href="#/medicion/${mId}" class="clinical-link" style="color: var(--primary-medium); font-weight: 600; text-decoration: underline;">${escapeHTML(m.measurement)} (${escapeHTML(abbr)})</a>`;
+            const abbr = I18n.localize(m.abbreviation) || I18n.localize(m.measurement);
+            return `<a href="#/medicion/${mId}" class="clinical-link" style="color: var(--primary-medium); font-weight: 600; text-decoration: underline;">${escapeHTML(I18n.localize(m.measurement))} (${escapeHTML(abbr)})</a>`;
         };
 
         const steps = this.buildProtocolGuideSteps(proto);
@@ -1035,24 +1334,27 @@ const Router = {
         const protoMediaHTML = MediaViewer.renderMediaSection(protoMedia);
 
         // Construir advertencias esenciales siempre visibles
+        const protoName = I18n.localize({ es: proto.name_es, en: proto.name_en });
+        const altName = I18n.localize({ es: proto.name_en, en: proto.name_es });
+
         let html = `
             <div class="navigation-header">
                 <a href="#/protocolos" class="btn-back">← ${escapeHTML(Router.uiStrings.clinicalReturnToListBtn)}</a>
-                <h2>${escapeHTML(proto.name_es)} (${escapeHTML(proto.acronym)})</h2>
+                <h2>${escapeHTML(protoName)} (${escapeHTML(proto.acronym)})</h2>
             </div>
 
             <div class="protocol-detail">
                 <div class="protocol-safety-banner card" style="border-left: 4px solid #d97706; background: rgba(217, 119, 6, 0.05); padding: 0.75rem;">
                     <p style="margin: 0 0 0.5rem 0; font-size: 0.95rem; font-weight: bold; color: #d97706;">${escapeHTML(Router.uiStrings.clinicalWarningsTitle)}</p>
                     <ul style="margin: 0; padding-left: 1.25rem; font-size: 0.9rem; line-height: 1.4;">
-                        <li><strong>${escapeHTML(Router.uiStrings.clinicalPurposeLabel)}:</strong> ${escapeHTML(data.educational_disclaimer)}</li>
-                        <li><strong>${escapeHTML(Router.uiStrings.clinicalIntegrationLabel)}:</strong> ${escapeHTML(proto.integration)}</li>
-                        <li><strong>${escapeHTML(Router.uiStrings.clinicalSafetyLabel)}:</strong> ${escapeHTML(proto.safety_and_workflow_notes)}</li>
+                        <li><strong>${escapeHTML(Router.uiStrings.clinicalPurposeLabel)}:</strong> ${escapeHTML(I18n.localize(data.educational_disclaimer))}</li>
+                        <li><strong>${escapeHTML(Router.uiStrings.clinicalIntegrationLabel)}:</strong> ${escapeHTML(I18n.localize(proto.integration))}</li>
+                        <li><strong>${escapeHTML(Router.uiStrings.clinicalSafetyLabel)}:</strong> ${escapeHTML(I18n.localize(proto.safety_and_workflow_notes))}</li>
                     </ul>
                 </div>
 
                 <div class="protocol-tabs">
-                    <div role="tablist" aria-label="Secciones del protocolo" class="protocol-tab-list" style="display: flex; gap: 0.5rem; margin-bottom: 1rem; border-bottom: 2px solid var(--border-light); overflow-x: auto; padding-bottom: 0.25rem;">
+                    <div role="tablist" aria-label="${escapeHTML(I18n.translate("label.protocol_sections"))}" class="protocol-tab-list" style="display: flex; gap: 0.5rem; margin-bottom: 1rem; border-bottom: 2px solid var(--border-light); overflow-x: auto; padding-bottom: 0.25rem;">
                         <button type="button" role="tab" aria-selected="true" aria-controls="protocol-guide-panel" id="protocol-guide-tab" tabindex="0" class="protocol-tab-button" data-protocol-tab="guide" style="padding: 0.5rem 1rem; border: none; background: none; font-weight: bold; cursor: pointer; border-bottom: 2px solid transparent;">
                             ${escapeHTML(Router.uiStrings.guideTab)}
                         </button>
@@ -1080,7 +1382,7 @@ const Router = {
                             <!-- Step Indicators / Markers -->
                             <div class="protocol-step-markers" style="display: flex; gap: 0.25rem; justify-content: center; flex-wrap: wrap;">
                                 ${steps.map((step, idx) => `
-                                    <button class="protocol-step-marker" data-step="${idx}" aria-label="Ir al paso ${idx + 1}: ${escapeHTML(step.title)}" style="width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border-light); background: var(--bg-light); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: bold;">
+                                    <button class="protocol-step-marker" data-step="${idx}" aria-label="${escapeHTML(I18n.translate("label.go_to_step", { step: idx + 1, title: step.title }))}" style="width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--border-light); background: var(--bg-light); cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: bold;">
                                         ${idx + 1}
                                     </button>
                                 `).join("")}
@@ -1090,15 +1392,18 @@ const Router = {
                             <div class="protocol-step-cards">
                                 ${steps.map((step, idx) => {
                                     if (step.type === "start") {
+                                        const contextLabel = I18n.translate("label.clinical_context") + ":";
+                                        const targetLabel = I18n.translate("label.target_population") + ":";
+                                        const sequenceLabel = I18n.translate("label.acquisition_sequence") + ":";
                                         return `
                                             <div class="protocol-step-card card" data-step="${idx}" ${idx === 0 ? "" : "hidden"}>
                                                 <h3 class="protocol-step-title" style="margin-top: 0;">${escapeHTML(step.name)} (${escapeHTML(step.acronym)})</h3>
-                                                <p style="font-style: italic; color: var(--text-muted-light);">${escapeHTML(proto.name_en)}</p>
+                                                <p style="font-style: italic; color: var(--text-muted-light);">${escapeHTML(altName)}</p>
                                                 <p><strong>${escapeHTML(Router.uiStrings.clinicalPurposeLabel)}:</strong> ${escapeHTML(step.purpose)}</p>
-                                                <p><strong>Contexto clínico:</strong> ${escapeHTML(step.clinical_context)}</p>
-                                                <p><strong>Población objetivo:</strong> ${escapeHTML(step.target_population)}</p>
+                                                <p><strong>${escapeHTML(contextLabel)}</strong> ${escapeHTML(step.clinical_context)}</p>
+                                                <p><strong>${escapeHTML(targetLabel)}</strong> ${escapeHTML(step.target_population)}</p>
                                                 <div style="margin-top: 0.5rem; padding: 0.5rem; background: rgba(0,0,0,0.02); border-left: 3px solid var(--primary-medium);">
-                                                    <strong>Secuencia de adquisición:</strong> ${escapeHTML(step.sequence_note)}
+                                                    <strong>${escapeHTML(sequenceLabel)}</strong> ${escapeHTML(step.sequence_note)}
                                                 </div>
                                             </div>
                                         `;
@@ -1114,11 +1419,12 @@ const Router = {
 
                                         const compMedia = MediaViewer.getMediaForEntity(mediaResources, 'component', comp.id);
                                         const compMediaHTML = MediaViewer.renderMediaSection(compMedia);
+                                        const componentHeader = I18n.translate("label.component_with_name", { name: I18n.localize({ es: comp.name_es, en: comp.name_en }) });
 
                                         return `
                                             <div class="protocol-step-card card" data-step="${idx}" hidden>
-                                                <h3 class="protocol-step-title" style="margin-top: 0;">Componente: ${escapeHTML(comp.name_es)}</h3>
-                                                <p style="font-style: italic; color: var(--text-muted-light); font-size: 0.9rem;">${escapeHTML(comp.name_en)}</p>
+                                                <h3 class="protocol-step-title" style="margin-top: 0;">${escapeHTML(componentHeader)}</h3>
+                                                <p style="font-style: italic; color: var(--text-muted-light); font-size: 0.9rem;">${escapeHTML(I18n.localize({ es: comp.name_en, en: comp.name_es }))}</p>
 
                                                 <div style="margin-top: 0.5rem;">
                                                     <strong>${escapeHTML(Router.uiStrings.clinicalQuestionsLabel)}:</strong>
@@ -1164,7 +1470,7 @@ const Router = {
                                                 <h3 class="protocol-step-title" style="margin-top: 0;">${escapeHTML(Router.uiStrings.integrationStep)}</h3>
                                                 <p>${escapeHTML(step.integration)}</p>
                                                 <div style="margin-top: 1rem; padding: 0.75rem; border-left: 4px solid #d97706; background: rgba(217, 119, 6, 0.05); font-size: 0.9rem;">
-                                                    <strong>Recordatorio:</strong> Siempre integre los hallazgos con el contexto clínico del paciente.
+                                                    <strong>${escapeHTML(I18n.translate("label.reminder"))}:</strong> ${escapeHTML(I18n.translate("label.reminder_text"))}
                                                 </div>
                                             </div>
                                         `;
@@ -1172,7 +1478,7 @@ const Router = {
                                         return `
                                             <div class="protocol-step-card card" data-step="${idx}" hidden>
                                                 <h3 class="protocol-step-title" style="margin-top: 0;">${escapeHTML(Router.uiStrings.summaryStep)}</h3>
-                                                <p>Ha completado la guía de componentes: <strong>${step.components_names.map(name => escapeHTML(name)).join(", ")}</strong>.</p>
+                                                <p>${escapeHTML(I18n.translate("label.protocol_guide_completed"))}: <strong>${step.components_names.map(name => escapeHTML(name)).join(", ")}</strong>.</p>
 
                                                 <div style="margin-top: 0.5rem;">
                                                     <strong>${escapeHTML(Router.uiStrings.clinicalGeneralLimitsTitle)}:</strong>
@@ -1209,14 +1515,14 @@ const Router = {
                         <div class="protocol-full-content content-accordion-grid">
                             <details class="content-accordion card clinical-card">
                                 <summary class="content-accordion-summary">
-                                    <span class="content-accordion-title">Propósito y contexto</span>
+                                    <span class="content-accordion-title">${escapeHTML(I18n.translate("label.purpose_and_context"))}</span>
                                     <span class="content-accordion-arrow"></span>
                                 </summary>
                                 <div class="content-accordion-body">
-                                    <p class="subtitle-en" style="font-style: italic; color: var(--text-muted-light);">${escapeHTML(proto.name_en)}</p>
-                                    <p><strong>${escapeHTML(Router.uiStrings.clinicalPurposeLabel)}:</strong> ${escapeHTML(proto.purpose)}</p>
-                                    <p><strong>Contexto clínico:</strong> ${escapeHTML(proto.clinical_context)}</p>
-                                    <p><strong>Población objetivo:</strong> ${escapeHTML(proto.target_population)}</p>
+                                    <p class="subtitle-en" style="font-style: italic; color: var(--text-muted-light);">${escapeHTML(altName)}</p>
+                                    <p><strong>${escapeHTML(Router.uiStrings.clinicalPurposeLabel)}:</strong> ${escapeHTML(I18n.localize(proto.purpose))}</p>
+                                    <p><strong>${escapeHTML(I18n.translate("label.clinical_context"))}:</strong> ${escapeHTML(I18n.localize(proto.clinical_context))}</p>
+                                    <p><strong>${escapeHTML(I18n.translate("label.target_population"))}:</strong> ${escapeHTML(I18n.localize(proto.target_population))}</p>
                                 </div>
                             </details>
 
@@ -1226,7 +1532,7 @@ const Router = {
                                     <span class="content-accordion-arrow"></span>
                                 </summary>
                                 <div class="content-accordion-body">
-                                    <p>${escapeHTML(proto.sequence_note)}</p>
+                                    <p>${escapeHTML(I18n.localize(proto.sequence_note))}</p>
                                 </div>
                             </details>
 
@@ -1239,30 +1545,34 @@ const Router = {
                                     ? comp.linked_measurement_ids.map(mId => resolveMeasurementLink(mId)).join(", ")
                                     : escapeHTML(Router.uiStrings.noLinkedItems);
 
+                                const componentLabel = I18n.translate("label.component_with_name", { name: "" }).replace(" :", "").replace(":", "").trim();
+                                const compName = I18n.localize({ es: comp.name_es, en: comp.name_en });
+                                const altCompName = I18n.localize({ es: comp.name_en, en: comp.name_es });
+
                                 return `
                                     <details class="content-accordion card clinical-card">
                                         <summary class="content-accordion-summary">
-                                            <span class="content-accordion-title">Componente: ${escapeHTML(comp.name_es)}</span>
+                                            <span class="content-accordion-title">${escapeHTML(componentLabel)} ${escapeHTML(compName)}</span>
                                             <span class="content-accordion-arrow"></span>
                                         </summary>
                                         <div class="content-accordion-body">
-                                            <p style="font-style: italic; color: var(--text-muted-light);">${escapeHTML(comp.name_en)}</p>
+                                            <p style="font-style: italic; color: var(--text-muted-light);">${escapeHTML(altCompName)}</p>
 
                                             <div style="margin-top: 0.5rem;">
                                                 <strong>${escapeHTML(Router.uiStrings.clinicalQuestionsLabel)}:</strong>
                                                 <ul style="margin: 0.25rem 0; padding-left: 1.25rem;">
-                                                    ${comp.clinical_questions.map(q => `<li>${escapeHTML(q)}</li>`).join("")}
+                                                    ${(comp.clinical_questions || []).map(q => `<li>${escapeHTML(I18n.localize(q))}</li>`).join("")}
                                                 </ul>
                                             </div>
 
                                             <div style="margin-top: 0.5rem;">
                                                 <strong>${escapeHTML(Router.uiStrings.clinicalTargetsLabel)}:</strong>
                                                 <ul style="margin: 0.25rem 0; padding-left: 1.25rem;">
-                                                    ${comp.targets.map(t => `<li>${escapeHTML(t)}</li>`).join("")}
+                                                    ${(comp.targets || []).map(t => `<li>${escapeHTML(I18n.localize(t))}</li>`).join("")}
                                                 </ul>
                                             </div>
 
-                                            <p><strong>${escapeHTML(Router.uiStrings.clinicalViewsLabel)}:</strong> ${comp.suggested_views.map(v => escapeHTML(v)).join(", ")}</p>
+                                            <p><strong>${escapeHTML(Router.uiStrings.clinicalViewsLabel)}:</strong> ${(comp.suggested_views || []).map(v => escapeHTML(I18n.localize(v))).join(", ")}</p>
 
                                             <div class="protocol-linked-items" style="margin: 0.75rem 0; padding: 0.75rem; background: rgba(0,0,0,0.02); border-radius: 6px; border: 1px solid var(--border-light);">
                                                 <p style="margin: 0 0 0.5rem 0;"><strong>${escapeHTML(Router.uiStrings.clinicalWindowLabel)}:</strong> ${linkedWindowsHTML}</p>
@@ -1272,12 +1582,12 @@ const Router = {
                                             <div style="margin-top: 0.5rem;">
                                                 <strong>${escapeHTML(Router.uiStrings.clinicalFindingsLabel)}:</strong>
                                                 <ul style="margin: 0.25rem 0; padding-left: 1.25rem;">
-                                                    ${comp.possible_findings.map(f => `<li>${escapeHTML(f)}</li>`).join("")}
+                                                    ${(comp.possible_findings || []).map(f => `<li>${escapeHTML(I18n.localize(f))}</li>`).join("")}
                                                 </ul>
                                             </div>
 
                                             <p style="margin-top: 0.5rem; padding: 0.5rem; border-left: 3px solid var(--primary-medium); font-size: 0.95rem; font-style: italic;">
-                                                <strong>${escapeHTML(Router.uiStrings.clinicalLimitsLabel)}:</strong> ${escapeHTML(comp.interpretation_limits)}
+                                                <strong>${escapeHTML(Router.uiStrings.clinicalLimitsLabel)}:</strong> ${escapeHTML(I18n.localize(comp.interpretation_limits))}
                                             </p>
                                         </div>
                                     </details>
@@ -1290,7 +1600,7 @@ const Router = {
                                     <span class="content-accordion-arrow"></span>
                                 </summary>
                                 <div class="content-accordion-body">
-                                    <p>${escapeHTML(proto.integration)}</p>
+                                    <p>${escapeHTML(I18n.localize(proto.integration))}</p>
                                 </div>
                             </details>
 
@@ -1300,7 +1610,7 @@ const Router = {
                                     <span class="content-accordion-arrow"></span>
                                 </summary>
                                 <div class="content-accordion-body">
-                                    <p>${escapeHTML(proto.limitations)}</p>
+                                    <p>${escapeHTML(I18n.localize(proto.limitations))}</p>
                                 </div>
                             </details>
 
@@ -1310,7 +1620,7 @@ const Router = {
                                     <span class="content-accordion-arrow"></span>
                                 </summary>
                                 <div class="content-accordion-body">
-                                    <p>${escapeHTML(proto.safety_and_workflow_notes)}</p>
+                                    <p>${escapeHTML(I18n.localize(proto.safety_and_workflow_notes))}</p>
                                 </div>
                             </details>
                             ${protoMediaHTML ? `
@@ -1558,30 +1868,40 @@ const Router = {
     // ABREVIATURAS
     async renderAbbreviations(container) {
         const abbreviations = await DataLoader.getAbbreviations() || [];
+        const escapeHTML = (str) => {
+            if (!str) return "";
+            return String(str)
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        };
 
         let html = `
             <div class="navigation-header">
-                <a href="#/" class="btn-back">← Inicio</a>
-                <h2>Lista de Abreviaturas</h2>
+                <a href="#/" class="btn-back">← ${I18n.translate("nav.home")}</a>
+                <h2>${escapeHTML(I18n.translate("label.abbreviations_list_title"))}</h2>
             </div>
 
             <table class="clinical-table">
                 <thead>
                     <tr>
-                        <th>Abreviatura</th>
-                        <th>Significado Clínico</th>
-                        <th>Página</th>
+                        <th>${I18n.translate("label.abbreviation")}</th>
+                        <th>${I18n.translate("label.definition")}</th>
+                        <th>${I18n.translate("label.origen")}</th>
                     </tr>
                 </thead>
                 <tbody>
         `;
 
         abbreviations.forEach(abbr => {
+            const meaningLoc = I18n.localize(abbr.meaning);
             html += `
                 <tr>
-                    <td><strong>${abbr.abbreviation}</strong></td>
-                    <td>${abbr.meaning}</td>
-                    <td>Pág. ${abbr.source_page}</td>
+                    <td><strong>${escapeHTML(abbr.abbreviation)}</strong></td>
+                    <td>${escapeHTML(meaningLoc)}</td>
+                    <td>P. ${abbr.source_page}</td>
                 </tr>
             `;
         });
@@ -1596,42 +1916,61 @@ const Router = {
     // CLASIFICACIONES
     async renderClassifications(container) {
         const classifications = await DataLoader.getClassifications() || [];
+        const escapeHTML = (str) => {
+            if (!str) return "";
+            return String(str)
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        };
 
         let html = `
             <div class="navigation-header">
-                <a href="#/" class="btn-back">← Inicio</a>
-                <h2>Clasificaciones Prácticas</h2>
+                <a href="#/" class="btn-back">← ${I18n.translate("nav.home")}</a>
+                <h2>${escapeHTML(I18n.translate("label.practical_classifications"))}</h2>
             </div>
         `;
 
         classifications.forEach(c => {
+            const nameLoc = I18n.localize(c.name);
+            const noteLoc = I18n.localize(c.note);
+            const col1Header = c.items[0].range ? I18n.translate("label.rango") : I18n.translate("label.parameter");
+            const col2Header = c.items[0].category ? I18n.translate("label.classification") : I18n.translate("label.cutoff_point");
+
             html += `
                 <div class="card" style="margin-bottom: 1.5rem; padding: 1.5rem; background-color: var(--card-bg-light); border: 1px solid var(--border-light); border-radius: 12px;">
-                    <h3 style="color: var(--primary-medium); margin-bottom: 0.5rem;">${c.name}</h3>
+                    <h3 style="color: var(--primary-medium); margin-bottom: 0.5rem;">${escapeHTML(nameLoc)}</h3>
                     <table class="clinical-table" style="margin: 0.5rem 0;">
                         <thead>
                             <tr>
-                                <th>${c.items[0].range ? "Rango" : "Parámetro"}</th>
-                                <th>${c.items[0].category ? "Clasificación" : "Punto de corte"}</th>
-                                ${c.items[0].method ? "<th>Método</th>" : ""}
+                                <th>${escapeHTML(col1Header)}</th>
+                                <th>${escapeHTML(col2Header)}</th>
+                                ${c.items[0].method ? `<th>${escapeHTML(I18n.translate("label.method"))}</th>` : ""}
                             </tr>
                         </thead>
                         <tbody>
             `;
             c.items.forEach(item => {
+                const paramLoc = I18n.localize(item.parameter);
+                const catLoc = I18n.localize(item.category);
+                const thresholdLoc = I18n.localize(item.threshold);
+                const methodLoc = I18n.localize(item.method);
+
                 html += `
                     <tr>
-                        <td><strong>${item.range || item.parameter}</strong></td>
-                        <td>${item.category || item.threshold}</td>
-                        ${item.method ? `<td>${item.method}</td>` : ""}
+                        <td><strong>${escapeHTML(item.range || paramLoc)}</strong></td>
+                        <td>${escapeHTML(catLoc || thresholdLoc)}</td>
+                        ${item.method ? `<td>${escapeHTML(methodLoc)}</td>` : ""}
                     </tr>
                 `;
             });
             html += `
                         </tbody>
                     </table>
-                    ${c.note ? `<p style="font-size: 0.85rem; color: var(--text-muted-light); margin-top: 0.5rem;"><strong>Nota:</strong> ${c.note}</p>` : ""}
-                    <div style="font-size: 0.8rem; color: var(--text-muted-light); text-align: right; margin-top: 0.25rem;">Página origen: ${c.source_page}</div>
+                    ${noteLoc ? `<p style="font-size: 0.85rem; color: var(--text-muted-light); margin-top: 0.5rem;"><strong>${escapeHTML(I18n.translate("label.note"))}:</strong> ${escapeHTML(noteLoc)}</p>` : ""}
+                    <div style="font-size: 0.8rem; color: var(--text-muted-light); text-align: right; margin-top: 0.25rem;">${I18n.translate("label.origen")}: ${c.source_page}</div>
                 </div>
             `;
         });
@@ -1642,25 +1981,39 @@ const Router = {
     // CONJUNTO MÍNIMO POCUS
     async renderMinimumSet(container) {
         const minSet = await DataLoader.getMinimumPocusSet() || [];
+        const escapeHTML = (str) => {
+            if (!str) return "";
+            return str.toString()
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        };
+
+        const descText = I18n.translate("label.minimum_set_desc");
+        const principleLabel = I18n.translate("label.integration_principle");
+        const principleText = I18n.translate("label.integration_principle_text");
 
         let html = `
             <div class="navigation-header">
-                <a href="#/" class="btn-back">← Inicio</a>
-                <h2>Conjunto Mínimo POCUS</h2>
+                <a href="#/" class="btn-back">← ${I18n.translate("nav.home")}</a>
+                <h2>${I18n.translate("label.minimum_set")} POCUS</h2>
             </div>
 
             <div style="background-color: var(--card-bg-light); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border-light);">
                 <p style="margin-bottom: 1rem; font-size: 0.95rem; color: var(--text-muted-light);">
-                    Habilidades y destrezas ecográficas básicas que el operador POCUS debe dominar para una evaluación cardiaca inicial completa.
+                    ${escapeHTML(descText)}
                 </p>
                 <ol style="padding-left: 1.25rem; display: flex; flex-direction: column; gap: 0.75rem;">
         `;
 
         minSet.forEach(item => {
+            const skillLoc = I18n.localize(item.skill);
             html += `
                 <li style="font-size: 0.95rem;">
-                    <strong>${item.skill}</strong>
-                    <span style="font-size: 0.8rem; color: var(--text-muted-light); margin-left: 0.5rem;">(Pág. ${item.source_page})</span>
+                    <strong>${escapeHTML(skillLoc)}</strong>
+                    <span style="font-size: 0.8rem; color: var(--text-muted-light); margin-left: 0.5rem;">(P. ${item.source_page})</span>
                 </li>
             `;
         });
@@ -1668,7 +2021,7 @@ const Router = {
         html += `
                 </ol>
                 <div class="safety-banner" style="margin-top: 1.5rem;">
-                    <strong>Principio de integración:</strong> La función diastólica, la función del VD, la hipertensión pulmonar, la severidad valvular y el taponamiento no deben definirse mediante una sola medición aislada.
+                    <strong>${escapeHTML(principleLabel)}:</strong> ${escapeHTML(principleText)}
                 </div>
             </div>
         `;
@@ -1678,22 +2031,33 @@ const Router = {
     // UNIDADES Y ERRORES FRECUENTES
     async renderUnitWarnings(container) {
         const warnings = await DataLoader.getUnitWarnings() || [];
+        const escapeHTML = (str) => {
+            if (str === null || str === undefined) return "";
+            return str.toString()
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        };
 
         let html = `
             <div class="navigation-header">
-                <a href="#/" class="btn-back">← Inicio</a>
-                <h2>Unidades y Errores Frecuentes</h2>
+                <a href="#/" class="btn-back">← ${I18n.translate("nav.home")}</a>
+                <h2>${I18n.translate("label.unit_warnings")}</h2>
             </div>
 
             <div class="cards-list">
         `;
 
         warnings.forEach(w => {
+            const parameter = I18n.localize(w.parameter);
+            const warning = I18n.localize(w.warning);
             html += `
                 <div class="card clinical-card warning-card" style="border-left: 4px solid #eab308; background-color: var(--card-bg-light);">
-                    <h3 style="color: var(--warning-text); font-size: 1.1rem; margin-bottom: 0.25rem;">${w.parameter}</h3>
-                    <p style="font-size: 0.95rem;">${w.warning}</p>
-                    <div style="font-size: 0.8rem; color: var(--text-muted-light); margin-top: 0.5rem; text-align: right;">Página origen: ${w.source_page}</div>
+                    <h3 style="color: var(--warning-text); font-size: 1.1rem; margin-bottom: 0.25rem;">${escapeHTML(parameter)}</h3>
+                    <p style="font-size: 0.95rem;">${escapeHTML(warning)}</p>
+                    <div style="font-size: 0.8rem; color: var(--text-muted-light); margin-top: 0.5rem; text-align: right;">${I18n.translate("label.origen")}: ${escapeHTML(w.source_page)}</div>
                 </div>
             `;
         });
@@ -1704,43 +2068,137 @@ const Router = {
 
     // MIS FAVORITOS
     async renderFavorites(container) {
-        const favs = Storage.getFavorites();
+        let measurements = [];
+        let glossary = [];
+        try {
+            measurements = await DataLoader.getMeasurements();
+        } catch (e) {
+            console.warn("DataLoader.getMeasurements failed in renderFavorites", e);
+        }
+        try {
+            glossary = await DataLoader.getGlossary();
+        } catch (e) {
+            console.warn("DataLoader.getGlossary failed in renderFavorites", e);
+        }
+        if (!Array.isArray(measurements)) measurements = [];
+        if (!Array.isArray(glossary)) glossary = [];
+
+        const measurementMap = {};
+        measurements.forEach(m => {
+            if (m && typeof m === "object" && typeof m.id === "string" && m.id.trim()) {
+                measurementMap[m.id] = m;
+            }
+        });
+        const glossaryMap = {};
+        glossary.forEach(g => {
+            if (g && typeof g === "object" && typeof g.id === "string" && g.id.trim()) {
+                glossaryMap[g.id] = g;
+            }
+        });
+
+        const escapeHTML = (value) => {
+            if (value === null || value === undefined) return "";
+            return String(value)
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        };
+
+        const resolveCurrentTitle = (entry) => {
+            if (!entry || typeof entry !== "object") return "";
+            let current = "";
+            if (entry.type === "medición") {
+                const resource = measurementMap[entry.id];
+                if (resource) {
+                    current = I18n.localize(resource.measurement);
+                }
+            } else if (entry.type === "término") {
+                const resource = glossaryMap[entry.id];
+                if (resource) {
+                    current = I18n.localize(resource.term);
+                }
+            }
+
+            if (typeof current === "string" && current.trim()) {
+                return current;
+            }
+
+            const fallbackTitle = I18n.localize(entry.title);
+            if (typeof fallbackTitle === "string" && fallbackTitle.trim()) {
+                return fallbackTitle;
+            }
+
+            return typeof entry.id === "string" ? entry.id : "";
+        };
+
+        const getLocalizedTypeLabel = (type) => {
+            if (type === "medición") {
+                return I18n.translate("label.measurement");
+            }
+            if (type === "término") {
+                return I18n.translate("label.term");
+            }
+            return I18n.localize({
+                es: "Elemento",
+                en: "Item"
+            });
+        };
+
+        const favs = Storage.getFavorites() || [];
 
         let html = `
             <div class="navigation-header">
-                <a href="#/" class="btn-back">← Inicio</a>
-                <h2>Mis Favoritos</h2>
+                <a href="#/" class="btn-back">← ${escapeHTML(I18n.translate("nav.home"))}</a>
+                <h2>${escapeHTML(I18n.translate("nav.favorites"))}</h2>
             </div>
         `;
 
         if (favs.length === 0) {
             html += `
                 <div class="card error-card">
-                    <p>Aún no has guardado ningún favorito. Pulsa sobre el botón "☆ Favorito" en cualquier ficha.</p>
+                    <p>${escapeHTML(I18n.translate("state.no_favorites"))}</p>
                 </div>
             `;
             container.innerHTML = html;
             return;
         }
 
+        const labelClearFavs = escapeHTML(I18n.localize({
+            es: "Limpiar favoritos",
+            en: "Clear favorites"
+        }));
+
         html += `
             <div style="text-align: right; margin-bottom: 1rem;">
-                <button id="clear-all-favs" class="btn-secondary" style="display: inline-flex; min-height: 38px; padding: 0.25rem 1rem;">Limpiar Todos</button>
+                <button id="clear-all-favs" class="btn-secondary" style="display: inline-flex; min-height: 38px; padding: 0.25rem 1rem;">${labelClearFavs}</button>
             </div>
             <div class="cards-list">
         `;
 
-        favs.forEach(f => {
-            const link = f.type === "medición" ? `#/medicion/${f.id}` : `#/glosario/${f.id}`;
-            const badgeClass = f.type === "medición" ? "badge-medicion" : "badge-termino";
+        favs.forEach((f, index) => {
+            const resolvedTitle = resolveCurrentTitle(f);
+            let link = "#/";
+            let badgeClass = "";
+
+            if (f.type === "medición") {
+                link = `#/medicion/${f.id}`;
+                badgeClass = "badge-medicion";
+            } else if (f.type === "término") {
+                link = `#/glosario/${f.id}`;
+                badgeClass = "badge-termino";
+            }
+
+            const labelRemove = escapeHTML(I18n.translate("action.remove_favorite"));
 
             html += `
                 <div class="card clinical-card" style="display: flex; flex-direction: row; justify-content: space-between; align-items: center; padding: 1rem;">
                     <div>
-                        <a href="${link}" style="text-decoration: none; font-weight: 600; color: var(--primary-light); font-size: 1.05rem;">${f.title}</a>
-                        <span class="result-badge ${badgeClass}" style="margin-left: 0.5rem;">${f.type}</span>
+                        <a href="${escapeHTML(link)}" style="text-decoration: none; font-weight: 600; color: var(--primary-light); font-size: 1.05rem;">${escapeHTML(resolvedTitle)}</a>
+                        <span class="result-badge ${escapeHTML(badgeClass)}" style="margin-left: 0.5rem;">${escapeHTML(getLocalizedTypeLabel(f.type))}</span>
                     </div>
-                    <button class="btn-table-action" onclick="Storage.toggleFavorite('${f.type}', '${f.id}', '${f.title}'); Router.route();" style="background-color: #fee2e2; color: #991b1b; border: none; border-radius: 6px; padding: 0.35rem 0.75rem; cursor: pointer;">Eliminar</button>
+                    <button class="btn-table-action" data-favorite-index="${index}" style="background-color: #fee2e2; color: #991b1b; border: none; border-radius: 6px; padding: 0.35rem 0.75rem; cursor: pointer;">${labelRemove}</button>
                 </div>
             `;
         });
@@ -1748,29 +2206,124 @@ const Router = {
         html += `</div>`;
         container.innerHTML = html;
 
+        const labelConfirm = I18n.localize({
+            es: "¿Estás seguro de que deseas borrar todos tus favoritos guardados?",
+            en: "Are you sure you want to delete all your saved favorites?"
+        });
+
         document.getElementById("clear-all-favs")?.addEventListener("click", () => {
-            if (confirm("¿Estás seguro de que deseas borrar todos tus favoritos guardados?")) {
+            if (confirm(labelConfirm)) {
                 Storage.clearFavorites();
                 Router.route();
             }
+        });
+
+        container.querySelectorAll("button[data-favorite-index]").forEach(btn => {
+            btn.addEventListener("click", () => {
+                const idx = parseInt(btn.getAttribute("data-favorite-index"), 10);
+                const originalEntry = favs[idx];
+                if (originalEntry) {
+                    const resolvedTitle = resolveCurrentTitle(originalEntry);
+                    Storage.toggleFavorite(originalEntry.type, originalEntry.id, resolvedTitle);
+                    Router.route();
+                }
+            });
         });
     },
 
     // VISTOS RECIENTEMENTE
     async renderRecents(container) {
-        const recents = Storage.getRecents();
+        let measurements = [];
+        let glossary = [];
+        try {
+            measurements = await DataLoader.getMeasurements();
+        } catch (e) {
+            console.warn("DataLoader.getMeasurements failed in renderRecents", e);
+        }
+        try {
+            glossary = await DataLoader.getGlossary();
+        } catch (e) {
+            console.warn("DataLoader.getGlossary failed in renderRecents", e);
+        }
+        if (!Array.isArray(measurements)) measurements = [];
+        if (!Array.isArray(glossary)) glossary = [];
+
+        const measurementMap = {};
+        measurements.forEach(m => {
+            if (m && typeof m === "object" && typeof m.id === "string" && m.id.trim()) {
+                measurementMap[m.id] = m;
+            }
+        });
+        const glossaryMap = {};
+        glossary.forEach(g => {
+            if (g && typeof g === "object" && typeof g.id === "string" && g.id.trim()) {
+                glossaryMap[g.id] = g;
+            }
+        });
+
+        const escapeHTML = (value) => {
+            if (value === null || value === undefined) return "";
+            return String(value)
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        };
+
+        const resolveCurrentTitle = (entry) => {
+            if (!entry || typeof entry !== "object") return "";
+            let current = "";
+            if (entry.type === "medición") {
+                const resource = measurementMap[entry.id];
+                if (resource) {
+                    current = I18n.localize(resource.measurement);
+                }
+            } else if (entry.type === "término") {
+                const resource = glossaryMap[entry.id];
+                if (resource) {
+                    current = I18n.localize(resource.term);
+                }
+            }
+
+            if (typeof current === "string" && current.trim()) {
+                return current;
+            }
+
+            const fallbackTitle = I18n.localize(entry.title);
+            if (typeof fallbackTitle === "string" && fallbackTitle.trim()) {
+                return fallbackTitle;
+            }
+
+            return typeof entry.id === "string" ? entry.id : "";
+        };
+
+        const getLocalizedTypeLabel = (type) => {
+            if (type === "medición") {
+                return I18n.translate("label.measurement");
+            }
+            if (type === "término") {
+                return I18n.translate("label.term");
+            }
+            return I18n.localize({
+                es: "Elemento",
+                en: "Item"
+            });
+        };
+
+        const recents = Storage.getRecents() || [];
 
         let html = `
             <div class="navigation-header">
-                <a href="#/" class="btn-back">← Inicio</a>
-                <h2>Vistos Recientemente</h2>
+                <a href="#/" class="btn-back">← ${escapeHTML(I18n.translate("nav.home"))}</a>
+                <h2>${escapeHTML(I18n.translate("nav.recents"))}</h2>
             </div>
         `;
 
         if (recents.length === 0) {
             html += `
                 <div class="card error-card">
-                    <p>No tienes elementos vistos recientemente en el historial.</p>
+                    <p>${escapeHTML(I18n.translate("state.no_recents"))}</p>
                 </div>
             `;
             container.innerHTML = html;
@@ -1779,20 +2332,29 @@ const Router = {
 
         html += `
             <div style="text-align: right; margin-bottom: 1rem;">
-                <button id="clear-all-recs" class="btn-secondary" style="display: inline-flex; min-height: 38px; padding: 0.25rem 1rem;">Limpiar Historial</button>
+                <button id="clear-all-recs" class="btn-secondary" style="display: inline-flex; min-height: 38px; padding: 0.25rem 1rem;">${escapeHTML(I18n.translate("action.clear_history"))}</button>
             </div>
             <div class="cards-list">
         `;
 
         recents.forEach(r => {
-            const link = r.type === "medición" ? `#/medicion/${r.id}` : `#/glosario/${r.id}`;
-            const badgeClass = r.type === "medición" ? "badge-medicion" : "badge-termino";
+            const resolvedTitle = resolveCurrentTitle(r);
+            let link = "#/";
+            let badgeClass = "";
+
+            if (r.type === "medición") {
+                link = `#/medicion/${r.id}`;
+                badgeClass = "badge-medicion";
+            } else if (r.type === "término") {
+                link = `#/glosario/${r.id}`;
+                badgeClass = "badge-termino";
+            }
 
             html += `
                 <div class="card clinical-card" style="display: flex; flex-direction: row; justify-content: space-between; align-items: center; padding: 1rem;">
                     <div>
-                        <a href="${link}" style="text-decoration: none; font-weight: 600; color: var(--primary-light); font-size: 1.05rem;">${r.title}</a>
-                        <span class="result-badge ${badgeClass}" style="margin-left: 0.5rem;">${r.type}</span>
+                        <a href="${escapeHTML(link)}" style="text-decoration: none; font-weight: 600; color: var(--primary-light); font-size: 1.05rem;">${escapeHTML(resolvedTitle)}</a>
+                        <span class="result-badge ${escapeHTML(badgeClass)}" style="margin-left: 0.5rem;">${escapeHTML(getLocalizedTypeLabel(r.type))}</span>
                     </div>
                 </div>
             `;
@@ -1809,12 +2371,22 @@ const Router = {
 
     // REFERENCIAS PRINCIPALES
     async renderReferences(container) {
+        const escapeHTML = (str) => {
+            if (!str) return "";
+            return str.toString()
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        };
+
         const refs = await DataLoader.getReferences() || [];
 
         let html = `
             <div class="navigation-header">
-                <a href="#/" class="btn-back">← Inicio</a>
-                <h2>Referencias Bibliográficas</h2>
+                <a href="#/" class="btn-back">← ${I18n.translate("nav.home")}</a>
+                <h2>${escapeHTML(I18n.translate("label.clinical_references_title"))}</h2>
             </div>
 
             <div style="background-color: var(--card-bg-light); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border-light); display: flex; flex-direction: column; gap: 1rem;">
@@ -1823,34 +2395,43 @@ const Router = {
         refs.forEach(r => {
             html += `
                 <div style="border-bottom: 1px solid var(--border-light); padding-bottom: 0.75rem; font-size: 0.9rem;">
-                    <p style="margin-bottom: 0.25rem;">${r.citation}</p>
-                    <span style="font-size: 0.75rem; color: var(--text-muted-light);">Citado en Página ${r.source_page} del PDF.</span>
+                    <p style="margin-bottom: 0.25rem;">${escapeHTML(r.citation)}</p>
+                    <span style="font-size: 0.75rem; color: var(--text-muted-light);">${escapeHTML(I18n.translate("label.cited_on_pdf_page", { page: r.source_page }))}</span>
                 </div>
             `;
         });
 
         html += `
                 <p style="font-size: 0.8rem; color: var(--text-muted-light); font-style: italic; margin-top: 1rem;">
-                    <strong>Nota editorial:</strong> Los valores de referencia pueden variar entre guías, laboratorios, equipos y poblaciones. Para decisiones clínicas definitivas debe consultarse la publicación primaria y el protocolo institucional vigente.
+                    <strong>${escapeHTML(I18n.translate("label.editorial_note"))}:</strong> ${escapeHTML(I18n.translate("label.editorial_note_text"))}
                 </p>
             </div>
         `;
         container.innerHTML = html;
     },
 
-    // ACERCA DE
     renderAbout(container) {
+        const escapeHTML = (str) => {
+            if (!str) return "";
+            return str.toString()
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        };
+
         container.innerHTML = `
             <div class="navigation-header">
-                <a href="#/" class="btn-back">← Inicio</a>
-                <h2>Acerca de POCUS Cardíaco</h2>
+                <a href="#/" class="btn-back">← ${I18n.translate("nav.home")}</a>
+                <h2>${escapeHTML(I18n.translate("label.about_title"))}</h2>
             </div>
 
             <div style="background-color: var(--card-bg-light); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border-light); display: flex; flex-direction: column; gap: 1rem; font-size: 0.95rem;">
-                <p><strong>POCUS Cardíaco</strong> es una aplicación web y PWA educativa, diseñada exclusivamente como una herramienta de consulta rápida y banco de mediciones.</p>
-                <p>Tiene como objetivo apoyar en la formación de médicos generales, residentes de especialidades médicas (Medicina Interna, Anestesiología, Urgencias, Cuidado Crítico) y estudiantes durante la adquisición de competencias en ultrasonido clínico enfocado en el punto de atención (POCUS).</p>
-                <p>Esta aplicación fue desarrollada y revisada por médicos internistas del <strong>Hospital San Rafael de Alajuela (HSRA)</strong> para el curso de POCUS del <strong>Posgrado de Medicina Interna de la Universidad de Costa Rica (UCR)</strong>.</p>
-                <p>Toda la información médica está compilada de manera estricta del documento fuente oficial <em>Mediciones POCUS Cardiaco Adultos - Glosario</em> revisado en Julio de 2026, sin alteraciones de los rangos o unidades.</p>
+                <p><strong>${escapeHTML(I18n.translate("app.name"))}</strong> ${escapeHTML(I18n.translate("label.about_app_description"))}</p>
+                <p>${escapeHTML(I18n.translate("label.about_training_objective"))}</p>
+                <p>${escapeHTML(I18n.translate("label.about_development_prefix"))} <strong>Hospital San Rafael de Alajuela (HSRA)</strong> ${escapeHTML(I18n.translate("label.about_development_course"))} <strong>${escapeHTML(I18n.translate("label.about_internal_medicine_program"))}</strong>.</p>
+                <p>${escapeHTML(I18n.translate("label.about_source_prefix"))} <em>Mediciones POCUS Cardiaco Adultos - Glosario</em> ${escapeHTML(I18n.translate("label.about_source_suffix"))}</p>
             </div>
         `;
     },
@@ -1869,6 +2450,16 @@ const Router = {
     },
 
     async renderQuizFlow(container, id) {
+        const escapeHTML = (str) => {
+            if (!str) return "";
+            return str.toString()
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        };
+
         let decodedId = "";
         try {
             decodedId = decodeURIComponent(id || "");
@@ -1896,13 +2487,13 @@ const Router = {
         if (!quiz || quiz.review_status !== "approved" || !QuizEngine.validateQuizDefinition(quiz)) {
             container.innerHTML = `
                 <div class="navigation-header">
-                    <a href="#/cuestionarios" class="btn-back">← Volver a Cuestionarios</a>
-                    <h2>Cuestionario no disponible</h2>
+                    <a href="#/cuestionarios" class="btn-back">← ${escapeHTML(I18n.translate("nav.back_to_quizzes"))}</a>
+                    <h2>${escapeHTML(I18n.translate("error.quiz_unavailable_title"))}</h2>
                 </div>
                 <div class="card error-card">
-                    <h3>Cuestionario no disponible</h3>
-                    <p>El cuestionario solicitado no está disponible o su formato no es válido.</p>
-                    <a href="#/cuestionarios" class="btn-primary" style="display: inline-block; margin-top: 1rem; text-decoration: none;">Volver a la lista</a>
+                    <h3>${escapeHTML(I18n.translate("error.quiz_unavailable_title"))}</h3>
+                    <p>${escapeHTML(I18n.translate("error.quiz_unavailable_text"))}</p>
+                    <a href="#/cuestionarios" class="btn-primary" style="display: inline-block; margin-top: 1rem; text-decoration: none;">${escapeHTML(I18n.translate("nav.back_to_list"))}</a>
                 </div>
             `;
             return;
@@ -1929,23 +2520,44 @@ const Router = {
     renderInstall(container) {
         container.innerHTML = `
             <div class="navigation-header">
-                <a href="#/" class="btn-back">← Inicio</a>
-                <h2>Instalación en iPhone (PWA)</h2>
+                <a href="#/" class="btn-back">← ${I18n.translate("nav.home")}</a>
+                <h2>${I18n.translate("label.install_title")}</h2>
             </div>
 
-            <div style="background-color: var(--card-bg-light); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border-light); font-size: 0.95rem;">
-                <p style="margin-bottom: 1rem; font-weight: 600;">Sigue estos pasos para instalar esta aplicación en la pantalla de inicio de tu iPhone:</p>
+            <div style="background-color: var(--card-bg-light); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border-light); font-size: 0.95rem; display: flex; flex-direction: column; gap: 1.5rem;">
+                <p>${I18n.translate("label.install_text")}</p>
 
-                <ol style="padding-left: 1.25rem; display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.5rem;">
-                    <li>Abre el navegador <strong>Safari</strong> en tu iPhone e ingresa a este sitio web.</li>
-                    <li>Toca el botón <strong>Compartir</strong> <span style="font-size: 1.2rem;">📤</span> (el icono de caja con flecha hacia arriba) en la barra de navegación inferior de Safari.</li>
-                    <li>Desplázate hacia abajo en el menú y selecciona la opción <strong>"Agregar a pantalla de inicio"</strong>.</li>
-                    <li>Confirma el nombre de la aplicación (<strong>POCUS Cardíaco</strong>) y toca <strong>"Agregar"</strong> en la esquina superior derecha.</li>
-                    <li>Busca el icono de la aplicación en tu pantalla de inicio y ábrela.</li>
-                </ol>
+                <div class="install-section">
+                    <h3 style="margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                        <span>🍎</span> ${I18n.translate("label.install_ios_title")}
+                    </h3>
+                    <p style="margin-bottom: 0.75rem; font-weight: 600;">${I18n.translate("label.inst_iphone_steps")}</p>
+                    <ol style="padding-left: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                        <li>${I18n.translate("label.inst_iphone_step1")}</li>
+                        <li>${I18n.translate("label.inst_iphone_step2")}</li>
+                        <li>${I18n.translate("label.inst_iphone_step3")}</li>
+                        <li>${I18n.translate("label.inst_iphone_step4")}</li>
+                        <li>${I18n.translate("label.inst_iphone_step5")}</li>
+                        <li>${I18n.translate("label.inst_iphone_step6")}</li>
+                    </ol>
+                </div>
 
-                <div class="safety-banner">
-                    <strong>Nota de la PWA:</strong> Después de abrir la aplicación por primera vez con conexión a Internet, todos los datos médicos clínicos quedarán almacenados de manera segura en la memoria de tu dispositivo. Podrás consultarla sin conexión de red en cualquier momento.
+                <div class="install-section">
+                    <h3 style="margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                        <span>🤖</span> ${I18n.translate("label.install_android_title")}
+                    </h3>
+                    <p style="margin-bottom: 0.75rem; font-weight: 600;">${I18n.translate("label.install_android_steps")}</p>
+                    <ol style="padding-left: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem;">
+                        <li>${I18n.translate("label.install_android_step1")}</li>
+                        <li>${I18n.translate("label.install_android_step2")}</li>
+                        <li>${I18n.translate("label.install_android_step3")}</li>
+                        <li>${I18n.translate("label.install_android_step4")}</li>
+                        <li>${I18n.translate("label.install_android_step5")}</li>
+                    </ol>
+                </div>
+
+                <div class="safety-banner" style="margin-top: 0.5rem;">
+                    <strong>${I18n.translate("label.pwa_note_title")}:</strong> ${I18n.translate("label.pwa_note_text")}
                 </div>
             </div>
         `;
@@ -1954,3 +2566,15 @@ const Router = {
 
 // Escuchar cambios de hash en la URL
 window.addEventListener("hashchange", () => Router.route());
+
+// Escuchar cambios globales de idioma para volver a renderizar la vista actual sin alterar el historial ni recargar
+window.addEventListener("pocus-language-changed", () => {
+    const hash = window.location.hash || '#/';
+    // Proteger las rutas de cuestionarios activos frente a un rerender de la ruta completa
+    if (hash.startsWith('#/cuestionarios/') || hash.startsWith('#/cuestionario')) {
+        // En cuestionarios, permitimos que la interfaz de cabecera estática del documento cambie
+        // pero NO volvemos a enrutar/destruir el flujo del cuestionario.
+        return;
+    }
+    Router.route();
+});

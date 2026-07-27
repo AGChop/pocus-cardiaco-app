@@ -1,110 +1,290 @@
 [
   {
     "id": "plax",
-    "window": "Paraesternal eje largo",
+    "window": {
+      "es": "Paraesternal eje largo",
+      "en": "Parasternal long-axis view"
+    },
     "abbreviation": "PLAX",
-    "typical_probe_position": "Borde esternal izquierdo, habitualmente 3.º-5.º espacio intercostal.",
-    "typical_marker_orientation": "Orientación típica hacia el hombro derecho; puede variar según la convención del equipo.",
-    "favored_structures": "VI, AI, válvula mitral, TSVI, válvula aórtica, raíz aórtica, pared anterior del VD y pericardio.",
-    "favored_measurements": "DTDVI/DTSVI, IVSd, PWTd, RWT, masa VI, EPSS, diámetro TSVI, diámetro AI, VC de IA y derrame pericárdico."
+    "typical_probe_position": {
+      "es": "Borde esternal izquierdo, habitualmente 3.º-5.º espacio intercostal.",
+      "en": "Left sternal border, usually 3rd-5th intercostal space."
+    },
+    "typical_marker_orientation": {
+      "es": "Orientación típica hacia el hombro derecho; puede variar según la convención del equipo.",
+      "en": "Typical orientation toward the right shoulder; may vary according to equipment convention."
+    },
+    "favored_structures": {
+      "es": "VI, AI, válvula mitral, TSVI, válvula aórtica, raíz aórtica, pared anterior del VD y pericardio.",
+      "en": "LV, LA, mitral valve, LVOT, aortic valve, aortic root, anterior RV wall, and pericardium."
+    },
+    "favored_measurements": {
+      "es": "DTDVI/DTSVI, IVSd, PWTd, RWT, masa VI, EPSS, diámetro TSVI, diámetro AI, VC de IA y derrame pericárdico.",
+      "en": "LVIDd/LVIDs, IVSd, PWTd, RWT, LV mass, EPSS, LVOT diameter, LA diameter, AR vena contracta width, and pericardial effusion."
+    }
   },
   {
     "id": "psax",
-    "window": "Paraesternal eje corto",
+    "window": {
+      "es": "Paraesternal eje corto",
+      "en": "Parasternal short-axis view"
+    },
     "abbreviation": "PSAX",
-    "typical_probe_position": "Desde PLAX, rotar aproximadamente 90° y barrer desde grandes vasos hasta el ápex.",
-    "typical_marker_orientation": "Orientación típica hacia el hombro izquierdo.",
-    "favored_structures": "Válvula aórtica, válvula mitral, TSVD, músculos papilares, septo y ventrículos en corte transversal.",
-    "favored_measurements": "Planimetría mitral, VTI/PAAT del TSVD, índice de excentricidad y aplanamiento septal."
+    "typical_probe_position": {
+      "es": "Desde PLAX, rotar aproximadamente 90° y barrer desde grandes vasos hasta el ápex.",
+      "en": "From PLAX, rotate approximately 90° and sweep from great vessels to the apex."
+    },
+    "typical_marker_orientation": {
+      "es": "Orientación típica hacia el hombro izquierdo.",
+      "en": "Typical orientation toward the left shoulder."
+    },
+    "favored_structures": {
+      "es": "Válvula aórtica, válvula mitral, TSVD, músculos papilares, septo y ventrículos en corte transversal.",
+      "en": "Aortic valve, mitral valve, RVOT, papillary muscles, septum, and ventricles in cross-section."
+    },
+    "favored_measurements": {
+      "es": "Planimetría mitral, VTI/PAAT del TSVD, índice de excentricidad y aplanamiento septal.",
+      "en": "Mitral planimetry, RVOT VTI/PAAT, eccentricity index, and septal flattening."
+    }
   },
   {
     "id": "a4c",
-    "window": "Apical cuatro cámaras",
+    "window": {
+      "es": "Apical cuatro cámaras",
+      "en": "Apical four-chamber view"
+    },
     "abbreviation": "A4C",
-    "typical_probe_position": "Ápex cardiaco, con el haz dirigido hacia la base.",
-    "typical_marker_orientation": "Orientación típica hacia el lado izquierdo del paciente; depende de la convención.",
-    "favored_structures": "VI, VD, AI, AD, válvulas mitral y tricúspide.",
-    "favored_measurements": "Simpson, MAPSE, s’/e’ mitral, flujo mitral, LAVI, dimensiones AD, TAPSE, s’ VD, FAC, TR y variaciones respiratorias."
+    "typical_probe_position": {
+      "es": "Ápex cardiaco, con el haz dirigido hacia la base.",
+      "en": "Cardiac apex, with the beam directed toward the base."
+    },
+    "typical_marker_orientation": {
+      "es": "Orientación típica hacia el lado izquierdo del paciente; depende de la convención.",
+      "en": "Typical orientation toward the patient's left side; depends on the convention."
+    },
+    "favored_structures": {
+      "es": "VI, VD, AI, AD, válvulas mitral y tricúspide.",
+      "en": "LV, RV, LA, RA, mitral and tricuspid valves."
+    },
+    "favored_measurements": {
+      "es": "Simpson, MAPSE, s’/e’ mitral, flujo mitral, LAVI, dimensiones AD, TAPSE, s’ VD, FAC, TR y variaciones respiratorias.",
+      "en": "Simpson, MAPSE, mitral s’/e’, mitral flow, LAVI, RA dimensions, TAPSE, RV s’, FAC, TR, and respiratory variations."
+    }
   },
   {
     "id": "rv_focused_a4c",
-    "window": "Apical cuatro cámaras enfocada en VD",
+    "window": {
+      "es": "Apical cuatro cámaras enfocada en VD",
+      "en": "RV-focused apical four-chamber view"
+    },
     "abbreviation": "A4C-VD",
-    "typical_probe_position": "Desde A4C, ajustar posición, rotación e inclinación para maximizar el VD sin acortar el ápex.",
-    "typical_marker_orientation": "Similar a A4C.",
-    "favored_structures": "VD completo, pared libre, anillo tricuspídeo y AD.",
-    "favored_measurements": "Diámetros y longitud del VD, TAPSE, s’ VD, FAC, strain VD, área/longitudes de AD y TR."
+    "typical_probe_position": {
+      "es": "Desde A4C, ajustar posición, rotación e inclinación para maximizar el VD sin acortar el ápex.",
+      "en": "From A4C, adjust position, rotation, and tilt to maximize the RV without foreshortening the apex."
+    },
+    "typical_marker_orientation": {
+      "es": "Similar a A4C.",
+      "en": "Similar to A4C."
+    },
+    "favored_structures": {
+      "es": "VD completo, pared libre, anillo tricuspídeo y AD.",
+      "en": "Entire RV, free wall, tricuspid annulus, and RA."
+    },
+    "favored_measurements": {
+      "es": "Diámetros y longitud del VD, TAPSE, s’ VD, FAC, strain VD, área/longitudes de AD y TR.",
+      "en": "RV diameters and length, TAPSE, RV s’, FAC, RV strain, RA area/lengths, and TR."
+    }
   },
   {
     "id": "a2c",
-    "window": "Apical dos cámaras",
+    "window": {
+      "es": "Apical dos cámaras",
+      "en": "Apical two-chamber view"
+    },
     "abbreviation": "A2C",
-    "typical_probe_position": "Rotación desde A4C para mostrar VI y AI sin cavidades derechas.",
-    "typical_marker_orientation": "Variable según convención; mantener ápex no acortado.",
-    "favored_structures": "VI y AI, paredes anterior e inferior.",
-    "favored_measurements": "Simpson biplano, LAVI, GLS y WMSI."
+    "typical_probe_position": {
+      "es": "Rotación desde A4C para mostrar VI y AI sin cavidades derechas.",
+      "en": "Rotation from A4C to visualize the LV and LA without the right-sided chambers."
+    },
+    "typical_marker_orientation": {
+      "es": "Variable según convención; mantener ápex no acortado.",
+      "en": "Variable according to the convention; maintain an unforeshortened apex."
+    },
+    "favored_structures": {
+      "es": "VI y AI, paredes anterior e inferior.",
+      "en": "LV and LA, anterior and inferior walls."
+    },
+    "favored_measurements": {
+      "es": "Simpson biplano, LAVI, GLS y WMSI.",
+      "en": "Biplane Simpson method, LAVI, GLS, and WMSI."
+    }
   },
   {
     "id": "a3c",
-    "window": "Apical eje largo / tres cámaras",
+    "window": {
+      "es": "Apical eje largo / tres cámaras",
+      "en": "Apical long-axis (three-chamber) view"
+    },
     "abbreviation": "A3C",
-    "typical_probe_position": "Rotación adicional desde A2C o ajuste desde A4C para alinear VI, TSVI y aorta.",
-    "typical_marker_orientation": "Variable según convención.",
-    "favored_structures": "VI, AI, válvula mitral, TSVI y válvula aórtica.",
-    "favored_measurements": "GLS, WMSI, VTI TSVI, IVRT y Doppler aórtico."
+    "typical_probe_position": {
+      "es": "Rotación adicional desde A2C o ajuste desde A4C para alinear VI, TSVI y aorta.",
+      "en": "Additional rotation from A2C or adjustment from A4C to align the LV, LVOT, and aorta."
+    },
+    "typical_marker_orientation": {
+      "es": "Variable según convención.",
+      "en": "Variable according to convention."
+    },
+    "favored_structures": {
+      "es": "VI, AI, válvula mitral, TSVI y válvula aórtica.",
+      "en": "LV, LA, mitral valve, LVOT, and aortic valve."
+    },
+    "favored_measurements": {
+      "es": "GLS, WMSI, VTI TSVI, IVRT y Doppler aórtico.",
+      "en": "GLS, WMSI, LVOT VTI, IVRT, and aortic Doppler."
+    }
   },
   {
     "id": "a5c",
-    "window": "Apical cinco cámaras",
+    "window": {
+      "es": "Apical cinco cámaras",
+      "en": "Apical five-chamber view"
+    },
     "abbreviation": "A5C",
-    "typical_probe_position": "Desde A4C, inclinar anteriormente para abrir el TSVI y la válvula aórtica.",
-    "typical_marker_orientation": "Similar a A4C.",
-    "favored_structures": "A4C más TSVI y válvula aórtica.",
-    "favored_measurements": "VTI/velocidad TSVI, Doppler aórtico, AVA, DVI e IVRT."
+    "typical_probe_position": {
+      "es": "Desde A4C, inclinar anteriormente para abrir el TSVI y la válvula aórtica.",
+      "en": "From A4C, tilt anteriorly to bring the LVOT and aortic valve into view."
+    },
+    "typical_marker_orientation": {
+      "es": "Similar a A4C.",
+      "en": "Similar to A4C."
+    },
+    "favored_structures": {
+      "es": "A4C más TSVI y válvula aórtica.",
+      "en": "A4C plus LVOT and aortic valve."
+    },
+    "favored_measurements": {
+      "es": "VTI/velocidad TSVI, Doppler aórtico, AVA, DVI e IVRT.",
+      "en": "LVOT VTI/velocity, aortic Doppler, AVA, DVI, and IVRT."
+    }
   },
   {
     "id": "subcostal_4c",
-    "window": "Subcostal cuatro cámaras",
+    "window": {
+      "es": "Subcostal cuatro cámaras",
+      "en": "Subcostal four-chamber view"
+    },
     "abbreviation": "SC4C",
-    "typical_probe_position": "Debajo del xifoides, usando hígado como ventana y dirigiendo el haz al hombro izquierdo.",
-    "typical_marker_orientation": "Orientación típica hacia el lado izquierdo del paciente.",
-    "favored_structures": "Cuatro cámaras, septos, pericardio y pared libre del VD.",
-    "favored_measurements": "Derrame/taponamiento, grosor pared VD y evaluación alternativa de función/tamaño en ventanas precordiales deficientes."
+    "typical_probe_position": {
+      "es": "Debajo del xifoides, usando hígado como ventana y dirigiendo el haz al hombro izquierdo.",
+      "en": "Below the xiphoid process, using the liver as a window and directing the beam to the left shoulder."
+    },
+    "typical_marker_orientation": {
+      "es": "Orientación típica hacia el lado izquierdo del paciente.",
+      "en": "Typical orientation toward the patient's left side."
+    },
+    "favored_structures": {
+      "es": "Cuatro cámaras, septos, pericardio y pared libre del VD.",
+      "en": "Four chambers, septa, pericardium, and RV free wall."
+    },
+    "favored_measurements": {
+      "es": "Derrame/taponamiento, grosor pared VD y evaluación alternativa de función/tamaño en ventanas precordiales deficientes.",
+      "en": "Pericardial effusion/tamponade assessment, RV wall thickness, and alternative assessment of cardiac function and chamber size when precordial windows are limited."
+    }
   },
   {
     "id": "subcostal_ivc",
-    "window": "Subcostal eje largo de VCI",
+    "window": {
+      "es": "Subcostal eje largo de VCI",
+      "en": "Subcostal IVC long-axis view"
+    },
     "abbreviation": "SC-VCI",
-    "typical_probe_position": "Desde subcostal, rotar para alinear VCI longitudinalmente hacia la AD.",
-    "typical_marker_orientation": "Orientación típica hacia la cabeza.",
-    "favored_structures": "VCI, unión cavoauricular y venas hepáticas.",
-    "favored_measurements": "Diámetro, colapsabilidad/distensibilidad de VCI, presión AD y flujo de venas hepáticas."
+    "typical_probe_position": {
+      "es": "Desde subcostal, rotar para alinear VCI longitudinalmente hacia la AD.",
+      "en": "From subcostal, rotate to align the IVC longitudinally toward the RA."
+    },
+    "typical_marker_orientation": {
+      "es": "Orientación típica hacia la cabeza.",
+      "en": "Typical orientation toward the head."
+    },
+    "favored_structures": {
+      "es": "VCI, unión cavoauricular y venas hepáticas.",
+      "en": "IVC, cavoatrial junction, and hepatic veins."
+    },
+    "favored_measurements": {
+      "es": "Diámetro, colapsabilidad/distensibilidad de VCI, presión AD y flujo de venas hepáticas.",
+      "en": "Diameter, IVC collapsibility/distensibility, RAP, and hepatic vein flow."
+    }
   },
   {
     "id": "rv_inflow",
-    "window": "Paraesternal de entrada del VD",
+    "window": {
+      "es": "Paraesternal de entrada del VD",
+      "en": "Parasternal RV inflow view"
+    },
     "abbreviation": "RV inflow",
-    "typical_probe_position": "Desde PLAX, inclinar medial e inferiormente hacia la válvula tricúspide.",
-    "typical_marker_orientation": "Ajustar para alinear AD-TV-VD.",
-    "favored_structures": "AD, válvula tricúspide y entrada del VD.",
-    "favored_measurements": "Doppler de IT, evaluación tricuspídea y, en algunos casos, Tei por PW."
+    "typical_probe_position": {
+      "es": "Desde PLAX, inclinar medial e inferiormente hacia la válvula tricúspide.",
+      "en": "From PLAX, tilt medially and inferiorly toward the tricuspid valve."
+    },
+    "typical_marker_orientation": {
+      "es": "Ajustar para alinear AD-TV-VD.",
+      "en": "Adjust to align RA-TV-RV."
+    },
+    "favored_structures": {
+      "es": "AD, válvula tricúspide y entrada del VD.",
+      "en": "RA, tricuspid valve, and RV inflow."
+    },
+    "favored_measurements": {
+      "es": "Doppler de IT, evaluación tricuspídea y, en algunos casos, Tei por PW.",
+      "en": "TR Doppler, tricuspid valve assessment, and, in selected cases, the Tei index by pulsed-wave Doppler."
+    }
   },
   {
     "id": "right_parasternal",
-    "window": "Paraesternal derecha alta",
+    "window": {
+      "es": "Paraesternal derecha alta",
+      "en": "High right parasternal view"
+    },
     "abbreviation": "RPS",
-    "typical_probe_position": "2.º-3.º espacio intercostal derecho, paciente en decúbito lateral derecho cuando sea posible.",
-    "typical_marker_orientation": "Hacia el hombro derecho en la convención habitual.",
-    "favored_structures": "Aorta ascendente y flujo transaórtico.",
-    "favored_measurements": "Vmax y gradientes aórticos; puede proporcionar la mayor velocidad en estenosis aórtica."
+    "typical_probe_position": {
+      "es": "2.º-3.º espacio intercostal derecho, paciente en decúbito lateral derecho cuando sea posible.",
+      "en": "High 2nd-3rd right intercostal space, patient in right lateral decubitus when possible."
+    },
+    "typical_marker_orientation": {
+      "es": "Hacia el hombro derecho en la convención habitual.",
+      "en": "Toward the right shoulder in standard convention."
+    },
+    "favored_structures": {
+      "es": "Aorta ascendente y flujo transaórtico.",
+      "en": "Ascending aorta and transaortic flow."
+    },
+    "favored_measurements": {
+      "es": "Vmax y gradientes aórticos; puede proporcionar la mayor velocidad en estenosis aórtica.",
+      "en": "Aortic Vmax and gradients; can provide the highest velocity in aortic stenosis."
+    }
   },
   {
     "id": "suprasternal",
-    "window": "Supraesternal",
+    "window": {
+      "es": "Supraesternal",
+      "en": "Suprasternal notch view"
+    },
     "abbreviation": "SSN",
-    "typical_probe_position": "Escotadura supraesternal, cuello extendido si es tolerado.",
-    "typical_marker_orientation": "Orientación ajustada al eje del arco aórtico.",
-    "favored_structures": "Arco aórtico, aorta descendente y ramas supraaórticas.",
-    "favored_measurements": "Doppler aórtico alternativo y reversión holodiastólica en aorta descendente."
+    "typical_probe_position": {
+      "es": "Escotadura supraesternal, cuello extendido si es tolerado.",
+      "en": "Suprasternal notch, neck extended if tolerated."
+    },
+    "typical_marker_orientation": {
+      "es": "Orientación ajustada al eje del arco aórtico.",
+      "en": "Orientation adjusted to the axis of the aortic arch."
+    },
+    "favored_structures": {
+      "es": "Arco aórtico, aorta descendente y ramas supraaórticas.",
+      "en": "Aortic arch, descending aorta, and aortic arch branches."
+    },
+    "favored_measurements": {
+      "es": "Doppler aórtico alternativo y reversión holodiastólica en aorta descendente.",
+      "en": "Alternative aortic Doppler interrogation and holodiastolic flow reversal in the descending aorta."
+    }
   }
 ]

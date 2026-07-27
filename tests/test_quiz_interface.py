@@ -462,6 +462,8 @@ def test_analytics_is_disabled_strictly():
             document.getElementById("results").textContent = JSON.stringify({ success: true, enabled: res });
         } catch(e) {
             document.getElementById("results").textContent = JSON.stringify({ success: false, error: e.message });
+        } finally {
+            window.close();
         }
     </script>
 </body>
@@ -472,19 +474,16 @@ def test_analytics_is_disabled_strictly():
         tmp.write(html_content)
         tmp_path = tmp.name
 
-    out_tmp_path = None
-    with tempfile.NamedTemporaryFile(suffix=".log", delete=False, mode="w", encoding="utf-8", dir="./") as out_tmp:
-        out_tmp_path = out_tmp.name
-
     with tempfile.TemporaryDirectory(dir="./") as user_data_dir:
         try:
             cmd = [
                 CHROME_PATH,
-                "--headless=old",
+                "--headless",
                 "--disable-gpu",
+                "--disable-software-rasterizer",
                 "--no-sandbox",
+                "--incognito",
                 "--allow-file-access-from-files",
-                "--virtual-time-budget=3000",
                 "--no-first-run",
                 "--no-default-browser-check",
                 "--disable-default-apps",
@@ -497,33 +496,36 @@ def test_analytics_is_disabled_strictly():
                 "--dump-dom",
                 "file://" + urllib.request.pathname2url(os.path.abspath(tmp_path))
             ]
-            with open(out_tmp_path, "w", encoding="utf-8") as out_f:
-                process = subprocess.Popen(cmd, stdout=out_f, stderr=subprocess.DEVNULL, stdin=subprocess.DEVNULL)
-                import time
-                start_time = time.time()
-                stdout_content = ""
-                success = False
-                while time.time() - start_time < 5.0:
-                    if os.path.exists(out_tmp_path):
-                        with open(out_tmp_path, "r", encoding="utf-8") as r_f:
-                            stdout_content = r_f.read()
-                        if '<div id="results">' in stdout_content:
-                            success = True
-                            break
-                    time.sleep(0.1)
-                process.kill()
-                process.wait()
+            res = subprocess.run(
+                cmd,
+                capture_output=True,
+                text=True,
+                timeout=20,
+                check=False,
+                stdin=subprocess.DEVNULL
+            )
 
-            if not success:
-                pytest.fail(f"Chrome timed out or failed to output results. Output: {stdout_content}")
+            if res.returncode != 0:
+                pytest.fail(
+                    f"Chrome execution failed with returncode {res.returncode}.\n"
+                    f"STDOUT:\n{res.stdout}\n"
+                    f"STDERR:\n{res.stderr}"
+                )
 
+            stdout_content = res.stdout
             match = re.search(r'<div id="results">(.*?)</div>', stdout_content)
             assert match is not None
             result_data = json.loads(match.group(1))
             assert result_data["success"] is True
             assert result_data["enabled"] is False
+        except subprocess.TimeoutExpired as e:
+            out_decoded = e.stdout.decode('utf-8', errors='replace') if isinstance(e.stdout, bytes) else str(e.stdout)
+            err_decoded = e.stderr.decode('utf-8', errors='replace') if isinstance(e.stderr, bytes) else str(e.stderr)
+            pytest.fail(
+                f"Chrome headless excedió el tiempo máximo de 20 segundos.\n"
+                f"STDOUT parcial:\n{out_decoded}\n"
+                f"STDERR parcial:\n{err_decoded}"
+            )
         finally:
             if os.path.exists(tmp_path):
                 os.remove(tmp_path)
-            if out_tmp_path and os.path.exists(out_tmp_path):
-                os.remove(out_tmp_path)

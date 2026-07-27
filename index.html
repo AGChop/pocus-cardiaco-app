@@ -3,97 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>POCUS Cardíaco - Glosario y Mediciones</title>
+    <title data-i18n="app.document_title">LOCUS POCUS - Glosario y Mediciones</title>
     <!-- Importar tipografía moderna Outfit de Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
     <!-- Enlace al archivo de estilos CSS -->
     <link rel="stylesheet" href="assets/css/styles.css">
-    
+
     <!-- Configuración para PWA (Manifiesto e iOS) -->
     <link rel="manifest" href="manifest.webmanifest">
     <meta name="theme-color" content="#1e3a8a">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="apple-mobile-web-app-title" content="POCUS Cardíaco">
-    <link rel="icon" type="image/png" href="./assets/icons/icon-192.png">
-    <link rel="shortcut icon" href="./assets/icons/icon-192.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="./assets/icons/apple-touch-icon-180.png">
+    <meta name="apple-mobile-web-app-title" content="LOCUS POCUS">
+    <link rel="icon" type="image/png" href="./assets/icons/locus-pocus-icon-192.png">
+    <link rel="shortcut icon" href="./assets/icons/locus-pocus-icon-192.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/icons/locus-pocus-apple-touch-icon-180.png">
 
     <!-- Metadatos de Open Graph (Redes Sociales / Compartido) -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="POCUS Cardíaco">
-    <meta property="og:description" content="Glosario, mediciones, ventanas y protocolos de POCUS cardíaco.">
+    <meta property="og:title" content="LOCUS POCUS">
+    <meta property="og:description" content="Glosario, mediciones, vistas y protocolos de POCUS cardíaco.">
     <meta property="og:url" content="https://agchop.github.io/pocus-cardiaco-app/">
-    <meta property="og:image" content="https://agchop.github.io/pocus-cardiaco-app/assets/images/social-preview-1200x630.png">
+    <meta property="og:image" content="https://agchop.github.io/pocus-cardiaco-app/assets/images/locus_pocus_social_preview_1200x630.png">
 
     <!-- Metadatos de Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="POCUS Cardíaco">
-    <meta name="twitter:description" content="Glosario, mediciones, ventanas y protocolos de POCUS cardíaco.">
-    <meta name="twitter:image" content="https://agchop.github.io/pocus-cardiaco-app/assets/images/social-preview-1200x630.png">
+    <meta name="twitter:title" content="LOCUS POCUS">
+    <meta name="twitter:description" content="Glosario, mediciones, vistas y protocolos de POCUS cardíaco.">
+    <meta name="twitter:image" content="https://agchop.github.io/pocus-cardiaco-app/assets/images/locus_pocus_social_preview_1200x630.png">
 </head>
 <body>
     <div class="app-container">
         <!-- Cabecera principal con Logotipo de Fusión Biomédica Profesional -->
         <header style="position: relative; text-align: center; padding: 1rem 0 0.5rem 0;">
-            <div style="position: absolute; right: 0.5rem; top: 0.5rem; z-index: 10;">
-                <select id="theme-select" aria-label="Seleccionar tema visual" style="padding: 0.25rem 0.5rem; border-radius: 6px; border: 1px solid var(--border-light); font-size: 0.8rem; background-color: var(--card-bg-light); color: var(--text-main-light); cursor: pointer;">
-                    <option value="auto">🌓 Auto</option>
-                    <option value="light">☀️ Claro</option>
-                    <option value="dark">🌙 Oscuro</option>
+            <div style="position: absolute; right: 0.5rem; top: 0.5rem; z-index: 10; display: flex; align-items: center;">
+                <select id="language-select" aria-label="Seleccionar idioma" data-i18n-aria-label="language.selector_label" style="padding: 0.25rem 0.5rem; border-radius: 6px; border: 1px solid var(--border-light); font-size: 0.8rem; background-color: var(--card-bg-light); color: var(--text-main-light); cursor: pointer; margin-right: 0.5rem;">
+                    <option value="es" data-i18n="language.spanish">ES</option>
+                    <option value="en" data-i18n="language.english">EN</option>
+                </select>
+                <select id="theme-select" aria-label="Seleccionar tema visual" data-i18n-aria-label="theme.selector_label" style="padding: 0.25rem 0.5rem; border-radius: 6px; border: 1px solid var(--border-light); font-size: 0.8rem; background-color: var(--card-bg-light); color: var(--text-main-light); cursor: pointer;">
+                    <option value="auto" data-i18n="theme.auto">🌓 Auto</option>
+                    <option value="light" data-i18n="theme.light">☀️ Claro</option>
+                    <option value="dark" data-i18n="theme.dark">🌙 Oscuro</option>
                 </select>
             </div>
-            
-            <!-- Logotipo Profesional Adaptable (Retorno a Inicio) -->
+
             <div class="header-logo" style="margin: 0 auto; max-width: 250px; width: 100%; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.08));">
-                <a href="#/" aria-label="Volver al inicio" style="display: block; text-decoration: none;">
-                    <img src="assets/images/pocus_fusion_branding.png" alt="POCUS Cardíaco - Glosario y banco de mediciones" style="width: 100%; height: auto; display: block; border-radius: 12px; border: 2px solid var(--border-light); transition: filter 0.3s; background-color: #ffffff;" class="brand-logo-img">
+                <a href="#/" aria-label="Volver al inicio" data-i18n-aria-label="nav.home" style="display: block; text-decoration: none;">
+                    <div class="brand-logo-stage" style="position: relative; display: block;">
+                        <img src="assets/images/locus_pocus_branding.png" alt="LOCUS POCUS - Glosario y banco de mediciones" data-i18n-title="app.document_title" style="width: 100%; height: auto; display: block; border-radius: 12px; border: 2px solid var(--border-light); transition: filter 0.3s; background-color: #ffffff;" class="brand-logo-img">
+                        <img src="assets/images/locus_pocus_flame_overlay.png" alt="" aria-hidden="true" draggable="false" class="brand-logo-flame-layer" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; border-radius: 12px; display: block;">
+                    </div>
                 </a>
             </div>
         </header>
 
         <!-- Descargo de Responsabilidad de Seguridad Clínica -->
-        <div class="safety-banner" role="alert">
-            <strong>Aviso de seguridad clínica:</strong> Esta herramienta es educativa y de consulta rápida. 
-            No sustituye un ecocardiograma formal, la valoración clínica, las guías vigentes ni el juicio 
+        <div class="safety-banner" role="alert" data-i18n="safety.notice">
+            Aviso de seguridad clínica: Esta herramienta es educativa y de consulta rápida.
+            No sustituye un ecocardiograma formal, la valoración clínica, las guías vigentes ni el juicio
             de un profesional capacitado.
         </div>
 
         <!-- Barra de Búsqueda Global -->
         <div class="search-container">
-            <input type="text" id="global-search" placeholder="🔍 Buscar FEVI, e', longitud VD, Simpson..." aria-label="Buscar en la aplicación">
-            <button id="clear-search" aria-label="Limpiar búsqueda" style="display: none;">&times;</button>
+            <input type="text" id="global-search" placeholder="🔍 Buscar FEVI, e', longitud VD, Simpson..." aria-label="Buscar en la aplicación" data-i18n-placeholder="search.placeholder" data-i18n-aria-label="search.aria_label">
+            <button id="clear-search" aria-label="Limpiar búsqueda" data-i18n-aria-label="search.clear" style="display: none;">&times;</button>
         </div>
 
         <!-- Sección de Contenido Principal -->
         <main id="app-content">
             <div class="main-nav">
                 <a href="#/glosario" class="nav-card">
-                    <h2>Glosario de Términos</h2>
-                    <p>Definición de parámetros, ventanas de adquisición y vocabulario clínico de POCUS.</p>
+                    <h2 data-i18n="nav.glossary">Glosario de Términos</h2>
+                    <p data-i18n="label.glossary_desc">Definición de parámetros, ventanas de adquisición y vocabulario clínico de POCUS.</p>
                 </a>
                 <a href="#/mediciones" class="nav-card">
-                    <h2>Banco de Mediciones</h2>
-                    <p>12 secciones con valores normales, fórmulas y puntos de corte ecocardiográficos.</p>
+                    <h2 data-i18n="nav.measurements">Banco de Mediciones</h2>
+                    <p data-i18n="label.measurements_desc">12 secciones con valores normales, fórmulas y puntos de corte ecocardiográficos.</p>
                 </a>
                 <a href="#/ventanas" class="nav-card">
-                    <h2>Ventanas ecocardiográficas</h2>
-                    <p>Guía de posición del transductor, orientación del marcador, estructuras visibles y mediciones asociadas.</p>
+                    <h2 data-i18n="nav.windows">Vistas ecocardiográficas</h2>
+                    <p data-i18n="label.windows_desc">Guía de posición del transductor, orientación del marcador, estructuras visibles y mediciones asociadas.</p>
                 </a>
                 <a href="#/protocolos" class="nav-card">
-                    <h2>Protocolos POCUS</h2>
-                    <p>Protocolos estructurados para la evaluación ecográfica dirigida en escenarios clínicos específicos.</p>
+                    <h2 data-i18n="nav.protocols">Protocolos POCUS</h2>
+                    <p data-i18n="label.protocols_desc">Protocolos estructurados para la evaluación ecográfica dirigida en escenarios clínicos específicos.</p>
                 </a>
             </div>
         </main>
 
         <!-- Pie de página -->
         <footer>
-            <p>&copy; 2026 POCUS Cardíaco. Versión Inicial Mínima.</p>
-            <p>Desarrollado por Medicina Interna del HSRA - Dr. García R.</p>
+            <p data-i18n="footer.version">&copy; 2026 LOCUS POCUS. Versión Inicial Mínima.</p>
+            <p data-i18n="footer.developed_by">Desarrollado por Medicina Interna del HSRA - Dr. García R.</p>
         </footer>
     </div>
 
@@ -101,6 +107,7 @@
     <script src="assets/js/storage.js"></script>
     <script src="assets/js/analytics.js"></script>
     <script src="assets/js/data-loader.js"></script>
+    <script src="assets/js/i18n.js"></script>
     <script src="assets/js/media-viewer.js"></script>
     <script src="assets/js/quiz-engine.js"></script>
     <script src="assets/js/theme.js"></script>

@@ -1,6 +1,20 @@
 import json
 import pytest
 
+def get_localized_text(value, language="es"):
+    if isinstance(value, dict):
+        selected = value.get(language)
+        if isinstance(selected, str) and selected.strip():
+            return selected
+        fallback_es = value.get("es")
+        if isinstance(fallback_es, str) and fallback_es.strip():
+            return fallback_es
+        fallback_en = value.get("en")
+        if isinstance(fallback_en, str) and fallback_en.strip():
+            return fallback_en
+        return ""
+    return value if isinstance(value, str) else ""
+
 # Pruebas de lógica clínica específicas para evitar regresiones de valores numéricos del PDF
 def test_rvp_formula_logic():
     # La fórmula de RVP debe estar sustentada en el VTI del TSVD y no en el TSVI
@@ -10,7 +24,7 @@ def test_rvp_formula_logic():
     rvp_meas = next((m for m in measurements if m["id"] == "rvp_ecografica"), None)
     assert rvp_meas is not None, "La medición 'rvp_ecografica' (Resistencia Vascular Pulmonar) no existe"
     
-    formula = rvp_meas["formula_or_method"].lower()
+    formula = get_localized_text(rvp_meas["formula_or_method"]).lower()
     
     # Debe mencionar VTI del TSVD o VTI TSVD o TSVD
     assert "tsvd" in formula or "vti_tsvd" in formula or "vti del tsvd" in formula
@@ -24,7 +38,7 @@ def test_tapse_values():
     tapse = next((m for m in measurements if m["id"] == "tapse_meas"), None)
     assert tapse is not None, "El parámetro TAPSE no existe"
     
-    normal_values = tapse["normal_values"].lower()
+    normal_values = get_localized_text(tapse["normal_values"]).lower()
     # Debe especificar que es anormal si es menor a 17 mm (o 1.7 cm)
     assert "17" in normal_values or "1.7" in normal_values
 
@@ -32,13 +46,14 @@ def test_fevi_ranges():
     with open("data/classifications.json", "r", encoding="utf-8") as f:
         classifications = json.load(f)
         
-    fevi_class = next((c for c in classifications if "fevi" in c["name"].lower() or "eyección" in c["name"].lower()), None)
+    fevi_class = next((c for c in classifications if "fevi" in get_localized_text(c["name"]).lower() or "eyección" in get_localized_text(c["name"]).lower()), None)
     assert fevi_class is not None, "La clasificación de FEVI no existe"
     
     # Verificar los valores límites exactos
     severa_found = False
     for item in fevi_class["items"]:
-        if "sever" in item["category"].lower():
+        category_text = get_localized_text(item["category"])
+        if "sever" in category_text.lower():
             assert "30" in item["range"], "La disfunción severa de FEVI debe ser < 30%"
             severa_found = True
             
@@ -48,13 +63,13 @@ def test_stenosis_thresholds():
     with open("data/classifications.json", "r", encoding="utf-8") as f:
         classifications = json.load(f)
         
-    aortic = next((c for c in classifications if "aórtica" in c["name"].lower()), None)
+    aortic = next((c for c in classifications if "aórtica" in get_localized_text(c["name"]).lower()), None)
     assert aortic is not None, "La clasificación de estenosis aórtica no existe"
     
     # Validar valores límites de estenosis aórtica severa
     for item in aortic["items"]:
-        param = item["parameter"].lower()
-        val = item["threshold"].lower()
+        param = get_localized_text(item["parameter"]).lower()
+        val = get_localized_text(item["threshold"]).lower()
         if "vmax" in param:
             assert "4" in val
         elif "gradiente" in param:

@@ -1,46 +1,85 @@
 [
   {
     "id": "fevi_class",
-    "name": "Clasificación de la FEVI",
+    "name": {
+      "es": "Clasificación de la FEVI",
+      "en": "LVEF Classification"
+    },
     "items": [
       {
         "range": ">70-75%",
-        "category": "FEVI hiperdinámica",
-        "method": "Estimación visual o Simpson"
+        "category": {
+          "es": "FEVI hiperdinámica",
+          "en": "Hyperdynamic LVEF"
+        },
+        "method": {
+          "es": "Estimación visual o Simpson",
+          "en": "Visual estimation or Simpson"
+        }
       },
       {
         "range": "53-73%",
-        "category": "FEVI normal",
-        "method": "Simpson biplano"
+        "category": {
+          "es": "FEVI normal",
+          "en": "Normal LVEF"
+        },
+        "method": {
+          "es": "Simpson biplano",
+          "en": "Biplane Simpson"
+        }
       },
       {
         "range": "41-52%",
-        "category": "FEVI levemente reducida",
-        "method": "Simpson biplano"
+        "category": {
+          "es": "FEVI levemente reducida",
+          "en": "Mildly reduced LVEF"
+        },
+        "method": {
+          "es": "Simpson biplano",
+          "en": "Biplane Simpson"
+        }
       },
       {
         "range": "30-40%",
-        "category": "FEVI moderadamente reducida",
-        "method": "Simpson biplano"
+        "category": {
+          "es": "FEVI moderadamente reducida",
+          "en": "Moderately reduced LVEF"
+        },
+        "method": {
+          "es": "Simpson biplano",
+          "en": "Biplane Simpson"
+        }
       },
       {
         "range": "<30%",
-        "category": "FEVI severamente reducida",
-        "method": "Simpson biplano"
+        "category": {
+          "es": "FEVI severamente reducida",
+          "en": "Severely reduced LVEF"
+        },
+        "method": {
+          "es": "Simpson biplano",
+          "en": "Biplane Simpson"
+        }
       }
     ],
     "source_page": 11
   },
   {
     "id": "as_severe_class",
-    "name": "Estenosis aórtica severa",
+    "name": {
+      "es": "Estenosis aórtica severa",
+      "en": "Severe aortic stenosis"
+    },
     "items": [
       {
         "parameter": "Vmax",
         "threshold": "≥4 m/s"
       },
       {
-        "parameter": "Gradiente medio",
+        "parameter": {
+          "es": "Gradiente medio",
+          "en": "Mean gradient"
+        },
         "threshold": "≥40 mmHg"
       },
       {
@@ -52,23 +91,41 @@
         "threshold": "<0,25"
       }
     ],
-    "note": "Integración de Vmax, gradiente medio, AVA y DVI.",
+    "note": {
+      "es": "Integración de Vmax, gradiente medio, AVA y DVI.",
+      "en": "Integration of Vmax, mean gradient, AVA, and DVI."
+    },
     "source_page": 11
   },
   {
     "id": "ms_severe_class",
-    "name": "Estenosis mitral severa",
+    "name": {
+      "es": "Estenosis mitral severa",
+      "en": "Severe mitral stenosis"
+    },
     "items": [
       {
-        "parameter": "Área mitral",
+        "parameter": {
+          "es": "Área mitral",
+          "en": "Mitral area"
+        },
         "threshold": "<1,0 cm²"
       },
       {
-        "parameter": "Gradiente medio",
-        "threshold": ">10 mmHg a FC 60-80 lpm"
+        "parameter": {
+          "es": "Gradiente medio",
+          "en": "Mean gradient"
+        },
+        "threshold": {
+          "es": ">10 mmHg a FC 60-80 lpm",
+          "en": ">10 mmHg at HR 60-80 bpm"
+        }
       }
     ],
-    "note": "Integración de área y gradiente a FC conocida.",
+    "note": {
+      "es": "Integración de área y gradiente a FC conocida.",
+      "en": "Integration of area and gradient at known HR."
+    },
     "source_page": 11
   }
 ]

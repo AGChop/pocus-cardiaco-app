@@ -1,57 +1,127 @@
 [
   {
-    "parameter": "Masa del VI",
-    "warning": "DTDVI, IVSd y PWTd deben estar en cm antes de aplicar la fórmula.",
+    "parameter": {
+      "es": "Masa del VI",
+      "en": "LV mass"
+    },
+    "warning": {
+      "es": "DTDVI, IVSd y PWTd deben estar en cm antes de aplicar la fórmula.",
+      "en": "LVIDd, IVSd, and PWTd must be in cm before applying the formula."
+    },
     "source_page": 3
   },
   {
-    "parameter": "Área del TSVI",
-    "warning": "El diámetro debe estar en cm. El área queda en cm².",
+    "parameter": {
+      "es": "Área del TSVI",
+      "en": "LVOT area"
+    },
+    "warning": {
+      "es": "El diámetro debe estar en cm. El área queda en cm².",
+      "en": "The diameter must be in cm. The resulting area is in cm²."
+    },
     "source_page": 3
   },
   {
-    "parameter": "Volumen sistólico",
-    "warning": "Área en cm² x VTI en cm = cm³, equivalente a mL.",
+    "parameter": {
+      "es": "Volumen sistólico",
+      "en": "Stroke volume"
+    },
+    "warning": {
+      "es": "Área en cm² x VTI en cm = cm³, equivalente a mL.",
+      "en": "Area in cm² x VTI in cm = cm³, equivalent to mL."
+    },
     "source_page": 3
   },
   {
-    "parameter": "Gasto cardiaco",
-    "warning": "VS en mL x FC / 1000 = L/min.",
+    "parameter": {
+      "es": "Gasto cardiaco",
+      "en": "Cardiac output"
+    },
+    "warning": {
+      "es": "VS en mL x FC / 1000 = L/min.",
+      "en": "SV in mL x HR / 1000 = L/min."
+    },
     "source_page": 3
   },
   {
-    "parameter": "Bernoulli",
-    "warning": "Velocidad en m/s: ΔP = 4V² produce mmHg.",
+    "parameter": {
+      "es": "Bernoulli",
+      "en": "Bernoulli"
+    },
+    "warning": {
+      "es": "Velocidad en m/s: ΔP = 4V² produce mmHg.",
+      "en": "With velocity in m/s, ΔP = 4V² yields mmHg."
+    },
     "source_page": 3
   },
   {
-    "parameter": "PISA / EROA",
-    "warning": "Radio en cm y velocidades en unidades consistentes.",
+    "parameter": {
+      "es": "PISA / EROA",
+      "en": "PISA / EROA"
+    },
+    "warning": {
+      "es": "Radio en cm y velocidades en unidades consistentes.",
+      "en": "The radius must be in cm, and velocities must use consistent units."
+    },
     "source_page": 3
   },
   {
-    "parameter": "RVP ecográfica",
-    "warning": "Debe emplearse VTI del TSVD/RVOT, no VTI del TSVI/LVOT.",
+    "parameter": {
+      "es": "RVP ecográfica",
+      "en": "Echocardiographic PVR"
+    },
+    "warning": {
+      "es": "Debe emplearse VTI del TSVD/RVOT, no VTI del TSVI/LVOT.",
+      "en": "RVOT VTI must be used, not LVOT VTI."
+    },
     "source_page": 3
   },
   {
-    "parameter": "Strain",
-    "warning": "Los valores son negativos: un valor menos negativo indica menor deformación.",
+    "parameter": {
+      "es": "Strain",
+      "en": "Strain"
+    },
+    "warning": {
+      "es": "Los valores son negativos: un valor menos negativo indica menor deformación.",
+      "en": "Values are negative: a less negative value indicates reduced deformation."
+    },
     "source_page": 3
   },
   {
-    "parameter": "Señal Doppler",
-    "warning": "No utilizar una señal Doppler incompleta o desalineada.",
+    "parameter": {
+      "es": "Señal Doppler",
+      "en": "Doppler signal"
+    },
+    "warning": {
+      "es": "No utilizar una señal Doppler incompleta o desalineada.",
+      "en": "Doppler signal"
+    },
+    "warning": {
+      "es": "No utilizar una señal Doppler incompleta o desalineada.",
+      "en": "Do not use an incomplete or misaligned Doppler signal."
+    },
     "source_page": 3
   },
   {
-    "parameter": "VCI en Ventilación",
-    "warning": "No extrapolar criterios de VCI de respiración espontánea a ventilación mecánica.",
+    "parameter": {
+      "es": "VCI en Ventilación",
+      "en": "IVC during mechanical ventilation"
+    },
+    "warning": {
+      "es": "No extrapolar criterios de VCI de respiración espontánea a ventilación mecánica.",
+      "en": "Do not extrapolate IVC criteria from spontaneous breathing to mechanical ventilation."
+    },
     "source_page": 3
   },
   {
-    "parameter": "Verificación general",
-    "warning": "Confirmar ventana, unidad, momento del ciclo y alineación Doppler antes de aceptar un resultado.",
+    "parameter": {
+      "es": "Verificación general",
+      "en": "General verification"
+    },
+    "warning": {
+      "es": "Confirmar ventana, unidad, momento del ciclo y alineación Doppler antes de aceptar un resultado.",
+      "en": "Confirm the view, unit, cardiac cycle timing, and Doppler alignment before accepting a result."
+    },
     "source_page": 3
   }
 ]

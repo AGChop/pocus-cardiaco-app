@@ -3,16 +3,31 @@
   "version": "1.0.0",
   "approved_on": "2026-07-21",
   "source": "data/protocols.draft.json",
-  "educational_disclaimer": "Este contenido es educativo. El protocolo RUSH complementa y no sustituye la valoración clínica, la reanimación ni los estudios diagnósticos definitivos. Los hallazgos deben integrarse con el contexto clínico.",
+  "educational_disclaimer": {
+    "es": "Este contenido es educativo. El protocolo RUSH complementa y no sustituye la valoración clínica, la reanimación ni los estudios diagnósticos definitivos. Los hallazgos deben integrarse con el contexto clínico.",
+    "en": "This content is educational. The RUSH protocol complements and does not replace clinical assessment, resuscitation, or definitive diagnostic studies. Findings must be integrated with the clinical context."
+  },
   "metadata": {
-    "title": "Borrador de Protocolos Clínicos POCUS",
+    "title": {
+      "es": "Borrador de Protocolos Clínicos POCUS",
+      "en": "Draft POCUS Clinical Protocols"
+    },
     "version": "1.0.0",
     "status": "approved-for-app-use",
-    "scope": "Ultrasonido en el punto de atención (POCUS) para la evaluación de pacientes en estado crítico.",
-    "intended_audience": "Residentes y médicos en formación en Medicina de Urgencias, Medicina Crítica y Medicina Interna.",
+    "scope": {
+      "es": "Ultrasonido en el punto de atención (POCUS) para la evaluación de pacientes en estado crítico.",
+      "en": "Point-of-care ultrasound (POCUS) for the assessment of critically ill patients."
+    },
+    "intended_audience": {
+      "es": "Residentes y médicos en formación en Medicina de Urgencias, Medicina Crítica y Medicina Interna.",
+      "en": "Residents and physicians in training in Emergency Medicine, Critical Care Medicine, and Internal Medicine."
+    },
     "protocol_count": 1,
     "generated_on": "2026-07-21",
-    "disclaimer": "Esta es una herramienta educativa y de consulta rápida. El examen RUSH complementa y no sustituye la valoración clínica exhaustiva ni el ecocardiograma formal. Los hallazgos ecográficos no deben interpretarse de forma aislada, y la realización del ultrasonido no debe retrasar las maniobras de reanimación cardiopulmonar o hemodinámica. Un resultado negativo en el protocolo no excluye por sí solo todas las posibles causas de choque.",
+    "disclaimer": {
+      "es": "Esta es una herramienta educativa y de consulta rápida. El examen RUSH complementa y no sustituye la valoración clínica exhaustiva ni el ecocardiograma formal. Los hallazgos ecográficos no deben interpretarse de forma aislada, y la realización del ultrasonido no debe retrasar las maniobras de reanimación cardiopulmonar o hemodinámica. Un resultado negativo en el protocolo no excluye por sí solo todas las posibles causas de choque.",
+      "en": "This is an educational and quick-reference tool. The RUSH examination complements and does not replace a comprehensive clinical assessment or formal echocardiography. Ultrasound findings should not be interpreted in isolation, and performing ultrasound must not delay cardiopulmonary or hemodynamic resuscitation. A negative protocol result does not by itself exclude all possible causes of shock."
+    },
     "approved_on": "2026-07-21",
     "source": "data/protocols.draft.json"
   },
@@ -41,14 +56,38 @@
       "name_es": "Protocolo RUSH",
       "name_en": "RUSH Protocol",
       "acronym": "RUSH",
-      "clinical_context": "Evaluación rápida y sistemática de pacientes con choque o hipotensión de etiología no clara.",
-      "purpose": "Ayudar a diferenciar las etiologías principales del estado de choque (hipovolémico, distributivo, cardiogénico y obstructivo) a través de una exploración ecográfica protocolizada.",
-      "target_population": "Pacientes adultos críticamente enfermos con hipotensión sistólica sostenida (<90 mmHg) o signos clínicos de choque.",
-      "prerequisites": "Formación básica en ecocardiografía enfocada y ecografía general en el punto de atención (POCUS).",
-      "sequence_note": "La tríada didáctica (Bomba, Tanque y Tuberías) no constituye una secuencia obligatoria e invariable. El orden de adquisición debe adaptarse activamente a la inestabilidad del paciente, la sospecha diagnóstica prioritaria, la presencia de ventanas ecográficas viables y la urgencia de intervenciones salvavidas inmediatas.",
-      "integration": "Los hallazgos del protocolo RUSH deben integrarse en el contexto clínico general del paciente. Patrones específicos (ej. hipercontractilidad del VI con colapso de VCI y colapso de cavidades derechas) apoyan hipótesis fisiológicas específicas (ej. shock hipovolémico u obstructivo) pero no sustituyen el diagnóstico definitivo de laboratorio o imagen avanzada.",
-      "limitations": "Calidad de ventana acústica deficiente, enfisema subcutáneo, incapacidad para movilizar al paciente y variabilidad interobservador en la estimación visual.",
-      "safety_and_workflow_notes": "El examen no debe retrasar la reanimación ni otras intervenciones salvavidas. Cuando sea necesario un procedimiento invasivo para el cual exista una técnica ecoguiada validada, debe considerarse la guía ecográfica en tiempo real por personal capacitado, siempre que sea factible y no retrase una intervención urgente.",
+      "clinical_context": {
+        "es": "Evaluación rápida y sistemática de pacientes con choque o hipotensión de etiología no clara.",
+        "en": "Rapid and systematic assessment of patients with shock or hypotension of unclear etiology."
+      },
+      "purpose": {
+        "es": "Ayudar a diferenciar las etiologías principales del estado de choque (hipovolémico, distributivo, cardiogénico y obstructivo) a través de una exploración ecográfica protocolizada.",
+        "en": "Help differentiate the major etiologies of shock (hypovolemic, distributive, cardiogenic, and obstructive) through a protocolized ultrasound examination."
+      },
+      "target_population": {
+        "es": "Pacientes adultos críticamente enfermos con hipotensión sistólica sostenida (<90 mmHg) o signos clínicos de choque.",
+        "en": "Critically ill adult patients with sustained systolic blood pressure below 90 mmHg or clinical signs of shock."
+      },
+      "prerequisites": {
+        "es": "Formación básica en ecocardiografía enfocada y ecografía general en el punto de atención (POCUS).",
+        "en": "Basic training in focused echocardiography and general point-of-care ultrasound (POCUS)."
+      },
+      "sequence_note": {
+        "es": "La tríada didáctica (Bomba, Tanque y Tuberías) no constituye una secuencia obligatoria e invariable. El orden de adquisición debe adaptarse activamente a la inestabilidad del paciente, la sospecha diagnóstica prioritaria, la presencia de ventanas ecográficas viables y la urgencia de intervenciones salvavidas inmediatas.",
+        "en": "The educational triad (Pump, Tank, and Pipes) does not constitute a mandatory or invariant sequence. The acquisition order should be actively adapted to patient instability, the priority diagnostic concern, the availability of adequate acoustic windows, and the urgency of immediate life-saving interventions."
+      },
+      "integration": {
+        "es": "Los hallazgos del protocolo RUSH deben integrarse en el contexto clínico general del paciente. Patrones específicos (ej. hipercontractilidad del VI con colapso de VCI y colapso de cavidades derechas) apoyan hipótesis fisiológicas específicas (ej. shock hipovolémico u obstructivo) pero no sustituyen el diagnóstico definitivo de laboratorio o imagen avanzada.",
+        "en": "RUSH protocol findings must be integrated within the patient's overall clinical context. Specific patterns (e.g., a hyperdynamic LV with IVC collapse and right-sided chamber collapse) may support specific physiologic hypotheses (e.g., hypovolemic or obstructive shock) but do not replace definitive diagnosis by laboratory testing or advanced imaging."
+      },
+      "limitations": {
+        "es": "Calidad de ventana acústica deficiente, enfisema subcutáneo, incapacidad para movilizar al paciente y variabilidad interobservador en la estimación visual.",
+        "en": "Poor acoustic window quality, subcutaneous emphysema, inability to reposition the patient, and interobserver variability in visual assessment."
+      },
+      "safety_and_workflow_notes": {
+        "es": "El examen no debe retrasar la reanimación ni otras intervenciones salvavidas. Cuando sea necesario un procedimiento invasivo para el cual exista una técnica ecoguiada validada, debe considerarse la guía ecográfica en tiempo real por personal capacitado, siempre que sea factible y no retrase una intervención urgente.",
+        "en": "The examination must not delay resuscitation or other life-saving interventions. When an invasive procedure is required and a validated ultrasound-guided technique is available, real-time ultrasound guidance by trained personnel should be considered whenever feasible and provided that it does not delay an urgent intervention."
+      },
       "reference_ids": [
         "ref_perera_2010",
         "ref_seif_2012",
@@ -61,20 +100,50 @@
           "name_es": "La Bomba (Evaluación cardíaca)",
           "name_en": "The Pump (Cardiac Evaluation)",
           "clinical_questions": [
-            "¿Existe derrame pericárdico con signos de repercusión hemodinámica?",
-            "¿Cómo está la función sistólica global del ventrículo izquierdo?",
-            "¿Hay dilatación o signos de sobrecarga del ventrículo derecho?"
+            {
+              "es": "¿Existe derrame pericárdico con signos de repercusión hemodinámica?",
+              "en": "Is there a pericardial effusion with signs of hemodynamic compromise?"
+            },
+            {
+              "es": "¿Cómo está la función sistólica global del ventrículo izquierdo?",
+              "en": "What is the global left ventricular systolic function?"
+            },
+            {
+              "es": "¿Hay dilatación o signos de sobrecarga del ventrículo derecho?",
+              "en": "Is the right ventricle dilated or are there signs of right ventricular overload?"
+            }
           ],
           "targets": [
-            "Derrame pericárdico (pequeño, moderado, grande) y colapso de cavidades derechas en diástole.",
-            "Contractilidad global del VI (hiperdinámico, normal, disminuido) y EPSS.",
-            "Relación de diámetros del ventrículo derecho respecto al ventrículo izquierdo (dilatación del VD)."
+            {
+              "es": "Derrame pericárdico (pequeño, moderado, grande) y colapso de cavidades derechas en diástole.",
+              "en": "Pericardial effusion (small, moderate, or large) and diastolic collapse of the right-sided chambers."
+            },
+            {
+              "es": "Contractilidad global del VI (hiperdinámico, normal, disminuido) y EPSS.",
+              "en": "Global LV contractility (hyperdynamic, normal, or reduced) and EPSS."
+            },
+            {
+              "es": "Relación de diámetros del ventrículo derecho respecto al ventrículo izquierdo (dilatación del VD).",
+              "en": "Ratio of right ventricular to left ventricular diameters (RV dilation)."
+            }
           ],
           "suggested_views": [
-            "Paraesternal eje largo (PLAX)",
-            "Paraesternal eje corto (PSAX)",
-            "Apical cuatro cámaras (A4C)",
-            "Subcostal cuatro cámaras (SC4C)"
+            {
+              "es": "Paraesternal eje largo (PLAX)",
+              "en": "Parasternal long-axis (PLAX)"
+            },
+            {
+              "es": "Paraesternal eje corto (PSAX)",
+              "en": "Parasternal short-axis (PSAX)"
+            },
+            {
+              "es": "Apical cuatro cámaras (A4C)",
+              "en": "Apical four-chamber (A4C)"
+            },
+            {
+              "es": "Subcostal cuatro cámaras (SC4C)",
+              "en": "Subcostal four-chamber (SC4C)"
+            }
           ],
           "linked_window_ids": [
             "plax",
@@ -95,12 +164,27 @@
             "colapso_vd_meas"
           ],
           "possible_findings": [
-            "Derrame pericárdico significativo con colapso diastólico del VD o colapso sistólico de la AD (Sugerente de taponamiento cardiaco).",
-            "Ventrículo izquierdo hiperdinámico con colapso de su cavidad en sístole ('kissing papillary muscles'), sugerente de hipovolemia o vasoplejía.",
-            "Ventrículo izquierdo severamente hipoactivo o acinético, sugerente de choque cardiogénico.",
-            "Ventrículo derecho dilatado (relación VD/VI >1.0) con aplanamiento septal (septo paradójico) o signo de McConnell, sugerente de embolia pulmonar masiva o disfunción aguda de cavidades derechas."
+            {
+              "es": "Derrame pericárdico significativo con colapso diastólico del VD o colapso sistólico de la AD (Sugerente de taponamiento cardiaco).",
+              "en": "Significant pericardial effusion with RV diastolic collapse or RA systolic collapse (suggestive of cardiac tamponade)."
+            },
+            {
+              "es": "Ventrículo izquierdo hiperdinámico con colapso de su cavidad en sístole ('kissing papillary muscles'), sugerente de hipovolemia o vasoplejía.",
+              "en": "Hyperdynamic left ventricle with systolic cavity obliteration ('kissing papillary muscles'), suggestive of hypovolemia or vasoplegia."
+            },
+            {
+              "es": "Ventrículo izquierdo severamente hipoactivo o acinético, sugerente de choque cardiogénico.",
+              "en": "Severely hypokinetic or akinetic left ventricle, suggestive of cardiogenic shock."
+            },
+            {
+              "es": "Ventrículo derecho dilatado (relación VD/VI >1.0) con aplanamiento septal (septo paradójico) o signo de McConnell, sugerente de embolia pulmonar masiva o disfunción aguda de cavidades derechas.",
+              "en": "Dilated right ventricle (RV/LV ratio >1.0) with septal flattening (paradoxical septal motion) or McConnell sign, suggestive of massive pulmonary embolism or acute right ventricular dysfunction."
+            }
           ],
-          "interpretation_limits": "Una relación VD/VI elevada de forma aislada no diagnostica embolia pulmonar (debe evaluarse cronicidad e hipertensión pulmonar). La ausencia de derrame pericárdico no excluye otras etiologías obstructivas. Una función sistólica global del ventrículo izquierdo aparentemente preservada o hiperdinámica no excluye por sí sola un choque cardiogénico, por ejemplo cuando existe disfunción aguda del ventrículo derecho, enfermedad valvular aguda o una complicación mecánica. Debe integrarse con el gasto cardiaco, las condiciones de carga y el contexto clínico. Un solo hallazgo no debe utilizarse de forma aislada para determinar la etiología del choque.",
+          "interpretation_limits": {
+            "es": "Una relación VD/VI elevada de forma aislada no diagnostica embolia pulmonar (debe evaluarse cronicidad e hipertensión pulmonar). La ausencia de derrame pericárdico no excluye otras etiologías obstructivas. Una función sistólica global del ventrículo izquierdo aparentemente preservada o hiperdinámica no excluye por sí sola un choque cardiogénico, por ejemplo cuando existe disfunción aguda del ventrículo derecho, enfermedad valvular aguda o una complicación mecánica. Debe integrarse con el gasto cardiaco, las condiciones de carga y el contexto clínico. Un solo hallazgo no debe utilizarse de forma aislada para determinar la etiología del choque.",
+            "en": "An elevated RV/LV ratio in isolation does not diagnose pulmonary embolism (chronicity and pulmonary hypertension must be assessed). The absence of pericardial effusion does not exclude other obstructive etiologies. Apparently preserved or hyperdynamic global LV systolic function does not by itself exclude cardiogenic shock, for example when acute RV dysfunction, acute valvular disease, or a mechanical complication is present. Findings must be integrated with cardiac output, loading conditions, and the clinical context. No single finding should be used in isolation to determine the etiology of shock."
+          },
           "reference_ids": [
             "ref_perera_2010",
             "ref_seif_2012"
@@ -111,19 +195,46 @@
           "name_es": "El Tanque (Evaluación de Volumen)",
           "name_en": "The Tank (Volume Evaluation)",
           "clinical_questions": [
-            "¿Cómo se comporta el diámetro y colapsabilidad de la vena cava inferior?",
-            "¿Hay signos ecográficos de congestión pulmonar o neumotórax?",
-            "¿Existe líquido libre intraperitoneal o derrame pleural?"
+            {
+              "es": "¿Cómo se comporta el diámetro y colapsabilidad de la vena cava inferior?",
+              "en": "What are the diameter and collapsibility characteristics of the inferior vena cava?"
+            },
+            {
+              "es": "¿Hay signos ecográficos de congestión pulmonar o neumotórax?",
+              "en": "Are there sonographic signs of pulmonary congestion or pneumothorax?"
+            },
+            {
+              "es": "¿Existe líquido libre intraperitoneal o derrame pleural?",
+              "en": "Is there free intraperitoneal fluid or a pleural effusion?"
+            }
           ],
           "targets": [
-            "Diámetro y colapsabilidad/distensibilidad de la VCI en ventilación espontánea o mecánica.",
-            "Pulmón y pleura: presencia de líneas A, líneas B (patrón alveolar/intersticial) y deslizamiento pleural (sliding).",
-            "Espacios dependientes del abdomen (Morison, esplenorrenal, subvesical) para líquido libre."
+            {
+              "es": "Diámetro y colapsabilidad/distensibilidad de la VCI en ventilación espontánea o mecánica.",
+              "en": "IVC diameter and collapsibility/distensibility during spontaneous breathing or mechanical ventilation."
+            },
+            {
+              "es": "Pulmón y pleura: presencia de líneas A, líneas B (patrón alveolar/intersticial) y deslizamiento pleural (sliding).",
+              "en": "Lung and pleura: presence of A-lines, B-lines (alveolar/interstitial pattern), and pleural sliding."
+            },
+            {
+              "es": "Espacios dependientes del abdomen (Morison, esplenorrenal, subvesical) para líquido libre.",
+              "en": "Dependent abdominal spaces (Morison's pouch, splenorenal recess, and subvesical space) for free fluid."
+            }
           ],
           "suggested_views": [
-            "Subcostal eje largo de VCI (SC-VCI)",
-            "Ventanas pulmonares anteriores y laterales",
-            "Ventanas abdominales del FAST (cuadrante superior derecho, izquierdo y pelvis)"
+            {
+              "es": "Subcostal eje largo de VCI (SC-VCI)",
+              "en": "Subcostal long-axis view of the IVC (SC-IVC)"
+            },
+            {
+              "es": "Ventanas pulmonares anteriores y laterales",
+              "en": "Anterior and lateral lung windows"
+            },
+            {
+              "es": "Ventanas abdominales del FAST (cuadrante superior derecho, izquierdo y pelvis)",
+              "en": "FAST abdominal windows (right upper quadrant, left upper quadrant, and pelvis)"
+            }
           ],
           "linked_window_ids": [
             "subcostal_ivc"
@@ -135,13 +246,31 @@
             "vci_pletorica_meas"
           ],
           "possible_findings": [
-            "VCI pequeña (<1.5 cm) y completamente colapsable, sugerente de depleción extrema de volumen.",
-            "VCI pletórica (>2.1 cm) sin colapso inspiratorio, compatible con presiones elevadas en la AD (taponamiento, embolia pulmonar, disfunción VD o sobrecarga hídrica).",
-            "Ausencia de deslizamiento pleural con líneas A ('lung point'), altamente sugestivo de neumotórax.",
-            "Múltiples líneas B bilaterales y difusas, sugerente de edema pulmonar cardiogénico o SDRA.",
-            "Líquido libre intraperitoneal (espacio hepatorrenal, esplenorrenal o pelvis) en contexto de trauma o abdomen agudo."
+            {
+              "es": "VCI pequeña (<1.5 cm) y completamente colapsable, sugerente de depleción extrema de volumen.",
+              "en": "Small IVC (<1.5 cm) with complete inspiratory collapse, suggestive of extreme volume depletion."
+            },
+            {
+              "es": "VCI pletórica (>2.1 cm) sin colapso inspiratorio, compatible con presiones elevadas en la AD (taponamiento, embolia pulmonar, disfunción VD o sobrecarga hídrica).",
+              "en": "Plethoric IVC (>2.1 cm) without inspiratory collapse, compatible with elevated RA pressures (tamponade, pulmonary embolism, RV dysfunction, or fluid overload)."
+            },
+            {
+              "es": "Ausencia de deslizamiento pleural con líneas A ('lung point'), altamente sugestivo de neumotórax.",
+              "en": "Absent pleural sliding with A-lines ('lung point'), highly suggestive of pneumothorax."
+            },
+            {
+              "es": "Múltiples líneas B bilaterales y difusas, sugerente de edema pulmonar cardiogénico o SDRA.",
+              "en": "Multiple diffuse bilateral B-lines, suggestive of cardiogenic pulmonary edema or ARDS."
+            },
+            {
+              "es": "Líquido libre intraperitoneal (espacio hepatorrenal, esplenorrenal o pelvis) en contexto de trauma o abdomen agudo.",
+              "en": "Free intraperitoneal fluid (hepatorenal recess, splenorenal recess, or pelvis) in the setting of trauma or an acute abdomen."
+            }
           ],
-          "interpretation_limits": "La evaluación de la VCI debe integrarse con otros parámetros. El diámetro y la colapsabilidad aislados no definen con precisión la volemia ni predicen la respuesta a fluidos en todos los pacientes (especialmente bajo ventilación mecánica o en presencia de presiones intratorácicas elevadas). Una VCI pequeña no obliga por sí sola a infundir líquidos, y una VCI dilatada no confirma congestión o taponamiento de forma aislada.",
+          "interpretation_limits": {
+            "es": "La evaluación de la VCI debe integrarse con otros parámetros. El diámetro y la colapsabilidad aislados no definen con precisión la volemia ni predicen la respuesta a fluidos en todos los pacientes (especialmente bajo ventilación mecánica o en presencia de presiones intratorácicas elevadas). Una VCI pequeña no obliga por sí sola a infundir líquidos, y una VCI dilatada no confirma congestión o taponamiento de forma aislada.",
+            "en": "IVC assessment must be integrated with other parameters. IVC diameter and collapsibility in isolation do not accurately define volume status or predict fluid responsiveness in all patients, especially during mechanical ventilation or in the presence of elevated intrathoracic pressures. A small IVC alone does not mandate fluid administration, and a dilated IVC does not independently confirm congestion or tamponade."
+          },
           "reference_ids": [
             "ref_perera_2010",
             "ref_seif_2012"
@@ -152,24 +281,51 @@
           "name_es": "Las Tuberías (Evaluación Vascular)",
           "name_en": "The Pipes (Vascular Evaluation)",
           "clinical_questions": [
-            "¿Hay evidencia de aneurisma o disección en la aorta abdominal?",
-            "¿Existe trombosis venosa profunda (TVP) en las extremidades inferiores?"
+            {
+              "es": "¿Hay evidencia de aneurisma o disección en la aorta abdominal?",
+              "en": "Is there evidence of an abdominal aortic aneurysm or dissection?"
+            },
+            {
+              "es": "¿Existe trombosis venosa profunda (TVP) en las extremidades inferiores?",
+              "en": "Is there deep vein thrombosis (DVT) in the lower extremities?"
+            }
           ],
           "targets": [
-            "Aorta abdominal en sus segmentos proximal, medio y distal.",
-            "Vena femoral común y vena poplítea mediante ecografía de compresión en 2 puntos."
+            {
+              "es": "Aorta abdominal en sus segmentos proximal, medio y distal.",
+              "en": "Abdominal aorta in its proximal, mid, and distal segments."
+            },
+            {
+              "es": "Vena femoral común y vena poplítea mediante ecografía de compresión en 2 puntos.",
+              "en": "Common femoral and popliteal veins using two-point compression ultrasonography."
+            }
           ],
           "suggested_views": [
-            "Barrido de aorta abdominal desde epigastrio hasta la bifurcación ilíaca",
-            "Eje transversal de vasos femorales y poplíteos"
+            {
+              "es": "Barrido de aorta abdominal desde epigastrio hasta la bifurcación ilíaca",
+              "en": "Abdominal aortic sweep from the epigastrium to the iliac bifurcation"
+            },
+            {
+              "es": "Eje transversal de vasos femorales y poplíteos",
+              "en": "Transverse view of the femoral and popliteal vessels"
+            }
           ],
           "linked_window_ids": [],
           "linked_measurement_ids": [],
           "possible_findings": [
-            "Aneurisma de aorta abdominal (diámetro >3 cm) o presencia de colgajo de disección íntima (flap).",
-            "Ausencia de colapsabilidad completa de la vena femoral o poplítea bajo compresión directa, indicativo de TVP aguda."
+            {
+              "es": "Aneurisma de aorta abdominal (diámetro >3 cm) o presencia de colgajo de disección íntima (flap).",
+              "en": "Abdominal aortic aneurysm (diameter >3 cm) or the presence of an intimal dissection flap."
+            },
+            {
+              "es": "Ausencia de colapsabilidad completa de la vena femoral o poplítea bajo compresión directa, indicativo de TVP aguda.",
+              "en": "Incomplete compressibility of the femoral or popliteal vein under direct compression, indicative of acute DVT."
+            }
           ],
-          "interpretation_limits": "Una evaluación limitada o negativa no excluye por completo la existencia de TVP en otros segmentos venosos. La imposibilidad de visualizar la aorta abdominal (por ejemplo, debido a gas intestinal excesivo) no excluye la presencia de un aneurisma. La ausencia de TVP detectada no descarta una embolia pulmonar en curso. El protocolo RUSH no sustituye a los estudios diagnósticos vasculares definitivos (como angiotomografía o ecografía dúplex completa).",
+          "interpretation_limits": {
+            "es": "Una evaluación limitada o negativa no excluye por completo la existencia de TVP en otros segmentos venosos. La imposibilidad de visualizar la aorta abdominal (por ejemplo, debido a gas intestinal excesivo) no excluye la presencia de un aneurisma. La ausencia de TVP detectada no descarta una embolia pulmonar en curso. El protocolo RUSH no sustituye a los estudios diagnósticos vasculares definitivos (como angiotomografía o ecografía dúplex completa).",
+            "en": "A limited or negative examination does not completely exclude DVT in other venous segments. Inability to visualize the abdominal aorta, for example because of excessive bowel gas, does not exclude an aneurysm. Failure to detect DVT does not rule out an ongoing pulmonary embolism. The RUSH protocol does not replace definitive vascular diagnostic studies, such as CT angiography or comprehensive duplex ultrasonography."
+          },
           "reference_ids": [
             "ref_perera_2010",
             "ref_seif_2012"

@@ -1,5 +1,5 @@
 // Service Worker de POCUS Cardíaco para soporte sin conexión (Offline)
-const CACHE_NAME = 'pocus-cardiaco-cache-v17';
+const CACHE_NAME = 'pocus-cardiaco-cache-v17-c3d1-brand1-e1a-e1b-e1c-qa1-qa2-qa3-final-logo2';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
@@ -12,8 +12,10 @@ const ASSETS_TO_CACHE = [
   './assets/js/data-loader.js',
   './assets/js/storage.js',
   './assets/js/theme.js',
+  './assets/js/i18n.js',
   './assets/js/search.js',
   './assets/js/router.js',
+  './data/translations.json',
   './data/media-resources.json',
   './data/quizzes.json',
   './data/sections.json',
@@ -28,12 +30,13 @@ const ASSETS_TO_CACHE = [
   './data/metadata.json',
   './data/windows.json',
   './data/protocols.json',
-  './assets/images/pocus_fusion_branding.png',
-  './assets/icons/apple-touch-icon-180.png',
-  './assets/icons/icon-192.png',
-  './assets/icons/icon-512.png',
-  './assets/icons/icon-maskable-512.png',
-  './assets/images/social-preview-1200x630.png'
+  './assets/images/locus_pocus_branding.png',
+  './assets/images/locus_pocus_flame_overlay.png',
+  './assets/icons/locus-pocus-apple-touch-icon-180.png',
+  './assets/icons/locus-pocus-icon-192.png',
+  './assets/icons/locus-pocus-icon-512.png',
+  './assets/icons/locus-pocus-icon-maskable-512.png',
+  './assets/images/locus_pocus_social_preview_1200x630.png'
 ];
 
 // Evento de instalación: cachear recursos estáticos y data clínica
@@ -114,7 +117,7 @@ self.addEventListener('fetch', (event) => {
         // 2. Solicitudes de imágenes o favicon -> Devolver el icono de 192px cacheado
         const url = event.request.url.toLowerCase();
         if (event.request.destination === 'image' || url.endsWith('.ico') || url.endsWith('.png') || url.endsWith('.jpg') || url.endsWith('.jpeg')) {
-          return caches.match('./assets/icons/icon-192.png');
+          return caches.match('./assets/icons/locus-pocus-icon-192.png');
         }
 
         // 3. Otros recursos -> Devolver un Response válido con estado 503

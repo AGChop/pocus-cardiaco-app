@@ -1,0 +1,819 @@
+{
+  "schema_version": "1.0",
+  "default_language": "es",
+  "supported_languages": ["es", "en"],
+  "translations": {
+    "app.document_title": {
+      "es": "LOCUS POCUS - Glosario y Mediciones",
+      "en": "LOCUS POCUS - Glossary and Measurements"
+    },
+    "app.name": {
+      "es": "LOCUS POCUS",
+      "en": "LOCUS POCUS"
+    },
+    "language.selector_label": {
+      "es": "Seleccionar idioma",
+      "en": "Select language"
+    },
+    "language.spanish": {
+      "es": "ES",
+      "en": "ES"
+    },
+    "language.english": {
+      "es": "EN",
+      "en": "EN"
+    },
+    "theme.selector_label": {
+      "es": "Seleccionar tema visual",
+      "en": "Select visual theme"
+    },
+    "theme.auto": {
+      "es": "Auto",
+      "en": "Auto"
+    },
+    "theme.light": {
+      "es": "Claro",
+      "en": "Light"
+    },
+    "theme.dark": {
+      "es": "Oscuro",
+      "en": "Dark"
+    },
+    "safety.notice": {
+      "es": "Aviso de seguridad clínica: Esta herramienta es educativa y de consulta rápida. No sustituye un ecocardiograma formal, la valoración clínica, las guías vigentes ni el juicio de un profesional capacitado.",
+      "en": "Clinical safety notice: This tool is educational and for quick reference. It does not replace a formal echocardiogram, clinical assessment, current guidelines, or the judgment of a trained professional."
+    },
+    "search.placeholder": {
+      "es": "🔍 Buscar FEVI, e', longitud VD, Simpson...",
+      "en": "🔍 Search LVEF, e', RV length, Simpson..."
+    },
+    "search.aria_label": {
+      "es": "Buscar en la aplicación",
+      "en": "Search in application"
+    },
+    "search.clear": {
+      "es": "Limpiar búsqueda",
+      "en": "Clear search"
+    },
+    "search.loading": {
+      "es": "Buscando en la base de datos médica...",
+      "en": "Searching in the medical database..."
+    },
+    "search.no_results_title": {
+      "es": "No se encontraron resultados",
+      "en": "No results found"
+    },
+    "search.no_results_message": {
+      "es": "No se encontraron términos ni mediciones relacionados con \"{query}\".",
+      "en": "No terms or measurements related to \"{query}\" were found."
+    },
+    "search.results_count": {
+      "es": "Se encontraron {count} resultados para \"{query}\":",
+      "en": "Found {count} results for \"{query}\":"
+    },
+    "nav.home": {
+      "es": "Inicio",
+      "en": "Home"
+    },
+    "nav.glossary": {
+      "es": "Glosario de Términos",
+      "en": "Glossary of Terms"
+    },
+    "nav.measurements": {
+      "es": "Banco de Mediciones",
+      "en": "Measurements Database"
+    },
+    "nav.windows": {
+      "es": "Vistas ecocardiográficas",
+      "en": "Echocardiographic Views"
+    },
+    "nav.protocols": {
+      "es": "Protocolos POCUS",
+      "en": "POCUS Protocols"
+    },
+    "nav.favorites": {
+      "es": "Favoritos",
+      "en": "Favorites"
+    },
+    "nav.recents": {
+      "es": "Recientes",
+      "en": "Recents"
+    },
+    "nav.about": {
+      "es": "Acerca de",
+      "en": "About"
+    },
+    "nav.install": {
+      "es": "Instalar",
+      "en": "Install"
+    },
+    "action.back": {
+      "es": "Volver",
+      "en": "Back"
+    },
+    "action.copy_definition": {
+      "es": "Copiar Definición",
+      "en": "Copy Definition"
+    },
+    "action.copy_formula": {
+      "es": "Copiar Fórmula",
+      "en": "Copy Formula"
+    },
+    "action.save_favorite": {
+      "es": "★ Guardar Favorito",
+      "en": "★ Save Favorite"
+    },
+    "action.remove_favorite": {
+      "es": "☆ Quitar Favorito",
+      "en": "☆ Remove Favorite"
+    },
+    "action.clear_history": {
+      "es": "Limpiar Historial",
+      "en": "Clear History"
+    },
+    "state.loading_content": {
+      "es": "Cargando contenido médico...",
+      "en": "Loading medical content..."
+    },
+    "state.no_favorites": {
+      "es": "No tienes elementos favoritos guardados.",
+      "en": "You have no saved favorites."
+    },
+    "state.no_recents": {
+      "es": "No tienes elementos visitados recientemente.",
+      "en": "You have no recently visited items."
+    },
+    "error.not_found_title": {
+      "es": "Página no encontrada",
+      "en": "Page Not Found"
+    },
+    "error.not_found_message": {
+      "es": "La sección que buscas no existe o está en desarrollo.",
+      "en": "The section you are looking for does not exist or is under development."
+    },
+    "error.go_home": {
+      "es": "Ir al inicio",
+      "en": "Go to Home"
+    },
+    "footer.version": {
+      "es": "© 2026 LOCUS POCUS. Versión Inicial Mínima.",
+      "en": "© 2026 LOCUS POCUS. Initial Minimum Version."
+    },
+    "footer.developed_by": {
+      "es": "Desarrollado por Medicina Interna del HSRA - Dr. García R.",
+      "en": "Developed by Internal Medicine of HSRA - Dr. Garcia R."
+    },
+    "label.definition": {
+      "es": "Definición",
+      "en": "Definition"
+    },
+    "label.formula_or_method": {
+      "es": "Fórmula o método",
+      "en": "Formula or method"
+    },
+    "label.normal_values": {
+      "es": "Valores normales",
+      "en": "Normal values"
+    },
+    "label.interpretation_limitations": {
+      "es": "Interpretación y limitaciones",
+      "en": "Interpretation and limitations"
+    },
+    "label.clinical_warning": {
+      "es": "⚠️ Advertencia clínica",
+      "en": "⚠️ Clinical warning"
+    },
+    "label.reference_values": {
+      "es": "Valores de Referencia",
+      "en": "Reference Values"
+    },
+    "label.acquisition_details": {
+      "es": "Detalles de Adquisición",
+      "en": "Acquisition Details"
+    },
+    "label.parameter": {
+      "es": "Parámetro",
+      "en": "Parameter"
+    },
+    "label.threshold": {
+      "es": "Límite",
+      "en": "Threshold"
+    },
+    "label.method": {
+      "es": "Método",
+      "en": "Method"
+    },
+    "label.acronym": {
+      "es": "Acrónimo",
+      "en": "Acronym"
+    },
+    "label.purpose": {
+      "es": "Propósito",
+      "en": "Purpose"
+    },
+    "label.section": {
+      "es": "Sección",
+      "en": "Section"
+    },
+    "label.window": {
+      "es": "Vista",
+      "en": "View"
+    },
+    "label.measurement": {
+      "es": "Medición",
+      "en": "Measurement"
+    },
+    "label.term": {
+      "es": "Término",
+      "en": "Term"
+    },
+    "label.abbreviation": {
+      "es": "Abreviatura",
+      "en": "Abbreviation"
+    },
+    "label.classification": {
+      "es": "Clasificación",
+      "en": "Classification"
+    },
+    "label.protocol": {
+      "es": "Protocolo",
+      "en": "Protocol"
+    },
+    "label.about_title": {
+      "es": "Acerca de LOCUS POCUS",
+      "en": "About LOCUS POCUS"
+    },
+    "label.about_text": {
+      "es": "Esta aplicación es una guía de referencia rápida para ecocardiografía POCUS en adultos. Su objetivo es netamente educativo y formativo para residentes y médicos en formación. Todos los datos clínicos y rangos de referencia están alineados con las guías vigentes de la ASE (American Society of Echocardiography).",
+      "en": "This application is a quick reference guide for adult POCUS echocardiography. Its purpose is strictly educational and training for residents and physicians in training. All clinical data and reference ranges are aligned with current ASE (American Society of Echocardiography) guidelines."
+    },
+    "label.install_title": {
+      "es": "Instalar LOCUS POCUS",
+      "en": "Install LOCUS POCUS"
+    },
+    "label.install_text": {
+      "es": "Instala LOCUS POCUS en tu dispositivo móvil para acceder rápidamente y consultar el contenido disponible sin conexión después de la primera carga con Internet.",
+      "en": "Install LOCUS POCUS on your mobile device for quick access and to consult available content offline after the first load with an Internet connection."
+    },
+    "label.install_btn": {
+      "es": "Instalar ahora",
+      "en": "Install now"
+    },
+    "label.copiar": {
+      "es": "Copiar",
+      "en": "Copy"
+    },
+    "label.copiado": {
+      "es": "✓ Contenido copiado",
+      "en": "✓ Content copied"
+    },
+    "label.view_results": {
+      "es": "Ver Resultados",
+      "en": "View Results"
+    },
+    "label.quizzes": {
+      "es": "Cuestionarios",
+      "en": "Quizzes"
+    },
+    "label.minimum_set": {
+      "es": "Conjunto Mínimo POCUS",
+      "en": "Minimum POCUS Set"
+    },
+    "label.minimum_set_desc": {
+      "es": "Habilidades y destrezas ecográficas básicas que el operador POCUS debe dominar para una evaluación cardiaca inicial completa.",
+      "en": "Basic ultrasound skills and competencies that the POCUS operator should master for a complete initial cardiac assessment."
+    },
+    "label.integration_principle": {
+      "es": "Principio de integración",
+      "en": "Integration principle"
+    },
+    "label.integration_principle_text": {
+      "es": "La función diastólica, la función del VD, la hipertensión pulmonar, la severidad valvular y el taponamiento no deben definirse mediante una sola medición aislada.",
+      "en": "Diastolic function, RV function, pulmonary hypertension, valvular severity, and tamponade should not be defined by a single isolated measurement."
+    },
+    "label.unit_warnings": {
+      "es": "Unidades y Errores Comunes",
+      "en": "Units and Common Errors"
+    },
+    "label.primary_window": {
+      "es": "Ventana Primaria",
+      "en": "Primary Window"
+    },
+    "label.preferred_view": {
+      "es": "Vista Preferida",
+      "en": "Preferred View"
+    },
+    "label.modality": {
+      "es": "Modalidad",
+      "en": "Modality"
+    },
+    "label.acquisition_timing": {
+      "es": "Momento del Ciclo",
+      "en": "Acquisition Timing"
+    },
+    "label.acquisition_key": {
+      "es": "Puntos Clave",
+      "en": "Key Points"
+    },
+    "label.clinical_questions": {
+      "es": "Preguntas Clínicas",
+      "en": "Clinical Questions"
+    },
+    "label.targets": {
+      "es": "Objetivos de Evaluación",
+      "en": "Evaluation Targets"
+    },
+    "label.suggested_views": {
+      "es": "Vistas Sugeridas",
+      "en": "Suggested Views"
+    },
+    "label.linked_measurements": {
+      "es": "Mediciones Vinculadas",
+      "en": "Linked Measurements"
+    },
+    "label.possible_findings": {
+      "es": "Hallazgos Posibles",
+      "en": "Possible Findings"
+    },
+    "label.components": {
+      "es": "Componentes",
+      "en": "Components"
+    },
+    "label.sequence": {
+      "es": "Secuencia",
+      "en": "Sequence"
+    },
+    "label.integration": {
+      "es": "Integración",
+      "en": "Integration"
+    },
+    "label.limitations": {
+      "es": "Limitaciones",
+      "en": "Limitations"
+    },
+    "label.safety_notes": {
+      "es": "Notas de Seguridad",
+      "en": "Safety Notes"
+    },
+    "label.references": {
+      "es": "Referencias",
+      "en": "References"
+    },
+    "label.quizzes_desc": {
+      "es": "Ponga a prueba sus conocimientos teóricos y de interpretación con autoevaluaciones formativas.",
+      "en": "Test your theoretical and interpretation knowledge with formative self-assessments."
+    },
+    "label.glossary_desc": {
+      "es": "Definición de parámetros, ventanas de adquisición y vocabulario clínico de POCUS.",
+      "en": "Definition of parameters, acquisition windows, and clinical vocabulary of POCUS."
+    },
+    "label.measurements_desc": {
+      "es": "12 secciones con valores normales, fórmulas y puntos de corte ecocardiográficos.",
+      "en": "12 sections with normal values, formulas, and echocardiographic cutoff points."
+    },
+    "label.windows_desc": {
+      "es": "Guía de posición del transductor, orientación del marcador, estructuras visibles y mediciones asociadas.",
+      "en": "Guide for transducer position, marker orientation, visible structures, and associated measurements."
+    },
+    "label.protocols_desc": {
+      "es": "Protocolos estructurados para la evaluación ecográfica dirigida en escenarios clínicos específicos.",
+      "en": "Structured protocols for focused ultrasound evaluation in specific clinical scenarios."
+    },
+    "label.sub_menu_desc": {
+      "es": "Herramienta educativa de consulta rápida para residentes y médicos en formación en ultrasonido POCUS cardiaco.",
+      "en": "Quick reference educational tool for residents and physicians in training in cardiac POCUS ultrasound."
+    },
+    "label.pocus_scope": {
+      "es": "Alcance POCUS",
+      "en": "POCUS Scope"
+    },
+    "label.priority_tier": {
+      "es": "Nivel de Prioridad",
+      "en": "Priority Tier"
+    },
+    "label.priority_label": {
+      "es": "Priorización",
+      "en": "Priority Label"
+    },
+    "label.display_order": {
+      "es": "Orden de Visualización",
+      "en": "Display Order"
+    },
+    "label.original_order": {
+      "es": "Orden Original",
+      "en": "Original Order"
+    },
+    "label.priority_rationale": {
+      "es": "Razonamiento de Prioridad",
+      "en": "Priority Rationale"
+    },
+    "label.priority_confidence": {
+      "es": "Confianza",
+      "en": "Confidence"
+    },
+    "label.alternate_windows": {
+      "es": "Ventanas Alternativas",
+      "en": "Alternate Windows"
+    },
+    "label.guide_tab": {
+      "es": "Guía interactiva",
+      "en": "Interactive guide"
+    },
+    "label.content_tab": {
+      "es": "Contenido completo",
+      "en": "Full content"
+    },
+    "label.references_tab": {
+      "es": "Referencias",
+      "en": "References"
+    },
+    "label.previous_btn": {
+      "es": "← Anterior",
+      "en": "← Previous"
+    },
+    "label.next_btn": {
+      "es": "Siguiente →",
+      "en": "Next →"
+    },
+    "label.reset_btn": {
+      "es": "Reiniciar",
+      "en": "Reset"
+    },
+    "label.finished_btn": {
+      "es": "Finalizado",
+      "en": "Finished"
+    },
+    "label.start_step": {
+      "es": "Inicio",
+      "en": "Start"
+    },
+    "label.integration_step": {
+      "es": "Integración fisiológica",
+      "en": "Physiological integration"
+    },
+    "label.summary_step": {
+      "es": "Resumen",
+      "en": "Summary"
+    },
+    "label.step_indicator": {
+      "es": "Paso {x} de {y}",
+      "en": "Step {x} of {y}"
+    },
+    "label.item_not_available": {
+      "es": "Elemento no disponible",
+      "en": "Item not available"
+    },
+    "label.no_linked_items": {
+      "es": "No hay elementos vinculados en la base actual.",
+      "en": "No linked items in current database."
+    },
+    "label.clinical_warnings_title": {
+      "es": "Advertencias Clínicas Esenciales",
+      "en": "Essential Clinical Warnings"
+    },
+    "label.clinical_purpose_label": {
+      "es": "Propósito",
+      "en": "Purpose"
+    },
+    "label.clinical_integration_label": {
+      "es": "Integración",
+      "en": "Integration"
+    },
+    "label.clinical_safety_label": {
+      "es": "Seguridad",
+      "en": "Safety"
+    },
+    "label.clinical_window_label": {
+      "es": "Vistas vinculadas",
+      "en": "Linked views"
+    },
+    "label.clinical_measurement_label": {
+      "es": "Mediciones vinculadas",
+      "en": "Linked measurements"
+    },
+    "label.clinical_views_label": {
+      "es": "Vistas sugeridas",
+      "en": "Suggested views"
+    },
+    "label.clinical_questions_label": {
+      "es": "Preguntas clínicas clave",
+      "en": "Key clinical questions"
+    },
+    "label.clinical_targets_label": {
+      "es": "Objetivos de evaluación",
+      "en": "Evaluation targets"
+    },
+    "label.clinical_findings_label": {
+      "es": "Hallazgos posibles",
+      "en": "Possible findings"
+    },
+    "label.clinical_limits_label": {
+      "es": "Límites de interpretación",
+      "en": "Interpretation limits"
+    },
+    "label.clinical_sequence_title": {
+      "es": "Secuencia y adaptación clínica",
+      "en": "Sequence and clinical adaptation"
+    },
+    "label.clinical_general_limits_title": {
+      "es": "Límites Generales",
+      "en": "General Limits"
+    },
+    "label.clinical_safety_workflow_title": {
+      "es": "Seguridad y flujo de trabajo",
+      "en": "Safety and workflow"
+    },
+    "label.clinical_references_title": {
+      "es": "Referencias Bibliográficas",
+      "en": "Bibliographic References"
+    },
+    "label.clinical_return_to_list_btn": {
+      "es": "Volver a Protocolos",
+      "en": "Back to Protocols"
+    },
+    "label.clinical_return_home_btn": {
+      "es": "Inicio",
+      "en": "Home"
+    },
+    "label.error_loading_title": {
+      "es": "Error al cargar el protocolo",
+      "en": "Error loading protocol"
+    },
+    "label.error_loading_text": {
+      "es": "No se pudo obtener la información detallada del protocolo.",
+      "en": "Could not retrieve detailed protocol information."
+    },
+    "label.error_loading_back_btn": {
+      "es": "Volver a Protocolos",
+      "en": "Back to Protocols"
+    },
+    "label.protocol_sections": {
+      "es": "Secciones del protocolo",
+      "en": "Protocol sections"
+    },
+    "label.go_to_step": {
+      "es": "Ir al paso {step}: {title}",
+      "en": "Go to step {step}: {title}"
+    },
+    "label.clinical_context": {
+      "es": "Contexto clínico",
+      "en": "Clinical context"
+    },
+    "label.target_population": {
+      "es": "Población objetivo",
+      "en": "Target population"
+    },
+    "label.acquisition_sequence": {
+      "es": "Secuencia de adquisición",
+      "en": "Acquisition sequence"
+    },
+    "label.component_with_name": {
+      "es": "Componente: {name}",
+      "en": "Component: {name}"
+    },
+    "label.reminder": {
+      "es": "Recordatorio",
+      "en": "Reminder"
+    },
+    "label.reminder_text": {
+      "es": "Siempre integre los hallazgos con el contexto clínico del paciente.",
+      "en": "Always integrate findings with the patient's clinical context."
+    },
+    "label.purpose_and_context": {
+      "es": "Propósito y contexto",
+      "en": "Purpose and context"
+    },
+    "label.copiar_def": {
+      "es": "Copiar Definición",
+      "en": "Copy Definition"
+    },
+    "label.copiar_for": {
+      "es": "Copiar Fórmula",
+      "en": "Copy Formula"
+    },
+    "label.categoria": {
+      "es": "Categoría",
+      "en": "Category"
+    },
+    "label.sinonimos": {
+      "es": "Sinónimos / Aliases",
+      "en": "Synonyms / Aliases"
+    },
+    "label.origen": {
+      "es": "Página origen",
+      "en": "Source page"
+    },
+    "label.detalles": {
+      "es": "Detalle",
+      "en": "Detail"
+    },
+    "label.quitar": {
+      "es": "Quitar",
+      "en": "Remove"
+    },
+    "label.favorito": {
+      "es": "Favorito",
+      "en": "Favorite"
+    },
+    "label.rango": {
+      "es": "Rango",
+      "en": "Range"
+    },
+    "label.unidades": {
+      "es": "Unidades",
+      "en": "Units"
+    },
+    "label.pos_transductor": {
+      "es": "Posición del transductor",
+      "en": "Transducer position"
+    },
+    "label.ori_marcador": {
+      "es": "Orientación del marcador",
+      "en": "Marker orientation"
+    },
+    "label.est_favorecidas": {
+      "es": "Estructuras favorecidas",
+      "en": "Favored structures"
+    },
+    "label.med_asociadas": {
+      "es": "Mediciones asociadas",
+      "en": "Associated measurements"
+    },
+    "label.inst_iphone": {
+      "es": "📲 Instalar LOCUS POCUS",
+      "en": "📲 Install LOCUS POCUS"
+    },
+    "label.install_ios_title": {
+      "es": "iPhone o iPad",
+      "en": "iPhone or iPad"
+    },
+    "label.inst_iphone_steps": {
+      "es": "Sigue estos pasos en Safari:",
+      "en": "Follow these steps in Safari:"
+    },
+    "label.inst_iphone_step1": {
+      "es": "Abre <strong>Safari</strong> en tu iPhone o iPad y visita este sitio web.",
+      "en": "Open <strong>Safari</strong> on your iPhone or iPad and visit this website."
+    },
+    "label.inst_iphone_step2": {
+      "es": "Toca el botón <strong>Compartir</strong> <span style=\"font-size: 1.2rem;\">📤</span>. Según la disposición de Safari, puede aparecer directamente o dentro del menú <strong>Más</strong>.",
+      "en": "Tap the <strong>Share</strong> button <span style=\"font-size: 1.2rem;\">📤</span>. Depending on your Safari layout, it may appear directly or inside the <strong>More</strong> menu."
+    },
+    "label.inst_iphone_step3": {
+      "es": "Selecciona <strong>\"Agregar a pantalla de inicio\"</strong>.",
+      "en": "Select <strong>\"Add to Home Screen\"</strong>."
+    },
+    "label.inst_iphone_step4": {
+      "es": "Activa <strong>\"Abrir como app web\"</strong> si aparece esa opción.",
+      "en": "Turn on <strong>\"Open as Web App\"</strong> if that option appears."
+    },
+    "label.inst_iphone_step5": {
+      "es": "Confirma el nombre <strong>LOCUS POCUS</strong> y toca <strong>\"Agregar\"</strong>.",
+      "en": "Confirm the name <strong>LOCUS POCUS</strong> and tap <strong>\"Add\"</strong>."
+    },
+    "label.inst_iphone_step6": {
+      "es": "Busca el icono de LOCUS POCUS en la pantalla de inicio y abre la aplicación.",
+      "en": "Find the LOCUS POCUS icon on the Home Screen and open the app."
+    },
+    "label.install_android_title": {
+      "es": "Android",
+      "en": "Android"
+    },
+    "label.install_android_steps": {
+      "es": "Sigue estos pasos en Chrome:",
+      "en": "Follow these steps in Chrome:"
+    },
+    "label.install_android_step1": {
+      "es": "Abre <strong>Chrome</strong> en tu dispositivo Android y visita este sitio web.",
+      "en": "Open <strong>Chrome</strong> on your Android device and visit this website."
+    },
+    "label.install_android_step2": {
+      "es": "Toca el menú <strong>Más</strong> <span style=\"font-size: 1.2rem;\">⋮</span> situado a la derecha de la barra de direcciones.",
+      "en": "Tap the <strong>More</strong> menu <span style=\"font-size: 1.2rem;\">⋮</span> to the right of the address bar."
+    },
+    "label.install_android_step3": {
+      "es": "Selecciona <strong>\"Agregar a pantalla de inicio\"</strong> y luego <strong>\"Instalar\"</strong>. En algunas versiones puede aparecer directamente <strong>\"Instalar aplicación\"</strong>.",
+      "en": "Select <strong>\"Add to home screen\"</strong> and then <strong>\"Install\"</strong>. In some versions, <strong>\"Install app\"</strong> may appear directly."
+    },
+    "label.install_android_step4": {
+      "es": "Sigue las instrucciones en pantalla para confirmar la instalación de LOCUS POCUS.",
+      "en": "Follow the on-screen instructions to confirm the installation of LOCUS POCUS."
+    },
+    "label.install_android_step5": {
+      "es": "Busca el icono de LOCUS POCUS en la pantalla de inicio o en el iniciador de aplicaciones y abre la aplicación.",
+      "en": "Find the LOCUS POCUS icon on the Home Screen or in the app launcher and open the app."
+    },
+    "label.pwa_note_title": {
+      "es": "Uso sin conexión",
+      "en": "Offline use"
+    },
+    "label.pwa_note_text": {
+      "es": "Después de abrir LOCUS POCUS por primera vez con conexión a Internet, el contenido esencial quedará guardado en la caché del dispositivo para permitir consultas sin conexión. Algunas funciones o recursos pueden requerir conexión.",
+      "en": "After opening LOCUS POCUS for the first time with an Internet connection, essential content will be stored in the device cache for offline consultation. Some features or resources may require a connection."
+    },
+    "error.windows_load_title": {
+      "es": "Error al cargar las vistas",
+      "en": "Error loading echocardiographic views"
+    },
+    "error.windows_load_text": {
+      "es": "Lo sentimos, no pudimos cargar la lista de vistas ecocardiográficas. Por favor, intente nuevamente más tarde.",
+      "en": "Sorry, we could not load the list of echocardiographic views. Please try again later."
+    },
+    "error.window_detail_load_title": {
+      "es": "Error al cargar la información",
+      "en": "Error loading information"
+    },
+    "error.window_detail_load_text": {
+      "es": "No se pudo cargar la información de la vista ecocardiográfica.",
+      "en": "The echocardiographic view information could not be loaded."
+    },
+    "nav.back_to_windows": {
+      "es": "Volver a Vistas",
+      "en": "Back to Views"
+    },
+    "error.protocols_load_title": {
+      "es": "Error al cargar los protocolos",
+      "en": "Error loading protocols"
+    },
+    "error.protocols_load_text": {
+      "es": "Lo sentimos, no pudimos cargar la lista de protocolos POCUS. Por favor, intente nuevamente más tarde.",
+      "en": "Sorry, we could not load the POCUS protocol list. Please try again later."
+    },
+    "label.protocol_guide_completed": {
+      "es": "Ha completado la guía de componentes",
+      "en": "You have completed the component guide"
+    },
+    "label.abbreviations_list_title": {
+      "es": "Lista de abreviaturas",
+      "en": "Abbreviations"
+    },
+    "label.practical_classifications": {
+      "es": "Clasificaciones Prácticas",
+      "en": "Practical Classifications"
+    },
+    "label.cutoff_point": {
+      "es": "Punto de corte",
+      "en": "Cutoff value"
+    },
+    "label.note": {
+      "es": "Nota",
+      "en": "Note"
+    },
+    "label.cited_on_pdf_page": {
+      "es": "Citado en Página {page} del PDF.",
+      "en": "Cited on page {page} of the PDF."
+    },
+    "label.editorial_note": {
+      "es": "Nota editorial",
+      "en": "Editorial note"
+    },
+    "label.editorial_note_text": {
+      "es": "Los valores de referencia pueden variar entre guías, laboratorios, equipos y poblaciones. Para decisiones clínicas definitivas debe consultarse la publicación primaria y el protocolo institucional vigente.",
+      "en": "Reference values may vary among guidelines, laboratories, equipment, and populations. For definitive clinical decisions, the primary publication and the current institutional protocol should be consulted."
+    },
+    "nav.back_to_quizzes": {
+      "es": "Volver a Cuestionarios",
+      "en": "Back to Quizzes"
+    },
+    "error.quiz_unavailable_title": {
+      "es": "Cuestionario no disponible",
+      "en": "Quiz unavailable"
+    },
+    "error.quiz_unavailable_text": {
+      "es": "El cuestionario solicitado no está disponible o su formato no es válido.",
+      "en": "The requested quiz is unavailable or its format is invalid."
+    },
+    "nav.back_to_list": {
+      "es": "Volver a la lista",
+      "en": "Back to the list"
+    },
+    "label.about_app_description": {
+      "es": "es una aplicación web y PWA educativa, diseñada exclusivamente como una herramienta de consulta rápida y banco de mediciones.",
+      "en": "is an educational web application and PWA designed exclusively as a quick-reference tool and measurement database."
+    },
+    "label.about_training_objective": {
+      "es": "Tiene como objetivo apoyar en la formación de médicos generales, residentes de especialidades médicas (Medicina Interna, Anestesiología, Urgencias, Cuidado Crítico) y estudiantes durante la adquisición de competencias en ultrasonido clínico enfocado en el punto de atención (POCUS).",
+      "en": "Its purpose is to support the training of general physicians, residents in medical specialties (Internal Medicine, Anesthesiology, Emergency Medicine, and Critical Care), and students as they develop competencies in focused point-of-care ultrasound (POCUS)."
+    },
+    "label.about_development_prefix": {
+      "es": "Esta aplicación fue desarrollada y revisada por médicos internistas del",
+      "en": "This application was developed and reviewed by internal medicine physicians at"
+    },
+    "label.about_development_course": {
+      "es": "para el curso de POCUS del",
+      "en": "for the POCUS course in the"
+    },
+    "label.about_internal_medicine_program": {
+      "es": "Posgrado de Medicina Interna de la Universidad de Costa Rica (UCR)",
+      "en": "Internal Medicine Residency Program at the University of Costa Rica (UCR)"
+    },
+    "label.about_source_prefix": {
+      "es": "Toda la información médica está compilada de manera estricta del documento fuente oficial",
+      "en": "All medical information has been compiled strictly from the official source document"
+    },
+    "label.about_source_suffix": {
+      "es": "revisado en Julio de 2026, sin alteraciones de los rangos o unidades.",
+      "en": "revised in July 2026, without altering any ranges or units."
+    }
+  }
+}

@@ -45,7 +45,7 @@ def test_glossary_rendering_uses_details_and_summary(router_content):
 
     # 7. Existen los botones o acciones Detalle
     assert 'class="btn-card-action"' in func_code or "btn-card-action" in func_code
-    assert "Detalle" in func_code
+    assert 'I18n.translate("label.detalles")' in func_code or "I18n.translate('label.detalles')" in func_code
 
     # 8. Se conservan los selectores de Copiar y Favorito del Glosario
     assert "copy-m-t-${item.id}" in func_code
@@ -75,7 +75,7 @@ def test_windows_rendering_uses_details_and_summary(router_content):
     assert "#/ventanas/${item.id}" in func_code
 
     # 7. Existen los botones o acciones Detalle
-    assert "Detalle" in func_code
+    assert 'I18n.translate("label.detalles")' in func_code or "I18n.translate('label.detalles')" in func_code
 
     # 13. No se utiliza el atributo open de forma predeterminada
     assert "open=" not in func_code
