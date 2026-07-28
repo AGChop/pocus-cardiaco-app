@@ -178,9 +178,33 @@ document.addEventListener("DOMContentLoaded", async () => {
 // Registro del Service Worker para capacidades Offline de la PWA
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./service-worker.js')
+        let hadServiceWorkerController = Boolean(navigator.serviceWorker.controller);
+        let isReloadingForServiceWorkerUpdate = false;
+
+        navigator.serviceWorker.addEventListener('controllerchange', () => {
+            console.log('PWA: Evento controllerchange detectado.');
+            if (!hadServiceWorkerController) {
+                console.log('PWA: Primer Service Worker instalado. No se requiere recarga.');
+                hadServiceWorkerController = true;
+            } else {
+                if (!isReloadingForServiceWorkerUpdate) {
+                    isReloadingForServiceWorkerUpdate = true;
+                    console.log('PWA: Service Worker actualizado. Recargando la aplicación para aplicar cambios...');
+                    window.location.reload();
+                }
+            }
+        });
+
+        navigator.serviceWorker.register('./service-worker.js', { updateViaCache: 'none' })
             .then((registration) => {
                 console.log('PWA: Service Worker registrado con éxito en el ámbito:', registration.scope);
+                registration.update()
+                    .then(() => {
+                        console.log('PWA: Comprobación de actualización solicitada con éxito.');
+                    })
+                    .catch((err) => {
+                        console.warn('PWA: Error al solicitar la comprobación de actualización:', err);
+                    });
             })
             .catch((error) => {
                 console.error('PWA: Error al registrar el Service Worker:', error);
