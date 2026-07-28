@@ -814,6 +814,22 @@
     "label.about_source_suffix": {
       "es": "revisado en Julio de 2026, sin alteraciones de los rangos o unidades.",
       "en": "revised in July 2026, without altering any ranges or units."
+    },
+    "label.protocol_flow_title": {
+      "es": "Mapa del protocolo",
+      "en": "Protocol map"
+    },
+    "label.protocol_flow_description": {
+      "es": "Explore la secuencia general y despliegue cada etapa antes de avanzar por la guía.",
+      "en": "Explore the overall sequence and expand each stage before moving through the guide."
+    },
+    "label.protocol_flow_path_title": {
+      "es": "Ruta de evaluación",
+      "en": "Evaluation pathway"
+    },
+    "label.protocol_flow_go_to_step": {
+      "es": "Ir a este paso",
+      "en": "Go to this step"
     }
   }
 }

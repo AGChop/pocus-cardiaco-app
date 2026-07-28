@@ -1263,6 +1263,129 @@ const Router = {
         return steps;
     },
 
+    renderProtocolFlowMap(steps, helpers) {
+        const { escapeHTML, resolveWindowLink, resolveMeasurementLink } = helpers;
+
+        let html = `
+        <section class="protocol-flow-map" aria-labelledby="protocol-flow-title-id">
+            <div class="protocol-flow-shell">
+                <h3 id="protocol-flow-title-id" class="protocol-flow-title">${escapeHTML(I18n.translate("label.protocol_flow_title"))}</h3>
+                <p class="protocol-flow-description">${escapeHTML(I18n.translate("label.protocol_flow_description"))}</p>
+                <h4 id="protocol-flow-path-title-id" class="sr-only">${escapeHTML(I18n.translate("label.protocol_flow_path_title"))}</h4>
+                <ol class="protocol-flow-list" aria-labelledby="protocol-flow-path-title-id">
+        `;
+
+        steps.forEach((step, idx) => {
+            const isOpen = idx === 0 ? "open" : "";
+            const stepTitle = step.title || step.name;
+            const buttonLabel = `${I18n.translate("label.protocol_flow_go_to_step")} - ${stepTitle}`;
+
+            html += `
+            <li class="protocol-flow-item">
+                <details class="protocol-flow-card" ${isOpen}>
+                    <summary class="protocol-flow-summary">
+                        <span>${escapeHTML(stepTitle)}</span>
+                    </summary>
+                    <div class="protocol-flow-details-content">
+            `;
+
+            if (step.type === "start") {
+                const contextLabel = I18n.translate("label.clinical_context") + ":";
+                const targetLabel = I18n.translate("label.target_population") + ":";
+                const sequenceLabel = I18n.translate("label.acquisition_sequence") + ":";
+                html += `
+                        <ul class="protocol-flow-subflow">
+                            <li class="protocol-flow-stage"><strong>${escapeHTML(Router.uiStrings.clinicalPurposeLabel)}:</strong> ${escapeHTML(step.purpose)}</li>
+                            <li class="protocol-flow-stage"><strong>${escapeHTML(contextLabel)}</strong> ${escapeHTML(step.clinical_context)}</li>
+                            <li class="protocol-flow-stage"><strong>${escapeHTML(targetLabel)}</strong> ${escapeHTML(step.target_population)}</li>
+                            <li class="protocol-flow-stage"><strong>${escapeHTML(sequenceLabel)}</strong> ${escapeHTML(step.sequence_note)}</li>
+                        </ul>
+                `;
+            } else if (step.type === "component") {
+                const comp = step.component;
+                const linkedWindowsHTML = comp.linked_window_ids && comp.linked_window_ids.length > 0
+                    ? comp.linked_window_ids.map(wId => resolveWindowLink(wId)).join(", ")
+                    : escapeHTML(Router.uiStrings.noLinkedItems);
+
+                const linkedMeasurementsHTML = comp.linked_measurement_ids && comp.linked_measurement_ids.length > 0
+                    ? comp.linked_measurement_ids.map(mId => resolveMeasurementLink(mId)).join(", ")
+                    : escapeHTML(Router.uiStrings.noLinkedItems);
+
+                const questionsHeader = Router.uiStrings.clinicalQuestionsLabel + ":";
+                const viewsHeader = Router.uiStrings.clinicalViewsLabel + ":";
+                const targetsHeader = Router.uiStrings.clinicalTargetsLabel + ":";
+                const findingsHeader = Router.uiStrings.clinicalFindingsLabel + ":";
+                const limitsHeader = Router.uiStrings.clinicalLimitsLabel + ":";
+
+                html += `
+                        <ul class="protocol-flow-subflow">
+                            <li class="protocol-flow-stage">
+                                <strong>${escapeHTML(questionsHeader)}</strong>
+                                <ul>
+                                    ${comp.clinical_questions.map(q => `<li>${escapeHTML(q)}</li>`).join("")}
+                                </ul>
+                            </li>
+                            <li class="protocol-flow-stage">
+                                <strong>${escapeHTML(viewsHeader)}</strong> ${comp.suggested_views.map(v => escapeHTML(v)).join(", ")}
+                            </li>
+                            <li class="protocol-flow-stage">
+                                <strong>${escapeHTML(targetsHeader)}</strong>
+                                <ul>
+                                    ${comp.targets.map(t => `<li>${escapeHTML(t)}</li>`).join("")}
+                                </ul>
+                                <div class="protocol-flow-linked-items">
+                                    <strong>${escapeHTML(Router.uiStrings.clinicalWindowLabel)}:</strong> ${linkedWindowsHTML}<br>
+                                    <strong>${escapeHTML(Router.uiStrings.clinicalMeasurementLabel)}:</strong> ${linkedMeasurementsHTML}
+                                </div>
+                            </li>
+                            <li class="protocol-flow-stage">
+                                <strong>${escapeHTML(findingsHeader)}</strong>
+                                <ul>
+                                    ${comp.possible_findings.map(f => `<li>${escapeHTML(f)}</li>`).join("")}
+                                </ul>
+                            </li>
+                            <li class="protocol-flow-stage">
+                                <strong>${escapeHTML(limitsHeader)}</strong> ${escapeHTML(comp.interpretation_limits)}
+                            </li>
+                        </ul>
+                `;
+            } else if (step.type === "integration") {
+                html += `
+                        <ul class="protocol-flow-subflow">
+                            <li class="protocol-flow-stage"><strong>${escapeHTML(Router.uiStrings.integrationStep)}:</strong> ${escapeHTML(step.integration)}</li>
+                            <li class="protocol-flow-stage"><strong>${escapeHTML(I18n.translate("label.reminder"))}:</strong> ${escapeHTML(I18n.translate("label.reminder_text"))}</li>
+                        </ul>
+                `;
+            } else if (step.type === "summary") {
+                html += `
+                        <ul class="protocol-flow-subflow">
+                            <li class="protocol-flow-stage"><strong>${escapeHTML(I18n.translate("label.protocol_guide_completed"))}:</strong> ${step.components_names.map(name => escapeHTML(name)).join(", ")}</li>
+                            <li class="protocol-flow-stage"><strong>${escapeHTML(Router.uiStrings.clinicalGeneralLimitsTitle)}:</strong> ${escapeHTML(step.limitations)}</li>
+                            <li class="protocol-flow-stage"><strong>${escapeHTML(Router.uiStrings.clinicalSafetyWorkflowTitle)}:</strong> ${escapeHTML(step.safety_and_workflow_notes)}</li>
+                        </ul>
+                `;
+            }
+
+            html += `
+                        <div class="protocol-flow-actions">
+                            <button type="button" class="btn-primary protocol-flow-jump" data-flow-step="${idx}" aria-label="${escapeHTML(buttonLabel)}">
+                                ${escapeHTML(I18n.translate("label.protocol_flow_go_to_step"))}
+                            </button>
+                        </div>
+                    </div>
+                </details>
+            </li>
+            `;
+        });
+
+        html += `
+                </ol>
+            </div>
+        </section>
+        `;
+        return html;
+    },
+
     // DETALLE DE PROTOCOLO
     async renderProtocolDetail(container, id) {
         const escapeHTML = (str) => {
@@ -1368,6 +1491,7 @@ const Router = {
 
                     <!-- PESTAÑA 1: GUÍA INTERACTIVA -->
                     <div id="protocol-guide-panel" role="tabpanel" aria-labelledby="protocol-guide-tab" class="protocol-tab-panel">
+                        ${this.renderProtocolFlowMap(steps, { escapeHTML, resolveWindowLink, resolveMeasurementLink })}
                         <div class="protocol-stepper" style="display: flex; flex-direction: column; gap: 1rem;">
                             <!-- Progress Bar -->
                             <div class="protocol-progress-container" style="background: var(--border-light); border-radius: 6px; height: 10px; overflow: hidden; position: relative; width: 100%;">
@@ -1858,6 +1982,17 @@ const Router = {
         markers.forEach((marker, i) => {
             marker.addEventListener("click", () => {
                 showStep(i, true);
+            });
+        });
+
+        // Initialize flow map buttons
+        const flowJumps = document.querySelectorAll(".protocol-flow-jump");
+        flowJumps.forEach(btn => {
+            btn.addEventListener("click", (e) => {
+                const stepIdx = parseInt(e.currentTarget.getAttribute("data-flow-step"), 10);
+                if (!isNaN(stepIdx) && stepIdx >= 0 && stepIdx < steps.length) {
+                    showStep(stepIdx, true);
+                }
             });
         });
 
