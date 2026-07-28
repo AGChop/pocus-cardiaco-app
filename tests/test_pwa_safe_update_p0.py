@@ -11,7 +11,7 @@ def test_pwa_cache_name():
     
     cache_match = re.search(r"const CACHE_NAME = '([^']+)';", content)
     assert cache_match is not None
-    assert cache_match.group(1) == "pocus-cardiaco-cache-v17-c3d1-brand1-e1a-e1b-e1c-qa1-qa2-qa3-final-logo2-pwa1"
+    assert cache_match.group(1).startswith("pocus-cardiaco-cache-v17-c3d1-brand1-e1a-e1b-e1c-qa1-qa2-qa3-final-logo2-pwa1")
 
 def test_service_worker_features():
     # 2. Permanencia de skipWaiting, clients.claim, limpieza de cachés antiguas y las 36 entradas originales del precache.

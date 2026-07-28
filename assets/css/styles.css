@@ -8,7 +8,7 @@
     --border-light: #e2e8f0;     /* Bordes gris claro */
     --text-main-light: #1e293b;  /* Texto principal oscuro */
     --text-muted-light: #64748b; /* Texto secundario gris */
-    
+
     /* Advertencias */
     --warning-bg: #fef9c3;      /* Amarillo tenue para advertencias de seguridad */
     --warning-border: #fef08a;  /* Borde amarillo */
@@ -1344,5 +1344,228 @@ body.dark-mode .protocol-step-marker:hover {
         animation: none !important;
         transform: none !important;
         opacity: 0 !important;
+    }
+}
+
+/* --- MAPA VISUAL DE PROTOCOLOS (UI2A) --- */
+.protocol-flow-map {
+    max-width: 800px;
+    margin: 1.5rem auto;
+    min-width: 0;
+}
+
+.protocol-flow-shell {
+    background-color: var(--primary-bg-light);
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    padding: 1.25rem;
+    margin-bottom: 1.5rem;
+    min-width: 0;
+}
+
+.protocol-flow-title {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: var(--primary-medium);
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.protocol-flow-description {
+    font-size: 0.95rem;
+    color: var(--text-main-light);
+    margin-bottom: 1.5rem;
+    line-height: 1.4;
+}
+
+.protocol-flow-list {
+    position: relative;
+    list-style: none;
+    padding-left: 1.75rem;
+    margin: 0;
+}
+
+/* Conector vertical principal */
+.protocol-flow-list::before {
+    content: "";
+    position: absolute;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    left: 0.5rem;
+    width: 2px;
+    background-color: var(--primary-medium);
+    opacity: 0.3;
+}
+
+.protocol-flow-item {
+    position: relative;
+    margin-bottom: 1.25rem;
+    min-width: 0;
+}
+
+.protocol-flow-item:last-child {
+    margin-bottom: 0;
+}
+
+/* Círculo del conector en cada paso */
+.protocol-flow-item::before {
+    content: "";
+    position: absolute;
+    left: -1.5rem;
+    top: 0.95rem;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--primary-medium);
+    border: 2px solid var(--card-bg-light);
+    z-index: 2;
+}
+
+.protocol-flow-card {
+    background-color: var(--card-bg-light);
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    min-width: 0;
+}
+
+.protocol-flow-card[open] {
+    border-color: var(--primary-medium);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+}
+
+.protocol-flow-summary {
+    padding: 0.75rem 1rem;
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--text-main-light);
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+    outline: none;
+}
+
+.protocol-flow-summary::-webkit-details-marker {
+    display: none;
+}
+
+.protocol-flow-summary:focus-visible {
+    outline: 2px solid var(--primary-medium);
+    outline-offset: -2px;
+}
+
+.protocol-flow-summary:hover {
+    background-color: var(--primary-bg-light);
+}
+
+.protocol-flow-summary::after {
+    content: "▶";
+    font-size: 0.75rem;
+    transition: transform 0.2s ease;
+    color: var(--text-muted-light);
+}
+
+.protocol-flow-card[open] .protocol-flow-summary::after {
+    transform: rotate(90deg);
+}
+
+.protocol-flow-details-content {
+    padding: 1rem;
+    border-top: 1px solid var(--border-light);
+    background-color: var(--card-bg-light);
+}
+
+.protocol-flow-subflow {
+    position: relative;
+    list-style: none;
+    padding-left: 1.5rem;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    min-width: 0;
+}
+
+/* Conector vertical del subflujo */
+.protocol-flow-subflow::before {
+    content: "";
+    position: absolute;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    left: 0.5rem;
+    width: 2px;
+    background-color: var(--primary-medium);
+    opacity: 0.2;
+}
+
+.protocol-flow-stage {
+    position: relative;
+    background-color: var(--primary-bg-light);
+    border: 1px solid var(--border-light);
+    border-radius: 6px;
+    padding: 0.75rem;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+/* Círculo/bullet decorativo para cada elemento del subflujo */
+.protocol-flow-stage::before {
+    content: "";
+    position: absolute;
+    left: -1.25rem;
+    top: 1rem;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--primary-medium);
+    border: 1px solid var(--card-bg-light);
+    z-index: 2;
+}
+
+.protocol-flow-stage ul {
+    margin: 0.25rem 0 0;
+    padding-left: 1.25rem;
+}
+
+.protocol-flow-linked-items {
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    background-color: var(--primary-bg-light);
+    border-radius: 4px;
+    border: 1px solid var(--border-light);
+    font-size: 0.85rem;
+}
+
+.protocol-flow-actions {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.protocol-flow-jump {
+    width: auto;
+    font-size: 0.85rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.protocol-flow-jump:focus-visible {
+    outline: 3px solid var(--primary-medium);
+    outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .protocol-flow-card,
+    .protocol-flow-summary::after,
+    .protocol-flow-jump {
+        transition: none !important;
     }
 }
