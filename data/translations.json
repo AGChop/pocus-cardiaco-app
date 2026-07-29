@@ -836,20 +836,28 @@
       "en": "Quick reference"
     },
     "label.protocol_quick_title": {
-      "es": "Exploración y hallazgos",
-      "en": "Examination and findings"
+      "es": "Resumen en una mirada",
+      "en": "At-a-glance summary"
     },
     "label.protocol_quick_description": {
-      "es": "Vista compacta de la secuencia, los objetivos de evaluación y los hallazgos posibles.",
-      "en": "Compact view of the sequence, evaluation targets, and possible findings."
+      "es": "Evaluación esencial y alertas clave en una sola ficha.",
+      "en": "Essential assessment and key alerts in a single card."
     },
     "label.protocol_quick_sequence": {
       "es": "Secuencia de exploración",
       "en": "Examination sequence"
     },
     "label.protocol_quick_expand_hint": {
-      "es": "Consulte la guía interactiva o el contenido completo para revisar preguntas clínicas, mediciones, límites y referencias.",
-      "en": "Use the interactive guide or full content to review clinical questions, measurements, limitations, and references."
+      "es": "Amplíe la información en la Guía interactiva o en Contenido completo.",
+      "en": "Review the Interactive guide or Full content for additional detail."
+    },
+    "label.protocol_quick_assess": {
+      "es": "Evaluar",
+      "en": "Assess"
+    },
+    "label.protocol_quick_alerts": {
+      "es": "Alertas",
+      "en": "Red flags"
     }
   }
 }

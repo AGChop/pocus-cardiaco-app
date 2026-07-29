@@ -46,7 +46,11 @@
             "Severely hypokinetic or akinetic left ventricle, suggestive of cardiogenic shock.",
             "Dilated right ventricle (RV/LV ratio >1.0) with septal flattening (paradoxical septal motion) or McConnell sign, suggestive of massive pulmonary embolism or acute right ventricular dysfunction."
           ],
-          "interpretation_limits": "An elevated RV/LV ratio in isolation does not diagnose pulmonary embolism (chronicity and pulmonary hypertension must be assessed). The absence of pericardial effusion does not exclude other obstructive etiologies. Apparently preserved or hyperdynamic global LV systolic function does not by itself exclude cardiogenic shock, for example when acute RV dysfunction, acute valvular disease, or a mechanical complication is present. Findings must be integrated with cardiac output, loading conditions, and the clinical context. No single finding should be used in isolation to determine the etiology of shock."
+          "interpretation_limits": "An elevated RV/LV ratio in isolation does not diagnose pulmonary embolism (chronicity and pulmonary hypertension must be assessed). The absence of pericardial effusion does not exclude other obstructive etiologies. Apparently preserved or hyperdynamic global LV systolic function does not by itself exclude cardiogenic shock, for example when acute RV dysfunction, acute valvular disease, or a mechanical complication is present. Findings must be integrated with cardiac output, loading conditions, and the clinical context. No single finding should be used in isolation to determine the etiology of shock.",
+          "quick_reference": {
+            "assess": "Global LV function, RV size, and pericardial effusion with right-sided chamber collapse.",
+            "alerts": "Tamponade, a hyperdynamic or severely depressed LV, and acute RV dilation."
+          }
         },
         "tank": {
           "clinical_questions": [
@@ -71,7 +75,11 @@
             "Multiple diffuse bilateral B-lines, suggestive of cardiogenic pulmonary edema or ARDS.",
             "Free intraperitoneal fluid (hepatorenal recess, splenorenal recess, or pelvis) in the setting of trauma or an acute abdomen."
           ],
-          "interpretation_limits": "IVC assessment must be integrated with other parameters. IVC diameter and collapsibility in isolation do not accurately define volume status or predict fluid responsiveness in all patients, especially during mechanical ventilation or in the presence of elevated intrathoracic pressures. A small IVC alone does not mandate fluid administration, and a dilated IVC does not independently confirm congestion or tamponade."
+          "interpretation_limits": "IVC assessment must be integrated with other parameters. IVC diameter and collapsibility in isolation do not accurately define volume status or predict fluid responsiveness in all patients, especially during mechanical ventilation or in the presence of elevated intrathoracic pressures. A small IVC alone does not mandate fluid administration, and a dilated IVC does not independently confirm congestion or tamponade.",
+          "quick_reference": {
+            "assess": "IVC, lung and pleural pattern, and free intraperitoneal fluid.",
+            "alerts": "Marked volume depletion or congestion, pneumothorax, pulmonary edema or ARDS, and free intraperitoneal fluid."
+          }
         },
         "pipes": {
           "clinical_questions": [
@@ -90,7 +98,11 @@
             "Abdominal aortic aneurysm (diameter >3 cm) or the presence of an intimal dissection flap.",
             "Incomplete compressibility of the femoral or popliteal vein under direct compression, indicative of acute DVT."
           ],
-          "interpretation_limits": "A limited or negative examination does not completely exclude DVT in other venous segments. Inability to visualize the abdominal aorta, for example because of excessive bowel gas, does not exclude an aneurysm. Failure to detect DVT does not rule out an ongoing pulmonary embolism. The RUSH protocol does not replace definitive vascular diagnostic studies, such as CT angiography or comprehensive duplex ultrasonography."
+          "interpretation_limits": "A limited or negative examination does not completely exclude DVT in other venous segments. Inability to visualize the abdominal aorta, for example because of excessive bowel gas, does not exclude an aneurysm. Failure to detect DVT does not rule out an ongoing pulmonary embolism. The RUSH protocol does not replace definitive vascular diagnostic studies, such as CT angiography or comprehensive duplex ultrasonography.",
+          "quick_reference": {
+            "assess": "Abdominal aorta and compressibility of the common femoral and popliteal veins.",
+            "alerts": "Aortic aneurysm or dissection and proximal DVT."
+          }
         }
       }
     }
