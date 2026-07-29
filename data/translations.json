@@ -830,6 +830,26 @@
     "label.protocol_flow_go_to_step": {
       "es": "Ir a este paso",
       "en": "Go to this step"
+    },
+    "label.protocol_quick_tab": {
+      "es": "Resumen rápido",
+      "en": "Quick reference"
+    },
+    "label.protocol_quick_title": {
+      "es": "Exploración y hallazgos",
+      "en": "Examination and findings"
+    },
+    "label.protocol_quick_description": {
+      "es": "Vista compacta de la secuencia, los objetivos de evaluación y los hallazgos posibles.",
+      "en": "Compact view of the sequence, evaluation targets, and possible findings."
+    },
+    "label.protocol_quick_sequence": {
+      "es": "Secuencia de exploración",
+      "en": "Examination sequence"
+    },
+    "label.protocol_quick_expand_hint": {
+      "es": "Consulte la guía interactiva o el contenido completo para revisar preguntas clínicas, mediciones, límites y referencias.",
+      "en": "Use the interactive guide or full content to review clinical questions, measurements, limitations, and references."
     }
   }
 }
