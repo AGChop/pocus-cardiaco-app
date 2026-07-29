@@ -1392,6 +1392,8 @@ const Router = {
         const sequenceTitle = I18n.translate("label.protocol_quick_sequence");
         const expandHint = I18n.translate("label.protocol_quick_expand_hint");
         const noLinkedItems = I18n.translate("label.no_linked_items");
+        const assessLabel = I18n.translate("label.protocol_quick_assess");
+        const alertsLabel = I18n.translate("label.protocol_quick_alerts");
 
         let html = `
         <article class="protocol-quick-card" aria-labelledby="protocol-quick-title-id">
@@ -1423,55 +1425,37 @@ const Router = {
         protocol.components.forEach(comp => {
             const localizedCompName = I18n.localize({ es: comp.name_es, en: comp.name_en });
 
-            const viewsList = comp.suggested_views && comp.suggested_views.length > 0
-                ? comp.suggested_views.map(v => escapeHTML(I18n.localize(v))).join(", ")
-                : escapeHTML(noLinkedItems);
+            let assessText = noLinkedItems;
+            let alertsText = noLinkedItems;
 
-            const targetsList = comp.targets && comp.targets.length > 0
-                ? comp.targets.map(t => I18n.localize(t))
-                : [noLinkedItems];
-
-            const findingsList = comp.possible_findings && comp.possible_findings.length > 0
-                ? comp.possible_findings.map(f => I18n.localize(f))
-                : [noLinkedItems];
+            if (comp.quick_reference) {
+                if (comp.quick_reference.assess) {
+                    assessText = I18n.localize(comp.quick_reference.assess);
+                }
+                if (comp.quick_reference.alerts) {
+                    alertsText = I18n.localize(comp.quick_reference.alerts);
+                }
+            }
 
             html += `
-                <div class="protocol-quick-component card">
+                <section class="protocol-quick-component">
                     <h4>${escapeHTML(localizedCompName)}</h4>
-                    <div class="protocol-quick-grid">
-                        <div class="protocol-quick-section">
-                            <strong>${escapeHTML(Router.uiStrings.clinicalViewsLabel)}:</strong>
-                            <p>${viewsList}</p>
-                        </div>
-                        <div class="protocol-quick-section">
-                            <strong>${escapeHTML(Router.uiStrings.clinicalTargetsLabel)}:</strong>
-                            <ul>
-                                ${targetsList.map(t => `<li>${escapeHTML(t)}</li>`).join("")}
-                            </ul>
-                        </div>
-                        <div class="protocol-quick-section">
-                            <strong>${escapeHTML(Router.uiStrings.clinicalFindingsLabel)}:</strong>
-                            <ul>
-                                ${findingsList.map(f => `<li>${escapeHTML(f)}</li>`).join("")}
-                            </ul>
-                        </div>
+                    <div class="protocol-quick-section protocol-quick-assess">
+                        <strong>${escapeHTML(assessLabel)}</strong>
+                        <p>${escapeHTML(assessText)}</p>
                     </div>
-                </div>
+                    <div class="protocol-quick-section protocol-quick-alerts">
+                        <strong>${escapeHTML(alertsLabel)}</strong>
+                        <p>${escapeHTML(alertsText)}</p>
+                    </div>
+                </section>
             `;
         });
 
         html += `
             </section>
-        `;
-
-        const reminderHeader = I18n.translate("label.reminder");
-        const reminderBody = I18n.translate("label.reminder_text");
-
-        html += `
-            <footer class="protocol-quick-reminder card">
-                <strong>${escapeHTML(reminderHeader)}:</strong>
-                <p>${escapeHTML(reminderBody)}</p>
-                <p class="protocol-quick-expand-hint">${escapeHTML(expandHint)}</p>
+            <footer class="protocol-quick-expand-hint">
+                ${escapeHTML(expandHint)}
             </footer>
         </article>
         `;

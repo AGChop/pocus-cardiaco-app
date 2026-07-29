@@ -117,7 +117,11 @@ def main():
                             "Ventrículo derecho dilatado (relación VD/VI >1.0) con aplanamiento septal (septo paradójico) o signo de McConnell, sugerente de embolia pulmonar masiva o disfunción aguda de cavidades derechas."
                         ],
                         "interpretation_limits": "Una relación VD/VI elevada de forma aislada no diagnostica embolia pulmonar (debe evaluarse cronicidad e hipertensión pulmonar). La ausencia de derrame pericárdico no excluye otras etiologías obstructivas. Una función sistólica global del ventrículo izquierdo aparentemente preservada o hiperdinámica no excluye por sí sola un choque cardiogénico, por ejemplo cuando existe disfunción aguda del ventrículo derecho, enfermedad valvular aguda o una complicación mecánica. Debe integrarse con el gasto cardiaco, las condiciones de carga y el contexto clínico. Un solo hallazgo no debe utilizarse de forma aislada para determinar la etiología del choque.",
-                        "reference_ids": ["ref_perera_2010", "ref_seif_2012"]
+                        "reference_ids": ["ref_perera_2010", "ref_seif_2012"],
+                        "quick_reference": {
+                            "assess": "Función global del VI, tamaño del VD y derrame pericárdico con colapso de cavidades derechas.",
+                            "alerts": "Taponamiento, VI hiperdinámico o severamente deprimido y dilatación aguda del VD."
+                        }
                     },
                     {
                         "id": "tank",
@@ -155,7 +159,11 @@ def main():
                             "Líquido libre intraperitoneal (espacio hepatorrenal, esplenorrenal o pelvis) en contexto de trauma o abdomen agudo."
                         ],
                         "interpretation_limits": "La evaluación de la VCI debe integrarse con otros parámetros. El diámetro y la colapsabilidad aislados no definen con precisión la volemia ni predicen la respuesta a fluidos en todos los pacientes (especialmente bajo ventilación mecánica o en presencia de presiones intratorácicas elevadas). Una VCI pequeña no obliga por sí sola a infundir líquidos, y una VCI dilatada no confirma congestión o taponamiento de forma aislada.",
-                        "reference_ids": ["ref_perera_2010", "ref_seif_2012"]
+                        "reference_ids": ["ref_perera_2010", "ref_seif_2012"],
+                        "quick_reference": {
+                            "assess": "VCI, patrón pulmonar y pleural, y líquido libre intraperitoneal.",
+                            "alerts": "Depleción o congestión marcada, neumotórax, edema pulmonar o SDRA y líquido libre intraperitoneal."
+                        }
                     },
                     {
                         "id": "pipes",
@@ -180,7 +188,11 @@ def main():
                             "Ausencia de colapsabilidad completa de la vena femoral o poplítea bajo compresión directa, indicativo de TVP aguda."
                         ],
                         "interpretation_limits": "Una evaluación limitada o negativa no excluye por completo la existencia de TVP en otros segmentos venosos. La imposibilidad de visualizar la aorta abdominal (por ejemplo, debido a gas intestinal excesivo) no excluye la presencia de un aneurisma. La ausencia de TVP detectada no descarta una embolia pulmonar en curso. El protocolo RUSH no sustituye a los estudios diagnósticos vasculares definitivos (como angiotomografía o ecografía dúplex completa).",
-                        "reference_ids": ["ref_perera_2010", "ref_seif_2012"]
+                        "reference_ids": ["ref_perera_2010", "ref_seif_2012"],
+                        "quick_reference": {
+                            "assess": "Aorta abdominal y compresibilidad de las venas femoral común y poplítea.",
+                            "alerts": "Aneurisma o disección aórtica y TVP proximal."
+                        }
                     }
                 ]
             }

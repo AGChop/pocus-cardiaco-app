@@ -97,7 +97,11 @@
           "reference_ids": [
             "ref_perera_2010",
             "ref_seif_2012"
-          ]
+          ],
+          "quick_reference": {
+            "assess": "Función global del VI, tamaño del VD y derrame pericárdico con colapso de cavidades derechas.",
+            "alerts": "Taponamiento, VI hiperdinámico o severamente deprimido y dilatación aguda del VD."
+          }
         },
         {
           "id": "tank",
@@ -138,7 +142,11 @@
           "reference_ids": [
             "ref_perera_2010",
             "ref_seif_2012"
-          ]
+          ],
+          "quick_reference": {
+            "assess": "VCI, patrón pulmonar y pleural, y líquido libre intraperitoneal.",
+            "alerts": "Depleción o congestión marcada, neumotórax, edema pulmonar o SDRA y líquido libre intraperitoneal."
+          }
         },
         {
           "id": "pipes",
@@ -166,7 +174,11 @@
           "reference_ids": [
             "ref_perera_2010",
             "ref_seif_2012"
-          ]
+          ],
+          "quick_reference": {
+            "assess": "Aorta abdominal y compresibilidad de las venas femoral común y poplítea.",
+            "alerts": "Aneurisma o disección aórtica y TVP proximal."
+          }
         }
       ]
     }

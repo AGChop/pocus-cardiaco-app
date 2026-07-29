@@ -257,6 +257,17 @@ def main():
                                 "es": cv,
                                 "en": i18n_c[ck]
                             }
+                        elif ck == "quick_reference":
+                            bc[ck] = {
+                                "assess": {
+                                    "es": cv["assess"],
+                                    "en": i18n_c[ck]["assess"]
+                                },
+                                "alerts": {
+                                    "es": cv["alerts"],
+                                    "en": i18n_c[ck]["alerts"]
+                                }
+                            }
                         else:
                             bc[ck] = cv
                     bilingual_comps.append(bc)

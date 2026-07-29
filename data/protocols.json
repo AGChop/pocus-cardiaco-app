@@ -188,7 +188,17 @@
           "reference_ids": [
             "ref_perera_2010",
             "ref_seif_2012"
-          ]
+          ],
+          "quick_reference": {
+            "assess": {
+              "es": "Función global del VI, tamaño del VD y derrame pericárdico con colapso de cavidades derechas.",
+              "en": "Global LV function, RV size, and pericardial effusion with right-sided chamber collapse."
+            },
+            "alerts": {
+              "es": "Taponamiento, VI hiperdinámico o severamente deprimido y dilatación aguda del VD.",
+              "en": "Tamponade, a hyperdynamic or severely depressed LV, and acute RV dilation."
+            }
+          }
         },
         {
           "id": "tank",
@@ -274,7 +284,17 @@
           "reference_ids": [
             "ref_perera_2010",
             "ref_seif_2012"
-          ]
+          ],
+          "quick_reference": {
+            "assess": {
+              "es": "VCI, patrón pulmonar y pleural, y líquido libre intraperitoneal.",
+              "en": "IVC, lung and pleural pattern, and free intraperitoneal fluid."
+            },
+            "alerts": {
+              "es": "Depleción o congestión marcada, neumotórax, edema pulmonar o SDRA y líquido libre intraperitoneal.",
+              "en": "Marked volume depletion or congestion, pneumothorax, pulmonary edema or ARDS, and free intraperitoneal fluid."
+            }
+          }
         },
         {
           "id": "pipes",
@@ -329,7 +349,17 @@
           "reference_ids": [
             "ref_perera_2010",
             "ref_seif_2012"
-          ]
+          ],
+          "quick_reference": {
+            "assess": {
+              "es": "Aorta abdominal y compresibilidad de las venas femoral común y poplítea.",
+              "en": "Abdominal aorta and compressibility of the common femoral and popliteal veins."
+            },
+            "alerts": {
+              "es": "Aneurisma o disección aórtica y TVP proximal.",
+              "en": "Aortic aneurysm or dissection and proximal DVT."
+            }
+          }
         }
       ]
     }
