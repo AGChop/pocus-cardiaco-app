@@ -1386,6 +1386,99 @@ const Router = {
         return html;
     },
 
+    renderProtocolQuickReference(protocol, escapeHTML) {
+        const titleText = I18n.translate("label.protocol_quick_title");
+        const descText = I18n.translate("label.protocol_quick_description");
+        const sequenceTitle = I18n.translate("label.protocol_quick_sequence");
+        const expandHint = I18n.translate("label.protocol_quick_expand_hint");
+        const noLinkedItems = I18n.translate("label.no_linked_items");
+
+        let html = `
+        <article class="protocol-quick-card" aria-labelledby="protocol-quick-title-id">
+            <header class="protocol-quick-header">
+                <h3 id="protocol-quick-title-id">${escapeHTML(titleText)}</h3>
+                <p class="protocol-quick-description">${escapeHTML(descText)}</p>
+            </header>
+        `;
+
+        const compNames = protocol.components.map(comp => I18n.localize({ es: comp.name_es, en: comp.name_en }));
+
+        html += `
+            <section class="protocol-quick-sequence" aria-labelledby="protocol-quick-seq-title">
+                <h4 id="protocol-quick-seq-title">${escapeHTML(sequenceTitle)}</h4>
+                <ol>
+                    ${compNames.map(name => `
+                        <li class="protocol-quick-sequence-item">
+                            <span>${escapeHTML(name)}</span>
+                        </li>
+                    `).join("")}
+                </ol>
+            </section>
+        `;
+
+        html += `
+            <section class="protocol-quick-components" aria-label="${escapeHTML(I18n.translate("label.components"))}">
+        `;
+
+        protocol.components.forEach(comp => {
+            const localizedCompName = I18n.localize({ es: comp.name_es, en: comp.name_en });
+
+            const viewsList = comp.suggested_views && comp.suggested_views.length > 0
+                ? comp.suggested_views.map(v => escapeHTML(I18n.localize(v))).join(", ")
+                : escapeHTML(noLinkedItems);
+
+            const targetsList = comp.targets && comp.targets.length > 0
+                ? comp.targets.map(t => I18n.localize(t))
+                : [noLinkedItems];
+
+            const findingsList = comp.possible_findings && comp.possible_findings.length > 0
+                ? comp.possible_findings.map(f => I18n.localize(f))
+                : [noLinkedItems];
+
+            html += `
+                <div class="protocol-quick-component card">
+                    <h4>${escapeHTML(localizedCompName)}</h4>
+                    <div class="protocol-quick-grid">
+                        <div class="protocol-quick-section">
+                            <strong>${escapeHTML(Router.uiStrings.clinicalViewsLabel)}:</strong>
+                            <p>${viewsList}</p>
+                        </div>
+                        <div class="protocol-quick-section">
+                            <strong>${escapeHTML(Router.uiStrings.clinicalTargetsLabel)}:</strong>
+                            <ul>
+                                ${targetsList.map(t => `<li>${escapeHTML(t)}</li>`).join("")}
+                            </ul>
+                        </div>
+                        <div class="protocol-quick-section">
+                            <strong>${escapeHTML(Router.uiStrings.clinicalFindingsLabel)}:</strong>
+                            <ul>
+                                ${findingsList.map(f => `<li>${escapeHTML(f)}</li>`).join("")}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+
+        html += `
+            </section>
+        `;
+
+        const reminderHeader = I18n.translate("label.reminder");
+        const reminderBody = I18n.translate("label.reminder_text");
+
+        html += `
+            <footer class="protocol-quick-reminder card">
+                <strong>${escapeHTML(reminderHeader)}:</strong>
+                <p>${escapeHTML(reminderBody)}</p>
+                <p class="protocol-quick-expand-hint">${escapeHTML(expandHint)}</p>
+            </footer>
+        </article>
+        `;
+
+        return html;
+    },
+
     // DETALLE DE PROTOCOLO
     async renderProtocolDetail(container, id) {
         const escapeHTML = (str) => {
@@ -1480,6 +1573,9 @@ const Router = {
                     <div role="tablist" aria-label="${escapeHTML(I18n.translate("label.protocol_sections"))}" class="protocol-tab-list" style="display: flex; gap: 0.5rem; margin-bottom: 1rem; border-bottom: 2px solid var(--border-light); overflow-x: auto; padding-bottom: 0.25rem;">
                         <button type="button" role="tab" aria-selected="true" aria-controls="protocol-guide-panel" id="protocol-guide-tab" tabindex="0" class="protocol-tab-button" data-protocol-tab="guide" style="padding: 0.5rem 1rem; border: none; background: none; font-weight: bold; cursor: pointer; border-bottom: 2px solid transparent;">
                             ${escapeHTML(Router.uiStrings.guideTab)}
+                        </button>
+                        <button type="button" role="tab" aria-selected="false" aria-controls="protocol-quick-panel" id="protocol-quick-tab" tabindex="-1" class="protocol-tab-button" data-protocol-tab="quick" style="padding: 0.5rem 1rem; border: none; background: none; font-weight: bold; cursor: pointer; border-bottom: 2px solid transparent;">
+                            ${escapeHTML(I18n.translate("label.protocol_quick_tab"))}
                         </button>
                         <button type="button" role="tab" aria-selected="false" aria-controls="protocol-full-panel" id="protocol-full-tab" tabindex="-1" class="protocol-tab-button" data-protocol-tab="content" style="padding: 0.5rem 1rem; border: none; background: none; font-weight: bold; cursor: pointer; border-bottom: 2px solid transparent;">
                             ${escapeHTML(Router.uiStrings.contentTab)}
@@ -1632,6 +1728,10 @@ const Router = {
                                 <button type="button" id="stepper-next-btn" class="btn-primary" data-guide-action="next" style="cursor: pointer;">${escapeHTML(Router.uiStrings.nextBtn)}</button>
                             </div>
                         </div>
+                    </div>
+                    <!-- PESTAÑA: RESUMEN RÁPIDO -->
+                    <div id="protocol-quick-panel" role="tabpanel" aria-labelledby="protocol-quick-tab" class="protocol-tab-panel" hidden>
+                        ${this.renderProtocolQuickReference(proto, escapeHTML)}
                     </div>
 
                     <!-- PESTAÑA 2: CONTENIDO COMPLETO -->
