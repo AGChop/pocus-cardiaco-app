@@ -1720,121 +1720,201 @@ const Router = {
 
                     <!-- PESTAÑA 2: CONTENIDO COMPLETO -->
                     <div id="protocol-full-panel" role="tabpanel" aria-labelledby="protocol-full-tab" class="protocol-tab-panel" hidden>
-                        <div class="protocol-full-content content-accordion-grid">
-                            <details class="content-accordion card clinical-card">
-                                <summary class="content-accordion-summary">
-                                    <span class="content-accordion-title">${escapeHTML(I18n.translate("label.purpose_and_context"))}</span>
-                                    <span class="content-accordion-arrow"></span>
-                                </summary>
-                                <div class="content-accordion-body">
-                                    <p class="subtitle-en" style="font-style: italic; color: var(--text-muted-light);">${escapeHTML(altName)}</p>
-                                    <p><strong>${escapeHTML(Router.uiStrings.clinicalPurposeLabel)}:</strong> ${escapeHTML(I18n.localize(proto.purpose))}</p>
-                                    <p><strong>${escapeHTML(I18n.translate("label.clinical_context"))}:</strong> ${escapeHTML(I18n.localize(proto.clinical_context))}</p>
-                                    <p><strong>${escapeHTML(I18n.translate("label.target_population"))}:</strong> ${escapeHTML(I18n.localize(proto.target_population))}</p>
+                        <div class="protocol-reader-shell">
+                            <div class="protocol-reader-launch">
+                                <button
+                                    type="button"
+                                    id="protocol-reader-open"
+                                    class="btn-secondary protocol-reader-open"
+                                    aria-pressed="false"
+                                >
+                                    ${escapeHTML(I18n.translate("label.reader_mode"))}
+                                </button>
+                            </div>
+
+                            <section
+                                id="protocol-reader-controls"
+                                class="protocol-reader-controls"
+                                aria-label="${escapeHTML(I18n.translate("label.reader_controls"))}"
+                                hidden
+                            >
+                                <div class="protocol-reader-control-group">
+                                    <button type="button" id="protocol-reader-close" class="protocol-reader-exit btn-secondary">${escapeHTML(I18n.translate("label.reader_exit"))}</button>
                                 </div>
-                            </details>
-
-                            <details class="content-accordion card clinical-card">
-                                <summary class="content-accordion-summary">
-                                    <span class="content-accordion-title">${escapeHTML(Router.uiStrings.clinicalSequenceTitle)}</span>
-                                    <span class="content-accordion-arrow"></span>
-                                </summary>
-                                <div class="content-accordion-body">
-                                    <p>${escapeHTML(I18n.localize(proto.sequence_note))}</p>
+                                <div class="protocol-reader-control-group">
+                                    <button type="button" id="protocol-reader-font-dec" class="btn-secondary" aria-label="${escapeHTML(I18n.translate("label.reader_font_decrease"))}">A−</button>
+                                    <button type="button" id="protocol-reader-font-inc" class="btn-secondary" aria-label="${escapeHTML(I18n.translate("label.reader_font_increase"))}">A+</button>
                                 </div>
-                            </details>
+                                <div class="protocol-reader-control-group">
+                                    <label for="protocol-reader-line-height-select">${escapeHTML(I18n.translate("label.reader_line_height"))}</label>
+                                    <select id="protocol-reader-line-height-select">
+                                        <option value="compact">${escapeHTML(I18n.translate("label.reader_line_compact"))}</option>
+                                        <option value="normal" selected>${escapeHTML(I18n.translate("label.reader_line_normal"))}</option>
+                                        <option value="relaxed">${escapeHTML(I18n.translate("label.reader_line_relaxed"))}</option>
+                                    </select>
+                                </div>
+                                <div class="protocol-reader-control-group">
+                                    <label for="protocol-reader-width-select">${escapeHTML(I18n.translate("label.reader_width"))}</label>
+                                    <select id="protocol-reader-width-select">
+                                        <option value="narrow">${escapeHTML(I18n.translate("label.reader_width_narrow"))}</option>
+                                        <option value="medium" selected>${escapeHTML(I18n.translate("label.reader_width_medium"))}</option>
+                                        <option value="wide">${escapeHTML(I18n.translate("label.reader_width_wide"))}</option>
+                                    </select>
+                                </div>
+                                <div class="protocol-reader-control-group">
+                                    <span class="protocol-reader-theme-label" id="reader-appearance-label">${escapeHTML(I18n.translate("label.reader_theme"))}</span>
+                                    <div class="protocol-reader-theme-options" role="group" aria-labelledby="reader-appearance-label">
+                                        <button type="button" class="theme-btn-warm" data-theme-val="warm" aria-pressed="true">${escapeHTML(I18n.translate("label.reader_theme_warm"))}</button>
+                                        <button type="button" class="theme-btn-sepia" data-theme-val="sepia" aria-pressed="false">${escapeHTML(I18n.translate("label.reader_theme_sepia"))}</button>
+                                        <button type="button" class="theme-btn-white" data-theme-val="white" aria-pressed="false">${escapeHTML(I18n.translate("label.reader_theme_white"))}</button>
+                                        <button type="button" class="theme-btn-night" data-theme-val="night" aria-pressed="false">${escapeHTML(I18n.translate("label.reader_theme_night"))}</button>
+                                    </div>
+                                </div>
+                                <div class="protocol-reader-control-group">
+                                    <button type="button" id="protocol-reader-distraction-toggle" class="btn-secondary" aria-pressed="false">${escapeHTML(I18n.translate("label.reader_distraction_free"))}</button>
+                                </div>
+                                <div class="protocol-reader-control-group">
+                                    <button type="button" id="protocol-reader-reset-btn" class="btn-secondary">${escapeHTML(I18n.translate("label.reader_reset"))}</button>
+                                </div>
+                            </section>
 
-                            ${proto.components.map(comp => {
-                                const linkedWindowsHTML = comp.linked_window_ids && comp.linked_window_ids.length > 0
-                                    ? comp.linked_window_ids.map(wId => resolveWindowLink(wId)).join(", ")
-                                    : escapeHTML(Router.uiStrings.noLinkedItems);
+                            <div
+                                class="protocol-reader-progress"
+                                role="progressbar"
+                                aria-label="${escapeHTML(I18n.translate("label.reader_progress"))}"
+                                aria-valuemin="0"
+                                aria-valuemax="100"
+                                aria-valuenow="0"
+                                hidden
+                            >
+                                <div class="protocol-reader-progress-bar"></div>
+                                <span class="protocol-reader-progress-text">0%</span>
+                            </div>
 
-                                const linkedMeasurementsHTML = comp.linked_measurement_ids && comp.linked_measurement_ids.length > 0
-                                    ? comp.linked_measurement_ids.map(mId => resolveMeasurementLink(mId)).join(", ")
-                                    : escapeHTML(Router.uiStrings.noLinkedItems);
-
-                                const componentLabel = I18n.translate("label.component_with_name", { name: "" }).replace(" :", "").replace(":", "").trim();
-                                const compName = I18n.localize({ es: comp.name_es, en: comp.name_en });
-                                const altCompName = I18n.localize({ es: comp.name_en, en: comp.name_es });
-
-                                return `
+                            <article
+                                id="protocol-reader-page"
+                                class="protocol-reader-page"
+                                data-reader-theme="warm"
+                                data-reader-line-height="normal"
+                                data-reader-width="medium"
+                            >
+                                <div class="protocol-full-content content-accordion-grid">
                                     <details class="content-accordion card clinical-card">
                                         <summary class="content-accordion-summary">
-                                            <span class="content-accordion-title">${escapeHTML(componentLabel)} ${escapeHTML(compName)}</span>
+                                            <span class="content-accordion-title">${escapeHTML(I18n.translate("label.purpose_and_context"))}</span>
                                             <span class="content-accordion-arrow"></span>
                                         </summary>
                                         <div class="content-accordion-body">
-                                            <p style="font-style: italic; color: var(--text-muted-light);">${escapeHTML(altCompName)}</p>
-
-                                            <div style="margin-top: 0.5rem;">
-                                                <strong>${escapeHTML(Router.uiStrings.clinicalQuestionsLabel)}:</strong>
-                                                <ul style="margin: 0.25rem 0; padding-left: 1.25rem;">
-                                                    ${(comp.clinical_questions || []).map(q => `<li>${escapeHTML(I18n.localize(q))}</li>`).join("")}
-                                                </ul>
-                                            </div>
-
-                                            <div style="margin-top: 0.5rem;">
-                                                <strong>${escapeHTML(Router.uiStrings.clinicalTargetsLabel)}:</strong>
-                                                <ul style="margin: 0.25rem 0; padding-left: 1.25rem;">
-                                                    ${(comp.targets || []).map(t => `<li>${escapeHTML(I18n.localize(t))}</li>`).join("")}
-                                                </ul>
-                                            </div>
-
-                                            <p><strong>${escapeHTML(Router.uiStrings.clinicalViewsLabel)}:</strong> ${(comp.suggested_views || []).map(v => escapeHTML(I18n.localize(v))).join(", ")}</p>
-
-                                            <div class="protocol-linked-items" style="margin: 0.75rem 0; padding: 0.75rem; background: rgba(0,0,0,0.02); border-radius: 6px; border: 1px solid var(--border-light);">
-                                                <p style="margin: 0 0 0.5rem 0;"><strong>${escapeHTML(Router.uiStrings.clinicalWindowLabel)}:</strong> ${linkedWindowsHTML}</p>
-                                                <p style="margin: 0;"><strong>${escapeHTML(Router.uiStrings.clinicalMeasurementLabel)}:</strong> ${linkedMeasurementsHTML}</p>
-                                            </div>
-
-                                            <div style="margin-top: 0.5rem;">
-                                                <strong>${escapeHTML(Router.uiStrings.clinicalFindingsLabel)}:</strong>
-                                                <ul style="margin: 0.25rem 0; padding-left: 1.25rem;">
-                                                    ${(comp.possible_findings || []).map(f => `<li>${escapeHTML(I18n.localize(f))}</li>`).join("")}
-                                                </ul>
-                                            </div>
-
-                                            <p style="margin-top: 0.5rem; padding: 0.5rem; border-left: 3px solid var(--primary-medium); font-size: 0.95rem; font-style: italic;">
-                                                <strong>${escapeHTML(Router.uiStrings.clinicalLimitsLabel)}:</strong> ${escapeHTML(I18n.localize(comp.interpretation_limits))}
-                                            </p>
+                                            <p class="subtitle-en" style="font-style: italic; color: var(--text-muted-light);">${escapeHTML(altName)}</p>
+                                            <p><strong>${escapeHTML(Router.uiStrings.clinicalPurposeLabel)}:</strong> ${escapeHTML(I18n.localize(proto.purpose))}</p>
+                                            <p><strong>${escapeHTML(I18n.translate("label.clinical_context"))}:</strong> ${escapeHTML(I18n.localize(proto.clinical_context))}</p>
+                                            <p><strong>${escapeHTML(I18n.translate("label.target_population"))}:</strong> ${escapeHTML(I18n.localize(proto.target_population))}</p>
                                         </div>
                                     </details>
-                                `;
-                            }).join("")}
 
-                            <details class="content-accordion card clinical-card">
-                                <summary class="content-accordion-summary">
-                                    <span class="content-accordion-title">${escapeHTML(Router.uiStrings.integrationStep)}</span>
-                                    <span class="content-accordion-arrow"></span>
-                                </summary>
-                                <div class="content-accordion-body">
-                                    <p>${escapeHTML(I18n.localize(proto.integration))}</p>
-                                </div>
-                            </details>
+                                    <details class="content-accordion card clinical-card">
+                                        <summary class="content-accordion-summary">
+                                            <span class="content-accordion-title">${escapeHTML(Router.uiStrings.clinicalSequenceTitle)}</span>
+                                            <span class="content-accordion-arrow"></span>
+                                        </summary>
+                                        <div class="content-accordion-body">
+                                            <p>${escapeHTML(I18n.localize(proto.sequence_note))}</p>
+                                        </div>
+                                    </details>
 
-                            <details class="content-accordion card clinical-card">
-                                <summary class="content-accordion-summary">
-                                    <span class="content-accordion-title">${escapeHTML(Router.uiStrings.clinicalGeneralLimitsTitle)}</span>
-                                    <span class="content-accordion-arrow"></span>
-                                </summary>
-                                <div class="content-accordion-body">
-                                    <p>${escapeHTML(I18n.localize(proto.limitations))}</p>
-                                </div>
-                            </details>
+                                    ${proto.components.map(comp => {
+                                        const linkedWindowsHTML = comp.linked_window_ids && comp.linked_window_ids.length > 0
+                                            ? comp.linked_window_ids.map(wId => resolveWindowLink(wId)).join(", ")
+                                            : escapeHTML(Router.uiStrings.noLinkedItems);
 
-                            <details class="content-accordion card clinical-card">
-                                <summary class="content-accordion-summary">
-                                    <span class="content-accordion-title">${escapeHTML(Router.uiStrings.clinicalSafetyWorkflowTitle)}</span>
-                                    <span class="content-accordion-arrow"></span>
-                                </summary>
-                                <div class="content-accordion-body">
-                                    <p>${escapeHTML(I18n.localize(proto.safety_and_workflow_notes))}</p>
+                                        const linkedMeasurementsHTML = comp.linked_measurement_ids && comp.linked_measurement_ids.length > 0
+                                            ? comp.linked_measurement_ids.map(mId => resolveMeasurementLink(mId)).join(", ")
+                                            : escapeHTML(Router.uiStrings.noLinkedItems);
+
+                                        const componentLabel = I18n.translate("label.component_with_name", { name: "" }).replace(" :", "").replace(":", "").trim();
+                                        const compName = I18n.localize({ es: comp.name_es, en: comp.name_en });
+                                        const altCompName = I18n.localize({ es: comp.name_en, en: comp.name_es });
+
+                                        return `
+                                            <details class="content-accordion card clinical-card">
+                                                <summary class="content-accordion-summary">
+                                                    <span class="content-accordion-title">${escapeHTML(componentLabel)} ${escapeHTML(compName)}</span>
+                                                    <span class="content-accordion-arrow"></span>
+                                                </summary>
+                                                <div class="content-accordion-body">
+                                                    <p style="font-style: italic; color: var(--text-muted-light);">${escapeHTML(altCompName)}</p>
+
+                                                    <div style="margin-top: 0.5rem;">
+                                                        <strong>${escapeHTML(Router.uiStrings.clinicalQuestionsLabel)}:</strong>
+                                                        <ul style="margin: 0.25rem 0; padding-left: 1.25rem;">
+                                                            ${(comp.clinical_questions || []).map(q => `<li>${escapeHTML(I18n.localize(q))}</li>`).join("")}
+                                                        </ul>
+                                                    </div>
+
+                                                    <div style="margin-top: 0.5rem;">
+                                                        <strong>${escapeHTML(Router.uiStrings.clinicalTargetsLabel)}:</strong>
+                                                        <ul style="margin: 0.25rem 0; padding-left: 1.25rem;">
+                                                            ${(comp.targets || []).map(t => `<li>${escapeHTML(I18n.localize(t))}</li>`).join("")}
+                                                        </ul>
+                                                    </div>
+
+                                                    <p><strong>${escapeHTML(Router.uiStrings.clinicalViewsLabel)}:</strong> ${(comp.suggested_views || []).map(v => escapeHTML(I18n.localize(v))).join(", ")}</p>
+
+                                                    <div class="protocol-linked-items" style="margin: 0.75rem 0; padding: 0.75rem; background: rgba(0,0,0,0.02); border-radius: 6px; border: 1px solid var(--border-light);">
+                                                        <p style="margin: 0 0 0.5rem 0;"><strong>${escapeHTML(Router.uiStrings.clinicalWindowLabel)}:</strong> ${linkedWindowsHTML}</p>
+                                                        <p style="margin: 0;"><strong>${escapeHTML(Router.uiStrings.clinicalMeasurementLabel)}:</strong> ${linkedMeasurementsHTML}</p>
+                                                    </div>
+
+                                                    <div style="margin-top: 0.5rem;">
+                                                        <strong>${escapeHTML(Router.uiStrings.clinicalFindingsLabel)}:</strong>
+                                                        <ul style="margin: 0.25rem 0; padding-left: 1.25rem;">
+                                                            ${(comp.possible_findings || []).map(f => `<li>${escapeHTML(I18n.localize(f))}</li>`).join("")}
+                                                        </ul>
+                                                    </div>
+
+                                                    <p style="margin-top: 0.5rem; padding: 0.5rem; border-left: 3px solid var(--primary-medium); font-size: 0.95rem; font-style: italic;">
+                                                        <strong>${escapeHTML(Router.uiStrings.clinicalLimitsLabel)}:</strong> ${escapeHTML(I18n.localize(comp.interpretation_limits))}
+                                                    </p>
+                                                </div>
+                                            </details>
+                                        `;
+                                    }).join("")}
+
+                                    <details class="content-accordion card clinical-card">
+                                        <summary class="content-accordion-summary">
+                                            <span class="content-accordion-title">${escapeHTML(Router.uiStrings.integrationStep)}</span>
+                                            <span class="content-accordion-arrow"></span>
+                                        </summary>
+                                        <div class="content-accordion-body">
+                                            <p>${escapeHTML(I18n.localize(proto.integration))}</p>
+                                        </div>
+                                    </details>
+
+                                    <details class="content-accordion card clinical-card">
+                                        <summary class="content-accordion-summary">
+                                            <span class="content-accordion-title">${escapeHTML(Router.uiStrings.clinicalGeneralLimitsTitle)}</span>
+                                            <span class="content-accordion-arrow"></span>
+                                        </summary>
+                                        <div class="content-accordion-body">
+                                            <p>${escapeHTML(I18n.localize(proto.limitations))}</p>
+                                        </div>
+                                    </details>
+
+                                    <details class="content-accordion card clinical-card">
+                                        <summary class="content-accordion-summary">
+                                            <span class="content-accordion-title">${escapeHTML(Router.uiStrings.clinicalSafetyWorkflowTitle)}</span>
+                                            <span class="content-accordion-arrow"></span>
+                                        </summary>
+                                        <div class="content-accordion-body">
+                                            <p>${escapeHTML(I18n.localize(proto.safety_and_workflow_notes))}</p>
+                                        </div>
+                                    </details>
+                                    ${protoMediaHTML ? `
+                                    <div class="protocol-media-container" style="margin-top: 1rem;">
+                                        ${protoMediaHTML}
+                                    </div>` : ''}
                                 </div>
-                            </details>
-                            ${protoMediaHTML ? `
-                            <div class="protocol-media-container" style="margin-top: 1rem;">
-                                ${protoMediaHTML}
-                            </div>` : ''}
+                            </article>
                         </div>
                     </div>
 
@@ -1856,7 +1936,7 @@ const Router = {
                     </div>
                 </div>
 
-                <div style="margin-top: 1.5rem; display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem;">
+                <div class="protocol-footer-actions" style="margin-top: 1.5rem; display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.5rem;">
                     <a href="#/protocolos" class="btn-primary">${escapeHTML(Router.uiStrings.clinicalReturnToListBtn)}</a>
                     <a href="#/" class="btn-secondary">${escapeHTML(Router.uiStrings.clinicalReturnHomeBtn)}</a>
                 </div>
@@ -1869,6 +1949,7 @@ const Router = {
         // Inicializar controladores interactivos
         this.initializeProtocolTabs(id);
         this.initializeProtocolStepper(id, steps);
+        this.initializeProtocolReader(id);
     },
 
     initializeProtocolTabs(protocolId) {
@@ -2082,6 +2163,312 @@ const Router = {
 
         // Show initial step
         showStep(currentStep, false);
+    },
+
+    initializeProtocolReader(protocolId) {
+        const fullPanel = document.getElementById("protocol-full-panel");
+        if (!fullPanel) return;
+
+        const appContainer = document.querySelector(".app-container") || document.getElementById("app");
+        const launchDiv = fullPanel.querySelector(".protocol-reader-launch");
+        const openBtn = document.getElementById("protocol-reader-open");
+        const controlsSec = document.getElementById("protocol-reader-controls");
+        const closeBtn = document.getElementById("protocol-reader-close");
+        const fontDecBtn = document.getElementById("protocol-reader-font-dec");
+        const fontIncBtn = document.getElementById("protocol-reader-font-inc");
+        const lineHeightSelect = document.getElementById("protocol-reader-line-height-select");
+        const widthSelect = document.getElementById("protocol-reader-width-select");
+        const themeBtns = controlsSec ? controlsSec.querySelectorAll(".protocol-reader-theme-options button") : [];
+        const distractionToggle = document.getElementById("protocol-reader-distraction-toggle");
+        const resetBtn = document.getElementById("protocol-reader-reset-btn");
+        const progressDiv = fullPanel.querySelector(".protocol-reader-progress");
+        const progressBar = progressDiv ? progressDiv.querySelector(".protocol-reader-progress-bar") : null;
+        const progressText = progressDiv ? progressDiv.querySelector(".protocol-reader-progress-text") : null;
+        const page = document.getElementById("protocol-reader-page");
+        const accordions = page ? page.querySelectorAll("details.content-accordion") : [];
+
+        let accordionStates = [];
+
+        const getValidTheme = () => {
+            const val = typeof Storage.getPreference === "function" ? Storage.getPreference("pocus_reader_theme") : null;
+            return ["warm", "sepia", "white", "night"].includes(val) ? val : "warm";
+        };
+        const getValidFontSize = () => {
+            const val = typeof Storage.getPreference === "function" ? parseInt(Storage.getPreference("pocus_reader_font_size"), 10) : 18;
+            return (!isNaN(val) && val >= 16 && val <= 24 && val % 2 === 0) ? val : 18;
+        };
+        const getValidLineHeight = () => {
+            const val = typeof Storage.getPreference === "function" ? Storage.getPreference("pocus_reader_line_height") : null;
+            return ["compact", "normal", "relaxed"].includes(val) ? val : "normal";
+        };
+        const getValidWidth = () => {
+            const val = typeof Storage.getPreference === "function" ? Storage.getPreference("pocus_reader_width") : null;
+            return ["narrow", "medium", "wide"].includes(val) ? val : "medium";
+        };
+        const getValidDistractionFree = () => {
+            const val = typeof Storage.getPreference === "function" ? Storage.getPreference("pocus_reader_distraction_free") : false;
+            return (val === true || val === "true");
+        };
+
+        const setPreferenceSafe = (key, value) => {
+            if (typeof Storage.setPreference === "function") {
+                Storage.setPreference(key, value);
+            }
+        };
+
+        const preventSummaryClick = (e) => {
+            e.preventDefault();
+        };
+
+        const updateProgress = () => {
+            if (!page || !progressDiv || progressDiv.hasAttribute("hidden")) return;
+            const pageHeight = page.offsetHeight;
+            const pageTop = page.offsetTop;
+            const viewportHeight = window.innerHeight;
+            const totalScrollable = pageHeight - viewportHeight;
+
+            let progress = 0;
+            if (totalScrollable <= 0) {
+                progress = 100;
+            } else {
+                const currentScroll = window.scrollY - pageTop;
+                progress = Math.max(0, Math.min(100, Math.round((currentScroll / totalScrollable) * 100)));
+            }
+
+            progressDiv.setAttribute("aria-valuenow", progress.toString());
+            if (progressBar) {
+                progressBar.style.width = `${progress}%`;
+            }
+            if (progressText) {
+                progressText.innerText = `${progress}%`;
+            }
+        };
+
+        const applyPreferences = () => {
+            if (!page) return;
+            const theme = getValidTheme();
+            const fontSize = getValidFontSize();
+            const lineHeight = getValidLineHeight();
+            const width = getValidWidth();
+            const distractionFree = getValidDistractionFree();
+
+            page.setAttribute("data-reader-theme", theme);
+            page.setAttribute("data-reader-line-height", lineHeight);
+            page.setAttribute("data-reader-width", width);
+            page.style.setProperty("--reader-font-size", `${fontSize}px`);
+
+            themeBtns.forEach(btn => {
+                const isSelected = btn.getAttribute("data-theme-val") === theme;
+                btn.setAttribute("aria-pressed", isSelected ? "true" : "false");
+                if (isSelected) {
+                    btn.classList.add("active");
+                } else {
+                    btn.classList.remove("active");
+                }
+            });
+
+            if (fontDecBtn) {
+                fontDecBtn.disabled = (fontSize <= 16);
+                fontDecBtn.setAttribute("aria-disabled", fontSize <= 16 ? "true" : "false");
+            }
+            if (fontIncBtn) {
+                fontIncBtn.disabled = (fontSize >= 24);
+                fontIncBtn.setAttribute("aria-disabled", fontSize >= 24 ? "true" : "false");
+            }
+
+            if (lineHeightSelect) lineHeightSelect.value = lineHeight;
+            if (widthSelect) widthSelect.value = width;
+
+            if (distractionToggle) {
+                distractionToggle.setAttribute("aria-pressed", distractionFree ? "true" : "false");
+                if (distractionFree) {
+                    distractionToggle.classList.add("active");
+                    if (fullPanel.classList.contains("reader-active")) {
+                        if (appContainer) appContainer.classList.add("reader-distraction-free");
+                    } else {
+                        if (appContainer) appContainer.classList.remove("reader-distraction-free");
+                    }
+                } else {
+                    distractionToggle.classList.remove("active");
+                    if (appContainer) appContainer.classList.remove("reader-distraction-free");
+                }
+            }
+        };
+
+        const activateReader = () => {
+            fullPanel.classList.add("reader-active");
+            if (appContainer) appContainer.classList.add("reader-layout-active");
+            if (openBtn) openBtn.setAttribute("aria-pressed", "true");
+            if (launchDiv) launchDiv.style.display = "none";
+            if (controlsSec) controlsSec.removeAttribute("hidden");
+            if (progressDiv) progressDiv.removeAttribute("hidden");
+
+            accordionStates = [];
+            accordions.forEach(acc => {
+                accordionStates.push(acc.open);
+                acc.open = true;
+                const summary = acc.querySelector("summary");
+                if (summary) {
+                    summary.addEventListener("click", preventSummaryClick);
+                }
+            });
+
+            applyPreferences();
+            updateProgress();
+
+            setTimeout(() => {
+                if (closeBtn) closeBtn.focus();
+            }, 50);
+        };
+
+        const deactivateReader = (options = {}) => {
+            const restoreFocus = options.restoreFocus !== false;
+            fullPanel.classList.remove("reader-active");
+            if (appContainer) {
+                appContainer.classList.remove("reader-layout-active");
+                appContainer.classList.remove("reader-distraction-free");
+            }
+            if (openBtn) openBtn.setAttribute("aria-pressed", "false");
+            if (launchDiv) launchDiv.style.display = "";
+            if (controlsSec) controlsSec.setAttribute("hidden", "true");
+            if (progressDiv) progressDiv.setAttribute("hidden", "true");
+
+            accordions.forEach((acc, index) => {
+                const summary = acc.querySelector("summary");
+                if (summary) {
+                    summary.removeEventListener("click", preventSummaryClick);
+                }
+                if (index < accordionStates.length) {
+                    acc.open = accordionStates[index];
+                }
+            });
+
+            if (page) {
+                page.style.removeProperty("--reader-font-size");
+            }
+
+            if (restoreFocus) {
+                setTimeout(() => {
+                    if (openBtn) openBtn.focus();
+                }, 50);
+            }
+        };
+
+        const handleKeyDown = (e) => {
+            if (e.key === "Escape" && fullPanel.classList.contains("reader-active")) {
+                e.preventDefault();
+                deactivateReader();
+            }
+        };
+
+        // Event listeners
+        if (openBtn) {
+            openBtn.addEventListener("click", activateReader);
+        }
+        if (closeBtn) {
+            closeBtn.addEventListener("click", deactivateReader);
+        }
+        if (fontDecBtn) {
+            fontDecBtn.addEventListener("click", () => {
+                const currentSize = getValidFontSize();
+                if (currentSize > 16) {
+                    setPreferenceSafe("pocus_reader_font_size", currentSize - 2);
+                    applyPreferences();
+                    updateProgress();
+                }
+            });
+        }
+        if (fontIncBtn) {
+            fontIncBtn.addEventListener("click", () => {
+                const currentSize = getValidFontSize();
+                if (currentSize < 24) {
+                    setPreferenceSafe("pocus_reader_font_size", currentSize + 2);
+                    applyPreferences();
+                    updateProgress();
+                }
+            });
+        }
+        if (lineHeightSelect) {
+            lineHeightSelect.addEventListener("change", (e) => {
+                const val = e.target.value;
+                if (["compact", "normal", "relaxed"].includes(val)) {
+                    setPreferenceSafe("pocus_reader_line_height", val);
+                    applyPreferences();
+                    updateProgress();
+                }
+            });
+        }
+        if (widthSelect) {
+            widthSelect.addEventListener("change", (e) => {
+                const val = e.target.value;
+                if (["narrow", "medium", "wide"].includes(val)) {
+                    setPreferenceSafe("pocus_reader_width", val);
+                    applyPreferences();
+                    updateProgress();
+                }
+            });
+        }
+        themeBtns.forEach(btn => {
+            btn.addEventListener("click", (e) => {
+                const val = e.currentTarget.getAttribute("data-theme-val");
+                if (["warm", "sepia", "white", "night"].includes(val)) {
+                    setPreferenceSafe("pocus_reader_theme", val);
+                    applyPreferences();
+                    updateProgress();
+                }
+            });
+        });
+        if (distractionToggle) {
+            distractionToggle.addEventListener("click", () => {
+                const current = getValidDistractionFree();
+                setPreferenceSafe("pocus_reader_distraction_free", !current);
+                applyPreferences();
+                updateProgress();
+            });
+        }
+        if (resetBtn) {
+            resetBtn.addEventListener("click", () => {
+                setPreferenceSafe("pocus_reader_theme", "warm");
+                setPreferenceSafe("pocus_reader_font_size", 18);
+                setPreferenceSafe("pocus_reader_line_height", "normal");
+                setPreferenceSafe("pocus_reader_width", "medium");
+                setPreferenceSafe("pocus_reader_distraction_free", false);
+                applyPreferences();
+                updateProgress();
+            });
+        }
+
+        // Close on switching tabs away from Contenido completo
+        const tabButtons = document.querySelectorAll('[role="tab"]');
+        tabButtons.forEach(btn => {
+            btn.addEventListener("click", () => {
+                if (btn.id !== "protocol-full-tab") {
+                    if (fullPanel.classList.contains("reader-active")) {
+                        deactivateReader();
+                    }
+                }
+            });
+        });
+
+        // Clean up helper before registering new listeners
+        if (Router._readerCleanup) {
+            Router._readerCleanup();
+        }
+
+        // Keydown Escape and Scroll
+        window.addEventListener("keydown", handleKeyDown);
+        window.addEventListener("scroll", updateProgress, { passive: true });
+        window.addEventListener("resize", updateProgress, { passive: true });
+
+        Router._readerCleanup = () => {
+            deactivateReader({ restoreFocus: false });
+            window.removeEventListener("keydown", handleKeyDown);
+            window.removeEventListener("scroll", updateProgress);
+            window.removeEventListener("resize", updateProgress);
+        };
+
+        // Apply appearance initially (but inactive)
+        applyPreferences();
     },
 
     // ABREVIATURAS

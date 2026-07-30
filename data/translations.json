@@ -858,6 +858,90 @@
     "label.protocol_quick_alerts": {
       "es": "Alertas",
       "en": "Red flags"
+    },
+    "label.reader_mode": {
+      "es": "Modo lectura",
+      "en": "Reading mode"
+    },
+    "label.reader_exit": {
+      "es": "Salir del modo lectura",
+      "en": "Exit reading mode"
+    },
+    "label.reader_controls": {
+      "es": "Controles de lectura",
+      "en": "Reading controls"
+    },
+    "label.reader_theme": {
+      "es": "Apariencia",
+      "en": "Appearance"
+    },
+    "label.reader_theme_warm": {
+      "es": "Papel cálido",
+      "en": "Warm paper"
+    },
+    "label.reader_theme_sepia": {
+      "es": "Sepia",
+      "en": "Sepia"
+    },
+    "label.reader_theme_white": {
+      "es": "Papel blanco",
+      "en": "White paper"
+    },
+    "label.reader_theme_night": {
+      "es": "Tinta nocturna",
+      "en": "Night ink"
+    },
+    "label.reader_font_decrease": {
+      "es": "Disminuir texto",
+      "en": "Decrease text size"
+    },
+    "label.reader_font_increase": {
+      "es": "Aumentar texto",
+      "en": "Increase text size"
+    },
+    "label.reader_line_height": {
+      "es": "Interlineado",
+      "en": "Line spacing"
+    },
+    "label.reader_line_compact": {
+      "es": "Compacto",
+      "en": "Compact"
+    },
+    "label.reader_line_normal": {
+      "es": "Normal",
+      "en": "Normal"
+    },
+    "label.reader_line_relaxed": {
+      "es": "Amplio",
+      "en": "Relaxed"
+    },
+    "label.reader_width": {
+      "es": "Ancho de página",
+      "en": "Page width"
+    },
+    "label.reader_width_narrow": {
+      "es": "Estrecho",
+      "en": "Narrow"
+    },
+    "label.reader_width_medium": {
+      "es": "Medio",
+      "en": "Medium"
+    },
+    "label.reader_width_wide": {
+      "es": "Amplio",
+      "en": "Wide"
+    },
+    "label.reader_distraction_free": {
+      "es": "Reducir distracciones",
+      "en": "Reduce distractions"
+    },
+    "label.reader_progress": {
+      "es": "Progreso de lectura",
+      "en": "Reading progress"
+    },
+    "label.reader_reset": {
+      "es": "Restablecer",
+      "en": "Reset"
     }
   }
 }
