@@ -5,122 +5,18 @@ import json
 import re
 import pytest
 import urllib.request
-
-CHROME_PATH = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+from tests.helpers.chrome_runner import run_js_in_chrome as _run_js_in_chrome, CHROME_PATH
 
 def run_js_in_chrome(js_payload):
-    # Read quiz-engine.js code
-    with open("assets/js/quiz-engine.js", "r", encoding="utf-8") as f:
-        quiz_engine_code = f.read()
+    try:
+        return _run_js_in_chrome(
+            js_payload,
+            harness_type="quiz",
+            timeout=20
+        )
+    except Exception as e:
+        pytest.fail(str(e))
 
-    html_content = """<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-</head>
-<body>
-    <div id="results"></div>
-    <script>
-        // Mock Storage
-        const _storage = {};
-        const Storage = {
-            getProgress: (type, id) => _storage[type + "_" + id] || null,
-            saveProgress: (type, id, data) => { _storage[type + "_" + id] = data; },
-            removeProgress: (type, id) => { delete _storage[type + "_" + id]; }
-        };
-
-        // Mock MediaViewer
-        const MediaViewer = {
-            renderMediaSection: (media) => "<div>MOCK_MEDIA</div>",
-            initializeMediaInteractions: (container) => {}
-        };
-
-        // Mock DataLoader
-        const DataLoader = {
-            getQuizzes: async () => [],
-            getMediaResources: async () => []
-        };
-
-        // Inject QuizEngine
-        //QUIZ_ENGINE_CODE//
-
-        // Run user payload synchronously
-        try {
-            const resultsEl = document.getElementById("results");
-            const res = (() => {
-                //JS_PAYLOAD//
-            })();
-            resultsEl.textContent = JSON.stringify({ success: true, data: res });
-        } catch (e) {
-            document.getElementById("results").textContent = JSON.stringify({ success: false, error: e.message });
-        } finally {
-            window.close();
-        }
-    </script>
-</body>
-</html>
-""".replace("//QUIZ_ENGINE_CODE//", quiz_engine_code).replace("//JS_PAYLOAD//", js_payload)
-
-    with tempfile.NamedTemporaryFile(suffix=".html", delete=False, mode="w", encoding="utf-8", dir="./") as tmp:
-        tmp.write(html_content)
-        tmp_path = tmp.name
-
-    with tempfile.TemporaryDirectory(dir="./") as user_data_dir:
-        try:
-            cmd = [
-                CHROME_PATH,
-                "--headless",
-                "--disable-gpu",
-                "--disable-software-rasterizer",
-                "--no-sandbox",
-                "--incognito",
-                "--allow-file-access-from-files",
-                "--no-first-run",
-                "--no-default-browser-check",
-                "--disable-default-apps",
-                "--disable-sync",
-                "--disable-background-networking",
-                "--disable-component-update",
-                "--password-store=basic",
-                "--use-mock-keychain",
-                f"--user-data-dir={os.path.abspath(user_data_dir)}",
-                "--dump-dom",
-                "file://" + urllib.request.pathname2url(os.path.abspath(tmp_path))
-            ]
-            res = subprocess.run(
-                cmd,
-                capture_output=True,
-                text=True,
-                timeout=20,
-                check=False,
-                stdin=subprocess.DEVNULL
-            )
-
-            if res.returncode != 0:
-                pytest.fail(
-                    f"Chrome execution failed with returncode {res.returncode}.\n"
-                    f"STDOUT:\n{res.stdout}\n"
-                    f"STDERR:\n{res.stderr}"
-                )
-
-            match = re.search(r'<div id="results">(.*?)</div>', res.stdout)
-            if match:
-                return json.loads(match.group(1))
-            else:
-                return {"success": False, "error": "No results div found", "output": res.stdout}
-        except subprocess.TimeoutExpired as e:
-            # e.stdout and e.stderr might be bytes or None in some Python versions if timeout occurs before stdout/stderr decode.
-            # We safely handle bytes decoding.
-            out_decoded = e.stdout.decode('utf-8', errors='replace') if isinstance(e.stdout, bytes) else str(e.stdout)
-            err_decoded = e.stderr.decode('utf-8', errors='replace') if isinstance(e.stderr, bytes) else str(e.stderr)
-            pytest.fail(
-                f"Chrome headless excedió el tiempo máximo de 20 segundos.\n"
-                f"STDOUT parcial:\n{out_decoded}\n"
-                f"STDERR parcial:\n{err_decoded}"
-            )
-        finally:
-            if os.path.exists(tmp_path):
-                os.remove(tmp_path)
 
 def test_quiz_definition_validation_headless():
     payload = """
