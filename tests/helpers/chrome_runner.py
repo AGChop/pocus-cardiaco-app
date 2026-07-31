@@ -130,6 +130,7 @@ def run_js_in_chrome(
 
         i18n_src = Path("assets/js/i18n.js").resolve().as_uri()
         search_src = Path("assets/js/search.js").resolve().as_uri()
+        protocol_renderer_src = Path("assets/js/components/protocol-renderer.js").resolve().as_uri()
         router_src = Path("assets/js/router.js").resolve().as_uri()
 
         css_tag = ""
@@ -152,6 +153,7 @@ def run_js_in_chrome(
         window.__moduleStatus = {
             i18n: false,
             search: false,
+            protocolRenderer: false,
             router: false
         };
 
@@ -251,6 +253,8 @@ def run_js_in_chrome(
     <script>window.__moduleStatus.i18n = typeof I18n !== "undefined";</script>
     <script src="__SEARCH_SRC__"></script>
     <script>window.__moduleStatus.search = typeof Search !== "undefined";</script>
+    <script src="__PROTOCOL_RENDERER_SRC__"></script>
+    <script>window.__moduleStatus.protocolRenderer = typeof ProtocolRenderer !== "undefined";</script>
     <script src="__ROUTER_SRC__"></script>
     <script>window.__moduleStatus.router = typeof Router !== "undefined";</script>
 
@@ -270,7 +274,7 @@ def run_js_in_chrome(
                 return;
             }
 
-            if (!window.__moduleStatus.i18n || !window.__moduleStatus.search || !window.__moduleStatus.router) {
+            if (!window.__moduleStatus.i18n || !window.__moduleStatus.search || !window.__moduleStatus.protocolRenderer || !window.__moduleStatus.router) {
                 resultsEl.textContent = JSON.stringify({
                     success: false,
                     error: "Module failed to load",
@@ -306,6 +310,7 @@ def run_js_in_chrome(
         html_content = html_content.replace("//MEASUREMENTS_JSON//", measurements_data)
         html_content = html_content.replace("__I18N_SRC__", i18n_src)
         html_content = html_content.replace("__SEARCH_SRC__", search_src)
+        html_content = html_content.replace("__PROTOCOL_RENDERER_SRC__", protocol_renderer_src)
         html_content = html_content.replace("__ROUTER_SRC__", router_src)
         html_content = html_content.replace("//JS_PAYLOAD//", js_payload)
 

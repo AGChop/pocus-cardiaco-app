@@ -1387,80 +1387,11 @@ const Router = {
     },
 
     renderProtocolQuickReference(protocol, escapeHTML) {
-        const titleText = I18n.translate("label.protocol_quick_title");
-        const descText = I18n.translate("label.protocol_quick_description");
-        const sequenceTitle = I18n.translate("label.protocol_quick_sequence");
-        const expandHint = I18n.translate("label.protocol_quick_expand_hint");
-        const noLinkedItems = I18n.translate("label.no_linked_items");
-        const assessLabel = I18n.translate("label.protocol_quick_assess");
-        const alertsLabel = I18n.translate("label.protocol_quick_alerts");
-
-        let html = `
-        <article class="protocol-quick-card" aria-labelledby="protocol-quick-title-id">
-            <header class="protocol-quick-header">
-                <h3 id="protocol-quick-title-id">${escapeHTML(titleText)}</h3>
-                <p class="protocol-quick-description">${escapeHTML(descText)}</p>
-            </header>
-        `;
-
-        const compNames = protocol.components.map(comp => I18n.localize({ es: comp.name_es, en: comp.name_en }));
-
-        html += `
-            <section class="protocol-quick-sequence" aria-labelledby="protocol-quick-seq-title">
-                <h4 id="protocol-quick-seq-title">${escapeHTML(sequenceTitle)}</h4>
-                <ol>
-                    ${compNames.map(name => `
-                        <li class="protocol-quick-sequence-item">
-                            <span>${escapeHTML(name)}</span>
-                        </li>
-                    `).join("")}
-                </ol>
-            </section>
-        `;
-
-        html += `
-            <section class="protocol-quick-components" aria-label="${escapeHTML(I18n.translate("label.components"))}">
-        `;
-
-        protocol.components.forEach(comp => {
-            const localizedCompName = I18n.localize({ es: comp.name_es, en: comp.name_en });
-
-            let assessText = noLinkedItems;
-            let alertsText = noLinkedItems;
-
-            if (comp.quick_reference) {
-                if (comp.quick_reference.assess) {
-                    assessText = I18n.localize(comp.quick_reference.assess);
-                }
-                if (comp.quick_reference.alerts) {
-                    alertsText = I18n.localize(comp.quick_reference.alerts);
-                }
-            }
-
-            html += `
-                <section class="protocol-quick-component">
-                    <h4>${escapeHTML(localizedCompName)}</h4>
-                    <div class="protocol-quick-section protocol-quick-assess">
-                        <strong>${escapeHTML(assessLabel)}</strong>
-                        <p>${escapeHTML(assessText)}</p>
-                    </div>
-                    <div class="protocol-quick-section protocol-quick-alerts">
-                        <strong>${escapeHTML(alertsLabel)}</strong>
-                        <p>${escapeHTML(alertsText)}</p>
-                    </div>
-                </section>
-            `;
+        return ProtocolRenderer.renderQuickReference(protocol, {
+            escapeHTML,
+            localize: (key) => I18n.localize(key),
+            translate: (key, params) => I18n.translate(key, params)
         });
-
-        html += `
-            </section>
-            <footer class="protocol-quick-expand-hint">
-                ${escapeHTML(expandHint)}
-            </footer>
-        </article>
-        `;
-
-        return html;
     },
 
     // DETALLE DE PROTOCOLO
