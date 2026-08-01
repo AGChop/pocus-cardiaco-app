@@ -112,15 +112,9 @@ def test_router_renderer_generic_constraints():
     # 15. No .slice
     # 16. No inline styles
     # 17. No card class on component/footer
-    router_path = "assets/js/router.js"
-    with open(router_path, "r", encoding="utf-8") as f:
-        content = f.read()
-
-    start_idx = content.find("renderProtocolQuickReference(protocol, escapeHTML) {")
-    end_idx = content.find("// DETALLE DE PROTOCOLO", start_idx)
-    assert start_idx != -1
-    assert end_idx != -1
-    method_code = content[start_idx:end_idx]
+    renderer_path = "assets/js/components/protocol-renderer.js"
+    with open(renderer_path, "r", encoding="utf-8") as f:
+        method_code = f.read()
 
     # Check for hardcoded clinical terms
     prohibited = ["rush", "pump", "tank", "pipes", "Bomba", "Tanque", "Tuberías"]
@@ -192,7 +186,7 @@ def test_quick_tab_styles_ui2c():
 
 def test_cache_name_and_precache_entries():
     # 30. Cache is quick2
-    # 31. ASSETS_TO_CACHE has 36 entries
+    # 31. ASSETS_TO_CACHE has 37 entries
     sw_path = "service-worker.js"
     assert os.path.exists(sw_path)
     with open(sw_path, "r", encoding="utf-8") as f:
@@ -200,13 +194,13 @@ def test_cache_name_and_precache_entries():
 
     cache_match = re.search(r"const CACHE_NAME = '([^']+)';", content)
     assert cache_match is not None
-    assert cache_match.group(1) == "pocus-cardiaco-cache-v17-c3d1-brand1-e1a-e1b-e1c-qa1-qa2-qa3-final-logo2-pwa1-flow1-quick2-reader1"
+    assert cache_match.group(1) == "pocus-cardiaco-cache-v17-c3d1-brand1-e1a-e1b-e1c-qa1-qa2-qa3-final-logo2-pwa1-flow1-quick2-reader1-prender1"
 
     assets_block_match = re.search(r"const ASSETS_TO_CACHE = \[(.*?)\];", content, re.DOTALL)
     assert assets_block_match is not None
     assets_text = assets_block_match.group(1)
     assets = [a.strip().strip("'\",") for a in assets_text.split("\n") if a.strip()]
-    assert len(assets) == 36
+    assert len(assets) == 37
 
 
 def test_non_modified_catalogs():
