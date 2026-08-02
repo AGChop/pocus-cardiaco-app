@@ -1486,22 +1486,25 @@ const Router = {
 
                 <div class="protocol-tabs">
                     <div role="tablist" aria-label="${escapeHTML(I18n.translate("label.protocol_sections"))}" class="protocol-tab-list" style="display: flex; gap: 0.5rem; margin-bottom: 1rem; border-bottom: 2px solid var(--border-light); overflow-x: auto; padding-bottom: 0.25rem;">
-                        <button type="button" role="tab" aria-selected="true" aria-controls="protocol-guide-panel" id="protocol-guide-tab" tabindex="0" class="protocol-tab-button" data-protocol-tab="guide" style="padding: 0.5rem 1rem; border: none; background: none; font-weight: bold; cursor: pointer; border-bottom: 2px solid transparent;">
-                            ${escapeHTML(Router.uiStrings.guideTab)}
-                        </button>
-                        <button type="button" role="tab" aria-selected="false" aria-controls="protocol-quick-panel" id="protocol-quick-tab" tabindex="-1" class="protocol-tab-button" data-protocol-tab="quick" style="padding: 0.5rem 1rem; border: none; background: none; font-weight: bold; cursor: pointer; border-bottom: 2px solid transparent;">
+                        <button type="button" role="tab" aria-selected="true" aria-controls="protocol-quick-panel" id="protocol-quick-tab" tabindex="0" class="protocol-tab-button" data-protocol-tab="quick" style="padding: 0.5rem 1rem; border: none; background: none; font-weight: bold; cursor: pointer; border-bottom: 2px solid transparent;">
                             ${escapeHTML(I18n.translate("label.protocol_quick_tab"))}
                         </button>
+
+                        <button type="button" role="tab" aria-selected="false" aria-controls="protocol-guide-panel" id="protocol-guide-tab" tabindex="-1" class="protocol-tab-button" data-protocol-tab="guide" style="padding: 0.5rem 1rem; border: none; background: none; font-weight: bold; cursor: pointer; border-bottom: 2px solid transparent;">
+                            ${escapeHTML(Router.uiStrings.guideTab)}
+                        </button>
+
                         <button type="button" role="tab" aria-selected="false" aria-controls="protocol-full-panel" id="protocol-full-tab" tabindex="-1" class="protocol-tab-button" data-protocol-tab="content" style="padding: 0.5rem 1rem; border: none; background: none; font-weight: bold; cursor: pointer; border-bottom: 2px solid transparent;">
                             ${escapeHTML(Router.uiStrings.contentTab)}
                         </button>
+
                         <button type="button" role="tab" aria-selected="false" aria-controls="protocol-references-panel" id="protocol-references-tab" tabindex="-1" class="protocol-tab-button" data-protocol-tab="references" style="padding: 0.5rem 1rem; border: none; background: none; font-weight: bold; cursor: pointer; border-bottom: 2px solid transparent;">
                             ${escapeHTML(Router.uiStrings.referencesTab)}
                         </button>
                     </div>
 
                     <!-- PESTAÑA 1: GUÍA INTERACTIVA -->
-                    <div id="protocol-guide-panel" role="tabpanel" aria-labelledby="protocol-guide-tab" class="protocol-tab-panel">
+                    <div id="protocol-guide-panel" role="tabpanel" aria-labelledby="protocol-guide-tab" class="protocol-tab-panel" hidden>
                         ${this.renderProtocolFlowMap(steps, { escapeHTML, resolveWindowLink, resolveMeasurementLink })}
                         <div class="protocol-stepper" style="display: flex; flex-direction: column; gap: 1rem;">
                             <!-- Progress Bar -->
@@ -1526,11 +1529,11 @@ const Router = {
                             <!-- Step Cards -->
                             <div class="protocol-step-cards">
                                 ${steps.map((step, idx) => {
-                                    if (step.type === "start") {
-                                        const contextLabel = I18n.translate("label.clinical_context") + ":";
-                                        const targetLabel = I18n.translate("label.target_population") + ":";
-                                        const sequenceLabel = I18n.translate("label.acquisition_sequence") + ":";
-                                        return `
+            if (step.type === "start") {
+                const contextLabel = I18n.translate("label.clinical_context") + ":";
+                const targetLabel = I18n.translate("label.target_population") + ":";
+                const sequenceLabel = I18n.translate("label.acquisition_sequence") + ":";
+                return `
                                             <div class="protocol-step-card card" data-step="${idx}" ${idx === 0 ? "" : "hidden"}>
                                                 <h3 class="protocol-step-title" style="margin-top: 0;">${escapeHTML(step.name)} (${escapeHTML(step.acronym)})</h3>
                                                 <p style="font-style: italic; color: var(--text-muted-light);">${escapeHTML(altName)}</p>
@@ -1542,21 +1545,21 @@ const Router = {
                                                 </div>
                                             </div>
                                         `;
-                                    } else if (step.type === "component") {
-                                        const comp = step.component;
-                                        const linkedWindowsHTML = comp.linked_window_ids && comp.linked_window_ids.length > 0
-                                            ? comp.linked_window_ids.map(wId => resolveWindowLink(wId)).join(", ")
-                                            : escapeHTML(Router.uiStrings.noLinkedItems);
+            } else if (step.type === "component") {
+                const comp = step.component;
+                const linkedWindowsHTML = comp.linked_window_ids && comp.linked_window_ids.length > 0
+                    ? comp.linked_window_ids.map(wId => resolveWindowLink(wId)).join(", ")
+                    : escapeHTML(Router.uiStrings.noLinkedItems);
 
-                                        const linkedMeasurementsHTML = comp.linked_measurement_ids && comp.linked_measurement_ids.length > 0
-                                            ? comp.linked_measurement_ids.map(mId => resolveMeasurementLink(mId)).join(", ")
-                                            : escapeHTML(Router.uiStrings.noLinkedItems);
+                const linkedMeasurementsHTML = comp.linked_measurement_ids && comp.linked_measurement_ids.length > 0
+                    ? comp.linked_measurement_ids.map(mId => resolveMeasurementLink(mId)).join(", ")
+                    : escapeHTML(Router.uiStrings.noLinkedItems);
 
-                                        const compMedia = MediaViewer.getMediaForEntity(mediaResources, 'component', comp.id);
-                                        const compMediaHTML = MediaViewer.renderMediaSection(compMedia);
-                                        const componentHeader = I18n.translate("label.component_with_name", { name: I18n.localize({ es: comp.name_es, en: comp.name_en }) });
+                const compMedia = MediaViewer.getMediaForEntity(mediaResources, 'component', comp.id);
+                const compMediaHTML = MediaViewer.renderMediaSection(compMedia);
+                const componentHeader = I18n.translate("label.component_with_name", { name: I18n.localize({ es: comp.name_es, en: comp.name_en }) });
 
-                                        return `
+                return `
                                             <div class="protocol-step-card card" data-step="${idx}" hidden>
                                                 <h3 class="protocol-step-title" style="margin-top: 0;">${escapeHTML(componentHeader)}</h3>
                                                 <p style="font-style: italic; color: var(--text-muted-light); font-size: 0.9rem;">${escapeHTML(I18n.localize({ es: comp.name_en, en: comp.name_es }))}</p>
@@ -1599,8 +1602,8 @@ const Router = {
                                                 </div>` : ''}
                                             </div>
                                         `;
-                                    } else if (step.type === "integration") {
-                                        return `
+            } else if (step.type === "integration") {
+                return `
                                             <div class="protocol-step-card card" data-step="${idx}" hidden>
                                                 <h3 class="protocol-step-title" style="margin-top: 0;">${escapeHTML(Router.uiStrings.integrationStep)}</h3>
                                                 <p>${escapeHTML(step.integration)}</p>
@@ -1609,8 +1612,8 @@ const Router = {
                                                 </div>
                                             </div>
                                         `;
-                                    } else if (step.type === "summary") {
-                                        return `
+            } else if (step.type === "summary") {
+                return `
                                             <div class="protocol-step-card card" data-step="${idx}" hidden>
                                                 <h3 class="protocol-step-title" style="margin-top: 0;">${escapeHTML(Router.uiStrings.summaryStep)}</h3>
                                                 <p>${escapeHTML(I18n.translate("label.protocol_guide_completed"))}: <strong>${step.components_names.map(name => escapeHTML(name)).join(", ")}</strong>.</p>
@@ -1631,9 +1634,9 @@ const Router = {
                                                 </div>
                                             </div>
                                         `;
-                                    }
-                                    return "";
-                                }).join("")}
+            }
+            return "";
+        }).join("")}
                             </div>
 
                             <!-- Stepper Actions -->
@@ -1645,7 +1648,7 @@ const Router = {
                         </div>
                     </div>
                     <!-- PESTAÑA: RESUMEN RÁPIDO -->
-                    <div id="protocol-quick-panel" role="tabpanel" aria-labelledby="protocol-quick-tab" class="protocol-tab-panel" hidden>
+                    <div id="protocol-quick-panel" role="tabpanel" aria-labelledby="protocol-quick-tab" class="protocol-tab-panel">
                         ${this.renderProtocolQuickReference(proto, escapeHTML)}
                     </div>
 
@@ -1754,19 +1757,19 @@ const Router = {
                                     </details>
 
                                     ${proto.components.map(comp => {
-                                        const linkedWindowsHTML = comp.linked_window_ids && comp.linked_window_ids.length > 0
-                                            ? comp.linked_window_ids.map(wId => resolveWindowLink(wId)).join(", ")
-                                            : escapeHTML(Router.uiStrings.noLinkedItems);
+            const linkedWindowsHTML = comp.linked_window_ids && comp.linked_window_ids.length > 0
+                ? comp.linked_window_ids.map(wId => resolveWindowLink(wId)).join(", ")
+                : escapeHTML(Router.uiStrings.noLinkedItems);
 
-                                        const linkedMeasurementsHTML = comp.linked_measurement_ids && comp.linked_measurement_ids.length > 0
-                                            ? comp.linked_measurement_ids.map(mId => resolveMeasurementLink(mId)).join(", ")
-                                            : escapeHTML(Router.uiStrings.noLinkedItems);
+            const linkedMeasurementsHTML = comp.linked_measurement_ids && comp.linked_measurement_ids.length > 0
+                ? comp.linked_measurement_ids.map(mId => resolveMeasurementLink(mId)).join(", ")
+                : escapeHTML(Router.uiStrings.noLinkedItems);
 
-                                        const componentLabel = I18n.translate("label.component_with_name", { name: "" }).replace(" :", "").replace(":", "").trim();
-                                        const compName = I18n.localize({ es: comp.name_es, en: comp.name_en });
-                                        const altCompName = I18n.localize({ es: comp.name_en, en: comp.name_es });
+            const componentLabel = I18n.translate("label.component_with_name", { name: "" }).replace(" :", "").replace(":", "").trim();
+            const compName = I18n.localize({ es: comp.name_es, en: comp.name_en });
+            const altCompName = I18n.localize({ es: comp.name_en, en: comp.name_es });
 
-                                        return `
+            return `
                                             <details class="content-accordion card clinical-card">
                                                 <summary class="content-accordion-summary">
                                                     <span class="content-accordion-title">${escapeHTML(componentLabel)} ${escapeHTML(compName)}</span>
@@ -1809,7 +1812,7 @@ const Router = {
                                                 </div>
                                             </details>
                                         `;
-                                    }).join("")}
+        }).join("")}
 
                                     <details class="content-accordion card clinical-card">
                                         <summary class="content-accordion-summary">
@@ -1884,70 +1887,91 @@ const Router = {
     },
 
     initializeProtocolTabs(protocolId) {
-        const tabButtons = document.querySelectorAll('[role="tab"]');
-        const tabPanels = document.querySelectorAll('[role="tabpanel"]');
+        const tabButtons = Array.from(
+            document.querySelectorAll(".protocol-tab-button")
+        );
 
-        const selectTab = (index) => {
-            tabButtons.forEach((btn, i) => {
-                const isSelected = i === index;
-                btn.setAttribute("aria-selected", isSelected ? "true" : "false");
-                btn.setAttribute("tabindex", isSelected ? "0" : "-1");
-                if (isSelected) {
-                    btn.classList.add("active");
-                    btn.style.borderBottom = "2px solid var(--primary-medium)";
-                    // Save to sessionStorage
-                    Storage.setSessionState(`pocus-protocol-tab-${protocolId}`, btn.id);
-                } else {
-                    btn.classList.remove("active");
-                    btn.style.borderBottom = "2px solid transparent";
-                }
+        const selectTab = (selectedButton, saveState = true) => {
+            if (!selectedButton) return;
+
+            const selectedPanelId =
+                selectedButton.getAttribute("aria-controls");
+
+            tabButtons.forEach((button) => {
+                const isSelected = button === selectedButton;
+
+                button.setAttribute(
+                    "aria-selected",
+                    isSelected ? "true" : "false"
+                );
+
+                button.setAttribute(
+                    "tabindex",
+                    isSelected ? "0" : "-1"
+                );
+
+                button.classList.toggle("active", isSelected);
+
+                button.style.borderBottom = isSelected
+                    ? "2px solid var(--primary-medium)"
+                    : "2px solid transparent";
             });
 
-            tabPanels.forEach((panel, i) => {
-                const isSelected = i === index;
-                if (isSelected) {
-                    panel.removeAttribute("hidden");
-                } else {
-                    panel.setAttribute("hidden", "true");
-                }
-            });
+            document
+                .querySelectorAll(".protocol-tab-panel")
+                .forEach((panel) => {
+                    const isSelected = panel.id === selectedPanelId;
+
+                    if (isSelected) {
+                        panel.removeAttribute("hidden");
+                    } else {
+                        panel.setAttribute("hidden", "");
+                    }
+                });
+
+            if (saveState) {
+                Storage.setSessionState(
+                    `pocus-protocol-tab-${protocolId}`,
+                    selectedButton.id
+                );
+            }
         };
 
-        tabButtons.forEach((btn, index) => {
-            btn.addEventListener("click", () => selectTab(index));
+        tabButtons.forEach((button, index) => {
+            button.addEventListener("click", () => {
+                selectTab(button);
+            });
 
-            btn.addEventListener("keydown", (e) => {
+            button.addEventListener("keydown", (event) => {
                 let nextIndex = index;
-                if (e.key === "ArrowRight") {
+
+                if (event.key === "ArrowRight") {
                     nextIndex = (index + 1) % tabButtons.length;
-                    e.preventDefault();
-                    selectTab(nextIndex);
-                    tabButtons[nextIndex].focus();
-                } else if (e.key === "ArrowLeft") {
-                    nextIndex = (index - 1 + tabButtons.length) % tabButtons.length;
-                    e.preventDefault();
-                    selectTab(nextIndex);
-                    tabButtons[nextIndex].focus();
-                } else if (e.key === "Home") {
-                    e.preventDefault();
-                    selectTab(0);
-                    tabButtons[0].focus();
-                } else if (e.key === "End") {
-                    e.preventDefault();
-                    selectTab(tabButtons.length - 1);
-                    tabButtons[tabButtons.length - 1].focus();
+                } else if (event.key === "ArrowLeft") {
+                    nextIndex =
+                        (index - 1 + tabButtons.length) %
+                        tabButtons.length;
+                } else if (event.key === "Home") {
+                    nextIndex = 0;
+                } else if (event.key === "End") {
+                    nextIndex = tabButtons.length - 1;
+                } else {
+                    return;
                 }
+
+                event.preventDefault();
+
+                const nextButton = tabButtons[nextIndex];
+                selectTab(nextButton);
+                nextButton.focus();
             });
         });
 
-        // Restaurar pestaña activa de sessionStorage
-        const storedTabId = Storage.getSessionState(`pocus-protocol-tab-${protocolId}`);
-        if (storedTabId) {
-            const storedIndex = Array.from(tabButtons).findIndex(btn => btn.id === storedTabId);
-            if (storedIndex !== -1) {
-                selectTab(storedIndex);
-            }
-        }
+        // Abrir siempre Resumen rápido al entrar al protocolo.
+        const quickTab =
+            document.getElementById("protocol-quick-tab");
+
+        selectTab(quickTab || tabButtons[0], false);
     },
 
     initializeProtocolStepper(protocolId, steps) {
