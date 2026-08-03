@@ -2514,6 +2514,7 @@ const Router = {
                         <tbody>
             `;
             c.items.forEach(item => {
+                const rangeLoc = I18n.localize(item.range);
                 const paramLoc = I18n.localize(item.parameter);
                 const catLoc = I18n.localize(item.category);
                 const thresholdLoc = I18n.localize(item.threshold);
@@ -2521,7 +2522,7 @@ const Router = {
 
                 html += `
                     <tr>
-                        <td><strong>${escapeHTML(item.range || paramLoc)}</strong></td>
+                        <td><strong>${escapeHTML(rangeLoc || paramLoc)}</strong></td>
                         <td>${escapeHTML(catLoc || thresholdLoc)}</td>
                         ${item.method ? `<td>${escapeHTML(methodLoc)}</td>` : ""}
                     </tr>

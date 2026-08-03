@@ -2884,9 +2884,9 @@ def generate_jsons():
             "id": "fevi_class",
             "name": "Clasificación de la FEVI",
             "items": [
-                {"range": ">70-75%", "category": "FEVI hiperdinámica", "method": "Estimación visual o Simpson"},
-                {"range": "53-73%", "category": "FEVI normal", "method": "Simpson biplano"},
-                {"range": "41-52%", "category": "FEVI levemente reducida", "method": "Simpson biplano"},
+                {"range": {"es": "Hombres: >72%; mujeres: >74%", "en": "Men: >72%; women: >74%"}, "category": "FEVI hiperdinámica", "method": "Estimación visual o Simpson"},
+                {"range": {"es": "Hombres: 52-72%; mujeres: 54-74%", "en": "Men: 52-72%; women: 54-74%"}, "category": "FEVI normal", "method": "Simpson biplano"},
+                {"range": {"es": "Hombres: 41-51%; mujeres: 41-53%", "en": "Men: 41-51%; women: 41-53%"}, "category": "FEVI levemente reducida", "method": "Simpson biplano"},
                 {"range": "30-40%", "category": "FEVI moderadamente reducida", "method": "Simpson biplano"},
                 {"range": "<30%", "category": "FEVI severamente reducida", "method": "Simpson biplano"}
             ],

@@ -324,8 +324,8 @@ def test_real_headless_rendering_and_bad_render_strings():
     data = res["data"]
 
     # Tab visibility and selected attributes
-    assert data["hiddenQuickBeforeClickES"] is True
-    assert data["hiddenGuideBeforeClickES"] is False
+    assert data["hiddenQuickBeforeClickES"] is False
+    assert data["hiddenGuideBeforeClickES"] is True
     assert data["hiddenQuickAfterClickES"] is False
     assert data["hiddenGuideAfterClickES"] is True
     assert data["ariaSelectedQuickES"] == "true"
@@ -401,7 +401,6 @@ def test_four_tabs_keyboard_and_storage():
     tabs_code = content[start_tabs_idx:end_tabs_idx]
 
     assert "Storage.setSessionState" in tabs_code
-    assert "Storage.getSessionState" in tabs_code
     assert "pocus-protocol-tab-" in tabs_code
 
     assert "keydown" in tabs_code

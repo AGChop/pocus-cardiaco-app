@@ -7,7 +7,10 @@
     },
     "items": [
       {
-        "range": ">70-75%",
+        "range": {
+          "es": "Hombres: >72%; mujeres: >74%",
+          "en": "Men: >72%; women: >74%"
+        },
         "category": {
           "es": "FEVI hiperdinámica",
           "en": "Hyperdynamic LVEF"
@@ -18,7 +21,10 @@
         }
       },
       {
-        "range": "53-73%",
+        "range": {
+          "es": "Hombres: 52-72%; mujeres: 54-74%",
+          "en": "Men: 52-72%; women: 54-74%"
+        },
         "category": {
           "es": "FEVI normal",
           "en": "Normal LVEF"
@@ -29,7 +35,10 @@
         }
       },
       {
-        "range": "41-52%",
+        "range": {
+          "es": "Hombres: 41-51%; mujeres: 41-53%",
+          "en": "Men: 41-51%; women: 41-53%"
+        },
         "category": {
           "es": "FEVI levemente reducida",
           "en": "Mildly reduced LVEF"
