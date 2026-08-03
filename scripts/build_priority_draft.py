@@ -307,6 +307,8 @@ REF_MAPPING = {
         "authors": "ASE Task Force, et al.",
         "organization_or_journal": "Journal of the American Society of Echocardiography",
         "year": 2025,
+        "doi": "10.1016/j.echo.2025.03.011",
+        "url": "https://doi.org/10.1016/j.echo.2025.03.011",
         "verification_status": "verified"
     },
     "valvular_regurgitation_2017": {
@@ -321,12 +323,12 @@ REF_MAPPING = {
     },
     "clinical_tamponade_consensus": {
         "id": "clinical_tamponade_consensus",
-        "title": "Echocardiographic assessment of pericardial effusion and cardiac tamponade",
+        "title": "2015 ESC Guidelines for the diagnosis and management of pericardial diseases",
         "authors": "Adler Y, Charron P, Imazio M, et al.",
         "organization_or_journal": "European Heart Journal",
         "year": 2015,
-        "doi": "10.1093/eurheartj/ehv317",
-        "url": "https://doi.org/10.1093/eurheartj/ehv317",
+        "doi": "10.1093/eurheartj/ehv318",
+        "url": "https://doi.org/10.1093/eurheartj/ehv318",
         "verification_status": "verified"
     },
     "spencer_ase_focus_2013": {
@@ -341,10 +343,12 @@ REF_MAPPING = {
     },
     "kirkpatrick_ase_nomenclature_2024": {
         "id": "kirkpatrick_ase_nomenclature_2024",
-        "title": "Guidelines for Cardiac Point-of-Care Ultrasound Nomenclature: Recommendations from the American Society of Echocardiography",
+        "title": "Recommendations for Cardiac Point-of-Care Ultrasound Nomenclature",
         "authors": "Kirkpatrick JN, et al.",
         "organization_or_journal": "Journal of the American Society of Echocardiography",
         "year": 2024,
+        "doi": "10.1016/j.echo.2024.05.001",
+        "url": "https://doi.org/10.1016/j.echo.2024.05.001",
         "verification_status": "verified"
     }
 }
