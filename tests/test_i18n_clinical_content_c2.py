@@ -84,6 +84,14 @@ def test_classifications_json_validity_and_bilingual():
                 else:
                     assert isinstance(p, str)
 
+            if "range" in subitem:
+                r = subitem["range"]
+                if isinstance(r, dict):
+                    assert "es" in r
+                    assert "en" in r
+                else:
+                    assert isinstance(r, str)
+
             if "category" in subitem:
                 cat = subitem["category"]
                 assert isinstance(cat, dict)
