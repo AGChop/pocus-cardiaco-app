@@ -746,6 +746,7 @@ body.dark-mode .measurement-accordion-content {
 .measurement-header-content {
     display: flex;
     justify-content: flex-end;
+    gap: 0.5rem;
     margin-bottom: 0.25rem;
 }
 
@@ -2182,4 +2183,64 @@ body.dark-mode #protocol-full-panel.reader-active .content-accordion-body {
     .protocol-quick-sequence-item:not(:last-child)::after {
         transition: none !important;
     }
+}
+
+/* Prioridad clínica de las mediciones */
+.priority-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.2rem 0.5rem;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.priority-tier-1 {
+    background-color: #dcfce7;
+    border-color: #86efac;
+    color: #166534;
+}
+
+.priority-tier-2 {
+    background-color: #dbeafe;
+    border-color: #93c5fd;
+    color: #1e40af;
+}
+
+.priority-tier-3 {
+    background-color: #fef3c7;
+    border-color: #fcd34d;
+    color: #92400e;
+}
+
+.priority-tier-4 {
+    background-color: #f3e8ff;
+    border-color: #d8b4fe;
+    color: #6b21a8;
+}
+
+body.dark-mode .priority-tier-1 {
+    background-color: #14532d;
+    border-color: #22c55e;
+    color: #dcfce7;
+}
+
+body.dark-mode .priority-tier-2 {
+    background-color: #1e3a8a;
+    border-color: #3b82f6;
+    color: #dbeafe;
+}
+
+body.dark-mode .priority-tier-3 {
+    background-color: #78350f;
+    border-color: #f59e0b;
+    color: #fef3c7;
+}
+
+body.dark-mode .priority-tier-4 {
+    background-color: #581c87;
+    border-color: #a855f7;
+    color: #f3e8ff;
 }

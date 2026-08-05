@@ -495,6 +495,8 @@ const Router = {
             const normalValuesLoc = I18n.localize(item.normal_values);
             const limitationsLoc = I18n.localize(item.interpretation_limitations);
             const unitsLoc = I18n.localize(item.units);
+            const priorityTier = Number(item.priority_tier) || 99;
+            const priorityLabel = item.priority_label || "Sin priorizar";
 
             const copyData =
                 `${I18n.translate("label.measurement")}: ${measurementLoc}\n` +
@@ -516,6 +518,7 @@ const Router = {
                     </summary>
                     <div class="measurement-accordion-content">
                         <div class="measurement-header-content">
+                            <span class="priority-badge priority-tier-${priorityTier}">${escapeHTML(priorityLabel)}</span>
                             <span class="unit-badge">${escapeHTML(unitsLoc)}</span>
                         </div>
                         <p><strong>${labelFormulaMethod}:</strong> ${escapeHTML(formulaLoc)}</p>
@@ -641,6 +644,8 @@ const Router = {
         const normalValuesLoc = I18n.localize(item.normal_values);
         const limitationsLoc = I18n.localize(item.interpretation_limitations);
         const unitsLoc = I18n.localize(item.units);
+        const priorityTier = Number(item.priority_tier) || 99;
+        const priorityLabel = item.priority_label || "Sin priorizar";
         const primaryWindowLoc = I18n.localize(item.primary_window);
         const preferredViewLoc = I18n.localize(item.preferred_view);
         const modalityLoc = I18n.localize(item.modality);
@@ -770,6 +775,9 @@ const Router = {
             </div>
 
             <div class="card clinical-detail-card">
+                <div class="measurement-header-content">
+                    <span class="priority-badge priority-tier-${priorityTier}">${escapeHTML(priorityLabel)}</span>
+                </div>
                 <div class="card-section">
                     <span class="detail-label">${labelMethod}</span>
                     <p class="detail-text">${escapeHTML(formulaLoc)}</p>
