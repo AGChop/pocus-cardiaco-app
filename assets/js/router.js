@@ -396,6 +396,16 @@ const Router = {
                 <a href="#/" class="btn-back">← ${I18n.translate("nav.home")}</a>
                 <h2>${I18n.translate("nav.measurements")}</h2>
             </div>
+            <aside class="priority-legend" aria-labelledby="priority-legend-title">
+                <h3 id="priority-legend-title">${I18n.translate("measurements.priority_legend_title")}</h3>
+                <p>${I18n.translate("measurements.priority_legend_intro")}</p>
+                <ul>
+                    <li>${I18n.translate("measurements.priority_basic")}</li>
+                    <li>${I18n.translate("measurements.priority_extended")}</li>
+                    <li>${I18n.translate("measurements.priority_advanced")}</li>
+                    <li>${I18n.translate("measurements.priority_reference")}</li>
+                </ul>
+            </aside>
             <div class="sections-list">
         `;
 

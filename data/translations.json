@@ -1,7 +1,10 @@
 {
   "schema_version": "1.0",
   "default_language": "es",
-  "supported_languages": ["es", "en"],
+  "supported_languages": [
+    "es",
+    "en"
+  ],
   "translations": {
     "app.document_title": {
       "es": "LOCUS POCUS - Glosario y Mediciones",
@@ -942,6 +945,30 @@
     "label.reader_reset": {
       "es": "Restablecer",
       "en": "Reset"
+    },
+    "measurements.priority_legend_title": {
+      "es": "Guía de niveles",
+      "en": "Level guide"
+    },
+    "measurements.priority_legend_intro": {
+      "es": "Los niveles describen el alcance y la complejidad de la evaluación, no la gravedad del paciente.",
+      "en": "Levels describe the scope and complexity of the assessment, not the severity of the patient's condition."
+    },
+    "measurements.priority_basic": {
+      "es": "POCUS básico: evaluación rápida y principalmente cualitativa.",
+      "en": "Basic POCUS: rapid and mainly qualitative assessment."
+    },
+    "measurements.priority_extended": {
+      "es": "POCUS extendido: evaluación más completa o cuantitativa.",
+      "en": "Extended POCUS: more comprehensive or quantitative assessment."
+    },
+    "measurements.priority_advanced": {
+      "es": "Ecocardiografía avanzada: requiere mayor entrenamiento y metodología formal.",
+      "en": "Advanced echocardiography: requires additional training and formal methodology."
+    },
+    "measurements.priority_reference": {
+      "es": "Referencia: medición especializada o de consulta.",
+      "en": "Reference: specialized measurement or consultation."
     }
   }
 }
