@@ -557,6 +557,56 @@ footer {
 }
 
 /* Secciones del Banco */
+.priority-legend {
+    margin-bottom: 1rem;
+    padding: 1.25rem;
+    background-color: var(--card-bg-light);
+    border: 1px solid var(--border-light);
+    border-radius: 12px;
+}
+
+.priority-legend h3 {
+    margin: 0 0 0.5rem;
+    color: var(--primary-medium);
+    font-size: 1.1rem;
+}
+
+.priority-legend p {
+    margin: 0 0 0.75rem;
+    color: var(--text-muted-light);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.priority-legend ul {
+    margin: 0;
+    padding-left: 1.25rem;
+    display: grid;
+    gap: 0.4rem;
+}
+
+.priority-legend li {
+    color: var(--text-main-light);
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.priority-legend li:nth-child(1)::marker {
+    color: #22c55e;
+}
+
+.priority-legend li:nth-child(2)::marker {
+    color: #3b82f6;
+}
+
+.priority-legend li:nth-child(3)::marker {
+    color: #f59e0b;
+}
+
+.priority-legend li:nth-child(4)::marker {
+    color: #a855f7;
+}
+
 .sections-list {
     display: flex;
     flex-direction: column;

@@ -20,8 +20,8 @@
       "prerequisites": "Basic training in focused echocardiography and general point-of-care ultrasound (POCUS).",
       "sequence_note": "The educational triad (Pump, Tank, and Pipes) does not constitute a mandatory or invariant sequence. The acquisition order should be actively adapted to patient instability, the priority diagnostic concern, the availability of adequate acoustic windows, and the urgency of immediate life-saving interventions.",
       "integration": "RUSH protocol findings must be integrated within the patient's overall clinical context. Specific patterns (e.g., a hyperdynamic LV with IVC collapse and right-sided chamber collapse) may support specific physiologic hypotheses (e.g., hypovolemic or obstructive shock) but do not replace definitive diagnosis by laboratory testing or advanced imaging.",
-      "limitations": "Poor acoustic window quality, subcutaneous emphysema, inability to reposition the patient, and interobserver variability in visual assessment.",
-      "safety_and_workflow_notes": "The examination must not delay resuscitation or other life-saving interventions. When an invasive procedure is required and a validated ultrasound-guided technique is available, real-time ultrasound guidance by trained personnel should be considered whenever feasible and provided that it does not delay an urgent intervention.",
+      "limitations": "Accuracy depends on the acoustic window, operator experience, and clinical context. RUSH does not independently confirm the cause of shock; findings may be nonspecific, coexist, or reflect chronic disease. A negative examination does not exclude pathology, and IVC assessment and limited venous compression ultrasonography have specific limitations.",
+      "safety_and_workflow_notes": "Integrate findings with the history, physical examination, vital signs, and response to treatment. The examination must not delay resuscitation, life-saving interventions, or definitive testing when indicated. Repeat the assessment when the clinical condition changes.",
       "components": {
         "pump": {
           "clinical_questions": [
@@ -41,10 +41,10 @@
             "Subcostal four-chamber (SC4C)"
           ],
           "possible_findings": [
-            "Significant pericardial effusion with RV diastolic collapse or RA systolic collapse (suggestive of cardiac tamponade).",
-            "Hyperdynamic left ventricle with systolic cavity obliteration ('kissing papillary muscles'), suggestive of hypovolemia or vasoplegia.",
-            "Severely hypokinetic or akinetic left ventricle, suggestive of cardiogenic shock.",
-            "Dilated right ventricle (RV/LV ratio >1.0) with septal flattening (paradoxical septal motion) or McConnell sign, suggestive of massive pulmonary embolism or acute right ventricular dysfunction."
+            "Pericardial effusion with RA systolic collapse or RV diastolic collapse, findings that support hemodynamic compromise. Tamponade is a clinical-hemodynamic diagnosis and is not determined solely by effusion size.",
+            "Hyperdynamic LV with systolic cavity obliteration ('kissing papillary muscles'), a pattern compatible with reduced filling or vasodilation in the appropriate context, but not diagnostic by itself of hypovolemia or vasoplegia.",
+            "Severely reduced global LV systolic function, a finding that may support a cardiogenic component of shock when consistent with the clinical and hemodynamic assessment.",
+            "Dilated RV (RV/LV ratio >1.0) with septal flattening or McConnell sign, compatible with acute or chronic RV pressure overload. These findings do not diagnose pulmonary embolism in isolation."
           ],
           "interpretation_limits": "An elevated RV/LV ratio in isolation does not diagnose pulmonary embolism (chronicity and pulmonary hypertension must be assessed). The absence of pericardial effusion does not exclude other obstructive etiologies. Apparently preserved or hyperdynamic global LV systolic function does not by itself exclude cardiogenic shock, for example when acute RV dysfunction, acute valvular disease, or a mechanical complication is present. Findings must be integrated with cardiac output, loading conditions, and the clinical context. No single finding should be used in isolation to determine the etiology of shock.",
           "quick_reference": {
@@ -69,11 +69,11 @@
             "FAST abdominal windows (right upper quadrant, left upper quadrant, and pelvis)"
           ],
           "possible_findings": [
-            "Small IVC (<1.5 cm) with complete inspiratory collapse, suggestive of extreme volume depletion.",
-            "Plethoric IVC (>2.1 cm) without inspiratory collapse, compatible with elevated RA pressures (tamponade, pulmonary embolism, RV dysfunction, or fluid overload).",
-            "Absent pleural sliding with A-lines ('lung point'), highly suggestive of pneumothorax.",
-            "Multiple diffuse bilateral B-lines, suggestive of cardiogenic pulmonary edema or ARDS.",
-            "Free intraperitoneal fluid (hepatorenal recess, splenorenal recess, or pelvis) in the setting of trauma or an acute abdomen."
+            "Small and markedly collapsible IVC, a finding that may support low right atrial pressure in the appropriate context; it does not determine volume status or fluid responsiveness by itself.",
+            "During spontaneous breathing, an IVC >2.1 cm with <50% inspiratory collapse suggests elevated right atrial pressure. These thresholds should not be directly applied during mechanical ventilation.",
+            "Absent pleural sliding with an A-line pattern increases suspicion for pneumothorax but has alternative explanations. Identification of a lung point increases specificity.",
+            "Multiple diffuse bilateral B-lines, indicating an interstitial syndrome. By themselves, they do not distinguish cardiogenic pulmonary edema from ARDS or other causes.",
+            "Free intraperitoneal fluid in the hepatorenal recess, splenorenal recess, or pelvis. Ultrasound alone does not determine its nature or cause."
           ],
           "interpretation_limits": "IVC assessment must be integrated with other parameters. IVC diameter and collapsibility in isolation do not accurately define volume status or predict fluid responsiveness in all patients, especially during mechanical ventilation or in the presence of elevated intrathoracic pressures. A small IVC alone does not mandate fluid administration, and a dilated IVC does not independently confirm congestion or tamponade.",
           "quick_reference": {
@@ -95,8 +95,8 @@
             "Transverse view of the femoral and popliteal vessels"
           ],
           "possible_findings": [
-            "Abdominal aortic aneurysm (diameter >3 cm) or the presence of an intimal dissection flap.",
-            "Incomplete compressibility of the femoral or popliteal vein under direct compression, indicative of acute DVT."
+            "Abdominal aorta >3 cm, measured outer wall to outer wall, compatible with an aneurysm; a visible intimal flap is concerning for dissection. A negative POCUS examination does not exclude aortic disease.",
+            "Incomplete compressibility of a deep vein, indicating thrombosis. Limited compression ultrasonography does not by itself establish thrombus age and may miss unexamined segments."
           ],
           "interpretation_limits": "A limited or negative examination does not completely exclude DVT in other venous segments. Inability to visualize the abdominal aorta, for example because of excessive bowel gas, does not exclude an aneurysm. Failure to detect DVT does not rule out an ongoing pulmonary embolism. The RUSH protocol does not replace definitive vascular diagnostic studies, such as CT angiography or comprehensive duplex ultrasonography.",
           "quick_reference": {

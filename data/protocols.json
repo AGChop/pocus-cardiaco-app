@@ -46,7 +46,7 @@
     },
     {
       "id": "ref_atkinson_2016",
-      "citation": "Atkinson P, Bowra J, Milne J, et al. International Federation for Emergency Medicine Consensus Statement: Sonography in hypotension and cardiac arrest (SHoC). Canadian Journal of Emergency Medicine. 2017;19(2):127-138.",
+      "citation": "Atkinson P, Bowra J, Milne J, et al. International Federation for Emergency Medicine Consensus Statement: Sonography in hypotension and cardiac arrest (SHoC). Canadian Journal of Emergency Medicine. 2017;19(6):459-470.",
       "doi": "10.1017/cem.2016.394"
     }
   ],
@@ -81,12 +81,12 @@
         "en": "RUSH protocol findings must be integrated within the patient's overall clinical context. Specific patterns (e.g., a hyperdynamic LV with IVC collapse and right-sided chamber collapse) may support specific physiologic hypotheses (e.g., hypovolemic or obstructive shock) but do not replace definitive diagnosis by laboratory testing or advanced imaging."
       },
       "limitations": {
-        "es": "Calidad de ventana acústica deficiente, enfisema subcutáneo, incapacidad para movilizar al paciente y variabilidad interobservador en la estimación visual.",
-        "en": "Poor acoustic window quality, subcutaneous emphysema, inability to reposition the patient, and interobserver variability in visual assessment."
+        "es": "La precisión depende de la ventana acústica, la experiencia del operador y el contexto clínico. RUSH no confirma por sí solo la etiología del choque; los hallazgos pueden ser inespecíficos, coexistir o reflejar enfermedad crónica. Un examen negativo no excluye patología y la evaluación de la VCI y la ecografía de compresión venosa limitada tienen restricciones propias.",
+        "en": "Accuracy depends on the acoustic window, operator experience, and clinical context. RUSH does not independently confirm the cause of shock; findings may be nonspecific, coexist, or reflect chronic disease. A negative examination does not exclude pathology, and IVC assessment and limited venous compression ultrasonography have specific limitations."
       },
       "safety_and_workflow_notes": {
-        "es": "El examen no debe retrasar la reanimación ni otras intervenciones salvavidas. Cuando sea necesario un procedimiento invasivo para el cual exista una técnica ecoguiada validada, debe considerarse la guía ecográfica en tiempo real por personal capacitado, siempre que sea factible y no retrase una intervención urgente.",
-        "en": "The examination must not delay resuscitation or other life-saving interventions. When an invasive procedure is required and a validated ultrasound-guided technique is available, real-time ultrasound guidance by trained personnel should be considered whenever feasible and provided that it does not delay an urgent intervention."
+        "es": "Integrar los hallazgos con la historia, exploración física, signos vitales y respuesta al tratamiento. El examen no debe retrasar la reanimación, las intervenciones salvavidas ni los estudios definitivos cuando estén indicados. Repetir la evaluación ante cambios clínicos.",
+        "en": "Integrate findings with the history, physical examination, vital signs, and response to treatment. The examination must not delay resuscitation, life-saving interventions, or definitive testing when indicated. Repeat the assessment when the clinical condition changes."
       },
       "reference_ids": [
         "ref_perera_2010",
@@ -165,20 +165,20 @@
           ],
           "possible_findings": [
             {
-              "es": "Derrame pericárdico significativo con colapso diastólico del VD o colapso sistólico de la AD (Sugerente de taponamiento cardiaco).",
-              "en": "Significant pericardial effusion with RV diastolic collapse or RA systolic collapse (suggestive of cardiac tamponade)."
+              "es": "Derrame pericárdico con colapso sistólico de la AD o colapso diastólico del VD, hallazgos que apoyan repercusión hemodinámica. El taponamiento es un diagnóstico clínico-hemodinámico y no se determina únicamente por el tamaño del derrame.",
+              "en": "Pericardial effusion with RA systolic collapse or RV diastolic collapse, findings that support hemodynamic compromise. Tamponade is a clinical-hemodynamic diagnosis and is not determined solely by effusion size."
             },
             {
-              "es": "Ventrículo izquierdo hiperdinámico con colapso de su cavidad en sístole ('kissing papillary muscles'), sugerente de hipovolemia o vasoplejía.",
-              "en": "Hyperdynamic left ventricle with systolic cavity obliteration ('kissing papillary muscles'), suggestive of hypovolemia or vasoplegia."
+              "es": "VI hiperdinámico con obliteración sistólica de la cavidad ('kissing papillary muscles'), patrón compatible con bajo llenado o vasodilatación en el contexto apropiado, pero no diagnóstico por sí solo de hipovolemia ni de vasoplejía.",
+              "en": "Hyperdynamic LV with systolic cavity obliteration ('kissing papillary muscles'), a pattern compatible with reduced filling or vasodilation in the appropriate context, but not diagnostic by itself of hypovolemia or vasoplegia."
             },
             {
-              "es": "Ventrículo izquierdo severamente hipoactivo o acinético, sugerente de choque cardiogénico.",
-              "en": "Severely hypokinetic or akinetic left ventricle, suggestive of cardiogenic shock."
+              "es": "VI con función sistólica global severamente reducida, hallazgo que puede apoyar un componente cardiogénico del choque cuando concuerda con la evaluación clínica y hemodinámica.",
+              "en": "Severely reduced global LV systolic function, a finding that may support a cardiogenic component of shock when consistent with the clinical and hemodynamic assessment."
             },
             {
-              "es": "Ventrículo derecho dilatado (relación VD/VI >1.0) con aplanamiento septal (septo paradójico) o signo de McConnell, sugerente de embolia pulmonar masiva o disfunción aguda de cavidades derechas.",
-              "en": "Dilated right ventricle (RV/LV ratio >1.0) with septal flattening (paradoxical septal motion) or McConnell sign, suggestive of massive pulmonary embolism or acute right ventricular dysfunction."
+              "es": "VD dilatado (relación VD/VI >1,0) con aplanamiento septal o signo de McConnell, compatible con sobrecarga del VD aguda o crónica. Estos hallazgos no diagnostican TEP de forma aislada.",
+              "en": "Dilated RV (RV/LV ratio >1.0) with septal flattening or McConnell sign, compatible with acute or chronic RV pressure overload. These findings do not diagnose pulmonary embolism in isolation."
             }
           ],
           "interpretation_limits": {
@@ -257,24 +257,24 @@
           ],
           "possible_findings": [
             {
-              "es": "VCI pequeña (<1.5 cm) y completamente colapsable, sugerente de depleción extrema de volumen.",
-              "en": "Small IVC (<1.5 cm) with complete inspiratory collapse, suggestive of extreme volume depletion."
+              "es": "VCI pequeña y marcadamente colapsable, hallazgo que puede apoyar presión auricular derecha baja en el contexto apropiado; no determina por sí solo la volemia ni la respuesta a fluidos.",
+              "en": "Small and markedly collapsible IVC, a finding that may support low right atrial pressure in the appropriate context; it does not determine volume status or fluid responsiveness by itself."
             },
             {
-              "es": "VCI pletórica (>2.1 cm) sin colapso inspiratorio, compatible con presiones elevadas en la AD (taponamiento, embolia pulmonar, disfunción VD o sobrecarga hídrica).",
-              "en": "Plethoric IVC (>2.1 cm) without inspiratory collapse, compatible with elevated RA pressures (tamponade, pulmonary embolism, RV dysfunction, or fluid overload)."
+              "es": "En respiración espontánea, VCI >2,1 cm con colapso inspiratorio <50 %, patrón que sugiere presión auricular derecha elevada. Estos umbrales no deben trasladarse directamente a ventilación mecánica.",
+              "en": "During spontaneous breathing, an IVC >2.1 cm with <50% inspiratory collapse suggests elevated right atrial pressure. These thresholds should not be directly applied during mechanical ventilation."
             },
             {
-              "es": "Ausencia de deslizamiento pleural con líneas A ('lung point'), altamente sugestivo de neumotórax.",
-              "en": "Absent pleural sliding with A-lines ('lung point'), highly suggestive of pneumothorax."
+              "es": "Ausencia de deslizamiento pleural con patrón de líneas A, hallazgo que aumenta la sospecha de neumotórax pero tiene diagnósticos diferenciales. La identificación de un punto pulmonar ('lung point') aumenta la especificidad.",
+              "en": "Absent pleural sliding with an A-line pattern increases suspicion for pneumothorax but has alternative explanations. Identification of a lung point increases specificity."
             },
             {
-              "es": "Múltiples líneas B bilaterales y difusas, sugerente de edema pulmonar cardiogénico o SDRA.",
-              "en": "Multiple diffuse bilateral B-lines, suggestive of cardiogenic pulmonary edema or ARDS."
+              "es": "Múltiples líneas B bilaterales y difusas, indicativas de síndrome intersticial. Por sí solas no distinguen edema cardiogénico de SDRA u otras causas.",
+              "en": "Multiple diffuse bilateral B-lines, indicating an interstitial syndrome. By themselves, they do not distinguish cardiogenic pulmonary edema from ARDS or other causes."
             },
             {
-              "es": "Líquido libre intraperitoneal (espacio hepatorrenal, esplenorrenal o pelvis) en contexto de trauma o abdomen agudo.",
-              "en": "Free intraperitoneal fluid (hepatorenal recess, splenorenal recess, or pelvis) in the setting of trauma or an acute abdomen."
+              "es": "Líquido libre intraperitoneal en el espacio hepatorrenal, esplenorrenal o la pelvis. La ecografía no determina por sí sola su naturaleza ni su causa.",
+              "en": "Free intraperitoneal fluid in the hepatorenal recess, splenorenal recess, or pelvis. Ultrasound alone does not determine its nature or cause."
             }
           ],
           "interpretation_limits": {
@@ -334,12 +334,12 @@
           "linked_measurement_ids": [],
           "possible_findings": [
             {
-              "es": "Aneurisma de aorta abdominal (diámetro >3 cm) o presencia de colgajo de disección íntima (flap).",
-              "en": "Abdominal aortic aneurysm (diameter >3 cm) or the presence of an intimal dissection flap."
+              "es": "Aorta abdominal >3 cm, medida de pared externa a pared externa, compatible con aneurisma; un colgajo íntimal visible es preocupante por disección. Un examen POCUS negativo no excluye patología aórtica.",
+              "en": "Abdominal aorta >3 cm, measured outer wall to outer wall, compatible with an aneurysm; a visible intimal flap is concerning for dissection. A negative POCUS examination does not exclude aortic disease."
             },
             {
-              "es": "Ausencia de colapsabilidad completa de la vena femoral o poplítea bajo compresión directa, indicativo de TVP aguda.",
-              "en": "Incomplete compressibility of the femoral or popliteal vein under direct compression, indicative of acute DVT."
+              "es": "Falta de compresibilidad completa de una vena profunda, indicativa de trombosis. La ecografía de compresión limitada no establece por sí sola la antigüedad del trombo y puede omitir segmentos no examinados.",
+              "en": "Incomplete compressibility of a deep vein, indicating thrombosis. Limited compression ultrasonography does not by itself establish thrombus age and may miss unexamined segments."
             }
           ],
           "interpretation_limits": {

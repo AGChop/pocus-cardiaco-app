@@ -51,7 +51,7 @@ def main():
             },
             {
                 "id": "ref_atkinson_2016",
-                "citation": "Atkinson P, Bowra J, Milne J, et al. International Federation for Emergency Medicine Consensus Statement: Sonography in hypotension and cardiac arrest (SHoC). Canadian Journal of Emergency Medicine. 2017;19(2):127-138.",
+                "citation": "Atkinson P, Bowra J, Milne J, et al. International Federation for Emergency Medicine Consensus Statement: Sonography in hypotension and cardiac arrest (SHoC). Canadian Journal of Emergency Medicine. 2017;19(6):459-470.",
                 "doi": "10.1017/cem.2016.394"
             }
         ],
@@ -67,8 +67,8 @@ def main():
                 "prerequisites": "Formación básica en ecocardiografía enfocada y ecografía general en el punto de atención (POCUS).",
                 "sequence_note": "La tríada didáctica (Bomba, Tanque y Tuberías) no constituye una secuencia obligatoria e invariable. El orden de adquisición debe adaptarse activamente a la inestabilidad del paciente, la sospecha diagnóstica prioritaria, la presencia de ventanas ecográficas viables y la urgencia de intervenciones salvavidas inmediatas.",
                 "integration": "Los hallazgos del protocolo RUSH deben integrarse en el contexto clínico general del paciente. Patrones específicos (ej. hipercontractilidad del VI con colapso de VCI y colapso de cavidades derechas) apoyan hipótesis fisiológicas específicas (ej. shock hipovolémico u obstructivo) pero no sustituyen el diagnóstico definitivo de laboratorio o imagen avanzada.",
-                "limitations": "Calidad de ventana acústica deficiente, enfisema subcutáneo, incapacidad para movilizar al paciente y variabilidad interobservador en la estimación visual.",
-                "safety_and_workflow_notes": "El examen no debe retrasar la reanimación ni otras intervenciones salvavidas. Cuando sea necesario un procedimiento invasivo para el cual exista una técnica ecoguiada validada, debe considerarse la guía ecográfica en tiempo real por personal capacitado, siempre que sea factible y no retrase una intervención urgente.",
+                "limitations": "La precisión depende de la ventana acústica, la experiencia del operador y el contexto clínico. RUSH no confirma por sí solo la etiología del choque; los hallazgos pueden ser inespecíficos, coexistir o reflejar enfermedad crónica. Un examen negativo no excluye patología y la evaluación de la VCI y la ecografía de compresión venosa limitada tienen restricciones propias.",
+                "safety_and_workflow_notes": "Integrar los hallazgos con la historia, exploración física, signos vitales y respuesta al tratamiento. El examen no debe retrasar la reanimación, las intervenciones salvavidas ni los estudios definitivos cuando estén indicados. Repetir la evaluación ante cambios clínicos.",
                 "reference_ids": ["ref_perera_2010", "ref_seif_2012", "ref_atkinson_2016"],
                 "review_status": "pending-clinical-review",
                 "components": [
@@ -111,10 +111,10 @@ def main():
                             "colapso_vd_meas"
                         ],
                         "possible_findings": [
-                            "Derrame pericárdico significativo con colapso diastólico del VD o colapso sistólico de la AD (Sugerente de taponamiento cardiaco).",
-                            "Ventrículo izquierdo hiperdinámico con colapso de su cavidad en sístole ('kissing papillary muscles'), sugerente de hipovolemia o vasoplejía.",
-                            "Ventrículo izquierdo severamente hipoactivo o acinético, sugerente de choque cardiogénico.",
-                            "Ventrículo derecho dilatado (relación VD/VI >1.0) con aplanamiento septal (septo paradójico) o signo de McConnell, sugerente de embolia pulmonar masiva o disfunción aguda de cavidades derechas."
+                            "Derrame pericárdico con colapso sistólico de la AD o colapso diastólico del VD, hallazgos que apoyan repercusión hemodinámica. El taponamiento es un diagnóstico clínico-hemodinámico y no se determina únicamente por el tamaño del derrame.",
+                            "VI hiperdinámico con obliteración sistólica de la cavidad ('kissing papillary muscles'), patrón compatible con bajo llenado o vasodilatación en el contexto apropiado, pero no diagnóstico por sí solo de hipovolemia ni de vasoplejía.",
+                            "VI con función sistólica global severamente reducida, hallazgo que puede apoyar un componente cardiogénico del choque cuando concuerda con la evaluación clínica y hemodinámica.",
+                            "VD dilatado (relación VD/VI >1,0) con aplanamiento septal o signo de McConnell, compatible con sobrecarga del VD aguda o crónica. Estos hallazgos no diagnostican TEP de forma aislada."
                         ],
                         "interpretation_limits": "Una relación VD/VI elevada de forma aislada no diagnostica embolia pulmonar (debe evaluarse cronicidad e hipertensión pulmonar). La ausencia de derrame pericárdico no excluye otras etiologías obstructivas. Una función sistólica global del ventrículo izquierdo aparentemente preservada o hiperdinámica no excluye por sí sola un choque cardiogénico, por ejemplo cuando existe disfunción aguda del ventrículo derecho, enfermedad valvular aguda o una complicación mecánica. Debe integrarse con el gasto cardiaco, las condiciones de carga y el contexto clínico. Un solo hallazgo no debe utilizarse de forma aislada para determinar la etiología del choque.",
                         "reference_ids": ["ref_perera_2010", "ref_seif_2012"],
@@ -152,11 +152,11 @@ def main():
                             "vci_pletorica_meas"
                         ],
                         "possible_findings": [
-                            "VCI pequeña (<1.5 cm) y completamente colapsable, sugerente de depleción extrema de volumen.",
-                            "VCI pletórica (>2.1 cm) sin colapso inspiratorio, compatible con presiones elevadas en la AD (taponamiento, embolia pulmonar, disfunción VD o sobrecarga hídrica).",
-                            "Ausencia de deslizamiento pleural con líneas A ('lung point'), altamente sugestivo de neumotórax.",
-                            "Múltiples líneas B bilaterales y difusas, sugerente de edema pulmonar cardiogénico o SDRA.",
-                            "Líquido libre intraperitoneal (espacio hepatorrenal, esplenorrenal o pelvis) en contexto de trauma o abdomen agudo."
+                            "VCI pequeña y marcadamente colapsable, hallazgo que puede apoyar presión auricular derecha baja en el contexto apropiado; no determina por sí solo la volemia ni la respuesta a fluidos.",
+                            "En respiración espontánea, VCI >2,1 cm con colapso inspiratorio <50 %, patrón que sugiere presión auricular derecha elevada. Estos umbrales no deben trasladarse directamente a ventilación mecánica.",
+                            "Ausencia de deslizamiento pleural con patrón de líneas A, hallazgo que aumenta la sospecha de neumotórax pero tiene diagnósticos diferenciales. La identificación de un punto pulmonar ('lung point') aumenta la especificidad.",
+                            "Múltiples líneas B bilaterales y difusas, indicativas de síndrome intersticial. Por sí solas no distinguen edema cardiogénico de SDRA u otras causas.",
+                            "Líquido libre intraperitoneal en el espacio hepatorrenal, esplenorrenal o la pelvis. La ecografía no determina por sí sola su naturaleza ni su causa."
                         ],
                         "interpretation_limits": "La evaluación de la VCI debe integrarse con otros parámetros. El diámetro y la colapsabilidad aislados no definen con precisión la volemia ni predicen la respuesta a fluidos en todos los pacientes (especialmente bajo ventilación mecánica o en presencia de presiones intratorácicas elevadas). Una VCI pequeña no obliga por sí sola a infundir líquidos, y una VCI dilatada no confirma congestión o taponamiento de forma aislada.",
                         "reference_ids": ["ref_perera_2010", "ref_seif_2012"],
@@ -184,8 +184,8 @@ def main():
                         "linked_window_ids": [],
                         "linked_measurement_ids": [],
                         "possible_findings": [
-                            "Aneurisma de aorta abdominal (diámetro >3 cm) o presencia de colgajo de disección íntima (flap).",
-                            "Ausencia de colapsabilidad completa de la vena femoral o poplítea bajo compresión directa, indicativo de TVP aguda."
+                            "Aorta abdominal >3 cm, medida de pared externa a pared externa, compatible con aneurisma; un colgajo íntimal visible es preocupante por disección. Un examen POCUS negativo no excluye patología aórtica.",
+                            "Falta de compresibilidad completa de una vena profunda, indicativa de trombosis. La ecografía de compresión limitada no establece por sí sola la antigüedad del trombo y puede omitir segmentos no examinados."
                         ],
                         "interpretation_limits": "Una evaluación limitada o negativa no excluye por completo la existencia de TVP en otros segmentos venosos. La imposibilidad de visualizar la aorta abdominal (por ejemplo, debido a gas intestinal excesivo) no excluye la presencia de un aneurisma. La ausencia de TVP detectada no descarta una embolia pulmonar en curso. El protocolo RUSH no sustituye a los estudios diagnósticos vasculares definitivos (como angiotomografía o ecografía dúplex completa).",
                         "reference_ids": ["ref_perera_2010", "ref_seif_2012"],
