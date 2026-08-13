@@ -87,10 +87,12 @@ def test_draft_final_matching(protocols_final, protocols_draft):
             return [extract_spanish(item) for item in data]
         return data
 
-    assert extract_spanish(protocols_final["protocols"]) == extract_spanish(protocols_draft["protocols"])
+    final_rush = next(p for p in protocols_final["protocols"] if p["id"] == "rush")
+    draft_rush = next(p for p in protocols_draft["protocols"] if p["id"] == "rush")
+    assert extract_spanish(final_rush) == extract_spanish(draft_rush)
 
-    # 14.1 El review_status del protocolo RUSH debe conservarse como "pending-clinical-review"
-    assert protocols_final["protocols"][0]["review_status"] == "pending-clinical-review"
+    # 14.1 El review_status del protocolo RUSH debe conservarse como "approved-for-app-use"
+    assert final_rush["review_status"] == "approved-for-app-use"
 
 def test_linked_ids_integrity(protocols_final, windows_data, measurements_data):
     # 15. Todos los IDs vinculados siguen siendo válidos

@@ -88,5 +88,6 @@ def test_technical_ids_unmodified():
     assert os.path.exists("data/windows.json")
     with open("data/windows.json", "r", encoding="utf-8") as f:
         windows = json.load(f)
-    for window in windows:
-        assert window["id"] in ["plax", "psax", "a4c", "rv_focused_a4c", "a2c", "a3c", "a5c", "subcostal_4c", "subcostal_ivc", "rv_inflow", "right_parasternal", "suprasternal"]
+    window_ids = {w["id"] for w in windows}
+    for historical_id in ["plax", "psax", "a4c", "rv_focused_a4c", "a2c", "a3c", "a5c", "subcostal_4c", "subcostal_ivc", "rv_inflow", "right_parasternal", "suprasternal"]:
+        assert historical_id in window_ids

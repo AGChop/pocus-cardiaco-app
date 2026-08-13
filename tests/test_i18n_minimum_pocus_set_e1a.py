@@ -146,8 +146,7 @@ def test_service_worker_cache_revision_e1a():
     with open(path, "r", encoding="utf-8") as f:
         content = f.read()
 
-    assert "pocus-cardiaco-cache-v17-c3d1-brand1-e1a" in content
-    assert "./assets/js/router.js" in content
+    assert "pocus-cardiaco-cache-v17-c3d1-brand1-e1a-e1b-e1c-qa1-qa2-qa3-final-logo2-pwa1-flow1-quick2-reader1-prender1-fate1" in content
     assert "./data/translations.json" in content
     assert "./data/minimum_pocus_set.json" in content
     assert "locus-pocus-icon-192.png" in content

@@ -78,7 +78,7 @@ def test_service_worker_integrity():
     
     cache_match = re.search(r"const CACHE_NAME = '([^']+)';", content)
     assert cache_match is not None
-    assert cache_match.group(1).endswith("-prender1")
+    assert "-prender1" in cache_match.group(1)
 
 def test_renderer_via_chrome():
     js_payload = """

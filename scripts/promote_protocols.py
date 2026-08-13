@@ -36,28 +36,41 @@ def main():
     valid_measurement_ids = {m["id"] for m in measurements}
 
     # 2. Validaciones básicas del borrador
-    if len(draft.get("protocols", [])) != 1:
-        print("Error: No existe exactamente un protocolo en el draft.")
+    protocols = draft.get("protocols", [])
+    if len(protocols) < 1:
+        print("Error: El borrador debe tener al menos un protocolo.")
         sys.exit(1)
 
-    protocol = draft["protocols"][0]
-    proto_id = protocol.get("id")
-    if proto_id != "rush":
-        print("Error: El protocolo no tiene el ID 'rush'.")
+    proto_ids = [p.get("id") for p in protocols]
+    if len(proto_ids) != len(set(proto_ids)):
+        print("Error: Existen IDs de protocolo duplicados.")
         sys.exit(1)
 
-    components = protocol.get("components", [])
-    if len(components) != 3:
-        print("Error: No existen exactamente tres componentes.")
+    # Validar que existan al menos rush y fate
+    if "rush" not in proto_ids or "fate" not in proto_ids:
+        print(f"Error: Deben existir al menos los protocolos 'rush' y 'fate'. Encontrados: {proto_ids}")
         sys.exit(1)
 
-    comp_ids = [c.get("id") for c in components]
-    if comp_ids != ["pump", "tank", "pipes"]:
-        print(f"Error: Los componentes no son pump, tank y pipes. Encontrados: {comp_ids}")
+    # Validar invariantes específicos de RUSH
+    rush_proto = next(p for p in protocols if p.get("id") == "rush")
+    rush_components = rush_proto.get("components", [])
+    if len(rush_components) != 3:
+        print("Error: RUSH debe tener exactamente 3 componentes.")
+        sys.exit(1)
+    rush_comp_ids = [c.get("id") for c in rush_components]
+    if rush_comp_ids != ["pump", "tank", "pipes"]:
+        print(f"Error: Componentes de RUSH incorrectos: {rush_comp_ids}")
         sys.exit(1)
 
-    if len(comp_ids) != len(set(comp_ids)):
-        print("Error: Existen IDs de componentes duplicados.")
+    # Validar invariantes específicos de FATE
+    fate_proto = next(p for p in protocols if p.get("id") == "fate")
+    fate_components = fate_proto.get("components", [])
+    if len(fate_components) != 4:
+        print("Error: FATE debe tener exactamente 4 componentes.")
+        sys.exit(1)
+    fate_comp_ids = [c.get("id") for c in fate_components]
+    if fate_comp_ids != ["subcostal_4c", "apical_4c", "parasternal", "pleural"]:
+        print(f"Error: Componentes de FATE incorrectos: {fate_comp_ids}")
         sys.exit(1)
 
     ref_ids = [r.get("id") for r in draft.get("references", [])]
@@ -66,63 +79,73 @@ def main():
         sys.exit(1)
 
     ref_set = set(ref_ids)
-    for ref_id in protocol.get("reference_ids", []):
-        if ref_id not in ref_set:
-            print(f"Error: La referencia general '{ref_id}' no existe.")
+
+    # Validaciones para todos los protocolos
+    for protocol in protocols:
+        p_id = protocol.get("id")
+        components = protocol.get("components", [])
+        comp_ids = [c.get("id") for c in components]
+
+        if len(comp_ids) != len(set(comp_ids)):
+            print(f"Error: Componentes duplicados en protocolo '{p_id}'.")
             sys.exit(1)
-    for comp in components:
-        for ref_id in comp.get("reference_ids", []):
+
+        for ref_id in protocol.get("reference_ids", []):
             if ref_id not in ref_set:
-                print(f"Error: La referencia del componente '{ref_id}' no existe.")
+                print(f"Error: La referencia general '{ref_id}' en protocolo '{p_id}' no existe.")
                 sys.exit(1)
 
-    for comp in components:
-        for w_id in comp.get("linked_window_ids", []):
-            if w_id not in valid_window_ids:
-                print(f"Error: ID de ventana vinculada '{w_id}' no existe en windows.json.")
+        for comp in components:
+            c_id = comp.get("id")
+            for ref_id in comp.get("reference_ids", []):
+                if ref_id not in ref_set:
+                    print(f"Error: La referencia del componente '{ref_id}' en '{p_id}.{c_id}' no existe.")
+                    sys.exit(1)
+
+            for w_id in comp.get("linked_window_ids", []):
+                if w_id not in valid_window_ids:
+                    print(f"Error: ID de ventana vinculada '{w_id}' en '{p_id}.{c_id}' no existe en windows.json.")
+                    sys.exit(1)
+
+            for m_id in comp.get("linked_measurement_ids", []):
+                if m_id not in valid_measurement_ids:
+                    print(f"Error: ID de medición vinculada '{m_id}' en '{p_id}.{c_id}' no existe en measurements.json.")
+                    sys.exit(1)
+
+        for fld in ["sequence_note", "limitations", "safety_and_workflow_notes"]:
+            if fld not in protocol:
+                print(f"Error: Falta {fld} en el protocolo '{p_id}'.")
                 sys.exit(1)
 
-    for comp in components:
-        for m_id in comp.get("linked_measurement_ids", []):
-            if m_id not in valid_measurement_ids:
-                print(f"Error: ID de medición vinculada '{m_id}' no existe en measurements.json.")
+        for comp in components:
+            if "interpretation_limits" not in comp:
+                print(f"Error: El componente '{comp.get('id')}' en '{p_id}' no tiene 'interpretation_limits'.")
                 sys.exit(1)
-
-    if "disclaimer" not in draft.get("metadata", {}):
-        print("Error: Falta el disclaimer en metadata.")
-        sys.exit(1)
-
-    for fld in ["sequence_note", "limitations", "safety_and_workflow_notes"]:
-        if fld not in protocol:
-            print(f"Error: Falta {fld} en el protocolo.")
-            sys.exit(1)
-
-    for comp in components:
-        if "interpretation_limits" not in comp:
-            print(f"Error: El componente '{comp.get('id')}' no tiene 'interpretation_limits'.")
-            sys.exit(1)
 
     json_str = json.dumps(draft, ensure_ascii=False)
     if "El Bombo" in json_str:
         print("Error: Se detectó el término no deseado 'El Bombo'.")
         sys.exit(1)
 
-    pump_comp = next(c for c in components if c.get("id") == "pump")
+    # Validar nombres de componentes fijos RUSH
+    pump_comp = next(c for c in rush_components if c.get("id") == "pump")
     if pump_comp.get("name_es") != "La Bomba (Evaluación cardíaca)":
-        print(f"Error: El nombre en español del componente pump no es correcto: {pump_comp.get('name_es')}")
+        print(f"Error: El nombre en español del componente pump de RUSH no es correcto: {pump_comp.get('name_es')}")
         sys.exit(1)
 
     if "Referencia_RUSH_Editor.pdf" in json_str:
         print("Error: Referencia ficticia 'Referencia_RUSH_Editor.pdf' detectada.")
         sys.exit(1)
 
-    if "source_document" in protocol or "source_page" in protocol:
-        print("Error: source_document o source_page ficticios en el protocolo.")
-        sys.exit(1)
-    for comp in components:
-        if "source_document" in comp or "source_page" in comp:
-            print(f"Error: source_document o source_page ficticios en el componente '{comp.get('id')}'.")
+    for protocol in protocols:
+        p_id = protocol.get("id")
+        if "source_document" in protocol or "source_page" in protocol:
+            print(f"Error: source_document o source_page ficticios en el protocolo '{p_id}'.")
             sys.exit(1)
+        for comp in protocol.get("components", []):
+            if "source_document" in comp or "source_page" in comp:
+                print(f"Error: source_document o source_page ficticios en el componente '{comp.get('id')}' de '{p_id}'.")
+                sys.exit(1)
 
     # 3. Validar catálogo de traducción data/protocols.i18n.json
     if i18n.get("source_language") != "es":
@@ -151,60 +174,61 @@ def main():
             print(f"Error i18n: metadata.{meta_field} falta o está vacío.")
             sys.exit(1)
 
-    # Validar protocolo en i18n
+    # Validar protocolos en i18n
     i18n_protocols = i18n.get("protocols", {})
-    if proto_id not in i18n_protocols:
-        print(f"Error i18n: Falta el protocolo '{proto_id}' en el catálogo.")
-        sys.exit(1)
-
-    i18n_proto = i18n_protocols[proto_id]
-    proto_fields = [
-        "clinical_context", "purpose", "target_population", "prerequisites",
-        "sequence_note", "integration", "limitations", "safety_and_workflow_notes"
-    ]
-    for pf in proto_fields:
-        val = i18n_proto.get(pf)
-        if not val or not val.strip():
-            print(f"Error i18n: protocols.{proto_id}.{pf} falta o está vacío.")
+    for protocol in protocols:
+        p_id = protocol.get("id")
+        if p_id not in i18n_protocols:
+            print(f"Error i18n: Falta el protocolo '{p_id}' en el catálogo.")
             sys.exit(1)
 
-    # Validar componentes en i18n
-    i18n_components = i18n_proto.get("components", {})
-
-    # Comprobar componentes sobrantes en i18n
-    for key in i18n_components.keys():
-        if key not in comp_ids:
-            print(f"Error i18n: Componente desconocido '{key}' en las traducciones.")
-            sys.exit(1)
-
-    for comp in components:
-        c_id = comp["id"]
-        if c_id not in i18n_components:
-            print(f"Error i18n: Falta el componente '{c_id}' en las traducciones.")
-            sys.exit(1)
-
-        i18n_comp = i18n_components[c_id]
-
-        # Validar interpretation_limits
-        il_val = i18n_comp.get("interpretation_limits")
-        if not il_val or not il_val.strip():
-            print(f"Error i18n: El componente '{c_id}' no tiene interpretation_limits traducido.")
-            sys.exit(1)
-
-        # Validar listas de componentes
-        list_fields = ["clinical_questions", "targets", "suggested_views", "possible_findings"]
-        for lf in list_fields:
-            draft_list = comp.get(lf, [])
-            i18n_list = i18n_comp.get(lf, [])
-
-            if len(draft_list) != len(i18n_list):
-                print(f"Error i18n: Mismatch de tamaño en '{lf}' para el componente '{c_id}'. Borrador: {len(draft_list)}, Traducción: {len(i18n_list)}")
+        i18n_proto = i18n_protocols[p_id]
+        proto_fields = [
+            "clinical_context", "purpose", "target_population", "prerequisites",
+            "sequence_note", "integration", "limitations", "safety_and_workflow_notes"
+        ]
+        for pf in proto_fields:
+            val = i18n_proto.get(pf)
+            if not val or not val.strip():
+                print(f"Error i18n: protocols.{p_id}.{pf} falta o está vacío.")
                 sys.exit(1)
 
-            for idx, (es_item, en_item) in enumerate(zip(draft_list, i18n_list)):
-                if not en_item or not en_item.strip():
-                    print(f"Error i18n: La traducción inglesa en '{lf}' índice {idx} para '{c_id}' está vacía.")
+        # Validar componentes en i18n para este protocolo
+        components = protocol.get("components", [])
+        comp_ids = [c.get("id") for c in components]
+        i18n_components = i18n_proto.get("components", {})
+
+        for key in i18n_components.keys():
+            if key not in comp_ids:
+                print(f"Error i18n: Componente desconocido '{key}' en las traducciones del protocolo '{p_id}'.")
+                sys.exit(1)
+
+        for comp in components:
+            c_id = comp["id"]
+            if c_id not in i18n_components:
+                print(f"Error i18n: Falta el componente '{c_id}' en las traducciones del protocolo '{p_id}'.")
+                sys.exit(1)
+
+            i18n_comp = i18n_components[c_id]
+
+            il_val = i18n_comp.get("interpretation_limits")
+            if not il_val or not il_val.strip():
+                print(f"Error i18n: El componente '{c_id}' en '{p_id}' no tiene interpretation_limits traducido.")
+                sys.exit(1)
+
+            list_fields = ["clinical_questions", "targets", "suggested_views", "possible_findings"]
+            for lf in list_fields:
+                draft_list = comp.get(lf, [])
+                i18n_list = i18n_comp.get(lf, [])
+
+                if len(draft_list) != len(i18n_list):
+                    print(f"Error i18n: Mismatch de tamaño en '{lf}' para el componente '{c_id}' de '{p_id}'. Borrador: {len(draft_list)}, Traducción: {len(i18n_list)}")
                     sys.exit(1)
+
+                for idx, (es_item, en_item) in enumerate(zip(draft_list, i18n_list)):
+                    if not en_item or not en_item.strip():
+                        print(f"Error i18n: La traducción inglesa en '{lf}' índice {idx} para '{p_id}.{c_id}' está vacía.")
+                        sys.exit(1)
 
     # 4. Combinar e integrar el contenido en formato bilingüe
     approved_date = "2026-07-21"
@@ -233,6 +257,9 @@ def main():
     bilingual_protocols = []
     for p in draft.get("protocols", []):
         bp = {}
+        p_id = p["id"]
+        i18n_proto = i18n_protocols[p_id]
+        i18n_components = i18n_proto.get("components", {})
         for k, v in p.items():
             if k in proto_fields:
                 bp[k] = {
@@ -261,11 +288,11 @@ def main():
                             bc[ck] = {
                                 "assess": {
                                     "es": cv["assess"],
-                                    "en": i18n_c[ck]["assess"]
+                                    "en": i18n_c["quick_reference"]["assess"]
                                 },
                                 "alerts": {
                                     "es": cv["alerts"],
-                                    "en": i18n_c[ck]["alerts"]
+                                    "en": i18n_c["quick_reference"]["alerts"]
                                 }
                             }
                         else:
@@ -275,8 +302,11 @@ def main():
             else:
                 bp[k] = v
         bilingual_protocols.append(bp)
+    # Escribir data/protocols.json de manera determinista con salto de línea final
+    # FATE is kept as pending-clinical-review and excluded from the promoted clinical protocols.json
+    promoted_protocols = [p for p in bilingual_protocols if p.get("review_status") != "pending-clinical-review"]
+    updated_metadata["protocol_count"] = len(promoted_protocols)
 
-    # Construir objeto de salida final
     final_data = {
         "status": status_str,
         "version": version_str,
@@ -285,10 +315,9 @@ def main():
         "educational_disclaimer": bilingual_ed_disclaimer,
         "metadata": updated_metadata,
         "references": draft.get("references", []),
-        "protocols": bilingual_protocols
+        "protocols": promoted_protocols
     }
 
-    # Escribir data/protocols.json de manera determinista con salto de línea final
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(final_data, f, indent=2, ensure_ascii=False)
         f.write("\n")

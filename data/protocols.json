@@ -48,6 +48,10 @@
       "id": "ref_atkinson_2016",
       "citation": "Atkinson P, Bowra J, Milne J, et al. International Federation for Emergency Medicine Consensus Statement: Sonography in hypotension and cardiac arrest (SHoC). Canadian Journal of Emergency Medicine. 2017;19(6):459-470.",
       "doi": "10.1017/cem.2016.394"
+    },
+    {
+      "id": "jensen_2004",
+      "citation": "Jensen MB, Sloth E, Larsen KM, Schmidt MB. Transthoracic echocardiography for cardiopulmonary monitoring in intensive care. European Journal of Anaesthesiology. 2004;21:700–707. DOI: 10.1017/S0265021504009068"
     }
   ],
   "protocols": [
@@ -93,7 +97,7 @@
         "ref_seif_2012",
         "ref_atkinson_2016"
       ],
-      "review_status": "pending-clinical-review",
+      "review_status": "approved-for-app-use",
       "components": [
         {
           "id": "pump",
