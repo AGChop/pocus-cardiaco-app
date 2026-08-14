@@ -219,9 +219,9 @@ def test_fate_exclusions_and_clean_state(protocols_draft):
     assert "tomografía" not in fate_str
     assert "toracocentesis" not in fate_str
 
-    # Assert three references exist and are resoluble, and have no source_page
+    # Assert FATE references exist and are resoluble, and have no source_page
     ref_ids = {r["id"] for r in protocols_draft["references"]}
-    for ref_id in ["jensen_2004", "via_2014", "neskovic_2018"]:
+    for ref_id in ["jensen_2004", "via_2014", "neskovic_2018", "volpicelli_2012"]:
         assert ref_id in ref_ids
         ref_obj = next(r for r in protocols_draft["references"] if r["id"] == ref_id)
         assert "source_page" not in ref_obj
@@ -242,9 +242,13 @@ def test_fate_exclusions_and_clean_state(protocols_draft):
         assert "via_2014" not in comp["reference_ids"]
         assert "neskovic_2018" not in comp["reference_ids"]
 
-    # Coherencia biventricular del componente apical
+    # El componente apical evalúa VI y VD por separado.
     apical = next(c for c in fate["components"] if c["id"] == "apical_4c")
-    assert "biventricular" in apical["quick_reference"]["assess"].lower()
+    apical_assess = apical["quick_reference"]["assess"].lower()
+    assert "vi" in apical_assess
+    assert "vd" in apical_assess
+    assert "por separado" in apical_assess
+    assert "biventricular" not in apical_assess
 
     # Parasternal component does not make septal flattening a central alert
     parasternal = next(c for c in fate["components"] if c["id"] == "parasternal")
@@ -290,6 +294,7 @@ def test_fate_exclusions_and_clean_state(protocols_draft):
     assert promoted_ref_ids == rush_ref_ids
     assert "via_2014" not in promoted_ref_ids
     assert "neskovic_2018" not in promoted_ref_ids
+    assert "volpicelli_2012" not in promoted_ref_ids
 
 def test_promotion_script_failures():
     # 18. Verificar que el promotor detecta y falla con errores esperados
@@ -355,10 +360,14 @@ def test_exact_clinical_requirements(protocols_final, protocols_draft, protocols
     # 2. Ausencia del DOI incorrecto
     assert "10.1017/j.echo.2014.05.001" not in via_draft_ref["citation"]
 
-    # 3. Coherencia biventricular del componente apical
+    # 3. Descripción separada de la función del VI y del VD
     fate_draft = next(p for p in protocols_draft["protocols"] if p["id"] == "fate")
     apical_draft = next(c for c in fate_draft["components"] if c["id"] == "apical_4c")
-    assert "biventricular" in apical_draft["quick_reference"]["assess"].lower()
+    apical_assess = apical_draft["quick_reference"]["assess"].lower()
+    assert "vi" in apical_assess
+    assert "vd" in apical_assess
+    assert "por separado" in apical_assess
+    assert "biventricular" not in apical_assess
 
     # 4. Categorías paraesternales separadas
     parasternal_draft = next(c for c in fate_draft["components"] if c["id"] == "parasternal")
@@ -401,30 +410,67 @@ def test_exact_clinical_requirements(protocols_final, protocols_draft, protocols
     assert any(p["id"] == "rush" for p in protocols_final["protocols"])
 
 
-def test_fate_literal_corrections_and_absences(protocols_i18n):
-    # Obtener el objeto de FATE en las traducciones
+def test_fate_scientific_review_blockers_are_resolved(
+    protocols_final, protocols_draft, protocols_i18n
+):
+    fate_draft = next(p for p in protocols_draft["protocols"] if p["id"] == "fate")
     fate_i18n = protocols_i18n["protocols"]["fate"]
-    fate_str = json.dumps(fate_i18n)
+    fate_es = json.dumps(fate_draft, ensure_ascii=False)
+    fate_en = json.dumps(fate_i18n)
 
-    # Pruebas literales para las tres cadenas corregidas:
-    # 1. Qualitative biventricular function assessment without mandatory quantitative measurements.
-    assert "Qualitative biventricular function assessment without mandatory quantitative measurements." in fate_str
+    # FATE remains a draft and cannot leak into the promoted runtime file.
+    assert fate_draft["review_status"] == "pending-clinical-review"
+    assert not any(p["id"] == "fate" for p in protocols_final["protocols"])
 
-    # 2. Marked apparent alteration of relative RV dimensions or apparently reduced global biventricular contractility.
-    assert "Marked apparent alteration of relative RV dimensions or apparently reduced global biventricular contractility." in fate_str
+    # The purpose and apical component describe LV and RV function separately.
+    assert "función sistólica del VI y del VD por separado" in fate_draft["purpose"]
+    assert "LV and RV systolic function separately" in fate_i18n["purpose"]
+    apical_es = next(c for c in fate_draft["components"] if c["id"] == "apical_4c")
+    apical_en = fate_i18n["components"]["apical_4c"]
+    assert "VI" in apical_es["targets"][1]
+    assert "VD" in apical_es["targets"][2]
+    assert "LV" in apical_en["targets"][1]
+    assert "RV" in apical_en["targets"][2]
+    assert "global biventricular" not in json.dumps(apical_en).lower()
+    assert "global biventricular" not in json.dumps(apical_es, ensure_ascii=False).lower()
 
-    # 3. Qualitative classification of each hemithorax as showing findings compatible with pleural fluid, no obvious finding, or an inconclusive study.
-    assert "Qualitative classification of each hemithorax as showing findings compatible with pleural fluid, no obvious finding, or an inconclusive study." in fate_str
+    # Simpson quantification belongs to referral for comprehensive echocardiography.
+    assert "método de Simpson" in apical_es["interpretation_limits"]
+    assert "derivar a ecocardiografía integral" in apical_es["interpretation_limits"]
+    assert "Simpson's method" in apical_en["interpretation_limits"]
+    assert "refer for comprehensive echocardiography" in apical_en["interpretation_limits"]
 
-    # Pruebas para la ausencia, dentro de FATE, de:
-    # - mandatory quantitative thresholds
-    assert "mandatory quantitative thresholds" not in fate_str
+    # The subcostal component avoids binary exclusion and undefined significance.
+    subcostal_es = next(c for c in fate_draft["components"] if c["id"] == "subcostal_4c")
+    subcostal_en = fate_i18n["components"]["subcostal_4c"]
+    assert "Presencia o ausencia" not in json.dumps(subcostal_es, ensure_ascii=False)
+    assert "Presence or absence" not in json.dumps(subcostal_en)
+    assert "derrame pericárdico significativo" not in json.dumps(subcostal_es, ensure_ascii=False).lower()
+    assert "significant pericardial effusion" not in json.dumps(subcostal_en).lower()
+    assert "relevancia hemodinámica" in subcostal_es["quick_reference"]["alerts"]
+    assert "hemodynamic relevance" in subcostal_en["quick_reference"]["alerts"]
 
-    # - Apparent marked alteration
-    assert "Apparent marked alteration" not in fate_str
+    # English terminology and governance requirements are explicit.
+    assert "comprehensive echocardiography" in fate_i18n["integration"]
+    assert "formal echocardiogram" not in fate_i18n["integration"]
+    assert "competencia supervisada" in fate_draft["prerequisites"]
+    assert "supervised competency" in fate_i18n["prerequisites"]
+    for required_es in ["almacenar", "supervisión", "control de calidad"]:
+        assert required_es in fate_draft["safety_and_workflow_notes"]
+    for required_en in ["store images", "supervision", "quality assurance"]:
+        assert required_en in fate_i18n["safety_and_workflow_notes"]
 
-    # - as finding compatible
-    assert "as finding compatible" not in fate_str
+    # The pleural component has a dedicated lung-ultrasound consensus reference.
+    pleural_es = next(c for c in fate_draft["components"] if c["id"] == "pleural")
+    assert "volpicelli_2012" in pleural_es["reference_ids"]
+    volpicelli = next(r for r in protocols_draft["references"] if r["id"] == "volpicelli_2012")
+    assert "10.1007/s00134-012-2513-4" in volpicelli["citation"]
 
-    # - non-conclusive
-    assert "non-conclusive" not in fate_str.lower()
+    # Previously rejected wording remains absent across the complete FATE object.
+    for rejected in [
+        "mandatory quantitative thresholds",
+        "mandatory quantitative measurements",
+        "Apparent marked alteration",
+        "non-conclusive",
+    ]:
+        assert rejected.lower() not in fate_en.lower()

@@ -38,6 +38,10 @@
     {
       "id": "neskovic_2018",
       "citation": "Neskovic AN, Skinner H, Price S, et al. Focus cardiac ultrasound core curriculum and core syllabus of the European Association of Cardiovascular Imaging. European Heart Journal–Cardiovascular Imaging. 2018;19(5):475–481. DOI: 10.1093/ehjci/jey006"
+    },
+    {
+      "id": "volpicelli_2012",
+      "citation": "Volpicelli G, Elbarbary M, Blaivas M, et al. International evidence-based recommendations for point-of-care lung ultrasound. Intensive Care Medicine. 2012;38(4):577–591. DOI: 10.1007/s00134-012-2513-4"
     }
   ],
   "protocols": [
@@ -200,13 +204,13 @@
       "name_en": "FATE Protocol",
       "acronym": "FATE",
       "clinical_context": "Evaluación ecocardiográfica enfocada en el punto de atención para la monitorización cardiopulmonar en cuidados intensivos, anestesia o emergencias.",
-      "purpose": "Evaluar de forma rápida y cualitativa la presencia de patología cardiopulmonar evidente, el tamaño de las cavidades, la función sistólica global del VI, la existencia de derrame pericárdico y líquido pleural.",
+      "purpose": "Evaluar de forma rápida y cualitativa la presencia de patología cardiopulmonar evidente, el tamaño de las cavidades, la función sistólica del VI y del VD por separado, y los hallazgos compatibles con líquido pericárdico o pleural.",
       "target_population": "Pacientes en estado crítico con sospecha de disfunción cardiopulmonar, shock o distrés respiratorio.",
-      "prerequisites": "Formación en ecocardiografía enfocada y ultrasonido pleuropulmonar en el punto de atención (POCUS).",
+      "prerequisites": "Formación documentada en ecocardiografía enfocada y ultrasonido pleuropulmonar en el punto de atención (POCUS), con competencia supervisada acorde con el rol profesional y la normativa local.",
       "sequence_note": "La secuencia de adquisición de vistas debe adaptarse a la ventana acústica del paciente y a la sospecha clínica prioritaria.",
       "integration": "Los hallazgos de FATE deben integrarse con el contexto clínico completo. La presencia de anomalías evidentes apoya decisiones clínicas rápidas pero no sustituye una ecocardiografía integral.",
       "limitations": "El examen está enfocado y es altamente dependiente del operador. Un estudio limitado o no concluyente no equivale a normalidad y no debe retrasar valoraciones expertas o una ecocardiografía integral si están indicadas.",
-      "safety_and_workflow_notes": "Interpretar siempre en el contexto hemodinámico y clínico del paciente. Un estudio técnicamente limitado debe registrarse como tal para no dar una falsa sensación de normalidad.",
+      "safety_and_workflow_notes": "Interpretar siempre en el contexto hemodinámico y clínico del paciente. Documentar la indicación, los hallazgos y las limitaciones; almacenar imágenes o clips conforme a la política local; asegurar supervisión cuando corresponda y participar en revisión periódica y control de calidad. Un estudio técnicamente limitado debe registrarse como tal para no dar una falsa sensación de normalidad.",
       "reference_ids": [
         "jensen_2004",
         "via_2014",
@@ -219,11 +223,11 @@
           "name_es": "Subcostal cuatro cámaras",
           "name_en": "Subcostal four-chamber",
           "clinical_questions": [
-            "¿Existe derrame pericárdico evidente?",
+            "¿Hay hallazgos compatibles con líquido pericárdico?",
             "¿Hay anomalías groseras de tamaño en las cavidades visibles?"
           ],
           "targets": [
-            "Presencia o ausencia de derrame pericárdico.",
+            "Búsqueda de hallazgos compatibles con líquido pericárdico.",
             "Relación cualitativa de tamaño de las cavidades cardiacas y contractilidad global."
           ],
           "suggested_views": [
@@ -234,9 +238,9 @@
           ],
           "linked_measurement_ids": [],
           "possible_findings": [
-            "Sin alteración evidente.",
+            "Sin hallazgo evidente de líquido pericárdico en la ventana examinada.",
             "Alteración aparente de dimensiones o contractilidad global.",
-            "Derrame pericárdico aparente.",
+            "Hallazgos compatibles con líquido pericárdico.",
             "Estudio no concluyente."
           ],
           "interpretation_limits": "Un subcostal técnicamente limitado por gas o hábito constitucional puede ocultar un derrame. La relevancia hemodinámica de un derrame pericárdico aparente exige integración clínica y evaluación adicional.",
@@ -244,8 +248,8 @@
             "jensen_2004"
           ],
           "quick_reference": {
-            "assess": "Derrame pericárdico y relación de tamaño de cavidades desde la ventana subcostal.",
-            "alerts": "Derrame pericárdico significativo."
+            "assess": "Hallazgos compatibles con líquido pericárdico y relación de tamaño de cavidades desde la ventana subcostal.",
+            "alerts": "Líquido pericárdico aparente; valorar su relevancia hemodinámica mediante integración clínica y evaluación adicional."
           }
         },
         {
@@ -254,11 +258,13 @@
           "name_en": "Apical four-chamber",
           "clinical_questions": [
             "¿Las dimensiones o la carga relativa de las cavidades parecen anormales?",
-            "¿La contractilidad global biventricular parece reducida?"
+            "¿La función sistólica global del VI parece reducida?",
+            "¿La función sistólica global del VD parece reducida?"
           ],
           "targets": [
             "Relación cualitativa de tamaño VD/VI (dilatación evidente del VD).",
-            "Estimación cualitativa de la función sistólica global biventricular."
+            "Estimación cualitativa de la función sistólica global del VI.",
+            "Estimación cualitativa de la función sistólica global del VD."
           ],
           "suggested_views": [
             "Apical cuatro cámaras (A4C)"
@@ -269,15 +275,19 @@
           "linked_measurement_ids": [],
           "possible_findings": [
             "Dilatación aparente del VD (relación cualitativa VD/VI aumentada).",
-            "Función sistólica global biventricular aparentemente reducida."
+            "Función sistólica global del VI aparentemente conservada.",
+            "Función sistólica global del VI aparentemente reducida.",
+            "Función sistólica global del VD aparentemente conservada.",
+            "Función sistólica global del VD aparentemente reducida.",
+            "Estudio no concluyente."
           ],
-          "interpretation_limits": "La evaluación visual no sustituye la planimetría ni las mediciones formales como el método de Simpson en caso de discrepancias clínicas. La comparación visual VD/VI no establece por sí sola una etiología. Evaluación cualitativa de la función biventricular sin requerir mediciones cuantitativas obligatorias.",
+          "interpretation_limits": "La comparación visual VD/VI no establece por sí sola una etiología. La función del VI y la del VD deben describirse por separado. Ante discrepancias clínicas o necesidad de cuantificación, incluido el método de Simpson, derivar a ecocardiografía integral.",
           "reference_ids": [
             "jensen_2004"
           ],
           "quick_reference": {
-            "assess": "Relación cualitativa de tamaño VD/VI y contractilidad global biventricular desde la ventana apical.",
-            "alerts": "Alteración marcada aparente de las dimensiones relativas del VD o contractilidad global biventricular aparentemente deprimida."
+            "assess": "Relación cualitativa de tamaño VD/VI y función sistólica cualitativa del VI y del VD por separado desde la ventana apical.",
+            "alerts": "Alteración marcada aparente de las dimensiones relativas del VD o función sistólica aparentemente reducida del VI o del VD."
           }
         },
         {
@@ -343,7 +353,8 @@
           ],
           "interpretation_limits": "Una zona anecoica aislada no establece el diagnóstico de derrame pleural sin localización anatómica y otros hallazgos compatibles. La ausencia de líquido visible no descarta colecciones pequeñas o loculadas. Las limitaciones técnicas reducen la sensibilidad del examen y deben registrarse. Clasificar cada hemitórax como hallazgo compatible, sin hallazgo evidente o no concluyente.",
           "reference_ids": [
-            "jensen_2004"
+            "jensen_2004",
+            "volpicelli_2012"
           ],
           "quick_reference": {
             "assess": "Presencia de hallazgos compatibles con líquido pleural de forma bilateral.",
