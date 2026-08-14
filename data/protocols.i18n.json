@@ -113,7 +113,7 @@
       "prerequisites": "Training in focused echocardiography and pleural ultrasound at the point of care (POCUS).",
       "sequence_note": "The acquisition sequence of views should be adapted to the patient's acoustic window and the priority clinical concern.",
       "integration": "FATE findings must be integrated with the complete clinical context. The presence of obvious abnormalities supports rapid clinical decisions but does not replace a formal echocardiogram.",
-      "limitations": "The examination is focused and highly operator-dependent. A limited or non-conclusive study does not equate to normalcy and must not delay expert assessment or comprehensive echocardiography if indicated.",
+      "limitations": "The examination is focused and highly operator-dependent. A limited or inconclusive study does not equate to normalcy and must not delay expert assessment or comprehensive echocardiography if indicated.",
       "safety_and_workflow_notes": "Always interpret in the patient's clinical and hemodynamic context. A technically limited study must be recorded as such to avoid a false sense of security.",
       "components": {
         "subcostal_4c": {
@@ -132,7 +132,7 @@
             "No obvious alteration.",
             "Apparent alteration of dimensions or global contractility.",
             "Apparent pericardial effusion.",
-            "Non-conclusive study."
+            "Inconclusive study."
           ],
           "interpretation_limits": "A technically limited subcostal view due to bowel gas or body habitus may obscure an effusion. The hemodynamic relevance of an apparent pericardial effusion requires clinical integration and additional evaluation.",
           "quick_reference": {
@@ -143,46 +143,48 @@
         "apical_4c": {
           "clinical_questions": [
             "Do chamber dimensions or relative loading appear abnormal?",
-            "Does global contractility appear reduced?"
+            "Does global biventricular contractility appear reduced?"
           ],
           "targets": [
             "Qualitative RV/LV size ratio (obvious RV dilation).",
-            "Qualitative estimation of global left ventricular systolic function."
+            "Qualitative estimation of global biventricular systolic function."
           ],
           "suggested_views": [
             "Apical four-chamber (A4C)"
           ],
           "possible_findings": [
             "Apparent RV dilation (increased qualitative RV/LV ratio).",
-            "Apparently reduced global LV systolic function."
+            "Apparently reduced global biventricular systolic function."
           ],
-          "interpretation_limits": "Visual assessment does not replace planimetry or formal measurements like Simpson's method in case of clinical discrepancies. Visual RV/LV comparison does not establish etiology by itself.",
+          "interpretation_limits": "Visual assessment does not replace planimetry or formal measurements like Simpson's method in case of clinical discrepancies. Visual RV/LV comparison does not establish etiology by itself. Qualitative biventricular function assessment without mandatory quantitative measurements.",
           "quick_reference": {
-            "assess": "RV/LV size ratio and global LV contractility from apical window.",
-            "alerts": "Severe RV dilation or global LV contractility apparently depressed."
+            "assess": "Qualitative RV/LV size ratio and global biventricular contractility from the apical window.",
+            "alerts": "Marked apparent alteration of relative RV dimensions or apparently reduced global biventricular contractility."
           }
         },
         "parasternal": {
           "clinical_questions": [
-            "Are there indirect signs of volume or pressure overload (e.g., septal flattening)?",
-            "Does LV systolic function in long and short axis confirm findings from other views?"
+            "Do chamber dimensions or wall thickness appear abnormal?",
+            "Does global contractility appear altered in PLAX or PSAX?"
           ],
           "targets": [
-            "Global contractility and relative LV wall thickness.",
-            "Ventricular geometry and interventricular septal behavior."
+            "Apparent dimensions, apparent wall thickness, global contractility, and ventricular geometry."
           ],
           "suggested_views": [
             "Parasternal long-axis (PLAX)",
             "Parasternal short-axis (PSAX)"
           ],
           "possible_findings": [
-            "Septal flattening (nonspecific finding requiring clinical context).",
-            "Preserved or depressed global LV contractility."
+            "No obvious alteration of dimensions or wall thickness.",
+            "Apparent alteration of dimensions or wall thickness.",
+            "Apparently preserved global contractility.",
+            "Apparently reduced global contractility.",
+            "Inconclusive study."
           ],
-          "interpretation_limits": "Chronic septal deformities can mimic acute overload. Septal flattening is a nonspecific finding requiring clinical context and does not constitute a diagnosis of overload by itself.",
+          "interpretation_limits": "Chronic septal deformities can mimic acute overload. Septal flattening is an optional and nonspecific finding requiring clinical correlation and does not constitute an overload diagnosis by itself.",
           "quick_reference": {
-            "assess": "LV geometry and septal behavior in PSAX/PLAX.",
-            "alerts": "Interventricular septal flattening or contractility apparently depressed."
+            "assess": "LV geometry, wall thickness, and global contractility in PSAX/PLAX.",
+            "alerts": "Global LV contractility or ventricular geometry apparently altered."
           }
         },
         "pleural": {
@@ -191,7 +193,7 @@
             "Is the pleural scan conclusive or technically limited?"
           ],
           "targets": [
-            "Presence or absence of findings compatible with pleural fluid examining both hemithoraces."
+            "Qualitative classification of each hemithorax as showing findings compatible with pleural fluid, no obvious finding, or an inconclusive study."
           ],
           "suggested_views": [
             "Bilateral pleural scan (Pleural)"
@@ -200,9 +202,10 @@
             "Findings compatible with pleural fluid in the right hemithorax.",
             "Findings compatible with pleural fluid in the left hemithorax.",
             "Findings compatible with bilateral pleural fluid.",
-            "Technically limited or non-conclusive pleural study."
+            "No obvious finding of pleural fluid in the examined hemithorax.",
+            "Technically limited or inconclusive pleural study."
           ],
-          "interpretation_limits": "An isolated anechoic zone does not establish pleural effusion diagnosis without anatomical localization and additional compatible findings. No quantitative measurements required.",
+          "interpretation_limits": "An isolated anechoic zone does not establish pleural effusion diagnosis without anatomical localization and other compatible findings. Failure to visualize fluid does not rule out small or loculated collections. Technical limitations reduce exam sensitivity and must be recorded. Classify each hemithorax as compatible finding, no obvious finding, or inconclusive.",
           "quick_reference": {
             "assess": "Presence of findings compatible with pleural fluid bilaterally.",
             "alerts": "Apparent pleural fluid."

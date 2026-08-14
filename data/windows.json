@@ -295,8 +295,8 @@
     },
     "abbreviation": "Pleural",
     "typical_probe_position": {
-      "es": "Exploración bilateral en las zonas anterior y lateral de ambos hemitórax, típicamente en los espacios intercostales dependientes.",
-      "en": "Bilateral scan of the anterior and lateral zones of both hemithoraces, typically in the dependent intercostal spaces."
+      "es": "Exploración bilateral en las zonas dependientes posterolaterales o basales de ambos hemitórax según la accesibilidad del paciente, identificando el diafragma y las estructuras subdiafragmáticas como referencias anatómicas clave.",
+      "en": "Bilateral scan of the dependent posterolateral or basal zones of both hemithoraces depending on patient accessibility, identifying the diaphragm and subdiaphragmatic structures as key anatomical landmarks."
     },
     "typical_marker_orientation": {
       "es": "Eje longitudinal (perpendicular a las costillas) para identificar el signo de la línea pleural.",

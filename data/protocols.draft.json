@@ -30,6 +30,14 @@
     {
       "id": "jensen_2004",
       "citation": "Jensen MB, Sloth E, Larsen KM, Schmidt MB. Transthoracic echocardiography for cardiopulmonary monitoring in intensive care. European Journal of Anaesthesiology. 2004;21:700–707. DOI: 10.1017/S0265021504009068"
+    },
+    {
+      "id": "via_2014",
+      "citation": "Via G, Hussain A, Wells M, et al. International evidence-based recommendations for focused cardiac ultrasound. Journal of the American Society of Echocardiography. 2014;27(7):683.e1–683.e33. DOI: 10.1016/j.echo.2014.05.001"
+    },
+    {
+      "id": "neskovic_2018",
+      "citation": "Neskovic AN, Skinner H, Price S, et al. Focus cardiac ultrasound core curriculum and core syllabus of the European Association of Cardiovascular Imaging. European Heart Journal–Cardiovascular Imaging. 2018;19(5):475–481. DOI: 10.1093/ehjci/jey006"
     }
   ],
   "protocols": [
@@ -196,11 +204,13 @@
       "target_population": "Pacientes en estado crítico con sospecha de disfunción cardiopulmonar, shock o distrés respiratorio.",
       "prerequisites": "Formación en ecocardiografía enfocada y ultrasonido pleuropulmonar en el punto de atención (POCUS).",
       "sequence_note": "La secuencia de adquisición de vistas debe adaptarse a la ventana acústica del paciente y a la sospecha clínica prioritaria.",
-      "integration": "Los hallazgos de FATE deben integrarse con el contexto clínico completo. La presencia de anomalías evidentes apoya decisiones clínicas rápidas pero no sustituye un ecocardiograma formal.",
-      "limitations": "El examen está enfocado y es altamente dependiente del operador. Un estudio limitado o no concluyente no equivale a normalidad y no debe retrasar valoraciones expertas o ecocardiografía integral si están indicadas.",
+      "integration": "Los hallazgos de FATE deben integrarse con el contexto clínico completo. La presencia de anomalías evidentes apoya decisiones clínicas rápidas pero no sustituye una ecocardiografía integral.",
+      "limitations": "El examen está enfocado y es altamente dependiente del operador. Un estudio limitado o no concluyente no equivale a normalidad y no debe retrasar valoraciones expertas o una ecocardiografía integral si están indicadas.",
       "safety_and_workflow_notes": "Interpretar siempre en el contexto hemodinámico y clínico del paciente. Un estudio técnicamente limitado debe registrarse como tal para no dar una falsa sensación de normalidad.",
       "reference_ids": [
-        "jensen_2004"
+        "jensen_2004",
+        "via_2014",
+        "neskovic_2018"
       ],
       "review_status": "pending-clinical-review",
       "components": [
@@ -244,11 +254,11 @@
           "name_en": "Apical four-chamber",
           "clinical_questions": [
             "¿Las dimensiones o la carga relativa de las cavidades parecen anormales?",
-            "¿La contractilidad global parece reducida?"
+            "¿La contractilidad global biventricular parece reducida?"
           ],
           "targets": [
             "Relación cualitativa de tamaño VD/VI (dilatación evidente del VD).",
-            "Estimación cualitativa de la función sistólica global del ventrículo izquierdo."
+            "Estimación cualitativa de la función sistólica global biventricular."
           ],
           "suggested_views": [
             "Apical cuatro cámaras (A4C)"
@@ -259,15 +269,15 @@
           "linked_measurement_ids": [],
           "possible_findings": [
             "Dilatación aparente del VD (relación cualitativa VD/VI aumentada).",
-            "Función sistólica global del VI aparentemente reducida."
+            "Función sistólica global biventricular aparentemente reducida."
           ],
-          "interpretation_limits": "La evaluación visual no sustituye la planimetría ni las mediciones formales como el método de Simpson en caso de discrepancias clínicas. La comparación visual VD/VI no establece por sí sola una etiología.",
+          "interpretation_limits": "La evaluación visual no sustituye la planimetría ni las mediciones formales como el método de Simpson en caso de discrepancias clínicas. La comparación visual VD/VI no establece por sí sola una etiología. Evaluación cualitativa de la función biventricular sin requerir mediciones cuantitativas obligatorias.",
           "reference_ids": [
             "jensen_2004"
           ],
           "quick_reference": {
-            "assess": "Relación de tamaño VD/VI y contractilidad global del VI desde ventana apical.",
-            "alerts": "Dilatación severa del VD o contractilidad global del VI aparentemente deprimida."
+            "assess": "Relación cualitativa de tamaño VD/VI y contractilidad global biventricular desde la ventana apical.",
+            "alerts": "Alteración marcada aparente de las dimensiones relativas del VD o contractilidad global biventricular aparentemente deprimida."
           }
         },
         {
@@ -275,12 +285,11 @@
           "name_es": "Paraesternal (ejes largo y corto)",
           "name_en": "Parasternal (long and short-axis)",
           "clinical_questions": [
-            "¿Hay signos indirectos de sobrecarga de volumen o presión (ej. aplanamiento septal)?",
-            "¿La función sistólica del VI en eje largo y corto confirma los hallazgos de otras vistas?"
+            "¿Las dimensiones de las cavidades o el grosor parietal parecen anormales?",
+            "¿La contractilidad global parece alterada en PLAX o PSAX?"
           ],
           "targets": [
-            "Contractilidad global y espesores parietales relativos del VI.",
-            "Geometría ventricular y comportamiento del tabique interventricular."
+            "Dimensiones aparentes, grosor parietal aparente, contractilidad global y geometría ventricular."
           ],
           "suggested_views": [
             "Paraesternal eje largo (PLAX)",
@@ -292,16 +301,19 @@
           ],
           "linked_measurement_ids": [],
           "possible_findings": [
-            "Aplanamiento septal (hallazgo inespecífico que requiere contexto clínico).",
-            "Contractilidad global del VI preservada o deprimida."
+            "Sin alteración evidente de las dimensiones o del grosor parietal.",
+            "Alteración aparente de las dimensiones o del grosor parietal.",
+            "Contractilidad global aparentemente conservada.",
+            "Contractilidad global aparentemente reducida.",
+            "Estudio no concluyente."
           ],
-          "interpretation_limits": "Las deformaciones septales crónicas pueden simular sobrecarga aguda. El aplanamiento septal es un hallazgo inespecífico que requiere contexto clínico y no constituye un diagnóstico de sobrecarga por sí solo.",
+          "interpretation_limits": "Las deformaciones septales crónicas pueden simular sobrecarga aguda. El aplanamiento septal es un hallazgo opcional e inespecífico que requiere correlación clínica y no constituye un diagnóstico de sobrecarga por sí solo.",
           "reference_ids": [
             "jensen_2004"
           ],
           "quick_reference": {
-            "assess": "Geometría del VI y comportamiento del septo en PSAX/PLAX.",
-            "alerts": "Aplanamiento del septo interventricular o contractilidad aparentemente deprimida."
+            "assess": "Geometría del VI, grosor parietal y contractilidad global en PSAX/PLAX.",
+            "alerts": "Contractilidad global del VI o geometría ventricular aparentemente alterada."
           }
         },
         {
@@ -313,7 +325,7 @@
             "¿El estudio pleural es concluyente o está limitado técnicamente?"
           ],
           "targets": [
-            "Presencia o ausencia de hallazgos compatibles con líquido pleural examinando ambos hemitórax."
+            "Clasificación cualitativa de cada hemitórax como hallazgo compatible con líquido pleural, sin hallazgo evidente o estudio no concluyente."
           ],
           "suggested_views": [
             "Exploración pleural bilateral (Pleural)"
@@ -326,9 +338,10 @@
             "Hallazgos compatibles con líquido pleural en hemitórax derecho.",
             "Hallazgos compatibles con líquido pleural en hemitórax izquierdo.",
             "Hallazgos compatibles con líquido pleural bilateral.",
+            "Sin hallazgo evidente de líquido pleural en el hemitórax examinado.",
             "Estudio pleural técnicamente limitado o no concluyente."
           ],
-          "interpretation_limits": "Una zona anecoica aislada no establece el diagnóstico de derrame pleural sin una localización anatómica y hallazgos compatibles adicionales. No se requieren mediciones cuantitativas.",
+          "interpretation_limits": "Una zona anecoica aislada no establece el diagnóstico de derrame pleural sin localización anatómica y otros hallazgos compatibles. La ausencia de líquido visible no descarta colecciones pequeñas o loculadas. Las limitaciones técnicas reducen la sensibilidad del examen y deben registrarse. Clasificar cada hemitórax como hallazgo compatible, sin hallazgo evidente o no concluyente.",
           "reference_ids": [
             "jensen_2004"
           ],

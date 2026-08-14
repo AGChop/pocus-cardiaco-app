@@ -307,6 +307,15 @@ def main():
     promoted_protocols = [p for p in bilingual_protocols if p.get("review_status") != "pending-clinical-review"]
     updated_metadata["protocol_count"] = len(promoted_protocols)
 
+    # Filter references to only keep those reachable from promoted protocols
+    promoted_ref_ids = set()
+    for p in promoted_protocols:
+        promoted_ref_ids.update(p.get("reference_ids", []))
+        for comp in p.get("components", []):
+            promoted_ref_ids.update(comp.get("reference_ids", []))
+
+    filtered_references = [r for r in draft.get("references", []) if r["id"] in promoted_ref_ids]
+
     final_data = {
         "status": status_str,
         "version": version_str,
@@ -314,7 +323,7 @@ def main():
         "source": source_str,
         "educational_disclaimer": bilingual_ed_disclaimer,
         "metadata": updated_metadata,
-        "references": draft.get("references", []),
+        "references": filtered_references,
         "protocols": promoted_protocols
     }
 

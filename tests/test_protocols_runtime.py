@@ -74,8 +74,18 @@ def test_final_protocol_structure(protocols_final):
     assert pump_comp["name_es"] == "La Bomba (Evaluación cardíaca)"
 
 def test_draft_final_matching(protocols_final, protocols_draft):
-    # 13. References del archivo final coinciden con las del draft
-    assert protocols_final["references"] == protocols_draft["references"]
+    # 13. References del archivo final son las alcanzables desde los protocolos promovidos
+    promoted_ref_ids = {r["id"] for r in protocols_final["references"]}
+    expected_ref_ids = set()
+    for p in protocols_final["protocols"]:
+        expected_ref_ids.update(p.get("reference_ids", []))
+        for comp in p.get("components", []):
+            expected_ref_ids.update(comp.get("reference_ids", []))
+    assert promoted_ref_ids == expected_ref_ids
+    # Y que las referencias correspondientes coincidan con las del draft
+    for ref in protocols_final["references"]:
+        draft_ref = next(r for r in protocols_draft["references"] if r["id"] == ref["id"])
+        assert ref == draft_ref
 
     # 14. Protocols del archivo final coinciden con los del draft (en su parte española)
     def extract_spanish(data):

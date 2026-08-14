@@ -219,13 +219,77 @@ def test_fate_exclusions_and_clean_state(protocols_draft):
     assert "tomografía" not in fate_str
     assert "toracocentesis" not in fate_str
 
+    # Assert three references exist and are resoluble, and have no source_page
+    ref_ids = {r["id"] for r in protocols_draft["references"]}
+    for ref_id in ["jensen_2004", "via_2014", "neskovic_2018"]:
+        assert ref_id in ref_ids
+        ref_obj = next(r for r in protocols_draft["references"] if r["id"] == ref_id)
+        assert "source_page" not in ref_obj
+
+    # Assert correct DOI of via_2014 and absence of incorrect DOI
+    via_ref = next(r for r in protocols_draft["references"] if r["id"] == "via_2014")
+    assert "10.1016/j.echo.2014.05.001" in via_ref["citation"]
+    assert "10.1017/j.echo" not in via_ref["citation"]
+
+    # Jensen remains primary source for components, while Via and Neskovic support protocol level
+    assert "jensen_2004" in fate["reference_ids"]
+    assert "via_2014" in fate["reference_ids"]
+    assert "neskovic_2018" in fate["reference_ids"]
+
+    # Jensen is the reference for each component, but Via/Neskovic are not in components
+    for comp in fate["components"]:
+        assert "jensen_2004" in comp["reference_ids"]
+        assert "via_2014" not in comp["reference_ids"]
+        assert "neskovic_2018" not in comp["reference_ids"]
+
+    # Coherencia biventricular del componente apical
+    apical = next(c for c in fate["components"] if c["id"] == "apical_4c")
+    assert "biventricular" in apical["quick_reference"]["assess"].lower()
+
+    # Parasternal component does not make septal flattening a central alert
+    parasternal = next(c for c in fate["components"] if c["id"] == "parasternal")
+    assert "aplanamiento septal" not in parasternal["quick_reference"]["alerts"].lower()
+    # Categorías paraesternales separadas
+    assert len(parasternal["possible_findings"]) == 5
+    assert "Sin alteración evidente de las dimensiones" in parasternal["possible_findings"][0]
+    assert "Alteración aparente de las dimensiones" in parasternal["possible_findings"][1]
+    assert "Contractilidad global aparentemente conservada" in parasternal["possible_findings"][2]
+    assert "Contractilidad global aparentemente reducida" in parasternal["possible_findings"][3]
+    assert "Estudio no concluyente" in parasternal["possible_findings"][4]
+
+    # Pleural scan/component mentions bilateral scans and anatomical landmarks
+    pleural = next(c for c in fate["components"] if c["id"] == "pleural")
+    pleural_limits = pleural["interpretation_limits"].lower()
+    assert "colecciones" in pleural_limits
+    assert "loculadas" in pleural_limits
+    assert "no concluyente" in pleural_limits
+    # Categoría pleural "sin hallazgo evidente"
+    assert "Sin hallazgo evidente de líquido pleural" in pleural["possible_findings"][3]
+    # Ausencia de afirmación diagnóstica de "ausencia de derrame"
+    assert "ausencia de derrame" not in pleural_limits
+
     # Assert no mandatory quantitative measurements
     for comp in fate["components"]:
         assert comp["linked_measurement_ids"] == []
 
-    # Assert no source_page for jensen_2004 reference
-    jensen_ref = next(r for r in protocols_draft["references"] if r["id"] == "jensen_2004")
-    assert "source_page" not in jensen_ref
+    # Verification of references in protocols.json (should only contain RUSH reachable references)
+    with open("data/protocols.json", "r", encoding="utf-8") as f:
+        promoted = json.load(f)
+    # FATE must be absent
+    assert not any(p["id"] == "fate" for p in promoted["protocols"])
+    # RUSH must be present and approved
+    rush = next(p for p in promoted["protocols"] if p["id"] == "rush")
+    assert rush["review_status"] == "approved-for-app-use"
+
+    # Reachable references for RUSH
+    rush_ref_ids = set(rush["reference_ids"])
+    for c in rush["components"]:
+        rush_ref_ids.update(c.get("reference_ids", []))
+
+    promoted_ref_ids = {r["id"] for r in promoted["references"]}
+    assert promoted_ref_ids == rush_ref_ids
+    assert "via_2014" not in promoted_ref_ids
+    assert "neskovic_2018" not in promoted_ref_ids
 
 def test_promotion_script_failures():
     # 18. Verificar que el promotor detecta y falla con errores esperados
@@ -281,3 +345,86 @@ def test_promotion_script_failures():
         shutil.copyfile(backup_path, "data/protocols.i18n.json")
         if os.path.exists(backup_path):
             os.remove(backup_path)
+
+
+def test_exact_clinical_requirements(protocols_final, protocols_draft, protocols_i18n):
+    # 1. DOI correcto de Via
+    via_draft_ref = next(r for r in protocols_draft["references"] if r["id"] == "via_2014")
+    assert "10.1016/j.echo.2014.05.001" in via_draft_ref["citation"]
+
+    # 2. Ausencia del DOI incorrecto
+    assert "10.1017/j.echo.2014.05.001" not in via_draft_ref["citation"]
+
+    # 3. Coherencia biventricular del componente apical
+    fate_draft = next(p for p in protocols_draft["protocols"] if p["id"] == "fate")
+    apical_draft = next(c for c in fate_draft["components"] if c["id"] == "apical_4c")
+    assert "biventricular" in apical_draft["quick_reference"]["assess"].lower()
+
+    # 4. Categorías paraesternales separadas
+    parasternal_draft = next(c for c in fate_draft["components"] if c["id"] == "parasternal")
+    expected_findings_es = [
+        "Sin alteración evidente de las dimensiones o del grosor parietal.",
+        "Alteración aparente de las dimensiones o del grosor parietal.",
+        "Contractilidad global aparentemente conservada.",
+        "Contractilidad global aparentemente reducida.",
+        "Estudio no concluyente."
+    ]
+    assert parasternal_draft["possible_findings"] == expected_findings_es
+
+    # 5. Categoría pleural "sin hallazgo evidente"
+    pleural_draft = next(c for c in fate_draft["components"] if c["id"] == "pleural")
+    assert "Sin hallazgo evidente de líquido pleural en el hemitórax examinado." in pleural_draft["possible_findings"]
+
+    # 6. Ausencia de afirmación diagnóstica de "ausencia de derrame"
+    assert "ausencia de derrame" not in pleural_draft["interpretation_limits"].lower()
+
+    # 7. Paridad posicional ES/EN
+    i18n_fate = protocols_i18n["protocols"]["fate"]
+    for comp in fate_draft["components"]:
+        c_id = comp["id"]
+        i18n_comp = i18n_fate["components"][c_id]
+        for list_field in ["clinical_questions", "targets", "suggested_views", "possible_findings"]:
+            assert len(comp[list_field]) == len(i18n_comp[list_field]), f"Mismatch size in {c_id}.{list_field}"
+
+    # 8. Referencias alcanzables del archivo promovido
+    promoted_ref_ids = {r["id"] for r in protocols_final["references"]}
+    rush_final = next(p for p in protocols_final["protocols"] if p["id"] == "rush")
+    expected_ref_ids = set(rush_final["reference_ids"])
+    for comp in rush_final["components"]:
+        expected_ref_ids.update(comp.get("reference_ids", []))
+    assert promoted_ref_ids == expected_ref_ids
+
+    # 9. FATE ausente de protocols.json
+    assert not any(p["id"] == "fate" for p in protocols_final["protocols"])
+
+    # 10. RUSH intacto
+    assert any(p["id"] == "rush" for p in protocols_final["protocols"])
+
+
+def test_fate_literal_corrections_and_absences(protocols_i18n):
+    # Obtener el objeto de FATE en las traducciones
+    fate_i18n = protocols_i18n["protocols"]["fate"]
+    fate_str = json.dumps(fate_i18n)
+
+    # Pruebas literales para las tres cadenas corregidas:
+    # 1. Qualitative biventricular function assessment without mandatory quantitative measurements.
+    assert "Qualitative biventricular function assessment without mandatory quantitative measurements." in fate_str
+
+    # 2. Marked apparent alteration of relative RV dimensions or apparently reduced global biventricular contractility.
+    assert "Marked apparent alteration of relative RV dimensions or apparently reduced global biventricular contractility." in fate_str
+
+    # 3. Qualitative classification of each hemithorax as showing findings compatible with pleural fluid, no obvious finding, or an inconclusive study.
+    assert "Qualitative classification of each hemithorax as showing findings compatible with pleural fluid, no obvious finding, or an inconclusive study." in fate_str
+
+    # Pruebas para la ausencia, dentro de FATE, de:
+    # - mandatory quantitative thresholds
+    assert "mandatory quantitative thresholds" not in fate_str
+
+    # - Apparent marked alteration
+    assert "Apparent marked alteration" not in fate_str
+
+    # - as finding compatible
+    assert "as finding compatible" not in fate_str
+
+    # - non-conclusive
+    assert "non-conclusive" not in fate_str.lower()

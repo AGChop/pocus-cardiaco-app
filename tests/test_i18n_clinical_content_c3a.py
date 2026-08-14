@@ -32,6 +32,14 @@ def test_windows_json_refinement_and_exact_names():
     for item in data:
         # Ignore new pleural_scan if present, but validate it matches requirements
         i_id = item["id"]
+        if i_id == "pleural_scan":
+            assert "diafragma" in item["typical_probe_position"]["es"]
+            assert "bilateral" in item["typical_probe_position"]["es"]
+            assert "diaphragm" in item["typical_probe_position"]["en"].lower()
+            assert "bilateral" in item["typical_probe_position"]["en"].lower()
+            assert "cualitativa" in item["favored_measurements"]["es"]
+            assert "qualitative" in item["favored_measurements"]["en"]
+            continue
         if i_id not in exact_english_names:
             continue
         assert item["window"]["en"] == exact_english_names[i_id]
