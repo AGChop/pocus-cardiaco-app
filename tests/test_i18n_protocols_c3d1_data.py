@@ -207,9 +207,17 @@ def test_draft_canonical_monolingual(protocols_draft):
 def test_fate_exclusions_and_clean_state(protocols_draft):
     fate = next(p for p in protocols_draft["protocols"] if p["id"] == "fate")
     fate_str = json.dumps(fate).lower()
-    # Assert exclusions of unwanted clinical terms
-    assert "pneumothorax" not in fate_str
-    assert "neumotórax" not in fate_str
+    # Full lung-ultrasound diagnoses are outside the component's assessed findings.
+    pleural_scope_es = next(c for c in fate["components"] if c["id"] == "pleural")
+    pleural_assessment_es = json.dumps(
+        {
+            "clinical_questions": pleural_scope_es["clinical_questions"],
+            "targets": pleural_scope_es["targets"],
+            "possible_findings": pleural_scope_es["possible_findings"],
+        },
+        ensure_ascii=False,
+    ).lower()
+    assert "neumotórax" not in pleural_assessment_es
     assert "a-line" not in fate_str
     assert "líneas a" not in fate_str
     assert "lung sliding" not in fate_str
@@ -221,7 +229,14 @@ def test_fate_exclusions_and_clean_state(protocols_draft):
 
     # Assert FATE references exist and are resoluble, and have no source_page
     ref_ids = {r["id"] for r in protocols_draft["references"]}
-    for ref_id in ["jensen_2004", "via_2014", "neskovic_2018", "volpicelli_2012"]:
+    for ref_id in [
+        "jensen_2004",
+        "via_2014",
+        "neskovic_2018",
+        "volpicelli_2012",
+        "kirkpatrick_2024",
+        "volpicelli_2026",
+    ]:
         assert ref_id in ref_ids
         ref_obj = next(r for r in protocols_draft["references"] if r["id"] == ref_id)
         assert "source_page" not in ref_obj
@@ -235,6 +250,7 @@ def test_fate_exclusions_and_clean_state(protocols_draft):
     assert "jensen_2004" in fate["reference_ids"]
     assert "via_2014" in fate["reference_ids"]
     assert "neskovic_2018" in fate["reference_ids"]
+    assert "kirkpatrick_2024" in fate["reference_ids"]
 
     # Jensen is the reference for each component, but Via/Neskovic are not in components
     for comp in fate["components"]:
@@ -295,6 +311,8 @@ def test_fate_exclusions_and_clean_state(protocols_draft):
     assert "via_2014" not in promoted_ref_ids
     assert "neskovic_2018" not in promoted_ref_ids
     assert "volpicelli_2012" not in promoted_ref_ids
+    assert "kirkpatrick_2024" not in promoted_ref_ids
+    assert "volpicelli_2026" not in promoted_ref_ids
 
 def test_promotion_script_failures():
     # 18. Verificar que el promotor detecta y falla con errores esperados
@@ -451,20 +469,57 @@ def test_fate_scientific_review_blockers_are_resolved(
     assert "hemodynamic relevance" in subcostal_en["quick_reference"]["alerts"]
 
     # English terminology and governance requirements are explicit.
-    assert "comprehensive echocardiography" in fate_i18n["integration"]
+    assert "comprehensive consultative echocardiography" in fate_i18n["integration"]
     assert "formal echocardiogram" not in fate_i18n["integration"]
     assert "competencia supervisada" in fate_draft["prerequisites"]
     assert "supervised competency" in fate_i18n["prerequisites"]
-    for required_es in ["almacenar", "supervisión", "control de calidad"]:
+    for required_es in [
+        "calidad de imagen",
+        "conclusión",
+        "almacenar",
+        "supervisión",
+        "control de calidad",
+        "Repetir la evaluación ante cambios clínicos",
+    ]:
         assert required_es in fate_draft["safety_and_workflow_notes"]
-    for required_en in ["store images", "supervision", "quality assurance"]:
+    for required_en in [
+        "image quality",
+        "conclusion",
+        "store images",
+        "supervision",
+        "quality assurance",
+        "Repeat the assessment after clinical changes",
+    ]:
         assert required_en in fate_i18n["safety_and_workflow_notes"]
+
+    # Current nomenclature explicitly identifies the basic B-mode scope.
+    assert "FATE básico" in fate_draft["clinical_context"]
+    assert "modo B" in fate_draft["clinical_context"]
+    assert "Basic FATE" in fate_i18n["clinical_context"]
+    assert "B-mode" in fate_i18n["clinical_context"]
+    assert "ventana no diagnóstica" in fate_draft["limitations"]
+    assert "non-diagnostic window" in fate_i18n["limitations"]
 
     # The pleural component has a dedicated lung-ultrasound consensus reference.
     pleural_es = next(c for c in fate_draft["components"] if c["id"] == "pleural")
+    pleural_en = fate_i18n["components"]["pleural"]
     assert "volpicelli_2012" in pleural_es["reference_ids"]
+    assert "volpicelli_2026" in pleural_es["reference_ids"]
     volpicelli = next(r for r in protocols_draft["references"] if r["id"] == "volpicelli_2012")
     assert "10.1007/s00134-012-2513-4" in volpicelli["citation"]
+    volpicelli_update = next(
+        r for r in protocols_draft["references"] if r["id"] == "volpicelli_2026"
+    )
+    assert "10.1007/s00134-026-08487-2" in volpicelli_update["citation"]
+    assert "no sustituye un examen pulmonar completo" in pleural_es["interpretation_limits"]
+    assert "does not replace a complete lung ultrasound examination" in pleural_en[
+        "interpretation_limits"
+    ]
+
+    kirkpatrick = next(
+        r for r in protocols_draft["references"] if r["id"] == "kirkpatrick_2024"
+    )
+    assert "10.1016/j.echo.2024.05.001" in kirkpatrick["citation"]
 
     # Previously rejected wording remains absent across the complete FATE object.
     for rejected in [

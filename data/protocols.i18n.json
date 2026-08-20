@@ -107,14 +107,14 @@
       }
     },
     "fate": {
-      "clinical_context": "Focused point-of-care echocardiographic evaluation for cardiopulmonary monitoring in intensive care, anesthesia, or emergencies.",
+      "clinical_context": "Basic FATE focused cardiopulmonary point-of-care assessment, based on qualitative B-mode acquisition, for monitoring critically ill patients in intensive care, anesthesia, or emergency settings.",
       "purpose": "To rapidly and qualitatively assess obvious cardiopulmonary pathology, chamber size, LV and RV systolic function separately, and findings compatible with pericardial or pleural fluid.",
       "target_population": "Critically ill patients with suspected cardiopulmonary dysfunction, shock, or respiratory distress.",
       "prerequisites": "Documented training in focused echocardiography and point-of-care pleuropulmonary ultrasound (POCUS), with supervised competency appropriate to the professional role and local regulations.",
       "sequence_note": "The acquisition sequence of views should be adapted to the patient's acoustic window and the priority clinical concern.",
-      "integration": "FATE findings must be integrated with the complete clinical context. The presence of obvious abnormalities supports rapid clinical decisions but does not replace comprehensive echocardiography.",
-      "limitations": "The examination is focused and highly operator-dependent. A limited or inconclusive study does not equate to normalcy and must not delay expert assessment or comprehensive echocardiography if indicated.",
-      "safety_and_workflow_notes": "Always interpret in the patient's clinical and hemodynamic context. Document the indication, findings, and limitations; store images or clips according to local policy; ensure supervision when required; and participate in periodic review and quality assurance. A technically limited study must be recorded as such to avoid a false sense of security.",
+      "integration": "FATE findings must be integrated with the complete clinical context. The presence of obvious abnormalities supports rapid clinical decisions, but the protocol is neither comprehensive consultative echocardiography nor a complete lung ultrasound examination.",
+      "limitations": "The examination is focused and highly operator-dependent. A non-diagnostic window does not permit inference that pathology is absent. A limited or inconclusive study does not equate to normalcy and must not delay expert assessment or comprehensive consultative echocardiography if indicated.",
+      "safety_and_workflow_notes": "Always interpret in the patient's clinical and hemodynamic context. Document the indication, image quality, findings, limitations, and conclusion; store images or clips according to local policy; ensure supervision when required; and participate in periodic review and quality assurance. Repeat the assessment after clinical changes when it may alter management. A technically limited study must be recorded as such to avoid a false sense of security.",
       "components": {
         "subcostal_4c": {
           "clinical_questions": [
@@ -211,7 +211,7 @@
             "No obvious finding of pleural fluid in the examined hemithorax.",
             "Technically limited or inconclusive pleural study."
           ],
-          "interpretation_limits": "An isolated anechoic zone does not establish pleural effusion diagnosis without anatomical localization and other compatible findings. Failure to visualize fluid does not rule out small or loculated collections. Technical limitations reduce exam sensitivity and must be recorded. Classify each hemithorax as compatible finding, no obvious finding, or inconclusive.",
+          "interpretation_limits": "An isolated anechoic zone does not establish pleural effusion diagnosis without anatomical localization and other compatible findings. Failure to visualize fluid does not rule out small or loculated collections. Technical limitations reduce exam sensitivity and must be recorded. Classify each hemithorax as compatible finding, no obvious finding, or inconclusive. This component is limited to qualitative assessment for pleural fluid and does not replace a complete lung ultrasound examination for pneumothorax, interstitial syndrome, or consolidation.",
           "quick_reference": {
             "assess": "Presence of findings compatible with pleural fluid bilaterally.",
             "alerts": "Apparent pleural fluid."

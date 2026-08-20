@@ -69,6 +69,14 @@ def main():
             {
                 "id": "volpicelli_2012",
                 "citation": "Volpicelli G, Elbarbary M, Blaivas M, et al. International evidence-based recommendations for point-of-care lung ultrasound. Intensive Care Medicine. 2012;38(4):577–591. DOI: 10.1007/s00134-012-2513-4"
+            },
+            {
+                "id": "kirkpatrick_2024",
+                "citation": "Kirkpatrick JN, Panebianco N, Díaz-Gómez JL, et al. Recommendations for Cardiac Point-of-Care Ultrasound Nomenclature. Journal of the American Society of Echocardiography. 2024;37(9):809–819. DOI: 10.1016/j.echo.2024.05.001"
+            },
+            {
+                "id": "volpicelli_2026",
+                "citation": "Volpicelli G, Gargani L, Zieleskiewicz L, et al. International evidence-based recommendations for point-of-care lung ultrasound: 2025 focused update of the 2012 recommendations. Intensive Care Medicine. 2026;52:1415–1446. DOI: 10.1007/s00134-026-08487-2"
             }
         ],
         "protocols": [
@@ -227,15 +235,15 @@ def main():
                 "name_es": "Protocolo FATE",
                 "name_en": "FATE Protocol",
                 "acronym": "FATE",
-                "clinical_context": "Evaluación ecocardiográfica enfocada en el punto de atención para la monitorización cardiopulmonar en cuidados intensivos, anestesia o emergencias.",
+                "clinical_context": "Evaluación cardiopulmonar enfocada FATE básico en el punto de atención, basada en adquisición cualitativa en modo B, para la monitorización de pacientes críticos en cuidados intensivos, anestesia o emergencias.",
                 "purpose": "Evaluar de forma rápida y cualitativa la presencia de patología cardiopulmonar evidente, el tamaño de las cavidades, la función sistólica del VI y del VD por separado, y los hallazgos compatibles con líquido pericárdico o pleural.",
                 "target_population": "Pacientes en estado crítico con sospecha de disfunción cardiopulmonar, shock o distrés respiratorio.",
                 "prerequisites": "Formación documentada en ecocardiografía enfocada y ultrasonido pleuropulmonar en el punto de atención (POCUS), con competencia supervisada acorde con el rol profesional y la normativa local.",
                 "sequence_note": "La secuencia de adquisición de vistas debe adaptarse a la ventana acústica del paciente y a la sospecha clínica prioritaria.",
-                "integration": "Los hallazgos de FATE deben integrarse con el contexto clínico completo. La presencia de anomalías evidentes apoya decisiones clínicas rápidas pero no sustituye una ecocardiografía integral.",
-                "limitations": "El examen está enfocado y es altamente dependiente del operador. Un estudio limitado o no concluyente no equivale a normalidad y no debe retrasar valoraciones expertas o una ecocardiografía integral si están indicadas.",
-                "safety_and_workflow_notes": "Interpretar siempre en el contexto hemodinámico y clínico del paciente. Documentar la indicación, los hallazgos y las limitaciones; almacenar imágenes o clips conforme a la política local; asegurar supervisión cuando corresponda y participar en revisión periódica y control de calidad. Un estudio técnicamente limitado debe registrarse como tal para no dar una falsa sensación de normalidad.",
-                "reference_ids": ["jensen_2004", "via_2014", "neskovic_2018"],
+                "integration": "Los hallazgos de FATE deben integrarse con el contexto clínico completo. La presencia de anomalías evidentes apoya decisiones clínicas rápidas, pero el protocolo no constituye una ecocardiografía consultiva integral ni un examen pulmonar completo.",
+                "limitations": "El examen está enfocado y es altamente dependiente del operador. Una ventana no diagnóstica no permite inferir ausencia de patología. Un estudio limitado o no concluyente no equivale a normalidad y no debe retrasar valoraciones expertas o una ecocardiografía consultiva integral si están indicadas.",
+                "safety_and_workflow_notes": "Interpretar siempre en el contexto hemodinámico y clínico del paciente. Documentar la indicación, la calidad de imagen, los hallazgos, las limitaciones y la conclusión; almacenar imágenes o clips conforme a la política local; asegurar supervisión cuando corresponda y participar en revisión periódica y control de calidad. Repetir la evaluación ante cambios clínicos cuando pueda modificar la conducta. Un estudio técnicamente limitado debe registrarse como tal para no dar una falsa sensación de normalidad.",
+                "reference_ids": ["jensen_2004", "via_2014", "neskovic_2018", "kirkpatrick_2024"],
                 "review_status": "pending-clinical-review",
                 "components": [
                     {
@@ -356,8 +364,8 @@ def main():
                             "Sin hallazgo evidente de líquido pleural en el hemitórax examinado.",
                             "Estudio pleural técnicamente limitado o no concluyente."
                         ],
-                        "interpretation_limits": "Una zona anecoica aislada no establece el diagnóstico de derrame pleural sin localización anatómica y otros hallazgos compatibles. La ausencia de líquido visible no descarta colecciones pequeñas o loculadas. Las limitaciones técnicas reducen la sensibilidad del examen y deben registrarse. Clasificar cada hemitórax como hallazgo compatible, sin hallazgo evidente o no concluyente.",
-                        "reference_ids": ["jensen_2004", "volpicelli_2012"],
+                        "interpretation_limits": "Una zona anecoica aislada no establece el diagnóstico de derrame pleural sin localización anatómica y otros hallazgos compatibles. La ausencia de líquido visible no descarta colecciones pequeñas o loculadas. Las limitaciones técnicas reducen la sensibilidad del examen y deben registrarse. Clasificar cada hemitórax como hallazgo compatible, sin hallazgo evidente o no concluyente. Este componente se limita a la búsqueda cualitativa de líquido pleural y no sustituye un examen pulmonar completo para neumotórax, síndrome intersticial o consolidación.",
+                        "reference_ids": ["jensen_2004", "volpicelli_2012", "volpicelli_2026"],
                         "quick_reference": {
                             "assess": "Presencia de hallazgos compatibles con líquido pleural de forma bilateral.",
                             "alerts": "Líquido pleural aparente."
