@@ -818,6 +818,18 @@
       "es": "revisado en Julio de 2026, sin alteraciones de los rangos o unidades.",
       "en": "revised in July 2026, without altering any ranges or units."
     },
+    "label.about_ip_title": {
+      "es": "Atribución e independencia",
+      "en": "Attribution and independence"
+    },
+    "label.about_fate_attribution": {
+      "es": "FATE se menciona como un protocolo clínico publicado. Esta aplicación es una implementación educativa independiente y no está afiliada, certificada ni respaldada por USabcd ni por los autores del protocolo. Los nombres y las marcas de terceros pertenecen a sus respectivos titulares.",
+      "en": "FATE is referenced as a published clinical protocol. This application is an independent educational implementation and is not affiliated with, certified by, or endorsed by USabcd or the protocol authors. Third-party names and marks belong to their respective owners."
+    },
+    "label.about_media_rights": {
+      "es": "No se incorporan imágenes, diagramas, capturas ni materiales docentes de terceros sin autorización escrita o una licencia compatible y debidamente atribuida.",
+      "en": "No third-party images, diagrams, screenshots, or teaching materials are incorporated without written authorization or a compatible, properly attributed license."
+    },
     "label.protocol_flow_title": {
       "es": "Mapa del protocolo",
       "en": "Protocol map"

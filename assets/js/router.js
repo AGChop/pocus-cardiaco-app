@@ -3012,6 +3012,11 @@ const Router = {
                 <p>${escapeHTML(I18n.translate("label.about_training_objective"))}</p>
                 <p>${escapeHTML(I18n.translate("label.about_development_prefix"))} <strong>Hospital San Rafael de Alajuela (HSRA)</strong> ${escapeHTML(I18n.translate("label.about_development_course"))} <strong>${escapeHTML(I18n.translate("label.about_internal_medicine_program"))}</strong>.</p>
                 <p>${escapeHTML(I18n.translate("label.about_source_prefix"))} <em>Mediciones POCUS Cardiaco Adultos - Glosario</em> ${escapeHTML(I18n.translate("label.about_source_suffix"))}</p>
+                <section aria-labelledby="about-ip-title" style="border-top: 1px solid var(--border-light); padding-top: 1rem;">
+                    <h3 id="about-ip-title" style="margin-top: 0;">${escapeHTML(I18n.translate("label.about_ip_title"))}</h3>
+                    <p>${escapeHTML(I18n.translate("label.about_fate_attribution"))}</p>
+                    <p>${escapeHTML(I18n.translate("label.about_media_rights"))}</p>
+                </section>
             </div>
         `;
     },
