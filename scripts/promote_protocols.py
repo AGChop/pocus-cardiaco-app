@@ -302,12 +302,11 @@ def main():
             else:
                 bp[k] = v
         bilingual_protocols.append(bp)
-    # Escribir data/protocols.json de manera determinista con salto de línea final
-    # FATE is kept as pending-clinical-review and excluded from the promoted clinical protocols.json
-    promoted_protocols = [p for p in bilingual_protocols if p.get("review_status") != "pending-clinical-review"]
+    # Promoción estricta de protocolos aprobados (review_status == "approved-for-app-use")
+    promoted_protocols = [p for p in bilingual_protocols if p.get("review_status") == "approved-for-app-use"]
     updated_metadata["protocol_count"] = len(promoted_protocols)
 
-    # Filter references to only keep those reachable from promoted protocols
+    # Filtrar referencias para protocols.json
     promoted_ref_ids = set()
     for p in promoted_protocols:
         promoted_ref_ids.update(p.get("reference_ids", []))
@@ -331,7 +330,38 @@ def main():
         json.dump(final_data, f, indent=2, ensure_ascii=False)
         f.write("\n")
 
-    print(f"Promoción completada con éxito. Archivo de salida: {output_path}")
+    # Generación de data/protocols.beta.json (solo public-beta)
+    beta_protocols = [p for p in bilingual_protocols if p.get("publication_status") == "public-beta"]
+    beta_ref_ids = set()
+    for p in beta_protocols:
+        beta_ref_ids.update(p.get("reference_ids", []))
+        for comp in p.get("components", []):
+            beta_ref_ids.update(comp.get("reference_ids", []))
+
+    beta_references = [r for r in draft.get("references", []) if r["id"] in beta_ref_ids]
+
+    beta_metadata = updated_metadata.copy()
+    beta_metadata["protocol_count"] = len(beta_protocols)
+    beta_metadata["status"] = "public-beta"
+    if "approved_on" in beta_metadata:
+        del beta_metadata["approved_on"]
+
+    beta_data = {
+        "status": "public-beta",
+        "version": version_str,
+        "source": source_str,
+        "educational_disclaimer": bilingual_ed_disclaimer,
+        "metadata": beta_metadata,
+        "references": beta_references,
+        "protocols": beta_protocols
+    }
+
+    beta_output_path = "data/protocols.beta.json"
+    with open(beta_output_path, "w", encoding="utf-8") as f:
+        json.dump(beta_data, f, indent=2, ensure_ascii=False)
+        f.write("\n")
+
+    print(f"Promoción completada con éxito. Archivo de salida: {output_path} y {beta_output_path}")
 
 if __name__ == "__main__":
     main()

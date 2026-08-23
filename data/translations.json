@@ -110,6 +110,38 @@
       "es": "Instalar",
       "en": "Install"
     },
+    "nav.comments": {
+      "es": "Comentarios y sugerencias",
+      "en": "Comments and suggestions"
+    },
+    "comments.title": {
+      "es": "Comentarios y sugerencias",
+      "en": "Comments and suggestions"
+    },
+    "comments.description": {
+      "es": "Utilice este formulario para comunicar posibles errores clínicos, problemas de traducción, referencias científicas, problemas de interfaz o sugerencias generales. Las observaciones serán revisadas antes de realizar cambios.",
+      "en": "Use this form to report potential clinical errors, translation issues, scientific references, interface problems, or general suggestions. Observations will be reviewed before making changes."
+    },
+    "comments.warning": {
+      "es": "No incluya nombres, números de expediente, imágenes clínicas ni información que permita identificar pacientes.",
+      "en": "Do not include names, medical record numbers, clinical images, or information that could identify patients."
+    },
+    "comments.open_btn": {
+      "es": "Abrir formulario de comentarios",
+      "en": "Open feedback form"
+    },
+    "fate.beta_badge": {
+      "es": "Beta clínica",
+      "en": "Clinical beta"
+    },
+    "fate.warning_text": {
+      "es": "Contenido educativo en revisión clínica. No sustituye la valoración médica integral ni una ecocardiografía consultiva. No debe utilizarse como única base para decisiones clínicas.",
+      "en": "Educational content under clinical review. It does not replace a comprehensive medical assessment or consultative echocardiography. It must not be used as the sole basis for clinical decisions."
+    },
+    "fate.feedback_btn": {
+      "es": "Enviar comentario sobre FATE",
+      "en": "Submit feedback about FATE"
+    },
     "action.back": {
       "es": "Volver",
       "en": "Back"

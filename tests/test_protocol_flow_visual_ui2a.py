@@ -190,7 +190,7 @@ def test_cache_name_and_precache_entries():
     assert assets_block_match is not None
     assets_text = assets_block_match.group(1)
     assets = [a.strip().strip("'\",") for a in assets_text.split("\n") if a.strip()]
-    assert len(assets) == 37
+    assert len(assets) == 38
 
 
 def test_clinical_data_intact():

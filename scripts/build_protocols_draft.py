@@ -245,6 +245,8 @@ def main():
                 "safety_and_workflow_notes": "Interpretar siempre en el contexto hemodinámico y clínico del paciente. Documentar la indicación, la calidad de imagen, los hallazgos, las limitaciones y la conclusión; almacenar imágenes o clips conforme a la política local; asegurar supervisión cuando corresponda y participar en revisión periódica y control de calidad. Repetir la evaluación ante cambios clínicos cuando pueda modificar la conducta. Un estudio técnicamente limitado debe registrarse como tal para no dar una falsa sensación de normalidad.",
                 "reference_ids": ["jensen_2004", "via_2014", "neskovic_2018", "kirkpatrick_2024"],
                 "review_status": "pending-clinical-review",
+                "publication_status": "public-beta",
+                "feedback_url": "https://docs.google.com/forms/d/e/1FAIpQLSeqAC_O5Iw3rbG6OagPAa-Ly2UMvBlZvsGrvwFPVAsnSSlyOQ/viewform?usp=dialog",
                 "components": [
                     {
                         "id": "subcostal_4c",

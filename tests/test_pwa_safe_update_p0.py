@@ -30,7 +30,7 @@ def test_service_worker_features():
     assert assets_block_match is not None
     assets_text = assets_block_match.group(1)
     assets = [a.strip().strip("'\",") for a in assets_text.split("\n") if a.strip()]
-    assert len(assets) == 37
+    assert len(assets) == 38
     
     expected_assets = [
         './',

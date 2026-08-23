@@ -226,6 +226,8 @@
         "kirkpatrick_2024"
       ],
       "review_status": "pending-clinical-review",
+      "publication_status": "public-beta",
+      "feedback_url": "https://docs.google.com/forms/d/e/1FAIpQLSeqAC_O5Iw3rbG6OagPAa-Ly2UMvBlZvsGrvwFPVAsnSSlyOQ/viewform?usp=dialog",
       "components": [
         {
           "id": "subcostal_4c",

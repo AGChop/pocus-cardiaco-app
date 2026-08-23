@@ -8,16 +8,49 @@ const DataLoader = {
             return this.cache[name];
         }
         try {
-            // Usamos rutas relativas para compatibilidad con subcarpetas en GitHub Pages
+            if (name === 'protocols') {
+                const approvedData = await this.fetchResourceDirect('protocols');
+                if (!approvedData) {
+                    return null;
+                }
+                const betaData = await this.fetchResourceDirect('protocols.beta');
+
+                // Fusionar aprobados y beta
+                const combined = { ...approvedData };
+                combined.protocols = [...(approvedData.protocols || [])];
+                combined.references = [...(approvedData.references || [])];
+                if (betaData && typeof betaData === 'object' && Array.isArray(betaData.protocols)) {
+                    combined.protocols = combined.protocols.concat(betaData.protocols);
+                    if (Array.isArray(betaData.references)) {
+                        const refIds = new Set(combined.references.map(r => r.id));
+                        betaData.references.forEach(ref => {
+                            if (ref && ref.id && !refIds.has(ref.id)) {
+                                combined.references.push(ref);
+                                refIds.add(ref.id);
+                            }
+                        });
+                    }
+                }
+                this.cache['protocols'] = combined;
+                return combined;
+            }
+
+            return await this.fetchResourceDirect(name);
+        } catch (error) {
+            console.error(`Error cargando la base de datos ${name}:`, error);
+            return null;
+        }
+    },
+
+    async fetchResourceDirect(name) {
+        try {
             const response = await fetch(`data/${name}.json`);
             if (!response.ok) {
                 throw new Error(`Error HTTP: ${response.status} al cargar ${name}`);
             }
-            const data = await response.json();
-            this.cache[name] = data;
-            return data;
+            return await response.json();
         } catch (error) {
-            console.error(`Error cargando la base de datos ${name}:`, error);
+            console.error(`Error cargando recurso directo ${name}:`, error);
             return null;
         }
     },
