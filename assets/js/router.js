@@ -113,6 +113,10 @@ const Router = {
             this.renderInstall(container);
             return;
         }
+        if (hash === '#/comentarios') {
+            this.renderCommentsPage(container);
+            return;
+        }
 
         // Ruta no encontrada (404)
         this.render404(container);
@@ -206,6 +210,7 @@ const Router = {
                 <a href="#/recientes" class="btn-secondary">${I18n.translate("nav.recents")}</a>
                 <a href="#/referencias" class="btn-secondary">${I18n.translate("label.clinical_references_title")}</a>
                 <a href="#/acerca" class="btn-secondary">${I18n.translate("nav.about")}</a>
+                <a href="#/comentarios" class="btn-secondary" style="grid-column: span 2;">${I18n.translate("nav.comments")}</a>
             </div>
 
             <div style="text-align: center; margin-top: 1.5rem;">
@@ -1169,12 +1174,16 @@ const Router = {
             const targetLabel = I18n.translate("label.target_population");
             const compLabel = I18n.translate("label.components");
 
+            const isBeta = proto.publication_status === "public-beta";
+            const badgeHTML = isBeta ? `<span class="priority-badge priority-tier-2" style="background-color: #d97706; color: white; margin-left: 0.5rem; font-size: 0.75rem; border-radius: 4px; padding: 0.15rem 0.4rem;">${escapeHTML(I18n.translate("fate.beta_badge"))}</span>` : "";
+
             html += `
                 <details class="content-accordion protocol-accordion card clinical-card">
                     <summary class="content-accordion-summary">
                         <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
                             <span class="content-accordion-title">${escapeHTML(protoName)}</span>
                             <span class="unit-badge">${escapeHTML(proto.acronym)}</span>
+                            ${badgeHTML}
                         </div>
                         <span class="content-accordion-arrow"></span>
                     </summary>
@@ -1486,6 +1495,36 @@ const Router = {
         const protoName = I18n.localize({ es: proto.name_es, en: proto.name_en });
         const altName = I18n.localize({ es: proto.name_en, en: proto.name_es });
 
+        let safetyBannerHTML = `
+            <div class="protocol-safety-banner card" style="border-left: 4px solid #d97706; background: rgba(217, 119, 6, 0.05); padding: 0.75rem;">
+                <p style="margin: 0 0 0.5rem 0; font-size: 0.95rem; font-weight: bold; color: #d97706;">${escapeHTML(Router.uiStrings.clinicalWarningsTitle)}</p>
+                <ul style="margin: 0; padding-left: 1.25rem; font-size: 0.9rem; line-height: 1.4;">
+                    <li><strong>${escapeHTML(Router.uiStrings.clinicalPurposeLabel)}:</strong> ${escapeHTML(I18n.localize(data.educational_disclaimer))}</li>
+                    <li><strong>${escapeHTML(Router.uiStrings.clinicalIntegrationLabel)}:</strong> ${escapeHTML(I18n.localize(proto.integration))}</li>
+                    <li><strong>${escapeHTML(Router.uiStrings.clinicalSafetyLabel)}:</strong> ${escapeHTML(I18n.localize(proto.safety_and_workflow_notes))}</li>
+                </ul>
+            </div>
+        `;
+
+        const isBeta = proto.publication_status === "public-beta";
+        if (isBeta) {
+            safetyBannerHTML = `
+                <div class="protocol-safety-banner card" style="border-left: 4px solid #dc2626; background: rgba(220, 38, 38, 0.05); padding: 0.75rem; margin-bottom: 1rem;">
+                    <p style="margin: 0 0 0.5rem 0; font-size: 0.95rem; font-weight: bold; color: #dc2626;">⚠️ ${escapeHTML(I18n.translate("fate.beta_badge"))}</p>
+                    <p style="margin: 0 0 0.75rem 0; font-size: 0.9rem; line-height: 1.4; color: var(--text-main-light); font-weight: 600;">
+                        ${escapeHTML(I18n.translate("fate.warning_text"))}
+                    </p>
+                    ${proto.feedback_url ? `
+                    <div style="margin-top: 0.5rem;">
+                        <a href="${escapeHTML(proto.feedback_url)}" target="_blank" rel="noopener noreferrer" class="btn-primary" style="display: inline-block; padding: 0.4rem 0.8rem; font-size: 0.85rem; text-decoration: none; border-radius: 6px;">
+                            ✉️ ${escapeHTML(I18n.translate("fate.feedback_btn"))}
+                        </a>
+                    </div>
+                    ` : ""}
+                </div>
+            `;
+        }
+
         let html = `
             <div class="navigation-header">
                 <a href="#/protocolos" class="btn-back">← ${escapeHTML(Router.uiStrings.clinicalReturnToListBtn)}</a>
@@ -1493,14 +1532,7 @@ const Router = {
             </div>
 
             <div class="protocol-detail">
-                <div class="protocol-safety-banner card" style="border-left: 4px solid #d97706; background: rgba(217, 119, 6, 0.05); padding: 0.75rem;">
-                    <p style="margin: 0 0 0.5rem 0; font-size: 0.95rem; font-weight: bold; color: #d97706;">${escapeHTML(Router.uiStrings.clinicalWarningsTitle)}</p>
-                    <ul style="margin: 0; padding-left: 1.25rem; font-size: 0.9rem; line-height: 1.4;">
-                        <li><strong>${escapeHTML(Router.uiStrings.clinicalPurposeLabel)}:</strong> ${escapeHTML(I18n.localize(data.educational_disclaimer))}</li>
-                        <li><strong>${escapeHTML(Router.uiStrings.clinicalIntegrationLabel)}:</strong> ${escapeHTML(I18n.localize(proto.integration))}</li>
-                        <li><strong>${escapeHTML(Router.uiStrings.clinicalSafetyLabel)}:</strong> ${escapeHTML(I18n.localize(proto.safety_and_workflow_notes))}</li>
-                    </ul>
-                </div>
+                ${safetyBannerHTML}
 
                 <div class="protocol-tabs">
                     <div role="tablist" aria-label="${escapeHTML(I18n.translate("label.protocol_sections"))}" class="protocol-tab-list" style="display: flex; gap: 0.5rem; margin-bottom: 1rem; border-bottom: 2px solid var(--border-light); overflow-x: auto; padding-bottom: 0.25rem;">
@@ -3012,6 +3044,11 @@ const Router = {
                 <p>${escapeHTML(I18n.translate("label.about_training_objective"))}</p>
                 <p>${escapeHTML(I18n.translate("label.about_development_prefix"))} <strong>Hospital San Rafael de Alajuela (HSRA)</strong> ${escapeHTML(I18n.translate("label.about_development_course"))} <strong>${escapeHTML(I18n.translate("label.about_internal_medicine_program"))}</strong>.</p>
                 <p>${escapeHTML(I18n.translate("label.about_source_prefix"))} <em>Mediciones POCUS Cardiaco Adultos - Glosario</em> ${escapeHTML(I18n.translate("label.about_source_suffix"))}</p>
+                <section aria-labelledby="about-ip-title" style="border-top: 1px solid var(--border-light); padding-top: 1rem;">
+                    <h3 id="about-ip-title" style="margin-top: 0;">${escapeHTML(I18n.translate("label.about_ip_title"))}</h3>
+                    <p>${escapeHTML(I18n.translate("label.about_fate_attribution"))}</p>
+                    <p>${escapeHTML(I18n.translate("label.about_media_rights"))}</p>
+                </section>
             </div>
         `;
     },
@@ -3138,6 +3175,48 @@ const Router = {
 
                 <div class="safety-banner" style="margin-top: 0.5rem;">
                     <strong>${I18n.translate("label.pwa_note_title")}:</strong> ${I18n.translate("label.pwa_note_text")}
+                </div>
+            </div>
+        `;
+    },
+
+    // COMENTARIOS Y SUGERENCIAS
+    renderCommentsPage(container) {
+        const escapeHTML = (str) => {
+            if (!str) return "";
+            return str.toString()
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
+        };
+
+        const title = I18n.translate("comments.title");
+        const desc = I18n.translate("comments.description");
+        const warning = I18n.translate("comments.warning");
+        const btnText = I18n.translate("comments.open_btn");
+        const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSeqAC_O5Iw3rbG6OagPAa-Ly2UMvBlZvsGrvwFPVAsnSSlyOQ/viewform?usp=dialog";
+
+        container.innerHTML = `
+            <div class="navigation-header">
+                <a href="#/" class="btn-back">← ${escapeHTML(I18n.translate("nav.home"))}</a>
+                <h2>${escapeHTML(title)}</h2>
+            </div>
+
+            <div class="card clinical-detail-card" style="background-color: var(--card-bg-light); border: 1px solid var(--border-light); padding: 1.5rem; border-radius: 12px; display: flex; flex-direction: column; gap: 1.5rem;">
+                <p style="font-size: 0.95rem; line-height: 1.5; color: var(--text-main-light); margin: 0;">
+                    ${escapeHTML(desc)}
+                </p>
+
+                <div class="safety-banner" role="alert" style="border-left: 4px solid #dc2626; background: rgba(220, 38, 38, 0.05); padding: 0.75rem; border-radius: 4px; font-size: 0.9rem; line-height: 1.4; color: var(--text-main-light);">
+                    <strong>⚠️ ${escapeHTML(I18n.translate("label.clinical_warning"))}:</strong> ${escapeHTML(warning)}
+                </div>
+
+                <div style="text-align: center; margin-top: 0.5rem; margin-bottom: 0.5rem;">
+                    <a href="${escapeHTML(formUrl)}" target="_blank" rel="noopener noreferrer" class="btn-primary" style="display: inline-block; padding: 0.6rem 1.2rem; font-size: 0.95rem; text-decoration: none; border-radius: 8px; font-weight: bold;">
+                        ✉️ ${escapeHTML(btnText)}
+                    </a>
                 </div>
             </div>
         `;

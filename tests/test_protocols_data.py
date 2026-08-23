@@ -32,27 +32,32 @@ def test_json_is_valid(protocols_draft):
     assert "references" in protocols_draft
     assert "protocols" in protocols_draft
 
-def test_exactly_one_protocol_id_rush(protocols_draft):
-    # 2. Existe exactamente un protocolo
-    assert len(protocols_draft["protocols"]) == 1
-    # 3. Su ID es rush
-    assert protocols_draft["protocols"][0]["id"] == "rush"
+def test_exactly_two_protocols_rush_and_fate(protocols_draft):
+    # 2. Existen exactamente dos protocolos
+    assert len(protocols_draft["protocols"]) == 2
+    # 3. Sus IDs son rush y fate
+    ids = [p["id"] for p in protocols_draft["protocols"]]
+    assert "rush" in ids
+    assert "fate" in ids
 
-def test_exactly_three_components_ids(protocols_draft):
-    protocol = protocols_draft["protocols"][0]
-    assert "components" in protocol
-    # 4. Existen exactamente tres componentes
-    assert len(protocol["components"]) == 3
+def test_protocol_components_ids(protocols_draft):
+    rush = next(p for p in protocols_draft["protocols"] if p["id"] == "rush")
+    assert "components" in rush
+    assert len(rush["components"]) == 3
+    rush_comp_ids = [c["id"] for c in rush["components"]]
+    assert rush_comp_ids == ["pump", "tank", "pipes"]
 
-    # 5. Sus IDs son pump, tank y pipes
-    comp_ids = [c["id"] for c in protocol["components"]]
-    assert comp_ids == ["pump", "tank", "pipes"]
+    fate = next(p for p in protocols_draft["protocols"] if p["id"] == "fate")
+    assert "components" in fate
+    assert len(fate["components"]) == 4
+    fate_comp_ids = [c["id"] for c in fate["components"]]
+    assert fate_comp_ids == ["subcostal_4c", "apical_4c", "parasternal", "pleural"]
 
 def test_no_duplicate_ids(protocols_draft):
     # 6. No hay IDs duplicados en componentes o referencias
-    protocol = protocols_draft["protocols"][0]
-    comp_ids = [c["id"] for c in protocol["components"]]
-    assert len(comp_ids) == len(set(comp_ids))
+    for protocol in protocols_draft["protocols"]:
+        comp_ids = [c["id"] for c in protocol["components"]]
+        assert len(comp_ids) == len(set(comp_ids))
 
     ref_ids = [r["id"] for r in protocols_draft["references"]]
     assert len(ref_ids) == len(set(ref_ids))
@@ -61,28 +66,30 @@ def test_all_used_references_exist(protocols_draft):
     # 7. Todas las referencias utilizadas existen
     ref_ids = {r["id"] for r in protocols_draft["references"]}
 
-    # Referencias del protocolo general
-    for ref_id in protocols_draft["protocols"][0].get("reference_ids", []):
-        assert ref_id in ref_ids
-
-    # Referencias de cada componente
-    for comp in protocols_draft["protocols"][0]["components"]:
-        for ref_id in comp.get("reference_ids", []):
+    for protocol in protocols_draft["protocols"]:
+        for ref_id in protocol.get("reference_ids", []):
             assert ref_id in ref_ids
+
+        # Referencias de cada componente
+        for comp in protocol["components"]:
+            for ref_id in comp.get("reference_ids", []):
+                assert ref_id in ref_ids
 
 def test_linked_window_ids_exist(protocols_draft, windows_data):
     # 8. Todos los linked_window_ids existen en windows.json
     valid_window_ids = {w["id"] for w in windows_data}
-    for comp in protocols_draft["protocols"][0]["components"]:
-        for w_id in comp["linked_window_ids"]:
-            assert w_id in valid_window_ids
+    for protocol in protocols_draft["protocols"]:
+        for comp in protocol["components"]:
+            for w_id in comp["linked_window_ids"]:
+                assert w_id in valid_window_ids
 
 def test_linked_measurement_ids_exist(protocols_draft, measurements_data):
     # 9. Todos los linked_measurement_ids existen en measurements.json
     valid_measurement_ids = {m["id"] for m in measurements_data}
-    for comp in protocols_draft["protocols"][0]["components"]:
-        for m_id in comp["linked_measurement_ids"]:
-            assert m_id in valid_measurement_ids
+    for protocol in protocols_draft["protocols"]:
+        for comp in protocol["components"]:
+            for m_id in comp["linked_measurement_ids"]:
+                assert m_id in valid_measurement_ids
 
 def test_no_fictitious_references_or_metadata(protocols_draft):
     # 10. No existe el texto Referencia_RUSH_Editor.pdf
@@ -90,29 +97,29 @@ def test_no_fictitious_references_or_metadata(protocols_draft):
     json_str = json.dumps(protocols_draft)
     assert "Referencia_RUSH_Editor.pdf" not in json_str
 
-    # En el protocolo y sus componentes, revisar si se coló algún source_document o source_page ficticio
-    assert "source_document" not in protocols_draft["protocols"][0]
-    assert "source_page" not in protocols_draft["protocols"][0]
-    for comp in protocols_draft["protocols"][0]["components"]:
-        assert "source_document" not in comp
-        assert "source_page" not in comp
+    for protocol in protocols_draft["protocols"]:
+        assert "source_document" not in protocol
+        assert "source_page" not in protocol
+        for comp in protocol["components"]:
+            assert "source_document" not in comp
+            assert "source_page" not in comp
 
 def test_required_fields_exist(protocols_draft):
     # 12. Existe disclaimer
     assert "disclaimer" in protocols_draft["metadata"]
-    # 13. Existe limitations
-    assert "limitations" in protocols_draft["protocols"][0]
-    # 14. Existe safety_and_workflow_notes
-    assert "safety_and_workflow_notes" in protocols_draft["protocols"][0]
-    # 15. Cada componente tiene interpretation_limits
-    for comp in protocols_draft["protocols"][0]["components"]:
-        assert "interpretation_limits" in comp
+    # 13-15. Campos requeridos en todos los protocolos y componentes
+    for protocol in protocols_draft["protocols"]:
+        assert "limitations" in protocol
+        assert "safety_and_workflow_notes" in protocol
+        for comp in protocol["components"]:
+            assert "interpretation_limits" in comp
 
 def test_clinical_corrections_validation(protocols_draft):
     json_str = json.dumps(protocols_draft)
 
     # 1. pump.name_es es “La Bomba (Evaluación cardíaca)”
-    pump_comp = next(c for c in protocols_draft["protocols"][0]["components"] if c["id"] == "pump")
+    rush = next(p for p in protocols_draft["protocols"] if p["id"] == "rush")
+    pump_comp = next(c for c in rush["components"] if c["id"] == "pump")
     assert pump_comp["name_es"] == "La Bomba (Evaluación cardíaca)"
 
     # 2. No existe el texto “El Bombo”
@@ -133,14 +140,18 @@ def test_clinical_corrections_validation(protocols_draft):
     assert perera_ref["doi"] == "10.1016/j.emc.2009.09.010"
 
     # 7. Pipes puede tener listas vinculadas vacías sin inventar IDs
-    pipes_comp = next(c for c in protocols_draft["protocols"][0]["components"] if c["id"] == "pipes")
+    pipes_comp = next(c for c in rush["components"] if c["id"] == "pipes")
     assert pipes_comp["linked_window_ids"] == []
     assert pipes_comp["linked_measurement_ids"] == []
 
 def test_status_is_pending_clinical_review(protocols_draft):
     # 16. El status es pending-clinical-review
     assert protocols_draft["metadata"]["status"] == "pending-clinical-review"
-    assert protocols_draft["protocols"][0]["review_status"] == "pending-clinical-review"
+    for protocol in protocols_draft["protocols"]:
+        if protocol["id"] == "rush":
+            assert protocol["review_status"] == "approved-for-app-use"
+        elif protocol["id"] == "fate":
+            assert protocol["review_status"] == "pending-clinical-review"
 
 def get_file_hash(filepath):
     hasher = hashlib.md5()

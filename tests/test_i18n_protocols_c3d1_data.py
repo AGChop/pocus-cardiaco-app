@@ -49,32 +49,48 @@ def test_i18n_catalog_properties(protocols_i18n):
     assert "El protocolo RUSH complementa y no sustituye" not in promoter_content
 
 def test_compiled_data_structure(protocols_final, protocols_draft, protocols_i18n):
-    # 6. Conserva un protocolo RUSH
-    assert len(protocols_final["protocols"]) == 1
-    proto = protocols_final["protocols"][0]
-    assert proto["id"] == "rush"
+    # 6. Conserva RUSH
+    proto_rush = next(p for p in protocols_final["protocols"] if p["id"] == "rush")
+    proto_fate = next((p for p in protocols_final["protocols"] if p["id"] == "fate"), None)
 
-    # 7. Tiene tres componentes en orden original
-    components = proto["components"]
-    assert len(components) == 3
-    assert [c["id"] for c in components] == ["pump", "tank", "pipes"]
+    # 7. Tiene tres componentes en orden original para RUSH
+    components_rush = proto_rush["components"]
+    assert len(components_rush) == 3
+    assert [c["id"] for c in components_rush] == ["pump", "tank", "pipes"]
 
-    # 9. Los 13 campos generales/metadatos son bilingües y no vacíos
+    # Si FATE está presente, tiene cuatro componentes en orden original para FATE
+    if proto_fate:
+        components_fate = proto_fate["components"]
+        assert len(components_fate) == 4
+        assert [c["id"] for c in components_fate] == ["subcostal_4c", "apical_4c", "parasternal", "pleural"]
+
+    # 9. Los campos generales/metadatos son bilingües y no vacíos
     bilingual_fields = [
         ("educational_disclaimer", protocols_final["educational_disclaimer"]),
         ("metadata.title", protocols_final["metadata"]["title"]),
         ("metadata.scope", protocols_final["metadata"]["scope"]),
         ("metadata.intended_audience", protocols_final["metadata"]["intended_audience"]),
         ("metadata.disclaimer", protocols_final["metadata"]["disclaimer"]),
-        ("rush.clinical_context", proto["clinical_context"]),
-        ("rush.purpose", proto["purpose"]),
-        ("rush.target_population", proto["target_population"]),
-        ("rush.prerequisites", proto["prerequisites"]),
-        ("rush.sequence_note", proto["sequence_note"]),
-        ("rush.integration", proto["integration"]),
-        ("rush.limitations", proto["limitations"]),
-        ("rush.safety_and_workflow_notes", proto["safety_and_workflow_notes"])
+        ("rush.clinical_context", proto_rush["clinical_context"]),
+        ("rush.purpose", proto_rush["purpose"]),
+        ("rush.target_population", proto_rush["target_population"]),
+        ("rush.prerequisites", proto_rush["prerequisites"]),
+        ("rush.sequence_note", proto_rush["sequence_note"]),
+        ("rush.integration", proto_rush["integration"]),
+        ("rush.limitations", proto_rush["limitations"]),
+        ("rush.safety_and_workflow_notes", proto_rush["safety_and_workflow_notes"]),
     ]
+    if proto_fate:
+        bilingual_fields.extend([
+            ("fate.clinical_context", proto_fate["clinical_context"]),
+            ("fate.purpose", proto_fate["purpose"]),
+            ("fate.target_population", proto_fate["target_population"]),
+            ("fate.prerequisites", proto_fate["prerequisites"]),
+            ("fate.sequence_note", proto_fate["sequence_note"]),
+            ("fate.integration", proto_fate["integration"]),
+            ("fate.limitations", proto_fate["limitations"]),
+            ("fate.safety_and_workflow_notes", proto_fate["safety_and_workflow_notes"])
+        ])
     for name, fld in bilingual_fields:
         assert isinstance(fld, dict), f"{name} no es un dict"
         assert "es" in fld and "en" in fld
@@ -82,24 +98,25 @@ def test_compiled_data_structure(protocols_final, protocols_draft, protocols_i18
         assert fld["en"].strip() != ""
 
     # 10 y 11. Estructura de listas de componentes bilingües
-    for comp in components:
-        c_id = comp["id"]
-        # interpretation_limits es dict bilingüe
-        assert isinstance(comp["interpretation_limits"], dict)
-        assert "es" in comp["interpretation_limits"]
-        assert "en" in comp["interpretation_limits"]
+    for proto in [p for p in [proto_rush, proto_fate] if p is not None]:
+        for comp in proto["components"]:
+            c_id = comp["id"]
+            # interpretation_limits es dict bilingüe
+            assert isinstance(comp["interpretation_limits"], dict)
+            assert "es" in comp["interpretation_limits"]
+            assert "en" in comp["interpretation_limits"]
 
-        for lf in ["clinical_questions", "targets", "suggested_views", "possible_findings"]:
-            lst = comp[lf]
-            assert isinstance(lst, list)
-            # Cada elemento es un diccionario {es, en}
-            for idx, item in enumerate(lst):
-                assert isinstance(item, dict), f"Elemento {idx} de {lf} en {c_id} no es dict"
-                assert "es" in item and "en" in item
-                assert isinstance(item["es"], str)
-                assert isinstance(item["en"], str)
-                assert item["es"].strip() != ""
-                assert item["en"].strip() != ""
+            for lf in ["clinical_questions", "targets", "suggested_views", "possible_findings"]:
+                lst = comp[lf]
+                assert isinstance(lst, list)
+                # Cada elemento es un diccionario {es, en}
+                for idx, item in enumerate(lst):
+                    assert isinstance(item, dict), f"Elemento {idx} de {lf} en {c_id} no es dict"
+                    assert "es" in item and "en" in item
+                    assert isinstance(item["es"], str)
+                    assert isinstance(item["en"], str)
+                    assert item["es"].strip() != ""
+                    assert item["en"].strip() != ""
 
     # 13. El español generado coincide con el draft (excepto por educational_disclaimer que no existe en el draft)
     def extract_spanish(data):
@@ -111,7 +128,10 @@ def test_compiled_data_structure(protocols_final, protocols_draft, protocols_i18
             return [extract_spanish(item) for item in data]
         return data
 
-    assert extract_spanish(protocols_final["protocols"]) == extract_spanish(protocols_draft["protocols"])
+    # Compare RUSH Spanish parts only
+    final_rush_es = extract_spanish(proto_rush)
+    draft_rush_es = extract_spanish(next(p for p in protocols_draft["protocols"] if p["id"] == "rush"))
+    assert final_rush_es == draft_rush_es
 
     # 14. El inglés coincide con el catálogo i18n
     i18n_rush = protocols_i18n["protocols"]["rush"]
@@ -121,16 +141,17 @@ def test_compiled_data_structure(protocols_final, protocols_draft, protocols_i18
     assert protocols_final["metadata"]["intended_audience"]["en"] == protocols_i18n["metadata"]["intended_audience"]
     assert protocols_final["metadata"]["disclaimer"]["en"] == protocols_i18n["metadata"]["disclaimer"]
 
-    assert proto["clinical_context"]["en"] == i18n_rush["clinical_context"]
-    assert proto["purpose"]["en"] == i18n_rush["purpose"]
-    assert proto["target_population"]["en"] == i18n_rush["target_population"]
-    assert proto["prerequisites"]["en"] == i18n_rush["prerequisites"]
-    assert proto["sequence_note"]["en"] == i18n_rush["sequence_note"]
-    assert proto["integration"]["en"] == i18n_rush["integration"]
-    assert proto["limitations"]["en"] == i18n_rush["limitations"]
-    assert proto["safety_and_workflow_notes"]["en"] == i18n_rush["safety_and_workflow_notes"]
+    # Validar RUSH inglés
+    assert proto_rush["clinical_context"]["en"] == i18n_rush["clinical_context"]
+    assert proto_rush["purpose"]["en"] == i18n_rush["purpose"]
+    assert proto_rush["target_population"]["en"] == i18n_rush["target_population"]
+    assert proto_rush["prerequisites"]["en"] == i18n_rush["prerequisites"]
+    assert proto_rush["sequence_note"]["en"] == i18n_rush["sequence_note"]
+    assert proto_rush["integration"]["en"] == i18n_rush["integration"]
+    assert proto_rush["limitations"]["en"] == i18n_rush["limitations"]
+    assert proto_rush["safety_and_workflow_notes"]["en"] == i18n_rush["safety_and_workflow_notes"]
 
-    for comp in components:
+    for comp in components_rush:
         c_id = comp["id"]
         i18n_comp = i18n_rush["components"][c_id]
         assert comp["interpretation_limits"]["en"] == i18n_comp["interpretation_limits"]
@@ -138,12 +159,36 @@ def test_compiled_data_structure(protocols_final, protocols_draft, protocols_i18
             for idx, item in enumerate(comp[lf]):
                 assert item["en"] == i18n_comp[lf][idx]
 
+    # Validar FATE inglés si está presente
+    if proto_fate:
+        i18n_fate = protocols_i18n["protocols"]["fate"]
+        assert proto_fate["clinical_context"]["en"] == i18n_fate["clinical_context"]
+        assert proto_fate["purpose"]["en"] == i18n_fate["purpose"]
+        assert proto_fate["target_population"]["en"] == i18n_fate["target_population"]
+        assert proto_fate["prerequisites"]["en"] == i18n_fate["prerequisites"]
+        assert proto_fate["sequence_note"]["en"] == i18n_fate["sequence_note"]
+        assert proto_fate["integration"]["en"] == i18n_fate["integration"]
+        assert proto_fate["limitations"]["en"] == i18n_fate["limitations"]
+        assert proto_fate["safety_and_workflow_notes"]["en"] == i18n_fate["safety_and_workflow_notes"]
+
+        for comp in components_fate:
+            c_id = comp["id"]
+            i18n_comp = i18n_fate["components"][c_id]
+            assert comp["interpretation_limits"]["en"] == i18n_comp["interpretation_limits"]
+            for lf in ["clinical_questions", "targets", "suggested_views", "possible_findings"]:
+                for idx, item in enumerate(comp[lf]):
+                    assert item["en"] == i18n_comp[lf][idx]
+
     # 15. Invariantes
     assert protocols_final["status"] == "approved-for-app-use"
     assert protocols_final["version"] == "1.0.0"
     assert protocols_final["approved_on"] == "2026-07-21"
     assert protocols_final["source"] == "data/protocols.draft.json"
-    assert proto["review_status"] == "pending-clinical-review"
+    for proto in [p for p in [proto_rush, proto_fate] if p is not None]:
+        if proto["id"] == "rush":
+            assert proto["review_status"] == "approved-for-app-use"
+        elif proto["id"] == "fate":
+            assert proto["review_status"] == "pending-clinical-review"
 
 def test_draft_canonical_monolingual(protocols_draft):
     # 1. El borrador no contiene educational_disclaimer en el nivel superior (ausencia intencional)
@@ -158,6 +203,116 @@ def test_draft_canonical_monolingual(protocols_draft):
     json_str = json.dumps(protocols_draft)
     assert '"es":' not in json_str
     assert '"en":' not in json_str
+
+def test_fate_exclusions_and_clean_state(protocols_draft):
+    fate = next(p for p in protocols_draft["protocols"] if p["id"] == "fate")
+    fate_str = json.dumps(fate).lower()
+    # Full lung-ultrasound diagnoses are outside the component's assessed findings.
+    pleural_scope_es = next(c for c in fate["components"] if c["id"] == "pleural")
+    pleural_assessment_es = json.dumps(
+        {
+            "clinical_questions": pleural_scope_es["clinical_questions"],
+            "targets": pleural_scope_es["targets"],
+            "possible_findings": pleural_scope_es["possible_findings"],
+        },
+        ensure_ascii=False,
+    ).lower()
+    assert "neumotórax" not in pleural_assessment_es
+    assert "a-line" not in fate_str
+    assert "líneas a" not in fate_str
+    assert "lung sliding" not in fate_str
+    assert "deslizamiento pulmonar" not in fate_str
+    assert "deslizamiento pleural" not in fate_str
+    assert "derrame masivo" not in fate_str
+    assert "tomografía" not in fate_str
+    assert "toracocentesis" not in fate_str
+
+    # Assert FATE references exist and are resoluble, and have no source_page
+    ref_ids = {r["id"] for r in protocols_draft["references"]}
+    for ref_id in [
+        "jensen_2004",
+        "via_2014",
+        "neskovic_2018",
+        "volpicelli_2012",
+        "kirkpatrick_2024",
+        "volpicelli_2026",
+    ]:
+        assert ref_id in ref_ids
+        ref_obj = next(r for r in protocols_draft["references"] if r["id"] == ref_id)
+        assert "source_page" not in ref_obj
+
+    # Assert correct DOI of via_2014 and absence of incorrect DOI
+    via_ref = next(r for r in protocols_draft["references"] if r["id"] == "via_2014")
+    assert "10.1016/j.echo.2014.05.001" in via_ref["citation"]
+    assert "10.1017/j.echo" not in via_ref["citation"]
+
+    # Jensen remains primary source for components, while Via and Neskovic support protocol level
+    assert "jensen_2004" in fate["reference_ids"]
+    assert "via_2014" in fate["reference_ids"]
+    assert "neskovic_2018" in fate["reference_ids"]
+    assert "kirkpatrick_2024" in fate["reference_ids"]
+
+    # Jensen is the reference for each component, but Via/Neskovic are not in components
+    for comp in fate["components"]:
+        assert "jensen_2004" in comp["reference_ids"]
+        assert "via_2014" not in comp["reference_ids"]
+        assert "neskovic_2018" not in comp["reference_ids"]
+
+    # El componente apical evalúa VI y VD por separado.
+    apical = next(c for c in fate["components"] if c["id"] == "apical_4c")
+    apical_assess = apical["quick_reference"]["assess"].lower()
+    assert "vi" in apical_assess
+    assert "vd" in apical_assess
+    assert "por separado" in apical_assess
+    assert "biventricular" not in apical_assess
+
+    # Parasternal component does not make septal flattening a central alert
+    parasternal = next(c for c in fate["components"] if c["id"] == "parasternal")
+    assert "aplanamiento septal" not in parasternal["quick_reference"]["alerts"].lower()
+    # Categorías paraesternales separadas
+    assert len(parasternal["possible_findings"]) == 5
+    assert "Sin alteración evidente de las dimensiones" in parasternal["possible_findings"][0]
+    assert "Alteración aparente de las dimensiones" in parasternal["possible_findings"][1]
+    assert "Contractilidad global aparentemente conservada" in parasternal["possible_findings"][2]
+    assert "Contractilidad global aparentemente reducida" in parasternal["possible_findings"][3]
+    assert "Estudio no concluyente" in parasternal["possible_findings"][4]
+
+    # Pleural scan/component mentions bilateral scans and anatomical landmarks
+    pleural = next(c for c in fate["components"] if c["id"] == "pleural")
+    pleural_limits = pleural["interpretation_limits"].lower()
+    assert "colecciones" in pleural_limits
+    assert "loculadas" in pleural_limits
+    assert "no concluyente" in pleural_limits
+    # Categoría pleural "sin hallazgo evidente"
+    assert "Sin hallazgo evidente de líquido pleural" in pleural["possible_findings"][3]
+    # Ausencia de afirmación diagnóstica de "ausencia de derrame"
+    assert "ausencia de derrame" not in pleural_limits
+
+    # Assert no mandatory quantitative measurements
+    for comp in fate["components"]:
+        assert comp["linked_measurement_ids"] == []
+
+    # Verification of references in protocols.json (should only contain RUSH reachable references)
+    with open("data/protocols.json", "r", encoding="utf-8") as f:
+        promoted = json.load(f)
+    # FATE must be absent
+    assert not any(p["id"] == "fate" for p in promoted["protocols"])
+    # RUSH must be present and approved
+    rush = next(p for p in promoted["protocols"] if p["id"] == "rush")
+    assert rush["review_status"] == "approved-for-app-use"
+
+    # Reachable references for RUSH
+    rush_ref_ids = set(rush["reference_ids"])
+    for c in rush["components"]:
+        rush_ref_ids.update(c.get("reference_ids", []))
+
+    promoted_ref_ids = {r["id"] for r in promoted["references"]}
+    assert promoted_ref_ids == rush_ref_ids
+    assert "via_2014" not in promoted_ref_ids
+    assert "neskovic_2018" not in promoted_ref_ids
+    assert "volpicelli_2012" not in promoted_ref_ids
+    assert "kirkpatrick_2024" not in promoted_ref_ids
+    assert "volpicelli_2026" not in promoted_ref_ids
 
 def test_promotion_script_failures():
     # 18. Verificar que el promotor detecta y falla con errores esperados
@@ -213,3 +368,164 @@ def test_promotion_script_failures():
         shutil.copyfile(backup_path, "data/protocols.i18n.json")
         if os.path.exists(backup_path):
             os.remove(backup_path)
+
+
+def test_exact_clinical_requirements(protocols_final, protocols_draft, protocols_i18n):
+    # 1. DOI correcto de Via
+    via_draft_ref = next(r for r in protocols_draft["references"] if r["id"] == "via_2014")
+    assert "10.1016/j.echo.2014.05.001" in via_draft_ref["citation"]
+
+    # 2. Ausencia del DOI incorrecto
+    assert "10.1017/j.echo.2014.05.001" not in via_draft_ref["citation"]
+
+    # 3. Descripción separada de la función del VI y del VD
+    fate_draft = next(p for p in protocols_draft["protocols"] if p["id"] == "fate")
+    apical_draft = next(c for c in fate_draft["components"] if c["id"] == "apical_4c")
+    apical_assess = apical_draft["quick_reference"]["assess"].lower()
+    assert "vi" in apical_assess
+    assert "vd" in apical_assess
+    assert "por separado" in apical_assess
+    assert "biventricular" not in apical_assess
+
+    # 4. Categorías paraesternales separadas
+    parasternal_draft = next(c for c in fate_draft["components"] if c["id"] == "parasternal")
+    expected_findings_es = [
+        "Sin alteración evidente de las dimensiones o del grosor parietal.",
+        "Alteración aparente de las dimensiones o del grosor parietal.",
+        "Contractilidad global aparentemente conservada.",
+        "Contractilidad global aparentemente reducida.",
+        "Estudio no concluyente."
+    ]
+    assert parasternal_draft["possible_findings"] == expected_findings_es
+
+    # 5. Categoría pleural "sin hallazgo evidente"
+    pleural_draft = next(c for c in fate_draft["components"] if c["id"] == "pleural")
+    assert "Sin hallazgo evidente de líquido pleural en el hemitórax examinado." in pleural_draft["possible_findings"]
+
+    # 6. Ausencia de afirmación diagnóstica de "ausencia de derrame"
+    assert "ausencia de derrame" not in pleural_draft["interpretation_limits"].lower()
+
+    # 7. Paridad posicional ES/EN
+    i18n_fate = protocols_i18n["protocols"]["fate"]
+    for comp in fate_draft["components"]:
+        c_id = comp["id"]
+        i18n_comp = i18n_fate["components"][c_id]
+        for list_field in ["clinical_questions", "targets", "suggested_views", "possible_findings"]:
+            assert len(comp[list_field]) == len(i18n_comp[list_field]), f"Mismatch size in {c_id}.{list_field}"
+
+    # 8. Referencias alcanzables del archivo promovido
+    promoted_ref_ids = {r["id"] for r in protocols_final["references"]}
+    rush_final = next(p for p in protocols_final["protocols"] if p["id"] == "rush")
+    expected_ref_ids = set(rush_final["reference_ids"])
+    for comp in rush_final["components"]:
+        expected_ref_ids.update(comp.get("reference_ids", []))
+    assert promoted_ref_ids == expected_ref_ids
+
+    # 9. FATE ausente de protocols.json
+    assert not any(p["id"] == "fate" for p in protocols_final["protocols"])
+
+    # 10. RUSH intacto
+    assert any(p["id"] == "rush" for p in protocols_final["protocols"])
+
+
+def test_fate_scientific_review_blockers_are_resolved(
+    protocols_final, protocols_draft, protocols_i18n
+):
+    fate_draft = next(p for p in protocols_draft["protocols"] if p["id"] == "fate")
+    fate_i18n = protocols_i18n["protocols"]["fate"]
+    fate_es = json.dumps(fate_draft, ensure_ascii=False)
+    fate_en = json.dumps(fate_i18n)
+
+    # FATE remains a draft and cannot leak into the promoted runtime file.
+    assert fate_draft["review_status"] == "pending-clinical-review"
+    assert not any(p["id"] == "fate" for p in protocols_final["protocols"])
+
+    # The purpose and apical component describe LV and RV function separately.
+    assert "función sistólica del VI y del VD por separado" in fate_draft["purpose"]
+    assert "LV and RV systolic function separately" in fate_i18n["purpose"]
+    apical_es = next(c for c in fate_draft["components"] if c["id"] == "apical_4c")
+    apical_en = fate_i18n["components"]["apical_4c"]
+    assert "VI" in apical_es["targets"][1]
+    assert "VD" in apical_es["targets"][2]
+    assert "LV" in apical_en["targets"][1]
+    assert "RV" in apical_en["targets"][2]
+    assert "global biventricular" not in json.dumps(apical_en).lower()
+    assert "global biventricular" not in json.dumps(apical_es, ensure_ascii=False).lower()
+
+    # Simpson quantification belongs to referral for comprehensive echocardiography.
+    assert "método de Simpson" in apical_es["interpretation_limits"]
+    assert "derivar a ecocardiografía integral" in apical_es["interpretation_limits"]
+    assert "Simpson's method" in apical_en["interpretation_limits"]
+    assert "refer for comprehensive echocardiography" in apical_en["interpretation_limits"]
+
+    # The subcostal component avoids binary exclusion and undefined significance.
+    subcostal_es = next(c for c in fate_draft["components"] if c["id"] == "subcostal_4c")
+    subcostal_en = fate_i18n["components"]["subcostal_4c"]
+    assert "Presencia o ausencia" not in json.dumps(subcostal_es, ensure_ascii=False)
+    assert "Presence or absence" not in json.dumps(subcostal_en)
+    assert "derrame pericárdico significativo" not in json.dumps(subcostal_es, ensure_ascii=False).lower()
+    assert "significant pericardial effusion" not in json.dumps(subcostal_en).lower()
+    assert "relevancia hemodinámica" in subcostal_es["quick_reference"]["alerts"]
+    assert "hemodynamic relevance" in subcostal_en["quick_reference"]["alerts"]
+
+    # English terminology and governance requirements are explicit.
+    assert "comprehensive consultative echocardiography" in fate_i18n["integration"]
+    assert "formal echocardiogram" not in fate_i18n["integration"]
+    assert "competencia supervisada" in fate_draft["prerequisites"]
+    assert "supervised competency" in fate_i18n["prerequisites"]
+    for required_es in [
+        "calidad de imagen",
+        "conclusión",
+        "almacenar",
+        "supervisión",
+        "control de calidad",
+        "Repetir la evaluación ante cambios clínicos",
+    ]:
+        assert required_es in fate_draft["safety_and_workflow_notes"]
+    for required_en in [
+        "image quality",
+        "conclusion",
+        "store images",
+        "supervision",
+        "quality assurance",
+        "Repeat the assessment after clinical changes",
+    ]:
+        assert required_en in fate_i18n["safety_and_workflow_notes"]
+
+    # Current nomenclature explicitly identifies the basic B-mode scope.
+    assert "FATE básico" in fate_draft["clinical_context"]
+    assert "modo B" in fate_draft["clinical_context"]
+    assert "Basic FATE" in fate_i18n["clinical_context"]
+    assert "B-mode" in fate_i18n["clinical_context"]
+    assert "ventana no diagnóstica" in fate_draft["limitations"]
+    assert "non-diagnostic window" in fate_i18n["limitations"]
+
+    # The pleural component has a dedicated lung-ultrasound consensus reference.
+    pleural_es = next(c for c in fate_draft["components"] if c["id"] == "pleural")
+    pleural_en = fate_i18n["components"]["pleural"]
+    assert "volpicelli_2012" in pleural_es["reference_ids"]
+    assert "volpicelli_2026" in pleural_es["reference_ids"]
+    volpicelli = next(r for r in protocols_draft["references"] if r["id"] == "volpicelli_2012")
+    assert "10.1007/s00134-012-2513-4" in volpicelli["citation"]
+    volpicelli_update = next(
+        r for r in protocols_draft["references"] if r["id"] == "volpicelli_2026"
+    )
+    assert "10.1007/s00134-026-08487-2" in volpicelli_update["citation"]
+    assert "no sustituye un examen pulmonar completo" in pleural_es["interpretation_limits"]
+    assert "does not replace a complete lung ultrasound examination" in pleural_en[
+        "interpretation_limits"
+    ]
+
+    kirkpatrick = next(
+        r for r in protocols_draft["references"] if r["id"] == "kirkpatrick_2024"
+    )
+    assert "10.1016/j.echo.2024.05.001" in kirkpatrick["citation"]
+
+    # Previously rejected wording remains absent across the complete FATE object.
+    for rejected in [
+        "mandatory quantitative thresholds",
+        "mandatory quantitative measurements",
+        "Apparent marked alteration",
+        "non-conclusive",
+    ]:
+        assert rejected.lower() not in fate_en.lower()

@@ -105,6 +105,119 @@
           }
         }
       }
+    },
+    "fate": {
+      "clinical_context": "Basic FATE focused cardiopulmonary point-of-care assessment, based on qualitative B-mode acquisition, for monitoring critically ill patients in intensive care, anesthesia, or emergency settings.",
+      "purpose": "To rapidly and qualitatively assess obvious cardiopulmonary pathology, chamber size, LV and RV systolic function separately, and findings compatible with pericardial or pleural fluid.",
+      "target_population": "Critically ill patients with suspected cardiopulmonary dysfunction, shock, or respiratory distress.",
+      "prerequisites": "Documented training in focused echocardiography and point-of-care pleuropulmonary ultrasound (POCUS), with supervised competency appropriate to the professional role and local regulations.",
+      "sequence_note": "The acquisition sequence of views should be adapted to the patient's acoustic window and the priority clinical concern.",
+      "integration": "FATE findings must be integrated with the complete clinical context. The presence of obvious abnormalities supports rapid clinical decisions, but the protocol is neither comprehensive consultative echocardiography nor a complete lung ultrasound examination.",
+      "limitations": "The examination is focused and highly operator-dependent. A non-diagnostic window does not permit inference that pathology is absent. A limited or inconclusive study does not equate to normalcy and must not delay expert assessment or comprehensive consultative echocardiography if indicated.",
+      "safety_and_workflow_notes": "Always interpret in the patient's clinical and hemodynamic context. Document the indication, image quality, findings, limitations, and conclusion; store images or clips according to local policy; ensure supervision when required; and participate in periodic review and quality assurance. Repeat the assessment after clinical changes when it may alter management. A technically limited study must be recorded as such to avoid a false sense of security.",
+      "components": {
+        "subcostal_4c": {
+          "clinical_questions": [
+            "Are there findings compatible with pericardial fluid?",
+            "Are there gross size abnormalities in the visible chambers?"
+          ],
+          "targets": [
+            "Search for findings compatible with pericardial fluid.",
+            "Qualitative size ratio of cardiac chambers and global contractility."
+          ],
+          "suggested_views": [
+            "Subcostal four-chamber (SC4C)"
+          ],
+          "possible_findings": [
+            "No obvious finding of pericardial fluid in the examined window.",
+            "Apparent alteration of dimensions or global contractility.",
+            "Findings compatible with pericardial fluid.",
+            "Inconclusive study."
+          ],
+          "interpretation_limits": "A technically limited subcostal view due to bowel gas or body habitus may obscure an effusion. The hemodynamic relevance of an apparent pericardial effusion requires clinical integration and additional evaluation.",
+          "quick_reference": {
+            "assess": "Findings compatible with pericardial fluid and chamber size relation from the subcostal window.",
+            "alerts": "Apparent pericardial fluid; assess hemodynamic relevance through clinical integration and additional evaluation."
+          }
+        },
+        "apical_4c": {
+          "clinical_questions": [
+            "Do chamber dimensions or relative loading appear abnormal?",
+            "Does global LV systolic function appear reduced?",
+            "Does global RV systolic function appear reduced?"
+          ],
+          "targets": [
+            "Qualitative RV/LV size ratio (obvious RV dilation).",
+            "Qualitative estimation of global LV systolic function.",
+            "Qualitative estimation of global RV systolic function."
+          ],
+          "suggested_views": [
+            "Apical four-chamber (A4C)"
+          ],
+          "possible_findings": [
+            "Apparent RV dilation (increased qualitative RV/LV ratio).",
+            "Apparently preserved global LV systolic function.",
+            "Apparently reduced global LV systolic function.",
+            "Apparently preserved global RV systolic function.",
+            "Apparently reduced global RV systolic function.",
+            "Inconclusive study."
+          ],
+          "interpretation_limits": "Visual RV/LV comparison does not establish etiology by itself. LV and RV function must be described separately. When clinical findings are discordant or quantification is needed, including Simpson's method, refer for comprehensive echocardiography.",
+          "quick_reference": {
+            "assess": "Qualitative RV/LV size ratio and separate qualitative LV and RV systolic function from the apical window.",
+            "alerts": "Marked apparent alteration of relative RV dimensions or apparently reduced LV or RV systolic function."
+          }
+        },
+        "parasternal": {
+          "clinical_questions": [
+            "Do chamber dimensions or wall thickness appear abnormal?",
+            "Does global contractility appear altered in PLAX or PSAX?"
+          ],
+          "targets": [
+            "Apparent dimensions, apparent wall thickness, global contractility, and ventricular geometry."
+          ],
+          "suggested_views": [
+            "Parasternal long-axis (PLAX)",
+            "Parasternal short-axis (PSAX)"
+          ],
+          "possible_findings": [
+            "No obvious alteration of dimensions or wall thickness.",
+            "Apparent alteration of dimensions or wall thickness.",
+            "Apparently preserved global contractility.",
+            "Apparently reduced global contractility.",
+            "Inconclusive study."
+          ],
+          "interpretation_limits": "Chronic septal deformities can mimic acute overload. Septal flattening is an optional and nonspecific finding requiring clinical correlation and does not constitute an overload diagnosis by itself.",
+          "quick_reference": {
+            "assess": "LV geometry, wall thickness, and global contractility in PSAX/PLAX.",
+            "alerts": "Global LV contractility or ventricular geometry apparently altered."
+          }
+        },
+        "pleural": {
+          "clinical_questions": [
+            "Are there sonographic findings compatible with pleural fluid on either side?",
+            "Is the pleural scan conclusive or technically limited?"
+          ],
+          "targets": [
+            "Qualitative classification of each hemithorax as showing findings compatible with pleural fluid, no obvious finding, or an inconclusive study."
+          ],
+          "suggested_views": [
+            "Bilateral pleural scan (Pleural)"
+          ],
+          "possible_findings": [
+            "Findings compatible with pleural fluid in the right hemithorax.",
+            "Findings compatible with pleural fluid in the left hemithorax.",
+            "Findings compatible with bilateral pleural fluid.",
+            "No obvious finding of pleural fluid in the examined hemithorax.",
+            "Technically limited or inconclusive pleural study."
+          ],
+          "interpretation_limits": "An isolated anechoic zone does not establish pleural effusion diagnosis without anatomical localization and other compatible findings. Failure to visualize fluid does not rule out small or loculated collections. Technical limitations reduce exam sensitivity and must be recorded. Classify each hemithorax as compatible finding, no obvious finding, or inconclusive. This component is limited to qualitative assessment for pleural fluid and does not replace a complete lung ultrasound examination for pneumothorax, interstitial syndrome, or consolidation.",
+          "quick_reference": {
+            "assess": "Presence of findings compatible with pleural fluid bilaterally.",
+            "alerts": "Apparent pleural fluid."
+          }
+        }
+      }
     }
   }
 }

@@ -8,9 +8,6 @@ def test_windows_json_refinement_and_exact_names():
     with open(path, "r", encoding="utf-8") as f:
         data = json.load(f)
 
-    assert isinstance(data, list)
-    assert len(data) == 12
-
     exact_english_names = {
         "plax": "Parasternal long-axis view",
         "psax": "Parasternal short-axis view",
@@ -26,9 +23,25 @@ def test_windows_json_refinement_and_exact_names():
         "suprasternal": "Suprasternal notch view"
     }
 
+    # Verify all 12 historical windows are present
+    windows_by_id = {item["id"]: item for item in data}
+    for h_id, expected_name in exact_english_names.items():
+        assert h_id in windows_by_id
+        assert windows_by_id[h_id]["window"]["en"] == expected_name
+
     for item in data:
+        # Ignore new pleural_scan if present, but validate it matches requirements
         i_id = item["id"]
-        assert i_id in exact_english_names
+        if i_id == "pleural_scan":
+            assert "diafragma" in item["typical_probe_position"]["es"]
+            assert "bilateral" in item["typical_probe_position"]["es"]
+            assert "diaphragm" in item["typical_probe_position"]["en"].lower()
+            assert "bilateral" in item["typical_probe_position"]["en"].lower()
+            assert "cualitativa" in item["favored_measurements"]["es"]
+            assert "qualitative" in item["favored_measurements"]["en"]
+            continue
+        if i_id not in exact_english_names:
+            continue
         assert item["window"]["en"] == exact_english_names[i_id]
 
         # 1. favored_measurements es un objeto

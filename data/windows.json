@@ -286,5 +286,29 @@
       "es": "Doppler aórtico alternativo y reversión holodiastólica en aorta descendente.",
       "en": "Alternative aortic Doppler interrogation and holodiastolic flow reversal in the descending aorta."
     }
+  },
+  {
+    "id": "pleural_scan",
+    "window": {
+      "es": "Exploración pleural bilateral",
+      "en": "Bilateral pleural scan view"
+    },
+    "abbreviation": "Pleural",
+    "typical_probe_position": {
+      "es": "Exploración bilateral en las zonas dependientes posterolaterales o basales de ambos hemitórax según la accesibilidad del paciente, identificando el diafragma y las estructuras subdiafragmáticas como referencias anatómicas clave.",
+      "en": "Bilateral scan of the dependent posterolateral or basal zones of both hemithoraces depending on patient accessibility, identifying the diaphragm and subdiaphragmatic structures as key anatomical landmarks."
+    },
+    "typical_marker_orientation": {
+      "es": "Eje longitudinal (perpendicular a las costillas) para identificar el signo de la línea pleural.",
+      "en": "Longitudinal axis (perpendicular to the ribs) to identify the pleural line sign."
+    },
+    "favored_structures": {
+      "es": "Línea pleural, espacio pleural y estructuras anatómicas necesarias para localizar líquido pleural de forma bilateral (hemitórax derecho e izquierdo).",
+      "en": "Pleural line, pleural space, and anatomical structures needed to locate pleural fluid bilaterally (right and left hemithoraces)."
+    },
+    "favored_measurements": {
+      "es": "No se requieren mediciones cuantitativas; evaluación cualitativa de hallazgos compatibles con líquido pleural en ambos hemitórax.",
+      "en": "No quantitative measurements required; qualitative assessment of findings compatible with pleural fluid in both hemithoraces."
+    }
   }
 ]

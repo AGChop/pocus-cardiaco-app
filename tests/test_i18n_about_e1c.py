@@ -44,10 +44,22 @@ def test_new_translation_keys_e1c():
         "label.about_source_suffix": {
             "es": "revisado en Julio de 2026, sin alteraciones de los rangos o unidades.",
             "en": "revised in July 2026, without altering any ranges or units."
+        },
+        "label.about_ip_title": {
+            "es": "Atribución e independencia",
+            "en": "Attribution and independence"
+        },
+        "label.about_fate_attribution": {
+            "es": "FATE se menciona como un protocolo clínico publicado. Esta aplicación es una implementación educativa independiente y no está afiliada, certificada ni respaldada por USabcd ni por los autores del protocolo. Los nombres y las marcas de terceros pertenecen a sus respectivos titulares.",
+            "en": "FATE is referenced as a published clinical protocol. This application is an independent educational implementation and is not affiliated with, certified by, or endorsed by USabcd or the protocol authors. Third-party names and marks belong to their respective owners."
+        },
+        "label.about_media_rights": {
+            "es": "No se incorporan imágenes, diagramas, capturas ni materiales docentes de terceros sin autorización escrita o una licencia compatible y debidamente atribuida.",
+            "en": "No third-party images, diagrams, screenshots, or teaching materials are incorporated without written authorization or a compatible, properly attributed license."
         }
     }
 
-    assert len(new_keys) == 7
+    assert len(new_keys) == 10
 
     for key, val in new_keys.items():
         assert key in translations, f"Missing translation key: {key}"
@@ -77,7 +89,10 @@ def test_router_render_about_e1c():
         "label.about_development_course",
         "label.about_internal_medicine_program",
         "label.about_source_prefix",
-        "label.about_source_suffix"
+        "label.about_source_suffix",
+        "label.about_ip_title",
+        "label.about_fate_attribution",
+        "label.about_media_rights"
     ]
     for key in keys:
         assert key in body
@@ -96,6 +111,9 @@ def test_router_render_about_e1c():
     assert '<strong>Hospital San Rafael de Alajuela (HSRA)</strong>' in body
     assert '<strong>${escapeHTML(I18n.translate("label.about_internal_medicine_program"))}</strong>' in body
     assert '<em>Mediciones POCUS Cardiaco Adultos - Glosario</em>' in body
+    assert 'aria-labelledby="about-ip-title"' in body
+    assert '${escapeHTML(I18n.translate("label.about_fate_attribution"))}' in body
+    assert '${escapeHTML(I18n.translate("label.about_media_rights"))}' in body
 
     # 7. No raw Spanish paragraphs pre-existing in router.js
     removed_phrases = [
@@ -172,3 +190,17 @@ def test_protection_minset_measurements_e1c():
     assert translations["label.abbreviations_list_title"]["en"] == "Abbreviations"
     assert translations["app.name"]["es"] == "LOCUS POCUS"
     assert translations["app.name"]["en"] == "LOCUS POCUS"
+
+
+def test_third_party_notice_and_media_policy():
+    with open("THIRD_PARTY_NOTICES.md", "r", encoding="utf-8") as f:
+        notice = f.read()
+
+    assert "independent educational implementation" in notice
+    assert "not affiliated with, certified by, or endorsed by USabcd" in notice
+    assert "does not reproduce the official FATE card" in notice
+
+    with open("data/media-resources.json", "r", encoding="utf-8") as f:
+        media = json.load(f)
+
+    assert media["resources"] == []

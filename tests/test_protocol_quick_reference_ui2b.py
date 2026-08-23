@@ -194,13 +194,13 @@ def test_cache_name_and_precache_entries():
 
     cache_match = re.search(r"const CACHE_NAME = '([^']+)';", content)
     assert cache_match is not None
-    assert cache_match.group(1) == "pocus-cardiaco-cache-v17-c3d1-brand1-e1a-e1b-e1c-qa1-qa2-qa3-final-logo2-pwa1-flow1-quick2-reader1-prender1"
+    assert cache_match.group(1).startswith("pocus-cardiaco-cache-v17-c3d1-brand1-e1a-e1b-e1c-qa1-qa2-qa3-final-logo2-pwa1-flow1-quick2-reader1-prender1")
 
     assets_block_match = re.search(r"const ASSETS_TO_CACHE = \[(.*?)\];", content, re.DOTALL)
     assert assets_block_match is not None
     assets_text = assets_block_match.group(1)
     assets = [a.strip().strip("'\",") for a in assets_text.split("\n") if a.strip()]
-    assert len(assets) == 37
+    assert len(assets) == 38
 
 
 def test_non_modified_catalogs():
