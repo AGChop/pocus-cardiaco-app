@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "source": "data/protocols.draft.json",
   "educational_disclaimer": {
-    "es": "Este contenido es educativo. El protocolo RUSH complementa y no sustituye la valoración clínica, la reanimación ni los estudios diagnósticos definitivos. Los hallazgos deben integrarse con el contexto clínico.",
-    "en": "This content is educational. The RUSH protocol complements and does not replace clinical assessment, resuscitation, or definitive diagnostic studies. Findings must be integrated with the clinical context."
+    "es": "Este contenido sobre FATE es educativo y se encuentra en revisión clínica. Complementa y no sustituye la valoración médica integral, la reanimación, la ecocardiografía consultiva ni los estudios diagnósticos definitivos. No debe utilizarse como única base para decisiones clínicas.",
+    "en": "This FATE content is educational and under clinical review. It complements and does not replace comprehensive medical assessment, resuscitation, consultative echocardiography, or definitive diagnostic studies. It must not be used as the sole basis for clinical decisions."
   },
   "metadata": {
     "title": {
-      "es": "Borrador de Protocolos Clínicos POCUS",
-      "en": "Draft POCUS Clinical Protocols"
+      "es": "Protocolos clínicos POCUS — Beta pública",
+      "en": "POCUS Clinical Protocols — Public beta"
     },
     "version": "1.0.0",
     "status": "public-beta",
@@ -24,8 +24,8 @@
     "protocol_count": 1,
     "generated_on": "2026-07-21",
     "disclaimer": {
-      "es": "Esta es una herramienta educativa y de consulta rápida. El examen RUSH complementa y no sustituye la valoración clínica exhaustiva ni el ecocardiograma formal. Los hallazgos ecográficos no deben interpretarse de forma aislada, y la realización del ultrasonido no debe retrasar las maniobras de reanimación cardiopulmonar o hemodinámica. Un resultado negativo en el protocolo no excluye por sí solo todas las posibles causas de choque.",
-      "en": "This is an educational and quick-reference tool. The RUSH examination complements and does not replace a comprehensive clinical assessment or formal echocardiography. Ultrasound findings should not be interpreted in isolation, and performing ultrasound must not delay cardiopulmonary or hemodynamic resuscitation. A negative protocol result does not by itself exclude all possible causes of shock."
+      "es": "Este contenido sobre FATE es educativo y se encuentra en revisión clínica. Complementa y no sustituye la valoración médica integral, la reanimación, la ecocardiografía consultiva ni los estudios diagnósticos definitivos. No debe utilizarse como única base para decisiones clínicas.",
+      "en": "This FATE content is educational and under clinical review. It complements and does not replace comprehensive medical assessment, resuscitation, consultative echocardiography, or definitive diagnostic studies. It must not be used as the sole basis for clinical decisions."
     },
     "source": "data/protocols.draft.json"
   },

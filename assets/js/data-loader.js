@@ -35,7 +35,11 @@ const DataLoader = {
                 return combined;
             }
 
-            return await this.fetchResourceDirect(name);
+            const data = await this.fetchResourceDirect(name);
+            if (data !== null) {
+                this.cache[name] = data;
+            }
+            return data;
         } catch (error) {
             console.error(`Error cargando la base de datos ${name}:`, error);
             return null;

@@ -340,9 +340,19 @@ def main():
 
     beta_references = [r for r in draft.get("references", []) if r["id"] in beta_ref_ids]
 
+    beta_ed_disclaimer = {
+        "es": "Este contenido sobre FATE es educativo y se encuentra en revisión clínica. Complementa y no sustituye la valoración médica integral, la reanimación, la ecocardiografía consultiva ni los estudios diagnósticos definitivos. No debe utilizarse como única base para decisiones clínicas.",
+        "en": "This FATE content is educational and under clinical review. It complements and does not replace comprehensive medical assessment, resuscitation, consultative echocardiography, or definitive diagnostic studies. It must not be used as the sole basis for clinical decisions."
+    }
+
     beta_metadata = updated_metadata.copy()
     beta_metadata["protocol_count"] = len(beta_protocols)
     beta_metadata["status"] = "public-beta"
+    beta_metadata["title"] = {
+        "es": "Protocolos clínicos POCUS — Beta pública",
+        "en": "POCUS Clinical Protocols — Public beta"
+    }
+    beta_metadata["disclaimer"] = beta_ed_disclaimer
     if "approved_on" in beta_metadata:
         del beta_metadata["approved_on"]
 
@@ -350,7 +360,7 @@ def main():
         "status": "public-beta",
         "version": version_str,
         "source": source_str,
-        "educational_disclaimer": bilingual_ed_disclaimer,
+        "educational_disclaimer": beta_ed_disclaimer,
         "metadata": beta_metadata,
         "references": beta_references,
         "protocols": beta_protocols
