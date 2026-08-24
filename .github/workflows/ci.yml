@@ -26,6 +26,7 @@ jobs:
         with:
           python-version: "3.13"
           cache: "pip"
+          cache-dependency-path: requirements-dev.txt
 
       - name: Install dependencies
         run: |
@@ -45,19 +46,27 @@ jobs:
 
       - name: Validate data regeneration
         run: |
-          mkdir -p tmp_ci
-          cp -r data tmp_ci/
-          cd tmp_ci
-          python3 ../scripts/build_priority_draft.py
-          python3 ../scripts/promote_measurement_priority.py
-          python3 ../scripts/build_protocols_draft.py
-          python3 ../scripts/promote_protocols.py
-          cd ..
-          diff -u data/measurement-priority.draft.json tmp_ci/data/measurement-priority.draft.json
-          diff -u data/measurement-priority.json tmp_ci/data/measurement-priority.json
-          diff -u data/protocols.draft.json tmp_ci/data/protocols.draft.json
-          diff -u data/protocols.json tmp_ci/data/protocols.json
-          diff -u data/protocols.beta.json tmp_ci/data/protocols.beta.json
+          temp_dir="$(mktemp -d)"
+          trap 'rm -rf "$temp_dir"' EXIT
+          cp -R data "$temp_dir/"
+
+          (
+            cd "$temp_dir"
+            python "$GITHUB_WORKSPACE/scripts/build_priority_draft.py"
+            python "$GITHUB_WORKSPACE/scripts/promote_measurement_priority.py"
+            python "$GITHUB_WORKSPACE/scripts/build_protocols_draft.py"
+            python "$GITHUB_WORKSPACE/scripts/promote_protocols.py"
+          )
+
+          for artifact in \
+            data/measurement-priority.draft.json \
+            data/measurement-priority.json \
+            data/protocols.draft.json \
+            data/protocols.json \
+            data/protocols.beta.json
+          do
+            cmp "$artifact" "$temp_dir/$artifact"
+          done
 
       - name: Run tests
         run: |
