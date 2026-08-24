@@ -3,6 +3,7 @@
 import os
 import json
 import re
+import shutil
 import tempfile
 import subprocess
 import urllib.request
@@ -10,6 +11,39 @@ from pathlib import Path
 from typing import Any, Dict
 
 CHROME_PATH = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+
+
+def resolve_chrome_path() -> str:
+    """Resolves the path to the Chrome executable across platforms."""
+    # 1. Environment variable
+    env_path = os.environ.get("CHROME_PATH")
+    if env_path:
+        return env_path
+
+    # For monkeypatch compatibility in tests
+    if globals().get("CHROME_PATH") != "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome":
+        return globals().get("CHROME_PATH")
+
+    # 2. Check shutil.which for common command names
+    for cmd in ("google-chrome", "google-chrome-stable", "chromium", "chromium-browser"):
+        path = shutil.which(cmd)
+        if path:
+            return path
+
+    # 3. Check common platform-specific locations
+    common_paths = [
+        "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+        "/Applications/Chromium.app/Contents/MacOS/Chromium",
+        "/usr/bin/google-chrome",
+        "/usr/bin/google-chrome-stable",
+        "/usr/bin/chromium",
+        "/usr/bin/chromium-browser",
+    ]
+    for path in common_paths:
+        if os.path.exists(path) and os.path.isfile(path):
+            return path
+
+    raise FileNotFoundError("Chrome executable not found. Please set CHROME_PATH environment variable.")
 
 
 def run_js_in_chrome(
@@ -52,8 +86,12 @@ def run_js_in_chrome(
     if virtual_time_budget < 0:
         raise ValueError(f"virtual_time_budget must be greater than or equal to 0, got {virtual_time_budget}")
 
-    if not os.path.exists(CHROME_PATH) or not os.path.isfile(CHROME_PATH):
-        raise FileNotFoundError(f"Chrome executable not found at: {CHROME_PATH}")
+    chrome_path = CHROME_PATH
+    if chrome_path == "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome":
+        chrome_path = resolve_chrome_path()
+
+    if not os.path.exists(chrome_path) or not os.path.isfile(chrome_path):
+        raise FileNotFoundError(f"Chrome executable not found at: {chrome_path}")
 
     if harness_type == "quiz":
         # Read quiz-engine.js code
@@ -321,7 +359,7 @@ def run_js_in_chrome(
     with tempfile.TemporaryDirectory(dir="./") as user_data_dir:
         try:
             cmd = [
-                CHROME_PATH,
+                chrome_path,
                 "--headless",
                 "--disable-gpu",
                 "--disable-software-rasterizer",

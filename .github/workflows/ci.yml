@@ -1,0 +1,68 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  ci:
+    name: Tests and data validation
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements-dev.txt ]; then pip install -r requirements-dev.txt; fi
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+      - name: Locate Google Chrome and set CHROME_PATH
+        run: |
+          chrome_path=$(which google-chrome || which google-chrome-stable || which chromium || which chromium-browser)
+          echo "Using Chrome path: $chrome_path"
+          echo "CHROME_PATH=$chrome_path" >> $GITHUB_ENV
+
+      - name: Validate JSON syntax
+        run: |
+          python -c "import json, glob; [json.load(open(f, encoding='utf-8')) for f in glob.glob('data/*.json')]"
+
+      - name: Validate data regeneration
+        run: |
+          mkdir -p tmp_ci
+          cp -r data tmp_ci/
+          cd tmp_ci
+          python3 ../scripts/build_priority_draft.py
+          python3 ../scripts/promote_measurement_priority.py
+          python3 ../scripts/build_protocols_draft.py
+          python3 ../scripts/promote_protocols.py
+          cd ..
+          diff -u data/measurement-priority.draft.json tmp_ci/data/measurement-priority.draft.json
+          diff -u data/measurement-priority.json tmp_ci/data/measurement-priority.json
+          diff -u data/protocols.draft.json tmp_ci/data/protocols.draft.json
+          diff -u data/protocols.json tmp_ci/data/protocols.json
+          diff -u data/protocols.beta.json tmp_ci/data/protocols.beta.json
+
+      - name: Run tests
+        run: |
+          PYTHONPATH=. python -m pytest -q
+
+      - name: Check for unstaged changes
+        run: |
+          git diff --exit-code

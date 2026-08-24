@@ -95,6 +95,7 @@ def promote():
 
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(approved_data, f, indent=2, ensure_ascii=False)
+        f.write("\n")
 
     print(f"Archivo de prioridades aprobado creado con éxito en {output_path}")
 
