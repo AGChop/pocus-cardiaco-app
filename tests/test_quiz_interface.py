@@ -5,7 +5,7 @@ import json
 import re
 import pytest
 import urllib.request
-from tests.helpers.chrome_runner import run_js_in_chrome as _run_js_in_chrome, CHROME_PATH
+from tests.helpers.chrome_runner import run_js_in_chrome as _run_js_in_chrome, resolve_chrome_path
 
 def run_js_in_chrome(js_payload):
     try:
@@ -373,7 +373,7 @@ def test_analytics_is_disabled_strictly():
     with tempfile.TemporaryDirectory(dir="./") as user_data_dir:
         try:
             cmd = [
-                CHROME_PATH,
+                resolve_chrome_path(),
                 "--headless",
                 "--disable-gpu",
                 "--disable-software-rasterizer",

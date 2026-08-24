@@ -1,5 +1,6 @@
 import json
 import os
+import sys
 import hashlib
 import subprocess
 import pytest
@@ -168,7 +169,7 @@ def test_promotion_script_and_sources_integrity():
     final_hash_before = get_file_hash(output_path) if os.path.exists(output_path) else None
 
     # 22. El script de promoción es reproducible
-    result = subprocess.run([".venv/bin/python", "scripts/promote_protocols.py"], capture_output=True, text=True)
+    result = subprocess.run([sys.executable, "scripts/promote_protocols.py"], capture_output=True, text=True)
     assert result.returncode == 0
 
     # Hash del output final después
