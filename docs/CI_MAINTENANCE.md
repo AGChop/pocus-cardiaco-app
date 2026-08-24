@@ -15,9 +15,9 @@ El workflow cuenta con políticas de **concurrencia** con cancelación automáti
 El job principal se llama `Tests and data validation` y realiza los siguientes pasos:
 1. **Validación de Sintaxis JSON**: Comprueba que todos los archivos `.json` ubicados en `data/` sean documentos estructurados válidos y puedan ser analizados sin errores.
 2. **Validación de Regeneración de Datos**:
-   - Para evitar modificar directamente los archivos clínicos versionados dentro del espacio de trabajo, la CI crea un directorio temporal (`tmp_ci/data/`).
+   - Para evitar modificar directamente los archivos clínicos versionados dentro del espacio de trabajo, la CI crea un directorio temporal en el sistema mediante `mktemp -d` (el cual es eliminado automáticamente al finalizar la ejecución).
    - Copia los insumos fuente en dicho directorio y ejecuta los scripts de generación (`build_priority_draft.py`, `promote_measurement_priority.py`, `build_protocols_draft.py`, y `promote_protocols.py`) utilizando el contexto del directorio temporal.
-   - Finalmente, realiza una comparación byte por byte (`diff -u`) entre los artefactos resultantes y los correspondientes archivos versionados en la rama:
+   - Finalmente, realiza una comparación byte por byte con el comando `cmp` entre los artefactos resultantes y los correspondientes archivos versionados en la rama:
      - `data/measurement-priority.draft.json`
      - `data/measurement-priority.json`
      - `data/protocols.draft.json`
