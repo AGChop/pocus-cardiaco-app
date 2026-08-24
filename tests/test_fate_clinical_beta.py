@@ -1,5 +1,6 @@
 import json
 import os
+import sys
 import hashlib
 import subprocess
 import pytest
@@ -92,8 +93,8 @@ def test_reproducibility_and_non_modification():
     beta_h1 = hashlib.sha256(open(beta_path, "rb").read()).hexdigest()
 
     # Run scripts
-    subprocess.run([".venv/bin/python", "scripts/build_protocols_draft.py"], check=True)
-    subprocess.run([".venv/bin/python", "scripts/promote_protocols.py"], check=True)
+    subprocess.run([sys.executable, "scripts/build_protocols_draft.py"], check=True)
+    subprocess.run([sys.executable, "scripts/promote_protocols.py"], check=True)
 
     # Hashes after
     draft_h2 = hashlib.sha256(open(draft_path, "rb").read()).hexdigest()

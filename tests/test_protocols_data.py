@@ -1,5 +1,6 @@
 import json
 import os
+import sys
 import hashlib
 import subprocess
 import pytest
@@ -173,7 +174,7 @@ def test_script_reproducibility_and_non_modification():
     draft_hash_before = get_file_hash(draft_path) if os.path.exists(draft_path) else None
 
     # 17. El script es reproducible: Ejecutar scripts/build_protocols_draft.py usando el python del venv
-    result = subprocess.run([".venv/bin/python", "scripts/build_protocols_draft.py"], capture_output=True, text=True)
+    result = subprocess.run([sys.executable, "scripts/build_protocols_draft.py"], capture_output=True, text=True)
     assert result.returncode == 0, f"Error al ejecutar script: {result.stderr}"
 
     # Generar hash de protocols.draft.json después
