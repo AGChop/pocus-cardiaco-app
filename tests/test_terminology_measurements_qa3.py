@@ -33,7 +33,7 @@ def test_qa3_measurements_count_and_spanish_hash():
 
     sha = hashlib.sha256(payload).hexdigest()
 
-    assert sha == "8602489c09530fbcc05cd710f08f6edc2fe80df05a5f36702a31718735483c47"
+    assert sha == "17cb6fb8a17597fda7f8a3887df5e3964e5d8900c29c2192a2d826a54f155d37"
 
 def test_qa3_exact_english_values():
     path = "data/measurements.json"

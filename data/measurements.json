@@ -449,8 +449,8 @@
       "en": "[(LVEDV - LVESV) / LVEDV] × 100."
     },
     "normal_values": {
-      "es": "53-73%; límite inferior: hombres 52%, mujeres 54%.",
-      "en": "53-73%; lower reference limit: men 52%, women 54%."
+      "es": "Simpson biplano: hombres 52–72%; mujeres 54–74% (intervalos de referencia en adultos). Superar el límite superior de referencia no establece por sí solo un estado hiperdinámico; interpretar según el método, la calidad de imagen y el contexto hemodinámico.",
+      "en": "Biplane Simpson: men 52–72%; women 54–74% (adult reference intervals). Exceeding the upper reference limit alone does not establish a hyperdynamic state; interpret according to the method, image quality, and hemodynamic context."
     },
     "interpretation_limitations": {
       "es": "Integrar con contractilidad regional, carga y calidad de imagen.",
@@ -793,8 +793,8 @@
       "en": "[(Systolic length - diastolic length) / diastolic length] × 100."
     },
     "normal_values": {
-      "es": "Aprox. -18% a -22%; menos negativo que -16% suele ser anormal.",
-      "en": "Approx. -18% to -22%; a value less negative than -16% is usually abnormal."
+      "es": "GLS del VI: normal cuando es más negativo que −18%; limítrofe entre −16% y −18%; anormal cuando es menos negativo que −16%. Los valores dependen del fabricante, la versión del software y las condiciones de carga. Para seguimiento seriado, utilizar preferiblemente la misma plataforma y comparar con el valor basal.",
+      "en": "LV GLS: normal when more negative than −18%; borderline from −16% to −18%; abnormal when less negative than −16%. Values depend on the vendor, software version, and loading conditions. For serial follow-up, preferably use the same platform and compare with baseline."
     },
     "interpretation_limitations": {
       "es": "Los valores son negativos; comparar idealmente con el mismo equipo/software.",
@@ -2277,8 +2277,8 @@
       "en": "Frequently 50-100 cm/s; dependent on age and loading conditions."
     },
     "interpretation_limitations": {
-      "es": "Representa el llenado ventricular temprano.",
-      "en": "Represents early ventricular filling."
+      "es": "Representa el llenado ventricular temprano. Esta variable aislada no diagnostica ni gradúa la disfunción diastólica ni estima por sí sola las presiones de llenado. Debe integrarse mediante el enfoque multiparamétrico aplicable al ritmo, la FEVI, las enfermedades concomitantes y el contexto clínico.",
+      "en": "Represents early ventricular filling. This variable alone does not diagnose or grade diastolic dysfunction or independently estimate filling pressures. It must be integrated using the multiparametric approach applicable to rhythm, LVEF, concomitant disease, and clinical context."
     },
     "units": "cm/s",
     "related_glossary_ids": [
@@ -2343,8 +2343,8 @@
       "en": "Variable with age and loading conditions; absent in atrial fibrillation."
     },
     "interpretation_limitations": {
-      "es": "No interpretar si no existe contracción auricular organizada.",
-      "en": "Do not interpret when organized atrial contraction is absent."
+      "es": "No interpretar si no existe contracción auricular organizada. Esta variable aislada no diagnostica ni gradúa la disfunción diastólica ni estima por sí sola las presiones de llenado. Debe integrarse mediante el enfoque multiparamétrico aplicable al ritmo, la FEVI, las enfermedades concomitantes y el contexto clínico.",
+      "en": "Do not interpret when organized atrial contraction is absent. This variable alone does not diagnose or grade diastolic dysfunction or independently estimate filling pressures. It must be integrated using the multiparametric approach applicable to rhythm, LVEF, concomitant disease, and clinical context."
     },
     "units": "cm/s",
     "related_glossary_ids": [
@@ -2406,8 +2406,8 @@
       "en": "Approximately 0.8-2.0; age-dependent."
     },
     "interpretation_limitations": {
-      "es": "No diagnostica por sí sola el grado de disfunción diastólica.",
-      "en": "Does not by itself diagnose the grade of diastolic dysfunction."
+      "es": "No diagnostica por sí sola el grado de disfunción diastólica. Esta variable aislada no diagnostica ni gradúa la disfunción diastólica ni estima por sí sola las presiones de llenado. Debe integrarse mediante el enfoque multiparamétrico aplicable al ritmo, la FEVI, las enfermedades concomitantes y el contexto clínico.",
+      "en": "Does not by itself diagnose the grade of diastolic dysfunction. This variable alone does not diagnose or grade diastolic dysfunction or independently estimate filling pressures. It must be integrated using the multiparametric approach applicable to rhythm, LVEF, concomitant disease, and clinical context."
     },
     "units": {
       "es": "adimensional",
@@ -2475,8 +2475,8 @@
       "en": "Approximately 160-240 ms."
     },
     "interpretation_limitations": {
-      "es": "Se acorta con llenado restrictivo y puede prolongarse con relajación alterada.",
-      "en": "Shortens with restrictive filling and may be prolonged with impaired relaxation."
+      "es": "Se acorta con llenado restrictivo y puede prolongarse con relajación alterada. Esta variable aislada no diagnostica ni gradúa la disfunción diastólica ni estima por sí sola las presiones de llenado. Debe integrarse mediante el enfoque multiparamétrico aplicable al ritmo, la FEVI, las enfermedades concomitantes y el contexto clínico.",
+      "en": "Shortens with restrictive filling and may be prolonged with impaired relaxation. This variable alone does not diagnose or grade diastolic dysfunction or independently estimate filling pressures. It must be integrated using the multiparametric approach applicable to rhythm, LVEF, concomitant disease, and clinical context."
     },
     "units": "ms",
     "related_glossary_ids": [
@@ -2538,8 +2538,8 @@
       "en": "Approximately 70-100 ms."
     },
     "interpretation_limitations": {
-      "es": "Depende de frecuencia cardiaca y presiones de relajación/llenado.",
-      "en": "Depends on heart rate and relaxation/filling pressures."
+      "es": "Depende de frecuencia cardiaca y presiones de relajación/llenado. Esta variable aislada no diagnostica ni gradúa la disfunción diastólica ni estima por sí sola las presiones de llenado. Debe integrarse mediante el enfoque multiparamétrico aplicable al ritmo, la FEVI, las enfermedades concomitantes y el contexto clínico.",
+      "en": "Depends on heart rate and relaxation/filling pressures. This variable alone does not diagnose or grade diastolic dysfunction or independently estimate filling pressures. It must be integrated using the multiparametric approach applicable to rhythm, LVEF, concomitant disease, and clinical context."
     },
     "units": "ms",
     "related_glossary_ids": [
@@ -2603,8 +2603,8 @@
       "en": "A reduced value suggests impaired relaxation; use age- and guideline-adjusted thresholds."
     },
     "interpretation_limitations": {
-      "es": "No usar aislado; puede alterarse por enfermedad regional o cirugía.",
-      "en": "Do not use in isolation; it may be altered by regional disease or surgery."
+      "es": "No usar aislado; puede alterarse por enfermedad regional o cirugía. Esta variable aislada no diagnostica ni gradúa la disfunción diastólica ni estima por sí sola las presiones de llenado. Debe integrarse mediante el enfoque multiparamétrico aplicable al ritmo, la FEVI, las enfermedades concomitantes y el contexto clínico.",
+      "en": "Do not use in isolation; it may be altered by regional disease or surgery. This variable alone does not diagnose or grade diastolic dysfunction or independently estimate filling pressures. It must be integrated using the multiparametric approach applicable to rhythm, LVEF, concomitant disease, and clinical context."
     },
     "units": "cm/s",
     "related_glossary_ids": [
@@ -2669,8 +2669,8 @@
       "en": "A reduced value suggests impaired relaxation; use age- and guideline-adjusted thresholds."
     },
     "interpretation_limitations": {
-      "es": "Sensible a alineación y movimiento de traslación.",
-      "en": "Sensitive to alignment and translational motion."
+      "es": "Sensible a alineación y movimiento de traslación. Esta variable aislada no diagnostica ni gradúa la disfunción diastólica ni estima por sí sola las presiones de llenado. Debe integrarse mediante el enfoque multiparamétrico aplicable al ritmo, la FEVI, las enfermedades concomitantes y el contexto clínico.",
+      "en": "Sensitive to alignment and translational motion. This variable alone does not diagnose or grade diastolic dysfunction or independently estimate filling pressures. It must be integrated using the multiparametric approach applicable to rhythm, LVEF, concomitant disease, and clinical context."
     },
     "units": "cm/s",
     "related_glossary_ids": [
@@ -2737,8 +2737,8 @@
       "en": ">14 suggests elevated filling pressure."
     },
     "interpretation_limitations": {
-      "es": "Interpretación multiparamétrica; valores intermedios son indeterminados.",
-      "en": "Multiparametric interpretation is required; intermediate values are indeterminate."
+      "es": "Interpretación multiparamétrica; valores intermedios son indeterminados. Esta variable aislada no diagnostica ni gradúa la disfunción diastólica ni estima por sí sola las presiones de llenado. Debe integrarse mediante el enfoque multiparamétrico aplicable al ritmo, la FEVI, las enfermedades concomitantes y el contexto clínico.",
+      "en": "Multiparametric interpretation is required; intermediate values are indeterminate. This variable alone does not diagnose or grade diastolic dysfunction or independently estimate filling pressures. It must be integrated using the multiparametric approach applicable to rhythm, LVEF, concomitant disease, and clinical context."
     },
     "units": {
       "es": "adimensional",
@@ -2807,8 +2807,8 @@
       "en": "<2.8 m/s as a traditional reference; integrate with current guidelines and other signs."
     },
     "interpretation_limitations": {
-      "es": "Una señal incompleta o mal alineada subestima la velocidad.",
-      "en": "An incomplete or misaligned signal underestimates velocity."
+      "es": "Una señal incompleta o mal alineada subestima la velocidad. Esta variable aislada no diagnostica ni gradúa la disfunción diastólica ni estima por sí sola las presiones de llenado. Debe integrarse mediante el enfoque multiparamétrico aplicable al ritmo, la FEVI, las enfermedades concomitantes y el contexto clínico.",
+      "en": "An incomplete or misaligned signal underestimates velocity. This variable alone does not diagnose or grade diastolic dysfunction or independently estimate filling pressures. It must be integrated using the multiparametric approach applicable to rhythm, LVEF, concomitant disease, and clinical context."
     },
     "units": "m/s",
     "related_glossary_ids": [
@@ -2868,8 +2868,8 @@
       "en": "≤34 mL/m²."
     },
     "interpretation_limitations": {
-      "es": "Marcador de carga crónica, no de cambios agudos aislados.",
-      "en": "Marker of chronic loading conditions, not of isolated acute changes."
+      "es": "Marcador de carga crónica, no de cambios agudos aislados. Esta variable aislada no diagnostica ni gradúa la disfunción diastólica ni estima por sí sola las presiones de llenado. Debe integrarse mediante el enfoque multiparamétrico aplicable al ritmo, la FEVI, las enfermedades concomitantes y el contexto clínico.",
+      "en": "Marker of chronic loading conditions, not of isolated acute changes. This variable alone does not diagnose or grade diastolic dysfunction or independently estimate filling pressures. It must be integrated using the multiparametric approach applicable to rhythm, LVEF, concomitant disease, and clinical context."
     },
     "units": "mL/m²",
     "related_glossary_ids": [
@@ -2933,8 +2933,8 @@
       "en": ">18% suggests preserved function; ≤18% supports dysfunction or elevated LA pressure."
     },
     "interpretation_limitations": {
-      "es": "Complementario; no reemplaza el algoritmo multiparamétrico.",
-      "en": "Adjunctive; does not replace the multiparametric algorithm."
+      "es": "Complementario; no reemplaza el algoritmo multiparamétrico. Esta variable aislada no diagnostica ni gradúa la disfunción diastólica ni estima por sí sola las presiones de llenado. Debe integrarse mediante el enfoque multiparamétrico aplicable al ritmo, la FEVI, las enfermedades concomitantes y el contexto clínico.",
+      "en": "Adjunctive; does not replace the multiparametric algorithm. This variable alone does not diagnose or grade diastolic dysfunction or independently estimate filling pressures. It must be integrated using the multiparametric approach applicable to rhythm, LVEF, concomitant disease, and clinical context."
     },
     "units": "%",
     "related_glossary_ids": [
