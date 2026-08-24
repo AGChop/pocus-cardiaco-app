@@ -110,6 +110,16 @@
       "doi": "10.1016/j.echo.2024.05.001",
       "url": "https://doi.org/10.1016/j.echo.2024.05.001",
       "verification_status": "verified"
+    },
+    {
+      "id": "strain_consensus_2025",
+      "title": "Clinical Applications of Strain Echocardiography: A Clinical Consensus Statement From the American Society of Echocardiography Developed in Collaboration With the European Association of Cardiovascular Imaging of the European Society of Cardiology",
+      "authors": "Thomas JD, Edvardsen T, Abraham T, et al.",
+      "organization_or_journal": "Journal of the American Society of Echocardiography",
+      "year": 2025,
+      "doi": "10.1016/j.echo.2025.07.007",
+      "url": "https://doi.org/10.1016/j.echo.2025.07.007",
+      "verification_status": "verified"
     }
   ],
   "priorities": [
@@ -446,7 +456,8 @@
       ],
       "rationale": "Strain longitudinal global del VI. Técnica avanzada basada en speckle tracking que requiere software especializado y alta resolución espacial.",
       "reference_ids": [
-        "chamber_quantification_2015"
+        "chamber_quantification_2015",
+        "strain_consensus_2025"
       ],
       "confidence": "high",
       "review_status": "pending"

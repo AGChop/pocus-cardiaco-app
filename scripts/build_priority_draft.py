@@ -350,6 +350,16 @@ REF_MAPPING = {
         "doi": "10.1016/j.echo.2024.05.001",
         "url": "https://doi.org/10.1016/j.echo.2024.05.001",
         "verification_status": "verified"
+    },
+    "strain_consensus_2025": {
+        "id": "strain_consensus_2025",
+        "title": "Clinical Applications of Strain Echocardiography: A Clinical Consensus Statement From the American Society of Echocardiography Developed in Collaboration With the European Association of Cardiovascular Imaging of the European Society of Cardiology",
+        "authors": "Thomas JD, Edvardsen T, Abraham T, et al.",
+        "organization_or_journal": "Journal of the American Society of Echocardiography",
+        "year": 2025,
+        "doi": "10.1016/j.echo.2025.07.007",
+        "url": "https://doi.org/10.1016/j.echo.2025.07.007",
+        "verification_status": "verified"
     }
 }
 
@@ -370,6 +380,10 @@ def get_refs_for_item(m_id, s_id):
         refs.append("chamber_quantification_2015")
     else:
         refs.append("chamber_quantification_2015")
+
+    # Vincular strain_consensus_2025 a gls_vi
+    if m_id == "gls_vi":
+        refs.append("strain_consensus_2025")
 
     # Añadir recomendaciones de FoCUS y nomenclatura 2024 para niveles 1 y 2
     tier_info = TIERS.get(m_id)
