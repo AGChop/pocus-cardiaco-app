@@ -38,13 +38,13 @@ def test_measurement_priority_runtime():
     meas_ids = {m["id"] for m in meas_data}
     assert set(approved_ids) == meas_ids, "Los IDs no coinciden exactamente con measurements.json."
 
-    # 5. Distribución es 3 / 37 / 43 / 18
+    # 5. Distribución es 2 / 36 / 43 / 20
     from collections import Counter
     counts = Counter([p["priority_tier"] for p in priorities])
-    assert counts[1] == 3, f"Nivel 1 esperado: 3, Encontrado: {counts[1]}"
-    assert counts[2] == 37, f"Nivel 2 esperado: 37, Encontrado: {counts[2]}"
+    assert counts[1] == 2, f"Nivel 1 esperado: 2, Encontrado: {counts[1]}"
+    assert counts[2] == 36, f"Nivel 2 esperado: 36, Encontrado: {counts[2]}"
     assert counts[3] == 43, f"Nivel 3 esperado: 43, Encontrado: {counts[3]}"
-    assert counts[4] == 18, f"Nivel 4 esperado: 18, Encontrado: {counts[4]}"
+    assert counts[4] == 20, f"Nivel 4 esperado: 20, Encontrado: {counts[4]}"
 
     # 6. Los objetos de prioridad del archivo final coinciden con los del draft
     draft_priorities = draft_data.get("priorities", [])
@@ -60,7 +60,7 @@ def test_measurement_priority_runtime():
     # 7. Metadatos superiores en la raíz
     assert approved_data.get("status") == "approved-for-app-ordering", "Status incorrecto en la raíz."
     assert approved_data.get("version") == "1.0.0", "Versión incorrecta en la raíz."
-    assert approved_data.get("approved_on") == "2026-07-21", "approved_on incorrecto en la raíz."
+    assert approved_data.get("approved_on") == "2026-08-25", "approved_on incorrecto en la raíz."
     assert approved_data.get("source") == "data/measurement-priority.draft.json", "source incorrecto en la raíz."
     assert isinstance(approved_data.get("ordering_disclaimer"), str) and len(approved_data.get("ordering_disclaimer")) > 0, "ordering_disclaimer inválido o vacío."
 
@@ -121,9 +121,9 @@ def test_measurement_priority_runtime():
     fevi_entry = next(p for p in priorities if p["measurement_id"] == "fevi")
     assert fevi_entry["priority_tier"] == 2, "FEVI debería ser Nivel 2."
 
-    # 22. relacion_vd_vi, diametro_vci_meas y colapsabilidad_vci_meas permanecen en Nivel 1
-    locked_3 = {"relacion_vd_vi", "diametro_vci_meas", "colapsabilidad_vci_meas"}
-    for m_id in locked_3:
+    # 22. relacion_vd_vi y diametro_vci_meas permanecen en Nivel 1 (colapsabilidad pasó a Nivel 2)
+    locked_2 = {"relacion_vd_vi", "diametro_vci_meas"}
+    for m_id in locked_2:
         entry = next(p for p in priorities if p["measurement_id"] == m_id)
         assert entry["priority_tier"] == 1, f"{m_id} debería ser Nivel 1."
 

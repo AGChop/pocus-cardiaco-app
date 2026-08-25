@@ -127,3 +127,15 @@ Este documento y el borrador de prioridades adjunto (`measurement-priority.draft
 ## 17. Advertencia de Control de Interfaz
 > [!WARNING]
 > Este documento y el archivo `measurement-priority.draft.json` representan una propuesta organizativa independiente. **Actualmente no controlan ni modifican el orden de visualización de los parámetros en la interfaz de la aplicación.** El orden visible del Banco de Mediciones permanece intacto y fiel a la secuencia original en `data/measurements.json` hasta la aprobación final de la Fase 3B.
+
+## 18. Estructura de Gobernanza y Revisión de Prioridades
+Para registrar formalmente el proceso de auditoría y revisión de la jerarquía de prioridades, se añade el soporte para registrar metadatos de revisión clínica en el esquema:
+
+*   **`review_status`**: Define el estado de revisión de la prioridad. Los valores válidos son `"pending"` o `"approved"`.
+*   **`review_metadata`** (Objeto opcional): Se incluye únicamente cuando una entrada ha sido revisada formalmente (`review_status: "approved"`). Contiene:
+    *   **`reviewer`**: Identificador del revisor clínico (ej. `"AGChop"`).
+    *   **`reviewed_on`**: Fecha de revisión en formato `YYYY-MM-DD`.
+    *   **`decision`**: Decisión tomada sobre la prioridad. Valores válidos: `"maintain"` o `"change-tier"`.
+    *   **`evidence_summary`**: Justificación y resumen bilingüe de la evidencia clínica, con las claves `"es"` y `"en"`.
+*   **`reference_ids`**: Permanece estrictamente como un campo separado en la raíz del objeto de prioridad para mantener la compatibilidad con el enlazado de referencias general.
+*   **Aclaración de Gobernanza**: El estado `"approved"` se limita estrictamente a la clasificación educativa del orden de prioridad dentro del aplicativo. No equivale en ningún caso a una aprobación institucional, diagnóstica, terapéutica, ni de un protocolo clínico específico.

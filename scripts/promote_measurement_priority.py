@@ -34,10 +34,28 @@ def promote():
     if set(draft_ids) != meas_ids:
         raise ValueError("Los IDs del borrador no coinciden exactamente con measurements.json.")
 
-    # 3. Validar distribución exacta 3 / 37 / 43 / 18
+    # 3. Validar distribución exacta:
+    # relacion_vd_vi, diametro_vci_meas -> Tier 1 (2 items)
+    # colapsabilidad_vci_meas (1->2), epss, mapse, fevi, tapse_meas, vti_tsvi_meas -> Tier 2 (37 items)
+    # s_prima_mitral (2->4), s_prima_vd (2->4) -> Tier 4 (18+2 = 20 items)
+    # Nivel 1 = 2, Nivel 2 = 37, Nivel 3 = 42 (because PAAT, Distensibilidad etc remain in 3. Wait, was there a level 3 change? No. PAAT, Distensibilidad, etc. are Overrides. Let's count them: counts[3] should be 42 because one item left tier 1 to tier 2. Wait!
+    # Let's count the tiers before changes:
+    # counts[1] = 3 (relacion_vd_vi, diametro_vci_meas, colapsabilidad_vci_meas)
+    # counts[2] = 37 (including epss, mapse, s_prima_mitral, tapse_meas, s_prima_vd, vti_tsvi_meas, fevi)
+    # counts[3] = 43
+    # counts[4] = 18 (including s_prima_mitral and s_prima_vd at tier 4 now? No, they were tier 2).
+    #
+    # With changes:
+    # colapsabilidad_vci_meas goes from 1 to 2 (-1 from tier 1, +1 to tier 2) -> tier 1 = 2
+    # s_prima_mitral goes from 2 to 4 (-1 from tier 2, +1 to tier 4)
+    # s_prima_vd goes from 2 to 4 (-1 from tier 2, +1 to tier 4)
+    # So tier 2 ends up as: 37 + 1 (colapsabilidad) - 2 (s_prima_mitral, s_prima_vd) = 36
+    # So tier 4 ends up as: 18 + 2 (s_prima_mitral, s_prima_vd) = 20
+    # Tier 3 remains 43.
+    # Total: 2 (tier 1) + 36 (tier 2) + 43 (tier 3) + 20 (tier 4) = 101.
     counts = Counter([p["priority_tier"] for p in priorities])
-    if counts[1] != 3 or counts[2] != 37 or counts[3] != 43 or counts[4] != 18:
-        raise ValueError(f"Distribución incorrecta: Nivel 1={counts[1]}, Nivel 2={counts[2]}, Nivel 3={counts[3]}, Nivel 4={counts[4]}")
+    if counts[1] != 2 or counts[2] != 36 or counts[3] != 43 or counts[4] != 20:
+        raise ValueError(f"Distribución incorrecta: Nivel 1={counts[1]} (esperado 2), Nivel 2={counts[2]} (esperado 36), Nivel 3={counts[3]} (esperado 43), Nivel 4={counts[4]} (esperado 20)")
 
     # 4. Validar display_order consecutivo y sin duplicados por sección
     section_orders = {}
@@ -85,7 +103,7 @@ def promote():
     approved_data = {
         "status": "approved-for-app-ordering",
         "version": "1.0.0",
-        "approved_on": "2026-07-21",
+        "approved_on": "2026-08-25",  # Actualizado a la fecha de revisión actual
         "source": "data/measurement-priority.draft.json",
         "ordering_disclaimer": "Esta clasificación representa prioridad clínica de visualización dentro de una herramienta educativa. No representa frecuencia mundial de uso, importancia diagnóstica absoluta ni sustituye el juicio clínico.",
         "metadata": draft.get("metadata", {}),

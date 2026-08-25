@@ -80,10 +80,25 @@ def test_clinical_ambiguities_issue16_specifications():
         assert item["interpretation_limitations"]["es"].count(warning_es) == 1
         assert item["interpretation_limitations"]["en"].count(warning_en) == 1
 
-    # 5. Las 101 prioridades continúan con review_status: pending
+    # 5. Las 10 prioridades del Lote 1 tienen review_status: approved y metadata completa, las otras 91 continúan pending.
     assert len(approved_data["priorities"]) == 101
+    lote1_ids = {
+        "relacion_vd_vi", "diametro_vci_meas", "colapsabilidad_vci_meas",
+        "fevi", "epss", "mapse", "s_prima_mitral", "tapse_meas", "s_prima_vd", "vti_tsvi_meas"
+    }
     for p in approved_data["priorities"]:
-        assert p["review_status"] == "pending", f"Medición {p['measurement_id']} tiene review_status modificado."
+        m_id = p["measurement_id"]
+        if m_id in lote1_ids:
+            assert p["review_status"] == "approved", f"Medición {m_id} del Lote 1 debería estar approved."
+            assert "review_metadata" in p, f"Medición {m_id} del Lote 1 debe contener review_metadata."
+            meta = p["review_metadata"]
+            assert meta["reviewer"] == "AGChop"
+            assert meta["reviewed_on"] == "2026-08-25"
+            assert meta["decision"] in ["maintain", "change-tier"]
+            assert meta["evidence_summary"]["es"] and meta["evidence_summary"]["es"].strip()
+            assert meta["evidence_summary"]["en"] and meta["evidence_summary"]["en"].strip()
+        else:
+            assert p["review_status"] == "pending", f"Medición {m_id} fuera del Lote 1 debe conservar status pending."
 
     # Cargar protocols.json y protocols.beta.json
     with open(protocols_path, "r", encoding="utf-8") as f:
@@ -126,3 +141,45 @@ def test_clinical_ambiguities_issue16_specifications():
     assert central_strain_refs[0]["doi"] == "10.1016/j.echo.2025.07.007"
     assert central_strain_refs[0]["url"] == "https://doi.org/10.1016/j.echo.2025.07.007"
     assert "source_page" not in central_strain_refs[0]
+
+    # 7. Comprobar las cuatro nuevas referencias del Lote 1 en data/measurement-priority.json
+    refs_priorities = approved_data["references"]
+    # IVC
+    ref_ivc = next(r for r in refs_priorities if r["id"] == "ivc_collapsibility_meta_2023")
+    assert ref_ivc["doi"] == "10.1016/j.medine.2021.12.018"
+    assert ref_ivc["url"] == "https://doi.org/10.1016/j.medine.2021.12.018"
+    assert ref_ivc["year"] == 2023
+    assert "Systematic review and meta-analysis" in ref_ivc["title"]
+    # Vinculada únicamente a colapsabilidad_vci_meas
+    linked_ivc = {p["measurement_id"] for p in approved_data["priorities"] if "ivc_collapsibility_meta_2023" in p.get("reference_ids", [])}
+    assert linked_ivc == {"colapsabilidad_vci_meas"}
+
+    # EPSS
+    ref_epss = next(r for r in refs_priorities if r["id"] == "epss_accuracy_2022")
+    assert ref_epss["doi"] == "10.24908/pocus.v7i1.15220"
+    assert ref_epss["url"] == "https://doi.org/10.24908/pocus.v7i1.15220"
+    assert ref_epss["year"] == 2022
+    assert "E-Point Septal Separation Accuracy" in ref_epss["title"]
+    # Vinculada únicamente a epss
+    linked_epss = {p["measurement_id"] for p in approved_data["priorities"] if "epss_accuracy_2022" in p.get("reference_ids", [])}
+    assert linked_epss == {"epss"}
+
+    # MAPSE
+    ref_mapse = next(r for r in refs_priorities if r["id"] == "focused_mapse_2023")
+    assert ref_mapse["doi"] == "10.1016/j.ajem.2023.03.018"
+    assert ref_mapse["url"] == "https://doi.org/10.1016/j.ajem.2023.03.018"
+    assert ref_mapse["year"] == 2023
+    assert "mitral annular plane systolic excursion" in ref_mapse["title"]
+    # Vinculada únicamente a mapse
+    linked_mapse = {p["measurement_id"] for p in approved_data["priorities"] if "focused_mapse_2023" in p.get("reference_ids", [])}
+    assert linked_mapse == {"mapse"}
+
+    # LVOT VTI
+    ref_vti = next(r for r in refs_priorities if r["id"] == "lvot_vti_fluid_2025")
+    assert ref_vti["doi"] == "10.1007/s40477-025-01072-1"
+    assert ref_vti["url"] == "https://doi.org/10.1007/s40477-025-01072-1"
+    assert ref_vti["year"] == 2025
+    assert "Utilization of left ventricular outflow tract" in ref_vti["title"]
+    # Vinculada únicamente a vti_tsvi_meas
+    linked_vti = {p["measurement_id"] for p in approved_data["priorities"] if "lvot_vti_fluid_2025" in p.get("reference_ids", [])}
+    assert linked_vti == {"vti_tsvi_meas"}

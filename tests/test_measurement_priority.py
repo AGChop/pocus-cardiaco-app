@@ -45,10 +45,10 @@ def test_priority_draft_validity():
     # 5. Distribución exacta
     from collections import Counter
     counts = Counter([p["priority_tier"] for p in draft["priorities"]])
-    assert counts[1] == 3, f"Nivel 1 esperado: 3, Encontrado: {counts[1]}"
-    assert counts[2] == 37, f"Nivel 2 esperado: 37, Encontrado: {counts[2]}"
+    assert counts[1] == 2, f"Nivel 1 esperado: 2, Encontrado: {counts[1]}"
+    assert counts[2] == 36, f"Nivel 2 esperado: 36, Encontrado: {counts[2]}"
     assert counts[3] == 43, f"Nivel 3 esperado: 43, Encontrado: {counts[3]}"
-    assert counts[4] == 18, f"Nivel 4 esperado: 18, Encontrado: {counts[4]}"
+    assert counts[4] == 20, f"Nivel 4 esperado: 20, Encontrado: {counts[4]}"
 
     # 6. Las nueve mediciones aprobadas están en Nivel 3
     approved_9 = {
@@ -74,13 +74,13 @@ def test_priority_draft_validity():
     assert fevi_entry["priority_tier"] == 2, f"FEVI debería ser Nivel 2. Encontrado: {fevi_entry['priority_tier']}"
     assert fevi_entry["pocus_scope"] == "extended", f"FEVI debería tener scope 'extended'. Encontrado: {fevi_entry['pocus_scope']}"
 
-    # 9. Los tres parámetros bloqueados permanecen en Nivel 1
-    locked_3 = {"relacion_vd_vi", "diametro_vci_meas", "colapsabilidad_vci_meas"}
-    for m_id in locked_3:
+    # 9. Los parámetros bloqueados de Nivel 1 permanecen en Nivel 1 (colapsabilidad pasó a Nivel 2)
+    locked_2 = {"relacion_vd_vi", "diametro_vci_meas"}
+    for m_id in locked_2:
         entry = next(p for p in draft["priorities"] if p["measurement_id"] == m_id)
         assert entry["priority_tier"] == 1, f"{m_id} debería ser Nivel 1. Encontrado: {entry['priority_tier']}"
         assert entry["pocus_scope"] == "basic", f"{m_id} debería tener scope 'basic'. Encontrado: {entry['pocus_scope']}"
-        # 10. Los tres de Nivel 1 tienen confidence moderate
+        # 10. Los de Nivel 1 tienen confidence moderate
         assert entry["confidence"] == "moderate", f"{m_id} debería tener confianza 'moderate'. Encontrado: {entry['confidence']}"
 
     # 11 y 12. priority_label y pocus_scope coinciden con priority_tier
