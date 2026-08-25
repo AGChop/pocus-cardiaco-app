@@ -4,13 +4,13 @@ import os
 # 1. CLASIFICACIONES BLOQUEADAS (Fijas)
 LOCKED_PRIORITIES = {
     "relacion_vd_vi": (1, "basic", ["shock", "disnea", "inestabilidad hemodinámica"],
-                       "Comparación 2D rápida del tamaño relativo del VD que ayuda a reconocer dilatación significativa del ventrículo derecho. Su exactitud depende de la carga, la calidad de imagen y la correcta alineación del plano de adquisición. No diagnostica por sí sola embolia pulmonar y debe integrarse siempre con la función del VD y el contexto clínico global."),
+                       "Comparación visual cualitativa en 2D del tamaño relativo del VD. Ayuda a reconocer dilatación del ventrículo derecho, pero no diagnostica por sí sola tromboembolia pulmonar (TEP), hipertensión pulmonar ni la etiología de la dilatación del VD. Requiere integración clínica."),
     "diametro_vci_meas": (1, "basic", ["shock", "inestabilidad hemodinámica"],
-                           "Medición 2D rápida de la VCI que, integrada con su variación respiratoria, función del corazón derecho, tipo de ventilación y contexto clínico, contribuye a estimar la presión auricular derecha y evaluar congestión venosa. No constituye por sí sola una medición directa de la volemia absoluta ni de la respuesta a la administración de líquidos."),
-    "colapsabilidad_vci_meas": (1, "basic", ["shock", "inestabilidad hemodinámica"],
-                                "Porcentaje de colapso respiratorio que forma parte de la evaluación básica de la VCI. Se aplica principalmente a pacientes en respiración espontánea, siendo muy dependiente de la técnica de adquisición y del esfuerzo inspiratorio realizado. No debe extrapolarse directamente a ventilación mecánica ni demuestra de forma aislada respuesta a líquidos."),
+                           "Medición 2D del diámetro de la VCI. Su valor de forma aislada no determina el estado de la volemia, la precarga ni la respuesta a la administración de fluidos."),
+    "colapsabilidad_vci_meas": (2, "extended", ["shock", "inestabilidad hemodinámica"],
+                                "Estimación del porcentaje de colapso de la VCI. Es muy dependiente de la respiración espontánea, el esfuerzo inspiratorio, la ventilación mecánica, la PEEP, la presión intraabdominal y la función del VD. No debe utilizarse de forma aislada para guiar la fluidoterapia."),
     "fevi": (2, "extended", ["shock", "disnea", "inestabilidad hemodinámica"],
-             "Cálculo cuantitativo por Simpson biplano que requiere vistas A4C y A2C, identificación de fin de diástole y fin de sístole, trazado endocárdico y evitar acortamiento apical. Es clínicamente útil, pero supera la estimación visual básica de la función sistólica realizada en FoCUS.")
+             "Cálculo cuantitativo formal de la FEVI por método de Simpson biplano (requiere delineación endocárdica en vistas A4C y A2C sin acortamiento apical). Se diferencia de la estimación visual cualitativa de la función sistólica propia del FoCUS básico.")
 }
 
 # 2. RECLASIFICACIONES APROBADAS (Nivel 2 -> Nivel 3)
@@ -24,9 +24,9 @@ CLINICALLY_REVIEWED_OVERRIDES = {
     "insuficiencia_mitral_severa_meas": (3, "contextual", ["disnea", "inestabilidad hemodinámica"],
                                          "La clasificación de insuficiencia mitral severa requiere integración multiparamétrica y una sospecha clínica o valvular específica."),
     "insuficiencia_aortica_severa_meas": (3, "contextual", ["shock", "inestabilidad hemodinámica"],
-                                          "La clasificación de insuficiencia aórtica severa requiere integrar Doppler color, Doppler espectral, flujo reverso y otros hallazgos."),
+                                           "La clasificación de insuficiencia aórtica severa requiere integrar Doppler color, Doppler espectral, flujo reverso y otros hallazgos."),
     "insuficiencia_tricuspidea_severa_meas": (3, "contextual", ["disnea", "inestabilidad hemodinámica"],
-                                              "La clasificación de insuficiencia tricuspídea severa requiere integración de vena contracta, Doppler, flujo de venas hepáticas, tamaño de cavidades y función derecha."),
+                                               "La clasificación de insuficiencia tricuspídea severa requiere integración de vena contracta, Doppler, flujo de venas hepáticas, tamaño de cavidades y función derecha."),
     "vena_contracta_meas": (3, "contextual", ["disnea"],
                             "La vena contracta es una medición semicuantitativa que se aplica cuando existe sospecha de regurgitación valvular y debe integrarse con otros criterios."),
     "variacion_mitral_respiratoria": (3, "contextual", ["shock", "inestabilidad hemodinámica"],
@@ -49,11 +49,11 @@ WITHDRAWN_ASCENTS = {
 BASE_PRIORITIES = {
     # === SECCIÓN 1: lv_systolic ===
     "epss": (2, "extended", ["disnea", "inestabilidad hemodinámica"],
-             "Distancia E-Septum con modo M. Sustituto cuantitativo indirecto de la función sistólica del VI. Útil en ventanas difíciles, pero dependiente de la posición mitral y la presencia de valvulopatías o miocardiopatías segmentarias. No debe preceder a la valoración visual global."),
+             "Distancia E-Septum en modo M. Herramienta complementaria de cribado para sospecha de disfunción sistólica del VI. No equivale a una medición formal de la FEVI ni la sustituye."),
     "mapse": (2, "extended", ["disnea", "inestabilidad hemodinámica"],
-              "Excursión sistólica longitudinal del anillo mitral por modo M. Permite valorar el acortamiento longitudinal izquierdo, pero requiere correcta alineación del cursor y entrenamiento extendido."),
-    "s_prima_mitral": (2, "extended", ["disnea", "inestabilidad hemodinámica"],
-                       "Velocidad sistólica tisular del anillo mitral por Doppler tisular (TDI). Valora la función longitudinal miocárdica de forma objetiva, requiriendo Doppler tisular y alineación paralela."),
+              "Excursión sistólica longitudinal del anillo mitral por modo M. Medición complementaria de la función longitudinal; no debe utilizarse como equivalente aislado de la función sistólica global del VI."),
+    "s_prima_mitral": (4, "advanced", ["disnea", "inestabilidad hemodinámica"],
+                       "Velocidad sistólica tisular del anillo mitral por Doppler tisular (TDI). Requiere Doppler tisular, alineación angular precisa y depende fuertemente de las condiciones de carga; no es un sustituto aislado de la FEVI."),
     "dtdvi": (2, "extended", ["disnea"],
               "Diámetro telediastólico del VI por modo 2D. Cuantifica dilatación de la cavidad izquierda para perfilar etiología de disnea, cuidando de evitar cortes oblicuos."),
     "dtsvi": (2, "extended", ["disnea"],
@@ -89,7 +89,7 @@ BASE_PRIORITIES = {
 
     # === SECCIÓN 3: stroke_volume_output ===
     "vti_tsvi_meas": (2, "extended", ["shock", "inestabilidad hemodinámica"],
-                       "Integral de velocidad-tiempo del TSVI mediante Doppler pulsado. Parámetro fundamental para el cálculo del gasto cardíaco y la evaluación hemodinámica del shock."),
+                       "Integral de velocidad-tiempo del TSVI por Doppler pulsado. Parámetro estático útil en shock. Un valor aislado no demuestra respuesta a fluidos; la evaluación de respuesta requiere comparar el cambio dinámico tras una maniobra validada (como elevación pasiva de piernas) en su contexto clínico."),
     "plr_vti_change": (2, "extended", ["shock", "inestabilidad hemodinámica"],
                         "Variación del VTI del TSVI posterior a una elevación pasiva de piernas. Excelente predictor dinámico de la respuesta a volumen."),
     "area_tsvi_meas": (3, "contextual", ["shock", "inestabilidad hemodinámica"],
@@ -109,9 +109,9 @@ BASE_PRIORITIES = {
 
     # === SECCIÓN 4: left_atrium ===
     "diametro_ap_ai": (2, "extended", ["disnea"],
-                       "Diámetro lineal anteroposterior de la aurícula izquierda en PLAX. Indicador básico de sobrecarga volumétrica o presión crónica de la AI."),
+                        "Diámetro lineal anteroposterior de la aurícula izquierda en PLAX. Indicador básico de sobrecarga volumétrica o presión crónica de la AI."),
     "volumen_ai_meas": (3, "contextual", ["disnea"],
-                         "Volumen volumétrico de la aurícula izquierda por método de Simpson o área-longitud en apical."),
+                          "Volumen volumétrico de la aurícula izquierda por método de Simpson o área-longitud en apical."),
     "lavi_meas": (3, "contextual", ["disnea"],
                    "Volumen indexado de la aurícula izquierda (LAVI). Clave para perfilar disfunción diastólica crónica."),
     "dilatacion_ai_class": (3, "contextual", ["disnea"],
@@ -143,9 +143,9 @@ BASE_PRIORITIES = {
 
     # === SECCIÓN 6: rv_systolic ===
     "tapse_meas": (2, "extended", ["disnea", "inestabilidad hemodinámica"],
-                   "Excursión sistólica del anillo tricuspídeo por modo M. Medida cuantitativa lineal de la función longitudinal derecha, no reemplaza la valoración cualitativa global ni la integración multiparamétrica."),
-    "s_prima_vd": (2, "extended", ["disnea", "inestabilidad hemodinámica"],
-                    "Velocidad sistólica tisular del anillo tricuspídeo por TDI. Valora la contractilidad longitudinal derecha de forma complementaria al TAPSE."),
+                   "Excursión sistólica del anillo tricuspídeo en modo M. Parámetro lineal de acortamiento longitudinal del VD dependiente de la carga y del ángulo del cursor; no representa por sí sola la función global del VD."),
+    "s_prima_vd": (4, "advanced", ["disnea", "inestabilidad hemodinámica"],
+                    "Velocidad sistólica tisular del anillo tricuspídeo por TDI. Requiere Doppler tisular, alineación angular y depende de la precarga/poscarga. Demanda interpretación multiparamétrica de la función derecha."),
     "diametro_basal_vd": (2, "extended", ["disnea"],
                            "Diámetro lineal transversal basal del VD en apical de 4 cámaras enfocado, útil para cuantificar la dilatación derecha."),
     "diametro_medio_vd": (2, "extended", ["disnea"],
@@ -360,6 +360,46 @@ REF_MAPPING = {
         "doi": "10.1016/j.echo.2025.07.007",
         "url": "https://doi.org/10.1016/j.echo.2025.07.007",
         "verification_status": "verified"
+    },
+    "ivc_collapsibility_meta_2023": {
+        "id": "ivc_collapsibility_meta_2023",
+        "title": "Fluid responsiveness assessment using inferior vena cava collapsibility among spontaneously breathing patients: Systematic review and meta-analysis",
+        "authors": "Orso D, et al.",
+        "organization_or_journal": "Medicina Intensiva",
+        "year": 2023,
+        "doi": "10.1016/j.medine.2021.12.018",
+        "url": "https://doi.org/10.1016/j.medine.2021.12.018",
+        "verification_status": "verified"
+    },
+    "epss_accuracy_2022": {
+        "id": "epss_accuracy_2022",
+        "title": "E-Point Septal Separation Accuracy for the Diagnosis of Mild and Severe Reduced Ejection Fraction in Emergency Department Patients",
+        "authors": "McKay MH, et al.",
+        "organization_or_journal": "POCUS Journal",
+        "year": 2022,
+        "doi": "10.24908/pocus.v7i1.15220",
+        "url": "https://doi.org/10.24908/pocus.v7i1.15220",
+        "verification_status": "verified"
+    },
+    "focused_mapse_2023": {
+        "id": "focused_mapse_2023",
+        "title": "Focused cardiac ultrasound with mitral annular plane systolic excursion (MAPSE) detection of left ventricular dysfunction",
+        "authors": "Berglund F, et al.",
+        "organization_or_journal": "Echo Research & Practice",
+        "year": 2023,
+        "doi": "10.1016/j.ajem.2023.03.018",
+        "url": "https://doi.org/10.1016/j.ajem.2023.03.018",
+        "verification_status": "verified"
+    },
+    "lvot_vti_fluid_2025": {
+        "id": "lvot_vti_fluid_2025",
+        "title": "Utilization of left ventricular outflow tract velocity time integral in the assessment of fluid responsiveness in adult patients with sepsis or septic shock - a systematic review",
+        "authors": "Tan C, et al.",
+        "organization_or_journal": "Anaesthesia",
+        "year": 2025,
+        "doi": "10.1007/s40477-025-01072-1",
+        "url": "https://doi.org/10.1007/s40477-025-01072-1",
+        "verification_status": "verified"
     }
 }
 
@@ -384,6 +424,16 @@ def get_refs_for_item(m_id, s_id):
     # Vincular strain_consensus_2025 a gls_vi
     if m_id == "gls_vi":
         refs.append("strain_consensus_2025")
+
+    # Vincular referencias específicas del Lote 1
+    if m_id == "colapsabilidad_vci_meas":
+        refs.append("ivc_collapsibility_meta_2023")
+    elif m_id == "epss":
+        refs.append("epss_accuracy_2022")
+    elif m_id == "mapse":
+        refs.append("focused_mapse_2023")
+    elif m_id == "vti_tsvi_meas":
+        refs.append("lvot_vti_fluid_2025")
 
     # Añadir recomendaciones de FoCUS y nomenclatura 2024 para niveles 1 y 2
     tier_info = TIERS.get(m_id)
@@ -475,6 +525,131 @@ def main():
                 4: "Avanzado / ecocardiografía integral"
             }
 
+            # Definición de metadatos de revisión para el Lote 1
+            review_metadata = None
+            review_status = "pending"
+
+            # 1. relacion_vd_vi
+            if m_id == "relacion_vd_vi":
+                review_status = "approved"
+                review_metadata = {
+                    "reviewer": "AGChop",
+                    "reviewed_on": "2026-08-25",
+                    "decision": "maintain",
+                    "evidence_summary": {
+                        "es": "Se mantiene en nivel 1 (Núcleo POCUS) al ser una comparación visual rápida cualitativa muy útil en shock/TEP sospechado; se aclara que no es diagnóstica por sí sola y requiere integración clínica.",
+                        "en": "Maintained in tier 1 (POCUS Core) as a rapid qualitative visual comparison highly useful in shock/suspected PE; clarified that it is not diagnostic on its own and requires clinical integration."
+                    }
+                }
+            # 2. diametro_vci_meas
+            elif m_id == "diametro_vci_meas":
+                review_status = "approved"
+                review_metadata = {
+                    "reviewer": "AGChop",
+                    "reviewed_on": "2026-08-25",
+                    "decision": "maintain",
+                    "evidence_summary": {
+                        "es": "Se mantiene en nivel 1 (Núcleo POCUS) para adquisición básica; se aclara que la medición aislada del diámetro no determina volemia, precarga ni respuesta a fluidos.",
+                        "en": "Maintained in tier 1 (POCUS Core) for basic acquisition; clarified that isolated diameter measurement does not determine volume status, preload, or fluid responsiveness."
+                    }
+                }
+            # 3. colapsabilidad_vci_meas
+            elif m_id == "colapsabilidad_vci_meas":
+                review_status = "approved"
+                review_metadata = {
+                    "reviewer": "AGChop",
+                    "reviewed_on": "2026-08-25",
+                    "decision": "change-tier",
+                    "evidence_summary": {
+                        "es": "Se cambia a nivel 2 (POCUS extendido) por su alta dependencia de la respiración espontánea, ventilación mecánica, PEEP, esfuerzo y presiones. No debe usarse aisladamente para indicar fluidoterapia.",
+                        "en": "Changed to tier 2 (extended POCUS) due to high dependence on spontaneous breathing, mechanical ventilation, PEEP, effort, and pressures. Should not be used in isolation to guide fluid therapy."
+                    }
+                }
+            # 4. fevi
+            elif m_id == "fevi":
+                review_status = "approved"
+                review_metadata = {
+                    "reviewer": "AGChop",
+                    "reviewed_on": "2026-08-25",
+                    "decision": "maintain",
+                    "evidence_summary": {
+                        "es": "Se mantiene en nivel 2 al ser la estimación formal cuantitativa por método de Simpson biplano, superando la valoración cualitativa rápida ('eyeballing') propia de un POCUS básico.",
+                        "en": "Maintained in tier 2 as it represents the formal quantitative assessment via biplane Simpson's method, exceeding the rapid qualitative evaluation ('eyeballing') of basic POCUS."
+                    }
+                }
+            # 5. epss
+            elif m_id == "epss":
+                review_status = "approved"
+                review_metadata = {
+                    "reviewer": "AGChop",
+                    "reviewed_on": "2026-08-25",
+                    "decision": "maintain",
+                    "evidence_summary": {
+                        "es": "Se mantiene en nivel 2 como herramienta complementaria de cribado para disfunción del VI; se documenta que no sustituye ni equivale a una FEVI formal.",
+                        "en": "Maintained in tier 2 as a complementary screening tool for LV dysfunction; documented that it does not replace or equal a formal LVEF."
+                    }
+                }
+            # 6. mapse
+            elif m_id == "mapse":
+                review_status = "approved"
+                review_metadata = {
+                    "reviewer": "AGChop",
+                    "reviewed_on": "2026-08-25",
+                    "decision": "maintain",
+                    "evidence_summary": {
+                        "es": "Se mantiene en nivel 2 como marcador complementario de acortamiento longitudinal; se enfatiza que no debe usarse como equivalente aislado de la función sistólica global del VI.",
+                        "en": "Maintained in tier 2 as a complementary marker of longitudinal shortening; emphasized that it should not be used as an isolated equivalent of global LV systolic function."
+                    }
+                }
+            # 7. s_prima_mitral
+            elif m_id == "s_prima_mitral":
+                review_status = "approved"
+                review_metadata = {
+                    "reviewer": "AGChop",
+                    "reviewed_on": "2026-08-25",
+                    "decision": "change-tier",
+                    "evidence_summary": {
+                        "es": "Se traslada a nivel 4 (Avanzado) por requerimiento técnico de Doppler tisular, alineación angular estricta y alta dependencia de carga. No es sustituto aislado de la FEVI.",
+                        "en": "Moved to tier 4 (Advanced) due to technical requirement of tissue Doppler, strict angular alignment, and high load dependency. Not an isolated substitute for LVEF."
+                    }
+                }
+            # 8. tapse_meas
+            elif m_id == "tapse_meas":
+                review_status = "approved"
+                review_metadata = {
+                    "reviewer": "AGChop",
+                    "reviewed_on": "2026-08-25",
+                    "decision": "maintain",
+                    "evidence_summary": {
+                        "es": "Se mantiene en nivel 2; se documenta que mide acortamiento longitudinal del VD y es dependiente de ángulo y carga, por lo que no refleja de manera aislada toda la función sistólica derecha.",
+                        "en": "Maintained in tier 2; documented that it measures RV longitudinal shortening and is angle- and load-dependent, thus not reflecting global right ventricular systolic function in isolation."
+                    }
+                }
+            # 9. s_prima_vd
+            elif m_id == "s_prima_vd":
+                review_status = "approved"
+                review_metadata = {
+                    "reviewer": "AGChop",
+                    "reviewed_on": "2026-08-25",
+                    "decision": "change-tier",
+                    "evidence_summary": {
+                        "es": "Se traslada a nivel 4 (Avanzado) al requerir Doppler tisular, presentar dependencia angular y de carga, y demandar interpretación multiparamétrica de la función derecha.",
+                        "en": "Moved to tier 4 (Advanced) as it requires tissue Doppler, has angular and load dependence, and demands multiparametric interpretation of right heart function."
+                    }
+                }
+            # 10. vti_tsvi_meas
+            elif m_id == "vti_tsvi_meas":
+                review_status = "approved"
+                review_metadata = {
+                    "reviewer": "AGChop",
+                    "reviewed_on": "2026-08-25",
+                    "decision": "maintain",
+                    "evidence_summary": {
+                        "es": "Se mantiene en nivel 2; se aclara que un VTI aislado es estático y no demuestra respuesta a fluidos, requiriendo comparación del cambio dinámico tras una maniobra validada en su contexto.",
+                        "en": "Maintained in tier 2; clarified that an isolated VTI is static and does not demonstrate fluid responsiveness, requiring comparison of dynamic changes after a validated maneuver in context."
+                    }
+                }
+
             p = {
                 "measurement_id": m_id,
                 "measurement_title": m_title,
@@ -494,8 +669,10 @@ def main():
                 "rationale": rationale,
                 "reference_ids": get_refs_for_item(m_id, s_id),
                 "confidence": "moderate" if m_id in ["fevi", "relacion_vd_vi", "diametro_vci_meas", "colapsabilidad_vci_meas"] else "high",
-                "review_status": "pending"
+                "review_status": review_status
             }
+            if review_metadata is not None:
+                p["review_metadata"] = review_metadata
             priorities.append(p)
 
     # Estructura del draft.json
@@ -509,7 +686,8 @@ def main():
             "expected_measurement_count": 101,
             "actual_measurement_count": len(measurements),
             "last_reviewed": "2026-07-20",
-            "disclaimer": "No representa una frecuencia mundial medida ni un ranking oficial universal."
+            "disclaimer": "No representa una frecuencia mundial medida ni un ranking oficial universal.",
+            "clinical_review_approval_disclaimer": "La aprobación corresponde exclusivamente a la clasificación educativa de prioridad dentro del proyecto y no constituye aprobación institucional ni una recomendación diagnóstica o terapéutica."
         },
         "references": list(REF_MAPPING.values()),
         "priorities": priorities
