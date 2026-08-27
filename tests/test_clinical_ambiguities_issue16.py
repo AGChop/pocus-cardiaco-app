@@ -80,25 +80,50 @@ def test_clinical_ambiguities_issue16_specifications():
         assert item["interpretation_limitations"]["es"].count(warning_es) == 1
         assert item["interpretation_limitations"]["en"].count(warning_en) == 1
 
-    # 5. Las 10 prioridades del Lote 1 tienen review_status: approved y metadata completa, las otras 91 continúan pending.
+    # 5. Las 25 prioridades del Lote 1 y Lote 2 tienen review_status: approved y metadata completa, las otras 76 continúan pending.
     assert len(approved_data["priorities"]) == 101
     lote1_ids = {
         "relacion_vd_vi", "diametro_vci_meas", "colapsabilidad_vci_meas",
         "fevi", "epss", "mapse", "s_prima_mitral", "tapse_meas", "s_prima_vd", "vti_tsvi_meas"
     }
+    lote2_ids = {
+        "dtdvi", "dtsvi", "fraccion_acortamiento_meas", "vtdvi", "vtdvi_indexed",
+        "vtsvi_meas", "vtsvi_indexed", "gls_vi", "wmsi", "ivsd", "pwtd",
+        "rwt_meas", "geometria_vi_meas", "masa_vi_meas", "lv_mass_index"
+    }
+    approved_ids_expected = lote1_ids.union(lote2_ids)
+    assert len(approved_ids_expected) == 25
+
+    approved_count = 0
+    pending_count = 0
+
     for p in approved_data["priorities"]:
         m_id = p["measurement_id"]
-        if m_id in lote1_ids:
-            assert p["review_status"] == "approved", f"Medición {m_id} del Lote 1 debería estar approved."
-            assert "review_metadata" in p, f"Medición {m_id} del Lote 1 debe contener review_metadata."
+        if m_id in approved_ids_expected:
+            approved_count += 1
+            assert p["review_status"] == "approved", f"Medición {m_id} debería estar approved."
+            assert "review_metadata" in p, f"Medición {m_id} debe contener review_metadata."
             meta = p["review_metadata"]
             assert meta["reviewer"] == "AGChop"
             assert meta["reviewed_on"] == "2026-08-25"
             assert meta["decision"] in ["maintain", "change-tier"]
             assert meta["evidence_summary"]["es"] and meta["evidence_summary"]["es"].strip()
-            assert meta["evidence_summary"]["en"] and meta["evidence_summary"]["en"].strip()
+            # Criterio: Simpson biplano no se describe como 3D
+            if m_id in ["fevi", "vtdvi", "vtdvi_indexed", "vtsvi_meas", "vtsvi_indexed"]:
+                es_summary = meta["evidence_summary"]["es"].lower()
+                en_summary = meta["evidence_summary"]["en"].lower()
+                assert "3d" not in es_summary and "tridimensional" not in es_summary, f"Simpson biplano en {m_id} no debe describirse como 3D."
+                assert "3d" not in en_summary and "three-dimensional" not in en_summary, f"Simpson biplano en {m_id} no debe describirse como 3D."
+
+            # Criterio: LVMI / lv_mass_index no afirma "confirmar hipertrofia verdadera"
+            if m_id == "lv_mass_index":
+                assert "hipertrofia verdadera" not in es_summary and "hipertrofia verdadera" not in p["rationale"].lower()
         else:
-            assert p["review_status"] == "pending", f"Medición {m_id} fuera del Lote 1 debe conservar status pending."
+            pending_count += 1
+            assert p["review_status"] == "pending", f"Medición {m_id} fuera del Lote 1 y 2 debe conservar status pending."
+
+    assert approved_count == 25
+    assert pending_count == 76
 
     # Cargar protocols.json y protocols.beta.json
     with open(protocols_path, "r", encoding="utf-8") as f:
@@ -183,3 +208,13 @@ def test_clinical_ambiguities_issue16_specifications():
     # Vinculada únicamente a vti_tsvi_meas
     linked_vti = {p["measurement_id"] for p in approved_data["priorities"] if "lvot_vti_fluid_2025" in p.get("reference_ids", [])}
     assert linked_vti == {"vti_tsvi_meas"}
+
+    # 8. Comprobar la nueva referencia de Hipertensión del Lote 2 en data/measurement-priority.json
+    ref_hyp = next(r for r in refs_priorities if r["id"] == "adult_hypertension_echo_2015")
+    assert ref_hyp["doi"] == "10.1016/j.echo.2015.05.002"
+    assert ref_hyp["url"] == "https://doi.org/10.1016/j.echo.2015.05.002"
+    assert ref_hyp["year"] == 2015
+    assert "Adult Hypertension" in ref_hyp["title"]
+    # Vinculada únicamente a masa, índice de masa, RWT o geometría
+    linked_hyp = {p["measurement_id"] for p in approved_data["priorities"] if "adult_hypertension_echo_2015" in p.get("reference_ids", [])}
+    assert linked_hyp == {"masa_vi_meas", "lv_mass_index", "rwt_meas", "geometria_vi_meas"}

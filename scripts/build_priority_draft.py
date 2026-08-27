@@ -361,6 +361,16 @@ REF_MAPPING = {
         "url": "https://doi.org/10.1016/j.echo.2025.07.007",
         "verification_status": "verified"
     },
+    "adult_hypertension_echo_2015": {
+        "id": "adult_hypertension_echo_2015",
+        "title": "Recommendations on the Use of Echocardiography in Adult Hypertension",
+        "authors": "Marwick TH, et al.",
+        "organization_or_journal": "Journal of the American Society of Echocardiography",
+        "year": 2015,
+        "doi": "10.1016/j.echo.2015.05.002",
+        "url": "https://doi.org/10.1016/j.echo.2015.05.002",
+        "verification_status": "verified"
+    },
     "ivc_collapsibility_meta_2023": {
         "id": "ivc_collapsibility_meta_2023",
         "title": "Fluid responsiveness assessment using inferior vena cava collapsibility among spontaneously breathing patients: Systematic review and meta-analysis",
@@ -434,6 +444,10 @@ def get_refs_for_item(m_id, s_id):
         refs.append("focused_mapse_2023")
     elif m_id == "vti_tsvi_meas":
         refs.append("lvot_vti_fluid_2025")
+
+    # Vincular adult_hypertension_echo_2015 al Lote 2
+    if m_id in ["masa_vi_meas", "lv_mass_index", "rwt_meas", "geometria_vi_meas"]:
+        refs.append("adult_hypertension_echo_2015")
 
     # Añadir recomendaciones de FoCUS y nomenclatura 2024 para niveles 1 y 2
     tier_info = TIERS.get(m_id)
@@ -647,6 +661,118 @@ def main():
                     "evidence_summary": {
                         "es": "Se mantiene en nivel 2; se aclara que un VTI aislado es estático y no demuestra respuesta a fluidos, requiriendo comparación del cambio dinámico tras una maniobra validada en su contexto.",
                         "en": "Maintained in tier 2; clarified that an isolated VTI is static and does not demonstrate fluid responsiveness, requiring comparison of dynamic changes after a validated maneuver in context."
+                    }
+                }
+            # === Lote 2: lv_systolic ===
+            elif m_id in ["dtdvi", "dtsvi"]:
+                review_status = "approved"
+                review_metadata = {
+                    "reviewer": "AGChop",
+                    "reviewed_on": "2026-08-25",
+                    "decision": "maintain",
+                    "evidence_summary": {
+                        "es": "Medidas lineales 2D-guiadas. Requieren plano PLAX correctamente orientado y medición perpendicular al eje largo. La oblicuidad y la geometría ventricular anormal limitan su interpretación, por lo que no sustituyen volúmenes ni función global.",
+                        "en": "2D-guided linear measurements. Require a correctly oriented PLAX view and measurement perpendicular to the long axis. Obliquity and abnormal ventricular geometry limit their interpretation; they do not replace volumes or global function."
+                    }
+                }
+            elif m_id == "fraccion_acortamiento_meas":
+                review_status = "approved"
+                review_metadata = {
+                    "reviewer": "AGChop",
+                    "reviewed_on": "2026-08-25",
+                    "decision": "maintain",
+                    "evidence_summary": {
+                        "es": "Medida radial derivada de diámetros telediastólico y telesistólico. Altamente dependiente de la geometría y de las condiciones de carga, puede ser engañosa en presencia de alteraciones segmentarias de la contractilidad y no sustituye a la FEVI volumétrica.",
+                        "en": "Radial measurement derived from end-diastolic and end-systolic diameters. Highly dependent on geometry and loading conditions, it can be misleading in the presence of regional wall motion abnormalities and does not replace volumetric LVEF."
+                    }
+                }
+            elif m_id in ["vtdvi", "vtdvi_indexed", "vtsvi_meas", "vtsvi_indexed"]:
+                review_status = "approved"
+                review_metadata = {
+                    "reviewer": "AGChop",
+                    "reviewed_on": "2026-08-25",
+                    "decision": "maintain",
+                    "evidence_summary": {
+                        "es": "Volumetría 2D basada en el método de Simpson biplano. Requiere proyecciones apicales de 4 y 2 cámaras alineadas sin acortamiento apical (foreshortening) y un correcto trazado endocárdico. La indexación por superficie corporal mejora la comparabilidad interindividual, interpretando según el tamaño corporal y el contexto clínico.",
+                        "en": "2D volumetry based on the biplane Simpson method. Requires properly aligned apical 4- and 2-chamber views without apical foreshortening and correct endocardial border tracing. Indexing by body surface area improves interindividual comparability, interpreting according to body size and clinical context."
+                    }
+                }
+            elif m_id == "gls_vi":
+                review_status = "approved"
+                review_metadata = {
+                    "reviewer": "AGChop",
+                    "reviewed_on": "2026-08-25",
+                    "decision": "maintain",
+                    "evidence_summary": {
+                        "es": "Strain longitudinal global. Requiere speckle tracking, calidad de imagen óptima, frame rate adecuado y ausencia de acortamiento apical. Al depender del fabricante del software y de la carga, se recomienda el seguimiento en la misma plataforma.",
+                        "en": "Global longitudinal strain. Requires speckle tracking, optimal image quality, appropriate frame rate, and absence of apical foreshortening. Since it depends on vendor software and loading conditions, serial follow-up on the same platform is recommended."
+                    }
+                }
+            elif m_id == "wmsi":
+                review_status = "approved"
+                review_metadata = {
+                    "reviewer": "AGChop",
+                    "reviewed_on": "2026-08-25",
+                    "decision": "maintain",
+                    "evidence_summary": {
+                        "es": "Evaluación visual segmentaria del VI mediante un modelo de 16 o 17 segmentos. Depende críticamente de una adecuada delineación endocárdica, la experiencia del lector y la convención de puntuación. No debe convertirse automáticamente en un valor de FEVI ni en un diagnóstico etiológico.",
+                        "en": "Segmental visual assessment of the LV using a 16- or 17-segment model. Critically depends on adequate endocardial visualization, reader experience, and scoring convention. Should not be automatically translated into an LVEF value or an etiological diagnosis."
+                    }
+                }
+            # === Lote 2: lv_geometry ===
+            elif m_id in ["ivsd", "pwtd"]:
+                review_status = "approved"
+                review_metadata = {
+                    "reviewer": "AGChop",
+                    "reviewed_on": "2026-08-25",
+                    "decision": "maintain",
+                    "evidence_summary": {
+                        "es": "Medición telediastólica lineal correctamente orientada. Se debe cuidar la exclusión de trabeculaciones, cuerdas tendinosas o estructuras del VD. Estas mediciones no diagnostican hipertrofia por sí solas de forma aislada.",
+                        "en": "Correctly oriented linear end-diastolic measurement. Care must be taken to exclude trabeculations, chordae tendineae, or RV structures. These measurements do not diagnose hypertrophy in isolation."
+                    }
+                }
+            elif m_id == "rwt_meas":
+                review_status = "approved"
+                review_metadata = {
+                    "reviewer": "AGChop",
+                    "reviewed_on": "2026-08-25",
+                    "decision": "maintain",
+                    "evidence_summary": {
+                        "es": "Grosor relativo de pared. Parámetro derivado adimensional calculado a partir del espesor de la pared posterior (PWTd) y el diámetro telediastólico (LVIDd). Debe interpretarse conjuntamente con la masa o el índice de masa del VI y no constituye un diagnóstico independiente.",
+                        "en": "Relative wall thickness. Derived dimensionless parameter calculated from posterior wall thickness (PWTd) and end-diastolic diameter (LVIDd). Must be interpreted together with LV mass or mass index and does not constitute an independent diagnosis."
+                    }
+                }
+            elif m_id == "geometria_vi_meas":
+                review_status = "approved"
+                review_metadata = {
+                    "reviewer": "AGChop",
+                    "reviewed_on": "2026-08-25",
+                    "decision": "maintain",
+                    "evidence_summary": {
+                        "es": "Clasificación geométrica derivada de la integración del grosor relativo de pared (RWT) y el índice de masa del VI. Distingue patrones adaptativos (normal, remodelado concéntrico, hipertrofia concéntrica o excéntrica) pero no determina de forma aislada la etiología ni la conducta terapéutica.",
+                        "en": "Geometric classification derived from the integration of relative wall thickness (RWT) and LV mass index. Distinguishes adaptive patterns (normal, concentric remodeling, concentric or eccentric hypertrophy) but does not determine etiology or therapeutic management in isolation."
+                    }
+                }
+            elif m_id == "masa_vi_meas":
+                review_status = "approved"
+                review_metadata = {
+                    "reviewer": "AGChop",
+                    "reviewed_on": "2026-08-25",
+                    "decision": "maintain",
+                    "evidence_summary": {
+                        "es": "Estimación lineal de la masa absoluta. Las fórmulas matemáticas basadas en dimensiones elevadas al cubo amplifican exponencialmente pequeños errores de medición. No deben mezclarse fórmulas lineales, bidimensionales o tridimensionales ni sus respectivos intervalos de referencia.",
+                        "en": "Linear estimation of absolute mass. Mathematical formulas based on cubed dimensions exponentially amplify small measurement errors. Linear, 2D, or 3D formulas and their respective reference intervals should not be mixed."
+                    }
+                }
+            elif m_id == "lv_mass_index":
+                review_status = "approved"
+                review_metadata = {
+                    "reviewer": "AGChop",
+                    "reviewed_on": "2026-08-25",
+                    "decision": "maintain",
+                    "evidence_summary": {
+                        "es": "Masa del VI indexada por superficie corporal para normalizarla según el tamaño corporal del paciente. La indexación por superficie corporal puede subestimar la hipertrofia en pacientes con obesidad, por lo que otras indexaciones pueden ser clínicamente pertinentes según el contexto.",
+                        "en": "LV mass indexed by body surface area to normalize it according to the patient's body size. BSA indexing may underestimate hypertrophy in patients with obesity, so other indexations may be clinically relevant depending on the context."
                     }
                 }
 
